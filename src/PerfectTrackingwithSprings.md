@@ -30,7 +30,7 @@ For this reason, I've always tried to avoid going down this route whenever I cou
 
 However, a few years ago, my old colleague Jack Potter showed me a kind of spring that can filter animation in exactly the way we want: it can remove discontinuities smoothly while still perfectly tracking the original signal when nothing is wrong.
 
-> &#x2705; 不止只去跳变，任何以内容优化为目的的算法，都是这样的目标：在去除不好的同时尽可能地保留好的。  
+> &#x2705; 不只去跳变，任何以内容优化为目的的算法，都是这样的目标：在去除不好的同时尽可能地保留好的。  
 
 The trick is to make a spring that **tracks the acceleration, velocity, and position of the input animation in different proportions**.
 
