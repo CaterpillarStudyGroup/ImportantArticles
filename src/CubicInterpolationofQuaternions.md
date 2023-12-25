@@ -105,15 +105,17 @@ cubic interpolation full
 
 One last adjustment to this formula is to effectively translate our points such that \\( p_0 = 0 \\). Then, once we have the interpolated value, translate it back up by adding the original value of \\( p_0 \\):
 
+> &#x2753; 这一步不知道有什么用。  
+
 ```c++
 void hermite_alt(
-    vec3& pos,
-    vec3& vel, 
-    float x, 
-    vec3 p0,
-    vec3 p1, 
-    vec3 v0,
-    vec3 v1)
+    vec3& pos,   // 求x时刻的位置
+    vec3& vel,   // 求x时刻的速度
+    float x,     // x 为[0,1]区间的值
+    vec3 p0,     // x=0时的位置
+    vec3 p1,     // x=1时的位置
+    vec3 v0,     // x=0时的速度
+    vec3 v1)     // x=1时的速度
 {
     vec3 p1_sub_p0 = p1 - p0;
 
@@ -133,14 +135,22 @@ void hermite_alt(
 This might seem like a pointless extra step, but this formulation with the first point at zero actually simplifies things in a way which will be really useful when we start dealing with quaternions.
 
 What we've derived is called Hermite Cubic Interpolation, and is essentially the mathematics used for a single segment of a Hermite Spline, which will be a key part of doing cubic interpolation of quaternions.
-Catmull-Rom Cubic Interpolation
+
+---
+
+## Catmull-Rom Cubic Interpolation
 
 If we have a series of points and their gradients/velocities, we can use the previous equation to make a smooth interpolation that passes through them. But what if we just have points? With no velocities or gradients associated with them? Can we still use Hermite Curve Interpolation?
 
+> &#x2705; 把这些点看作是关键帧，所谓make a smooth interpolation是指在关键帧之间增加一些平滑点形成的平滑曲线，而不是把这个点本身平滑掉。  
+
 Yes! The trick is to take four points instead of two, and to use the central difference to "estimate" a gradient/velocity to associate with each of the middle two points. Then, once we have these velocities we can use Hermite Curve Interpolation to interpolate the intermediate values.
+
+> &#x2705; 已知p0, p1, p2, p3，求p1与p2之间的插值  
 
 In code it looks something like this:
 
+```c++
 void catmull_rom(
     vec3& pos,
     vec3& vel,
@@ -154,6 +164,7 @@ void catmull_rom(
     vec3 v2 = ((p2 - p1) + (p3 - p2)) / 2;
     return hermite(pos, vel, x, p1, p2, v1, v2);
 }
+```
 
 You can see that we compute the central difference for these two middle points using the average of the forward and backward differences. Then, we pass these estimated velocities to our Hermite Curve Interpolation function to get the final interpolated value! The result is something like this:
 
@@ -161,27 +172,32 @@ catmull rom spline
 
 And that's how we use a Catmull-Rom spline to do cubic interpolation. Here is what it looks like in 3d:
 
-Quaternion Catmull-Rom Cubic Interpolation
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/CubicInterpolation/catmull_rom.m4v
+
+---
+
+## Quaternion Catmull-Rom Cubic Interpolation
 
 Now that we understand exactly what is going on (and what each different value and computation represents) we are ready to adapt our equations to work with quaternions instead of positions.
 
 First we will tackle the Hermite Cubic Interpolation function, and there are a few changes we need to make to get this formula to work for quaternions:
 
-    Instead of linear velocities, we need to use angular velocities.
-    When we compute the difference between p0 and p1 to put p0 at zero, we are instead going to take the quaternion difference.
-    Once we have this quaterion difference, we are going to convert it into the scaled-angle-axis space so that it makes sense to mix it with angular velocities.
-    Once we have added everything together, we need to convert the result back to a quaternion. And instead of adding back the original value of p0 we will use quaternion multiplication.
+1. Instead of linear velocities, we need to use [angular velocities](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity).
+2. When we compute the difference between p0 and p1 to put p0 at zero, we are instead going to take the quaternion difference.
+3. Once we have this quaterion difference, we are going to convert it into the scaled-angle-axis space so that it makes sense to mix it with angular velocities.
+4. Once we have added everything together, we need to convert the result back to a quaternion. And instead of adding back the original value of p0 we will use quaternion multiplication.
 
 In code it looks like this:
 
+```c++
 void quat_hermite(
-    quat& rot,
-    vec3& vel, 
-    float x, 
-    quat r0,
-    quat r1, 
-    vec3 v0,
-    vec3 v1)
+    quat& rot,  // 求x时刻的旋转
+    vec3& vel,  // 求x时刻的旋转速度
+    float x,    // x 为[0,1]区间的值
+    quat r0,    // x=0时的旋转
+    quat r1,    // x=1时的旋转
+    vec3 v0,    // x=0时的旋转速度
+    vec3 v1)    // x=0时的旋转速度
 {
     float w1 = 3*x*x - 2*x*x*x;
     float w2 = x*x*x - 2*x*x + x;
@@ -191,13 +207,16 @@ void quat_hermite(
     float q2 = 3*x*x - 4*x + 1;
     float q3 = 3*x*x - 2*x;
     
+    // 先求 quaterion difference，然后转化为scaled-angle-axis表示
     vec3 r1_sub_r0 = quat_to_scaled_angle_axis(quat_abs(quat_mul_inv(r1, r0)));   
     
+    // 对旋转插值之后再转回四元数表示
     rot = quat_mul(quat_from_scaled_angle_axis(w1*r1_sub_r0 + w2*v0 + w3*v1), r0);
     vel = q1*r1_sub_r0 + q2*v0 + q3*v1;
 }
+```
 
-Next, we can tackle our Catmull-Rom Cubic Interpolation function. This time there are fewer adjustments. All we really need to do is convert our velocity computations via finite difference, into angular velocity computations via finite difference (as described in my previous article on angular velocity)...
+Next, we can tackle our Catmull-Rom Cubic Interpolation function. This time there are fewer adjustments. All we really need to do is convert our velocity computations via finite difference, into angular velocity computations via finite difference (as described in my [previous article](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) on angular velocity)...
 
 void quat_catmull_rom(
     quat& rot,
@@ -221,7 +240,11 @@ And that's it! While some of these steps might not be 100% obvious without think
 
 Here is what it looks like in our little 3d environment:
 
-Raw Quaternion Cubic Interpolation
+https://www.daniel-holden.com/media/uploads/CubicInterpolation/quat_catmull_rom.m4v
+
+---
+
+## Raw Quaternion Cubic Interpolation
 
 If you are interpolating a series of quaternions which are sequentially pretty similar to each other, and have been "unrolled" so that there are no sudden discontinuities there is an even easier way to do cubic interpolation of quaternions, which is to just do the interpolation directly in the 4d quaternion space, treating the quaternions as 4d vectors, and re-normalize the result.
 
