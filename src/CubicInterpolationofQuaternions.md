@@ -187,6 +187,8 @@ First we will tackle the Hermite Cubic Interpolation function, and there are a f
 3. Once we have this quaterion difference, we are going to convert it into the scaled-angle-axis space so that it makes sense to mix it with angular velocities.
 4. Once we have added everything together, we need to convert the result back to a quaternion. And instead of adding back the original value of p0 we will use quaternion multiplication.
 
+> &#x2753; 什么是scaled-angle-axis？
+
 In code it looks like this:
 
 ```c++
@@ -216,8 +218,11 @@ void quat_hermite(
 }
 ```
 
+> &#x2753; 仍然没有看出把r1-r0提取出来的作用
+
 Next, we can tackle our Catmull-Rom Cubic Interpolation function. This time there are fewer adjustments. All we really need to do is convert our velocity computations via finite difference, into angular velocity computations via finite difference (as described in my [previous article](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) on angular velocity)...
 
+```c++
 void quat_catmull_rom(
     quat& rot,
     vec3& vel,
@@ -231,50 +236,68 @@ void quat_catmull_rom(
     vec3 r2_sub_r1 = quat_to_scaled_angle_axis(quat_abs(quat_mul_inv(r2, r1)));
     vec3 r3_sub_r2 = quat_to_scaled_angle_axis(quat_abs(quat_mul_inv(r3, r2)));
   
+    // finite difference
     vec3 v1 = (r1_sub_r0 + r2_sub_r1) / 2;
     vec3 v2 = (r2_sub_r1 + r3_sub_r2) / 2;
     return quat_hermite(rot, vel, x, r1, r2, v1, v2);
 }
+```
 
 And that's it! While some of these steps might not be 100% obvious without thinking about it a little, as long as you understand the relationship between angular velocities and quaternions, I don't think there is anything unexpected going on.
 
 Here is what it looks like in our little 3d environment:
 
-https://www.daniel-holden.com/media/uploads/CubicInterpolation/quat_catmull_rom.m4v
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/CubicInterpolation/quat_catmull_rom.m4v
 
 ---
 
 ## Raw Quaternion Cubic Interpolation
 
-If you are interpolating a series of quaternions which are sequentially pretty similar to each other, and have been "unrolled" so that there are no sudden discontinuities there is an even easier way to do cubic interpolation of quaternions, which is to just do the interpolation directly in the 4d quaternion space, treating the quaternions as 4d vectors, and re-normalize the result.
+If you are interpolating a series of quaternions which are sequentially pretty similar to each other, and have been "[unrolled](https://www.daniel-holden.com/page/joint-limits#unrolling)" so that there are no sudden discontinuities there is an even easier way to do cubic interpolation of quaternions, which is to just do the interpolation directly in the 4d quaternion space, treating the quaternions as 4d vectors, and re-normalize the result.
 
-This can be faster and will produce practically identical results when your quaternions are similar. I see this as like the difference between using slerp and nlerp for linear interpolation.
+This can be faster and will produce practically identical results when your quaternions are similar. I see this as like [the difference between using slerp and nlerp](http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/) for linear interpolation.
 
 One thing to be careful of in this setup is that if you are treating the quaternions as raw 4d vectors then the "velocities" you get out of the cubic interpolation will not be angular velocities, but velocities in the raw 4d quaternion space.
 
+> &#x2753; angular velocities与velocities in the raw 4d quaternion space是什么关系？
+
 If we want to convert these "velocities" in the 4d quaternion space into actual angular velocities we can do so using the following function:
 
+```c++
 vec3 quat_delta_to_angular_velocity(quat qref, quat qdelta)
 {
     quat a = quat_mul_inv(qdelta, qref);
     return 2.0f * vec3(a.x, a.y, a.z);
 }
+```
 
 Here qdelta is the scaled raw difference between two quaternions in the 4d space and qref is a quaternion representing the rotation at which this difference was taken (i.e. one of the two quaternions used to compute the difference or the rotation along the spline associated with this difference).
 
-This gives a result equal to the linear approximation of the angular velocity.
-Conclusion
+> &#x2753; qref是什么？  
 
-When it comes to animation data, I think most people believe that doing cubic interpolation of rotations is a waste of CPU cycles. Yes - sampling four poses is more expensive than two and the mathematics involved are more expensive too - but cubic interpolation really can make a visual difference - in particular when playing animation in slow-motion.
+This gives a result equal to the [linear approximation](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) of the angular velocity.
+
+## Conclusion
+
+When it comes to animation data, I think most people believe that doing cubic interpolation of rotations is a waste of CPU cycles. Yes - **sampling** four poses is more expensive than two and the mathematics involved are more expensive too - but cubic interpolation really can make a visual difference - in particular when playing animation in slow-motion.
+
+> &#x2753; sampling是用来采样关键帧？  
 
 In addition, compared to linear interpolation, cubic interpolation gives velocities that change smoothly in-between frames, which can prevent aliasing effects when further processing the data. For example, sampling velocities for a motion-matching database via linear interpolation at a rate higher than the original animation data will produce consecutive entries with the same velocities - which can look like a bug when it comes to inspect the data and can affect the result of downstream algorithms such as PCA.
+
+> &#x2753; 采样会需要插值。为什么线性插值会导致速度不变？速度不变会产生什么Artifacts？PCA怎么成了motion matching的downstream？  
+
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/CubicInterpolation/animation_interpolation.m4v
 
 Here is another concrete example: while FIFA 21 has undoubtedly some of the best, most sophisticated, and most realistic animation in the world of video games, the linear interpolation between frames, and the velocity discontinuity this introduces during slow-mo is something that cannot be un-seen.
 
 Edit: FIFA 23 on the other hand does use a similar technique to the one described here. I think the results speak for themselves!
 
 Either way, I hope this post has shed some light on cubic interpolation of quaternions. And as always, thanks for reading!
-Appendix: Cubic Interpolation of Scales
+
+---
+
+## Appendix: Cubic Interpolation of Scales
 
 Those of you who have read my article on scalar velocity will know that we can follow a very similar process to derive a method of cubic interpolation of scales.
 
