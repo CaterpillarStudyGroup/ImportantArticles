@@ -329,7 +329,7 @@ There is one more additional fact we can use to get the variables we need from t
 (y^2-w^2)-d\cdot y+s&=0&(2)\\\\ 
 2\cdot w\cdot y-d\cdot w&=0 &(3) \end{align*}
  
-**Finding** \\(c\\) 
+## Finding \\(c\\) 
 
 
 Using equation `(1) ` we can solve for `c` right away to get our first unknown!
@@ -340,575 +340,54 @@ s\cdot g+d\cdot q&=s\cdot c\\\\
 g+\frac{d\cdot q}{s} &=c \end{align*}
  
 
-**Finding** \\(y\\)
+## Finding \\(y\\)
 And by rearranging equation `(3)` we can also find a solution for `y`:
 
+\begin{align*} 2\cdot w\cdot y-d\cdot w&=0\\\\ 
+d\cdot w&=2\cdot w\cdot y\\\\ 
+d &=2\cdot y\\\\
+\frac{d}{2} &=y \end{align*}
+
+## Finding \\(w\\)
+
+Which we can substitute into equation `(2)` to solve for ``w``:
+
+\begin{align*} (y^2- w^2)-d\cdot y+s&=0\\\\ 
+((\frac{d}{2}) ^2-w^2)-d\cdot \frac{d}{2}+s&=0\\\\ 
+\frac{d^2}{4}-w^2- \frac{d^2}{2}+s&=0\\\\ 
+\frac{d^2}{4}- \frac{d^2}{2}+s&=w^2\\\\ 
+s- \frac{d^2}{4}&=w^2\\\\ 
+\sqrt{s-\frac{d^2}{4}}  &=w \end{align*}
+
+## Finding the Spring State
+
+There are two final unknown variables remaining: `j`, and `p` - the amplitude and the phase. Unlike `y`,`w`, and `c`, these two are determined by the initial conditions of the spring. Therefore, given some initial position and velocity, \\(x_0\\) and \\(v_0\\), we can plug these in our equations along with \\(t=0\\) to get some more equations we will use to find `j` and `p`:
+
+​\begin{align*} x_0&=j \cdot e^{−y \cdot 0} \cdot \cos(w⋅0+p)+c\\\\
+x_0&=j \cdot \cos(p)+c\\\\
+\\\\
+v_0&=−y \cdot j \cdot e ^{−y \cdot 0} \cdot \cos(w \cdot 0+p)−w \cdot j \cdot e^{−y\cdot 0}\cdot \sin(w \cdot 0+p)\\\\
+v_0&=−y \cdot j \cdot \cos(p)−w \cdot j \cdot \sin(p) \end{align*}
+​
+
+## Finding \\(j\\)  
+
+Let's start with `j`. First we'll re-arrange our equation for \\(x_0\\) in terms of `p`:
+
+
+\begin{align*} x_0&=j\cdot ​\cos(p)+c\\\\
+x_0-c&=j\cdot \cos(p)\\\\
+\frac{x_0-c}{j} &=\cos(p)\\\\
+\text{arccos} (\frac{x_0-c}{j})&=p \end{align*}
+
+And substitute this into our equation for \\(v_0\\):
 
 
 
-
- 
-
-Finding 
-�
-w
-Which we can substitute into equation 
-(
-2
-)
-(2) to solve for 
-�
-w:
-
-(
-�
-2
-−
-�
-2
-)
-−
-�
-⋅
-�
-+
-�
-=
-0
-(
-(
-�
-2
-)
-2
-−
-�
-2
-)
-−
-�
-⋅
-�
-2
-+
-�
-=
-0
-�
-2
-4
-−
-�
-2
-−
-�
-2
-2
-+
-�
-=
-0
-�
-2
-4
-−
-�
-2
-2
-+
-�
-=
-�
-2
-�
-−
-�
-2
-4
-=
-�
-2
-�
-−
-�
-2
-4
-=
-�
-(y 
-2
- −w 
-2
- )−d⋅y+s
-(( 
-2
-d
-​
- ) 
-2
- −w 
-2
- )−d⋅ 
-2
-d
-​
- +s
-4
-d 
-2
- 
-​
- −w 
-2
- − 
-2
-d 
-2
- 
-​
- +s
-4
-d 
-2
- 
-​
- − 
-2
-d 
-2
- 
-​
- +s
-s− 
-4
-d 
-2
- 
-​
- 
-s− 
-4
-d 
-2
- 
-​
- 
-​
- 
-​
-  
-=0
-=0
-=0
-=w 
-2
- 
-=w 
-2
- 
-=w
-​
- 
-
-Finding the Spring State
-There are two final unknown variables remaining: 
-�
-j, and 
-�
-p - the amplitude and the phase. Unlike 
-�
-y, 
-�
-w, and 
-�
-c, these two are determined by the initial conditions of the spring. Therefore, given some initial position and velocity, 
-�
-0
-x 
-0
-​
-  and 
-�
-0
-v 
-0
-​
- , we can plug these in our equations along with 
-�
-=
-0
-t=0 to get some more equations we will use to find 
-�
-j and 
-�
-p:
-
-�
-0
-=
-�
-⋅
-�
-−
-�
-⋅
-0
-⋅
-cos
-⁡
-(
-�
-⋅
-0
-+
-�
-)
-+
-�
-�
-0
-=
-�
-⋅
-cos
-⁡
-(
-�
-)
-+
-�
-�
-0
-=
-−
-�
-⋅
-�
-⋅
-�
-−
-�
-⋅
-0
-⋅
-cos
-⁡
-(
-�
-⋅
-0
-+
-�
-)
-−
-�
-⋅
-�
-⋅
-�
-−
-�
-⋅
-0
-⋅
-sin
-⁡
-(
-�
-⋅
-0
-+
-�
-)
-�
-0
-=
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-)
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-�
-)
-x 
-0
-​
- 
-x 
-0
-​
- 
-v 
-0
-​
- 
-v 
-0
-​
- 
-​
-  
-=j⋅e 
-−y⋅0
- ⋅cos(w⋅0+p)+c
-=j⋅cos(p)+c
-=−y⋅j⋅e 
-−y⋅0
- ⋅cos(w⋅0+p)−w⋅j⋅e 
-−y⋅0
- ⋅sin(w⋅0+p)
-=−y⋅j⋅cos(p)−w⋅j⋅sin(p)
-​
- 
-
-Finding 
-�
-j
-Let's start with 
-�
-j. First we'll re-arrange our equation for 
-�
-0
-x 
-0
-​
-  in terms of 
-�
-p:
-
-�
-0
-=
-�
-⋅
-cos
-⁡
-(
-�
-)
-+
-�
-�
-0
-−
-�
-=
-�
-⋅
-cos
-⁡
-(
-�
-)
-�
-0
-−
-�
-�
-=
-cos
-⁡
-(
-�
-)
 arccos
 ⁡
-(
-�
-0
-−
-�
-�
-)
-=
-�
-x 
-0
-​
- 
-x 
-0
-​
- −c
-j
-x 
-0
-​
- −c
-​
- 
-arccos( 
-j
-x 
-0
-​
- −c
-​
- )
-​
-  
-=j⋅cos(p)+c
-=j⋅cos(p)
-=cos(p)
-=p
-​
- 
 
-And substitute this into our equation for 
-�
-0
-v 
-0
-​
- :
 
-�
-0
-=
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-)
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-�
-)
-�
-0
-=
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-arccos
-⁡
-(
-�
-0
-−
-�
-�
-)
-)
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-arccos
-⁡
-(
-�
-0
-−
-�
-�
-)
-)
-�
-0
-=
-−
-�
-⋅
-�
-⋅
-�
-0
-−
-�
-�
-−
-�
-⋅
-�
-⋅
-1
-−
-(
-�
-0
-−
-�
-)
-2
-�
-2
-�
-0
-=
-−
-�
-⋅
-(
-�
-0
-−
-�
-)
-−
-�
-⋅
-�
-⋅
-1
-−
-(
-�
-0
-−
-�
-)
-2
-�
-2
-v 
-0
-​
- 
-v 
-0
-​
- 
-v 
-0
-​
- 
-v 
-0
-​
  
 ​
   
