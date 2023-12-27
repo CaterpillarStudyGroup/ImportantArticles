@@ -1,3 +1,5 @@
+转载出处：https://www.daniel-holden.com/page/cubic-interpolation-quaternions
+
 # Cubic Interpolation of Quaternions
 
 Created on April 25, 2023, 9:01 a.m.
@@ -303,6 +305,7 @@ Those of you who have read my article on scalar velocity will know that we can f
 
 Again, we can start with a function for a hermite spline, this time taking scalar velocities as input (for this code, using the natural base).
 
+```c++
 void scale_hermite(
     vec3& scl,
     vec3& svl, 
@@ -325,9 +328,13 @@ void scale_hermite(
     scl = exp(w1*s1_sub_s0 + w2*v0 + w3*v1) * s0;
     svl = q1*s1_sub_s0 + q2*v0 + q3*v1;
 }
+```
+
+> &#x2753; 为什么用log和exp?  
 
 Then, the catmull-rom derivation follows in exactly the same way - with scalar velocities computed as shown previously.
 
+```c++
 void scale_catmull_rom(
     vec3& scl,
     vec3& svl,
@@ -345,6 +352,7 @@ void scale_catmull_rom(
     vec3 v2 = (s2_sub_s1 + s3_sub_s2) / 2;
     return scale_hermite(scl, svl, x, s1, s2, v1, v2);
 }
+```
 
 And this is what it looks like in action:
 
