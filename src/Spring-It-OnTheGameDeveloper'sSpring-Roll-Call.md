@@ -78,7 +78,7 @@ Let's start our investigation by plotting the behavior of `x` using the normal `
 
 Here we can see repeated calls to `lerp` actually produce a kind of exponential decay toward the goal:
 
-\begin{align*} t=0,x=1.0 \\\\ t=1,x=0.5 \\\\t=2,x=0.25 \\\\t=3,x=0.125 \end{align*}
+\begin{align*} t=0,x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
 
 
   
