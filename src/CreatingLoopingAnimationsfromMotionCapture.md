@@ -116,9 +116,10 @@ vec3 decayed_offset(
 }
 ```
 
-```c++
+
 We can use it to compute the offset we need to apply at each frame.
 
+```c++
 void compute_inertialize_both_offsets(
     slice2d<vec3> offsets,
     const slice1d<vec3> diff_pos,
