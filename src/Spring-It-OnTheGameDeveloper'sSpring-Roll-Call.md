@@ -212,163 +212,26 @@ We can see that this looks a bit like a physics equation where \\(damping \cdot 
 
 This system is like a kind of particle with a velocity always proportional to the difference between the current particle position and the goal position. This explains the discontinuity - the velocity of our damper will always be directly proportional to the difference between the current position and the goal without ever taking any previous velocities into account.
 
-What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the `*stiffness*`.
+What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the *stiffness*.
 
 ​\begin{align*} \upsilon_{t+dt} & = \upsilon_t +dt \cdot stiffness \cdot (g-x_t)  \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
  
 
-But the problem now is that this particle wont slow down until it has already over-shot the goal and is pulled back in the opposite direction. To fix this we can add a `q` variable which represents a goal velocity, and add another term which takes us toward this goal velocity. This we will scale by another new parameter which we will call the `*damping* `(for reasons which will become clearer later in the article).
+But the problem now is that this particle wont slow down until it has already over-shot the goal and is pulled back in the opposite direction. To fix this we can add a `q` variable which represents a goal velocity, and add another term which takes us toward this goal velocity. This we will scale by another new parameter which we will call the *damping* (for reasons which will become clearer later in the article).
+
+​\begin{align*} \upsilon_{t+dt} & = \upsilon_t +dt \cdot stiffness \cdot (g-x_t) + dt \cdot damping \cdot (q-\upsilon_t)   \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
 
 
+When `q` is very small we can think of this like a kind of friction term which simply subtracts the current velocity. And when `q=0` and `dt⋅damping=1` we can see that this friction term actually completely removes the existing velocity, reverting our system back to something just like our original damper.
 
- +dt⋅stiffness⋅(g−x 
-t
-​
- )+dt⋅damping⋅(q−v 
-t
-​
- )
-=x 
-t
-​
- +dt⋅v 
-t
-​
- 
-​
- 
+Another way to think about these terms is by thinking of them as accelerations, which can be shown more clearly by factoring out the `dt`:
 
-When 
-�
-q is very small we can think of this like a kind of friction term which simply subtracts the current velocity. And when 
-�
-=
-0
-q=0 and 
-�
-�
-⋅
-�
-�
-�
-�
-�
-�
-�
-=
-1
-dt⋅damping=1 we can see that this friction term actually completely removes the existing velocity, reverting our system back to something just like our original damper.
+​​\begin{align*} a_t & = stiffness \cdot (g-x_t) + damping \cdot (q-\upsilon_t)   \\\\ \upsilon_{t+dt} & =  \upsilon_t + dt \cdot a_t \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
 
-Another way to think about these terms is by thinking of them as accelerations, which can be shown more clearly by factoring out the 
-�
-�
-dt:
 
-�
-�
-=
-�
-�
-�
-�
-�
-�
-�
-�
-�
-⋅
-(
-�
-−
-�
-�
-)
-+
-�
-�
-�
-�
-�
-�
-�
-⋅
-(
-�
-−
-�
-�
-)
-�
-�
-+
-�
-�
-=
-�
-�
-+
-�
-�
-⋅
-�
-�
-�
-�
-+
-�
-�
-=
-�
-�
-+
-�
-�
-⋅
-�
-�
-a 
-t+dt
-​
- 
-v 
-t+dt
-​
- 
-x 
-t+dt
-​
- 
-​
-  
-=stiffness⋅(g−x 
-t
-​
- )+damping⋅(q−v 
-t
-​
- )
-=v 
-t
-​
- +dt⋅a 
-t
-​
- 
-=x 
-t
-​
- +dt⋅v 
-t
-​
- 
-​
- 
+Assuming the mass of our particle is exactly one, it really is possible to think about this as two individual forces - one pulling the particle in the direction of the goal velocity, and one pulling it toward the goal position. If we use a small enough `dt` we can actually plug these functions together and simulate a simple damped spring with exactly the velocity continuity we wanted. Here is a function which does that (using [spring-damper](https://gafferongames.com/post/integration_basics/) semi-implicit euler integration).
 
-Assuming the mass of our particle is exactly one, it really is possible to think about this as two individual forces - one pulling the particle in the direction of the goal velocity, and one pulling it toward the goal position. If we use a small enough 
-�
-�
-dt we can actually plug these functions together and simulate a simple damped spring with exactly the velocity continuity we wanted. Here is a function which does that (using semi-implicit euler integration).
-
+```c++
 void spring_damper_bad(
     float& x,
     float& v, 
@@ -381,296 +244,44 @@ void spring_damper_bad(
     v += dt * stiffness * (g - x) + dt * damping * (q - v);
     x += dt * v;
 }
+```
+
 Let's see how it looks:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/springdamper_bad.m4v
 
-But unfortunately just like before we have problems when the 
-�
-�
-dt is large, and certain settings for 
-�
-�
-�
-�
-�
-�
-�
-�
-�
-stiffness and 
-�
-�
-�
-�
-�
-�
-�
-damping can make the system unstable. These unintuitive parameters like 
-�
-�
-�
-�
-�
-�
-�
-damping and 
-�
-�
-�
-�
-�
-�
-�
-�
-�
-stiffness are also back again... arg!
+But unfortunately just like before we have problems when the `dt` is large, and certain settings for `stiffness` and `dampi`ng can make the system unstable. These unintuitive parameters like `damping` and `stiffness` are also back again... arg!
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/springdamper_unstable.m4v
 
 Can we give this spring the same treatment as we did for our damper by fiddling around with the maths? Well yes we can, but unfortunately from here on in things are going to get a bit more complicated...
 
-The Exact Spring Damper
-This time the exact version of our model is too complicated to solve using a simple recurrence relation. Instead we're going to have to try a different tactic: we're going to guess an equation we think models the spring and then try to work out how to compute all the different parameters of that equation based on the parameters we do know such as the 
-�
-�
-�
-�
-�
-�
-�
-damping and 
-�
-�
-�
-�
-�
-�
-�
-�
-�
-stiffness.
+---
 
-If we take a look at the movement of the spring in the previous section we can see there are basically two features - an exponential decay toward the goal position, and a kind of oscillation, a bit like a 
-cos
-⁡
-cos or 
-sin
-⁡
-sin function. So let's try and come up with an equation which fits that kind of shape and go from there. What about something like this?
+## The Exact Spring Damper   
 
-�
-�
-=
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-+
-�
-x 
-t
+This time the exact version of our model is too complicated to solve using a simple recurrence relation. Instead we're going to have to try a different tactic: we're going to guess an equation we think models the spring and then try to work out how to compute all the different parameters of that equation based on the parameters we do know such as the `damping` and `stiffness`.
+
+If we take a look at the movement of the spring in the previous section we can see there are basically two features - an exponential decay toward the goal position, and a kind of oscillation, a bit like a `cos` or `sin` function. So let's try and come up with an equation which fits that kind of shape and go from there. What about something like this?
+
+​​\begin{align*} x_t & = j \cdot e^{-y \cdot t} \cdot cos (w \cdot t+p)+c \end{align*}
+
 ​
- =j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)+c
+Where `j` is the amplitude, `y` controls the time it takes to decay, a bit like our half-life parameter, `t` is the time, `w` is the frequency of oscillations, `p` is the phase of oscillations, and `c` is an offset on the vertical axis. This seems like a reasonable formulation of the behavior we saw previously.
+
+But before we try to find all of these unknown parameters, let's write down the derivatives of this function with respect to `t` too. We'll use `vt` to denote the velocity, and `at` to denote the acceleration.
+
+
+​\begin{align*} x_t & = j \cdot e^{-y \cdot t} \cdot cos (w \cdot t+p)+c \end{align*}
 ​
+​\begin{align*} x_t & =j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)+c\\\\
+\upsilon _t & =-y\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)\\\\
+& -w\cdot j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p) \\\\
+a_t & =y^2\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)\\\\
+& -w^2\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p) \\\\
+& +2\cdot w\cdot y\cdot j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}
  
 
-Where 
-�
-j is the amplitude, 
-�
-y controls the time it takes to decay, a bit like our half-life parameter, 
-�
-t is the time, 
-�
-w is the frequency of oscillations, 
-�
-p is the phase of oscillations, and 
-�
-c is an offset on the vertical axis. This seems like a reasonable formulation of the behavior we saw previously.
-
-But before we try to find all of these unknown parameters, let's write down the derivatives of this function with respect to 
-�
-t too. We'll use 
-�
-�
-v 
-t
-​
-  to denote the velocity, and 
-�
-�
-a 
-t
-​
-  to denote the acceleration.
-
-�
-�
-=
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-+
-�
-�
-�
-=
-−
-�
-⋅
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-−
-�
-⋅
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-�
-�
-=
-�
-2
-⋅
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-−
-�
-2
-⋅
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-+
-2
-⋅
-�
-⋅
-�
-⋅
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-x 
-t
-​
- 
-v 
-t
-​
- 
-a 
-t
-​
- 
-​
-  
-=j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)+c
-=−y⋅j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)
 −w⋅j⋅e 
 −y⋅t
  ⋅sin(w⋅t+p)
