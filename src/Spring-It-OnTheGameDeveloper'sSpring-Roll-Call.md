@@ -170,7 +170,7 @@ float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 
 The change of base theorem tells us another thing: that changing the rate *of decay* is no different from scaling the `dt` in the exponent. So using the `halflife` to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the *rate of decay* like in our previous setup.
 
-There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper] https://twitter.com/Mr_Rowl/status/1577454895652708352 even better approximation from Danny Chapman):
+There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper]( https://twitter.com/Mr_Rowl/status/1577454895652708352) even better approximation from Danny Chapman):
 
 ```c++
 float fast_negexp(float x)
