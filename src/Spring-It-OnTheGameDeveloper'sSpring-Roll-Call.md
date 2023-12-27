@@ -287,69 +287,12 @@ Those might look a bit scary but we can make them a lot less scary by just summa
 
 
 ​\begin{align*} C&=j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p) \\\\S&=j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}
-​
- 
+​ 
 
 Giving us the following:
 
-�
-�
-=
-�
-+
-�
-�
-�
-=
-−
-�
-⋅
-�
-−
-�
-⋅
-�
-�
-�
-=
-�
-2
-⋅
-�
-−
-�
-2
-⋅
-�
-+
-2
-⋅
-�
-⋅
-�
-⋅
-�
-x 
-t
-​
- 
-v 
-t
-​
- 
-a 
-t
-​
- 
-​
-  
-=C+c
-=−y⋅C−w⋅S
-=y 
-2
- ⋅C−w 
-2
- ⋅C+2⋅w⋅y⋅S
+​\begin{align*} x_t&=C+c\\\\ \upsilon _t&=-j\cdot C-w \cdot S \\\\ a_t&=y^2 \cdot C-w^2\cdot C+2\cdot w\cdot y\cdot S \end{align*}
+​ 
 ​
  
 
