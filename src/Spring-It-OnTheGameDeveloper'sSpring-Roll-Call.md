@@ -168,192 +168,51 @@ float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 }
 ```
 
-The change of base theorem tells us another thing: that changing the rate of decay is no different from scaling the dt in the exponent. So using the halflife to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the rate of decay like in our previous setup.
+The change of base theorem tells us another thing: that changing the rate *of decay* is no different from scaling the `dt` in the exponent. So using the `halflife` to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the *rate of decay* like in our previous setup.
 
-There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this even better approximation from Danny Chapman):
+There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper even better approximation from Danny Chapman]):
 
+```c++
 float fast_negexp(float x)
 {
     return 1.0f / (1.0f + x + 0.48f*x*x + 0.235f*x*x*x);
 }
+```
+
 And that's it - we've converted our unstable damper into one that is fast, stable, and has intuitive parameters!
 
+```c++
 float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 {
     return lerp(x, g, 1.0f-fast_negexp((0.69314718056f * dt) / (halflife + eps)));
 }
+```
+
 Let's see how it looks...
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_implicit.m4v
 
 Perfect!
 
-The Spring Damper
+---
+
+## The Spring Damper  
+
 The exact damper works well in a lot of cases, but has one major issue - it creates discontinuities when the goal position changes quickly. For example, even if the object is moving in one direction, it will immediately switch to moving in the opposite direction if the goal changes direction. This can create a kind of annoying sudden movement which you can see in the previous videos.
 
 The problem is that there is no velocity continuity - no matter what happened in the previous frames the damper will always move toward the goal. Let's see how we might be able to fix that. We can start by looking again at our old broken bad damper, and examining it in a bit more detail:
 
-�
-�
-+
-�
-�
-=
-lerp
-(
-�
-�
-,
-�
-,
-�
-�
-⋅
-�
-�
-�
-�
-�
-�
-�
-)
-�
-�
-+
-�
-�
-=
-�
-�
-+
-�
-�
-⋅
-�
-�
-�
-�
-�
-�
-�
-⋅
-(
-�
-−
-�
-�
-)
-x 
-t+dt
-​
- 
-x 
-t+dt
-​
+\begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,dt \cdot damping)  \\\\ x_{t+dt} & =  x_t + dt \cdot damping \cdot (g-x_t)   \end{align*}
  
 ​
-  
-=lerp(x 
-t
-​
- ,g,dt⋅damping)
-=x 
-t
-​
- +dt⋅damping⋅(g−x 
-t
-​
- )
-​
- 
+We can see that this looks a bit like a physics equation where \\(damping \cdot (g−x_t ) \\) represents the velocity.
 
-We can see that this looks a bit like a physics equation where 
-�
-�
-�
-�
-�
-�
-�
-⋅
-(
-�
-−
-�
-�
-)
-damping⋅(g−x 
-t
-​
- ) represents the velocity.
-
-�
-�
-=
-�
-�
-�
-�
-�
-�
-�
-⋅
-(
-�
-−
-�
-�
-)
-�
-�
-+
-�
-�
-=
-�
-�
-+
-�
-�
-⋅
-�
-�
-v 
-t+dt
-​
- 
-x 
-t+dt
-​
- 
-​
-  
-=damping⋅(g−x 
-t
-​
- )
-=x 
-t
-​
- +dt⋅v 
-t
-​
- 
-​
+​\begin{align*} \upsilon_t & = damping \cdot (g-x_t)  \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
  
 
 This system is like a kind of particle with a velocity always proportional to the difference between the current particle position and the goal position. This explains the discontinuity - the velocity of our damper will always be directly proportional to the difference between the current position and the goal without ever taking any previous velocities into account.
 
-What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the 
-�
-�
-�
-�
-�
-�
-�
-�
-�
-stiffness.
+What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the `*stiffness*`.
 
 �
 �
