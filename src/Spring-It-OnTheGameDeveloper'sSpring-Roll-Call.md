@@ -78,7 +78,7 @@ Let's start our investigation by plotting the behavior of `x` using the normal `
 
 Here we can see repeated calls to `lerp` actually produce a kind of exponential decay toward the goal:
 
-\begin{align*} t=0,x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
+\begin{align*} t=0, & x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
 
  
 And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation `\\(x_t=0.5^t\\)` . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
@@ -87,7 +87,7 @@ And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the eq
 
 We'll start by defining a separate variable `\\(y=1−damping⋅ft\\)`, which will make the maths a bit easier later on. In this case `\\(ft\\)` is a fixed, small `\\(dt\\)` such as `\\( \frac{1}{60} \\)`. Then we will expand the `lerp` function:
 
-\begin{align*} t=0, & x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
+\begin{align*} x_{t+1} & = \text{lerp } (x_t,g,1-y) \\\\ x_{t+1} & = (1-(1-y)) \cdot x_t+(1-y) \cdot g\\\\x_{t+1} & = y\cdot x_t-(y-1)\cdot g \\\\x_{t+1} & = y\cdot x_t- y\cdot g +g \end{align*}
 
   
 =lerp(x 
