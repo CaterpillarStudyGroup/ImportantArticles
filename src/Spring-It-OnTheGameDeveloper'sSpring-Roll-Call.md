@@ -44,11 +44,11 @@ By applying this `damper` function each frame we can smoothly move toward the go
 
 Below you can see a visualization of this in action where the horizontal axis represents time and the vertical axis represents the position of the object.
 
-https://www.daniel-holden.com/media/uploads/springs/damper.m4v
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper.m4v
 
 But this solution has a problem: if we change the framerate of our game (or the timestep of our system) we get different behavior from the `damper`. More specifically, it moves the object slower when we have a lower framerate:
 
-https://www.daniel-holden.com/media/uploads/springs/damper_dt.m4v
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_dt.m4v
 
 
 And this makes sense if we think about it - if the game is running at 30 frames per second you are going to perform half as many calls to `damper` as if you were running at 60 frames per second, so the object is not going to get pulled toward the goal as quickly. One simple idea for a fix might be to just multiply the factor by the timestep `dt` - now at least when the timestep is larger the object will move more quickly toward the goal...
@@ -63,7 +63,7 @@ float damper_bad(float x, float t, float damping, float dt)
 
 This might appear like it works on face value but there are two big problems with this solution which can come back to bite us badly. Firstly, we now have a mysterious `damping` variable which is difficult to set and interpret. But secondly, and more importantly, if we set the `damping` or the `dt` too high (such that `damping * dt > 1`) the whole thing becomes unstable, and in the worst case explodes:
 
-https://www.daniel-holden.com/media/uploads/springs/damper_bad.m4v
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_bad.m4v
 
 We could use various hacks like clamping `damping * dt` to be less than `1` but there is fundamentally something wrong with what we've done here. We can see this if we imagine that `damping * dt` is roughly equal to `0.5` - here, doubling the `dt` does not produce the same result as applying the damper twice: lerping with a factor of `0.5` twice will take us 75% of the way toward the goal, while lerping with a `factor` of `1.0` once will bring us 100% of the way there. So what's the real fix?
 
@@ -81,7 +81,7 @@ Here we can see repeated calls to `lerp` actually produce a kind of exponential 
 \begin{align*} t=0, & x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
 
  
-And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation `\\(x_t=0.5^t\\)` . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
+And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation `\begin{align*} x_t=0.5^t \end{align*}` . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
 
 ## Recurrence Relation   
 
