@@ -282,75 +282,11 @@ a_t & =y^2\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)\\\\
 & +2\cdot w\cdot y\cdot j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}
  
 
-−w⋅j⋅e 
-−y⋅t
- ⋅sin(w⋅t+p)
-=y 
-2
- ⋅j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)
-−w 
-2
- ⋅j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)
-+2⋅w⋅y⋅j⋅e 
-−y⋅t
- ⋅sin(w⋅t+p)
-​
- 
-
 Those might look a bit scary but we can make them a lot less scary by just summarizing some of the common terms:
 
-�
-=
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-cos
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-�
-=
-�
-⋅
-�
-−
-�
-⋅
-�
-⋅
-sin
-⁡
-(
-�
-⋅
-�
-+
-�
-)
-C
-S
-​
-  
-=j⋅e 
-−y⋅t
- ⋅cos(w⋅t+p)
-=j⋅e 
-−y⋅t
- ⋅sin(w⋅t+p)
+
+
+​\begin{align*} C&=j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p) \\\\S&=j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}
 ​
  
 
