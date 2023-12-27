@@ -40,7 +40,7 @@ By applying this `damper` function each frame we can smoothly move toward the go
 
 \begin{align*} x = \text{damper}(x, g,\text{factor}); \end{align*}
 
-x = damper(x, g, factor);
+
 
 Below you can see a visualization of this in action where the horizontal axis represents time and the vertical axis represents the position of the object.
 
