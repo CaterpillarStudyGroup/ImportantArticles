@@ -146,7 +146,7 @@ So have we fixed it? Well, in this formulation we've essentially solved the prob
 
 But there is another, potentially better way to fix the problem. Instead of fixing the timestep, we can fix the *rate of decay* and let the timestep vary. This sounds a little odd at first but in practice it makes things much easier. The basic idea is simple: let's set the rate of decay to `0.5` and instead scale the timestep such that we can control the exact *half-life* of the damper - a.k.a the time it takes for the distance to the goal to reduce by half:
 
-\begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,1-\frac{1 }{0.5}^{dt/halflife})  \\\\ x_{t+dt} & = \\text {lerp }(x_t,g,1-2^{-dt/halflife})   \end{align*}
+\begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,1-\frac{1 }{0.5}^{-dt/halflife})  \\\\ x_{t+dt} & = \\text {lerp }(x_t,g,1-2^{-dt/halflife})   \end{align*}
 ​
 
 
@@ -170,7 +170,7 @@ float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 
 The change of base theorem tells us another thing: that changing the rate *of decay* is no different from scaling the `dt` in the exponent. So using the `halflife` to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the *rate of decay* like in our previous setup.
 
-There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper even better approximation from Danny Chapman]):
+There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper] even better approximation from Danny Chapman):
 
 ```c++
 float fast_negexp(float x)
