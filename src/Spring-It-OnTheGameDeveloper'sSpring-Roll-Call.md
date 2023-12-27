@@ -85,7 +85,7 @@ And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the eq
 
 ## Recurrence Relation   
 
-We'll start by defining a separate variable ` \\( y=1−damping⋅ft \\) `, which will make the maths a bit easier later on. In this case ` \\(ft\\)` is a fixed, small `\\(dt\\)` such as ` \\( \frac{1}{60} \\) `. Then we will expand the `lerp` function:
+We'll start by defining a separate variable  \\( y=1−damping⋅ft \\) , which will make the maths a bit easier later on. In this case ` \\(ft\\)` is a fixed, small `\\(dt\\)` such as ` \\( \frac{1}{60} \\) `. Then we will expand the `lerp` function:
 
 \begin{align*} x_{t+1} & = \text{lerp } (x_t,g,1-y) \\\\ x_{t+1} & = (1-(1-y)) \cdot x_t+(1-y) \cdot g\\\\x_{t+1} & = y\cdot x_t-(y-1)\cdot g \\\\x_{t+1} & = y\cdot x_t- y\cdot g +g \end{align*}
 
