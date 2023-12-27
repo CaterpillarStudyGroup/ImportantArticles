@@ -510,410 +510,45 @@ a_t&=j^2\cdot j_0\cdot e ^{−y\cdot t} +y^2\cdot t\cdot y_1\cdot e ^{−y\cdot 
 ​
 ## Over Damped:
 
+\begin{align*} x_t&=j_0\cdot e ^{−y_0\cdot t} +j_1\cdot e ^{−y_1\cdot t}+c \\\\
+v_t&=-y_0\cdot j_0\cdot e ^{−y_0\cdot t} -y_1\cdot j_1\cdot e ^{−y_1\cdot t}\\\\
+a_t&=j^2_0\cdot j_0\cdot e ^{−y_0\cdot t} +y^2_1\cdot j_1\cdot e ^{−y_1\cdot t} \end{align*}
 
-​
- 
 
 What we did in the previous section was solve for the under damped case, but the other two cases require exactly the same style of derivation to get them working.
 
-Solving the Critically Damped Case
-Let's start with the easiest: the critically damped case. The first two unknowns 
-�
-c and 
-�
-y have exactly the same solution as in the under-damped case, 
-�
-=
-�
-+
-�
-⋅
-�
-�
-c=g+ 
-s
-d⋅q
-​
-  and 
-�
-=
-�
-2
-y= 
-2
-d
-​
- , while the other two unknowns 
-�
-0
-j 
-0
-​
-  and 
-�
-1
-j 
-1
-​
-  can be found easily from the initial conditions 
-�
-0
-x 
-0
-​
- , 
-�
-0
-v 
-0
-​
- , and 
-�
-=
-0
-t=0:
+## Solving the Critically Damped Case
 
-�
-0
-=
-�
-0
-⋅
-�
-−
-�
-⋅
-0
-+
-0
-⋅
-�
-1
-⋅
-�
-−
-�
-⋅
-0
-+
-�
-�
-0
-=
-�
-0
-+
-�
-x 
-0
+Let's start with the easiest: the critically damped case. The first two unknowns `c` and `y` have exactly the same solution as in the under-damped case, \\(c=g+ \frac{d\cdot q}{s}\\) and \\(y=\frac{d}{2}\\), while the other two unknowns \\(j_0\\) and \\(j_1\\) can be found easily from the initial conditions \\(x_0\\), \\(v_0\\), and \\(t=0\\):
 ​
- 
-x 
-0
-​
- 
-​
-  
-=j 
-0
-​
- ⋅e 
-−y⋅0
- +0⋅j 
-1
-​
- ⋅e 
-−y⋅0
- +c
-=j 
-0
-​
- +c
-​
- 
+ \begin{align*} x_0&=j_0\cdot e^{−y\cdot 0} +0\cdot j_1\cdot e^{−y\cdot 0} +c \\\\
+x_0&=j_0 +c \end{align*}
 
 And for the velocity...
 
-�
-0
-=
-−
-�
-⋅
-�
-0
-⋅
-�
-−
-�
-⋅
-0
-−
-�
-⋅
-0
-⋅
-�
-1
-⋅
-�
-−
-�
-⋅
-�
-+
-�
-1
-⋅
-�
-−
-�
-⋅
-0
-�
-0
-=
-−
-�
-⋅
-�
-0
-+
-�
-1
-v 
-0
+\begin{align*} v_0&=-y\cdot j_0\cdot e^{−y\cdot 0} -y\cdot 0\cdot j_1\cdot e^{−y\cdot t}+j_1\cdot e^{−y\cdot 0} \\\\
+v_0&=-y\cdot j_0 +j_1 \end{align*}
 ​
  
-v 
-0
-​
- 
-​
-  
-=−y⋅j 
-0
-​
- ⋅e 
-−y⋅0
- −y⋅0⋅j 
-1
-​
- ⋅e 
-−y⋅t
- +j 
-1
-​
- ⋅e 
-−y⋅0
- 
-=−y⋅j 
-0
-​
- +j 
-1
-​
- 
-​
- 
-
 Giving us...
 
-�
-0
-=
-�
-0
-−
-�
-�
-1
-=
-�
-0
-+
-�
-0
-⋅
-�
-j 
-0
+\begin{align*} j_0&=x_0-c \\\\
+j_1&=v_0 +j_0\cdot y \end{align*}
 ​
- 
-j 
-1
-​
- 
-​
-  
-=x 
-0
-​
- −c
-=v 
-0
-​
- +j 
-0
-​
- ⋅y
-​
- 
-
 And that's it, easy!
 
-Solving the Over Damped Case
+## Solving the Over Damped Case
+
 The over-damped case is a little more difficult so let's first summarize some terms again to make our equations clearer.
 
-�
-0
-=
-�
-0
-⋅
-�
-−
-�
-0
-⋅
-�
-�
-1
-=
-�
-1
-⋅
-�
-−
-�
-1
-⋅
-�
-E 
-0
-​
+\begin{align*} E_0&=j_0\cdot e^{−y_0\cdot t} \\\\
+E_1&=j_1\cdot e^{−y_1\cdot t} \end{align*}
  
-E 
-1
-​
- 
-​
-  
-=j 
-0
-​
- ⋅e 
-−y 
-0
-​
- ⋅t
- 
-=j 
-1
-​
- ⋅e 
-−y 
-1
-​
- ⋅t
- 
-​
- 
-
 Giving us...
 
-�
-�
-=
-�
-0
-+
-�
-1
-+
-�
-�
-�
-=
-−
-�
-0
-⋅
-�
-0
-−
-�
-1
-⋅
-�
-1
-�
-�
-=
-�
-0
-2
-⋅
-�
-0
-+
-�
-1
-2
-⋅
-�
-1
-x 
-t
-​
- 
-v 
-t
-​
- 
-a 
-t
-​
- 
-​
-  
-=E 
-0
-​
- +E 
-1
-​
- +c
-=−y 
-0
-​
- ⋅E 
-0
-​
- −y 
-1
-​
- ⋅E 
-1
-​
- 
-=y 
-0
-2
-​
- ⋅E 
-0
-​
- +y 
-1
-2
-​
- ⋅E 
-1
-​
- 
-​
- 
+\begin{align*} x_t&=E_0+E_1+c \\\\
+v_t&=-j_0\cdot E_0-y_1\cdot E_1 \\\\
+a_t&=j^2_0\cdot E_0+y^2_1\cdot E_1 \end{align*}
 
 We'll start by finding the two unknowns 
 �
