@@ -81,16 +81,16 @@ Here we can see repeated calls to `lerp` actually produce a kind of exponential 
 \begin{align*} t=0, & x=1.0 \\\\ t=1, & x=0.5 \\\\t=2, & x=0.25 \\\\t=3, & x=0.125 \end{align*}
 
  
-And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation `\begin{align*} x_t=0.5^t \end{align*}` . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
+And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation \\( x_t=0.5^t \\) . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
 
 ## Recurrence Relation   
 
-We'll start by defining a separate variable  \\( y=1−damping⋅ft \\) , which will make the maths a bit easier later on. In this case ` \\(ft\\)` is a fixed, small `\\(dt\\)` such as ` \\( \frac{1}{60} \\) `. Then we will expand the `lerp` function:
+We'll start by defining a separate variable  \\( y=1−damping⋅ft \\) , which will make the maths a bit easier later on. In this case ` ft` is a fixed, small `dt` such as \\( \frac{1}{60} \\) . Then we will expand the `lerp` function:
 
 \begin{align*} x_{t+1} & = \text{lerp } (x_t,g,1-y) \\\\ x_{t+1} & = (1-(1-y)) \cdot x_t+(1-y) \cdot g\\\\x_{t+1} & = y\cdot x_t-(y-1)\cdot g \\\\x_{t+1} & = y\cdot x_t- y\cdot g +g \end{align*}
 
 
-Now for the recurrence relation: by plugging this equation into itself we are going to see how the exponent appears. First we need to ` \\(t+1\\) ` to ` \\(t+2\\) ` and then replace the new ` \\(x_{t+1}\\) `  which appears on the right hand side with the same equation again.
+Now for the recurrence relation: by plugging this equation into itself we are going to see how the exponent appears. First we need to ` t+1` to ` t+2 ` and then replace the new  \\(x_{t+1}\\)  which appears on the right hand side with the same equation again.
 
 \begin{align*} x_{t+1} & = y \cdot x_t-y \cdot g + g \\\\ x_{t+2} & = y \cdot x_{t+1}-y \cdot g + g \\\\ x_{t+2} & = y \cdot (y\cdot x_t-y\cdot  g+g)-y\cdot g+g  \\\\x_{t+2} & = y \cdot y \cdot x_t- y\cdot y \cdot  g +y \cdot g-y \cdot g+g  \\\\x_{t+2} & = y \cdot y \cdot x_t- y\cdot y \cdot  g +g \end{align*}
 
@@ -117,94 +117,12 @@ Ah-ha! Our exponent has appeared. And by rearranging a bit we can even write thi
 
 As a small tweak, we can make the exponent negative:
 
-�
-�
-+
-�
-=
-lerp
-(
-�
-�
-,
-�
-,
-1
-−
-�
-�
-)
-�
-�
-+
-�
-=
-lerp
-(
-�
-�
-,
-�
-,
-1
-−
-1
-�
-−
-�
-)
-x 
-t+n
+\begin{align*} x_{t+n} & = \text {lerp }(x_t,g,1-y^n)  \\\\ x_{t+n} & = \\text {lerp }(x_t,g,1-\frac{1 }{y}^{-n})   \end{align*}
 ​
- 
-x 
-t+n
-​
- 
-​
-  
-=lerp(x 
-t
-​
- ,g,1−y 
-n
- )
-=lerp(x 
-t
-​
- ,g,1− 
-y
-1
-​
-  
-−n
- )
-​
- 
 
-Remember that 
-�
-n represents a multiple of 
-�
-�
-ft, so if we have a new arbitrary 
-�
-�
-dt we will need to convert it to 
-�
-n first using 
-�
-=
-�
-�
-�
-�
-n= 
-ft
-dt
-​
- . In C++ we would write it as follows:
+Remember that `n` represents a multiple of `ft`, so if we have a new arbitrary `dt` we will need to convert it to `n` first using \\(n=\frac{dt }{ft} \\) . In C++ we would write it as follows:
 
+```c++
 float damper_exponential(
     float x,
     float g, 
@@ -214,124 +132,42 @@ float damper_exponential(
 {
     return lerp(x, g, 1.0f - powf(1.0 / (1.0 - ft * damping), -dt / ft));
 } 
-Let's see it action! Notice how it produces the same, identical and stable behavior even when we make the dt and damping large.
+```
+
+Let's see it action! Notice how it produces the same, identical and stable behavior even when we make the `dt` and `damping` large.
+
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_exponent.m4v
+
+So have we fixed it? Well, in this formulation we've essentially solved the problem by letting the behavior of the damper match one particular timestep while allowing the rate of decay to still vary. In this case `1.0f - ft * damping` is our rate of decay, and it dictates what proportion of the distance toward the goal will remain after `ft` in time. As long as we make the fixed timestep `ft` small enough, `ft * damping` should never exceed `1.0` and the system remains stable and well behaved.
 
 
-So have we fixed it? Well, in this formulation we've essentially solved the problem by letting the behavior of the damper match one particular timestep while allowing the rate of decay to still vary. In this case 1.0f - ft * damping is our rate of decay, and it dictates what proportion of the distance toward the goal will remain after ft in time. As long as we make the fixed timestep ft small enough, ft * damping should never exceed 1.0 and the system remains stable and well behaved.
+## The Half-Life   
 
-The Half-Life
-But there is another, potentially better way to fix the problem. Instead of fixing the timestep, we can fix the rate of decay and let the timestep vary. This sounds a little odd at first but in practice it makes things much easier. The basic idea is simple: let's set the rate of decay to 
-0.5
-0.5 and instead scale the timestep such that we can control the exact half-life of the damper - a.k.a the time it takes for the distance to the goal to reduce by half:
 
-�
-�
-+
-�
-�
-=
-lerp
-(
-�
-�
-,
-�
-,
-1
-−
-1
-0.5
-−
-�
-�
-/
-ℎ
-�
-�
-�
-�
-�
-�
-�
-)
-�
-�
-+
-�
-�
-=
-lerp
-(
-�
-�
-,
-�
-,
-1
-−
-2
-−
-�
-�
-/
-ℎ
-�
-�
-�
-�
-�
-�
-�
-)
-x 
-t+dt
-​
- 
-x 
-t+dt
-​
- 
-​
-  
-=lerp(x 
-t
-​
- ,g,1− 
-0.5
-1
-​
-  
-−dt/halflife
- )
-=lerp(x 
-t
-​
- ,g,1−2 
-−dt/halflife
- )
-​
- 
+But there is another, potentially better way to fix the problem. Instead of fixing the timestep, we can fix the *rate of decay* and let the timestep vary. This sounds a little odd at first but in practice it makes things much easier. The basic idea is simple: let's set the rate of decay to `0.5` and instead scale the timestep such that we can control the exact *half-life* of the damper - a.k.a the time it takes for the distance to the goal to reduce by half:
 
-This simplifies the code and gives a more intuitive parameter to control the damper. Now we don't ever need to worry about if we've set the damping too large or made the fixed timestep ft small enough.
+\begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,1-\frac{1 }{0.5}^{dt/halflife})  \\\\ x_{t+dt} & = \\text {lerp }(x_t,g,1-2^{-dt/halflife})   \end{align*}
+​
 
+
+This simplifies the code and gives a more intuitive parameter to control the damper. Now we don't ever need to worry about if we've set the `damping` too large or made the fixed timestep `ft` small enough.
+
+```c++
 float damper_exact(float x, float g, float halflife, float dt)
 {
     return lerp(x, g, 1.0f - powf(2, -dt / halflife));
 }
-For neatness, we can also switch to an exponential base using the change of base theorem: just multiply the dt by 
-�
-�
-(
-2
-)
-=
-0.69314718056
-ln(2)=0.69314718056 and switch to using expf. Finally, we should add some small epsilon value like 1e-5f to avoid division by zero when our halflife is very small:
+```
 
+For neatness, we can also switch to an exponential base using the change of base theorem: just multiply the `dt` by `ln(2)=0.69314718056` and switch to using `expf`. Finally, we should add some small epsilon value like `1e-5f` to avoid division by zero when our `halflife` is very small:
+
+```c++
 float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 {
     return lerp(x, g, 1.0f - expf(-(0.69314718056f * dt) / (halflife + eps)));
 }
+```
+
 The change of base theorem tells us another thing: that changing the rate of decay is no different from scaling the dt in the exponent. So using the halflife to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the rate of decay like in our previous setup.
 
 There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this even better approximation from Danny Chapman):
