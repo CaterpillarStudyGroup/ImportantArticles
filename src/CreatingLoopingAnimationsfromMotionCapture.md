@@ -8,9 +8,9 @@ Today I'd like to talk about a couple of different ideas for how to automaticall
 
 But first, a little bit of philosophical discussion - because some of you reading this might be thinking "but Dan, aren't you trying to move animation tech away from the use of small, looped animation clips?".
 
-Well the truth is this: the way I feel about looping animations is pretty much the way I feel about tiling textures. That yes - if done poorly they can look bad - and when there is a short repeat period with no added details on top the repetition becomes painfully obvious in a way that destroys both realism and immersion. But I've sort of been convinced that looping/tiling is a powerful form of proceduralism we should exploit in games - and that if we want to create worlds with a level of perceived detail that comes close to reality (and more importantly, fit those worlds in RAM or on our hard drives), it may well be an ally rather than an enemy.
+Well the truth is this: the way I feel about looping animations is pretty much the way I feel about tiling textures. That yes - if done poorly they can look bad - and when there is a short repeat period with no added details on top the repetition becomes painfully obvious in a way that destroys both realism and immersion. But I've <u>sort of been convinced</u> that looping/tiling is a powerful form of proceduralism we should exploit in games - and that if we want to create worlds with a level of perceived detail that comes close to reality (and more importantly, fit those worlds in RAM or on our hard drives), it may well be an ally rather than an enemy.
 
-Nonetheless, whenever a discussion leads down the path of "we must have the ability to individually tweak each of the 27 frames of locomotion in the main run cycle otherwise we risk creating an experience too jarring for the player during the hours of gameplay they will see it repeated" I cannot help but think animation tech is still somehow stuck in the days of this.
+Nonetheless, whenever a discussion leads down the path of "we must have the ability to individually tweak each of the 27 frames of locomotion in the main run cycle otherwise we risk creating an experience too jarring for the player during the hours of gameplay they will see it repeated" I cannot help but think animation tech is still somehow stuck in the days of <u>this</u>.
 
 > &#x2705; loop不仅是一小段动画的不段循环，也可以看作是小样本生成任务。只需要一小段reference motion，就可以生成无限时长的丰富但又具有reference motion特点的动作。由于reference motion可以精心制作的高质量数据，生成出的序列也是高质量的。    
 
@@ -18,22 +18,36 @@ Longer loops definitely help, as does adding procedural details on top, or a var
 
 Okay - rant indulged... onto the technical stuff...
 
+
+---
+
 If we have a clip of animation we want to make loop there are essentially two things we need to do: 1. make the first and last frame of the animation the same. 2. ensure the velocity of the first frame and last frame are similar enough that we don't have a visual discontinuity.
 
 > &#x2705; 看样子，本文的目的不是小样本生成。而是一段动作序列的首尾拼接，达到序列级的循环。  
 
-Luckily, one of my favorite tools in animation programming can be used for exactly this: inertialization. And while most often this is used for stitching together two different animations at runtime, we can also use it offline to stitch an animation to itself creating what is essentially a looped animation.
+Luckily, one of my favorite tools in animation programming can be used for exactly this: <u>inertialization</u>. And while most often this is used for stitching together two different animations at runtime, we can also use it offline to *stitch an animation to itself* creating what is essentially a looped animation.
 
-For example, given something like the following:
+For example, given something like the following:     
 
-We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a critically damped spring:
+![](./assets/07-01.png) 
+
+We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a <u> critically damped spring </U>:   
+
+![](./assets/07-02.png)   
+
 
 In this case I've added this offset to the front of the animation, but we could add it to the back instead:
 
-We can also distribute the offset over both sides of the clip - by applying some amount of the offset to the front of the animation, and some amount of it to the back in the opposite direction. We can even have individual half-lives for each side if we want to, or account for the velocity and position discontinuities in different ratios at the back and front:
+![](./assets/07-03.png) 
 
-To implement this in code, first we need to compute the differences for the start and end frames:
+We can also distribute the offset over both sides of the clip - by applying some amount of the offset to the front of the animation, and some amount of it to the back in the opposite direction. We can even have individual half-lives for each side if we want to, or account for the velocity and position discontinuities in different ratios at the back and front:   
 
+![](./assets/07-04.png) 
+
+
+To implement this in code, first we need to compute the differences for the start and end frames:   
+
+```c++
 void compute_start_end_positional_difference(
     slice1d<vec3> diff_pos,
     slice1d<vec3> diff_vel,
@@ -81,11 +95,13 @@ void compute_start_end_rotational_difference(
                 rot(         1, j), rot(         0, j), dt);
     }
 }
+```
 
-Note that we convert the rotational offset into scaled-angle-axis space to allow us to treat it like a vector and combine it with angular velocities.
+Note that we convert the rotational offset into <u> scaled-angle-axis space </U> to allow us to treat it like a vector and combine it with angular velocities.  
 
 Then, given our inertialization function which decays the difference...
 
+```c++
 vec3 decayed_offset(
     const vec3 x, // Initial Position
     const vec3 v, // Initial Velocity
@@ -98,7 +114,9 @@ vec3 decayed_offset(
 
     return eydt*(x + j1*dt);
 }
+```
 
+```c++
 We can use it to compute the offset we need to apply at each frame.
 
 void compute_inertialize_both_offsets(
@@ -136,9 +154,12 @@ void compute_inertialize_both_offsets(
         }
     }
 }
+```
+
 
 And then apply this offset to the actual animation.
 
+```c++
 void apply_positional_offsets(
     slice2d<vec3> out, 
     const slice2d<vec3> pos, 
@@ -176,13 +197,21 @@ void apply_rotational_offsets(
         }
     }
 }
+```
 
 And this is how it looks on the character:
 
+https://www.daniel-holden.com/media/uploads/Looping/inertialize_both.m4v
+
+
 Unfortunately the spring-based inertializer has a problem here... if we slow down the animation we can see that there is a small discontinuity at the end of the loop. This is because even with a reasonably short half-life the exponential decay still produces some tiny residual offset at the end of the animation:
+
+https://www.daniel-holden.com/media/uploads/Looping/inertialize_slowmo.m4v
+
 
 An inertializer with a fixed fade out time fixes this. For example, here is a basic cubic inertialization function we can use instead that decays exactly to zero by blendtime:
 
+```c++
 vec3 decayed_offset_cubic(
     const vec3 x, // Initial Position
     const vec3 v, // Initial Velocity
@@ -199,21 +228,37 @@ vec3 decayed_offset_cubic(
     
     return a*t*t*t + b*t*t + c*t + d;
 }
+```
 
 Now we can be sure our offsets will definitely be blended out in time:
 
+![](./assets/07-05.png) 
+
 Which removes the discontinuity.
+
+https://www.daniel-holden.com/media/uploads/Looping/inertialize_cubic.m4v
 
 Something else we can do is spread the offset over the whole animation using a kind of linear fade rather than distributing it just at either end:
 
+![](./assets/07-06.png) 
+
+
 The problem here is that doing so naively introduces a velocity discontinuity. Which again is visible if we watch the loop in slow-mo:
+
+https://www.daniel-holden.com/media/uploads/Looping/linear.m4v
+
 
 This velocity discontinuity can be removed by again using some inertializers, but in this case using them just to blend out the velocity difference at either end:
 
+![](./assets/07-07.png) 
+
 This is then added to the linear offset:
+
+![](./assets/07-08.png) 
 
 Which in C++ looks something like this:
 
+```c++
 vec3 decayed_velocity_offset_cubic(
     const vec3 v, // Initial Velocity 
     const float blendtime, 
@@ -265,17 +310,26 @@ void compute_linear_inertialize_offsets(
         }
     }
 }
+```
 
 Note that the velocity introduced by the linear fade needs to be accounted for when we apply the inertializers, but in this case because it's the same on both the start and the end of the animation it cancels itself out. As we will see later, if the velocity introduced by our initial offset is different at the start and end we need to account for it when setting the initial velocity of the inertializers.
 
 That aside, here is what this looks like on the character:
 
+https://www.daniel-holden.com/media/uploads/Looping/linear_inertialize.m4v
+ 
+
 This spreads the adjustment over the whole animation which in many cases is very useful and generally looks good for short animations. However, in certain cases it introduces a kind of "drift" to the animation which might not be what we want and can introduce foot sliding:
+
+https://www.daniel-holden.com/media/uploads/Looping/linear_comparison.m4v
 
 One idea is to limit the linear fade to just the start and end. Here we can use a little function I'm calling "softfade", to make a linear ramp that fades the offset out. The alpha parameter here can be used to adjust the "hardness" of the ramp.
 
+![](./assets/07-09.png)
+
 Which we might implement in C++ like this:
 
+```c++
 float softfade(const float x, const float alpha)
 {
     return logf(1.0f + expf(alpha - 2.0f*alpha*x)) / alpha;
@@ -306,13 +360,19 @@ vec3 decayed_offset_softfade_grad_zero(
 {
     return x * (softfade_grad_zero(hardness) / duration);
 }
+```
 
 This we can apply to either side of the animation for the durations we want.
 
+![](./assets/07-10.png)
+
 Like before we need to account for the velocity discontinuity using additional inertialization - but with that the results are smooth.
+
+![](./assets/07-11.png)
 
 In C++ the implementation could look something like this. First we need to update our function which computes the difference in position and velocity to take into account the velocity introduced by the softfade offset:
 
+```c++
 void compute_softfade_start_end_difference(
     slice1d<vec3> diff_pos,
     slice1d<vec3> diff_vel,
@@ -396,9 +456,11 @@ void compute_softfade_start_end_difference(
         diff_vel(j) = velocity_end - velocity_start;
     }
 }
+```
 
 Then we can compute our softfade offset:
 
+```c++
 void compute_softfade_inertialize_offsets(
     slice2d<vec3> offsets,
     const slice1d<vec3> diff_pos,
@@ -444,8 +506,11 @@ void compute_softfade_inertialize_offsets(
         }
     }
 }
+```
 
 Using this we can adjust the fade-out time to just a section of the animation to avoid too much drift.
+
+https://www.daniel-holden.com/media/uploads/Looping/softfade.m4v
 
 We also need to handle the root carefully. If we want it to loop in the world space we can use any of the techniques above, however more often we only want it to loop in the character space - or to be more specific - we just want to remove any potential velocity discontinuity at the loop transition point.
 
@@ -453,6 +518,7 @@ What this means in practice is that we need to compute our offsets in the charac
 
 Here is what that looks like in code:
 
+```c++
 void compute_root_inertialize_offsets(
     slice2d<vec3> offsets_pos, 
     slice2d<vec3> offsets_rot, 
@@ -516,15 +582,20 @@ void compute_root_inertialize_offsets(
                 ((rot.rows-1) - i) * dt);
     }
 }
+```
 
 And here is a kind of top-down 2D visualization of what this is effectively doing.
 
+![](./assets/07-12.png)
+
 Now when we play back the looped clip and let the displacement of the root accumulate we can see that even for clips with very different root velocities at the start and end we don't see any discontinuity:
+
+https://www.daniel-holden.com/media/uploads/Looping/root_motion.m4v
 
 Although I've provided some specific implementations here, there are practically infinite ways to produce looped animations using this idea.
 
-For example, I am sure we could take some ideas from adjustment blending to try and improve the results. At the end of the day all we need to do is produce an offset with a total displacement that accounts for the positional difference and an offset in velocities at either end which accounts for the velocity difference - everything that happens in the middle is essentially up to us!
+For example, I am sure we could take some ideas from <u> adjustment blending </U> to try and improve the results. At the end of the day all we need to do is produce an offset with a total displacement that accounts for the positional difference and an offset in velocities at either end which accounts for the velocity difference - everything that happens in the middle is essentially up to us!
 
-If you want to have a play around with the system shown in this post I've prepared a web-demo here.
+If you want to have a play around with the system shown in this post I've prepared a web-demo <u> here </u>.
 
 And the source code for everything is available here.
