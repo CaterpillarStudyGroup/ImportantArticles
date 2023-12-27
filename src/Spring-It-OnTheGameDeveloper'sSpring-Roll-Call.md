@@ -92,47 +92,8 @@ We'll start by defining a separate variable  \\( y=1−damping⋅ft \\) , which 
 
 Now for the recurrence relation: by plugging this equation into itself we are going to see how the exponent appears. First we need to ` \\(t+1\\) ` to ` \\(t+2\\) ` and then replace the new ` \\(x_{t+1}\\) `  which appears on the right hand side with the same equation again.
 
-\\(t+2\\)
-​
- 
-x 
-t+2
-​
- 
-x 
-t+2
-​
- 
-x 
-t+2
-​
- 
-x 
-t+2
-​
- 
-​
-  
-=y⋅x 
-t
-​
- −y⋅g+g
-=y⋅x 
-t+1
-​
- −y⋅g+g
-=y⋅(y⋅x 
-t
-​
- −y⋅g+g)−y⋅g+g
-=y⋅y⋅x 
-t
-​
- −y⋅y⋅g+y⋅g−y⋅g+g
-=y⋅y⋅x 
-t
-​
- −y⋅y⋅g+g
+\begin{align*} x_{t+1} & = y \cdot x_t-y \cdot g + g \\\\ x_{t+2} & = y \cdot x_{t+1}-y \cdot g + g \\\\ x_{t+2} & = y \cdot (y\cdot x_t-y\cdot  g+g)-y\cdot g+g  \\\\x_{t+2} & = y \cdot y \cdot x_t- y\cdot y \cdot  g +y \cdot g-y \cdot g+g  \\\\x_{t+2} & = y \cdot y \cdot x_t- y\cdot y \cdot  g +g \end{align*}
+
 ​
  
 
