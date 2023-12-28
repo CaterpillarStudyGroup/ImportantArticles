@@ -8,9 +8,9 @@ Today I'd like to talk about a couple of different ideas for how to automaticall
 
 But first, a little bit of philosophical discussion - because some of you reading this might be thinking "but Dan, aren't you trying to move animation tech away from the use of small, looped animation clips?".
 
-Well the truth is this: the way I feel about looping animations is pretty much the way I feel about tiling textures. That yes - if done poorly they can look bad - and when there is a short repeat period with no added details on top the repetition becomes painfully obvious in a way that destroys both realism and immersion. But I've [spring-damper](https://twitter.com/BrianKaris/status/1547739866816847872) sort of been convinced that looping/tiling is a powerful form of proceduralism we should exploit in games - and that if we want to create worlds with a level of perceived detail that comes close to reality (and more importantly, fit those worlds in RAM or on our hard drives), it may well be an ally rather than an enemy.
+Well the truth is this: the way I feel about looping animations is pretty much the way I feel about tiling textures. That yes - if done poorly they can look bad - and when there is a short repeat period with no added details on top the repetition becomes painfully obvious in a way that destroys both realism and immersion. But I've [sort of been](https://twitter.com/BrianKaris/status/1547739866816847872) convinced that looping/tiling is a powerful form of proceduralism we should exploit in games - and that if we want to create worlds with a level of perceived detail that comes close to reality (and more importantly, fit those worlds in RAM or on our hard drives), it may well be an ally rather than an enemy.
 
-Nonetheless, whenever a discussion leads down the path of "we must have the ability to individually tweak each of the 27 frames of locomotion in the main run cycle otherwise we risk creating an experience too jarring for the player during the hours of gameplay they will see it repeated" I cannot help but think animation tech is still somehow stuck in the days of [spring-damper](https://www.daniel-holden.com/media/uploads/Looping/terrain.jpg) this.
+Nonetheless, whenever a discussion leads down the path of "we must have the ability to individually tweak each of the 27 frames of locomotion in the main run cycle otherwise we risk creating an experience too jarring for the player during the hours of gameplay they will see it repeated" I cannot help but think animation tech is still somehow stuck in the days of [this](https://www.daniel-holden.com/media/uploads/Looping/terrain.jpg).
 
 > &#x2705; loop不仅是一小段动画的不段循环，也可以看作是小样本生成任务。只需要一小段reference motion，就可以生成无限时长的丰富但又具有reference motion特点的动作。由于reference motion可以精心制作的高质量数据，生成出的序列也是高质量的。    
 
@@ -25,13 +25,13 @@ If we have a clip of animation we want to make loop there are essentially two th
 
 > &#x2705; 看样子，本文的目的不是小样本生成。而是一段动作序列的首尾拼接，达到序列级的循环。  
 
-Luckily, one of my favorite tools in animation programming can be used for exactly this: [spring-damper](https://www.daniel-holden.com/page/spring-roll-call#inertialization) inertialization. And while most often this is used for stitching together two different animations at runtime, we can also use it offline to *stitch an animation to itself* creating what is essentially a looped animation.
+Luckily, one of my favorite tools in animation programming can be used for exactly this: [inertialization](https://www.daniel-holden.com/page/spring-roll-call#inertialization). And while most often this is used for stitching together two different animations at runtime, we can also use it offline to *stitch an animation to itself* creating what is essentially a looped animation.
 
 For example, given something like the following:     
 
 ![](./assets/07-01.png) 
 
-We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a [spring-damper](https://www.daniel-holden.com/page/spring-roll-call#critical) critically damped spring:   
+We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a [critically damped spring](https://www.daniel-holden.com/page/spring-roll-call#critical):   
 
 ![](./assets/07-02.png)   
 
@@ -97,7 +97,7 @@ void compute_start_end_rotational_difference(
 }
 ```
 
-Note that we convert the rotational offset into [spring-damper](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) scaled-angle-axis space to allow us to treat it like a vector and combine it with angular velocities.  
+Note that we convert the rotational offset into [scaled-angle-axis space](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) to allow us to treat it like a vector and combine it with angular velocities.  
 
 Then, given our inertialization function which decays the difference...
 
@@ -595,8 +595,8 @@ Now when we play back the looped clip and let the displacement of the root accum
 
 Although I've provided some specific implementations here, there are practically infinite ways to produce looped animations using this idea.
 
-For example, I am sure we could take some ideas from [spring-damper](https://www.youtube.com/watch?v=eeWBlMJHR14) adjustment blending to try and improve the results. At the end of the day all we need to do is produce an offset with a total displacement that accounts for the positional difference and an offset in velocities at either end which accounts for the velocity difference - everything that happens in the middle is essentially up to us!
+For example, I am sure we could take some ideas from [adjustment blending](https://www.youtube.com/watch?v=eeWBlMJHR14) to try and improve the results. At the end of the day all we need to do is produce an offset with a total displacement that accounts for the positional difference and an offset in velocities at either end which accounts for the velocity difference - everything that happens in the middle is essentially up to us!
 
-If you want to have a play around with the system shown in this post I've prepared a web-demo [spring-damper](https://www.daniel-holden.com/media/uploads/Looping/looping.html) here.
+If you want to have a play around with the system shown in this post I've prepared a web-demo [here](https://www.daniel-holden.com/media/uploads/Looping/looping.html).
 
-And the source code for everything is available [spring-damper](https://github.com/orangeduck/Animation-Looping) here.
+And the source code for everything is available [here](https://github.com/orangeduck/Animation-Looping).
