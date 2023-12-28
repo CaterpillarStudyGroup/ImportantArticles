@@ -572,477 +572,36 @@ y_1&=\frac{d-\sqrt{d^2-4\cdot s}}{2}  \end{align*}
 Now that these are found we're ready to solve for \\( j_0\\) and 
 \\( j_1\\) using the initial conditions \\( x_0\\), \\( v_0\\) and \\(t=0\\):
 
+\begin{align*} x_0&=j_0\cdot e ^{−y_0\cdot 0} +j_1\cdot e ^{−y_1\cdot 0}+c \\\\
+x_0&=j_0+j_1+c\\\\
+\\\\
+v_0&=-y_0\cdot j_0\cdot e ^{−y_0\cdot 0} -y_1\cdot j_1\cdot e ^{−y_1\cdot 0}\\\\
+v_0&=-y_0\cdot j_0 −y_1\cdot j_1 \end{align*}
 
+First we'll re-arrange our eqiation for \\(x_0\\) in terms of  \\(j_0\\): 
+​
+\begin{align*} x_0&=j_0+j_1+c \\\\
+x_0-j_1-c&=j_0 \end{align*}
 
+Which we'll substitute into our equation for \\(v_0\\) to solve for 
+\\(j_1\\) :
 
+\begin{align*} v_0&=-y_0\cdot j_0-y_1\cdot j_1 \\\\
+v_0&=-y_0\cdot (x_0-j_1-c)-y_1\cdot j_1 \\\\
+v_0&=-y_0\cdot x_0+y_0\cdot j_1+y_0\cdot c-y_1\cdot j_1 \\\\
+-v_0&=y_0\cdot x_0-y_0\cdot j_1-y_0\cdot c+y_1\cdot j_1 \\\\
+y_0\cdot c-v_0-y_0\cdot x_0&=-y_0\cdot j_1+y_1\cdot j_1 \\\\
+y_0\cdot c-v_0-y_0\cdot x_0&=j_1\cdot (y_1-y_0) \\\\
+\frac{y_0\cdot c-v_0-y_0\cdot x_0}{y_1-y_0}&=j_1  \end{align*}
 
+After which is is easy to get \\(j_0\\):
 
-​
+​\begin{align*} x_0&=j_0+j_1+c \\\\
+x_0-j_1-c&=j_0 \end{align*}
  
-​
- 
-
-First we'll re-arrange our eqiation for 
-�
-0
-x 
-0
-​
-  in terms of 
-�
-0
-j 
-0
-​
- 
-
-�
-0
-=
-�
-0
-+
-�
-1
-+
-�
-�
-0
-−
-�
-1
-−
-�
-=
-�
-0
-x 
-0
-​
- 
-x 
-0
-​
- −j 
-1
-​
- −c
-​
-  
-=j 
-0
-​
- +j 
-1
-​
- +c
-=j 
-0
-​
- 
-​
- 
-
-Which we'll substitute into our equation for 
-�
-0
-v 
-0
-​
-  to solve for 
-�
-1
-j 
-1
-​
- :
-
-�
-0
-=
-−
-�
-0
-⋅
-�
-0
-−
-�
-1
-⋅
-�
-1
-�
-0
-=
-−
-�
-0
-⋅
-(
-�
-0
-−
-�
-1
-−
-�
-)
-−
-�
-1
-⋅
-�
-1
-�
-0
-=
-−
-�
-0
-⋅
-�
-0
-+
-�
-0
-⋅
-�
-1
-+
-�
-0
-⋅
-�
-−
-�
-1
-⋅
-�
-1
-−
-�
-0
-=
-�
-0
-⋅
-�
-0
-−
-�
-0
-⋅
-�
-1
-−
-�
-0
-⋅
-�
-+
-�
-1
-⋅
-�
-1
-�
-0
-⋅
-�
-−
-�
-0
-−
-�
-0
-⋅
-�
-0
-=
-−
-�
-0
-⋅
-�
-1
-+
-�
-1
-⋅
-�
-1
-�
-0
-⋅
-�
-−
-�
-0
-−
-�
-0
-⋅
-�
-0
-=
-�
-1
-⋅
-(
-�
-1
-−
-�
-0
-)
-�
-0
-⋅
-�
-−
-�
-0
-−
-�
-0
-⋅
-�
-0
-�
-1
-−
-�
-0
-=
-�
-1
-v 
-0
-​
- 
-v 
-0
-​
- 
-v 
-0
-​
- 
-−v 
-0
-​
- 
-y 
-0
-​
- ⋅c−v 
-0
-​
- −y 
-0
-​
- ⋅x 
-0
-​
- 
-y 
-0
-​
- ⋅c−v 
-0
-​
- −y 
-0
-​
- ⋅x 
-0
-​
- 
-y 
-1
-​
- −y 
-0
-​
- 
-y 
-0
-​
- ⋅c−v 
-0
-​
- −y 
-0
-​
- ⋅x 
-0
-​
- 
-​
- 
-​
-  
-=−y 
-0
-​
- ⋅j 
-0
-​
- −y 
-1
-​
- ⋅j 
-1
-​
- 
-=−y 
-0
-​
- ⋅(x 
-0
-​
- −j 
-1
-​
- −c)−y 
-1
-​
- ⋅j 
-1
-​
- 
-=−y 
-0
-​
- ⋅x 
-0
-​
- +y 
-0
-​
- ⋅j 
-1
-​
- +y 
-0
-​
- ⋅c−y 
-1
-​
- ⋅j 
-1
-​
- 
-=y 
-0
-​
- ⋅x 
-0
-​
- −y 
-0
-​
- ⋅j 
-1
-​
- −y 
-0
-​
- ⋅c+y 
-1
-​
- ⋅j 
-1
-​
- 
-=−y 
-0
-​
- ⋅j 
-1
-​
- +y 
-1
-​
- ⋅j 
-1
-​
- 
-=j 
-1
-​
- ⋅(y 
-1
-​
- −y 
-0
-​
- )
-=j 
-1
-​
- 
-​
- 
-
-After which is is easy to get 
-�
-0
-j 
-0
-​
- :
-
-�
-0
-=
-�
-0
-+
-�
-1
-+
-�
-�
-0
-−
-�
-1
-−
-�
-=
-�
-0
-x 
-0
-​
- 
-x 
-0
-​
- −j 
-1
-​
- −c
-​
-  
-=j 
-0
-​
- +j 
-1
-​
- +c
-=j 
-0
-​
- 
-​
- 
-
 And that's it! Let's add all of these different cases to our spring damper function:
 
+```c++
 void spring_damper_exact(
     float& x, 
     float& v, 
@@ -1097,12 +656,19 @@ void spring_damper_exact(
         v = -y0*j0*ey0dt - y1*j1*ey1dt;
     }
 }
-Awesome! Now it works even for very high damping values!
+```
 
+Awesome! Now it works even for very high `damping` values!
 
-The Half-life and the Frequency
-We're almost there, but our functions still use these mysterious damping and stiffness parameters. Can we turn these into something a bit more meaningful? Yes! Just like before we can use a halflife parameter instead of a damping parameter by controlling what we give as input to the exp functions:
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_fixed.m4v
 
+---
+
+## The Half-life and the Frequency   
+
+We're almost there, but our functions still use these mysterious `damping` and `stiffness` parameters. Can we turn these into something a bit more meaningful? Yes! Just like before we can use a `halflife` parameter instead of a `damping` parameter by controlling what we give as input to the `exp` functions:
+
+```c++
 float halflife_to_damping(float halflife, float eps = 1e-5f)
 {
     return (4.0f * 0.69314718056f) / (halflife + eps);
@@ -1112,20 +678,13 @@ float damping_to_halflife(float damping, float eps = 1e-5f)
 {
     return (4.0f * 0.69314718056f) / (damping + eps);
 }
-Here as well as our previous constant of 
-�
-�
-(
-2
-)
-ln(2) we need to multiply by 4. This is a bit of a fudge factor but roughly it corresponds to the fact that we divide by two once to get 
-�
-y from 
-�
-d, and that the spring equation is usually a sum of two exponential terms instead of the single one we had for the damper.
+```
 
-What about the stiffness parameter? Well this one we can turn into a parameter called frequency:
+Here as well as our previous constant of `ln(2)` we need to multiply by `4`. This is a bit of a fudge factor but roughly it corresponds to the fact that we divide by two once to get `y` from `d`, and that the spring equation is usually a sum of two exponential terms instead of the single one we had for the damper.
 
+What about the `stiffness` parameter? Well this one we can turn into a parameter called `frequency`:
+
+```c++
 float frequency_to_stiffness(float frequency)
 {
    return squaref(2.0f * M_PI * frequency);
@@ -1135,26 +694,17 @@ float stiffness_to_frequency(float stiffness)
 {
     return sqrtf(stiffness) / (2.0f * M_PI);
 }
-Which is close to what will become 
-�
-w in the under-damped case.
+```
 
-Both are not completely honest names - the velocity continuity and oscillations of the spring means that the position will not be exactly half way toward the goal in halflife time, while the frequency parameter is more like a pseudo-frequency as the rate of oscillation is also affected by the damping value. Nonetheless, both give more intuitive controls for the spring than the damping and stiffness alternatives.
+Which is close to what will become `w` in the under-damped case.
 
+Both are not completely honest names - the velocity continuity and oscillations of the spring means that the position will not be exactly half way toward the goal in `halflife` time, while the `frequency` parameter is more like a pseudo-frequency as the rate of oscillation is also affected by the `damping` value. Nonetheless, both give more intuitive controls for the spring than the `damping` and `stiffness` alternatives.
 
-Along these lines, another useful set of functions are those that give us settings for these two parameters in the critical case (i.e. when 
-�
-2
-4
-=
-�
-4
-d 
-2
- 
-​
- =s ). These can be useful for setting defaults or in other cases when we only want to set one of these parameters.
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_halflife.m4v
 
+Along these lines, another useful set of functions are those that give us settings for these two parameters in the critical case (i.e. when \\(\frac{d^2}{4}=s\\)). These can be useful for setting defaults or in other cases when we only want to set one of these parameters.
+
+```c++
 float critical_halflife(float frequency)
 {
     return damping_to_halflife(sqrtf(frequency_to_stiffness(frequency) * 4.0f));
@@ -1164,8 +714,11 @@ float critical_frequency(float halflife)
 {
     return stiffness_to_frequency(squaref(halflife_to_damping(halflife)) / 4.0f);
 }
-The critical_halflife function doesn't make that much sense since when critical there aren't any oscillations, but it can still be useful in certain cases. Putting it all together we can provide our spring with a nicer interface:
+```
 
+The `critical_halflife` function doesn't make that much sense since when critical there aren't any oscillations, but it can still be useful in certain cases. Putting it all together we can provide our spring with a nicer interface:
+
+```c++
 void spring_damper_exact(
     float& x, 
     float& v, 
@@ -1186,47 +739,25 @@ void spring_damper_exact(
     ...
 
 }
-Below you can see which critical frequency corresponds to a given halflife. And now I promise we really are done: that's it, an exact damped spring!
+```
 
+Below you can see which critical `frequency` corresponds to a given `halflife`. And now I promise we really are done: that's it, an exact damped spring!
 
-The Damping Ratio
-Although controlling the frequency is nice, there is a different control which may be even better for users as it resembles a bit more the scale from less springy to more springy they might want. This is the damping ratio, where a value of 
-1
-1 means a critically damped spring, a value 
-<
-1
-<1 means an under-damped spring, and a value 
->
-1
->1 means a over-damped spring.
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_critical.m4v
 
-The equation for the damping ratio 
-�
-r is as follows, where 
-�
-d is the damping and 
-�
-s is the stiffness:
+---
 
-�
-=
-�
-2
- 
-�
-r= 
-2  
-s
-​
- 
-d
-​
- 
-​
- 
+## The Damping Ratio   
+
+Although controlling the frequency is nice, there is a different control which may be even better for users as it resembles a bit more the scale from less springy to more springy they might want. This is the damping ratio, where a value of `1` means a critically damped spring, a value `<1` means an under-damped spring, and a value `>1` means a over-damped spring.
+
+The equation for the damping ratio `r` is as follows, where `d` is the damping and `s` is the stiffness:
+
+\begin{align*} r=\frac{d}{2\sqrt{s} } \end{align*}
 
 This we can re-arrange to solve for stiffness or damping as required.
 
+```c++
 float damping_ratio_to_stiffness(float ratio, float damping)
 {
     return squaref(damping / (ratio * 2.0f));
@@ -1236,8 +767,11 @@ float damping_ratio_to_damping(float ratio, float stiffness)
 {
     return ratio * 2.0f * sqrtf(stiffness);
 }
+```
+
 And use instead of the frequency.
 
+```c++
 void spring_damper_exact_ratio(
     float& x, 
     float& v, 
@@ -1258,12 +792,19 @@ void spring_damper_exact_ratio(
     ...
 
 }
+```
+
 And here it is in action!
 
+> &#x1F50E;https://www.daniel-holden.com/media/uploads/springs/damping_ratio.m4v
 
-The Critical Spring Damper
-Looking at our exact spring damper, the critical case is particularly interesting for us (and is most likely the case you may have actually used in your games) - not only because it's the situation where the spring moves toward the goal as fast as possible without additional oscillation, but because it's the easiest to compute and also to use as it has fewer parameters. We can therefore make a special function for it, which will allow us to remove the frequency parameter and throw in a few more basic optimizations:
+---
 
+## The Critical Spring Damper
+
+Looking at our exact spring damper, the critical case is particularly interesting for us (and is most likely the case you may have actually used in your games) - not only because it's the situation where the spring moves toward the goal as fast as possible without additional oscillation, but because it's the easiest to compute and also to use as it has fewer parameters. We can therefore make a special function for it, which will allow us to remove the `frequency` parameter and throw in a few more basic optimizations:
+
+```c++
 void critical_spring_damper_exact(
     float& x, 
     float& v, 
@@ -1284,8 +825,11 @@ void critical_spring_damper_exact(
     x = eydt*(j0 + j1*dt) + c;
     v = eydt*(v - j1*y*dt);
 }
-With no special cases for over-damping and under-damping this can compile down to something very fast. Separate functions for other common situations can be useful too, such as when the goal velocity q is zero...
+```
 
+With no special cases for over-damping and under-damping this can compile down to something very fast. Separate functions for other common situations can be useful too, such as when the goal velocity `q` is zero...
+
+```c++
 void simple_spring_damper_exact(
     float& x, 
     float& v, 
@@ -1301,8 +845,11 @@ void simple_spring_damper_exact(
     x = eydt*(j0 + j1*dt) + x_goal;
     v = eydt*(v - j1*y*dt);
 }
+```
+
 or when the goal position is zero too...
 
+```c++
 void decay_spring_damper_exact(
     float& x, 
     float& v, 
@@ -1316,173 +863,47 @@ void decay_spring_damper_exact(
     x = eydt*(x + j1*dt);
     v = eydt*(v - j1*y*dt);
 }
-Another optimization that can be useful is to pre-compute y and eydt for a given halflife. If there are many springs that need to be updated with the same halflife and dt this can provide a big speed-up.
+```
 
-Applications
-Smoothing
+Another optimization that can be useful is to pre-compute `y` and `eydt` for a given `halflife`. If there are many springs that need to be updated with the same `halflife` and `dt` this can provide a big speed-up.
+
+---
+
+# Applications  
+
+## Smoothing
+
 Probably the most common application of springs in game development is smoothing - any noisy signal can be easily smoothed in real time by a spring damper and the half life can be used to control the amount of smoothing applied vs how responsive it is to changes.
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_smoothing.m4v
 
-Filtering
-Springs also work well for filtering out sudden changes or jitters in signals, and even springs with quite a small halflife will do really well at removing any sudden jitters.
+---
 
+## Filtering
 
-Controllers
+Springs also work well for filtering out sudden changes or jitters in signals, and even springs with quite a small `halflife` will do really well at removing any sudden jitters.
+
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_filtering.m4v
+
+---
+
+## Controllers
+
 Another common application of springs in game development is for moving characters. The usual process is to take the user input from the gamepad and turn it into a desired character velocity, which we then set as the goal for a spring. Each timestep we tick this spring and use what it produces as a velocity with which to move the character. By tweaking the parameters of the spring we can achieve movement with different levels of smoothness and responsiveness.
 
 The slightly unintuitive thing to remember about this setup is that we are using the spring in a way such that its position corresponds to the character's velocity - meaning the spring's velocity will correspond to the character's acceleration.
 
-Assuming the desired character velocity remains fixed we can also use this spring to predict the future character velocity by simply by evaluating the spring with a larger 
-�
-�
-dt than we normally would and seeing what the result is.
+Assuming the desired character velocity remains fixed we can also use this spring to predict the future character velocity by simply by evaluating the spring with a larger `dt` than we normally would and seeing what the result is.
 
 If we want the character's position after some timestep (not just the velocity) we can compute it more accurately by using the the integral of our critical spring equation with respect to time. This will give us an accurate prediction of the future position of the character too.
 
-�
-�
-=
-∫
-(
-�
-0
-⋅
-�
-−
-�
-⋅
-�
-+
-�
-⋅
-�
-1
-⋅
-�
-−
-�
-⋅
-�
-+
-�
-)
-�
-�
-�
-�
-=
-−
-�
-1
-�
-2
-⋅
-�
-−
-�
-⋅
-�
-+
-−
-�
-0
-−
-�
-1
-⋅
-�
-�
-⋅
-�
-−
-�
-⋅
-�
-+
-�
-1
-�
-2
-+
-�
-0
-�
-+
-�
-⋅
-�
-+
-�
-0
-x 
-t
-​
- 
-x 
-t
-​
- 
-​
-  
-=∫(j 
-0
-​
- ⋅e 
-−y⋅t
- +t⋅j 
-1
-​
- ⋅e 
-−y⋅t
- +c)dt
-= 
-y 
-2
- 
-−j 
-1
-​
- 
-​
- ⋅e 
-−y⋅t
- + 
-y
-−j 
-0
-​
- −j 
-1
-​
- ⋅t
-​
- ⋅e 
-−y⋅t
- + 
-y 
-2
- 
-j 
-1
-​
- 
-​
- + 
-y
-j 
-0
-​
- 
-​
- +c⋅t+x 
-0
-​
- 
-​
- 
+\begin{align*} x_t&=\int (j_0 \cdot e^{-y\cdot t}+t\cdot j_1 \cdot e^{-y\cdot t}+c)dt\\\\
+
+x_t&=\frac{-j_1}{y_2} \cdot e^{-y\cdot t}+\frac{-j_0-j_1\cdot t}{y} \cdot e^{-y\cdot t}+\frac{j_1}{y_2}+\frac{j_0}{y}+c\cdot t+x_0\end{align*}
 
 And translated into code...
 
+```c++
 void spring_character_update(
     float& x, 
     float& v, 
@@ -1501,11 +922,11 @@ void spring_character_update(
     v = eydt*(j0 + j1*dt) + v_goal;
     a = eydt*(a - j1*y*dt);
 }
-This code is the same as the critically damped spring, but applied to the character velocity and the integral used to compute the character position. If we want to predict the future trajectory we can use this to update arrays of data each with a different 
-�
-�
-dt:
+```
 
+This code is the same as the critically damped spring, but applied to the character velocity and the integral used to compute the character position. If we want to predict the future trajectory we can use this to update arrays of data each with a different `dt`:
+
+```c++
 void spring_character_predict(
     float px[], 
     float pv[], 
@@ -1530,20 +951,27 @@ void spring_character_predict(
         spring_character_update(px[i], pv[i], pa[i], v_goal, halflife, i * dt);
     }
 }
+```
+
 This really shows how using a completely exact spring equation comes in handy - we can accurately predict the state of the spring at any arbitrary point in the future without having to simulate what happens in between.
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_controller.m4v
 
-Here you can see me moving around a point in the world using the above code and a desired character velocity coming from the gamepad. By adjusting the halflife of the spring we can achieve different levels of responsiveness and smoothness, and by evaluating the spring at various different times in the future we can predict where the character would be if the current input were to remain fixed (shown in red).
+Here you can see me moving around a point in the world using the above code and a desired character velocity coming from the gamepad. By adjusting the `halflife` of the spring we can achieve different levels of responsiveness and smoothness, and by evaluating the spring at various different times in the future we can predict where the character would be if the current input were to remain fixed (shown in red).
 
-This is exactly the method we use to predict the future character trajectory in Learned Motion Matching.
+This is exactly the method we use to predict the future character trajectory in [spring-damper] (https://www.daniel-holden.com/page/learned-motion-matching) Learned Motion Matching.
 
-Inertialization
-In game animation, inertialization is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.
+---
+
+## Inertialization
+
+In game animation,  [spring-damper] (https://www.youtube.com/watch?v=BYyv4KTegJI) inertialization is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.
 
 The idea is this: if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.
 
-In code it looks something like this. First at the transition point we record the offset in terms of position and velocity between the currently playing animation src and the one we're going to switch to dst:
+In code it looks something like this. First at the transition point we record the offset in terms of position and velocity between the currently playing animation `src` and the one we're going to switch to `dst`:
 
+```c++
 void inertialize_transition(
     float& off_x, float& off_v, 
     float src_x, float src_v,
@@ -1552,8 +980,11 @@ void inertialize_transition(
     off_x = (src_x + off_x) - dst_x;
     off_v = (src_v + off_v) - dst_v;
 }
+```
+
 We then switch to this animation, and at every frame we decay this offset toward zero, adding the result back to our currently playing animation.
 
+```c++
 void inertialize_update(
     float& out_x, float& out_v,
     float& off_x, float& off_v,
@@ -1565,23 +996,27 @@ void inertialize_update(
     out_x = in_x + off_x;
     out_v = in_v + off_v;
 }
+```
+
 Here you can see it in action:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_inertialization.m4v
 
-As you can see, each time we toggle the button there is a transition between the two different streams of animation (in this case two different 
-sin
-⁡
-sin waves shown in red), while the inertialization smoothly fills in the difference (shown in blue).
+As you can see, each time we toggle the button there is a transition between the two different streams of animation (in this case two different `sin` waves shown in red), while the inertialization smoothly fills in the difference (shown in blue).
 
-Unlike the original presentation which uses a polynomial to blend out the offset over a specific period, a spring does not provide a fixed blend time and can easily overshoot. However the exponential decay does mean it tends to look smooth and blends out to something negligible at a very fast rate. In addition, since there is no need to remember the last transition time the code is very simple, and because we use the decay_spring_damper_exact variant of the spring it can be made exceptionally fast, in particular when all the blends for the different bones use the same halflife and dt to update.
+Unlike the original presentation which uses a polynomial to blend out the offset over a specific period, a spring does not provide a fixed blend time and can easily overshoot. However the exponential decay does mean it tends to look smooth and blends out to something negligible at a very fast rate. In addition, since there is no need to remember the last transition time the code is very simple, and because we use the `decay_spring_damper_exact` variant of the spring it can be made exceptionally fast, in particular when all the blends for the different bones use the same `halflife` and `dt` to update.
 
-This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in Learned Motion Matching.
+This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in [spring-damper](https://www.daniel-holden.com/page/learned-motion-matching) Learned Motion Matching.
 
-Interpolation
+---
+
+## Interpolation
+
 The time dimension of a spring doesn't have to always be the real time that ticks by - it can be any variable that increases monotonically. For example we could use the parameterization along a curve as the time dimension to feed to a spring to produce a kind of spline.
 
 Here I set up a piecewise interpolation of some 2D control points and used that as position and velocity goal for two springs (one for each dimension in 2D).
 
+```c++
 void piecewise_interpolation(
     float& x,
     float& v,
@@ -1599,18 +1034,25 @@ void piecewise_interpolation(
     x = lerp(pnts[i0], pnts[i1], alpha);
     v = (pnts[i0] - pnts[i1]) / npnts;
 }
-The result is a kind of funky spline which springs toward the control points. By adjusting the halflife and frequency we can produce some interesting shapes but overall the result has an odd feel to it since it's not symmetric and usually doesn't quite reach the last control point. Perhaps some more experimentation here could be interesting, such as running two springs along the control points in opposite directions and mixing the result.
+```
 
+The result is a kind of funky spline which *springs* toward the control points. By adjusting the `halflife` and `frequency` we can produce some interesting shapes but overall the result has an odd feel to it since it's not symmetric and usually doesn't quite reach the last control point. Perhaps some more experimentation here could be interesting, such as running two springs along the control points in opposite directions and mixing the result.
+
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_interpolation.m4v
 
 I think there is probably still a way to formulate an interesting and useful type of spline using springs. Tell me if you manage to come up with anything interesting!
 
-Resonance
+---
+
+## Resonance
+
 If you've got a signal which you think contains at specific frequency but you don't know exactly which frequency it is what do you do? Well, I can already see you starting to type "fast fourier transform" into google but hold on a second, do you really need to do something that complicated?
 
 Springs can be used to see if a signal is oscillating at a specific frequency! Fed with a goal moving at their resonate frequency springs will oscillate and build up energy, while fed a goal moving at any other frequency will make them die out and lose energy.
 
 We can measure the energy of the spring using the sum of potential and kinematic energies.
 
+```c++
 float spring_energy(
     float x, 
     float v, 
@@ -1625,11 +1067,15 @@ float spring_energy(
         squaref(scale * (v - v_rest)) + s * 
         squaref(scale * (x - x_rest))) / 2.0f;
 }
+```
+
 Then, if we want to see which frequency is contained in a signal we can simply drive a spring (or multiple springs at different frequencies) and see which setting produces the most energy.
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/application_resonance.m4v
 
-As mentioned in the previous sections, the frequency parameter we're using doesn't actually reflect the true resonate frequency of the spring (the true resonate frequency is also affected by the damping), but we can find the frequency we need to set a spring to match some resonant frequency by fixing the halflife:
+As mentioned in the previous sections, the `frequency` parameter we're using doesn't actually reflect the true resonate frequency of the spring (the true resonate frequency is also affected by the `damping`), but we can find the frequency we need to set a spring to match some resonant frequency by fixing the `halflife`:
 
+```c++
 float resonant_frequency(float goal_frequency, float halflife)
 {
     float d = halflife_to_damping(halflife);
@@ -1637,112 +1083,30 @@ float resonant_frequency(float goal_frequency, float halflife)
     float resonant_stiffness = goal_stiffness - (d*d)/4.0f;
     return stiffness_to_frequency(resonant_stiffness);
 }
-When trying to pick out specific frequencies the halflife of the spring affects the sensitivity. A long halflife (or low damping) means the spring will only build up energy when driven at frequencies very close to its resonate frequency, and it will build up more energy too. While a shorter halflife means a broader range of frequencies that build up energy.
+```
 
-For a really cool application of this idea check out this blog post by Kevin Bergamin.
+When trying to pick out specific frequencies the `halflife` of the spring affects the sensitivity. A long `halflife` (or low `damping`) means the spring will only build up energy when driven at frequencies very close to its resonate frequency, and it will build up more energy too. While a shorter `halflife` means a broader range of frequencies that build up energy.
 
-Extrapolation
+For a really cool application of this idea check out [spring-damper](https://quazikb.github.io/WaveEq/index.html) this blog post by [spring-damper](https://quazikb.github.io/) Kevin Bergamin.
+
+---
+
+## Extrapolation
+
 If we have an object moving at a velocity with damping applied we can use a damper to estimate a what the position might be at some time in the future.
 
 The idea is to assume the velocity is being reduced over time via an exponential decay (i.e. via a damper):
 
-�
-�
-=
-�
-0
-⋅
-�
-−
-�
-⋅
-�
-v 
-t
-​
- 
-​
-  
-=v 
-0
-​
- ⋅e 
-−y⋅t
- 
-​
- 
+\begin{align*} v_t&=v_0 \cdot e^{-y\cdot t} \end{align*}
 
-Then, like in the controller example, we can then take the integral of this equation to work out the exact future position at some time 
-�
-t:
+Then, like in the controller example, we can then take the integral of this equation to work out the exact future position at some time `t`:
 
-�
-�
-=
-∫
-�
-0
-⋅
-�
-−
-�
-⋅
-�
-�
-�
-�
-�
-=
-�
-0
-�
- 
-(
-1
-−
-�
-−
-�
-⋅
-�
-)
-+
-�
-0
-x 
-t
-​
- 
-x 
-t
-​
- 
-​
-  
-=∫v 
-0
-​
- ⋅e 
-−y⋅t
- dt
-= 
-y
-v 
-0
-​
- 
-​
-  (1−e 
-−y⋅t
- )+x 
-0
-​
- 
-​
- 
+\begin{align*} x_t&=\int v_0 \cdot e^{-y\cdot t}dt\\\\
+x_t&=\frac{v_0}{y} (1- e^{-y\cdot t} )+x_0 \end{align*}
 
-In code it looks something like this where halflife controls the decay rate of the velocity.
+In code it looks something like this where `halflife` controls the decay rate of the velocity.
 
+```c++
 void extrapolate(
     float& x,
     float& v,
@@ -1754,13 +1118,21 @@ void extrapolate(
     x = x + (v / (y + eps)) * (1.0f - fast_negexp(y * dt));
     v = v * fast_negexp(y * dt);
 }
+```
+
 And here is a little demo showing it in action:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/extrapolation.m4v
 
-Other Springs
-Double Spring
+---
+
+# Other Springs
+
+## Double Spring
+
 You'll notice that the spring damper has a kind of asymmetric look to it - the start is very steep and it quickly evens out. We can achieve more of an "S" shape to the spring by using another spring on the goal. We'll deem this the "double spring":
 
+```c++
 void double_spring_damper_exact(
     float& x, 
     float& v, 
@@ -1773,14 +1145,21 @@ void double_spring_damper_exact(
     simple_spring_damper_exact(xi, vi, x_goal, 0.5f * halflife, dt);
     simple_spring_damper_exact(x, v, xi, 0.5f * halflife, dt);
 }
+```
+
 And here you can see it in action:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/double_spring.m4v
 
-In red you can see the intermediate spring xi while in blue you can see the "double spring" which has a slightly more "S" shaped start and end.
+In red you can see the intermediate spring `xi` while in blue you can see the "double spring" which has a slightly more "S" shaped start and end.
 
-Timed Spring
+---
+
+## Timed Spring
+
 In some cases we might not want the spring to reach the goal immediately but at some specific time in the future - yet we might still want to keep the smoothing and filtering properties the spring brings when the goal changes quickly. Here is a spring variant that takes as input a goal time as well as a goal position and tries to achieve the goal at approximately the correct time. The idea is to track a linear interpolation directly toward the goal but to do so some time in the future (to give the spring time to blend out once it gets close to the goal).
 
+```c++
 void timed_spring_damper_exact(
     float& x,
     float& v,
@@ -1803,12 +1182,19 @@ void timed_spring_damper_exact(
     
     xi += v_goal * dt;
 }
-Here the apprehension parameter controls how far into the future we try to track the linear interpolation. A value of 2 means two-times the half life, or that we expect the blend-out to be 75% done by the goal time. Below we can see this spring in action, with the linear interpolation toward the goal shown in red.
+```
 
+Here the `apprehension` parameter controls how far into the future we try to track the linear interpolation. A value of `2` means two-times the half life, or that we expect the blend-out to be 75% done by the goal time. Below we can see this spring in action, with the linear interpolation toward the goal shown in red.
 
-Velocity Spring
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/timed_spring.m4v
+
+---
+
+## Velocity Spring
+
 We can use a similar idea to make a spring that tries to maintain a given velocity by tracking an intermediate target that moves toward the goal at that fixed velocity.
 
+```c++
 void velocity_spring_damper_exact(
     float& x,
     float& v,
@@ -1830,12 +1216,19 @@ void velocity_spring_damper_exact(
     
     xi = fabs(x_goal - xi) > dt * v_goal ? xi + x_diff * dt : x_goal; 
 }
+```
+
 And here is how this one looks, with the intermediate target shown in red.
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/velocity_spring.m4v
 
-Quaternion Spring
-The simplified code of the simple spring damper also lends itself to be easily adapted to other things such as quaternions. Here the main trick is to convert quaternion differences into angular velocities (first convert to angle axis then scale the axis by the angle) so that they can interact with the other terms such as the exponential terms and the spring velocity.
+---
 
+## Quaternion Spring
+
+The simplified code of the simple spring damper also lends itself to be easily adapted to other things such as quaternions. Here the main trick is to convert quaternion differences into [spring-damper](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) angular velocities (first convert to angle axis then scale the axis by the angle) so that they can interact with the other terms such as the exponential terms and the spring velocity.
+
+```c++
 void simple_spring_damper_exact_quat(
     quat& x, 
     vec3& v, 
@@ -1853,20 +1246,34 @@ void simple_spring_damper_exact_quat(
     x = quat_mul(quat_from_scaled_angle_axis(eydt*(j0 + j1*dt)), x_goal);
     v = eydt*(v - j1*y*dt);
 }
+```
+
 One thing that is perhaps unintuitive about this derivation is the fact that we actually compute a rotation which takes the goal toward the initial state rather than the other way around (which is what we might expect).
 
 It's a good exercise to try and do this same style of derivation for other spring variants and other quantities such as angles, but I'll leave that as an exercise for you...
 
-Scale Spring
-In this post I show how we can derive an equation for a spring that works on object scales.
+---
+
+## Scale Spring
+
+In [spring-damper](https://www.daniel-holden.com/page/scalar-velocity) this post I show how we can derive an equation for a spring that works on object scales.
+
+---
 
 Tracking Spring
-See this article for a spring which can be used to perfectly track animation data while still removing discontinuities.
+See [spring-damper](https://www.daniel-holden.com/page/perfect-tracking-springs) this article for a spring which can be used to perfectly track animation data while still removing discontinuities.
 
-Conclusion
-Source Code
-The source code for all the demos shown in this article can be found here. They use raylib and more specifically raygui but once you have both of those installed you should be ready to roll.
+---
 
-Conclusion
+# Conclusion
+
+## Source Code
+
+The source code for all the demos shown in this article can be found [spring-damper](https://github.com/orangeduck/Spring-It-On) here. They use [spring-damper](https://www.raylib.com/) raylib and more specifically [spring-damper](https://github.com/raysan5/raygui) raygui but once you have both of those installed you should be ready to roll.
+
+---
+
+## Conclusion
+
 I hope this article has piqued your interest in springs. Don't hesitate to get in contact if you come up with any other interesting derivations, applications, or spring variations. I'd be more than happy to add them to this article for others to see. Other than that there is not much more to say - happy exploring!
 
