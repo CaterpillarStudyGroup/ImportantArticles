@@ -6,19 +6,19 @@
 
 Something which is often required by animation systems (Motion Matching being a key example) is a way to compute a "cost" associated with a particular transition between two frames of animation.
 
-In Motion Matching this is typically done by taking the difference between ["features"](https://montreal.ubisoft.com/en/introducing-learned-motion-matching/) "features" of both the source and destination animations. Usually, the positions of a few key joints (such as the feet), as well as their velocities. The magnitudes (or squared magnitudes) of the differences of these feature values is computed, and then added together using some user specified or automatically computed weights.
+In Motion Matching this is typically done by taking the difference between ["features"](https://montreal.ubisoft.com/en/introducing-learned-motion-matching/) of both the source and destination animations. Usually, the positions of a few key joints (such as the feet), as well as their velocities. The magnitudes (or squared magnitudes) of the differences of these feature values is computed, and then added together using some user specified or automatically computed weights.
 
 And although both simple and fast, there are two limitations to this notion of a "transition cost". The first problem is that we're mixing units (such as positions and velocities). This is why we need some kind of weighting terms to balance the contribution from each of these things. Setting good weights by hand is quite difficult, so we often resort to some kind of statistical normalization instead - something which can be a little brittle to changes in our data.
 
 The second problem is that this does not account for the relationships between these features. And having some particular combination of joint position and velocity can often result in an unexpectedly good transition, which is not accounted for when we just add up those differences separately (as we will see later).
 
-While I was thinking about this problem, I wondered if we could do something better by assuming our transitions are performed using [spring-damper](https://www.daniel-holden.com/page/spring-roll-call#inertialization) inertialization. The idea I came up with was this: let's define our transition cost as *the total displacement* caused by an inertialized transition. i.e. The area of the graph between the source and destination animations:
+While I was thinking about this problem, I wondered if we could do something better by assuming our transitions are performed using [inertialization](https://www.daniel-holden.com/page/spring-roll-call#inertialization). The idea I came up with was this: let's define our transition cost as *the total displacement* caused by an inertialized transition. i.e. The area of the graph between the source and destination animations:
 
 ![](./assets/6a-1.png) 
 
 When we're using a critically damped spring to produce this offset between source and destination, something like this area can be computed directly using the *integral* of the spring equation.
 
-For example, here's the integral of a critically damped spring, with target position zero and target velocity zero (as used to decay the offset of the inertializer), where the initial position is given as `x`, the initial velocity as `v` and half-damping `y` is as defined [spring-damper](https://www.daniel-holden.com/page/spring-roll-call#critical) here:
+For example, here's the integral of a critically damped spring, with target position zero and target velocity zero (as used to decay the offset of the inertializer), where the initial position is given as `x`, the initial velocity as `v` and half-damping `y` is as defined [here](https://www.daniel-holden.com/page/spring-roll-call#critical):
 
 
 \begin{align*} \int (e^{−y\cdot t}\cdot (x+(v+x\cdot y)\cdot t))dt & =−e^{−y\cdot t} \cdot \frac{1}{y^2} \cdot (t\cdot v\cdot y+x\cdot y\cdot (t\cdot y+2)+v) \end{align*}
@@ -121,7 +121,7 @@ And although I'm certain there are some pathological cases which assign a small 
 
 You can see that at least the error is limited to a fairly small part of the space where we have a large velocity offset and small, exact positional offset.
 
-To test this feature, I added it to my [spring-damper](https://www.daniel-holden.com/page/code-vs-data-driven-displacement) previous Motion Matching demo, using the original setup and acceleration structure, but replacing the existing bone position and bone velocity features with [spring-damper](https://github.com/orangeduck/Motion-Matching/blob/inertialize_feature/database.h#L444) this feature:
+To test this feature, I added it to my [previous Motion Matching demo](https://www.daniel-holden.com/page/code-vs-data-driven-displacement), using the original setup and acceleration structure, but replacing the existing bone position and bone velocity features with [this feature](https://github.com/orangeduck/Motion-Matching/blob/inertialize_feature/database.h#L444):
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/MotionMatchingInertializeFeature.m4v
 
@@ -139,7 +139,7 @@ Finally, it's worth mentioning that when we compute the total displacement here 
 
 ## Appendix: Cubic Inertializer
 
-For fun I thought I would try and do the same derivation for a simple cubic inertializer function (which I used in [spring-damper](https://www.daniel-holden.com/page/creating-looping-animations-motion-capture) my article on looping animations):
+For fun I thought I would try and do the same derivation for a simple cubic inertializer function (which I used in [my article on looping animations](https://www.daniel-holden.com/page/creating-looping-animations-motion-capture)):
 
 ```c++
 def decay_cubic(
@@ -233,7 +233,7 @@ And, just like before this means we need to compute the intersection time. In th
 
 \begin{align*} a x^3 +b x^2 +c x+d=(x−1)(x−1)(x − ?) ​\end{align*}
 
-To compute the final root we can use [spring-damper](https://www.youtube.com/watch?v=aGpsjErdPnU) synthetic division:
+To compute the final root we can use [synthetic division](https://www.youtube.com/watch?v=aGpsjErdPnU):
 
 \begin{align*} (a x^3 +b x^2 +c x+d) / (x−1)&=a x^2 +(a+b) x+(a+b+c)\\\\
 (a x^2 +(a+b) x+(a+b+c)) / (x−1)&=a x+2a+b ​\end{align*}
@@ -297,7 +297,7 @@ Giving the following feature:
 
 where `pos` is the bone position, `vel` is the bone velocity, and `z` is the `blendtime`. I find it interesting how close this is to the spring-based feature given that the half-damping `y` is kind of similar to an inverse blend time.
 
-Finally, here you can see an [spring-damper](https://github.com/orangeduck/Motion-Matching/tree/inertialize_feature_cubic) adaption of my motion matching demo, with this feature used for matching, and the cubic inertializer used for blending:
+Finally, here you can see an [adaption of my motion matching demo](https://github.com/orangeduck/Motion-Matching/tree/inertialize_feature_cubic), with this feature used for matching, and the cubic inertializer used for blending:
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/MotionMatchingCubicInertializeFeature.m4v
 
