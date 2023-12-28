@@ -104,50 +104,16 @@ The first step is to expand out the position difference `x` and elocity differen
 
 Then, we just need to re-arrange it until we've got all the `s` variables on one side of a difference, and all the `d` on the other:
 
-
-
- 
-​
- 
+\begin{align*} =&|\frac{2\cdot y\cdot s_{pos}-2\cdot y\cdot d_{pos}+s_{vel}-d_{vel} }{ y^2}|\\\\
+=&|\frac{(2\cdot y\cdot s_{pos}+s_{vel})-(2\cdot y\cdot d_{pos}+d_{vel}) }{ y^2}|\\\\
+=&|\frac{(2\cdot y\cdot s_{pos}+s_{vel})}{ y^2}-\frac{(2\cdot y\cdot d_{pos}+d_{vel}) }{ y^2}|\\\\
+=&|(\frac{2\cdot s_{pos}}{ y}+\frac{s_{vel}}{ y^2})-(\frac{2\cdot d_{pos}}{y}+\frac{d_{vel} }{ y^2})|\end{align*}
 
 Which tells us that to emulate this approximate cost function the feature we need to put into our database is exactly the following:
 
-2
-⋅
-�
-�
-�
-�
-+
-�
-�
-�
-�
-2
-y
-2⋅pos
-​
- + 
-y 
-2
- 
-vel
-​
- 
-​
- 
+\begin{align*} \frac{2\cdot pos}{y}+\frac{vel }{ y^2}\end{align*}
 
-where 
-�
-�
-�
-pos is the bone position, 
-�
-�
-�
-vel is the bone velocity, and 
-�
-y is the half-damping which we compute from the half-life.
+where `pos` is the bone position, `vel` is the bone velocity, and `y` is the half-damping which we compute from the half-life.
 
 And although I'm certain there are some pathological cases which assign a small cost to transitions with large oscillations, in practice, if you use a relatively small half-life it seems to work. Here I've visualized the error of this function in comparison to our more exact cost function given previously.
 
