@@ -5,36 +5,48 @@
 
 ## Created on May 4, 2022, 9:34 p.m.
 
-In a previous post I explained what the angular velocity is, how to compute it, and how it relates to the angle-axis representation of rotations, as well as the so called exponential map.
+In [a previous post] (https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) I explained what the angular velocity is, how to compute it, and how it relates to the angle-axis representation of rotations, as well as the so called *exponential map*.
 
-Today I want to talk about something different, but similar: scale - as in the scale of objects we might place in a 3D world. And with that I have a question for you: what does velocity mean when it comes to scale. What is scalar velocity?
+Today I want to talk about something different, but similar: scale - as in the scale of objects we might place in a 3D world. And with that I have a question for you: what does *velocity* mean when it comes to *scale*. What is scalar *velocity*?
 
 More specifically - if we have an object with a scale that is changing over time, how can we represent that rate of change, how can we compute it, and how can we interpret it?
 
-Well one simple thing we could try is to just take the difference between two scale values at different times, and then divide that difference by the dt:
+Well one simple thing we could try is to just take the difference between two scale values at different times, and then divide that difference by the `dt`:
 
+```c++
 float scale_differentiate_velocity_naive(float next, float curr, float dt)
 {
     return (next - curr) / dt;
 }
-Then, if we wanted to scale an object from, say, a scale of 0.1 to a scale of 10, over a period of 3 seconds, the velocity would be given by (10 - 0.1) / 3, and we would add fixed increments of this velocity, multiplied by the dt, onto the scale value of the object at each frame.
+```
 
+Then, if we wanted to scale an object from, say, a scale of `0.1` to a scale of `10`, over a period of `3` seconds, the velocity would be given by `(10 - 0.1) / 3`, and we would add fixed increments of this velocity, multiplied by the `dt`, onto the scale value of the object at each frame.
+
+```c++
 float scalar_velocity = scale_differentiate_velocity_naive(10.0f, 0.1f, 3.0f);
 
 ...
 // Each Frame
 scale = scale + dt * scalar_velocity;
+```
+
 But if we do this the growth appears fast at the beginning, but slows down as the object gets larger:
+
+![](./assets/8-1.png) 
 
 
 The reason this doesn't really work is because, scales, just like rotations, naturally compose using multiplication, rather than addition.
 
-In fact we can see this, if we instead multiply the scale by some fixed rate each frame.
+In fact we can see this, if we instead *multiply* the scale by some fixed rate each frame.
 
+```c++
 // Each Frame
 scale = 1.025 * scale;
+```
+
 Doing things this way we get the visually continuous growth we'd expect:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/DuckScaleUniform.m4v
 
 And this already gives us a bit more intuition for what a scalar velocity should be - not a number we add each frame, but more like a ratio - a value which we multiply our scale values by each frame.
 
