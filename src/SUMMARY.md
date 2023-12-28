@@ -11,7 +11,7 @@
 - [Inertialization Transition Cost](InertializationTransitionCost.md)
 - [Scalar Velocity](ScalarVelocity.md)
 - [Joint Limits](JointLimits.md)
-
+- [Visualizing Rotation Spaces](VisualizingRotationSpaces.md)
 
 
 
