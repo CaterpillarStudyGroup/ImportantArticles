@@ -46,7 +46,7 @@ Similarly, converting from angle-axis to another rotation format is often useful
 
 In fact if we understand the concepts well, all these functions can have relatively simple implementations which make exactly how they work clear too.   
 
-Personally, I think it's easiest to start with `log` and `exp` functions for quaternions. If we take a quick look at the <u> wikipedia page </u> and transcribe the equations into code, here is what we might come up with:  
+Personally, I think it's easiest to start with `log` and `exp` functions for quaternions. If we take a quick look at the [spring-damper](https://en.wikipedia.org/wiki/Quaternion#Exponential,_logarithm,_and_power_functions) wikipedia page and transcribe the equations into code, here is what we might come up with:  
 
 ```c++
 quat quat_exp_naive(vec3 v)
