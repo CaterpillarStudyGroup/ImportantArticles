@@ -170,7 +170,7 @@ float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
 
 The change of base theorem tells us another thing: that changing the rate *of decay* is no different from scaling the `dt` in the exponent. So using the `halflife` to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the *rate of decay* like in our previous setup.
 
-There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [spring-damper]( https://twitter.com/Mr_Rowl/status/1577454895652708352) even better approximation from Danny Chapman):
+There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this [even better approximation from Danny Chapman](https://twitter.com/Mr_Rowl/status/1577454895652708352)):
 
 ```c++
 float fast_negexp(float x)
@@ -229,7 +229,7 @@ Another way to think about these terms is by thinking of them as accelerations, 
 ​​\begin{align*} a_t & = stiffness \cdot (g-x_t) + damping \cdot (q-\upsilon_t)   \\\\ \upsilon_{t+dt} & =  \upsilon_t + dt \cdot a_t \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
 
 
-Assuming the mass of our particle is exactly one, it really is possible to think about this as two individual forces - one pulling the particle in the direction of the goal velocity, and one pulling it toward the goal position. If we use a small enough `dt` we can actually plug these functions together and simulate a simple damped spring with exactly the velocity continuity we wanted. Here is a function which does that (using [spring-damper](https://gafferongames.com/post/integration_basics/) semi-implicit euler integration).
+Assuming the mass of our particle is exactly one, it really is possible to think about this as two individual forces - one pulling the particle in the direction of the goal velocity, and one pulling it toward the goal position. If we use a small enough `dt` we can actually plug these functions together and simulate a simple damped spring with exactly the velocity continuity we wanted. Here is a function which does that (using [semi-implicit euler integration](https://gafferongames.com/post/integration_basics/)).
 
 ```c++
 void spring_damper_bad(
@@ -959,13 +959,13 @@ This really shows how using a completely exact spring equation comes in handy - 
 
 Here you can see me moving around a point in the world using the above code and a desired character velocity coming from the gamepad. By adjusting the `halflife` of the spring we can achieve different levels of responsiveness and smoothness, and by evaluating the spring at various different times in the future we can predict where the character would be if the current input were to remain fixed (shown in red).
 
-This is exactly the method we use to predict the future character trajectory in [spring-damper] (https://www.daniel-holden.com/page/learned-motion-matching) Learned Motion Matching.
+This is exactly the method we use to predict the future character trajectory in [Learned Motion Matching](https://www.daniel-holden.com/page/learned-motion-matching).
 
 ---
 
 ## Inertialization
 
-In game animation,  [spring-damper] (https://www.youtube.com/watch?v=BYyv4KTegJI) inertialization is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.
+In game animation, [inertialization](https://www.youtube.com/watch?v=BYyv4KTegJI) is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.
 
 The idea is this: if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.
 
@@ -1006,7 +1006,7 @@ As you can see, each time we toggle the button there is a transition between the
 
 Unlike the original presentation which uses a polynomial to blend out the offset over a specific period, a spring does not provide a fixed blend time and can easily overshoot. However the exponential decay does mean it tends to look smooth and blends out to something negligible at a very fast rate. In addition, since there is no need to remember the last transition time the code is very simple, and because we use the `decay_spring_damper_exact` variant of the spring it can be made exceptionally fast, in particular when all the blends for the different bones use the same `halflife` and `dt` to update.
 
-This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in [spring-damper](https://www.daniel-holden.com/page/learned-motion-matching) Learned Motion Matching.
+This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in [Learned Motion Matching](https://www.daniel-holden.com/page/learned-motion-matching).
 
 ---
 
@@ -1087,7 +1087,7 @@ float resonant_frequency(float goal_frequency, float halflife)
 
 When trying to pick out specific frequencies the `halflife` of the spring affects the sensitivity. A long `halflife` (or low `damping`) means the spring will only build up energy when driven at frequencies very close to its resonate frequency, and it will build up more energy too. While a shorter `halflife` means a broader range of frequencies that build up energy.
 
-For a really cool application of this idea check out [spring-damper](https://quazikb.github.io/WaveEq/index.html) this blog post by [spring-damper](https://quazikb.github.io/) Kevin Bergamin.
+For a really cool application of this idea check out [this blog post](https://quazikb.github.io/WaveEq/index.html) by [Kevin Bergamin](https://quazikb.github.io/).
 
 ---
 
@@ -1226,7 +1226,7 @@ And here is how this one looks, with the intermediate target shown in red.
 
 ## Quaternion Spring
 
-The simplified code of the simple spring damper also lends itself to be easily adapted to other things such as quaternions. Here the main trick is to convert quaternion differences into [spring-damper](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) angular velocities (first convert to angle axis then scale the axis by the angle) so that they can interact with the other terms such as the exponential terms and the spring velocity.
+The simplified code of the simple spring damper also lends itself to be easily adapted to other things such as quaternions. Here the main trick is to convert quaternion differences into [angular velocities](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) (first convert to angle axis then scale the axis by the angle) so that they can interact with the other terms such as the exponential terms and the spring velocity.
 
 ```c++
 void simple_spring_damper_exact_quat(
@@ -1256,12 +1256,12 @@ It's a good exercise to try and do this same style of derivation for other sprin
 
 ## Scale Spring
 
-In [spring-damper](https://www.daniel-holden.com/page/scalar-velocity) this post I show how we can derive an equation for a spring that works on object scales.
+In [this post](https://www.daniel-holden.com/page/scalar-velocity) I show how we can derive an equation for a spring that works on object scales.
 
 ---
 
 Tracking Spring
-See [spring-damper](https://www.daniel-holden.com/page/perfect-tracking-springs) this article for a spring which can be used to perfectly track animation data while still removing discontinuities.
+See [this article](https://www.daniel-holden.com/page/perfect-tracking-springs) for a spring which can be used to perfectly track animation data while still removing discontinuities.
 
 ---
 
@@ -1269,7 +1269,7 @@ See [spring-damper](https://www.daniel-holden.com/page/perfect-tracking-springs)
 
 ## Source Code
 
-The source code for all the demos shown in this article can be found [spring-damper](https://github.com/orangeduck/Spring-It-On) here. They use [spring-damper](https://www.raylib.com/) raylib and more specifically [spring-damper](https://github.com/raysan5/raygui) raygui but once you have both of those installed you should be ready to roll.
+The source code for all the demos shown in this article can be found [here](https://github.com/orangeduck/Spring-It-On). They use [raylib](https://www.raylib.com/) and more specifically [raygui](https://github.com/raysan5/raygui) but once you have both of those installed you should be ready to roll.
 
 ---
 
