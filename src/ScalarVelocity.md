@@ -282,6 +282,7 @@ In formulating this quaterion spring we faced the same basic problem that we hav
 
 Scales are no different, and the formulation of a scale spring looks remarkably similar to the quaternion one:
 
+```c++
 void simple_spring_damper_exact_scale(
     float& x, 
     float& v, 
@@ -299,10 +300,16 @@ void simple_spring_damper_exact_scale(
     x = exp2f(eydt*(j0 + j1*dt)) * x_goal;
     v = eydt*(v - j1*y*dt);
 }
-But it isn't just lerp and springs which can make use of this transformation.
+```
 
-Using log2 and exp2 for scales can be useful in all kinds of different situations where we are trying to adapt equations which assume the object is some kind of vector which can be added and subtracted. For example, almost all of linear algebra and machine learning!
+But it isn't just `lerp` and springs which can make use of this transformation.
 
+Using `log2` and `exp2` for scales can be useful in all kinds of different situations where we are trying to adapt equations which assume the object is some kind of vector which can be added and subtracted. For example, almost all of linear algebra and machine learning!
 
-Conclusion
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/DuckSpring.m4v
+
+---
+
+## Conclusion
+
 Just like angular velocities, scalar velocities are not immediately intuitive. But that doesn't mean they are magical numbers which can't be understood, and knowing a little bit about them can give us great intuitions for how to deal with them in a whole host of different situations. Happy scaling!
