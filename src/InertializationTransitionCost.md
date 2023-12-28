@@ -117,14 +117,17 @@ where `pos` is the bone position, `vel` is the bone velocity, and `y` is the hal
 
 And although I'm certain there are some pathological cases which assign a small cost to transitions with large oscillations, in practice, if you use a relatively small half-life it seems to work. Here I've visualized the error of this function in comparison to our more exact cost function given previously.
 
-inertialization approx cost function 2d
+![](./assets/6a-7.png) 
 
 You can see that at least the error is limited to a fairly small part of the space where we have a large velocity offset and small, exact positional offset.
 
-To test this feature, I added it to my previous Motion Matching demo, using the original setup and acceleration structure, but replacing the existing bone position and bone velocity features with this feature:
+To test this feature, I added it to my [spring-damper](https://www.daniel-holden.com/page/code-vs-data-driven-displacement) previous Motion Matching demo, using the original setup and acceleration structure, but replacing the existing bone position and bone velocity features with [spring-damper](https://github.com/orangeduck/Motion-Matching/blob/inertialize_feature/database.h#L444) this feature:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/MotionMatchingInertializeFeature.m4v
 
 Not bad! And although the difference is not hugely significant, to me it looks like an overall improvement, and I was surprised at how well this idea worked out-of-the-box with no tweaking of velocity and positional weights required. So while perhaps not a silver bullet, to me this still seems like a fairly good way to potentially reduce the database size and remove one more weight for users to tweak!
+
+---
 
 As a disclaimer I should say that while I thought this was an interesting idea worth sharing, it's not something I've tested myself extensively, so in practice your mileage may vary.
 
@@ -132,9 +135,13 @@ Also worth noting is that although I've provided the derivation here for a sprin
 
 Finally, it's worth mentioning that when we compute the total displacement here we are making an assumption that the inertialized movement of a joint's position in character space is going to be similar to what we would get if we individually inertialized all of the local joint rotations down the chain - something that may well not often be true.
 
-Appendix: Cubic Inertializer
-For fun I thought I would try and do the same derivation for a simple cubic inertializer function (which I used in my article on looping animations):
+---
 
+## Appendix: Cubic Inertializer
+
+For fun I thought I would try and do the same derivation for a simple cubic inertializer function (which I used in [spring-damper](https://www.daniel-holden.com/page/creating-looping-animations-motion-capture) my article on looping animations):
+
+```c++
 def decay_cubic(
     x,
     v,
@@ -150,16 +157,15 @@ def decay_cubic(
     a = 2*d + c
     
     return a*t*t*t + b*t*t + c*t + d
-The idea behind this function is essentially just to find the coefficients of a cubic polynomial with some initial position and velocity on the y-axis, which crosses the x-axis at 
-1
-1, with a velocity of 
-0
-0. Then, if we want to change how long it takes to decay we can simply scale the x-axis (and adjust the initial velocity accordingly).
+```
 
-cubic intertialize function
+The idea behind this function is essentially just to find the coefficients of a cubic polynomial with some initial position and velocity on the y-axis, which crosses the x-axis at `1`, with a velocity of `0`. Then, if we want to change how long it takes to decay we can simply scale the x-axis (and adjust the initial velocity accordingly).
+
+![](./assets/6a-8.png) 
 
 The way we use this inertializer is a bit different. Rather than decaying the offset over time, we keep track of the initial offset, the time since transition, and compute the decayed offset on the fly based on how long it has been since the transition (we can actually do things this way with our spring-based inertializer too if we want).
 
+```c++
 void decayed_offset_cubic(
     vec3& out_x,
     vec3& out_v,
@@ -217,195 +223,29 @@ void inertialize_cubic_update(
     out_x = in_x + dec_x;
     out_v = in_v + dec_v;
 }
-Just like our spring, this function can cross the x-axis before 
-1
-1, which means if we want to compute the absolute displacement, we need to compute the integral in two parts:
+```
 
-cubic intertialize intersection
+Just like our spring, this function can cross the x-axis before `1`, which means if we want to compute the absolute displacement, we need to compute the integral in two parts:
+
+![](./assets/6a-9.png) 
 
 And, just like before this means we need to compute the intersection time. In this case, since our cubic function is tangent to the x-axis at 1, we know that two of the roots will be exactly 1, which makes our lives a lot easier when it comes to finding the final one:
 
-�
- 
-�
-3
-+
-�
- 
-�
-2
-+
-�
- 
-�
-+
-�
-=
-(
-�
-−
-1
-)
-(
-�
-−
-1
-)
-(
-�
- 
-−
- 
-?
-)
-a x 
-3
- +b x 
-2
- +c x+d=(x−1)(x−1)(x − ?)
-​
- 
+\begin{align*} a x^3 +b x^2 +c x+d=(x−1)(x−1)(x − ?) ​\end{align*}
 
-To compute the final root we can use synthetic division:
+To compute the final root we can use [spring-damper](https://www.youtube.com/watch?v=aGpsjErdPnU) synthetic division:
 
-(
-�
+\begin{align*} (a x^3 +b x^2 +c x+d) / (x−1)&=a x^2 +(a+b) x+(a+b+c)\\\\
+(a x^2 +(a+b) x+(a+b+c)) / (x−1)&=a x+2a+b ​\end{align*}
  
-�
-3
-+
-�
- 
-�
-2
-+
-�
- 
-�
-+
-�
-)
- 
-/
- 
-(
-�
-−
-1
-)
-=
-�
- 
-�
-2
-+
-(
-�
-+
-�
-)
- 
-�
-+
-(
-�
-+
-�
-+
-�
-)
-(
-�
- 
-�
-2
-+
-(
-�
-+
-�
-)
- 
-�
-+
-(
-�
-+
-�
-+
-�
-)
-)
- 
-/
- 
-(
-�
-−
-1
-)
-=
-�
- 
-�
-+
-2
-�
-+
-�
-(a x 
-3
- +b x 
-2
- +c x+d) / (x−1)
-(a x 
-2
- +(a+b) x+(a+b+c)) / (x−1)
-​
-  
-=a x 
-2
- +(a+b) x+(a+b+c)
-=a x+2a+b
-​
- 
-
 Which means the value of the final root is given by the following:
 
-�
- 
-�
-+
-2
-�
-+
-�
-=
-0
-�
-=
-−
-2
- 
-�
-−
-�
-�
-a x+2a+b
-x
-​
-  
-=0
-= 
-a
-−2 a−b
-​
- 
-​
- 
+\begin{align*} a x+2a+b &=0\\\\
+x&= \frac{−2a −b}{a} ​\end{align*}
 
-We then just need to scale this by the blendtime if we want to get the actual intersection time:
+We then just need to scale this by the `blendtime` if we want to get the actual intersection time:
 
+```c++
 def decay_cubic_intersection(x, v, blendtime, eps=1e-8):
     
     d = x
@@ -416,253 +256,17 @@ def decay_cubic_intersection(x, v, blendtime, eps=1e-8):
     t = (-2*a - b) / (a + eps)
     
     return t * blendtime
-So, depending on if there is an intersection between 
-0
-0 and 
-1
-1, the total displacement is either the blendtime multiplied by the integral of our polynomial between 
-0
-0 and 
-1
-1, or the blendtime multiplied by the sum of two integrals: one between 
-0
-0 and 
-�
-t, and one between 
-�
-t and 
-1
-1 where 
-�
-t is the intersection time:
+```
 
-∫
-0
-�
-�
- 
-�
-3
-+
-�
- 
-�
-2
-+
-�
- 
-�
-+
-�
-�
-�
-=
-�
- 
-�
-4
-4
-+
-�
- 
-�
-3
-3
-+
-�
- 
-�
-2
-2
-+
-�
- 
-�
-∫
-�
-1
-�
- 
-�
-3
-+
-�
- 
-�
-2
-+
-�
- 
-�
-+
-�
-�
-�
-=
-(
-�
-4
-+
-�
-3
-+
-�
-2
-+
-�
-)
-−
-(
-�
- 
-�
-4
-4
-+
-�
- 
-�
-3
-3
-+
-�
- 
-�
-2
-2
-+
-�
- 
-�
-)
-∫
-0
-1
-�
- 
-�
-3
-+
-�
- 
-�
-2
-+
-�
- 
-�
-+
-�
-�
-�
-=
-�
-4
-+
-�
-3
-+
-�
-2
-+
-�
-∫ 
-0
-t
-​
- a x 
-3
- +b x 
-2
- +c x+ddx
-∫ 
-t
-1
-​
- a x 
-3
- +b x 
-2
- +c x+ddx
-∫ 
-0
-1
-​
- a x 
-3
- +b x 
-2
- +c x+ddx
-​
-  
-= 
-4
-a t 
-4
- 
-​
- + 
-3
-b t 
-3
- 
-​
- + 
-2
-c t 
-2
- 
-​
- +d t
-=( 
-4
-a
-​
- + 
-3
-b
-​
- + 
-2
-c
-​
- +d)−( 
-4
-a t 
-4
- 
-​
- + 
-3
-b t 
-3
- 
-​
- + 
-2
-c t 
-2
- 
-​
- +d t)
-= 
-4
-a
-​
- + 
-3
-b
-​
- + 
-2
-c
-​
- +d
-​
- 
+So, depending on if there is an intersection between `0` and `1`, the total displacement is either the `blendtime` multiplied by the integral of our polynomial between `0` and `1`, or the blendtime multiplied by the sum of two integrals: one between `0` and `t`, and one between `t` and `1` where `t` is the intersection time:
+
+\begin{align*} \int_{0}^{t} a x^3 +b x^2 +c x+ddx&=\frac{at^4}{4} +\frac{bt^3}{3} +\frac{ct^2}{2}+dt\\\\
+ \int_{t}^{1} a x^3 +b x^2 +c x+ddx&=(\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d)-(\frac{at^4}{4} +\frac{bt^3}{3} +\frac{ct^2}{2}+dt)\\\\
+\int_{0}^{1} a x^3 +b x^2 +c x+ddx&=\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d \end{align*}
 
 Which in code looks something like this:
 
+```c++
 def decay_cubic_displacement(x, v, blendtime, eps=1e-8):
     
     d = x
@@ -678,446 +282,23 @@ def decay_cubic_displacement(x, v, blendtime, eps=1e-8):
     return blendtime * np.where((t >= 0.0) & (t <= 1.0),
         abs(int_0 - int_t) + abs(int_t),
         abs(int_0))
-Again, like before, if we can accept the approximation which does not split the integral into two parts, and underestimates the displacement of oscillations, we can derive a motion matching feature by getting all the source variables and destinations variables on either side of a subtraction, where here 
-�
-z is the blendtime:
+```
 
-=
-�
- 
-∣
-�
-4
-+
-�
-3
-+
-�
-2
-+
-�
-∣
-=
-�
- 
-∣
-�
-2
- 
-�
-�
-�
-�
-−
-�
-2
- 
-�
-�
-�
-�
-−
-2
-�
-3
- 
-�
-�
-�
-�
-+
-2
-�
-3
- 
-�
-�
-�
-�
-+
-1
-2
- 
-�
-�
-�
-�
-−
-1
-2
- 
-�
-�
-�
-�
-+
-�
-4
- 
-�
-�
-�
-�
-−
-�
-4
- 
-�
-�
-�
-�
-∣
-=
-�
- 
-∣
-(
-�
-2
- 
-�
-�
-�
-�
-−
-2
-�
-3
- 
-�
-�
-�
-�
-+
-1
-2
- 
-�
-�
-�
-�
-+
-�
-4
- 
-�
-�
-�
-�
-)
-−
-(
-�
-2
- 
-�
-�
-�
-�
-−
-2
-�
-3
- 
-�
-�
-�
-�
-+
-1
-2
- 
-�
-�
-�
-�
-+
-�
-4
- 
-�
-�
-�
-�
-)
-∣
-=
-�
- 
-∣
-(
-�
-12
- 
-�
-�
-�
-�
-+
-1
-2
- 
-�
-�
-�
-�
-)
-−
-(
-�
-12
- 
-�
-�
-�
-�
-+
-1
-2
- 
-�
-�
-�
-�
-)
-∣
-​
-  
-=z  
-∣
-∣
-​
-  
-4
-a
-​
- + 
-3
-b
-​
- + 
-2
-c
-​
- +d 
-∣
-∣
-​
- 
-=z  
-∣
-∣
-​
-  
-2
-z
-​
-  s 
-vel
-​
- − 
-2
-z
-​
-  d 
-vel
-​
- − 
-3
-2z
-​
-  s 
-vel
-​
- + 
-3
-2z
-​
-  d 
-vel
-​
- + 
-2
-1
-​
-  s 
-pos
-​
- − 
-2
-1
-​
-  d 
-pos
-​
- + 
-4
-z
-​
-  s 
-vel
-​
- − 
-4
-z
-​
-  d 
-vel
-​
-  
-∣
-∣
-​
- 
-=z  
-∣
-∣
-​
- ( 
-2
-z
-​
-  s 
-vel
-​
- − 
-3
-2z
-​
-  s 
-vel
-​
- + 
-2
-1
-​
-  s 
-pos
-​
- + 
-4
-z
-​
-  s 
-vel
-​
- )−( 
-2
-z
-​
-  d 
-vel
-​
- − 
-3
-2z
-​
-  d 
-vel
-​
- + 
-2
-1
-​
-  d 
-pos
-​
- + 
-4
-z
-​
-  d 
-vel
-​
- ) 
-∣
-∣
-​
- 
-=z  
-∣
-∣
-​
- ( 
-12
-z
-​
-  s 
-vel
-​
- + 
-2
-1
-​
-  s 
-pos
-​
- )−( 
-12
-z
-​
-  d 
-vel
-​
- + 
-2
-1
-​
-  d 
-pos
-​
- ) 
-∣
-∣
-​
- 
-​
- 
+Again, like before, if we can accept the approximation which does not split the integral into two parts, and underestimates the displacement of oscillations, we can derive a motion matching feature by getting all the source variables and destinations variables on either side of a subtraction, where here `z` is the `blendtime`:
+
+\begin{align*} =&z|\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d|\\\\
+=&z|\frac{z}{2}s_{vel} -\frac{z}{2}d_{vel} -\frac{2z}{3}s_{vel} +\frac{2z}{3}d_{vel} +\frac{1}{2}s_{pos}-\frac{1}{2}d_{pos}+\frac{z}{4}s_{vel}-\frac{z}{4}d_{vel}|\\\\
+=&z|(\frac{z}{2}s_{vel} -\frac{2z}{3}s_{vel} +\frac{1}{2}s_{pos} +\frac{z}{4}s_{vel} )-(\frac{z}{2}d_{vel}-\frac{2z}{3}d_{vel}+\frac{1}{2}d_{pos}+\frac{z}{4}d_{vel})|\\\\
+=&z|(\frac{z}{12}s_{vel}+\frac{1}{2}s_{pos} )-(\frac{z}{12}d_{vel}+\frac{1}{2}d_{pos})|  \end{align*}
 
 Giving the following feature:
 
-�
-⋅
-�
-�
-�
-2
-+
-�
-2
-⋅
-�
-�
-�
-12
-2
-z⋅pos
-​
- + 
-12
-z 
-2
- ⋅vel
-​
- 
-​
- 
+\begin{align*} \frac{z\cdot pos}{2}+\frac{z^2\cdot vel}{12} \end{align*}
 
-where 
-�
-�
-�
-pos is the bone position, 
-�
-�
-�
-vel is the bone velocity, and 
-�
-z is the blendtime. I find it interesting how close this is to the spring-based feature given that the half-damping 
-�
-y is kind of similar to an inverse blend time.
+where `pos` is the bone position, `vel` is the bone velocity, and `z` is the `blendtime`. I find it interesting how close this is to the spring-based feature given that the half-damping `y` is kind of similar to an inverse blend time.
 
-Finally, here you can see an adaption of my motion matching demo, with this feature used for matching, and the cubic inertializer used for blending:
+Finally, here you can see an [spring-damper](https://github.com/orangeduck/Motion-Matching/tree/inertialize_feature_cubic) adaption of my motion matching demo, with this feature used for matching, and the cubic inertializer used for blending:
 
+> &#x1F50E; https://www.daniel-holden.com/media/uploads/MotionMatchingCubicInertializeFeature.m4v
 
 Nice!
