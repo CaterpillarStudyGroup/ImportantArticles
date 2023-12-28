@@ -201,7 +201,7 @@ quat quat_integrate_angular_velocity(
 }
 ```
 
-Where the `quat_abs` function ensure the quaternion is on the hemisphere closest to the identity quaternion, and avoids creating angular velocities that "wrap around" (see this article for an intuitive explanation of why this is required).
+Where the `quat_abs` function ensure the quaternion is on the hemisphere closest to the identity quaternion, and avoids creating angular velocities that "wrap around" (see [spring-damper](https://www.daniel-holden.com/page/visualizing-rotation-spaces) this article for an intuitive explanation of why this is required).
 
 ```c++
 quat quat_abs(quat x)
@@ -298,5 +298,5 @@ Since these don't have any division their derivatives are very smooth. Useful fo
 
 And that's all I've got for you today! It turns out the details are important when it comes to the exponential map / angle-axis / angular velocity. I hope this article has got you thinking a bit more deeply about these functions, how they can be implemented, their numerical stability, as well as derivatives.
 
-If you're interesting in more on low level rotation stuff, check out this post on visualizing rotation representations.
+If you're interesting in more on low level rotation stuff, check out [spring-damper](https://www.daniel-holden.com/page/visualizing-rotation-spaces) this post on visualizing rotation representations.
 
