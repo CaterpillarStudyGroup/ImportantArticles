@@ -10,6 +10,7 @@
 - [Spring-It-On: The Game Developer's Spring-Roll-Call](Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.md)
 - [Inertialization Transition Cost](InertializationTransitionCost.md)
 - [Scalar Velocity](ScalarVelocity.md)
+- [Joint Limits](JointLimits.md)
 
 
 
