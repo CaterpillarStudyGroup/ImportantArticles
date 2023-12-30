@@ -2,7 +2,6 @@
 
 # Exponential Map, Angle Axis, and Angular Velocity  
 
-
 ## Created on July 10, 2021, 5:16 p.m.
 
 If you've used rotations when programming graphics, physics, or video games, there are three concepts you've probably seen mentioned, but may not have understood exactly what the difference was between them all:

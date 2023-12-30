@@ -33,8 +33,10 @@ For example, given something like the following:
 
 We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a [critically damped spring](https://www.daniel-holden.com/page/spring-roll-call#critical):   
 
-![](./assets/07-02.png)   
+> &#x2705; 用critically damped spring的方式生成difference的系数，加到曲线上。  
+> &#x2753; 这跟惯插有什么关系？  
 
+![](./assets/07-02.png)   
 
 In this case I've added this offset to the front of the animation, but we could add it to the back instead:
 
@@ -46,6 +48,9 @@ We can also distribute the offset over both sides of the clip - by applying some
 
 
 To implement this in code, first we need to compute the differences for the start and end frames:   
+
+> &#x2705; 上面的例子是在单点上做位置的混合。下面代码是应用到角色上，对每个角色的关节做混合。一个关节的状态包含位置、速度、旋转、旋转速度。  
+> &#x2753; 位置和速度是global的还是相对于父的？旋转我认为是相对于父的。位置应该是全局的，因为角色的joint offset是不变的。但是从代码上看，似乎取位置和取速度的方法是一样的。  
 
 ```c++
 void compute_start_end_positional_difference(
@@ -99,6 +104,8 @@ void compute_start_end_rotational_difference(
 
 Note that we convert the rotational offset into [scaled-angle-axis space](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) to allow us to treat it like a vector and combine it with angular velocities.  
 
+> &#x2705; 速度的混合都是在scaled-angle-axis space上做的。  
+
 Then, given our inertialization function which decays the difference...
 
 ```c++
@@ -116,6 +123,9 @@ vec3 decayed_offset(
 }
 ```
 
+> &#x2753; `halflife_to_damping`和`fast_negexpf`分别是什么函数？  
+> &#x2753; j1应该是个外插值，因为内插值可以直接通过函数得到。为什么要外插？返回值是什么含义？  
+> &#x2753; 为什么x和v注释为Initial，从下面的调用上看是ratio * offset。
 
 We can use it to compute the offset we need to apply at each frame.
 
@@ -159,6 +169,8 @@ void compute_inertialize_both_offsets(
 
 
 And then apply this offset to the actual animation.
+
+> &#x2753; 同时apply位置和速度，怎么保证二者是兼容的？  
 
 ```c++
 void apply_positional_offsets(
@@ -205,12 +217,16 @@ And this is how it looks on the character:
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/inertialize_both.m4v
 
 
-Unfortunately the spring-based inertializer has a problem here... if we slow down the animation we can see that there is a small discontinuity at the end of the loop. This is because even with a reasonably short half-life the exponential decay still produces some tiny residual offset at the end of the animation:
+Unfortunately the spring-based inertializer has a problem here... if we slow down the animation we can see that there is a **small discontinuity at the end of the loop**. This is because even with a reasonably short half-life the exponential decay still produces some tiny residual offset at the end of the animation:
+
+> &#x2753; exponential decay 与residual offset是什么关系？  
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/inertialize_slowmo.m4v
 
 
-An inertializer with a fixed fade out time fixes this. For example, here is a basic cubic inertialization function we can use instead that decays exactly to zero by blendtime:
+An inertializer **with a fixed fade out time** fixes this. For example, here is a basic cubic inertialization function we can use instead that decays exactly to zero by blendtime:
+
+> &#x2705; 要求在固定帧数内完成插值  
 
 ```c++
 vec3 decayed_offset_cubic(
@@ -250,6 +266,8 @@ The problem here is that doing so naively introduces a velocity discontinuity. W
 
 
 This velocity discontinuity can be removed by again using some inertializers, but in this case using them just to blend out the velocity difference at either end:
+
+> &#x2753; 位置平滑与速度平滑的不兼容，为什么inertializers能保证兼容？  
 
 ![](./assets/07-07.png) 
 
@@ -315,16 +333,20 @@ void compute_linear_inertialize_offsets(
 
 Note that the velocity introduced by the linear fade needs to be accounted for when we apply the inertializers, but in this case because it's the same on both the start and the end of the animation it cancels itself out. As we will see later, if the velocity introduced by our initial offset is different at the start and end we need to account for it when setting the initial velocity of the inertializers.
 
+> &#x2753; linear fade会导致运动速度的变化。但为什么在这个场景中不用考虑呢？  
+
 That aside, here is what this looks like on the character:
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/linear_inertialize.m4v
  
 
-This spreads the adjustment over the whole animation which in many cases is very useful and generally looks good for short animations. However, in certain cases it introduces a kind of "drift" to the animation which might not be what we want and can introduce foot sliding:
+This spreads the adjustment over the whole animation which in many cases is very useful and generally looks good for short animations. However, in certain cases it introduces a kind of "**drift**" to the animation which might not be what we want and can introduce foot sliding:
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/linear_comparison.m4v
 
 One idea is to limit the linear fade to just the start and end. Here we can use a little function I'm calling "softfade", to make a linear ramp that fades the offset out. The alpha parameter here can be used to adjust the "hardness" of the ramp.
+
+> &#x2753; 既然这样，为什么要引入spread the offset over the whole animation？  
 
 ![](./assets/07-09.png)
 
@@ -367,7 +389,7 @@ This we can apply to either side of the animation for the durations we want.
 
 ![](./assets/07-10.png)
 
-Like before we need to account for the velocity discontinuity using additional inertialization - but with that the results are smooth.
+Like before we need to **account for the velocity discontinuity using additional inertialization** - but with that the results are smooth.
 
 ![](./assets/07-11.png)
 
@@ -509,7 +531,9 @@ void compute_softfade_inertialize_offsets(
 }
 ```
 
-Using this we can adjust the fade-out time to just a section of the animation to avoid too much drift.
+Using this we can **adjust the fade-out time to just a section** of the animation to avoid too much drift.
+
+> &#x2705; fadeout会引入drift，因此控制fadeout的范围。  
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/softfade.m4v
 

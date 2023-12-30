@@ -4,13 +4,15 @@
 # Spring-It-On: The Game Developer's Spring-Roll-Call   
 
 
-## Created on March 4, 2021, 5:49 p.m.   
+Created on March 4, 2021, 5:49 p.m.   
 
 Springs! What do springs have to do with game development? We'll if you're asking that question and reading this article you're in the right place. Because we're about to do a lot of talking about springs... and, while some of you may well have used springs before, I'm guessing that even if you did the code you used resided in the dark depths of your project as a set of mysterious equations that no one ever touched.
 
 And that's sad, because although the maths can undeniably be tricky, springs are interesting, and a surprisingly versatile tool, with lots of applications in Computer Science that I never even realized were possible until I thought "wouldn't it be nice to know how those equations came about?" and dug a bit deeper.
 
 So I think every Computer Scientist, and in particular those interested in game development, animation, or physics, could probably benefit from a bit of knowledge of springs. In the very least this: what they are, what they do, how they do it, and what they can be used for. So with that in mind, let's start right from the beginning: *The Damper*.
+
+> &#x2705; Damper：阻尼器
 
 ---
 
@@ -28,7 +30,9 @@ float lerp(float x, float y, float a)
     return (1.0f - a) * x + a * y;
 }
 
-float damper(float x, float g, float factor)
+float damper(float x, // 当前位置
+             float g, // 期望位置
+             float factor // 混合速度)
 {
     return lerp(x, g, factor);
 }
