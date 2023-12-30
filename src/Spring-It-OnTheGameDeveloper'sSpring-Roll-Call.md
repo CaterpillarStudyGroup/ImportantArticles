@@ -48,9 +48,12 @@ By applying this `damper` function each frame we can smoothly move toward the go
 
 Below you can see a visualization of this in action where the horizontal axis represents time and the vertical axis represents the position of the object.
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper.m4v
+![](assets/damper.jpg)
 
 But this solution has a problem: if we change the framerate of our game (or the timestep of our system) we get different behavior from the `damper`. More specifically, it moves the object slower when we have a lower framerate:
+
+> &#x2705; 移动速度与帧率有关。  
+> &#x2753; 在指定帧数内到达目标状态，还是在指定时间内到达目标状态，插值需要考虑这个问题吗？  
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_dt.m4v
 
@@ -67,9 +70,19 @@ float damper_bad(float x, float t, float damping, float dt)
 
 This might appear like it works on face value but there are two big problems with this solution which can come back to bite us badly. Firstly, we now have a mysterious `damping` variable which is difficult to set and interpret. But secondly, and more importantly, if we set the `damping` or the `dt` too high (such that `damping * dt > 1`) the whole thing becomes unstable, and in the worst case explodes:
 
+> &#x2705; 问题1：由于`damping * dt`代表了混合的系数，因此必须在(0,1)范围内。  
+
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_bad.m4v
 
 We could use various hacks like clamping `damping * dt` to be less than `1` but there is fundamentally something wrong with what we've done here. We can see this if we imagine that `damping * dt` is roughly equal to `0.5` - here, doubling the `dt` does not produce the same result as applying the damper twice: lerping with a factor of `0.5` twice will take us 75% of the way toward the goal, while lerping with a `factor` of `1.0` once will bring us 100% of the way there. So what's the real fix?
+
+> &#x2705; 问题1解决方法：遇1截断。  
+> &#x2705; 问题2：
+> 场景1：damping = 1， dt=0.5，执行一次，x' = 0.5x + 0.5y，再执行一次，x'' = 0.5x' + 0.5y = 0.25x + 0.75y  
+> 场景2：damping = 1， dt=1，执行一次，x' = y
+> 两次结果不一样，作者认为这是一个问题。  
+> &#x2705; 这为什么是个问题呢？直觉上来讲，两个damping场景下damping是一样的，会希望同样的时间后应该到达同样的状态。事实上呢，同时是执行了1时间，只是场景1分了更小的时间片，得到的结果就不一样了。所以作者认为没有真正解决“适配不同dt”的问题了。    
+> &#x2753; 这里还有一个问题，只要`damping * dt`不为1，似乎x永远也不可能真正到达target的位置。  
 
 --- 
 
@@ -87,9 +100,11 @@ Here we can see repeated calls to `lerp` actually produce a kind of exponential 
  
 And for a `lerp` factor of `0.5`, we can see that this pattern is exactly the equation \\( x_t=0.5^t \\) . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.
 
+> &#x1F50E; recurrence relation：递推关系
+
 ## Recurrence Relation   
 
-We'll start by defining a separate variable  \\( y=1−damping⋅ft \\) , which will make the maths a bit easier later on. In this case ` ft` is a fixed, small `dt` such as \\( \frac{1}{60} \\) . Then we will expand the `lerp` function:
+We'll start by defining a separate variable  `y=1−damping⋅ft` , which will make the maths a bit easier later on. In this case ` ft` is a fixed, small `dt` such as \\( \frac{1}{60} \\) . Then we will expand the `lerp` function:
 
 \begin{align*} x_{t+1} & = \text{lerp } (x_t,g,1-y) \\\\ x_{t+1} & = (1-(1-y)) \cdot x_t+(1-y) \cdot g\\\\x_{t+1} & = y\cdot x_t-(y-1)\cdot g \\\\x_{t+1} & = y\cdot x_t- y\cdot g +g \end{align*}
 
@@ -117,7 +132,7 @@ Ah-ha! Our exponent has appeared. And by rearranging a bit we can even write thi
 
 \begin{align*} x_{t+n} & = y^n \cdot  x_t-y ^n \cdot g + g  \\\\ x_{t+n} & = y^n \cdot  x_t+g \cdot (1-y^n)  \\\\ x_{t+n} & = \text{lerp } (x_t,g,1-y^n) \end{align*}
 
-
+> &#x2705; 以1-y为factor做n次相当于以\\(1-y^n\\)为factor做一次
 
 As a small tweak, we can make the exponent negative:
 
@@ -125,6 +140,8 @@ As a small tweak, we can make the exponent negative:
 ​
 
 Remember that `n` represents a multiple of `ft`, so if we have a new arbitrary `dt` we will need to convert it to `n` first using \\(n=\frac{dt }{ft} \\) . In C++ we would write it as follows:
+
+> &#x2705; n代表dt时间内会执行lerp的次数，dt时间内有多少帧就会执行多少次。ft代表一帧的时长。因此\\(n=\frac{dt }{ft} \\)。   
 
 ```c++
 float damper_exponential(
@@ -138,12 +155,17 @@ float damper_exponential(
 } 
 ```
 
+> &#x2705; 这样解决了两个问题：  
+> 1. factor永远不会大于1
+> 2. 在damping和ft确定的情况下，执行一次dt=1或者两次dt=0.5，结果是一样的。    
+
 Let's see it action! Notice how it produces the same, identical and stable behavior even when we make the `dt` and `damping` large.
 
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/springs/damper_exponent.m4v
 
 So have we fixed it? Well, in this formulation we've essentially solved the problem by letting the behavior of the damper match one particular timestep while allowing the rate of decay to still vary. In this case `1.0f - ft * damping` is our rate of decay, and it dictates what proportion of the distance toward the goal will remain after `ft` in time. As long as we make the fixed timestep `ft` small enough, `ft * damping` should never exceed `1.0` and the system remains stable and well behaved.
 
+> &#x2705; 上面这个方法能解决问题的原理是，不管dt多大，都把它分解为以ft为步长走n次，那么总的dt一样多，一次对应的n一样多，结果就会是一样的。  
 
 ## The Half-Life   
 
@@ -152,7 +174,7 @@ But there is another, potentially better way to fix the problem. Instead of fixi
 
 \begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,1-\frac{1 }{0.5}^{-dt/halflife})  \\\\ x_{t+dt} & = \\text {lerp }(x_t,g,1-2^{-dt/halflife})   \end{align*}
 ​
-
+> &#x2705; 似乎是在上一段的基础上，固定住factor并把ft变成一个更有意义的可调参数。  
 
 This simplifies the code and gives a more intuitive parameter to control the damper. Now we don't ever need to worry about if we've set the `damping` too large or made the fixed timestep `ft` small enough.
 
@@ -171,6 +193,20 @@ float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
     return lerp(x, g, 1.0f - expf(-(0.69314718056f * dt) / (halflife + eps)));
 }
 ```
+
+> &#x2705; 公式推导：
+> 定义
+> $$
+> 2^{-\frac{dt}{halflife}} = y，
+> $$
+> 对两边取以2为底对的对数，并把以2为底转换为以e为底，得：
+> $$
+> -\frac{dt}{halflife} = \log_2^y = \frac{\ln y}{\ln 2}
+> $$
+> 通过化简，求出：
+> $$
+> y = \exp(-\frac{dt * \ln 2}{halflife})
+> $$
 
 The change of base theorem tells us another thing: that changing the rate *of decay* is no different from scaling the `dt` in the exponent. So using the `halflife` to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the *rate of decay* like in our previous setup.
 
@@ -204,7 +240,7 @@ Perfect!
 
 The exact damper works well in a lot of cases, but has one major issue - it creates discontinuities when the goal position changes quickly. For example, even if the object is moving in one direction, it will immediately switch to moving in the opposite direction if the goal changes direction. This can create a kind of annoying sudden movement which you can see in the previous videos.
 
-The problem is that there is no velocity continuity - no matter what happened in the previous frames the damper will always move toward the goal. Let's see how we might be able to fix that. We can start by looking again at our old broken bad damper, and examining it in a bit more detail:
+The problem is that there is no **velocity continuity** - no matter what happened in the previous frames the damper will always move toward the goal. Let's see how we might be able to fix that. We can start by looking again at our old broken bad damper, and examining it in a bit more detail:
 
 \begin{align*} x_{t+dt} & = \text {lerp }(x_t,g,dt \cdot damping)  \\\\ x_{t+dt} & =  x_t + dt \cdot damping \cdot (g-x_t)   \end{align*}
  
@@ -214,17 +250,19 @@ We can see that this looks a bit like a physics equation where \\(damping \cdot 
 ​\begin{align*} \upsilon_t & = damping \cdot (g-x_t)  \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
  
 
-This system is like a kind of particle with a velocity always proportional to the difference between the current particle position and the goal position. This explains the discontinuity - the velocity of our damper will always be directly proportional to the difference between the current position and the goal without ever taking any previous velocities into account.
+This system is like a kind of **particle with a velocity always proportional to the difference between the current particle position and the goal position**. This explains the discontinuity - the velocity of our damper will always be directly proportional to the difference between the current position and the goal without ever taking any previous velocities into account.
 
 What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the *stiffness*.
 
 ​\begin{align*} \upsilon_{t+dt} & = \upsilon_t +dt \cdot stiffness \cdot (g-x_t)  \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
- 
+
+> &#x2705; 速度第一项：当前速度，速度第二项：使达到目标状态的速度
 
 But the problem now is that this particle wont slow down until it has already over-shot the goal and is pulled back in the opposite direction. To fix this we can add a `q` variable which represents a goal velocity, and add another term which takes us toward this goal velocity. This we will scale by another new parameter which we will call the *damping* (for reasons which will become clearer later in the article).
 
 ​\begin{align*} \upsilon_{t+dt} & = \upsilon_t +dt \cdot stiffness \cdot (g-x_t) + dt \cdot damping \cdot (q-\upsilon_t)   \\\\ x_{t+dt} & =  x_t + dt \cdot \upsilon_t \end{align*}
 
+> &#x2705; 速度第一项：当前速度，速度第二项：使达到目标状态的速度，速度第三项：目标速度
 
 When `q` is very small we can think of this like a kind of friction term which simply subtracts the current velocity. And when `q=0` and `dt⋅damping=1` we can see that this friction term actually completely removes the existing velocity, reverting our system back to something just like our original damper.
 
@@ -492,7 +530,7 @@ But what does this negative square root actually correspond to? Does it mean tha
 
 In fact we didn't notice when we came up with our original equation to model the behavior of the spring, but there are three different ways this spring can act depending on the relative sizes of the `damping` and `stiffness` values.
 
-If \\(s-\frac{d^2}{4} > 0\\) it means the spring is *under* damped, causing oscillations to appear with motions governed by the equations we already derived. If \\(s-\frac{d^2}{4} > 0\\) it means the spring is *critically* damped, meaning it returns to the goal as fast as possible without extra oscillation, and if \\(s-\frac{d^2}{4} > 0\\) it means the spring is *over* damped, and will return slowly toward the goal.
+If \\(s-\frac{d^2}{4} > 0\\) it means the spring is *under* damped, causing oscillations to appear with motions governed by the equations we already derived. If \\(s-\frac{d^2}{4} = 0\\) it means the spring is *critically* damped, meaning it returns to the goal as fast as possible without extra oscillation, and if \\(s-\frac{d^2}{4} < 0\\) it means the spring is *over* damped, and will return slowly toward the goal.
 
 In each of these cases there is a different set of basic equations governing the system, leading to a different derivation just like the one we completed. I'm going to save us a bit of time and write them all our here rather than going through the trial and error process of examining different guesses at equations and seeing if they fit:
 
@@ -971,7 +1009,11 @@ This is exactly the method we use to predict the future character trajectory in 
 
 In game animation, [inertialization](https://www.youtube.com/watch?v=BYyv4KTegJI) is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.
 
+> &#x2753; cross-fade blend是什么？
+
 The idea is this: if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.
+
+> &#x2705; transition point：转换点，第一段动画开始往第二段动画切的点
 
 In code it looks something like this. First at the transition point we record the offset in terms of position and velocity between the currently playing animation `src` and the one we're going to switch to `dst`:
 
@@ -1009,6 +1051,13 @@ Here you can see it in action:
 As you can see, each time we toggle the button there is a transition between the two different streams of animation (in this case two different `sin` waves shown in red), while the inertialization smoothly fills in the difference (shown in blue).
 
 Unlike the original presentation which uses a polynomial to blend out the offset over a specific period, a spring does not provide a fixed blend time and can easily overshoot. However the exponential decay does mean it tends to look smooth and blends out to something negligible at a very fast rate. In addition, since there is no need to remember the last transition time the code is very simple, and because we use the `decay_spring_damper_exact` variant of the spring it can be made exceptionally fast, in particular when all the blends for the different bones use the same `halflife` and `dt` to update.
+
+> 用spring的做动作切换的特点：
+> 1. 没有固定的blender时间
+> 2. 很容易会overshoot
+> 3. 结果平滑
+> 4. 混合速度快
+> 5. 不需要记住上一帧的状态
 
 This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in [Learned Motion Matching](https://www.daniel-holden.com/page/learned-motion-matching).
 

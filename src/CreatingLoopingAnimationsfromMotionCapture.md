@@ -27,14 +27,23 @@ If we have a clip of animation we want to make loop there are essentially two th
 
 Luckily, one of my favorite tools in animation programming can be used for exactly this: [inertialization](https://www.daniel-holden.com/page/spring-roll-call#inertialization). And while most often this is used for stitching together two different animations at runtime, we can also use it offline to *stitch an animation to itself* creating what is essentially a looped animation.
 
+> &#x1F50E; inertialization：https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#inertialization
+> 
+> if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.
+> &#x2705; 用spring damper来生成offset，可使最终的轨迹和速度都是连续的。
+
 For example, given something like the following:     
 
 ![](./assets/07-01.png) 
 
 We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a [critically damped spring](https://www.daniel-holden.com/page/spring-roll-call#critical):   
 
-> &#x2705; 用critically damped spring的方式生成difference的系数，加到曲线上。  
-> &#x2753; 这跟惯插有什么关系？  
+> &#x2705; 用critically damped spring的方式生成difference的系数，加到曲线上。   
+> &#x1F50E; critically damped spring: https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#over-under-and-critical-damping
+> 
+> &#x2705; 用damper spring来实现offset decay涉及到大量的公式以及参数的求解。critically damped spring是其中一种场景，这种场景下参数w = 0。  
+> &#x2705; w is the frequency of oscillations。w = 0代表震荡频率不会发生变化。  
+
 
 ![](./assets/07-02.png)   
 
@@ -61,6 +70,7 @@ void compute_start_end_positional_difference(
 {
     // Check we have at least 2 frames of animation
     assert(pos.rows >= 2);
+    // rows为第一维，代表不同帧。cols为第二维，代表不同关节。
 
     // Loop over every joint
     for (int j = 0; j < pos.cols; j++)
