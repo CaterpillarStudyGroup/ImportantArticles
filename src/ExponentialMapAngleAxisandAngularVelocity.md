@@ -1,8 +1,8 @@
-转载出处：https://www.daniel-holden.com/page/cubic-interpolation-quaternions
+转载出处：https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity
 
 # Exponential Map, Angle Axis, and Angular Velocity  
 
-## Created on July 10, 2021, 5:16 p.m.
+Created on July 10, 2021, 5:16 p.m.
 
 If you've used rotations when programming graphics, physics, or video games, there are three concepts you've probably seen mentioned, but may not have understood exactly what the difference was between them all:
 
@@ -20,7 +20,11 @@ But before we go into more detail there are a few more concepts which we need to
 
 The first, which does not seem to have a standard name (sometimes I've heard it called the "helical" representation of a rotation), is to convert a rotation into angle-axis, take the axis, and scale it by the angle of the rotation. The result is a new 3D vector which I like to call the **scaled-angle-axis representation**.
 
+> &#x2753; scaled angle axis与angle axis是什么区别？scale it by the angle是什么意思？  
+
 The second is simply the inverse of the exponential map - a function which takes a rotation in some form (e.g. a quaternion, or rotation matrix), and converts it into the corresponding exponentially mapped 3D vector. Usually this is simply called the **log** of a rotation.
+
+> &#x2753; 和exponential有什么关系？
 
 The confusion around all these three concepts comes down to the fact that the exponential map, the angle-axis representation, and the angular velocity all do more or less the same thing... *sort of*:
 
@@ -28,10 +32,23 @@ The confusion around all these three concepts comes down to the fact that the ex
   - In other words, the "log" computes the "axis" of a rotation, scaled by the "half angle" of a rotation.   
   - Or putting it another way, if we want to compute the angle and axis of a rotation we can take its "log", and the direction of the result will represent the "axis", while the magnitude will represent half the "angle" of rotation around that axis.   
 
+> &#x2705; angle, axis = log(vector)  
+> scaled_angle_axis = half(angle) * axis
+
 The angular velocity is related in a slightly different way: in essence it's the difference between two rotations, stored in the "scaled-angle-axis" representation, and scaled by some "dt":   
 
   - If we have two rotations, and we multiply one by the inverse of the other, convert the result to scaled-angle-axis, and divide by the "dt" we have exactly the "angular velocity" between these rotations - just as if we were computing the velocity via finite difference.   
+
+> &#x2705; 求两个rotation之间的变化速度：   
+> diff = r1 * inverse(r2)  
+> saa = scaled_angle_axis(diff)  
+> av = saa / dt
+
   - If you have a set of angular velocities you want to integrate, you simply multiply them by the "dt", convert them all back from the scaled-angle-axis format to whatever rotation format you are using, and multiply all those rotations together.   
+
+> &#x2705; 已知一个角度和一个角速度，求另一个角度：  
+> saa = av * dt  
+> r2 = saa * r1
 
 Maybe things will be clearer with a bit of code...   
 

@@ -25,11 +25,13 @@ If we have a clip of animation we want to make loop there are essentially two th
 
 > &#x2705; 看样子，本文的目的不是小样本生成。而是一段动作序列的首尾拼接，达到序列级的循环。  
 
+## 方式一： inertialization
+
 Luckily, one of my favorite tools in animation programming can be used for exactly this: [inertialization](https://www.daniel-holden.com/page/spring-roll-call#inertialization). And while most often this is used for stitching together two different animations at runtime, we can also use it offline to *stitch an animation to itself* creating what is essentially a looped animation.
 
 > &#x1F50E; inertialization：https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#inertialization
 > 
-> if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.
+> if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.  
 > &#x2705; 用spring damper来生成offset，可使最终的轨迹和速度都是连续的。
 
 For example, given something like the following:     
@@ -114,6 +116,7 @@ void compute_start_end_rotational_difference(
 
 Note that we convert the rotational offset into [scaled-angle-axis space](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) to allow us to treat it like a vector and combine it with angular velocities.  
 
+> &#x1F50E; scaled angle axis: convert a rotation into angle-axis, take the axis, and scale it by the angle of the rotation. The result is a new 3D vector which I like to call the scaled-angle-axis representation.  
 > &#x2705; 速度的混合都是在scaled-angle-axis space上做的。  
 
 Then, given our inertialization function which decays the difference...
@@ -133,9 +136,13 @@ vec3 decayed_offset(
 }
 ```
 
-> &#x2753; `halflife_to_damping`和`fast_negexpf`分别是什么函数？  
-> &#x2753; j1应该是个外插值，因为内插值可以直接通过函数得到。为什么要外插？返回值是什么含义？  
-> &#x2753; 为什么x和v注释为Initial，从下面的调用上看是ratio * offset。
+> &#x2705; 函数目的：假设当前offset = x，offset velocity = v。期望的offset 衰减速度为：经过halflife时间之后，offset衰减为offset/2。求，dt时间之后offset为多少？  
+> &#x1F50E; `halflife_to_damping`：https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#the-half-life-and-the-frequency  
+> &#x1F50E; `decayed_offset`：https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#the-critical-spring-damper  
+> &#x1F50E; `fast_negexpf`: https://caterpillarstudygroup.github.io/ImportantArticles/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html#the-half-life  
+> &#x2705; `decayed_offset`把offset当成x来做，所以target x = 0且Target v = 0。相当于`decay_spring_damper_exact`版本。  
+> &#x2705; `halflife_to_damping`：根据damping系数求出offset下降到一半需要的时间。  
+> &#x2705; `fast_negexpf`：相当于`ln(x)`函数  
 
 We can use it to compute the offset we need to apply at each frame.
 
@@ -144,9 +151,9 @@ void compute_inertialize_both_offsets(
     slice2d<vec3> offsets,
     const slice1d<vec3> diff_pos,
     const slice1d<vec3> diff_vel,
-    const float halflife_start, 
-    const float halflife_end, 
-    const float ratio,
+    const float halflife_start,  // 第二段开始处的decay速度
+    const float halflife_end,   // 第一段结束处的decay速度
+    const float ratio,  // 第一段结束处需要调整的offset占整个offset的比例
     const float dt)
 {
     // Check ratio of correction for start
@@ -177,10 +184,9 @@ void compute_inertialize_both_offsets(
 }
 ```
 
-
 And then apply this offset to the actual animation.
 
-> &#x2753; 同时apply位置和速度，怎么保证二者是兼容的？  
+> &#x2753; 同时apply位置和旋转，怎么保证二者是兼容的？  
 
 ```c++
 void apply_positional_offsets(
@@ -224,19 +230,39 @@ void apply_rotational_offsets(
 
 And this is how it looks on the character:
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/inertialize_both.m4v
-
+<iframe 
+src="./assets/inertialize_both.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
 
 Unfortunately the spring-based inertializer has a problem here... if we slow down the animation we can see that there is a **small discontinuity at the end of the loop**. This is because even with a reasonably short half-life the exponential decay still produces some tiny residual offset at the end of the animation:
 
-> &#x2753; exponential decay 与residual offset是什么关系？  
+> &#x2705; offset是以指数的形式下降的，因此只会无限接近0，会存在residual offset  
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/inertialize_slowmo.m4v
+<iframe 
+src="./assets/inertialize_slowmo.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
 
+
+## 方式二： cubic inertialization
 
 An inertializer **with a fixed fade out time** fixes this. For example, here is a basic cubic inertialization function we can use instead that decays exactly to zero by blendtime:
 
 > &#x2705; 要求在固定帧数内完成插值  
+> &#x2753; cubic inertialization是什么？
 
 ```c++
 vec3 decayed_offset_cubic(
@@ -263,7 +289,18 @@ Now we can be sure our offsets will definitely be blended out in time:
 
 Which removes the discontinuity.
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/inertialize_cubic.m4v
+<iframe 
+src="./assets/inertialize_cubic.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
+
+## 方式三： linear fade
 
 Something else we can do is spread the offset over the whole animation using a kind of linear fade rather than distributing it just at either end:
 
@@ -272,12 +309,20 @@ Something else we can do is spread the offset over the whole animation using a k
 
 The problem here is that doing so naively introduces a velocity discontinuity. Which again is visible if we watch the loop in slow-mo:
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/linear.m4v
+<iframe 
+src="./assets/linear.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
 
+## 方式四：linear face + cubic inertializers
 
 This velocity discontinuity can be removed by again using some inertializers, but in this case using them just to blend out the velocity difference at either end:
-
-> &#x2753; 位置平滑与速度平滑的不兼容，为什么inertializers能保证兼容？  
 
 ![](./assets/07-07.png) 
 
@@ -343,16 +388,35 @@ void compute_linear_inertialize_offsets(
 
 Note that the velocity introduced by the linear fade needs to be accounted for when we apply the inertializers, but in this case because it's the same on both the start and the end of the animation it cancels itself out. As we will see later, if the velocity introduced by our initial offset is different at the start and end we need to account for it when setting the initial velocity of the inertializers.
 
-> &#x2753; linear fade会导致运动速度的变化。但为什么在这个场景中不用考虑呢？  
+> &#x2753; linear fade产生的offset是匀速运动，因此所产生的速度变化对所有帧是一致的，不影响velocity offset。  
 
 That aside, here is what this looks like on the character:
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/linear_inertialize.m4v
- 
+<iframe 
+src="./assets/linear_inertialize.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
 
 This spreads the adjustment over the whole animation which in many cases is very useful and generally looks good for short animations. However, in certain cases it introduces a kind of "**drift**" to the animation which might not be what we want and can introduce foot sliding:
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/linear_comparison.m4v
+<iframe 
+src="./assets/linear_comparison.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
+
+## 方式五：soft fade + cubic inertializers
 
 One idea is to limit the linear fade to just the start and end. Here we can use a little function I'm calling "softfade", to make a linear ramp that fades the offset out. The alpha parameter here can be used to adjust the "hardness" of the ramp.
 
@@ -545,7 +609,18 @@ Using this we can **adjust the fade-out time to just a section** of the animatio
 
 > &#x2705; fadeout会引入drift，因此控制fadeout的范围。  
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/softfade.m4v
+<iframe 
+src="./assets/softfade.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
+
+## Handle the root
 
 We also need to handle the root carefully. If we want it to loop in the world space we can use any of the techniques above, however more often we only want it to loop in the character space - or to be more specific - we just want to remove any potential velocity discontinuity at the loop transition point.
 
@@ -625,7 +700,17 @@ And here is a kind of top-down 2D visualization of what this is effectively doin
 
 Now when we play back the looped clip and let the displacement of the root accumulate we can see that even for clips with very different root velocities at the start and end we don't see any discontinuity:
 
-> &#x1F50E; https://www.daniel-holden.com/media/uploads/Looping/root_motion.m4v
+<iframe 
+src="./assets/root_motion.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe>
+
 
 Although I've provided some specific implementations here, there are practically infinite ways to produce looped animations using this idea.
 
