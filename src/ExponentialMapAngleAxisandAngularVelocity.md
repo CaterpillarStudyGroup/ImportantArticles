@@ -58,7 +58,11 @@ Because all of these concepts are so interlinked, when it comes down to actually
 
 But it can actually be beneficial to think more carefully about the differences between all of them. Consider the identity rotation: the angle is clearly zero, but in angle-axis the axis could be any axis. This means you need to pick an arbitrary axis for when the rotation is close to the identity and this produces a weird edge case: converting from angle-axis and back again can give you a different result to what you started with.  
 
+> &#x2705; identity rotation 在轴角表示法中是不唯一的。  
+
 Similarly, converting from angle-axis to another rotation format is often useful for getting rotations from user input or other controls, but converting from some rotation format to angle-axis is rarely required for any other reason than computing angular velocities, scaled-angle-axis, or the "log" function.   
+
+> &#x2705; 轴角表示最大的作用是计算角速度
 
 In fact if we understand the concepts well, all these functions can have relatively simple implementations which make exactly how they work clear too.   
 
@@ -87,7 +91,7 @@ vec3 quat_log_naive(quat q)
 
 But this has some issues. Can you spot them? Well in `quat_log_naive` we can get a division by zero when `length` is zero - which will definitely be the case if we have any quaternion close to the identity quaternion. While in `quat_exp_naive` we have a division by zero when `halfangle` is close to zero... which again will be the case when we have the zero vector (i.e. identity rotation) as input.   
 
-And with that aside, if you actually try these functions you'll notice they still occasionally produce `NaNs`. This is because the `w` component of the quaternion can often be slightly smaller or larger than `-1` or `1` due to the floating point error that accumulates when multiplying quaternions together - which produces `NaN` when we pass it to the `acosf` function.   
+And with that aside, if you actually try these functions you'll notice they still occasionally produce `NaNs`. This is because **the `w` component of the quaternion can often be slightly smaller or larger than `-1` or `1`** due to the floating point error that accumulates when multiplying quaternions together - which **produces `NaN`** when we pass it to the `acosf` function.   
 
 One way to fix these issues is to add some checks, and use an approximation when the rotation is very close to the identity:
 

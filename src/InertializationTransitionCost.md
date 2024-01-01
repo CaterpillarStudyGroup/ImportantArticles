@@ -1,10 +1,12 @@
-转载出处：https://www.daniel-holden.com/page/perfect-tracking-springs
+转载出处：https://www.daniel-holden.com/page/inertialization-transition-cost
 
 # Inertialization Transition Cost
 
-## Created on June 2, 2022, 3:21 p.m.
+Created on June 2, 2022, 3:21 p.m.
 
 Something which is often required by animation systems (Motion Matching being a key example) is a way to compute a "cost" associated with a particular transition between two frames of animation.
+
+> &#x2705; cost：转移代价
 
 In Motion Matching this is typically done by taking the difference between ["features"](https://montreal.ubisoft.com/en/introducing-learned-motion-matching/) of both the source and destination animations. Usually, the positions of a few key joints (such as the feet), as well as their velocities. The magnitudes (or squared magnitudes) of the differences of these feature values is computed, and then added together using some user specified or automatically computed weights.
 

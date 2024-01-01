@@ -1,11 +1,11 @@
-转载出处：https://www.daniel-holden.com/page/perfect-tracking-springs
+转载出处：https://www.daniel-holden.com/page/scalar-velocity
 
 
 # Scalar Velocity
 
-## Created on May 4, 2022, 9:34 p.m.
+Created on May 4, 2022, 9:34 p.m.
 
-In [a previous post] (https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) I explained what the angular velocity is, how to compute it, and how it relates to the angle-axis representation of rotations, as well as the so called *exponential map*.
+In [a previous post](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) I explained what the angular velocity is, how to compute it, and how it relates to the angle-axis representation of rotations, as well as the so called *exponential map*.
 
 Today I want to talk about something different, but similar: scale - as in the scale of objects we might place in a 3D world. And with that I have a question for you: what does *velocity* mean when it comes to *scale*. What is scalar *velocity*?
 
@@ -35,7 +35,7 @@ But if we do this the growth appears fast at the beginning, but slows down as th
 ![](./assets/8-1.png) 
 
 
-The reason this doesn't really work is because, scales, just like rotations, naturally compose using multiplication, rather than addition.
+The reason this doesn't really work is because, scales, just like rotations, **naturally compose using multiplication**, rather than addition.
 
 In fact we can see this, if we instead *multiply* the scale by some fixed rate each frame.
 
