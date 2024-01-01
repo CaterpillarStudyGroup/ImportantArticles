@@ -1,9 +1,9 @@
-转载出处：https://www.daniel-holden.com/page/perfect-tracking-springs
+转载出处：https://www.daniel-holden.com/page/visualizing-rotation-spaces
 
 
 # Visualizing Rotation Spaces
 
-## Created on June 13, 2021, 3:54 p.m.
+Created on June 13, 2021, 3:54 p.m.
 
 There are many different ways we can represent the rotation of an object in 3D space. The most classic of these is the [Rotation Matrix](https://en.wikipedia.org/wiki/Rotation_matrix), but there are others you might have come across such as [Euler Angles](https://en.wikipedia.org/wiki/Euler_angles), [Quaternions](https://www.3dgep.com/understanding-quaternions/), and the [Exponential Map](http://webhome.cs.uvic.ca/~blob/courses/485c/notes/pdf/expmap.pdf).
 
@@ -23,19 +23,42 @@ Euler angles are sets of three angles each of which represents a rotation around
 
 Right away we can see some interesting things about this 3D space - first, it repeats itself periodically every \\(2\pi \\) - as, no matter what the axis, rotating by \\(2\pi+x \\) is the same as just rotating by `x`.
 
+> &#x2705; 属性一：以\\(2\pi \\)为周期重复。  
+
 This periodic repetition isn't like a `mod` function with a sudden discontinuity - instead it's smooth like a `sin` function. If we look at values less than zero we can see this same periodic repetition into the negative space too, as rotating by \\(-x \\) is the same as \\(2\pi+x \\).
+
+> &#x2705; 属性二：周期交界处连续。  
 
 A weird thing about this space is that if you look very closely there are duplicate regions inside this 3D cube of rotations. Depending on the axes we choose and the order we apply our rotations there can sometimes be multiple ways to get to the same final rotation. Similarly, if we switch the order of rotations we get a completely different space.
 
+> &#x2705; 属性三：周期内（\\(2\pi \\)范围内）有重复。即同一状态可能有多种表达。    
+
 For some extreme rotations we can also face the issue of [gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock), where a specific combination of two rotations can make the third unable to do anything, rendering a whole region of the space the same.
 
-![](./assets/v-2.png) 
+> &#x2705; 属性四：gimbal lock
+
+<iframe 
+src="./assets/euler_angles.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe> 
 
 You can interpolate in this space, but the result is not going to be the shortest path between between the two rotations, and depending on the way the angles are combined it can result in all sorts of weird twists and swings as we pass through different regions of the space.
 
+> &#x2705; 属性五：插值不友好。会引入额外的自转或旋转。  
+
 There are also no "holes" in this space - every point within it represents a valid rotation, from the origin outward to infinity. We can use this to represent rotations which "wrap around" multiple times by using these larger repetitions. This can be both good and bad depending on what our application is - we may want to distinguish between rotations of \\(2\pi\\) and \\(4\pi\\) or we may prefer they were always both encoded by the same value.
 
+> &#x2705; 属性六：所有3D空间的取值都是合法的。  
+
 If we look at an individual axis we might think this space acts like normal angles do, looping around every \\(2\pi\\), but expand this to three dimensions and while we *can* represent any rotation in 3D space we want, generally we can't do so in a consistent or regular way and inside this cube we have weird deformations that change based on the axes of rotation and the order of application.
+
+> &#x2705; 属性七：在3D中各向异性。只有沿着特定轴才会表现出\\(2\pi\\)周期。  
 
 ---
 
@@ -45,19 +68,29 @@ Quaternions are four dimensional numbers that can be used to represent rotations
 
 I like to visualize the `w` dimension on the vertical axis, and the `x` and `y` dimensions on the other two axes, meaning that the identity quaternion `[1 0 0 0]` is encoded by the point right at the north pole of the sphere:
 
+> &#x2705; 3D坐标为(w, x, y)  
+
 ![](./assets/v-3.png) 
 
 As we move down the surface of the sphere from the top to bottom we start to represent rotations of greater amounts up until we get to the equator, which represents rotations of \\(2\pi\\) (or \\(-\pi\\)) around each dimension. If we keep moving down we start to represent rotations of over \\(\pi\\), until we get back down to the south-pole, which encodes a full rotation of \\(2\pi\\).
 
-This gives us our first interesting insight into quaternions - the south-pole encodes the same rotation as the north-pole - the identity rotation. In fact, the whole of the southern hemisphere encodes rotations which are also represented in the northern hemisphere and we can switch between these two simply by negating the quaternion. While the north and south hemispheres encode the same rotation in absolute terms, we usually say the southern hemisphere represents rotations "going the long way round" - e.g. rotating by \\(\frac{3}{2} \pi \\) instead of  \\(-\frac{1}{2} \pi \\). This fact that quaternions can have two different encodings for the same rotation is the so called "double cover" property of the quaternions.
+> &#x2705; \\(\cos(\frac{0}{2})=1\\), \\(\cos(\frac{\pi}{2})=0\\), \\(\cos(\frac{2\pi}{2})=-1\\)
+
+This gives us our first interesting insight into quaternions - the south-pole encodes the same rotation as the north-pole - the identity rotation. In fact, the whole of the southern hemisphere encodes rotations which are also represented in the northern hemisphere and we can switch between these two simply by negating the quaternion. While **the north and south hemispheres encode the same rotation in absolute terms**, we usually say **the southern hemisphere represents rotations "going the long way round"** - e.g. rotating by \\(\frac{3}{2} \pi \\) instead of  \\(-\frac{1}{2} \pi \\). This fact that quaternions can have two different encodings for the same rotation is the so called "double cover" property of the quaternions.
 
 This may sound odd at first but it isn't any different to the Euler angles in some respect - these also have multiple "covers" of the space of rotations - in fact the Euler angles have infinite "covers" - there is another one each time the space repeats. And when you look at it this way it may even seem odd that the quaternions only have two covers - they can only represent rotations between \\(-2 \pi \\) and  \\(+2 \pi \\) because they are limited to this finite surface on the hyper-sphere.
+
+> &#x2705; 属性一：每个四元数有两种表示。  
 
 ![](./assets/v-4.png) 
 
 The normalized quaternions have a big "hole" in the middle of the sphere (and outside the sphere) of values that don't (by default) represent a valid rotation. And even if we consider un-normalized quaternions as valid rotations (we say they can just be normalized), there is still the point right at the origin which cannot represent a valid rotation.
 
+> &#x2705; 属性二：存在不合法的表示。  
+
 If we want to interpolate two quaternions there are two ways to do it - we can linearly interpolate and then re-normalize to get back onto the surface of the sphere, or we can interpolate along the surface of the sphere (the so called [slerp](https://en.wikipedia.org/wiki/Slerp) function). Both can work fine as long as we are careful when we interpolate rotations from two different hemispheres of the sphere as we might find we end up "going the long way around" by mistake.
+
+> &#x2705; 属性三：可直接插值，但对于两个半球的表示的插值，可能插出不合适的路径。    
 
 I like to think of the quaternion space of rotations in terms of its two hemispheres - with all rotations at the top representing "short" (less than \\(\pi \\) in magnitude) rotations, and all those at the bottom going "the long way round". When we multiply quaternions we are essentially traveling around the surface of this sphere as if flying a plane around the globe. No matter how many rotations we combine we never end up off the surface, but we can quickly lose track of (or meaning in) how many times we may have looped around and in which hemisphere we are now located.
 
@@ -67,15 +100,35 @@ I like to think of the quaternion space of rotations in terms of its two hemisph
 
 The [exponential map](https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity) is an encoding of a rotation where we take the axis of rotation, and scale it by the angle of rotation around that axis, divided by two. This produces a 3D vector space where the origin encodes the identity rotation, and further rotations along each axis are encoded by vectors extending in those directions.
 
+> &#x2705; angle * axis / 2  
+> &#x2705; (0, 0, 0)代表identity
+
 ![](./assets/v-5.png) 
 
 Unlike the Euler angle space, which is shaped like a cube, the exponential map produces a space like a kind of solid sphere, with "shells" of identity rotation every \\(\pi \\) distance from the origin and additional "layers" which encode the same set of rotations on top.
 
-![](./assets/v-6.png) 
+> &#x2705; 半径为\\(\pi \\)的地方也是identity  
 
-Both linear interpolation and spherical interpolation can work in this space, and as long as you don't interpolate between "layers" by mistake, they both work pretty nicely. Like the Euler angles, this space provides infinite "covers", and as we move further away from the origin we can represent multiple "wrap arounds" of rotation up to infinity. There are also no undefined points in the space - every point represents a valid rotation and the identity rotation is neatly at zero.
+<iframe 
+src="./assets/exponential_map.mp4" 
+scrolling="no" 
+border="0" 
+frameborder="no" 
+framespacing="0" 
+allowfullscreen="true" 
+height=600 
+width=800> 
+</iframe> 
+
+**Both linear interpolation and spherical interpolation can work in this space**, and as long as you don't interpolate between "layers" by mistake, they both work pretty nicely. Like the Euler angles, this space provides infinite "covers", and as we move further away from the origin we can represent multiple "wrap arounds" of rotation up to infinity. There are also no undefined points in the space - every point represents a valid rotation and the identity rotation is neatly at zero.
+
+> &#x2705; 属性一：方便插值  
+> &#x2705; 属性二：无非法值  
+> &#x2753; interpolate between "layers"是什么意思？为什么说这是错误的？  
 
 This space has a lot of nice properties, but it lacks one very important one - an efficient way of composing rotations - which is why we usually need to convert back to the quaternion representation first. Sad, because other than that I think it's a pretty cool looking space!
+
+> &#x2705; 属性三：不能进行进行旋转的组合。   
 
 ---
 
