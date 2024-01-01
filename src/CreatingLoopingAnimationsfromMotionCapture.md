@@ -393,7 +393,7 @@ Note that the velocity introduced by the linear fade needs to be accounted for w
 That aside, here is what this looks like on the character:
 
 <iframe 
-src="./assets/linear_inertialize.mp4" 
+src="./assets/linear_inertialize.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 

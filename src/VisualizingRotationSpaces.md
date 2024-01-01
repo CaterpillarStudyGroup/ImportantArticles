@@ -136,7 +136,7 @@ This space has a lot of nice properties, but it lacks one very important one - a
 
 If you want to try out any of the these visualizations yourself here is the quick and dirty code I used to generate these images/videos. You can also see the exact algorithm I used to color the points - essentially I take the axis of rotation as the RGB color, and then interpolate it with grey based on the amount of rotation around that axis (this makes the identity rotation grey).
 
-```c++
+```python
 import numpy as np
 from mayavi import mlab
 
