@@ -3,6 +3,7 @@
 [Important Articles]()
 
 - [Introduction](README.md)
+- [如何高效读论文](./ReadPapers.md)
 - [Perfect Tracking with Springs](PerfectTrackingwithSprings.md)
 - [Cubic Interpolation of Quaternions](CubicInterpolationofQuaternions.md)
 - [Creating Looping Animations from Motion Capture](CreatingLoopingAnimationsfromMotionCapture.md)
