@@ -13,6 +13,8 @@
 - [Scalar Velocity](ScalarVelocity.md)
 - [Joint Limits](JointLimits.md)
 - [Visualizing Rotation Spaces](VisualizingRotationSpaces.md)
+- [Tutorial: Video Diffusion Models](TutorialVideoDiffusionModels.md)
+
 
 
 
