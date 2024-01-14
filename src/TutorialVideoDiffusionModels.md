@@ -570,7 +570,8 @@ P62
 
 Cascaded generation
 
-From static to magic   
+**From static to magic**   
+
 Add motion to a single image or fill-in the in-betw    
 
 ![](./assets/08-62.png) 
