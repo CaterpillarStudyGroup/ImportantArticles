@@ -1034,8 +1034,488 @@ P107
 | ![](./assets/08-107-1.png) | ![](./assets/08-107-2.png) | ![](./assets/08-107-3.png) |
 | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022. | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
 
+P108  
+# 2 Video Generation
+
+## 2.5 Storyboard
+ 
+P109  
+![](./assets/08-109.png) 
+
+P110 
+## opyright©Mike Shou, NUS
+
+Human can imagine what does the scene look like “roughly”
+
+“Two men stand in the airport waiting room and stare at the 
+airplane thru window”   
+
+What is in your mind now?
+
+Storyboard image from deviantart.com.
+
+
+P111
+## What is a storyboard?
+
+A concept in film production
+
+![](./assets/08-111.png) 
+
+ - Rough sketches/drawings with notes    
+ - Example: Inception by Christopher Nola   
+
+Storyboard image from deviantart.com.    
+
+
+P112 
+## What is a storyboard?
+
+A concept in film production
+
+ - How to generate such a storyboard?    
+ - As humans, over the years, we have acquired such “visual prior” about object location, object shape, relation, etc.   
+ - Can LLM model such visual prio？    
+
+Storyboard image from deviantart.com.   
+
+P113   
+## VisorGPT
+
+Can we model such visual prior with LLM
+
+![](./assets/08-113.png) 
+
+Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.
+
+P114   
+## VisorGPT
+
+Prompt design
+
+![](./assets/08-114-1.png) 
+
+![](./assets/08-114-2.png) 
+
+Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.   
+
+P118   
+## VisorGPT
+
+Modeling Visual Prior via Generative Pre-Training
+
+![](./assets/08-118.png) 
+
+Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
+
+P119  
+## VisorGPT
+
+Sample from the LLM which has learned visual prior
+
+![](./assets/08-119.png) 
+
+Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
+
+P120   
+## VisorGPT
+
+Sample from the LLM which has learned visual prior
+
+![](./assets/08-120.png) 
+
+Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.  
+
+P121   
+## VideoDirectorGPT
+
+Use storyboard as condition to generate video
+
+![](./assets/08-121.png) 
+
+Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,” arXiv 2023.   
+
+
+P122  
+## VideoDirectorGPT
+
+Use storyboard as condition to generate video
+
+![](./assets/08-122.png) 
+
+Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,” arXiv 2023.    
+
+P124   
+## Long-form Video Prior
+
+GPT can be trained to learn better long-form video prior (e.g., object position, relative size, human interaction)
+
+**A new dataset - Storyboard20K**
+
+![](./assets/08-124.png) 
+
+Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,” to be released in 2024.    
+<https://github.com/showlab/Long-form-Video-Prior>   
+
+
+P125  
+## Storyboard: More Works
+
+|||
+|--|--|
+| ![](./assets/08-125-1.png)  |  ![](./assets/08-125-2.png)  |
+| **Dysen-VDM** (Fei et al.)<br>Storyboard through scene graphs<br>“Empowering Dynamics-aware Text-to-Video Diffusion with Large Language Models,” arXiv 2023. | **DirectT2V** (Hong et al.) <br> Storyboard through bounding boxes <br> “Large Language Models are Frame-level Directors for Zero-shot Text-to-Video Generation,” arXiv 2023. |
+|  ![](./assets/08-125-3.png)  |  ![](./assets/08-125-4.png)  |
+| **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023.  |   
+
+
+P126   
+## 2 Video Generation
+
+## 2.6 Long video generation
+
+
+P127  
+
+![](./assets/08-127.png) 
+
+
+P128  
+## NUWA-XL  
+
+Recursive interpolations for generating very long videos
+
+**Method Proposed**
+
+ - A “diffusion over diffusion” architecture for very long video generation
+
+**Key Idea**
+
+ - Key idea: coarse-to-fine hierarchical generation
+
+**Other Highlights**
+
+ - Trained on very long videos (3376 frames)
+ - Enables parallel inference
+ - Built FlintstonesHD: a new dataset for long video generation, contains 166 episodes with an average of 38000 frames of 1440 × 1080 resolution
+
+Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.   
+
+P129  
+## NUWA-XL
+
+Recursive interpolations for generating very long videos
+
+**Generation Pipeline**
+
+ - Storyboard through multiple text prompts   
+
+![](./assets/08-129.png) 
+
+Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023. 129
+
+P130  
+## NUWA-XL
+
+Recursive interpolations for generating very long videos
+
+**Generation Pipeline**
+
+ - Storyboard through multiple text prompts
+ - Global diffusion model: L text prompts → L keyframes
+ - Local diffusion model: 2 text prompts + 2 keyframes → L keyframes   
+
+![](./assets/08-130.png) 
+
+Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.
+
+
+P131  
+## NUWA-XL
+
+Recursive interpolations for generating very long videos
+
+**Mask Temporal Diffusion (MTD)**  
+
+ - A basic diffusion model for global & local diffusion models
+
+![](./assets/08-131.png) 
+
+
+Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
+
+P133
+## Long Video Generation: More Works
+
+|||
+|--|--|
+| ![](./assets/08-133-1.png)  | **Latent Video Diffusion Models for High-Fidelity Long Video Generation** (He et al.) <br> Generate long videos via autoregressive generation & interpolation <br> “Latent Video Diffusion Models for High-Fidelity Long Video Generation,” arXiv 2022.|
+|  ![](./assets/08-133-2.png) | **VidRD** (Gu et al.) <br> Autoregressive long video generation <br> “Reuse and Diffuse: Iterative Denoising for Text-to-Video Generation,” arXiv 2023. |
+|  ![](./assets/08-133-3.png) | **VideoGen** (Li et al.) <br> Cascaded pipeline for long video generation <br> “VideoGen: A Reference-Guided Latent Diffusion Approach for High Definition Text-to-Video Generation,” arXiv 2023.|
+
+P134  
+# 2 Video Generation
+
+## 2.7 Multimodal-guided generation
+
+P135  
+
+![](./assets/08-135.png) 
+
+
+P136  
+## MCDiff  
+
+Motion-guided video generation
+
+![](./assets/08-136.png) 
+
+
+Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023.    
+
+P137  
+## MCDiff
+
+Motion-guided video generation
+
+ - Two-stage autoregressive generation
+
+![](./assets/08-137.png) 
+
+Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023. 137
+
+P139   
+## The Power of Sound (TPoS)
+
+Sound- and text-guided video generation
+
+ - Input/output: a text prompt + an audio segment → a video
+
+![](./assets/08-139.png) 
+
+Jeong et al., “The Power of Sound (TPoS): Audio Reactive Video Generation with Stable Diffusion,” ICCV 2023.    
+
+P140
+## Sound-Guided Video Generation: More Works
+
+|||
+|--|--|
+| ![](./assets/08-140-1.png)  | **AADiff** (Lee et al.) <br> “AADiff: Audio-Aligned Video Synthesis with Text-to-Image Diffusion,” CVPRW 2023. |
+| ![](./assets/08-140-2.png) | **Generative Disco** (Liu et al.)<br> “Generative Disco: Text-to-Video Generation for Music Visualization,” arXiv 2023. |
+
+Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.   
+
+P141  
+## Image-Guided Video Generation: More Works
+
+|||
+|--|--|
+| ![](./assets/08-141-1.png)  | Generative Image Dynamics (Li et al.) <br> “Generative Image Dynamics,” arXiv 2023. |
+|  ![](./assets/08-141-2.png)  | **LaMD** (Hu et al.) <br> “LaMD: Latent Motion Diffusion for Video Generation,” arXiv 2023. |
+|  ![](./assets/08-141-3.png)  | **LFDM** (Ni et al.) <br> “Conditional Image-to-Video Generation with Latent Flow Diffusion Models,” CVPR 2023.  |
+
+
+Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.   
+
+
+P142  
+## Cinematic Mindscapes   
+
+Brain activity-guided video generation
+
+ - Task: human vision reconstruction via fMRI signal-guided video generation   
+
+![](./assets/08-142.png) 
+
+Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Brain Activity,” arXiv 2023.     
+
+P144  
+## Multimodal-Guided Video Generation: More Works
+
+|||
+| ![](./assets/08-144-1.png)  | ![](./assets/08-144-2.png)  |
+| **MovieFactory** (Zhu et al.) <br> “MovieFactory: Automatic Movie Creation from Text using Large Generative Models for Language and Images,” arXiv 2023. | **CoDi** (Tang et al.) <br>
+“Any-to-Any Generation via Composable Diffusion,” NeurIPS 2023.|
+| ![](./assets/08-144-3.png)  | ![](./assets/08-144-4.png)  |
+| **MM-Diffusion** (Ruan et al.) <br> “MM-Diffusion: Learning Multi-Modal Diffusion Models for Joint Audio and Video Generation,” CVPR 2023. | **NExT-GPT** (Wu et al.) <br> “NExT-GPT: Any-to-Any Multimodal LLM,” arXiv 2023. |
+
+Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
+
+P145  
+# 3 Video Editing
+
+P146  
+
+![](./assets/08-146.png) 
+
+P147  
+# 3 Video Editing
+
+## 3.1 Tuning-based
+
+
+P148  
+## One-Shot Tuned
+
+P149 
+
+![](./assets/08-149.png) 
+
+P150  
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+![](./assets/08-150.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
+
+P152   
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+<https://github.com/showlab/Tune-A-Video>
+
+Motivation: appearance from pretrained T2I models, dynamics from a reference video 
+
+![](./assets/08-152.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
+
+P153
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+**Obs #1: Still images that accurately represent the verb terms**
+
+![](./assets/08-153-1.png) 
+
+**Obs #2: Extending attention to spatio-temporal yields consistent content**
+
+![](./assets/08-153-2.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 153
+
+
+P154   
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+![](./assets/08-154.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 154
+
+
+P155
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+![](./assets/08-155.png) 
+
+**Full finetuning**: finetunes the entire network
+
+ - inefficient, especially when #frames increases;   
+ - prone to overfitting → poor editing ability.   
+
+**Our tuning strategy**: update the specific projection matrices
+
+ - parameter efficient and fast (~10 min);    
+ - retains the original property of pre-trained T2I diffusion models.   
+
+
+**Structure guidance via DDIM inversion**
+
+\begin{align*} \mathcal{V} ^\ast =\mathcal{D} (\mathrm{DDIM-samp} (\mathrm{DDIM-inv} (\varepsilon (\mathcal{V} )),\tau^\ast  ))\end{align*}
+
+ - preserves the structural information   
+ - improves temporal consistency   
+
+
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 155
+
+
+P156  
+## Tune-A-Video
+
+![](./assets/08-156.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
+
+P157  
+## Tune-A-Video
+
+![](./assets/08-157.png) 
+
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+
+P158  
+## Tune-A-Video
+
+![](./assets/08-158.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
+
+P159  
+## Tune-A-Video
+
+![](./assets/08-159.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+
+P160  
+## Tune-A-Video
+
+
+![](./assets/08-160.png) 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+
+P161
+## Tune-A-Video
+
+One-shot tuning of T2I models for T2V generation/editing
+
+![](./assets/08-161.png) 
+
+**Automatic metrics – CLIP Score**
+
+ - *Frame Consistency*: the average cosine similarity between all pairs of video frames   
+ - *Textual Alignment*: average CLIP score between all frames of output videos and corresponding edited prompts    
+
+**User study** 
+
+Compare two videos generated by our method and a baseline (shown in random order):   
+
+ - *Which video has better temporal consistency?*    
+ - *Which video better aligns with the textual description?*    
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+
+P162  
+## Dreamix
+
+Few-shot finetuning for personalized video editing
+
+**Main idea: Mixed Video-Image Finetuning**
+
+ - Finetune Imagen Video (Ho et al., 2022) which is a strong video foundation model
+
+![](./assets/08-162-1.png) 
+
+ - Finetuned to generate individual frames (bypassing temporal attentions) & video
+
+![](./assets/08-162-2.png) 
+
+Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023. 162
 
 
 
 
-![](./assets/08-73.png) 
+
+![](./assets/08-149.png) 
