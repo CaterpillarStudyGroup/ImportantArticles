@@ -950,7 +950,7 @@ Transform domain-specific T2I models to T2V models
  - Domain-specific (personalized) models are widely available for image   
     - Domain-specific finetuning methodologies: LoRA, DreamBooth…   
     - Communities: Hugging Face, CivitAI…   
- - Task: turn these image models into T2V models, without specific finetuning   
+ - **Task: turn these image models into T2V models, without specific finetuning**   
 
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
