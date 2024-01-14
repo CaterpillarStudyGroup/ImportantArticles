@@ -1052,7 +1052,8 @@ P109
 ![](./assets/08-109.png) 
 
 P110 
-## opyright©Mike Shou, NUS
+## What is a storyboard?
+
 
 Human can imagine what does the scene look like “roughly”
 
@@ -1224,7 +1225,7 @@ Recursive interpolations for generating very long videos
 
 ![](./assets/08-129.png) 
 
-Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023. 129
+Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
 
 P130  
 ## NUWA-XL
