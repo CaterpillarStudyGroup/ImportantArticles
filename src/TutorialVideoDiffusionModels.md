@@ -1085,7 +1085,7 @@ A concept in film production
 
  - How to generate such a storyboard?    
  - As humans, over the years, we have acquired such “visual prior” about object location, object shape, relation, etc.   
- 
+
  - Can LLM model such visual prio？    
 
 Storyboard image from deviantart.com.   
@@ -2119,7 +2119,7 @@ Customized video subject swapping via point control
 
 **Empirical Observations**
 
- - **Observation 1**: If we can drag the points, the trained T2I-Aapter can generate new contents based on such dragged new points (new condition) à feasible to use semantic points as condition to control and maintain the source motion trajectory.
+ - **Observation 1**: If we can drag the points, the trained T2I-Aapter can generate new contents based on such dragged new points (new condition)  →  feasible to use semantic points as condition to control and maintain the source motion trajectory.
 
 ![](./assets/08-229.png) 
 
