@@ -157,6 +157,9 @@ p18
 P20   
 ## CLIP   
 
+Encoders bridge vision and language
+
+
  - CLIP text-/image-embeddings are commonly used in diffusion models for conditional generation
 
 |||
