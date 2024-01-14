@@ -2046,7 +2046,482 @@ Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Di
 
 
 
+P223   
+## MagicAnimate
+
+Pose-guided video generation
+
+![](./assets/08-223.png) 
+
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.    
+
+P224   
+## Video Editing Under Pose Guidance: More Works
+
+|||
+|--|--|
+| ![](./assets/08-224-1.png)  | **Dancing Avatar** (Qin et al.)<br> Pose-guided video editing <br> “Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model,” arXiv 2023. |
+| ![](./assets/08-224-2.png)  | **Follow Your Pose** (Ma et al.) <br> Pose-guided video editing  <br> “Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos,” arXiv 2023.  |
+| ![](./assets/08-224-3.png)  | **DisCo** (Wang et al.) <br> Pose-guided video editing <br> “Disco: Disentangled control for referring human dance generation in real world,” arXiv 2023.  |
+
+P225   
+## Point-Control
+
+P226   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Problem Formulation**
+
+ - Subject replacement: change video subject to a **customized** subject    
+ - Background preservation: preserve the unedited background same as the source video    
+
+![](./assets/08-226.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P227    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+
+**Motivation**
+
+ - Existing methods are promising but still often motion not well aligned   
+ - Need ensure precise correspondence of <u> **semantic points** </u> between the source and target   
+
+![](./assets/08-227.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P228    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Empirical Observations**
+
+ - **Question**: Can we <u> learn semantic point control </u> for a specific <u>source video subject</u> using only a <u>small number of source video frames</u>   
+ - **Toy Experiment**: Manually define and annotate a set of semantic points on 8 frame; use such point maps as condition for training a control net, i.e., T2I-Adapter.    
+
+![](./assets/08-228.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
+
+P229    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Empirical Observations**
+
+ - **Observation 1**: If we can drag the points, the trained T2I-Aapter can generate new contents based on such dragged new points (new condition) à feasible to use semantic points as condition to control and maintain the source motion trajectory.
+
+![](./assets/08-229.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
+
+P230    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Empirical Observations**
+
+ - **Observation 2**: Further, we can drag the semantic points to control the subject’s shape   
+ 
+![](./assets/08-230.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+P231    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+![](./assets/08-231.png) 
+
+**Framework**
+
+ - **Motion layer**: use pretrained and fixed AnimateDiff to ensure essential temporal consistency    
+ - **ED-LoRA** \\(_(Mix-of-Show)\\): learn the wconcept to be customized   
+
+ - **Key design aims**: 
+    - Introduce semantic point correspondences to guide motion trajectory   
+    - Reduce human efforts of annotating points    
+
+
+Gu et al. “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+Gu et al. “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models.” NeurIPS, 2023.   
+
+P232   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Step 1: Semantic Point Extraction**
+
+ - Reduce human efforts in annotating points    
+    - User define point at one keyframe    
+    - Propagate to other frames by point tracking/detector   
+ - Embedding    
+
+![](./assets/08-232.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+P233   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Methodology – Step 1: Semantic Point Extraction on the source video**
+
+
+ - Reduce human efforts in annotating points   
+ - Embedding   
+    - Extract DIFT embedding (intermediate U-Net feature) for each semantic point   
+    - Aggregate over all frames   
+
+![](./assets/08-233.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+P234    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Methodology – Step 2: Semantic Point Registration on the source video**  
+
+ - Introduce several learnable MLPs, corresponding to different scales
+ - Optimize the MLPs    
+    - Point Patch Loss: restrict diffusion loss to reconstruct local patch around the point    
+    - Semantic-Enhanced Schedule: only sample higher timestep (0.5T, T), which prevents overfitting to low-level details    
+
+![](./assets/08-234.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P235    
+## VideoSwap
+
+Customized video subject swapping via point control   
+
+**Methodology**   
+
+ - After Step1 (Semantic Point Extraction) and Step2 (Semantic Point Registration), those semantic points can be used to guide motion   
+ - User-point interaction for various applications   
+
+![](./assets/08-235.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P236   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Methodology**
+
+ - How to drag point for shape change?   
+    - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial, because of complex camera motion and subject motion in video.   
+    - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.   
+
+![](./assets/08-236.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P237   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Methodology**
+
+ - How to drag point for shape change?   
+ - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial because of complex camera motion and subject motion in video.   
+ - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.    
+
+![](./assets/08-237.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P238    
+## VideoSwap
+
+Customized video subject swapping via point control
+
+![](./assets/08-238-1.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+P239   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+![](./assets/08-239.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+P240   
+## VideoSwap
+
+Customized video subject swapping via point control
+
+**Qualitative Comparisons to previous works**
+
+ - VideoSwap can **support shape change** in the target swap results, leading to the correct identity of target concept. 
+
+![](./assets/08-240.png) 
+
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+P242   
+# 3 Video Editing
+
+## 3.4 3D-Aware
+
+P243   
+
+![](./assets/08-243.png) 
+
+
+P244   
+## Layered Neural Atlases
+
+Decompose a video into two images
+
+ - Decompose a video into a foreground image + a background image    
+
+![](./assets/08-244.png) 
+
+Kasten et al., “Layered Neural Atlases for Consistent Video Editing,” arXiv 2023.   
+
+P245    
+## Layered Neural Atlases
+
+Decompose a video into two images
+
+ - Decompose a video into a foreground image + a background image   
+ - Edit the foreground/background image = edit the video    
+
+![](./assets/08-245.png) 
+
+Kasten et al., “Layered Neural Atlases for Consistent Video Editing,” arXiv 2023.    
+
+
+P246   
+## VidEdit
+
+Atlas-based video editing
+
+ - Decompose a video into a foreground image + a background image   
+ - Edit the foreground/background image = edit the video   
+ - Use diffusion to edit foreground/background atlas   
+
+![](./assets/08-246.png) 
+
+Video from Kasten et al., “Layered Neural Atlases for Consistent Video Edigng,” arXiv 2023.    
+Couairon et al., “VidEdit: Zero-Shot and Spagally Aware Text-Driven Video Edigng,” arXiv 2023.   
+
+P247    
+## StableVideo & Shape-aware Text-drive Layered Video Editing
+
+Atlas-based video edieng
+
+![](./assets/08-247.png) 
+
+Lee et al., “Shape-aware Text-driven Layered Video Editing,” CVPR 2023.   
+Chai et al., “StableVideo: Text-driven Consistency-aware Diffusion Video Editing,” ICCV 2023.   
+
+P248   
+## StableVideo
+
+Atlas-based video editing
+
+
+![](./assets/08-248.png) 
+
+Chai et al., “StableVideo: Text-driven Consistency-aware Diffusion Video Edigng,” ICCV 2023.   
+
+P249    
+## Content Deformation Field (CoDeF)
+
+Edit a video = edit a canonical image + learned deformaeon field
+
+ - Limitations of Neural Layered Atlases   
+    - Limited capacity for faithfully reconstructing intricate video details, missing subtle motion features like blinking eyes and slight smiles   
+    - Distorted nature of the estimated atlas leads to impaired semantic information   
+
+ - Content Deformation Field: inspired by dynamic NeRF works, a new way of representing video, as a 2d canonical image + 3D deformation field over time   
+
+ - Edit a video = edit a canonical image + learned deformation field   
+
+
+Ouyang et al., “CoDeF: Content Deformation Fields for Temporally Consistent Video Processing,” arXiv 2023.
+
+
+P250    
+## Content Deformation Field (CoDeF)
+
+Edit a video = edit a canonical image + learned deformation field    
+
+**Problem Formulation**
+
+ - Decode a video into a 2D canonical field and a 3D temporal deformation field   
+ - Deformation Field: video (x, y, t) → canonical image coordinate (x’, y’)   
+ - Canonical Field: (x’, y’) → (r, g, b), like a “2D image”   
+
+![](./assets/08-250.png) 
+
+Ouyang et al., “CoDeF: Content Deformation Fields for Temporally Consistent Video Processing,” arXiv 2023.   
+
+P251   
+## Content Deformation Field (CoDeF)
+
+Edit a video = edit a canonical image + learned deformation field    
+
+**CoDeF compared to Atlas**
+
+ - Superior robustness to non-rigid motion   
+ - Effective reconstruction of subtle movements (e.g. eyes blinking)    
+ - More accurate reconstruction: 4.4dB higher PSNR   
+
+Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
+
+P252   
+## Content Deformation Field (CoDeF)
+
+Edit a video = edit a canonical image + learned deformation field   
+
+![](./assets/08-252.png) 
+
+Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
+
+P253   
+## Content Deformafon Field (CoDeF)
+
+Edit a video = edit a canonical image + learned deformation field   
+
+![](./assets/08-253.png) 
+
+Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
+
+P253   
+## DynVideo-E
+
+Edit a video = edit a canonical ~~image~~ 3D NeRF   
+
+Canonical image in CoDeF is still 2D   
+
+Can we represent the video in a truly 3D space?   
+
+P255   
+## DynVideo-E
+
+Edit a video = edit a canonical ~~image~~ 3D NeRF
+
+![](./assets/08-255.png) 
+
+Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for arge-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
+
+P257   
+## DynVideo-E
+
+Edit a video = edit a canonical ~~image~~ 3D NeRF   
+
+**Main idea**
+
+ - For the first time introduce the dynamic NeRF as an innovative video representation for large-scale motion- and view-change human-centric video editing.   
+
+Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.
+
+P258  
+## DynVideo-E
+
+Edit a video = edit a canonical ~~image~~ 3D NeRF   
+
+Follow HOSNeRF, represent the video as:   
+ - Background NeRF   
+ - Human NeRF   
+ - Deformation Field   
+
+Edit background NeRF and human NeRF respectively   
+
+![](./assets/08-258.png) 
+
+Liu et al., “HOSNeRF: Dynamic Human-Object-Scene Neural Radiance Fields from a Single Video,” ICCV 2023.   
+Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Mogon- and View-Change Human-Centric Video Edigng,” arXiv 2023.   
+
+
+P259  
+## DynVideo-E
+
+DynVideo-E significantly outperforms SOTA    
+approaches on two challenging datasets by a large margin of 50% ∼ 95% in terms of human preference   
+
+P263   
+# 3 Video Editing  
+
+## 3.5 Other Guidance
+
+
+P264  
+
+![](./assets/08-264.png) 
+
+P265   
+## InstructPix2Pix
+
+Instruction-guided image editing
+
+![](./assets/08-265.png) 
+
+Brooks et al., “InstructPix2Pix: Learning to Follow Image diting Instructions,” CVPR 2023.  
+
+
+P266   
+## InstructVid2Vid
+
+Instruction-guided Video Editing
+
+ - Generate ⟨instruction, video⟩ dataset using ChatGPT, BLIP and Tune-A-Video   
+ - Train inflated Stable Diffusion for instruction-guided video editing   
+
+![](./assets/08-266.png) 
+
+Qin et al., “InstructVid2Vid: Controllable Video Editing with Natural Language Instructions,” arXiv 2023.  
+
+P267   
+## Speech Driven Video Editing via an Audio-Conditioned Diffusion Model
+
+Speech-driven video editing
+
+![](./assets/08-267.png) 
+
+Bigioi et al., “Speech Driven Video Editing via an Audio-Conditioned Diffusion Model,” arXiv 2023.   
+
+P268   
+## Soundini
+
+Sound-guided video editing
+
+![](./assets/08-268.png) 
+
+Lee et al., “Soundini: Sound-Guided Diffusion for Natural Video Editing,” arXiv 2023.    
+
+P269   
+## Video Editing Under Various Guidance: More Works
+
+|||
+|--|--|
+| ![](./assets/08-269-1.png)  | **Collaborative Score Distillation** (Kim et al.) <br> Instruction-guide video editing <br> “Collaborative Score Distillation for Consistent Visual Synthesis,” NeurIPS 2023. |
+| ![](./assets/08-269-2.png)  | **Make-A-Protagonist** (Zhao et al.) <br> Video ediSng with an ensemble of experts <br> “Make-A-Protagonist: Generic Video Edigng with An Ensemble of Experts,” arXiv 2023. |
+| ![](./assets/08-269-3.png)  | **DragNUWA** (Yin et al.) <br> Multimodal-guided video editing <br> “DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory,” arXiv 2023. |
 
 
 
-![](./assets/08-200.png) 
