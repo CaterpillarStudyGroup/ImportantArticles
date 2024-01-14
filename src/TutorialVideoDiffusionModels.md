@@ -1529,7 +1529,7 @@ Few-shot finetuning for personalized video editing
 
 ![](./assets/08-162-2.png) 
 
-Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023. 162
+Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023.    
 
 
 P163  
@@ -1736,7 +1736,9 @@ Consistent high-quality semantic edits
 
 ![](./assets/08-183.png) 
 
-No temporal finetuning, good temporal consistency Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.     
+  
+Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.   
+
 
 P184   
 ## FateZero   
