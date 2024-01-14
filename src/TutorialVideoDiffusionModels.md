@@ -921,12 +921,13 @@ Gupta et al., “Photorealistic Video Generation with Diffusion Models,” arXiv
 P95   
 ## Other Closed-Source Works
 
+
 |||
 |--|--|
-| ![](./assets/08-95-1.png) |![](./assets/08-95-2.png) |
-| **Latent Shift** (An et al.)<br>Shift latent features for better temporal coherence <br> “Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation,” arXiv 2023.| **Video Factory** (Wang et al.)<br> Modify attention mechanism for better temporal coherence <br> “VideoFactory: Swap Attention in Spatiotemporal Diffusions for Text-to-Video Generation,” arXiv 2023.| 
-|![](./assets/08-95-3.png) |![](./assets/08-95-4.png) |
-| **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023. | *VideoFusion* (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
+| ![](./assets/08-95-1.png)  | **Latent Shift** (An et al.)<br>Shift latent features for better temporal coherence <br> “Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation,” arXiv 2023. |
+| ![](./assets/08-95-2.png) | **Video Factory** (Wang et al.)<br> Modify attention mechanism for better temporal coherence <br> “VideoFactory: Swap Attention in Spatiotemporal Diffusions for Text-to-Video Generation,” arXiv 2023. |
+| ![](./assets/08-95-3.png) | **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023.  |
+| ![](./assets/08-95-4.png)  | **VideoFusion** (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
 
 P96  
 # 2 Video Generation
@@ -1029,10 +1030,14 @@ Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-
 P107 
 ## Training Efficient Techniques: More Works
 
-||||
-|--|--|--|
-| ![](./assets/08-107-1.png) | ![](./assets/08-107-2.png) | ![](./assets/08-107-3.png) |
-| **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022. | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+
+|||
+|--|--|
+| ![](./assets/08-107-1.png)  | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022.  |
+|  ![](./assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
+| ![](./assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+
+
 
 P108  
 # 2 Video Generation
@@ -1160,13 +1165,16 @@ Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,” to
 
 P125  
 ## Storyboard: More Works
-
+  
 |||
 |--|--|
-| ![](./assets/08-125-1.png)  |  ![](./assets/08-125-2.png)  |
-| **Dysen-VDM** (Fei et al.)<br>Storyboard through scene graphs<br>“Empowering Dynamics-aware Text-to-Video Diffusion with Large Language Models,” arXiv 2023. | **DirectT2V** (Hong et al.) <br> Storyboard through bounding boxes <br> “Large Language Models are Frame-level Directors for Zero-shot Text-to-Video Generation,” arXiv 2023. |
-|  ![](./assets/08-125-3.png)  |  ![](./assets/08-125-4.png)  |
-| **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023.  |   
+|  ![](./assets/08-125-1.png) | **Dysen-VDM** (Fei et al.)<br>Storyboard through scene graphs<br>“Empowering Dynamics-aware Text-to-Video Diffusion with Large Language Models,” arXiv 2023. |
+| ![](./assets/08-125-2.png)  | **DirectT2V** (Hong et al.) <br> Storyboard through bounding boxes <br> “Large Language Models are Frame-level Directors for Zero-shot Text-to-Video Generation,” arXiv 2023. |
+|  ![](./assets/08-125-3.png)  | **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. |
+|  ![](./assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
+
+
+
 
 
 P126   
@@ -1332,12 +1340,17 @@ Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Bra
 P144  
 ## Multimodal-Guided Video Generation: More Works
 
+
 |||
-| ![](./assets/08-144-1.png)  | ![](./assets/08-144-2.png)  |
-| **MovieFactory** (Zhu et al.) <br> “MovieFactory: Automatic Movie Creation from Text using Large Generative Models for Language and Images,” arXiv 2023. | **CoDi** (Tang et al.) <br>
-“Any-to-Any Generation via Composable Diffusion,” NeurIPS 2023.|
-| ![](./assets/08-144-3.png)  | ![](./assets/08-144-4.png)  |
-| **MM-Diffusion** (Ruan et al.) <br> “MM-Diffusion: Learning Multi-Modal Diffusion Models for Joint Audio and Video Generation,” CVPR 2023. | **NExT-GPT** (Wu et al.) <br> “NExT-GPT: Any-to-Any Multimodal LLM,” arXiv 2023. |
+|--|--|
+| ![](./assets/08-144-1.png)  | **MovieFactory** (Zhu et al.) <br> “MovieFactory: Automatic Movie Creation from Text using Large Generative Models for Language and Images,” arXiv 2023. |
+| ![](./assets/08-144-2.png) | **CoDi** (Tang et al.) <br> “Any-to-Any Generation via Composable Diffusion,” NeurIPS 2023. |
+| ![](./assets/08-144-3.png)  | **MM-Diffusion** (Ruan et al.) <br> “MM-Diffusion: Learning Multi-Modal Diffusion Models for Joint Audio and Video Generation,” CVPR 2023. |
+|  ![](./assets/08-144-4.png) | **NExT-GPT** (Wu et al.) <br> “NExT-GPT: Any-to-Any Multimodal LLM,” arXiv 2023.  |
+|  |  |
+
+
+
 
 Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
@@ -1534,8 +1547,8 @@ P164
 
 |||
 |--|--|
-| ![](./assets/08-164-1.png)  | ![](./assets/08-164-2.png)  | 
-| \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. | **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
+| ![](./assets/08-164-1.png)  | \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. |
+| ![](./assets/08-164-2.png)  |  **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
 
 P165   
 ## One-Shot Tuned Video Editing: More Works
@@ -1762,12 +1775,16 @@ Qi et al., “FateZero: Fusing Akengons for Zero-shot Text-based Video Edigng,�
 P187   
 ## Training-Free Video Editing: More Works
 
-||||
-|--|--|--|
-| ![](./assets/08-187-1.png)  | ![](./assets/08-187-2.png)  | ![](./assets/08-187-3.png)  |
-| **MeDM** (Chu et al.) <br> OpScal flow-based guidance for temporal consistency <br> “MeDM: Mediagng Image Diffusion Models for Video-to￾Video Translagon with Temporal Correspondence Guidance,” arXiv 2023. | **Ground-A-Video** (Jeong et al.) <br> Improve temporal consistency via modified attention and optical flow <br> “Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models,” arXiv 2023. | **Gen-L-Video** (Lorem et al.) <br> Edit very long videos using existing generators <br> “Gen-L-Video: Multi-Text to Long Video Generation via Temporal Co-Denoising,” arXiv 2023. |
-| ![](./assets/08-187-4.png)  | ![](./assets/08-187-5.png)  | ![](./assets/08-187-6.png)  |
-| **FLATTEN** (Cong et al.) <br> Optical flow-guided attention for temporal consistency <br> “Flatten: optical flow-guided attention for consistent text-to-video editing,” arXiv 2023. | **InFusion** (Khandelwal et al.) <br> Improve temporal consistency via fusing latents <br> “InFusion: Inject and Attention Fusion for Multi Concept Zero-Shot Text-based Video Editing,” ICCVW 2023. | **Vid2Vid-Zero** (Wang et al.) <br> Improve temporal consistency via cross￾attention guidance and null-text inversion <br> “Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models,” arXiv 2023. |
+
+|||
+|--|--|
+| ![](./assets/08-187-1.png)  | **MeDM** (Chu et al.) <br> OpScal flow-based guidance for temporal consistency <br> “MeDM: Mediagng Image Diffusion Models for Video-to￾Video Translagon with Temporal Correspondence Guidance,” arXiv 2023. |
+| ![](./assets/08-187-2.png) | **Ground-A-Video** (Jeong et al.) <br> Improve temporal consistency via modified attention and optical flow <br> “Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models,” arXiv 2023. |
+| ![](./assets/08-187-3.png)  | **Gen-L-Video** (Lorem et al.) <br> Edit very long videos using existing generators <br> “Gen-L-Video: Multi-Text to Long Video Generation via Temporal Co-Denoising,” arXiv 2023.  |
+| ![](./assets/08-187-4.png)  | **FLATTEN** (Cong et al.) <br> Optical flow-guided attention for temporal consistency <br> “Flatten: optical flow-guided attention for consistent text-to-video editing,” arXiv 2023. |
+| ![](./assets/08-187-5.png) | **InFusion** (Khandelwal et al.) <br> Improve temporal consistency via fusing latents <br> “InFusion: Inject and Attention Fusion for Multi Concept Zero-Shot Text-based Video Editing,” ICCVW 2023.  |
+| ![](./assets/08-187-6.png)  | **Vid2Vid-Zero** (Wang et al.) <br> Improve temporal consistency via cross￾attention guidance and null-text inversion <br> “Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models,” arXiv 2023. |
+
 
 P188    
 # 3 Video Editing
@@ -1907,11 +1924,128 @@ ControlNet-like video editing
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
+P203   
+## ControlVideo (Zhang et al. 2023)   
+
+ControlNet-like video editing
+
+![](./assets/08-203.png)  
+
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.     
+
+P208   
+## VideoControlNet
+
+Optical flow-guided video editing; I, P, B frames in video compression
+
+![](./assets/08-208.png)  
+
+Hu et al., “VideoControlNet: A Motion-Guided Video-to-Video Translation Framework by Using Diffusion Model with ControlNet,” arXiv 2023.     
 
 
+P210   
+## CCEdit
 
+Mulemodal-guided video edieng
+
+![](./assets/08-210.png)  
+
+Feng et al., “CCEdit: Creative and Controllable Video Editing via Diffusion Models,” arXiv 2023.    
+
+P211   
+## VideoComposer
+
+Image-, sketch-, motion-, depth-, mask-controlled video editing
+
+**Video Editing based on Various Conditions**
+
+![](./assets/08-211.png)  
+
+Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.  
+
+P212   
+## VideoComposer
+
+Image-, sketch-, motion-, depth-, mask-controlled video editing   
+
+• Spako-Temporal Condikon encoder (STC-encoder): a unified input interface for condikons   
+
+![](./assets/08-212.png)  
+
+Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.    
+
+P214   
+## ControlNet- and Depth-Controlled Video Editing: More Works
+
+|||
+|--|--|
+| ![](./assets/08-214-1.png)  | **MagicProp** (Yan et al.) <br> “MagicProp: Diffusion-based Video Editing via Motion-aware Appearance Propagation,” arXiv 2023. |
+| ![](./assets/08-214-2.png) | **Make-Your-Video** (Xing et al.) <br> “Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance,” arXiv 2023.   |
+| ![](./assets/08-214-3.png) | **Control-A-Video** (Lorem et al.) <br> “Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models,” arXiv 2023. |
+| ![](./assets/08-214-4.png)  | **MagicEdit** (Liew et al.) <br> “MagicEdit: High-Fidelity and Temporally Coherent Video Editing,” arXiv 2023. |
+| ![](./assets/08-214-5.png)  |  **EVE** (Chen et al.) <br> “EVE: Efficient zero-shot text-based Video Editing with Depth Map Guidance and Temporal Consistency Constraints,” arXiv 2023. |
+
+P215   
+## Pose Control
+
+P216  
+## DreamPose
+
+Pose- and image-guided video generation
+
+Input: image  \\(\quad \\) Input: pose sequence   \\(\quad \\)  Output: Video   
 
  
+Karras et al., “DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion,” arXiv 2023.   
+
+P217   
+## MagicAnimate
+
+Pose- and image-guided video generation
+
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animagon using Diffusion Model,” arXiv 2023.    
+
+P218   
+## MagicAnimate
+
+Pose- and image-guided video generaeon
+
+**Challenges**
+
+ - Flickering video   
+ - Cannot maintain background   
+ - Short video animation results   
+
+**Possible Cause**
+
+ - Weak appearance preservation due to lack of temporal modeling    
+
+
+
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.  
+
+P219   
+## MagicAnimate
+
+Pose- and image-guided video generation   
+
+• Training data: TikTok dataset of 350 dancing videos; TED-talks dataset of 1,203 video clips   
+
+![](./assets/08-219.png) 
+
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023. 219
+
+P220   
+## MagicAnimate
+
+Pose- and image-guided video generation
+
+![](./assets/08-220.png) 
+
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.
+
+
+
 
 
 
