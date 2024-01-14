@@ -1085,6 +1085,7 @@ A concept in film production
 
  - How to generate such a storyboard?    
  - As humans, over the years, we have acquired such “visual prior” about object location, object shape, relation, etc.   
+ 
  - Can LLM model such visual prio？    
 
 Storyboard image from deviantart.com.   
