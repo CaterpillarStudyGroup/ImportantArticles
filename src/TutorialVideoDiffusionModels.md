@@ -1515,6 +1515,66 @@ Few-shot finetuning for personalized video editing
 Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023. 162
 
 
+P163  
+## Dreamix
+
+Few-shot finetuning for personalized video editing
+
+**Inference Overview**
+
+ - Corrupt the input video by downsampling and add noise   
+ - Apply the finetuned video diffusion model to denoise and upscale   
+
+![](./assets/08-163.png) 
+
+Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023.    
+
+P164   
+## One-Shot Tuned Video Editing: More Works
+
+|||
+|--|--|
+| ![](./assets/08-164-1.png)  | ![](./assets/08-164-2.png)  | 
+| \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. | **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
+
+P165   
+## One-Shot Tuned Video Editing: More Works
+
+![](./assets/08-165.png) 
+
+**Compared to training-free editing methods:** 
+
+ - Cons: still need 1 video for training
+ - Pros: supports significant shape change 
+
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
+
+P166  
+## Multiple-Shot Tuned
+
+Video Editing: Text Conditioned
+
+P167  
+
+![](./assets/08-167.png) 
+
+P168
+## MotionDirector
+
+Tune on multiple videos of a motion to be customised
+
+\begin{align*}  \text{Imagine what a monkey playing golf looks like?} \end{align*}
+
+
+![](./assets/08-168.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023. 168
+
+
+
+
+
+
 
 
 
