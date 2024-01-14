@@ -1,6 +1,6 @@
 # Tutorial: Video Diffusion Models
 
-Mike Shou   
+**Mike Shou**   
 
 Asst Prof, National U. of Singapore   
 
