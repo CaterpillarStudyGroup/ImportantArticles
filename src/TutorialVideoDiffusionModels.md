@@ -1395,7 +1395,7 @@ One-shot tuning of T2I models for T2V generation/editing
 
 <https://github.com/showlab/Tune-A-Video>
 
-Motivation: appearance from pretrained T2I models, dynamics from a reference video 
+**Motivation**: appearance from pretrained T2I models, dynamics from a reference video 
 
 ![](./assets/08-152.png) 
 
