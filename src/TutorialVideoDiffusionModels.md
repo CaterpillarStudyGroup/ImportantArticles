@@ -615,7 +615,7 @@ Leverage pretrained T2I models for video generation
  - Decoder: add 3D convolutional layers   
  - Upsampler diffusion model: add 3D convolution layers   
 
-Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
+   
 
 P66   
 # 2 Video Generation   
