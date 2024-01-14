@@ -2004,12 +2004,8 @@ Input: image  \\(\quad \\) Input: pose sequence   \\(\quad \\)  Output: Video
  
 Karras et al., “DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion,” arXiv 2023.   
 
-P217   
-## MagicAnimate
 
-Pose- and image-guided video generation
 
-Xu et al., “MagicAnimate: Temporally Consistent Human Image Animagon using Diffusion Model,” arXiv 2023.    
 
 P218   
 ## MagicAnimate
