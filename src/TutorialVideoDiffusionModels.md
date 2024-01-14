@@ -901,7 +901,7 @@ P91
 Transformer-based diffusion for text-to-video generation
 
  - Transformer-based architecture extended from DiT (class-conditioned transformer-based LDM)   
- - Train T2I à insert temporal self-attn à joint image-video finetuning (motion-free guidance)    
+ - Train T2I \\(\to \\)  insert temporal self-attn \\(\to \\) joint image-video finetuning (motion-free guidance)    
 
 ![](./assets/08-91.png) 
 
