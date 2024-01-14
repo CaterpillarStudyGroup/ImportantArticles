@@ -1295,7 +1295,7 @@ Motion-guided video generation
 
 ![](./assets/08-137.png) 
 
-Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023. 137
+Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023.    
 
 P139   
 ## The Power of Sound (TPoS)
