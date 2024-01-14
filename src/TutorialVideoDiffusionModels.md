@@ -698,8 +698,8 @@ P74
 
 Leverage pretrained T2I models for video generation
 
-||||
-|--|--|--|
+|||||
+|--|--|--|--|
 | " Robot dancing in times square,” arXiv 2023.  | " Clown fish swimming through the coral reef,” arXiv 2023.| " Melting ice cream dripping down the cone,” arXiv 2023.| " Hyper-realistic photo of an abandoned industrial site during a storm,” arXiv 2023.|
 | ![](./assets/08-74-1.png)  |  ![](./assets/08-74-2.png) | ![](./assets/08-74-3.png)  |  ![](./assets/08-74-4.png) |
 
@@ -707,8 +707,335 @@ Leverage pretrained T2I models for video generation
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
 
 
+P75   
+## Show-1
+
+Better text-video alignment? Generation in both pixel- and latent-domain
+
+![](./assets/08-75.png) 
+
+Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
+
+P76   
+## Show-1
+
+Better text-video alignment? Generation in both pixel- and latent-domain   
+
+**Motivation**
+
+ - Pixel-based VDM achieves better text-video alignment than latent-based VDM   
+
+|||
+|--|--|
+| ![](./assets/08-76-1.png) | ![](./assets/08-76-2.png) |
+
+
+Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
+
+P77   
+## Show-1
+
+Generation in both pixel- and latent-domain
+
+**Motivation**
+
+ - Pixel-based VDM achieves better text-video alignment than latent-based VDM   
+ - Pixel-based VDM takes much larger memory than latent-based VDM    
+
+![](./assets/08-77.png) 
+
+
+Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
+
+
+P78   
+## Show-1   
+
+Generation in both pixel- and latent-domain  
+
+**Motivation** 
+
+ - Use Pixel-based VDM in low-res stage   
+ - Use latent-based VDM in high-res stage   
+
+![](./assets/08-78.png) 
+
+Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
+
+
+P79   
+## Show-1   
+
+Generation in both pixel- and latent-domain
+
+<https://github.com/showlab/Show-1>
+
+ - Better text-video alignment   
+ - Can synthesize large motion   
+ - Memory-efficient   
+
+Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
+
+
+P80  
+## VideoCrafter  
+
+• Latent diffusion inserted with temporal layers
+
+![](./assets/08-80.png) 
+
+Chen et al., “VideoCrafter1: Open Diffusion Models for High-Quality Video Generation,” arXiv 2023.    
+
+P81  
+## LaVie  
+
+Joint image-video finetuning with curriculum learning
+
+![](./assets/08-81.png) 
+
+Wang et al., “LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models,” arXiv 2023.   
+
+P83   
+## Stable Video Diffusion  
+
+Scaling latent video diffusion models to large datasets
+
+**Data Processing and Annotation** 
+
+ - Cut Detection and Clipping    
+    - Detect cuts/transitions at multiple FPS levels   
+    - Extract clips precisely using keyframe timestamps   
+ - Synthetic Captioning   
+    - Use CoCa image captioner to caption the mid-frame of each clip   
+    - Use V-BLIP to obtain video-based caption   
+    - Use LLM to summarise the image- and video-based caption   
+    - Compute CLIP similarities and aesthetic scores
+ - Filter Static Scene   
+    - Use dense optical flow magnitudes to filter static scenes   
+ - Text Detection   
+    - Use OCR to detect and remove clips with excess text    
+
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.     
+
+P84   
+## Stable Video Diffusion   
+
+Scaling latent video diffusion models to large datasets
+
+**Data Processing and Annotation**  
+
+
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023. 84
+
+![](./assets/08-84.png) 
+
+P85  
+## Stable Video Diffusion   
+
+Scaling latent video diffusion models to large datasets
+
+**Stage I: Image Pretraining**
+
+ - Initialize weights from Stable Diffusion 2.1 (text-to-image model)   
+
+![](./assets/08-85.png) 
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
+
+P86   
+## Stable Video Diffusion   
+
+Scaling latent video diffusion models to large datasets
+
+**Stage II: Curating a Video Pretraining Dataset**
+
+ - Systematic Data Curation
+    - Curate subsets filtered by various criteria (CLIP-, OCR-, optical flow-, aesthetic-scores…)
+    - Assess human preferences on models trained on different subsets
+    - Choose optimal filtering thresholds via Elo rankings for human preference votes
+ - Well-curated beats un-curated pretraining dataset
+
+![](./assets/08-86.png) 
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.  
+
+P87   
+## Stable Video Diffusion  
+
+Scaling latent video diffusion models to large datasets
+
+**Stage III: High-Quality Finetuning**
+
+ - Finetune base model (pretrained from Stages I-II) on high-quality video data   
+    - High-Resolution Text-to-Video Generation   
+       - ~1M samples. Finetune for 50K iterations at 576x1024 (in contrast to 320x576 base resolution)   
+    - High Resolution Image-to-Video Generation   
+    - Frame Interpolation   
+    - Multi-View Generation   
+ - Performance gains from curation persists after finetuning   
+
+![](./assets/08-87.png) 
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
+
+P89   
+# 2 Video Generation
+
+## 2.3 Other closed-source works
+
+
+P90   
+
+![](./assets/08-90.png) 
+
+
+P91   
+## GenTron
+
+Transformer-based diffusion for text-to-video generation
+
+ - Transformer-based architecture extended from DiT (class-conditioned transformer-based LDM)   
+ - Train T2I à insert temporal self-attn à joint image-video finetuning (motion-free guidance)    
+
+![](./assets/08-91.png) 
+
+Chen et al., “GenTron: Delving Deep into Diffusion Transformers for Image and Video Generation,” arXiv 2023.    
+
+P93   
+## W.A.L.T.
+
+Transformer-based diffusion for text-to-video generation  
+
+ - Transformer-based denoising diffusion backbone   
+ - Joint image-video training via unified image/video latent space (created by a joint 3D encoder with causal 3D conv layers, allowing the first frame of a video to be tokenized independently)   
+ - Window attention to reduce computing/memory costs   
+ - Cascaded pipeline for high-quality generation    
+ 
+![](./assets/08-93.png) 
+
+Gupta et al., “Photorealistic Video Generation with Diffusion Models,” arXiv 2023.     
+
+
+P95   
+## Other Closed-Source Works
+
+|||
+|--|--|
+| ![](./assets/08-95-1.png) |![](./assets/08-95-2.png) |
+| **Latent Shift** (An et al.)<br>Shift latent features for better temporal coherence <br> “Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation,” arXiv 2023.| **Video Factory** (Wang et al.)<br> Modify attention mechanism for better temporal coherence <br> “VideoFactory: Swap Attention in Spatiotemporal Diffusions for Text-to-Video Generation,” arXiv 2023.| 
+|![](./assets/08-95-3.png) |![](./assets/08-95-4.png) |
+| **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023. | *VideoFusion* (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
+
+P96  
+# 2 Video Generation
+
+## 2.4 Training-efficient techniques
+
+P97  
+
+![](./assets/08-97.png) 
+
+P98 
+## AnimateDiff  
+
+Transform domain-specific T2I models to T2V models
+
+ - Domain-specific (personalized) models are widely available for image   
+    - Domain-specific finetuning methodologies: LoRA, DreamBooth…   
+    - Communities: Hugging Face, CivitAI…   
+ - Task: turn these image models into T2V models, without specific finetuning   
+
+
+Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
+
+P99  
+## AnimateDiff   
+
+Transform domain-specific T2I models to T2V models
+
+**Methodology**
+
+ - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
+ - Plug it into a domain-specific T2I model during inference   
+
+![](./assets/08-99.png) 
+
+Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
+
+P100 
+## AnimateDiff   
+
+Transform domain-specific T2I models to T2V models
+
+**Methodology** 
+
+ - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
+ - Plug it into a domain-specific T2I model during inference   
+
+![](./assets/08-100.png)   
+
+ - Train on WebVid-10M, resized at 256x256 (experiments show can generalize to higher res.)   
+
+Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
+
+P102  
+## Text2Video-Zero   
+
+Use Stable Diffusion to generate videos without any finetuning
+
+**Motivation: How to use Stable Diffusion for video generation without finetuning?**  
+
+ - Start from noises of similar pattern   
+ - Make intermediate features of different frames to be similar   
+
+
+Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.    
+
+P103   
+## Text2Video-Zero   
+
+Use Stable Diffusion to generate videos without any finetuning
+
+ - Start from noises of similar pattern: given the first frame’s noise, define a global scene motion, used to translate the first frame’s noise to generate similar initial noise for other frames   
+
+![](./assets/08-103.png) 
+
+Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.  
+
+P104   
+## Text2Video-Zero
+
+Use Stable Diffusion to generate videos without any finetuning
+
+ - Make intermediate features of different frames to be similar: always use K and V from the first frame in self-attention   
+
+![](./assets/08-104.png) 
+
+Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.    
+
+P105   
+## Text2Video-Zero
+
+Use Stable Diffusion to generate videos without any finetuning
+
+ - Optional background smoothing: regenerate the background, average with the first frame
+
+![](./assets/08-105.png) 
+
+Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.   
+
+P107 
+## Training Efficient Techniques: More Works
+
+||||
+|--|--|--|
+| ![](./assets/08-107-1.png) | ![](./assets/08-107-2.png) | ![](./assets/08-107-3.png) |
+| **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022. | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+
+
+
+
 
 ![](./assets/08-73.png) 
-
-
-
