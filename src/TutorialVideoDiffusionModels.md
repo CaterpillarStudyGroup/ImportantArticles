@@ -829,11 +829,11 @@ Scaling latent video diffusion models to large datasets
 
 **Data Processing and Annotation**  
 
-
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023. 84
-
 ![](./assets/08-84.png) 
+
+Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
+
+
 
 P85  
 ## Stable Video Diffusion   
