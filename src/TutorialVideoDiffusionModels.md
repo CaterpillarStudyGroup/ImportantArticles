@@ -1754,7 +1754,7 @@ Attention map fusing for better temporal consistency
 
 Qi et al., “FateZero: Fusing Attentions for Zero-shot Text-based Video Editing,” ICCV 2023.    
 
-P184   
+P185   
 ## FateZero   
 
 Attention map fusing for better temporal consistency
@@ -1901,7 +1901,7 @@ ControlNet-like video editing
 ![](./assets/08-200.png) 
 
 
-Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023. 200
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
 P201   
 ## ControlVideo (Zhang et al. 2023)
@@ -1915,7 +1915,7 @@ ControlNet-like video editing
 ![](./assets/08-201.png) 
 
 
-Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023. 201
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
 P202   
 ## ControlVideo (Zhang et al. 2023)  
