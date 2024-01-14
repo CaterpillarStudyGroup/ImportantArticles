@@ -1578,8 +1578,341 @@ Tune on multiple videos of a motion to be customised
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
+P170   
+## MotionDirector
+
+Tune on multiple videos of a motion to be customised
+
+![](./assets/08-170.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023   
+
+P171   
+## MotionDirector
+
+## Tune on multiple videos of a motion to be customised
+
+ - MokonDirector can customize foundakon models to generate videos with desired mokons.
+
+![](./assets/08-171.png) 
+
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.   
+
+P172   
+## MotionDirector
+
+Tune on multiple videos of a motion to be customised  
+
+ - The challenge is generalizing the learned motions to diverse appearance.   
+ - MotionDirector learns the appearances and motions in reference videos in a decoupled way, to avoid overfitting on the limited appearances.   
+
+
+![](./assets/08-172.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.   
+
+P173   
+## MotionDirector
+
+Tune on multiple videos of a motion to be customised
+
+ - Decouple appearance and motion.
+
+![](./assets/08-173.png) 
+
+Zhao et al., “MogonDirector: Mogon Customizagon of Text-to-Video Diffusion Models,” arXiv 2023.     
+
+P174   
+## MotionDirector  
+
+
+Tune on muleple videos of a moeon to be customised
+
+- Comparing with other methods.
+
+![](./assets/08-174.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
+
+P175   
+## MotionDirector
+
+Tune on multiple videos of a motion to be customised
+
+ - Comparing with other methods.   
+
+![](./assets/08-175.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
+
+P176  
+## MofonDirector
+
+Tune on multiple videos of a motion to be customised
+
+![](./assets/08-176.png) 
+
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.     
+
+P177  
+# 3 Video Editing
+
+## 3.2 Training-free
+
+P178   
+![](./assets/08-178.png) 
+
+P179   
+## TokenFlow
+
+Consistent high-quality semantic edits
+
+Main challenge using T2I to edit videos without finetuning: temporal consistency  
+
+![](./assets/08-179.png) 
+
+Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Edigng,” arXiv 2023.    
+
+P180   
+## TokenFlow
+
+Consistent high-quality semantic edits
+
+**Key Idea**
+
+ - Achieve consistency by enforcing the inter-frame correspondences in the original video   
+
+Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Edigng,” arXiv 2023.     
+
+P181   
+## TokenFlow   
+
+Consistent high-quality semanec edits
+
+**Main idea**
+
+![](./assets/08-181.png) 
+
+Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.    
+
+P182   
+## TokenFlow
+
+Consistent high-quality semantic edits
+
+**Main idea**
+
+During conditional denoising, use features from corresponding positions in preceding and following frames instead of the pixel's own feature at output of extended-attention
+
+|||
+|--|--|
+| ![](./assets/08-182.png)  | ![](./assets/08-182-1.png)  |
+
+
+Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.    
+
+P183   
+## TokenFlow
+
+Consistent high-quality semantic edits
+
+![](./assets/08-183.png) 
+
+No temporal finetuning, good temporal consistency Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.     
+
+P184   
+## FateZero   
+
+Attention map fusing for better temporal consistency
+
+**Methodology** 
+
+ - During DDIM inversion, save inverted self-/cross-attention maps    
+ - During editing, use some algorithms to blend inverted maps and generated maps   
+
+![](./assets/08-184.png) 
+
+Qi et al., “FateZero: Fusing Attentions for Zero-shot Text-based Video Editing,” ICCV 2023.    
+
+P184   
+## FateZero   
+
+Attention map fusing for better temporal consistency
+
+**Methodology**
+
+ - During DDIM inversion, save inverted self-/cross-avenkon maps   
+ - During edikng, use some algorithms to blend inverted maps and generated maps   
+
+![](./assets/08-185.png) 
+
+Qi et al., “FateZero: Fusing Attentions for Zero-shot Text-based Video Editing,” ICCV 2023.    
+
+
+P186    
+## FateZero  
+
+Attention map fusing for better temporal consistency
+
+![](./assets/08-186.png) 
+
+Qi et al., “FateZero: Fusing Akengons for Zero-shot Text-based Video Edigng,” ICCV 2023.    
+
+P187   
+## Training-Free Video Editing: More Works
+
+||||
+|--|--|--|
+| ![](./assets/08-187-1.png)  | ![](./assets/08-187-2.png)  | ![](./assets/08-187-3.png)  |
+| **MeDM** (Chu et al.) <br> OpScal flow-based guidance for temporal consistency <br> “MeDM: Mediagng Image Diffusion Models for Video-to￾Video Translagon with Temporal Correspondence Guidance,” arXiv 2023. | **Ground-A-Video** (Jeong et al.) <br> Improve temporal consistency via modified attention and optical flow <br> “Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models,” arXiv 2023. | **Gen-L-Video** (Lorem et al.) <br> Edit very long videos using existing generators <br> “Gen-L-Video: Multi-Text to Long Video Generation via Temporal Co-Denoising,” arXiv 2023. |
+| ![](./assets/08-187-4.png)  | ![](./assets/08-187-5.png)  | ![](./assets/08-187-6.png)  |
+| **FLATTEN** (Cong et al.) <br> Optical flow-guided attention for temporal consistency <br> “Flatten: optical flow-guided attention for consistent text-to-video editing,” arXiv 2023. | **InFusion** (Khandelwal et al.) <br> Improve temporal consistency via fusing latents <br> “InFusion: Inject and Attention Fusion for Multi Concept Zero-Shot Text-based Video Editing,” ICCVW 2023. | **Vid2Vid-Zero** (Wang et al.) <br> Improve temporal consistency via cross￾attention guidance and null-text inversion <br> “Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models,” arXiv 2023. |
+
+P188    
+# 3 Video Editing
+
+## 3.3 Controlled Edifng (depth/pose/point/ControlNet)
+
+P189   
+
+![](./assets/08-189.png) 
+
+P190   
+## Depth Control
+
+
+P192   
+## Use MiDaS to offer depth condition
+
+Depth estimating network
+
+
+Ranftl et al., “Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer,” TPAMI 2022.
+
+
+P193   
+## Gen-1
+
+Framewise depth-guided video editing
+
+ - Inflate Stable Diffusion to a 3D model, finetune on pretrained weights   
+ - Insert temporal convolution/attention layers   
+ - Finetune to take **per-frame depth as conditions**   
+
+|||
+|--|--|
+| ![](./assets/08-193-1.png)  | ![](./assets/08-193-2.png)  |
+
+
+Psser et al., “Structure and Content-Guided Video Synthesis with Diffusion Models,” ICCV 2023. 
+
+P194   
+## Pix2Video
+
+Framewise depth-guided video editing
+
+ - Leverage a pretrained per-frame depth-conditioned Stable Diffusion model to edit frame by frame, to maintain motion consistency between source video and edited video
+ - No need for training/finetuning
+ - Challenge is how to ensure temporal consistency?   
+
+![](./assets/08-194.png) 
+
+Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.   
+
+
+P195   
+## Pix2Video
+
+Framewise depth-guided video editing
+
+ - How to ensure temporal consistency?   
+    - Obtain initial noise from DDIM inversion   
+
+![](./assets/08-195.png) 
+
+Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
+
+P196   
+## Pix2Video
+
+Framewise depth-guided video editing
+
+ - How to ensure temporal consistency?    
+    - Inject self-attention features from the previous frame in U-Net for generating the current frame    
+    - Use the latent of the previous frame to guide latent update of the current frame   
+ 
+![](./assets/08-196.png) 
+
+Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
+
+P197   
+## Pix2Video
+
+Framewise depth-guided video editing
+
+![](./assets/08-197.png) 
+
+Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023   
+
+P198   
+## Pix2Video
+
+Framewise depth-guided video editing
+
+![](./assets/08-198.png) 
+
+Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.
+
+
+P199   
+## ControlNet / Multiple Control
+
+P200   
+## ControlVideo (Zhang et al. 2023)
+
+ControlNet-like video editing
+
+ - Input structural conditions through **ControlNet**
+
+![](./assets/08-200.png) 
+
+
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023. 200
+
+P201   
+## ControlVideo (Zhang et al. 2023)
+
+ControlNet-like video editing
+
+ - Use pretrained weights for Stable Diffusion & ControlNet, no training/finetuning   
+ - Inflate Stable Diffusion and ControlNet along the temporal dimension   
+ - Interleaved-frame smoothing during DDIM sampling for bever temporal consistency    
+
+![](./assets/08-201.png) 
+
+
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023. 201
+
+P202   
+## ControlVideo (Zhang et al. 2023)  
+
+ControlNet-like video editing
+
+ - Use pretrained weights for Stable Diffusion & ControlNet, no training/finetuning   
+ - Inflate Stable Diffusion and ControlNet along the temporal dimension    
+ - Interleaved-frame smoothing during denoising for better temporal consistency    
+
+![](./assets/08-202.png)
+
+Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
 
 
 
-![](./assets/08-149.png) 
+
+ 
+
+
+
+![](./assets/08-200.png) 
