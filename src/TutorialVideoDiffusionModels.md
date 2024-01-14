@@ -695,7 +695,7 @@ P73
 Leverage pretrained T2I models for video generation  
 
 
-Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.  
+
 
 P74  
 ## ModelScopeT2V
