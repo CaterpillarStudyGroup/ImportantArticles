@@ -2412,7 +2412,7 @@ Edit a video = edit a canonical image + learned deformation field
 
 Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
 
-P253   
+P254   
 ## DynVideo-E
 
 Edit a video = edit a canonical ~~image~~ 3D NeRF   
@@ -2420,6 +2420,9 @@ Edit a video = edit a canonical ~~image~~ 3D NeRF
 Canonical image in CoDeF is still 2D   
 
 Can we represent the video in a truly 3D space?   
+
+Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
+
 
 P255   
 ## DynVideo-E
@@ -2462,8 +2465,7 @@ Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Mogon- and Vi
 P259  
 ## DynVideo-E
 
-DynVideo-E significantly outperforms SOTA    
-approaches on two challenging datasets by a large margin of 50% ∼ 95% in terms of human preference   
+DynVideo-E significantly outperforms SOTA approaches on two challenging datasets by a large margin of 50% ∼ 95% in terms of human preference   
 
 P263   
 # 3 Video Editing  
