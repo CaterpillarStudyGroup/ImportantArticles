@@ -317,8 +317,8 @@ Early work on video generation
 
  - 3D U-Net factorized over space and time   
  - Image 2D conv inflated as → space-only 3D conv, i.e., 2 in (2+1)D Conv   
-    - Kernel size: (3×3) → (1×3×3)   
-    - Feature vectors: (height × weight × channel) → (frame × height × width × channel)   
+    - Kernel size: (3×3) → (<u>1</u>×3×3)   
+    - Feature vectors: (height × weight × channel) → (<u>frame</u> × height × width × channel)   
  - Spatial attention: remain the same   
  - Insert temporal attention layer: attend across the temporal dimension (spatial axes as batch)   
 
