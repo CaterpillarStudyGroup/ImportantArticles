@@ -111,8 +111,8 @@ DDPM vs DDIM
 
 |||
 |--|--|
-| ![](./assets/08-14.png) | **DDPM cannot skip timesteps**  <br> A few hundreds steps to generate an image |
-|![](./assets/08-14.png) |**DDIM can skip timesteps** <br> Say 50 steps to generate an image |
+| ![](./assets/08-15-1.png) | **DDPM cannot skip timesteps**  <br> A few hundreds steps to generate an image |
+|![](./assets/08-15-2.png) |**DDIM can skip timesteps** <br> Say 50 steps to generate an image |
 
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.    
