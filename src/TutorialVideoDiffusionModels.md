@@ -1444,10 +1444,9 @@ One-shot tuning of T2I models for T2V generation/editing
  - parameter efficient and fast (~10 min);    
  - retains the original property of pre-trained T2I diffusion models.   
 
+\begin{align*} \mathcal{V} ^\ast =\mathcal{D} (\mathrm{DDIM-samp} (\mathrm{DDIM-inv} (\varepsilon (\mathcal{V} )),\tau^\ast  ))\end{align*}
 
 **Structure guidance via DDIM inversion**
-
-\begin{align*} \mathcal{V} ^\ast =\mathcal{D} (\mathrm{DDIM-samp} (\mathrm{DDIM-inv} (\varepsilon (\mathcal{V} )),\tau^\ast  ))\end{align*}
 
  - preserves the structural information   
  - improves temporal consistency   
