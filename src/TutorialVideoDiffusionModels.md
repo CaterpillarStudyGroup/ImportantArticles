@@ -460,4 +460,67 @@ where
 Wang et al., “Image Quality Assessment: from Error Visibility to Structural Similarity,” IEEE Transactions on Image Processing, April 2004.   
 Horé et al., “Image Quality Metrics: PSNR vs. SSIM,” ICPR 2010.   
 
+P51   
+## CLIP Similarity   
+
+Image-caption similarity
+
+![](./assets/08-51.png) 
+
+Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.      
+
+P52   
+## Fréchet Video Distance (FVD)  
+
+Semantic similarity and temporal coherence between two videos    
+
+![](./assets/08-52.png) 
+
+Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.    
+Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric & Challenges,” arXiv 2018.     
+
+
+P53   
+## Kernel Video Distance   
+
+Video quality assessment via semantic features and MMD  
+
+![](./assets/08-53.png) 
+
+Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.    
+Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric & Challenges,” arXiv 2018.      
+
+
+P54   
+## Video Inception Score (IS)
+
+Video quality and diversity
+
+![](./assets/08-54.png) 
+
+Salimans et al., “Improved Techniques for Training GANs,” NeurIPS 2016.    
+Barratt et al., “A Note on the Inception Score,” ICML 2018.    
+Saito et al., “Train Sparsely, Generated Densely: Memory-Efficient Unsupervised Training of High-Resolution Temporal GAN,” IJCV 2020. 
+
+
+P55   
+## Frame Consistence CLIP scores
+
+Frame temporal semantic consistency
+
+
+ - Compute CLIP image embeddings for all frames   
+ - Report average cosine similarity between all pairs of frames   
+
+![](./assets/08-55.png) 
+
+Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.    
+
+
+
+
+
+
+
+
 
