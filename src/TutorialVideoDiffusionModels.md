@@ -136,7 +136,7 @@ Based on the assumption that the ODE process can be reversed in the limit of sma
 
 Forward Diffusion Process: Add \\(\mathcal{N} (0,\mathbf{I} ) \\) Noise
 
-DDIM Inversion Process: Add Noise \\(\mathrm{inverted} \\) by the trained DDIM denoiser
+DDIM Inversion Process: Add Noise **inverted** by the trained DDIM denoiser
 
 Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.    
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.   
