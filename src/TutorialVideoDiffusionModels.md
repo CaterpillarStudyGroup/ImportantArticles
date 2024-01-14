@@ -517,10 +517,198 @@ Frame temporal semantic consistency
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.    
 
 
+P57   
+## Evaluation Metrics    
+
+Hybrid evaluation
+
+**EvalCrafter**
+
+ - Creates a balanced prompt list for evaluation   
+ - **Multi-criteria decision analysis** on 18 metrics: visual quality, content quality…   
+ - Regress the coefficients of all metrics to generate an overall score aligned with user opinions   
+
+![](./assets/08-57.png) 
+
+Liu et al., “EvalCrafter: Benchmarking and Evaluating Large Video Generation Models,” arXiv 2023.      
+
+P58  
+## Make-A-Video   
+
+Cascaded generation
+
+![](./assets/08-58.png) 
+
+Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
+
+
+P59   
+## Make-A-Video   
+
+Cascaded generation
+
+![](./assets/08-59.png) 
+
+Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
+
+
+P60  
+## Make-A-Video   
+
+Cascaded generation
+
+![](./assets/08-60.png) 
+
+Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
+
+
+P62   
+## Make-A-Video   
+
+Cascaded generation
+
+From static to magic   
+Add motion to a single image or fill-in the in-betw    
+
+![](./assets/08-62.png) 
+
+Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
+
+
+P63   
+## Imagen & Imagen Video
+
+Leverage pretrained T2I models for video generation; Cascaded generation
+
+|||
+|--|--|
+| ![](./assets/08-63-1.png)  |  ![](./assets/08-63-2.png) |
+
+
+Imagen: Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding,” arXiv 2022.    
+Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with Diffusion Models,” arXiv 2022.    
+
+
+P64   
+## Align your Latents
+
+Leverage pretrained T2I models for video generation; 
+Cascaded generation   
+
+![](./assets/08-64.png)
+
+Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
+
+
+P65   
+## Align your Latents   
+
+Leverage pretrained T2I models for video generation
+
+**Inserting Temporal Layers**   
+
+ - Latent space diffusion model: insert temporal convolutional & 3D attention layers   
+ - Decoder: add 3D convolutional layers   
+ - Upsampler diffusion model: add 3D convolution layers   
+
+Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
+
+P66   
+# 2 Video Generation   
+
+## 2.2 Open-source base models
+
+
+P67   
+![](./assets/08-67.png)
+
+P68   
+## ModelScopeT2V
+
+Leverage pretrained T2I models for video generation
+
+ - Inflate Stable Diffusion to a 3D model, preserving pretrained weights   
+ - Insert spatio-temporal blocks, can handle varying number of frames   
+
+|||
+|--|--|
+| ![](./assets/08-68-1.png)  |  ![](./assets/08-68-2.png) |
+
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
+
+P69   
+## ModelScopeT2V
+
+Leverage pretrained T2I models for video generation   
+
+ - Inflate Stable Diffusion to a 3D model, preserving pretrained weights    
+ - Insert spatio-temporal blocks   
+
+![](./assets/08-69.png) 
+
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
+
+
+P70   
+## ModelScopeT2V    
+
+Leverage pretrained T2I models for video generation
+
+
+ - Inflate Stable Diffusion to a 3D model, preserving pretrained weights   
+ - Insert spatio-temporal blocks, **can handle varying number of frames**   
+
+![](./assets/08-70.png) 
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023. 
+
+
+P71   
+## ModelScopeT2V
+
+Length = 1   
+Model generate images   
+
+P72   
+## ModelScopeT2V   
+
+Leverage pretrained T2I models for video generation
+
+![](./assets/08-72.png) 
+
+
+ZeroScope: finetunes ModelScope on a small set of high-quality videos, resulting into higher resolution at 
+1024 x 576, without the Shutterstock watermark    
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
+
+
+P73   
+## ModelScopeT2V   
+
+Leverage pretrained T2I models for video generation  
+
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.  
+
+P74  
+## ModelScopeT2V
+
+Leverage pretrained T2I models for video generation
+
+||||
+|--|--|--|
+| " Robot dancing in times square,” arXiv 2023.  | " Clown fish swimming through the coral reef,” arXiv 2023.| " Melting ice cream dripping down the cone,” arXiv 2023.| " Hyper-realistic photo of an abandoned industrial site during a storm,” arXiv 2023.|
+| ![](./assets/08-74-1.png)  |  ![](./assets/08-74-2.png) | ![](./assets/08-74-3.png)  |  ![](./assets/08-74-4.png) |
+
+
+Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
 
 
 
-
+![](./assets/08-73.png) 
 
 
 
