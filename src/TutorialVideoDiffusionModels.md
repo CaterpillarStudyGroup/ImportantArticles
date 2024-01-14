@@ -1563,16 +1563,20 @@ P168
 
 Tune on multiple videos of a motion to be customised
 
-\begin{align*}  \text{Imagine what a monkey playing golf looks like?} \end{align*}
 
 
-![](./assets/08-168.png) 
+![](./assets/08-168-1.png) 
 
-Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023. 168
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
+P169  
+## MotionDirector
 
+Tune on multiple videos of a motion to be customised
 
+![](./assets/08-169.png) 
 
+Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
 
 
