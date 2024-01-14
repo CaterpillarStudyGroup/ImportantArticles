@@ -1414,7 +1414,7 @@ One-shot tuning of T2I models for T2V generation/editing
 
 ![](./assets/08-153-2.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 153
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
 
 P154   
@@ -1424,7 +1424,7 @@ One-shot tuning of T2I models for T2V generation/editing
 
 ![](./assets/08-154.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 154
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
 
 P155
@@ -1454,7 +1454,7 @@ One-shot tuning of T2I models for T2V generation/editing
 
 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023. 155
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
 
 P156  
