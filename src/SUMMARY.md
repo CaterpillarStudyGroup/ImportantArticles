@@ -14,8 +14,10 @@
 - [Joint Limits](JointLimits.md)
 - [Visualizing Rotation Spaces](VisualizingRotationSpaces.md)
 - [Tutorial: Video Diffusion Models](TutorialVideoDiffusionModels.md)
-- [Diffusion Model](DiffusionModel.md)
-- [Stable Diffusion](StableDiffusion.md)
+- [DiffusionModel_lhy_1](DiffusionModel_lhy_1.md)
+- [StableDiffusion_lhy_2](StableDiffusion_lhy_2.md)
+- [DDPM_lhy_3](DDPM_lhy_3.md)
+
 
 
 
