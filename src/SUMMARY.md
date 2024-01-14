@@ -15,6 +15,7 @@
 - [Visualizing Rotation Spaces](VisualizingRotationSpaces.md)
 - [Tutorial: Video Diffusion Models](TutorialVideoDiffusionModels.md)
 - [Diffusion Model](DiffusionModel.md)
+- [Stable Diffusion](StableDiffusion.md)
 
 
 
