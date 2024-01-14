@@ -134,9 +134,9 @@ P17
 
 Based on the assumption that the ODE process can be reversed in the limit of small steps    
 
-Forward Diffusion Process: Add \\({\color{Red} \mathcal{N} (0,\mathbf{I} )} \\) Noise
+Forward Diffusion Process: Add \\(\mathcal{N} (0,\mathbf{I} ) \\) Noise
 
-DDIM Inversion Process: Add Noise \\({\color{Red}  \mathrm{inverted} }\\) by the trained DDIM denoiser
+DDIM Inversion Process: Add Noise \\(\mathrm{inverted} \\) by the trained DDIM denoiser
 
 Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.    
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.   
