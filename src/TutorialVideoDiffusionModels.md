@@ -450,13 +450,13 @@ Pixel-level similarity between images
 
  - For two images \\(x,y \text{ of shape }  M\times N\\):   
 
-\begin{align*}  \mathrm{SSIM} (xy)=l(x,y)\cdot c(x,y)\cdot s(x,y)\end{align*}
+\begin{align*}  \mathrm{SSIM} (x,y)=l(x,y)\cdot c(x,y)\cdot s(x,y)\end{align*}
 
 where   
 
 \begin{align*} \begin{cases}
- \text{Lumiannce Comparison Funckon:} l(x,y)=\frac{2\mu _x\mu _y+C_1}{\mu _x^2\mu _y^2+C_1}  \\\\ 
- \text{Contrast Comparison Funckon:} c(x,y)=\frac{2\sigma  _x\sigma  _y+C_2}{\sigma  _x^2\sigma  _y^2+C_2}  \\\\ 
+ \text{Lumiannce Comparison Funckon:} l(x,y)=\frac{2\mu _x\mu _y+C_1}{\mu _x^2+\mu _y^2+C_1}  \\\\ 
+ \text{Contrast Comparison Funckon:} c(x,y)=\frac{2\sigma  _x\sigma  _y+C_2}{\sigma  _x^2+\sigma  _y^2+C_2}  \\\\ 
   \text{Structure Comparison Funckon:} s(x,y)=\frac{\sigma  _{xy}+C_3}{\sigma  _{x}\sigma  _{y}+C_3}  \end{cases}\end{align*}
  
 
