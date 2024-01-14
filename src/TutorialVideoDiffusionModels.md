@@ -2031,11 +2031,10 @@ P219
 
 Pose- and image-guided video generation   
 
-• Training data: TikTok dataset of 350 dancing videos; TED-talks dataset of 1,203 video clips   
 
 ![](./assets/08-219.png) 
 
-Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023. 219
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.    
 
 P220   
 ## MagicAnimate
@@ -2148,7 +2147,7 @@ Customized video subject swapping via point control
 **Framework**
 
  - **Motion layer**: use pretrained and fixed AnimateDiff to ensure essential temporal consistency    
- - **ED-LoRA** \\(_(Mix-of-Show)\\): learn the wconcept to be customized   
+ - **ED-LoRA** \\(_{(Mix-of-Show)}\\): learn the wconcept to be customized   
 
  - **Key design aims**: 
     - Introduce semantic point correspondences to guide motion trajectory   
