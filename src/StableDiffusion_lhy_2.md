@@ -1,12 +1,10 @@
-P1   
-# Stable Diffusion
-
-![](./assets/lhy2-1.png) 
 
 P2   
 ## Framework 
 
-![](./assets/lhy2-2.png) 
+![](./assets/lhy2-2-1.png) 
+
+![](./assets/lhy2-2-2.png) 
 
 P3   
 ## Stable Diffusion 
@@ -32,16 +30,18 @@ P5
 <https://arxiv.org/abs/2205.11487>
 
 
-![](./assets/lhy2-5.png) 
+![](./assets/lhy2-5-1.png) 
 
-P6   
-## Framework 
 
-![](./assets/lhy2-6.png) 
+
 
 P7   
 
-![](./assets/lhy2-7.png) 
+![](./assets/lhy2-7-1.png) 
+
+<https://arxiv.org/abs/2205.11487>
+
+
 
 P8   
 ## Fréchet Inception Distance (FID)
@@ -56,28 +56,35 @@ P9
 
 <https://arxiv.org/abs/2103.00020>
 
-![](./assets/lhy2-9.png) 
+400 million image-text pairs  
+
+
+![](./assets/lhy2-9-1.png) 
 
 P10   
 ## Framework
 
-![](./assets/lhy2-10.png) 
+Decoder can be trained without labelled data.   
+
+Decoder
+
 
 
 P11  
-## 「中間產物」為小圖
+## 「中间产物」为小图
 
-![](./assets/lhy2-11.png) 
+![](./assets/lhy2-11-1.png) 
 
 P12   
-## 「中間產物」為「Latent Representation」
+## 「中间产物」为「Latent Representation」
 
-![](./assets/lhy2-12.png) 
+Auto-encoder
 
-P13   
-## Framework 
+![](./assets/lhy2-12-1.png) 
 
-![](./assets/lhy2-13.png) 
+![](./assets/lhy2-12-2.png) 
+
+
 
 P14   
 ![](./assets/lhy2-14.png) 
@@ -97,7 +104,4 @@ P17
 
 ![](./assets/lhy2-17.png) 
 
-P18   
-## Framework 
 
-![](./assets/lhy2-18.png) 
