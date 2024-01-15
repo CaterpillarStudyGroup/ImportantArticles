@@ -32,6 +32,10 @@ P5
 
 ![](./assets/lhy2-5-1.png) 
 
+P6   
+## Framework 
+
+Text Encoder   
 
 
 
@@ -78,7 +82,7 @@ P11
 P12   
 ## 「中间产物」为「Latent Representation」
 
-Auto-encoder
+<u>Auto-encoder</u>
 
 ![](./assets/lhy2-12-1.png) 
 
