@@ -59,7 +59,7 @@ P12
 P13   
 ## Denoising Diffusion Probabilistic Models
 
-![](./assets/lhy1-13-1.png) 
+![](./assets/lhy1-13-3.png) 
 
 ![](./assets/lhy1-13-2.png) 
 
