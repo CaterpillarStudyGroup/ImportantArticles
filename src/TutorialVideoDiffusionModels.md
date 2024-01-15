@@ -40,6 +40,8 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
+> &#x2705; DiffusionModel 的第一篇论文    
+
 
 P8   
 ## DDPM (Denoising Diffusion Probabilistic Models)
@@ -61,6 +63,8 @@ Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
+
+> &#x2705; 通过公式推导，可以直接从\\(x_0\\)加噪到\\(X_t\\)．   
 
 
 P10   
@@ -85,6 +89,14 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.    
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
+
+> &#x2705; 输入带噪声图像，预测噪声，原图像去掉噪声后得到干净图像。     
+> &#x2705; \\(x_t\\) 可以处于任意时间步，可以一步去噪到干净图像。   
+> &#x2705; Noise Predictor Network 通常使用 UNet.    
+> &#x2705; \\(t\\) 代表时间步，网络可以以此决定去噪程度。   
+> &#x2705; “A cat” 是文本 condition.    
+
+
 P12   
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
@@ -95,6 +107,11 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
+> &#x2705; 虽然训练时是根据\\(X_t\\)预测\\(X_0\\).   
+> &#x2705; 但是推断时，\\(X_t\\)减去噪声后，又重新sample出一个噪声后加到图像上，变成\\(X_{t-1}\\)．   
+> &#x2705; 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。   
+
+
 P14  
 
 ## DDIM (Denoising Diffusion Implicit Models)
@@ -103,6 +120,11 @@ P14
 
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.    
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.   
+
+> &#x2753; 是否可以快速去噪？   
+> &#x2705; DDIM：可以直接从\\(t_2\\)去噪到\\(t_1\\).   
+> &#x2705; 把\\(X_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
+
 
 P15   
 ## Denoising Diffusion Models
@@ -128,6 +150,7 @@ Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.    
 Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.    
 
+> &#x2705; 已有训好的 denoiser，输入干净图像，求它的噪声。   
 
 P17   
 ## DDIM Inversion
@@ -141,6 +164,10 @@ Based on the assumption that the ODE process can be reversed in the limit of sma
 Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.    
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.   
 Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.    
+
+
+> &#x2705; 前向过程与DDIM Inverse 的区别   
+> &#x2705; DDIM Inverse 可用于图片编辑   
 
 
 p18   
@@ -169,11 +196,19 @@ Encoders bridge vision and language
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.     
 
 
+> &#x2753; 文本条件怎么输入到 denoiser？   
+> &#x2705; CLIP embedding：202 openai，图文配对训练用 CLIP 把文本转为 feature.   
+
+
 P21   
 
 ## Latent Diffusion
 
 ![](./assets/08-21.png) 
+
+> &#x2705; 把图片转为 high leve sematic space    
+> &#x2705; semanic更抽像，维度更低，因此模型更高效。   
+
 
 P22   
 ## Stable Diffusion
@@ -183,6 +218,10 @@ Conditional/unconditional image generation
 ![](./assets/08-22.png) 
 
 Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,” CVPR 2022.      
+
+> &#x2705; Stable Diffusion 特点：   
+> &#x2705; (1)：在 latent space 上工作   
+> &#x2705; (2)：引入多种 condition．   
 
 
 P24   
@@ -198,6 +237,8 @@ Few-shot finetuning of large models for personalized generation
 Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” arXiv 2021.    
 Gu et al., “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models,” arXiv 2023.   
 
+> &#x2705; LoRA:Low-Rank Adaptation    
+> &#x2705; 对已训好的大模型进行微调，生成想要的风格特点：要训练或调整的参数非常少。   
 
 P25   
 ## DreamBooth   
@@ -211,6 +252,10 @@ Few-shot finetuning of large models for generating personalized concepts
 Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” CVPR 2023.    
 
 
+> &#x2705; DreamBooth：输入文本和图像，文本中的［V］指代图像，生成新图像。   
+> &#x2705; 特点：对预训练的 diffusion model 的权重改变比较大。   
+
+
 P26  
 ## ControlNet    
 
@@ -219,6 +264,9 @@ Conditional generation with various guidances
 ![](./assets/08-26.png)
 
 Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023.     
+
+> &#x2705; Control Net：更细粒度的 condition．   
+> &#x2705; 方法：（1）预训练好 Diffusion Model（2）参数复制一份，原始网络 fix（3）用各种 condition finetune 新的网络。（4）两个网络结合到一起。   
 
 
 P27   
@@ -280,6 +328,8 @@ P35
 ![](./assets/08-35.png)
 
 
+> &#x2705; 从 2D 输出变成 3D 输出。   
+
 P36  
 ## Video Diffusion Models  
 
@@ -301,6 +351,9 @@ Recap (2+1)D Conv
 | ![](./assets/08-37-1.png)  |  ![](./assets/08-37-2.png) |
 
 Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.    
+
+> &#x2705; \\(t\times d\times d\\) 卷积 kenal 数量非常大，可以对 kernel 做分解，先在 spatial 上做卷积，然后在 temporal 上做卷积。   
+> &#x2705; 特点：效果还不错，效率也高。   
 
 P38   
 ## Video Diffusion Models   
@@ -326,6 +379,11 @@ Early work on video generation
 
 Ho et al., “Video Diffusion Models,” NeurIPS 2022.  
 
+> &#x2705; 2D U-Net 变为 3D U-Net，需要让其内部的 conv 操作和 attention 操作适配 3D.   
+> &#x2705; （1）2D conv 适配 3D，实际上只是扩充一个维度变成伪 3D，没有对时序信息做抽象。  
+> &#x2705; （2）attention 操作同样没有考虑时序。   
+> &#x2705; （3）时序上的抽象体现在 temporal attention layer上。   
+
 
 P40  
 ## Make-A-Video
@@ -336,6 +394,11 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022. 
 
+> &#x2705; 效果更好，框架在当下更主流。   
+> &#x2705; （1）SD：decoder 出关键帧的大概影像。  
+> &#x2705; （2）FI：补上中间帧。   
+> &#x2705; （3）SSR：时空上的超分。   
+
 P41   
 ## Make-A-Video
 
@@ -344,6 +407,8 @@ Cascaded generation
 ![](./assets/08-41.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
+
+> &#x2753; 第 3 步时间上的超分为什么没有增加帧数？   
 
 P42  
 ## Make-A-Video
@@ -354,6 +419,8 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
+> &#x2705; 此处的伪 3D 是指（2＋1）D，它有时序上的抽像，与 VDM 不同。   
+> &#x2705; 空间卷积使用预训练好的图像模型。   
 
 P43   
 ## Make-A-Video
@@ -364,6 +431,8 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.   
 
+
+> &#x2705; attention 操作也是（2＋1）D．   
 
 P44  
 ## Make-A-Video
@@ -385,6 +454,8 @@ The WebVid-10M Dataset
 ![](./assets/08-45.png) 
 
 Bain et al., “Frozen in Time: A Joint Video and Image Encoder for End to End Paper,” ICCV 2021.    
+
+> &#x2705; WebVid 是常用的视频数据集，有高清视频及配对文本。   
 
 P46   
 ## Evaluation Metrics
@@ -424,6 +495,9 @@ Semantic similarity between images
 
 Heusel et al., “GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,” NeurIPS 2017.    
 Hung-Yi Lee, “Machine Learning 2023 Spring,” National Taiwan University.    
+
+> &#x2705; FID：评估两个 distribution 的差距有多大。由于使用了网络的高层feature，可以评价 high／evel 的语义相似性。   
+
 
 P49   
 ## Peak Signal-to-Noise Ratio (PSNR)
@@ -505,6 +579,8 @@ Salimans et al., “Improved Techniques for Training GANs,” NeurIPS 2016.
 Barratt et al., “A Note on the Inception Score,” ICML 2018.    
 Saito et al., “Train Sparsely, Generated Densely: Memory-Efficient Unsupervised Training of High-Resolution Temporal GAN,” IJCV 2020. 
 
+> &#x2705; 多样性，在不给定 condition 的情况生成的分布的多样性。   
+> &#x2705; 质量：在给 condition 的条件下应生成特定的类别。   
 
 P55   
 ## Frame Consistence CLIP scores
@@ -545,6 +621,7 @@ Cascaded generation
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
 
+
 P59   
 ## Make-A-Video   
 
@@ -553,6 +630,8 @@ Cascaded generation
 ![](./assets/08-59.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
+
+> &#x2705; 早期都在UCF数据上比较，但UCF本身质量比较低，新的生成方法生成的质量更高，因此不常用 UCF 了。  
 
 
 P60  
@@ -592,6 +671,9 @@ Leverage pretrained T2I models for video generation; Cascaded generation
 Imagen: Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding,” arXiv 2022.    
 Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with Diffusion Models,” arXiv 2022.    
 
+> &#x2705; 先在 image 上做 cascade 生成      
+> &#x2705; 视频是在图像上增加时间维度的超分   
+
 
 P64   
 ## Align your Latents
@@ -603,6 +685,7 @@ Cascaded generation
 
 Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
 
+> &#x2705; 在 latent space 工作，因此 “生成关键帧 + 插帧 + 超分” 之后要 Decoder.   
 
 P65   
 ## Align your Latents   
@@ -615,7 +698,8 @@ Leverage pretrained T2I models for video generation
  - Decoder: add 3D convolutional layers   
  - Upsampler diffusion model: add 3D convolution layers   
 
-   
+
+> &#x2705; 所有工作的基本思路：（1）先从小的生成开始（2）充分利用 T2 I．   
 
 P66   
 # 2 Video Generation   
@@ -641,6 +725,9 @@ Leverage pretrained T2I models for video generation
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
 
+> &#x2705; 基本思路：（1）以 Stable Diffusion 为基础，在 latent space 工作。（2）把 SD 中的 2D 操作扩展为 3D.   
+
+
 P69   
 ## ModelScopeT2V
 
@@ -653,6 +740,8 @@ Leverage pretrained T2I models for video generation
 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
+
+> &#x2705; 扩展方法为（2＋1）D，因此在 2D 时空 spatial 的卷积操作和 Attention 操作之后分别增加了 temporal 的卷积和 Attention.   
 
 
 P70   
@@ -667,6 +756,8 @@ Leverage pretrained T2I models for video generation
 ![](./assets/08-70.png) 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023. 
+
+> &#x2705; 时域卷积操作能指定 frame 数，因此可以“生成视频”与“生成图像”联合训练。   
 
 
 P71   
@@ -688,6 +779,8 @@ ZeroScope: finetunes ModelScope on a small set of high-quality videos, resulting
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
 
+
+> &#x2705; ZeroScope 在 ModelScope 上 finetune，使用了非常小但质量非常高的数据，得到了高分辨率的生成效果。   
 
 P73   
 ## ModelScopeT2V   
@@ -720,6 +813,9 @@ Better text-video alignment? Generation in both pixel- and latent-domain
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
 
+> &#x2705; 当前模型存在的问题：当文本变复杂时，文本和内容的 align 不好。  
+> &#x2705; show-1 在 alignment 上做了改进。   
+
 P76   
 ## Show-1
 
@@ -735,6 +831,9 @@ Better text-video alignment? Generation in both pixel- and latent-domain
 
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
+
+> &#x2705; 实验发现：pixel spase 比 latent space更擅长 align ment.   
+> &#x2705; 原因：在 latent space，文本对 pixel 的控制比较差。   
 
 P77   
 ## Show-1
@@ -799,6 +898,9 @@ Joint image-video finetuning with curriculum learning
 
 Wang et al., “LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models,” arXiv 2023.   
 
+> &#x2705; 提供了一套高质量数据集，生成的视频质量也更好（训练集很重要）。   
+
+
 P83   
 ## Stable Video Diffusion  
 
@@ -821,6 +923,10 @@ Scaling latent video diffusion models to large datasets
 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.     
+
+> &#x2705; SVD：构建数据集    
+> &#x2705; （1）把视频切成小段，描述会更准确   
+> &#x2705; （2）用现有模型生成视频描述     
 
 P84   
 ## Stable Video Diffusion   
@@ -864,6 +970,8 @@ Scaling latent video diffusion models to large datasets
 ![](./assets/08-86.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.  
+
+> &#x2705; 在少量高质量数据上 finehune，质量提升很大。   
 
 P87   
 ## Stable Video Diffusion  
@@ -921,6 +1029,9 @@ Transformer-based diffusion for text-to-video generation
 
 Gupta et al., “Photorealistic Video Generation with Diffusion Models,” arXiv 2023.     
 
+P94   
+> &#x2753; 已训好的图像生成模型，怎样转成同风格的视频生成模型？    
+
 
 P95   
 ## Other Closed-Source Works
@@ -933,10 +1044,14 @@ P95
 | ![](./assets/08-95-3.png) | **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023.  |
 | ![](./assets/08-95-4.png)  | **VideoFusion** (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
 
+> &#x2705; Framwork（1）在原模型中加入 temporal layers（2）fix 原模型，训练新的 layers（3）把 lager 插入到目标 T2 I 模型中。   
+
 P96  
 # 2 Video Generation
 
 ## 2.4 Training-efficient techniques
+
+> &#x2753; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
 
 P97  
 
@@ -955,6 +1070,10 @@ Transform domain-specific T2I models to T2V models
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
 
+> &#x2753; 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
+> &#x2753;（2）中间帧的特征保持一致。    
+
+
 P99  
 ## AnimateDiff   
 
@@ -968,6 +1087,10 @@ Transform domain-specific T2I models to T2V models
 ![](./assets/08-99.png) 
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
+
+
+> &#x2705; 在 noise 上对内容进行编辑，即定义第一帧的 noise，以及后面帧的 noise 运动趋势。   
+
 
 P100 
 ## AnimateDiff   
@@ -984,6 +1107,13 @@ Transform domain-specific T2I models to T2V models
  - Train on WebVid-10M, resized at 256x256 (experiments show can generalize to higher res.)   
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
+
+
+> &#x2705; 保证中间帧尽量相似。   
+
+P101   
+> &#x2705; 扣出背景并 smooth.    
+
 
 P102  
 ## Text2Video-Zero   
@@ -1031,6 +1161,9 @@ Use Stable Diffusion to generate videos without any finetuning
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.   
 
+P106   
+> &#x2705; 文本 → 结构化的中间脚本 → 视频   
+
 P107 
 ## Training Efficient Techniques: More Works
 
@@ -1041,6 +1174,8 @@ P107
 |  ![](./assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
 | ![](./assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
 
+> &#x2705; 用纯文本的形式把图片描述出来。   
+> &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tome.    
 
 
 P108  
@@ -1063,6 +1198,8 @@ airplane thru window”
 What is in your mind now?
 
 Storyboard image from deviantart.com.
+
+> &#x2705; 难点：保持内容的一致性。   
 
 
 P111
@@ -1090,6 +1227,10 @@ A concept in film production
 
 Storyboard image from deviantart.com.   
 
+
+> &#x2705; 没有训练 GPT／LLM，而是使用文本来引导，但是生成结果不合理。   
+
+
 P113   
 ## VisorGPT
 
@@ -1110,6 +1251,11 @@ Prompt design
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.   
 
+
+P116    
+> &#x2705; 两层 diffusion    
+
+
 P118   
 ## VisorGPT
 
@@ -1127,6 +1273,9 @@ Sample from the LLM which has learned visual prior
 ![](./assets/08-119.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
+
+> &#x2705; Global：文生图  \\(\quad\\)  Local：图序列补全。   
+
 
 P120   
 ## VisorGPT
@@ -1180,7 +1329,7 @@ P125
 |  ![](./assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
 
 
-
+> &#x2705; （1）画运动轨迹（2）光流（3）做为 condition，可以细粒度地控制运动轨迹。   
 
 
 P126   
@@ -1332,6 +1481,8 @@ P141
 Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.   
 
 
+> &#x2705; 当前帧只与上帧和前一帧做 attention，大大减少计算量。  
+
 P142  
 ## Cinematic Mindscapes   
 
@@ -1342,6 +1493,10 @@ Brain activity-guided video generation
 ![](./assets/08-142.png) 
 
 Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Brain Activity,” arXiv 2023.     
+
+> &#x2705; 对要编辑的视频，先 DDIM Inversion，得到 inverfed noise，这是保留了原视频 pattern 的 noise.   
+> &#x2705; 用这个 noise 作为 init noise，还原出的视频跟原视频有比较好的结构化保留。   
+
 
 P144  
 ## Multimodal-Guided Video Generation: More Works
@@ -1380,6 +1535,11 @@ P149
 
 ![](./assets/08-149.png) 
 
+> &#x2705; 在一个视频上训练后可以对视频进行编辑。   
+> &#x2705; 训练过程：（1）对模型的时域模块 finetune．  
+> &#x2705; （2）对图像打乱后用图像 findune．  
+
+
 P150  
 ## Tune-A-Video
 
@@ -1388,6 +1548,12 @@ One-shot tuning of T2I models for T2V generation/editing
 ![](./assets/08-150.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
+
+> &#x2705; 推断过程：（1）把视频 dounsample，维度变小。
+> &#x2705; （2）加入噪声作为初始噪声，类似于 DDIM Inversion.    
+> &#x2705; （3）用 diffusion model 生成。   
+> &#x2705; （4）上采样。   
+
 
 P152   
 ## Tune-A-Video
@@ -1470,7 +1636,12 @@ P157
 ![](./assets/08-157.png) 
 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
+
+
+> &#x2705; （1）用几段视频学习 concept．   
+> &#x2705; （2）把 concept 接入到 diffusion model 中。   
+
 
 P158  
 ## Tune-A-Video
@@ -1479,12 +1650,22 @@ P158
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
+> &#x2705; 不仅学 motion，还可以学 camera motion，camera motion，物体轨迹。    
+
 P159  
 ## Tune-A-Video
 
 ![](./assets/08-159.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
+
+
+> &#x2705; 怎么把一个 concept 应用到不同的物体上。   
+> &#x2705; 怎样只学 motion 而不被物体的 appearance 影响，能不能 decouple.   
+> &#x2705; 分支1：spatial path，灰色为 spatial LoRA，学习外表信息。   
+> &#x2705; 分支2：temporal path，蓝色为 temporal LoRA，这个 path 用于学习 motion.    
+> &#x2705; debias：去掉 appreance 对 loss 的影响。   
+
 
 P160  
 ## Tune-A-Video
@@ -1492,7 +1673,12 @@ P160
 
 ![](./assets/08-160.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.
+Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
+
+
+> &#x2705; 应用：（1）也可以用于 one shot       
+> &#x2705; （2）可以用于 appreace 和 motion 的组合   
+> &#x2705; （3）可以用于 Image Animation   
 
 P161
 ## Tune-A-Video
@@ -1681,6 +1867,8 @@ P177
 P178   
 ![](./assets/08-178.png) 
 
+> &#x2705; 视频编辑领域比较难的问题：怎么保持时序一致性。   
+
 P179   
 ## TokenFlow
 
@@ -1702,6 +1890,8 @@ Consistent high-quality semantic edits
  - Achieve consistency by enforcing the inter-frame correspondences in the original video   
 
 Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Edigng,” arXiv 2023.     
+
+> &#x2705; 在 UNet 中抽出 feature map 之后，找 corresponden 并记录下来。在 denoise 过程中把这个 correspondence 应用起来。   
 
 P181   
 ## TokenFlow   
@@ -1739,6 +1929,8 @@ Consistent high-quality semantic edits
 
   
 Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Editing,” arXiv 2023.   
+
+> &#x2705; 在 DDIM inversion 过程中，把 attention maps 保存下来了，在 denoise 时，把这个 map 结合进去。    
 
 
 P184   
@@ -2096,7 +2288,10 @@ Customized video subject swapping via point control
 
 ![](./assets/08-227.png) 
 
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+> &#x2705; （1）人工标注每一帧的 semantic point．（少量标注，8帧）    
+> &#x2705; （2）把 point map 作为 condition．   
 
 P228    
 ## VideoSwap
@@ -2112,6 +2307,9 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
 
+
+> &#x2705; 实验证明，可以用 semantic point 作为 control．   
+
 P229    
 ## VideoSwap
 
@@ -2123,7 +2321,10 @@ Customized video subject swapping via point control
 
 ![](./assets/08-229.png) 
 
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
+Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.  
+
+
+> &#x2705; 也可以通过拉部分点改变车的形状。   
 
 P230    
 ## VideoSwap
@@ -2269,6 +2470,9 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
+
+> &#x2705; point contrd 可以处理形变比较大的场景。   
+
 P240   
 ## VideoSwap
 
@@ -2350,6 +2554,9 @@ Atlas-based video editing
 
 Chai et al., “StableVideo: Text-driven Consistency-aware Diffusion Video Edigng,” ICCV 2023.   
 
+
+> &#x2705; 给一个场景的多视角图片，基于 MLP 学习 3D 场景的隐式表达。   
+
 P249    
 ## Content Deformation Field (CoDeF)
 
@@ -2395,6 +2602,9 @@ Edit a video = edit a canonical image + learned deformation field
 
 Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
 
+
+> &#x2705; CoDef 把 3D 视频压缩为 2D Image，因此可以利用很多 2D 算法，再把 deformation 传递到整个视频。    
+
 P252   
 ## Content Deformation Field (CoDeF)
 
@@ -2403,6 +2613,9 @@ Edit a video = edit a canonical image + learned deformation field
 ![](./assets/08-252.png) 
 
 Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
+
+> &#x2705; 在时序上有比较好的一致性。   
+> &#x2705; 由于使用了 control net，与原视频在 Spatial level 也保持得非常好。   
 
 P253   
 ## Content Deformafon Field (CoDeF)
@@ -2434,6 +2647,11 @@ Edit a video = edit a canonical ~~image~~ 3D NeRF
 
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for arge-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
 
+
+P256   
+> &#x2705; Nerf 在人体成像上比较好。   
+
+
 P257   
 ## DynVideo-E
 
@@ -2444,6 +2662,11 @@ Edit a video = edit a canonical ~~image~~ 3D NeRF
  - For the first time introduce the dynamic NeRF as an innovative video representation for large-scale motion- and view-change human-centric video editing.   
 
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.
+
+
+> &#x2705; 不直接编辑图像，而是编辑 Nerf．   
+> &#x2705;（1）认为背景静止，学出背景 Neof．   
+> &#x2705; Stale Diffusion 用来计算 Loss.  
 
 P258  
 ## DynVideo-E
@@ -2498,7 +2721,11 @@ Instruction-guided Video Editing
 
 ![](./assets/08-266.png) 
 
-Qin et al., “InstructVid2Vid: Controllable Video Editing with Natural Language Instructions,” arXiv 2023.  
+Qin et al., “InstructVid2Vid: Controllable Video Editing with Natural Language Instructions,” arXiv 2023.    
+
+
+> &#x2705;（1）把说话的部分 mask 掉 （2）用 diffusion 根据 Audio Feature 生成说话的部分。   
+> &#x2705; 额外约束：（1）reference 状态 （2）前后帧 smooth     
 
 P267   
 ## Speech Driven Video Editing via an Audio-Conditioned Diffusion Model
