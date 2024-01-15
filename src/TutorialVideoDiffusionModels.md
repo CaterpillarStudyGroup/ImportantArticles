@@ -64,7 +64,7 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
-> &#x2705; 通过公式推导，可以直接从\\(x_0\\)加噪到\\(X_t\\)．   
+> &#x2705; 通过公式推导，可以直接从\\(x_0\\)加噪到\\(x_t\\)．   
 
 
 P10   
@@ -107,8 +107,8 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
-> &#x2705; 虽然训练时是根据\\(X_t\\)预测\\(X_0\\).   
-> &#x2705; 但是推断时，\\(X_t\\)减去噪声后，又重新sample出一个噪声后加到图像上，变成\\(X_{t-1}\\)．   
+> &#x2705; 虽然训练时是根据\\(x_t\\)预测\\(x_0\\).   
+> &#x2705; 但是推断时，\\(x_t\\)减去噪声后，又重新 sample 出一个噪声后加到图像上，变成\\(x_{t-1}\\)．   
 > &#x2705; 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。   
 
 
@@ -123,7 +123,7 @@ Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.
 
 > &#x2753; 是否可以快速去噪？   
 > &#x2705; DDIM：可以直接从\\(t_2\\)去噪到\\(t_1\\).   
-> &#x2705; 把\\(X_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
+> &#x2705; 把\\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
 
 
 P15   
@@ -207,7 +207,7 @@ P21
 ![](./assets/08-21.png) 
 
 > &#x2705; 把图片转为 high leve sematic space    
-> &#x2705; semanic更抽像，维度更低，因此模型更高效。   
+> &#x2705; semanic 更抽像，维度更低，因此模型更高效。   
 
 
 P22   
@@ -496,7 +496,7 @@ Semantic similarity between images
 Heusel et al., “GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,” NeurIPS 2017.    
 Hung-Yi Lee, “Machine Learning 2023 Spring,” National Taiwan University.    
 
-> &#x2705; FID：评估两个 distribution 的差距有多大。由于使用了网络的高层feature，可以评价 high／evel 的语义相似性。   
+> &#x2705; FID：评估两个 distribution 的差距有多大。由于使用了网络的高层 feature，可以评价 high／evel 的语义相似性。   
 
 
 P49   
@@ -699,7 +699,7 @@ Leverage pretrained T2I models for video generation
  - Upsampler diffusion model: add 3D convolution layers   
 
 
-> &#x2705; 所有工作的基本思路：（1）先从小的生成开始（2）充分利用 T2 I．   
+> &#x2705; 所有工作的基本思路：（1）先从小的生成开始（2）充分利用 T2I．   
 
 P66   
 # 2 Video Generation   
@@ -832,7 +832,7 @@ Better text-video alignment? Generation in both pixel- and latent-domain
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
 
-> &#x2705; 实验发现：pixel spase 比 latent space更擅长 align ment.   
+> &#x2705; 实验发现：pixel spase 比 latent space 更擅长 align ment.   
 > &#x2705; 原因：在 latent space，文本对 pixel 的控制比较差。   
 
 P77   
@@ -971,7 +971,7 @@ Scaling latent video diffusion models to large datasets
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.  
 
-> &#x2705; 在少量高质量数据上 finehune，质量提升很大。   
+
 
 P87   
 ## Stable Video Diffusion  
@@ -991,6 +991,8 @@ Scaling latent video diffusion models to large datasets
 ![](./assets/08-87.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
+
+> &#x2705; 在少量高质量数据上 finehune，质量提升很大。   
 
 P89   
 # 2 Video Generation
@@ -1536,7 +1538,7 @@ P149
 ![](./assets/08-149.png) 
 
 > &#x2705; 在一个视频上训练后可以对视频进行编辑。   
-> &#x2705; 训练过程：（1）对模型的时域模块 finetune．  
+> &#x2705; 训练过程：（1）对模型的时域模块 finetune．   
 > &#x2705; （2）对图像打乱后用图像 findune．  
 
 
@@ -1549,8 +1551,8 @@ One-shot tuning of T2I models for T2V generation/editing
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
-> &#x2705; 推断过程：（1）把视频 dounsample，维度变小。
-> &#x2705; （2）加入噪声作为初始噪声，类似于 DDIM Inversion.    
+> &#x2705; 推断过程：（1）把视频 dounsample，维度变小。   
+> &#x2705; （2）加入噪声作为初始噪声，类似于 DDIM Inversion.     
 > &#x2705; （3）用 diffusion model 生成。   
 > &#x2705; （4）上采样。   
 
