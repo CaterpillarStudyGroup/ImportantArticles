@@ -21,6 +21,8 @@ P4
 
 ![](./assets/lhy2-4.png) 
 
+> &#x2705; DALL-E 的生成模型有两种：Auoregressive 和 Diffusion.   
+
 
 P5   
 ## Imagen 
@@ -31,6 +33,9 @@ P5
 
 
 ![](./assets/lhy2-5-1.png) 
+
+> &#x2705; Decoder 也是一个 Diffusion Model，把小图变成大图。    
+
 
 P6   
 ## Framework 
@@ -46,6 +51,11 @@ P7
 <https://arxiv.org/abs/2205.11487>
 
 
+> &#x2705; Text Encoder 可以用 GPT．BERT 等预训练模型。      
+> &#x2705; Text Encoder 的大小对结果影响很大。
+> &#x2705; 评分说明：FID 越小越好，CLIP score 越大越好。因此右下角最好。   
+> &#x2705; Diffusion Model 的大小没那么重要。   
+
 
 P8   
 ## Fréchet Inception Distance (FID)
@@ -54,6 +64,14 @@ P8
 
 
 ![](./assets/lhy2-8.png) 
+
+
+> &#x2753; 怎么评价图像生成的好坏？
+> &#x2705; CNN＋Softmax 是一个预训练好的图像分类网络，取 softmax 上一层做为图像的 feature.   
+> &#x2705; 取大量真实图像的 feaure 和预州图你的 featwre.   
+> &#x2705; 假设两类图像的 feature 各自符合高斯分布，计算两个分布的距离。    
+> &#x2705; 优点：评价结果与人类直觉很接近，缺点：需要大量 sample.   
+
 
 P9   
 ## Contrastive Language-Image Pre-Training (CLIP) 
@@ -64,6 +82,9 @@ P9
 
 
 ![](./assets/lhy2-9-1.png) 
+
+
+> &#x2705; CLIP Score，衡量与文字的匹配度。   
 
 P10   
 ## Framework
@@ -99,12 +120,18 @@ Generation Model
 P14   
 ![](./assets/lhy2-14.png) 
 
+> &#x2705; noise 加下 “中间产物”／latent code上。    
+> &#x2705; Forard Process    
 
 P15   
 ![](./assets/lhy2-15.png) 
 
+> &#x2705; Reverte Process.    
+
 P16   
 ![](./assets/lhy2-16.png) 
+
+> &#x2705; Inference    
 
 
 P17   
