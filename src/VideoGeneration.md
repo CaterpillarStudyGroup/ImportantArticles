@@ -762,7 +762,7 @@ P96
 
 ## 2.4 Training-efficient techniques
 
-> &#x2753; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
+> &#x2705; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
 
 P97  
 
@@ -781,8 +781,8 @@ Transform domain-specific T2I models to T2V models
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
 
-> &#x2753; 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
-> &#x2753;（2）中间帧的特征保持一致。    
+> &#x2705; 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
+> &#x2705; （2）中间帧的特征保持一致。    
 
 
 P99  
