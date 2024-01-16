@@ -21,10 +21,16 @@ Powered by Midjourney
 P4   
 ![](./assets/lhy1-4-1.png) 
 
+
+> &#x2705; Denoise 模块需要根据当前的时间步做出不用承度的去噪。   
+
 P5   
 ## Denoise 模組內部實際做的事情
 
 ![](./assets/lhy1-5.png) 
+
+> &#x2705; 预测 noise，原始图一 - noise ＝ 去噪图    
+> &#x2705; 原因：预测 noise 的难度小于预测一张图像    
 
 
 P6   
@@ -37,7 +43,7 @@ P6
 P8    
 ![](./assets/lhy1-8-1.png) 
 
-
+> &#x2705; 通过自己加噪来构造 GT    
 
 
 P10   
@@ -46,6 +52,8 @@ P10
 ![](./assets/lhy1-10-1.png) 
 
 ![](./assets/lhy1-10-2.png) 
+
+> &#x2705; 每一个 step 的 denoise 都要输入 text．    
 
 P11
 ## Text-to-Image 
