@@ -99,7 +99,7 @@ P13
 
 
 > &#x2705; VAE 和 diffusion 非常相似，许多公式是通用的。    
-> &#x2705; \\(G（Z）\\) 不代表某个生成结果，而是一个高斯的均值，然后计算 \\(x\\) 在这个分布中的概率。   
+> &#x2705; \\(G（z）\\) 不代表某个生成结果，而是一个高斯的均值，然后计算 \\(x\\) 在这个分布中的概率。   
 
 
 P14   
@@ -117,7 +117,9 @@ P15
 
 ![](./assets/lhy3-15.png)  
 
-\begin{align*} P\theta (x_0)=\int\limits _{x_1:x_T}^{} P(x_T)P_\theta (x_{T-1}|x_T)\dots P_\theta (x_{t-1}|x_t) \dots P_\theta(x_0|x_1)dx_1:x_T  \end{align*}
+$$
+P\theta (x_0)=\int\limits _{x_1:x_T}^{} P(x_T)P_\theta (x_{T-1}|x_T)\dots P_\theta (x_{t-1}|x_t) \dots P_\theta(x_0|x_1)dx_1:x_T  
+$$
 
 > &#x2705; 对于 diffusion model，每次 denoise 出的是一个高斯分布的均值。   
 > &#x2705; 得出 \\(x_0\\) 在最终分布中的概率。   
