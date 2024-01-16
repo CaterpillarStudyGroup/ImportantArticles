@@ -29,7 +29,7 @@ P5
 
 ![](./assets/lhy1-5.png) 
 
-> &#x2705; 预测 noise，原始图一 - noise ＝ 去噪图    
+> &#x2705; 预测 noise，原始图 - noise ＝ 去噪图    
 > &#x2705; 原因：预测 noise 的难度小于预测一张图像    
 
 
