@@ -52,7 +52,7 @@ P7
 
 
 > &#x2705; Text Encoder 可以用 GPT．BERT 等预训练模型。      
-> &#x2705; Text Encoder 的大小对结果影响很大。
+> &#x2705; Text Encoder 的大小对结果影响很大。  
 > &#x2705; 评分说明：FID 越小越好，CLIP score 越大越好。因此右下角最好。   
 > &#x2705; Diffusion Model 的大小没那么重要。   
 
