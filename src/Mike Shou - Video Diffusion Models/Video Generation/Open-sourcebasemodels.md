@@ -9,7 +9,7 @@ P66
 
 P67   
 ![](./assets/08-67.png)
-
+m
 P68   
 ## ModelScopeT2V
 

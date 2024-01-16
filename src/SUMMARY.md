@@ -30,8 +30,7 @@
     - [Training-free](Training-free.md)
     - [Controlled Edifng](ControlledEdifng.md)
     - [3D-Aware](3D-Aware.md)
-
-  
+    - [Other Guidance](OtherGuidance.md)
 - [李宏毅Diffusion Model]()
   - [Diffusion Model](DiffusionModel.md)
   - [Stable Diffusion](StableDiffusion.md)
