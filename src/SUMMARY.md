@@ -20,9 +20,9 @@
   - [Video Generation](VideoGeneration.md)
   - [Video Editing](VideoEditing.md)
 - [李宏毅Diffusion Model]()
-  - [DiffusionModel_lhy_1](DiffusionModel_lhy_1.md)
-  - [StableDiffusion_lhy_2](StableDiffusion_lhy_2.md)
-  - [DDPM_lhy_3](DDPM_lhy_3.md)
+  - [Diffusion Model](DiffusionModel.md)
+  - [Stable Diffusion](StableDiffusion.md)
+  - [Diffusion Model背后的数掌原理](DiffusionModel背后的数掌原理.md)
 
 
 
