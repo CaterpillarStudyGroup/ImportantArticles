@@ -36,7 +36,7 @@ Luckily, one of my favorite tools in animation programming can be used for exact
 
 For example, given something like the following:     
 
-![](./assets/07-01.png) 
+![](../assets/07-01.png) 
 
 We can take the difference between the first and last frame of animation, as well as the difference in velocity, and then add back this difference as an offset, decayed over time by something like a [critically damped spring](https://www.daniel-holden.com/page/spring-roll-call#critical):   
 
@@ -47,15 +47,15 @@ We can take the difference between the first and last frame of animation, as wel
 > &#x2705; w is the frequency of oscillations。w = 0代表震荡频率不会发生变化。  
 
 
-![](./assets/07-02.png)   
+![](../assets/07-02.png)   
 
 In this case I've added this offset to the front of the animation, but we could add it to the back instead:
 
-![](./assets/07-03.png) 
+![](../assets/07-03.png) 
 
 We can also distribute the offset over both sides of the clip - by applying some amount of the offset to the front of the animation, and some amount of it to the back in the opposite direction. We can even have individual half-lives for each side if we want to, or account for the velocity and position discontinuities in different ratios at the back and front:   
 
-![](./assets/07-04.png) 
+![](../assets/07-04.png) 
 
 
 To implement this in code, first we need to compute the differences for the start and end frames:   
@@ -285,7 +285,7 @@ vec3 decayed_offset_cubic(
 
 Now we can be sure our offsets will definitely be blended out in time:
 
-![](./assets/07-05.png) 
+![](../assets/07-05.png) 
 
 Which removes the discontinuity.
 
@@ -304,7 +304,7 @@ width=800>
 
 Something else we can do is spread the offset over the whole animation using a kind of linear fade rather than distributing it just at either end:
 
-![](./assets/07-06.png) 
+![](../assets/07-06.png) 
 
 
 The problem here is that doing so naively introduces a velocity discontinuity. Which again is visible if we watch the loop in slow-mo:
@@ -324,11 +324,11 @@ width=800>
 
 This velocity discontinuity can be removed by again using some inertializers, but in this case using them just to blend out the velocity difference at either end:
 
-![](./assets/07-07.png) 
+![](../assets/07-07.png) 
 
 This is then added to the linear offset:
 
-![](./assets/07-08.png) 
+![](../assets/07-08.png) 
 
 Which in C++ looks something like this:
 
@@ -422,7 +422,7 @@ One idea is to limit the linear fade to just the start and end. Here we can use 
 
 > &#x2753; 既然这样，为什么要引入spread the offset over the whole animation？  
 
-![](./assets/07-09.png)
+![](../assets/07-09.png)
 
 Which we might implement in C++ like this:
 
@@ -461,11 +461,11 @@ vec3 decayed_offset_softfade_grad_zero(
 
 This we can apply to either side of the animation for the durations we want.
 
-![](./assets/07-10.png)
+![](../assets/07-10.png)
 
 Like before we need to **account for the velocity discontinuity using additional inertialization** - but with that the results are smooth.
 
-![](./assets/07-11.png)
+![](../assets/07-11.png)
 
 In C++ the implementation could look something like this. First we need to update our function which computes the difference in position and velocity to take into account the velocity introduced by the softfade offset:
 
@@ -696,7 +696,7 @@ void compute_root_inertialize_offsets(
 
 And here is a kind of top-down 2D visualization of what this is effectively doing.
 
-![](./assets/07-12.png)
+![](../assets/07-12.png)
 
 Now when we play back the looped clip and let the displacement of the root accumulate we can see that even for clips with very different root velocities at the start and end we don't see any discontinuity:
 
