@@ -5,7 +5,7 @@ P32
 
 ## 2.1 Pioneering/early works
 
-![](../assets/08-33.png)
+![](./assets/08-33.png)
 
 
 P34  
