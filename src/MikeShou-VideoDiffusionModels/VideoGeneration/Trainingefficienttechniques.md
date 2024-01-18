@@ -10,7 +10,7 @@ P96
 
 P97  
 
-![](./assets/08-97.png) 
+![](../assets/08-97.png) 
 
 P98 
 ## AnimateDiff  
@@ -39,7 +39,7 @@ Transform domain-specific T2I models to T2V models
  - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
  - Plug it into a domain-specific T2I model during inference   
 
-![](./assets/08-99.png) 
+![](../assets/08-99.png) 
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
 
@@ -57,7 +57,7 @@ Transform domain-specific T2I models to T2V models
  - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
  - Plug it into a domain-specific T2I model during inference   
 
-![](./assets/08-100.png)   
+![](../assets/08-100.png)   
 
  - Train on WebVid-10M, resized at 256x256 (experiments show can generalize to higher res.)   
 
@@ -90,7 +90,7 @@ Use Stable Diffusion to generate videos without any finetuning
 
  - Start from noises of similar pattern: given the first frame’s noise, define a global scene motion, used to translate the first frame’s noise to generate similar initial noise for other frames   
 
-![](./assets/08-103.png) 
+![](../assets/08-103.png) 
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.  
 
@@ -101,7 +101,7 @@ Use Stable Diffusion to generate videos without any finetuning
 
  - Make intermediate features of different frames to be similar: always use K and V from the first frame in self-attention   
 
-![](./assets/08-104.png) 
+![](../assets/08-104.png) 
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.    
 
@@ -112,7 +112,7 @@ Use Stable Diffusion to generate videos without any finetuning
 
  - Optional background smoothing: regenerate the background, average with the first frame
 
-![](./assets/08-105.png) 
+![](../assets/08-105.png) 
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.   
 
@@ -125,9 +125,9 @@ P107
 
 |||
 |--|--|
-| ![](./assets/08-107-1.png)  | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022.  |
-|  ![](./assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
-| ![](./assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+| ![](../assets/08-107-1.png)  | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022.  |
+|  ![](../assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
+| ![](../assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
 
 > &#x2705; 用纯文本的形式把图片描述出来。   
 > &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tome.    

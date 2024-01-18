@@ -112,7 +112,7 @@ width=800>
 
 But if we plot the raw quaternion values of the local joint rotations relative to our reference pose, we can see that there are discontinuities and the quaternion cover is flipping at various frames:
 
-![](./assets/J-1.png) 
+![](../assets/J-1.png) 
 
 If we want to fix this we need to do two things. **First, we need to pick a cover for the very first frame in our animation. In this case we can force it to be the relative rotation "going the short way around" from the reference pose using (what I call) the `quat_abs` function. Next, we can "unroll" the rest of the rotations, removing any sudden switches of cover by ensuring each frame uses the quaternion closest to the rotation of the previous frame** (in this code `slice1d` is a basic array-like type using `()` for indexing):
 
@@ -142,7 +142,7 @@ void quat_unroll_inplace(slice1d<quat> rotations)
 
 This allows for relative rotations of more than 180 degrees compared to the reference pose, but only when they actually happen in the data. So now, for each frame, we have the rotation relative to the reference pose accounting for double cover and the fact that the "identity pose" is in most cases meaningless:
 
-![](./assets/J-2.png) 
+![](../assets/J-2.png) 
 
 If we convert these rotations into the [scaled angle axis](https://theorangeduck.com/page/exponential-map-angle-axis-angular-velocity) representation, we end up with a 3d vector. And if we plot this for every frame in our dataset, we can get a *distribution of rotations* for each joint - we can see the full set of rotations used by each joint in our motion capture data. And the region where we have points describes the space of valid rotations for a particular joint - in other words - the joint limit. Here you can see these plots visualized for various different joints:
 

@@ -90,7 +90,7 @@ We could use various hacks like clamping `damping * dt` to be less than `1` but 
 
 Let's start our investigation by plotting the behavior of `x` using the normal `damper` with a fixed `dt` of `1.0`, a `goal` of `0`, and a `factor` of `0.5`:
 
-![](./assets/06-1.png)
+![](../assets/06-1.png)
 
 
 Here we can see repeated calls to `lerp` actually produce a kind of exponential decay toward the goal:
@@ -514,7 +514,7 @@ void spring_damper_exact(
 
 Phew - that was a lot of equations and re-arranging, but it worked, and produces a smooth, stable motion even with a very large `dt` or `stiffness`. And anyway, doesn't it feel nice to actually use those high school trig identities and do some old school equation manipulation for once!
 
-![](./assets/06-2.png)  
+![](../assets/06-2.png)  
 
 ---
 

@@ -32,7 +32,7 @@ scale = scale + dt * scalar_velocity;
 
 But if we do this the growth appears fast at the beginning, but slows down as the object gets larger:
 
-![](./assets/8-1.png) 
+![](../assets/8-1.png) 
 
 
 The reason this doesn't really work is because, scales, just like rotations, **naturally compose using multiplication**, rather than addition.

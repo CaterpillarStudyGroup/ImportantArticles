@@ -5,11 +5,11 @@ P29
 P30  
 ## Video Foundation Model
 
-![](./assets/08-30.png)
+![](../assets/08-30.png)
 
 
 P31  
 
-![](./assets/08-31.png)
+![](../assets/08-31.png)
 
 

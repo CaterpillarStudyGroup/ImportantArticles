@@ -9,13 +9,13 @@ Joint work with Pei Yang & Jay Wu
 
 Slides:<https://sites.google.com/view/showlab/tutorial> 
 
-![](./assets/08-001.png)
+![](../assets/08-001.png)
 
 
 P2  
 ## Video Foundation Model  
 
-![](./assets/08-01.png)
+![](../assets/08-01.png)
 
 
 P5  

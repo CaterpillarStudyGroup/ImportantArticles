@@ -19,7 +19,7 @@ If you want to see exactly how I made these visualizations be sure to check out 
 
 Euler angles are sets of three angles each of which represents a rotation around a different axis. These are then combined together to produce a final rotation by applying one rotation after the other. We can therefore imagine the space of Euler angles as being a 3D space, where each point represents a unique set of three Euler angles, encoding a different rotation.
 
-![](./assets/v-1.png) 
+![](../assets/v-1.png) 
 
 Right away we can see some interesting things about this 3D space - first, it repeats itself periodically every \\(2\pi \\) - as, no matter what the axis, rotating by \\(2\pi+x \\) is the same as just rotating by `x`.
 
@@ -70,7 +70,7 @@ I like to visualize the `w` dimension on the vertical axis, and the `x` and `y` 
 
 > &#x2705; 3D坐标为(w, x, y)  
 
-![](./assets/v-3.png) 
+![](../assets/v-3.png) 
 
 As we move down the surface of the sphere from the top to bottom we start to represent rotations of greater amounts up until we get to the equator, which represents rotations of \\(2\pi\\) (or \\(-\pi\\)) around each dimension. If we keep moving down we start to represent rotations of over \\(\pi\\), until we get back down to the south-pole, which encodes a full rotation of \\(2\pi\\).
 
@@ -82,7 +82,7 @@ This may sound odd at first but it isn't any different to the Euler angles in so
 
 > &#x2705; 属性一：每个四元数有两种表示。  
 
-![](./assets/v-4.png) 
+![](../assets/v-4.png) 
 
 The normalized quaternions have a big "hole" in the middle of the sphere (and outside the sphere) of values that don't (by default) represent a valid rotation. And even if we consider un-normalized quaternions as valid rotations (we say they can just be normalized), there is still the point right at the origin which cannot represent a valid rotation.
 
@@ -103,7 +103,7 @@ The [exponential map](https://www.daniel-holden.com/page/exponential-map-angle-a
 > &#x2705; angle * axis / 2  
 > &#x2705; (0, 0, 0)代表identity
 
-![](./assets/v-5.png) 
+![](../assets/v-5.png) 
 
 Unlike the Euler angle space, which is shaped like a cube, the exponential map produces a space like a kind of solid sphere, with "shells" of identity rotation every \\(\pi \\) distance from the origin and additional "layers" which encode the same set of rotations on top.
 

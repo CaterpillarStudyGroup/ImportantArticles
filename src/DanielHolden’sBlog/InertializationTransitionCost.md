@@ -16,7 +16,7 @@ The second problem is that this does not account for the relationships between t
 
 While I was thinking about this problem, I wondered if we could do something better by assuming our transitions are performed using [inertialization](https://www.daniel-holden.com/page/spring-roll-call#inertialization). The idea I came up with was this: let's define our transition cost as *the total displacement* caused by an inertialized transition. i.e. The area of the graph between the source and destination animations:
 
-![](./assets/6a-1.png) 
+![](../assets/6a-1.png) 
 
 When we're using a critically damped spring to produce this offset between source and destination, something like this area can be computed directly using the *integral* of the spring equation.
 
@@ -36,11 +36,11 @@ Then, by taking the definite integral of this equation from zero to infinity, we
 
 However this isn't exactly what we're looking for - and it wont exactly give us the area of the graph between source and destination animations in all cases. The first reason for this is that this number can be negative: springs which start with a negative displacement will produce a graph primarily below zero, resulting in a negative integral:
 
-![](./assets/6a-2.png) 
+![](../assets/6a-2.png) 
 
 The second, worse problem, is that some graphs can even cross zero - producing an area both above and below zero, leading to an integral which underestimates the total area since it subtracts one from the other:
 
-![](./assets/6a-3.png) 
+![](../assets/6a-3.png) 
 
 In these cases we need to split the integral into two parts - first computing the absolute value of the area before the graph crosses zero, and then the part after.
 
@@ -84,15 +84,15 @@ def decay_spring_damper_displacement(x, v, halflife):
 
 But given we want to use this as a cost function, what does it actually look like? Well here's a 2D plot, with difference in position on the x-axis and difference in velocity on y-axis (the `halflife` here is set to `0.15`):
 
-![](./assets/6a-4.png) 
+![](../assets/6a-4.png) 
 
 We can compare this to the cost function we would get if we just add the summed absolute differences in position and velocity (here the velocity difference is scaled by `0.5`):
 
-![](./assets/6a-5.png) 
+![](../assets/6a-5.png) 
 
 The main difference we can see is that our new transition cost resembles more of a skewed valley than an inverted pyramid - the cost of a positive offset can actually be low - as long as it's combined with a negative velocity offset of the right magnitude. This makes sense - a large velocity offset can initialize the spring in a way such that it corrects itself back to zero more quickly than an initial velocity offset of zero:
 
-![](./assets/6a-6.png) 
+![](../assets/6a-6.png) 
 
 But the problem with this cost function in practice is that since it's not a normal euclidean distance, it's not totally clear how we might integrate it with the rest of our system and exploit many of the common acceleration structures used in Motion Matching.
 
@@ -119,7 +119,7 @@ where `pos` is the bone position, `vel` is the bone velocity, and `y` is the hal
 
 And although I'm certain there are some pathological cases which assign a small cost to transitions with large oscillations, in practice, if you use a relatively small half-life it seems to work. Here I've visualized the error of this function in comparison to our more exact cost function given previously.
 
-![](./assets/6a-7.png) 
+![](../assets/6a-7.png) 
 
 You can see that at least the error is limited to a fairly small part of the space where we have a large velocity offset and small, exact positional offset.
 
@@ -163,7 +163,7 @@ def decay_cubic(
 
 The idea behind this function is essentially just to find the coefficients of a cubic polynomial with some initial position and velocity on the y-axis, which crosses the x-axis at `1`, with a velocity of `0`. Then, if we want to change how long it takes to decay we can simply scale the x-axis (and adjust the initial velocity accordingly).
 
-![](./assets/6a-8.png) 
+![](../assets/6a-8.png) 
 
 The way we use this inertializer is a bit different. Rather than decaying the offset over time, we keep track of the initial offset, the time since transition, and compute the decayed offset on the fly based on how long it has been since the transition (we can actually do things this way with our spring-based inertializer too if we want).
 
@@ -229,7 +229,7 @@ void inertialize_cubic_update(
 
 Just like our spring, this function can cross the x-axis before `1`, which means if we want to compute the absolute displacement, we need to compute the integral in two parts:
 
-![](./assets/6a-9.png) 
+![](../assets/6a-9.png) 
 
 And, just like before this means we need to compute the intersection time. In this case, since our cubic function is tangent to the x-axis at 1, we know that two of the roots will be exactly 1, which makes our lives a lot easier when it comes to finding the final one:
 

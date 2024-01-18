@@ -7,7 +7,7 @@ P108
 ## 2.5 Storyboard
  
 P109  
-![](./assets/08-109.png) 
+![](../assets/08-109.png) 
 
 P110 
 ## What is a storyboard?
@@ -30,7 +30,7 @@ P111
 
 A concept in film production
 
-![](./assets/08-111.png) 
+![](../assets/08-111.png) 
 
  - Rough sketches/drawings with notes    
  - Example: Inception by Christopher Nola   
@@ -59,7 +59,7 @@ P113
 
 Can we model such visual prior with LLM
 
-![](./assets/08-113.png) 
+![](../assets/08-113.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.
 
@@ -68,9 +68,9 @@ P114
 
 Prompt design
 
-![](./assets/08-114-1.png) 
+![](../assets/08-114-1.png) 
 
-![](./assets/08-114-2.png) 
+![](../assets/08-114-2.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.   
 
@@ -84,7 +84,7 @@ P118
 
 Modeling Visual Prior via Generative Pre-Training
 
-![](./assets/08-118.png) 
+![](../assets/08-118.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
 
@@ -93,7 +93,7 @@ P119
 
 Sample from the LLM which has learned visual prior
 
-![](./assets/08-119.png) 
+![](../assets/08-119.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
 
@@ -105,7 +105,7 @@ P120
 
 Sample from the LLM which has learned visual prior
 
-![](./assets/08-120.png) 
+![](../assets/08-120.png) 
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.  
 
@@ -114,7 +114,7 @@ P121
 
 Use storyboard as condition to generate video
 
-![](./assets/08-121.png) 
+![](../assets/08-121.png) 
 
 Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,” arXiv 2023.   
 
@@ -124,7 +124,7 @@ P122
 
 Use storyboard as condition to generate video
 
-![](./assets/08-122.png) 
+![](../assets/08-122.png) 
 
 Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,” arXiv 2023.    
 
@@ -135,7 +135,7 @@ GPT can be trained to learn better long-form video prior (e.g., object position,
 
 **A new dataset - Storyboard20K**
 
-![](./assets/08-124.png) 
+![](../assets/08-124.png) 
 
 Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,” to be released in 2024.    
 <https://github.com/showlab/Long-form-Video-Prior>   
@@ -146,10 +146,10 @@ P125
   
 |||
 |--|--|
-|  ![](./assets/08-125-1.png) | **Dysen-VDM** (Fei et al.)<br>Storyboard through scene graphs<br>“Empowering Dynamics-aware Text-to-Video Diffusion with Large Language Models,” arXiv 2023. |
-| ![](./assets/08-125-2.png)  | **DirectT2V** (Hong et al.) <br> Storyboard through bounding boxes <br> “Large Language Models are Frame-level Directors for Zero-shot Text-to-Video Generation,” arXiv 2023. |
-|  ![](./assets/08-125-3.png)  | **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. |
-|  ![](./assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
+|  ![](../assets/08-125-1.png) | **Dysen-VDM** (Fei et al.)<br>Storyboard through scene graphs<br>“Empowering Dynamics-aware Text-to-Video Diffusion with Large Language Models,” arXiv 2023. |
+| ![](../assets/08-125-2.png)  | **DirectT2V** (Hong et al.) <br> Storyboard through bounding boxes <br> “Large Language Models are Frame-level Directors for Zero-shot Text-to-Video Generation,” arXiv 2023. |
+|  ![](../assets/08-125-3.png)  | **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. |
+|  ![](../assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
 
 
 > &#x2705; （1）画运动轨迹（2）光流（3）做为 condition，可以细粒度地控制运动轨迹。   
