@@ -10,7 +10,7 @@ P148
 
 P149 
 
-![](./assets/08-149.png) 
+![](../assets/08-149.png) 
 
 > &#x2705; 在一个视频上训练后可以对视频进行编辑。   
 > &#x2705; 训练过程：（1）对模型的时域模块 finetune．   
@@ -22,7 +22,7 @@ P150
 
 One-shot tuning of T2I models for T2V generation/editing
 
-![](./assets/08-150.png) 
+![](../assets/08-150.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
@@ -41,7 +41,7 @@ One-shot tuning of T2I models for T2V generation/editing
 
 **Motivation**: appearance from pretrained T2I models, dynamics from a reference video 
 
-![](./assets/08-152.png) 
+![](../assets/08-152.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
@@ -52,11 +52,11 @@ One-shot tuning of T2I models for T2V generation/editing
 
 **Obs #1: Still images that accurately represent the verb terms**
 
-![](./assets/08-153-1.png) 
+![](../assets/08-153-1.png) 
 
 **Obs #2: Extending attention to spatio-temporal yields consistent content**
 
-![](./assets/08-153-2.png) 
+![](../assets/08-153-2.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
@@ -66,7 +66,7 @@ P154
 
 One-shot tuning of T2I models for T2V generation/editing
 
-![](./assets/08-154.png) 
+![](../assets/08-154.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
@@ -76,7 +76,7 @@ P155
 
 One-shot tuning of T2I models for T2V generation/editing
 
-![](./assets/08-155.png) 
+![](../assets/08-155.png) 
 
 **Full finetuning**: finetunes the entire network
 
@@ -103,14 +103,14 @@ Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-t
 P156  
 ## Tune-A-Video
 
-![](./assets/08-156.png) 
+![](../assets/08-156.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
 P157  
 ## Tune-A-Video
 
-![](./assets/08-157.png) 
+![](../assets/08-157.png) 
 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
@@ -123,7 +123,7 @@ Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-t
 P158  
 ## Tune-A-Video
 
-![](./assets/08-158.png) 
+![](../assets/08-158.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
@@ -132,7 +132,7 @@ Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-t
 P159  
 ## Tune-A-Video
 
-![](./assets/08-159.png) 
+![](../assets/08-159.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
 
@@ -148,7 +148,7 @@ P160
 ## Tune-A-Video
 
 
-![](./assets/08-160.png) 
+![](../assets/08-160.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
 
@@ -162,7 +162,7 @@ P161
 
 One-shot tuning of T2I models for T2V generation/editing
 
-![](./assets/08-161.png) 
+![](../assets/08-161.png) 
 
 **Automatic metrics – CLIP Score**
 
@@ -187,11 +187,11 @@ Few-shot finetuning for personalized video editing
 
  - Finetune Imagen Video (Ho et al., 2022) which is a strong video foundation model
 
-![](./assets/08-162-1.png) 
+![](../assets/08-162-1.png) 
 
  - Finetuned to generate individual frames (bypassing temporal attentions) & video
 
-![](./assets/08-162-2.png) 
+![](../assets/08-162-2.png) 
 
 Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023.    
 
@@ -206,7 +206,7 @@ Few-shot finetuning for personalized video editing
  - Corrupt the input video by downsampling and add noise   
  - Apply the finetuned video diffusion model to denoise and upscale   
 
-![](./assets/08-163.png) 
+![](../assets/08-163.png) 
 
 Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” arXiv 2023.    
 
@@ -215,13 +215,13 @@ P164
 
 |||
 |--|--|
-| ![](./assets/08-164-1.png)  | \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. |
-| ![](./assets/08-164-2.png)  |  **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
+| ![](../assets/08-164-1.png)  | \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. |
+| ![](../assets/08-164-2.png)  |  **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
 
 P165   
 ## One-Shot Tuned Video Editing: More Works
 
-![](./assets/08-165.png) 
+![](../assets/08-165.png) 
 
 **Compared to training-free editing methods:** 
 
@@ -237,7 +237,7 @@ Video Editing: Text Conditioned
 
 P167  
 
-![](./assets/08-167.png) 
+![](../assets/08-167.png) 
 
 P168
 ## MotionDirector
@@ -246,7 +246,7 @@ Tune on multiple videos of a motion to be customised
 
 
 
-![](./assets/08-168-1.png) 
+![](../assets/08-168-1.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
@@ -255,7 +255,7 @@ P169
 
 Tune on multiple videos of a motion to be customised
 
-![](./assets/08-169.png) 
+![](../assets/08-169.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
@@ -264,7 +264,7 @@ P170
 
 Tune on multiple videos of a motion to be customised
 
-![](./assets/08-170.png) 
+![](../assets/08-170.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023   
 
@@ -275,7 +275,7 @@ P171
 
  - MokonDirector can customize foundakon models to generate videos with desired mokons.
 
-![](./assets/08-171.png) 
+![](../assets/08-171.png) 
 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.   
@@ -289,7 +289,7 @@ Tune on multiple videos of a motion to be customised
  - MotionDirector learns the appearances and motions in reference videos in a decoupled way, to avoid overfitting on the limited appearances.   
 
 
-![](./assets/08-172.png) 
+![](../assets/08-172.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.   
 
@@ -300,7 +300,7 @@ Tune on multiple videos of a motion to be customised
 
  - Decouple appearance and motion.
 
-![](./assets/08-173.png) 
+![](../assets/08-173.png) 
 
 Zhao et al., “MogonDirector: Mogon Customizagon of Text-to-Video Diffusion Models,” arXiv 2023.     
 
@@ -312,7 +312,7 @@ Tune on muleple videos of a moeon to be customised
 
 - Comparing with other methods.
 
-![](./assets/08-174.png) 
+![](../assets/08-174.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
@@ -323,7 +323,7 @@ Tune on multiple videos of a motion to be customised
 
  - Comparing with other methods.   
 
-![](./assets/08-175.png) 
+![](../assets/08-175.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.    
 
@@ -332,6 +332,6 @@ P176
 
 Tune on multiple videos of a motion to be customised
 
-![](./assets/08-176.png) 
+![](../assets/08-176.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.     
