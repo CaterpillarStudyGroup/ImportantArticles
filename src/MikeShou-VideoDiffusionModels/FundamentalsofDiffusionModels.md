@@ -6,7 +6,7 @@ P6
 P7  
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-02.png)
+![](../assets/08-02.png)
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.   
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
@@ -19,7 +19,7 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 P8   
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-03.png)
+![](../assets/08-03.png)
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.    
@@ -30,7 +30,7 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 P9  
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-04.png)
+![](../assets/08-04.png)
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
@@ -43,7 +43,7 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 P10   
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-05.png)
+![](../assets/08-05.png)
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.
@@ -54,7 +54,7 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 P11   
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-11.png)
+![](../assets/08-11.png)
 
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
@@ -73,7 +73,7 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 P12   
 ## DDPM (Denoising Diffusion Probabilistic Models)
 
-![](./assets/08-12.png)
+![](../assets/08-12.png)
 
 Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.   
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
@@ -89,7 +89,7 @@ P14
 
 ## DDIM (Denoising Diffusion Implicit Models)
 
-![](./assets/08-14.png)
+![](../assets/08-14.png)
 
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.    
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.   
@@ -106,8 +106,8 @@ DDPM vs DDIM
 
 |||
 |--|--|
-| ![](./assets/08-15-1.png) | **DDPM cannot skip timesteps**  <br> A few hundreds steps to generate an image |
-|![](./assets/08-15-2.png) |**DDIM can skip timesteps** <br> Say 50 steps to generate an image |
+| ![](../assets/08-15-1.png) | **DDPM cannot skip timesteps**  <br> A few hundreds steps to generate an image |
+|![](../assets/08-15-2.png) |**DDIM can skip timesteps** <br> Say 50 steps to generate an image |
 
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.    
@@ -117,7 +117,7 @@ P16
 
 The task of Inversion
 
-![](./assets/08-16.png)
+![](../assets/08-16.png)
 
 Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.    
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.    
@@ -164,7 +164,7 @@ Encoders bridge vision and language
 
 |||
 |--|--|
-| ![](./assets/08-20-1.png)  |  ![](./assets/08-20-2.png) |
+| ![](../assets/08-20-1.png)  |  ![](../assets/08-20-2.png) |
 
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.     
 
@@ -177,7 +177,7 @@ P21
 
 ## Latent Diffusion
 
-![](./assets/08-21.png) 
+![](../assets/08-21.png) 
 
 > &#x2705; 把图片转为 high leve sematic space    
 > &#x2705; semanic 更抽像，维度更低，因此模型更高效。   
@@ -188,7 +188,7 @@ P22
 
 Conditional/unconditional image generation    
 
-![](./assets/08-22.png) 
+![](../assets/08-22.png) 
 
 Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,” CVPR 2022.      
 
@@ -204,7 +204,7 @@ Few-shot finetuning of large models for personalized generation
 
 |||
 |--|--|
-| ![](./assets/08-24-1.png)  |  ![](./assets/08-24-2.png) |
+| ![](../assets/08-24-1.png)  |  ![](../assets/08-24-2.png) |
 
 
 Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” arXiv 2021.    
@@ -220,7 +220,7 @@ Few-shot finetuning of large models for generating personalized concepts
 
 |||
 |--|--|
-| ![](./assets/08-25-1.png)  |  ![](./assets/08-25-2.png) |
+| ![](../assets/08-25-1.png)  |  ![](../assets/08-25-2.png) |
 
 Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” CVPR 2023.    
 
@@ -234,7 +234,7 @@ P26
 
 Conditional generation with various guidances    
 
-![](./assets/08-26.png)
+![](../assets/08-26.png)
 
 Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023.     
 
@@ -248,7 +248,7 @@ P27
 Conditional generation with various guidances   
  - Finetune parameters of a trainable copy   
 
-![](./assets/08-27.png)
+![](../assets/08-27.png)
 
 Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023.   
 
@@ -257,7 +257,7 @@ P28
 
 Conditional generation with various guidances
 
-![](./assets/08-28.png)
+![](../assets/08-28.png)
 
 Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023. 
 
