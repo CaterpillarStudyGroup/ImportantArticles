@@ -2,16 +2,16 @@
 P2   
 ## Framework 
 
-![](./assets/lhy2-2-1.png) 
+![](../assets/lhy2-2-1.png) 
 
-![](./assets/lhy2-2-2.png) 
+![](../assets/lhy2-2-2.png) 
 
 P3   
 ## Stable Diffusion 
 
 <https://arxiv.org/abs/2112.10752>  
 
-![](./assets/lhy2-3.png) 
+![](../assets/lhy2-3.png) 
 
 P4   
 ## DALL-E series 
@@ -19,7 +19,7 @@ P4
 
 <https://arxiv.org/abs/2102.12092>
 
-![](./assets/lhy2-4.png) 
+![](../assets/lhy2-4.png) 
 
 > &#x2705; DALL-E 的生成模型有两种：Auoregressive 和 Diffusion.   
 
@@ -32,7 +32,7 @@ P5
 <https://arxiv.org/abs/2205.11487>
 
 
-![](./assets/lhy2-5-1.png) 
+![](../assets/lhy2-5-1.png) 
 
 > &#x2705; Decoder 也是一个 Diffusion Model，把小图变成大图。    
 
@@ -46,7 +46,7 @@ Text Encoder
 
 P7   
 
-![](./assets/lhy2-7-1.png) 
+![](../assets/lhy2-7-1.png) 
 
 <https://arxiv.org/abs/2205.11487>
 
@@ -63,7 +63,7 @@ P8
 <https://arxiv.org/abs/1706.08500>
 
 
-![](./assets/lhy2-8.png) 
+![](../assets/lhy2-8.png) 
 
 
 > &#x2753; 怎么评价图像生成的好坏？   
@@ -81,7 +81,7 @@ P9
 400 million image-text pairs  
 
 
-![](./assets/lhy2-9-1.png) 
+![](../assets/lhy2-9-1.png) 
 
 
 > &#x2705; CLIP Score，衡量与文字的匹配度。   
@@ -98,16 +98,16 @@ Decoder
 P11  
 ## 「中间产物」为小图
 
-![](./assets/lhy2-11-1.png) 
+![](../assets/lhy2-11-1.png) 
 
 P12   
 ## 「中间产物」为「Latent Representation」
 
 <u>Auto-encoder</u>
 
-![](./assets/lhy2-12-1.png) 
+![](../assets/lhy2-12-1.png) 
 
-![](./assets/lhy2-12-2.png) 
+![](../assets/lhy2-12-2.png) 
 
 
 P13   
@@ -118,18 +118,18 @@ Generation Model
 
 
 P14   
-![](./assets/lhy2-14.png) 
+![](../assets/lhy2-14.png) 
 
 > &#x2705; noise 加下 “中间产物”／latent code上。    
 > &#x2705; Forard Process    
 
 P15   
-![](./assets/lhy2-15.png) 
+![](../assets/lhy2-15.png) 
 
 > &#x2705; Reverte Process.    
 
 P16   
-![](./assets/lhy2-16.png) 
+![](../assets/lhy2-16.png) 
 
 > &#x2705; Inference    
 
@@ -139,6 +139,6 @@ P17
 
 <https://arxiv.org/abs/2112.10752>
 
-![](./assets/lhy2-17.png) 
+![](../assets/lhy2-17.png) 
 
 

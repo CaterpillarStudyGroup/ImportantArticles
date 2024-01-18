@@ -2,18 +2,18 @@
 P2   
 ## 基本概念 
 
-![](./assets/lhy3-2.png) 
+![](../assets/lhy3-2.png) 
 
 
 P3   
 ## VAE vs. Diffusion Model 
 
-![](./assets/lhy3-2.png) 
+![](../assets/lhy3-2.png) 
 
 P5   
 ## <u>Training</u> 
 
-![](./assets/lhy3-5.png) 
+![](../assets/lhy3-5.png) 
 
 > &#x2705; 红框：\\(X_o\\) 与 noise 做加权平均，权重是预定义好的。得到的是带噪声图像，\\(\alpha \\) 越来越小，即噪声越来越多。   
 > &#x2705; \\(\epsilon_\theta \\) 的预测结果应趋近于 \\(\epsilon\\) 。   
@@ -21,14 +21,14 @@ P5
 
 P6
 
-![](./assets/lhy3-6.png) 
+![](../assets/lhy3-6.png) 
 
 P7   
 
 |||
 |--|--|
-| 想像中… | ![](./assets/lhy3-7-1.png)  |
-| 实际上…  | ![](./assets/lhy3-7-2.png)  |
+| 想像中… | ![](../assets/lhy3-7-1.png)  |
+| 实际上…  | ![](../assets/lhy3-7-2.png)  |
 
 
 > &#x2705; 上面过程将加噪过程逐步拆解，是为了帮助理解逐步去噪的过程。但实际上，公式可以证明，逐步加噪和一步加噪在数学上是等价的。   
@@ -37,10 +37,10 @@ P7
 P8   
 ## <u> Inference </u> 
 
-![](./assets/lhy3-8-1.png) 
+![](../assets/lhy3-8-1.png) 
 
 
-![](./assets/lhy3-8-2.png) 
+![](../assets/lhy3-8-2.png) 
 
 > &#x2705; \\(X_T\\) 是初始噪声，每个 step 还要每次额外生成一个噪声\\(Z\\).   
 > &#x2705; \\(\alpha \\) 和 \\( \bar{\alpha } \\) 是两组数值序列。   
@@ -54,7 +54,7 @@ P9
 P10   
 ## 影像生成模型本质上的共同目标
 
-![](./assets/lhy3-10.png) 
+![](../assets/lhy3-10.png) 
 
 > &#x2705; 实际使用中还会加一个 condition，但整体上没有本质差异，因此后面推导中不考虑 condition.    
 
@@ -63,7 +63,7 @@ P10
 P11   
 ## Maximum Likelihood Estimation
 
-![](./assets/lhy3-11.png) 
+![](../assets/lhy3-11.png) 
 
 Sample {\\(x^1,x^2,\cdots ,x^m\\)} from \\(P_{data}(x)\\)    
 
@@ -80,7 +80,7 @@ We can compute \\(P_\theta (x^i)\\)
 
 P12  
 
-![](./assets/lhy3-12.png) 
+![](../assets/lhy3-12.png) 
 
 
 Maximum Likelihood = Minimize KL Divergence    
@@ -94,8 +94,8 @@ P13
 
 |||
 |--|--|
-| ![](./assets/lhy3-13-1.png) | ![](./assets/lhy3-13-2.png) |
-| ![](./assets/lhy3-13-3.png) | ![](./assets/lhy3-13-4.png) |
+| ![](../assets/lhy3-13-1.png) | ![](../assets/lhy3-13-2.png) |
+| ![](../assets/lhy3-13-3.png) | ![](../assets/lhy3-13-4.png) |
 
 
 > &#x2705; VAE 和 diffusion 非常相似，许多公式是通用的。    
@@ -105,7 +105,7 @@ P13
 P14   
 ## VAE: Lower bound of \\(log P(x)\\)  
 
-![](./assets/lhy3-14.png)
+![](../assets/lhy3-14.png)
 
 
 > &#x2705; 通常无法最大化 \\(P（x）\\)，而是最大化 \\(log P(x)\\) 的下界。  
@@ -115,7 +115,7 @@ P14
 P15   
 ## DDPM: Compute \\(𝑃_\theta(x)\\)   
 
-![](./assets/lhy3-15.png)  
+![](../assets/lhy3-15.png)  
 
 $$
 P_ \theta (x_0)=\int\limits _ {x_1:x_T}^{} P(x_T)P_ \theta (x_{T-1}|x_T) \dots P_ \theta (x_ {t-1}|x_t) \dots P_ \theta(x_0|x_1)dx_1:x_T  
@@ -129,14 +129,14 @@ $$
 P16   
 ## DDPM: Lower bound of \\(log P(x)\\)  
 
-![](./assets/lhy3-16-1.png)  
+![](../assets/lhy3-16-1.png)  
 
-![](./assets/lhy3-16-2.png)  
+![](../assets/lhy3-16-2.png)  
 
 
 
 P17   
-![](./assets/lhy3-17.png)  
+![](../assets/lhy3-17.png)  
 
 > &#x2705; 提前定好一组 \\(\beta \\)．代表 noise 要加多大。   
 > &#x2705; \\(q（x_t｜x_{t-1}）\\) 仍然属于高斯分布，其均值为 \\(\sqrt{1-\beta _t} \cdot x_t\\)，方差为 \\(\beta _t\\).   
@@ -144,23 +144,23 @@ P17
 
 
 P18   
-![](./assets/lhy3-18.png)  
+![](../assets/lhy3-18.png)  
 
 > &#x2705; 两次 sample 出的 noise 是独立同分布。   
 
 P19   
-![](./assets/lhy3-19.png)  
+![](../assets/lhy3-19.png)  
 
 > &#x2705; 两个 noise 以这种形式相加的结果，也符合某个特定的高斯分布。   
 
 P20   
-![](./assets/lhy3-20.png)  
+![](../assets/lhy3-20.png)  
 
 > &#x2705; 结论：\\( x_t=\sqrt{\bar{\alpha }_t}  \cdot x_0+\sqrt{1-\bar{\alpha }_t} \cdot \varepsilon \\).    
 
 
 P21   
-![](./assets/lhy3-21.png)  
+![](../assets/lhy3-21.png)  
 
 
 
@@ -177,10 +177,10 @@ P22
 
 P23  
 
-![](./assets/lhy3-23-1.png)  
+![](../assets/lhy3-23-1.png)  
 
 
-![](./assets/lhy3-23-2.png)  
+![](.../assets/lhy3-23-2.png)  
 
 
 > &#x2705; 已知 \\(q (x_t\mid x_0)\\)，\\(q (x_{t-1} \mid x_0)\\) 和 \\(q (x_t \mid x_{t-1})\\)，求 \\(q (x_{t-1} \mid x_t,x_0)\\).   
@@ -188,32 +188,32 @@ P23
 
 
 P24   
-![](./assets/lhy3-24.png)  
+![](../assets/lhy3-24.png)  
 
 > &#x2705; 已知\\(x_0\\) 和 \\(x_t\\)，求 \\(x_{t-1}\\) 的分布。   
 
 
 P25   
-![](./assets/lhy3-25.png)  
+![](../assets/lhy3-25.png)  
 
 <https://arxiv.org/pdf/2208.11970.pdf>
 
 
 P26   
-![](./assets/lhy3-26.png)  
+![](.../assets/lhy3-26.png)  
 
 > &#x2705; 结论：\\(q(x_{t-1}|x_t,x_0)\\) 也是高斯分布。   
 
 
 P27   
-![](./assets/lhy3-27-1.png)  
+![](../assets/lhy3-27-1.png)  
 
 How to minimize KL divergence?    
 
-![](./assets/lhy3-27-2.png)  
+![](../assets/lhy3-27-2.png)  
 
 
-![](./assets/lhy3-27-3.png)  
+![](../assets/lhy3-27-3.png)  
 
 
 > &#x2705; 两个高斯分布的 KLD 有公式解，但此处不同公式解为  \\( \theta\\) 只能影响分布2的均值。   
@@ -222,16 +222,16 @@ How to minimize KL divergence?
 
 
 P28   
-![](./assets/lhy3-28-1.png)  
+![](../assets/lhy3-28-1.png)  
 
-![](./assets/lhy3-28-2.png)  
+![](../assets/lhy3-28-2.png)  
 
 
 > &#x2705; 分布1的均值可以看作是 \\(x_{t-1}\\) 的 GT 了。   
 
 
 P31   
-![](./assets/lhy3-31.png)  
+![](../assets/lhy3-31.png)  
 
 
 > &#x2705; 具体的训练方法：    
@@ -242,16 +242,16 @@ P31
 
 
 P32   
-![](./assets/lhy3-32-1.png)  
+![](../assets/lhy3-32-1.png)  
 
-![](./assets/lhy3-32-2.png)  
+![](../assets/lhy3-32-2.png)  
 
 > &#x2705; 因为唯一未知的部分就是 \\(\varepsilon \\).   
 > &#x2705; \\(\alpha \\) 是预定义的超参，DDPM 试图学习 \\(\alpha \\)，发现没有提升。
 
 
 P33   
-![](./assets/lhy3-33.png)  
+![](../assets/lhy3-33.png)  
 
 为什么不直接取 Mean？
 
@@ -275,12 +275,12 @@ P36
 
 <https://arxiv.org/abs/1904.09751>  
 
-![](./assets/lhy3-36.png)  
+![](../assets/lhy3-36.png)  
 
 > &#x2705; 因为：（1）每次取概率最大的值，会导致生成重复结果。    
 
 P37   
-![](./assets/lhy3-37.png)  
+![](.../assets/lhy3-37.png)  
 
 > &#x2705; 数据分析发现，人写文章大多数不是选概率最大的词。   
 
@@ -288,7 +288,7 @@ P39
 ## Diffusion Model 是一种 Autoregressive 
 
 
-![](./assets/lhy3-39.png)  
+![](../assets/lhy3-39.png)  
 
 
 
@@ -298,7 +298,7 @@ P43
  - Difficulty:    
  - Solution: Noise on latent space    
 
-![](./assets/lhy3-43.png)  
+![](../assets/lhy3-43.png)  
 
 <https://arxiv.org/abs/2205.14217>
 
@@ -307,7 +307,7 @@ P43
 
 P44   
 
-![](./assets/lhy3-44.png)  
+![](../assets/lhy3-44.png)  
 
 <https://arxiv.org/abs/2210.08933>
 
@@ -321,9 +321,9 @@ P45
 
 Diffusion via Edit￾based Reconstruction (DiffusER)
 
-![](./assets/lhy3-45-1.png)  
+![](../assets/lhy3-45-1.png)  
 
-![](./assets/lhy3-45-2.png)  
+![](../assets/lhy3-45-2.png)  
 
 
 <https://arxiv.org/abs/2107.03006>
@@ -337,7 +337,7 @@ P48
 <https://aclanthology.org/D19-1633/>
 
 
-![](./assets/lhy3-48.png)  
+![](../assets/lhy3-48.png)  
 
 > &#x2705; 把几率比较低的部分盖住，再做一次生成。   
 
@@ -349,12 +349,12 @@ P49
 
 <https://arxiv.org/abs/2301.00704>
 
-![](./assets/lhy3-49.png)  
+![](../assets/lhy3-49.png)  
 
 P50   
-![](./assets/lhy3-50-1.png)  
+![](../assets/lhy3-50-1.png)  
 
-![](./assets/lhy3-50-2.png)  
+![](../assets/lhy3-50-2.png)  
 
 P51   
 
