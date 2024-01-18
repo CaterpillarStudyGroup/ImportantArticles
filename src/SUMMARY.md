@@ -17,7 +17,7 @@
 - [Mike Shou - Video Diffusion Models]()
   - [Mike Shou](MikeShou-VideoDiffusionModels/MikeShou.md)
   - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
-  - [Video Generation](MikeShou-VideoDiffusionModels/VideoGeneration.md)
+  - [Video Generation](MikeShou-VideoDiffusionModels/VideoEditing/VideoGeneration.md)
     - [Pioneering/early works](MikeShou-VideoDiffusionModels/Pioneeringearlyworks.md)
     - [Open-source base models](MikeShou-VideoDiffusionModels/Open-sourcebasemodels.md)
     - [Other closed-source works](MikeShou-VideoDiffusionModels/Otherclosed-sourceworks.md)
