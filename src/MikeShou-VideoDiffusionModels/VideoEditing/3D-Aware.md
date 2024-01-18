@@ -6,7 +6,7 @@ P242
 
 P243   
 
-![](./assets/08-243.png) 
+![](../assets/08-243.png) 
 
 
 P244   
@@ -16,7 +16,7 @@ Decompose a video into two images
 
  - Decompose a video into a foreground image + a background image    
 
-![](./assets/08-244.png) 
+![](../assets/08-244.png) 
 
 Kasten et al., “Layered Neural Atlases for Consistent Video Editing,” arXiv 2023.   
 
@@ -28,7 +28,7 @@ Decompose a video into two images
  - Decompose a video into a foreground image + a background image   
  - Edit the foreground/background image = edit the video    
 
-![](./assets/08-245.png) 
+![](../assets/08-245.png) 
 
 Kasten et al., “Layered Neural Atlases for Consistent Video Editing,” arXiv 2023.    
 
@@ -42,7 +42,7 @@ Atlas-based video editing
  - Edit the foreground/background image = edit the video   
  - Use diffusion to edit foreground/background atlas   
 
-![](./assets/08-246.png) 
+![](../assets/08-246.png) 
 
 Video from Kasten et al., “Layered Neural Atlases for Consistent Video Edigng,” arXiv 2023.    
 Couairon et al., “VidEdit: Zero-Shot and Spagally Aware Text-Driven Video Edigng,” arXiv 2023.   
@@ -52,7 +52,7 @@ P247
 
 Atlas-based video edieng
 
-![](./assets/08-247.png) 
+![](../assets/08-247.png) 
 
 Lee et al., “Shape-aware Text-driven Layered Video Editing,” CVPR 2023.   
 Chai et al., “StableVideo: Text-driven Consistency-aware Diffusion Video Editing,” ICCV 2023.   
@@ -63,7 +63,7 @@ P248
 Atlas-based video editing
 
 
-![](./assets/08-248.png) 
+![](../assets/08-248.png) 
 
 Chai et al., “StableVideo: Text-driven Consistency-aware Diffusion Video Edigng,” ICCV 2023.   
 
@@ -98,7 +98,7 @@ Edit a video = edit a canonical image + learned deformation field
  - Deformation Field: video (x, y, t) → canonical image coordinate (x’, y’)   
  - Canonical Field: (x’, y’) → (r, g, b), like a “2D image”   
 
-![](./assets/08-250.png) 
+![](../assets/08-250.png) 
 
 Ouyang et al., “CoDeF: Content Deformation Fields for Temporally Consistent Video Processing,” arXiv 2023.   
 
@@ -123,7 +123,7 @@ P252
 
 Edit a video = edit a canonical image + learned deformation field   
 
-![](./assets/08-252.png) 
+![](../assets/08-252.png) 
 
 Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
 
@@ -135,7 +135,7 @@ P253
 
 Edit a video = edit a canonical image + learned deformation field   
 
-![](./assets/08-253.png) 
+![](../assets/08-253.png) 
 
 Ouyang et al., “CoDeF: Content Deformation Fields for emporally Consistent Video Processing,” arXiv 2023.   
 
@@ -156,7 +156,7 @@ P255
 
 Edit a video = edit a canonical ~~image~~ 3D NeRF
 
-![](./assets/08-255.png) 
+![](../assets/08-255.png) 
 
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for arge-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
 
@@ -193,7 +193,7 @@ Follow HOSNeRF, represent the video as:
 
 Edit background NeRF and human NeRF respectively   
 
-![](./assets/08-258.png) 
+![](../assets/08-258.png) 
 
 Liu et al., “HOSNeRF: Dynamic Human-Object-Scene Neural Radiance Fields from a Single Video,” ICCV 2023.   
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Mogon- and View-Change Human-Centric Video Edigng,” arXiv 2023.   
