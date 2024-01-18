@@ -32,9 +32,9 @@
     - [3D-Aware](3D-Aware.md)
     - [Other Guidance](OtherGuidance.md)
 - [李宏毅Diffusion Model]()
-  - [Diffusion Model](DiffusionModel.md)
-  - [Stable Diffusion](StableDiffusion.md)
-  - [Diffusion Model背后的数掌原理](DiffusionModel背后的数掌原理.md)
+  - [Diffusion Model](李宏毅DiffusionModel/DiffusionModel.md)
+  - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
+  - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 
 
   
