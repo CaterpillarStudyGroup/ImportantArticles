@@ -7,14 +7,14 @@ P263
 
 P264  
 
-![](../assets/08-264.png) 
+![](../../assets/08-264.png) 
 
 P265   
 ## InstructPix2Pix
 
 Instruction-guided image editing
 
-![](../assets/08-265.png) 
+![](../../assets/08-265.png) 
 
 Brooks et al., “InstructPix2Pix: Learning to Follow Image diting Instructions,” CVPR 2023.  
 
@@ -27,7 +27,7 @@ Instruction-guided Video Editing
  - Generate ⟨instruction, video⟩ dataset using ChatGPT, BLIP and Tune-A-Video   
  - Train inflated Stable Diffusion for instruction-guided video editing   
 
-![](../assets/08-266.png) 
+![](../../assets/08-266.png) 
 
 Qin et al., “InstructVid2Vid: Controllable Video Editing with Natural Language Instructions,” arXiv 2023.    
 
@@ -40,7 +40,7 @@ P267
 
 Speech-driven video editing
 
-![](../assets/08-267.png) 
+![](../../assets/08-267.png) 
 
 Bigioi et al., “Speech Driven Video Editing via an Audio-Conditioned Diffusion Model,” arXiv 2023.   
 
@@ -49,7 +49,7 @@ P268
 
 Sound-guided video editing
 
-![](../assets/08-268.png) 
+![](../../assets/08-268.png) 
 
 Lee et al., “Soundini: Sound-Guided Diffusion for Natural Video Editing,” arXiv 2023.    
 
@@ -58,7 +58,7 @@ P269
 
 |||
 |--|--|
-| ![](../assets/08-269-1.png)  | **Collaborative Score Distillation** (Kim et al.) <br> Instruction-guide video editing <br> “Collaborative Score Distillation for Consistent Visual Synthesis,” NeurIPS 2023. |
-| ![](../assets/08-269-2.png)  | **Make-A-Protagonist** (Zhao et al.) <br> Video ediSng with an ensemble of experts <br> “Make-A-Protagonist: Generic Video Edigng with An Ensemble of Experts,” arXiv 2023. |
-| ![](../assets/08-269-3.png)  | **DragNUWA** (Yin et al.) <br> Multimodal-guided video editing <br> “DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory,” arXiv 2023. |
+| ![](../../assets/08-269-1.png)  | **Collaborative Score Distillation** (Kim et al.) <br> Instruction-guide video editing <br> “Collaborative Score Distillation for Consistent Visual Synthesis,” NeurIPS 2023. |
+| ![](../../assets/08-269-2.png)  | **Make-A-Protagonist** (Zhao et al.) <br> Video ediSng with an ensemble of experts <br> “Make-A-Protagonist: Generic Video Edigng with An Ensemble of Experts,” arXiv 2023. |
+| ![](../../assets/08-269-3.png)  | **DragNUWA** (Yin et al.) <br> Multimodal-guided video editing <br> “DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory,” arXiv 2023. |
 

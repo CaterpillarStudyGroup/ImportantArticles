@@ -6,7 +6,7 @@ P188
 
 P189   
 
-![](../assets/08-189.png) 
+![](../../assets/08-189.png) 
 
 P190   
 ## Depth Control
@@ -32,7 +32,7 @@ Framewise depth-guided video editing
 
 |||
 |--|--|
-| ![](../assets/08-193-1.png)  | ![](../assets/08-193-2.png)  |
+| ![](../../assets/08-193-1.png)  | ![](../../assets/08-193-2.png)  |
 
 
 Psser et al., “Structure and Content-Guided Video Synthesis with Diffusion Models,” ICCV 2023. 
@@ -46,7 +46,7 @@ Framewise depth-guided video editing
  - No need for training/finetuning
  - Challenge is how to ensure temporal consistency?   
 
-![](../assets/08-194.png) 
+![](../../assets/08-194.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.   
 
@@ -59,7 +59,7 @@ Framewise depth-guided video editing
  - How to ensure temporal consistency?   
     - Obtain initial noise from DDIM inversion   
 
-![](../assets/08-195.png) 
+![](../../assets/08-195.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
 
@@ -72,7 +72,7 @@ Framewise depth-guided video editing
     - Inject self-attention features from the previous frame in U-Net for generating the current frame    
     - Use the latent of the previous frame to guide latent update of the current frame   
  
-![](../assets/08-196.png) 
+![](../../assets/08-196.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
 
@@ -81,7 +81,7 @@ P197
 
 Framewise depth-guided video editing
 
-![](../assets/08-197.png) 
+![](../../assets/08-197.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023   
 
@@ -90,7 +90,7 @@ P198
 
 Framewise depth-guided video editing
 
-![](../assets/08-198.png) 
+![](../../assets/08-198.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.
 
@@ -105,7 +105,7 @@ ControlNet-like video editing
 
  - Input structural conditions through **ControlNet**
 
-![](../assets/08-200.png) 
+![](../../assets/08-200.png) 
 
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
@@ -119,7 +119,7 @@ ControlNet-like video editing
  - Inflate Stable Diffusion and ControlNet along the temporal dimension   
  - Interleaved-frame smoothing during DDIM sampling for bever temporal consistency    
 
-![](../assets/08-201.png) 
+![](../../assets/08-201.png) 
 
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
@@ -133,7 +133,7 @@ ControlNet-like video editing
  - Inflate Stable Diffusion and ControlNet along the temporal dimension    
  - Interleaved-frame smoothing during denoising for better temporal consistency    
 
-![](../assets/08-202.png)
+![](../../assets/08-202.png)
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
@@ -142,7 +142,7 @@ P203
 
 ControlNet-like video editing
 
-![](../assets/08-203.png)  
+![](../../assets/08-203.png)  
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.     
 
@@ -151,7 +151,7 @@ P208
 
 Optical flow-guided video editing; I, P, B frames in video compression
 
-![](../assets/08-208.png)  
+![](../../assets/08-208.png)  
 
 Hu et al., “VideoControlNet: A Motion-Guided Video-to-Video Translation Framework by Using Diffusion Model with ControlNet,” arXiv 2023.     
 
@@ -161,7 +161,7 @@ P210
 
 Mulemodal-guided video edieng
 
-![](../assets/08-210.png)  
+![](../../assets/08-210.png)  
 
 Feng et al., “CCEdit: Creative and Controllable Video Editing via Diffusion Models,” arXiv 2023.    
 
@@ -172,7 +172,7 @@ Image-, sketch-, motion-, depth-, mask-controlled video editing
 
 **Video Editing based on Various Conditions**
 
-![](../assets/08-211.png)  
+![](../../assets/08-211.png)  
 
 Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.  
 
@@ -183,7 +183,7 @@ Image-, sketch-, motion-, depth-, mask-controlled video editing
 
 • Spako-Temporal Condikon encoder (STC-encoder): a unified input interface for condikons   
 
-![](../assets/08-212.png)  
+![](../../assets/08-212.png)  
 
 Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.    
 
@@ -192,11 +192,11 @@ P214
 
 |||
 |--|--|
-| ![](../assets/08-214-1.png)  | **MagicProp** (Yan et al.) <br> “MagicProp: Diffusion-based Video Editing via Motion-aware Appearance Propagation,” arXiv 2023. |
-| ![](../assets/08-214-2.png) | **Make-Your-Video** (Xing et al.) <br> “Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance,” arXiv 2023.   |
-| ![](../assets/08-214-3.png) | **Control-A-Video** (Lorem et al.) <br> “Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models,” arXiv 2023. |
-| ![](../assets/08-214-4.png)  | **MagicEdit** (Liew et al.) <br> “MagicEdit: High-Fidelity and Temporally Coherent Video Editing,” arXiv 2023. |
-| ![](../assets/08-214-5.png)  |  **EVE** (Chen et al.) <br> “EVE: Efficient zero-shot text-based Video Editing with Depth Map Guidance and Temporal Consistency Constraints,” arXiv 2023. |
+| ![](../../assets/08-214-1.png)  | **MagicProp** (Yan et al.) <br> “MagicProp: Diffusion-based Video Editing via Motion-aware Appearance Propagation,” arXiv 2023. |
+| ![](../../assets/08-214-2.png) | **Make-Your-Video** (Xing et al.) <br> “Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance,” arXiv 2023.   |
+| ![](../../assets/08-214-3.png) | **Control-A-Video** (Lorem et al.) <br> “Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models,” arXiv 2023. |
+| ![](../../assets/08-214-4.png)  | **MagicEdit** (Liew et al.) <br> “MagicEdit: High-Fidelity and Temporally Coherent Video Editing,” arXiv 2023. |
+| ![](../../assets/08-214-5.png)  |  **EVE** (Chen et al.) <br> “EVE: Efficient zero-shot text-based Video Editing with Depth Map Guidance and Temporal Consistency Constraints,” arXiv 2023. |
 
 P215   
 ## Pose Control
@@ -239,7 +239,7 @@ P219
 Pose- and image-guided video generation   
 
 
-![](../assets/08-219.png) 
+![](../../assets/08-219.png) 
 
 Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.    
 
@@ -248,7 +248,7 @@ P220
 
 Pose- and image-guided video generation
 
-![](../assets/08-220.png) 
+![](../../assets/08-220.png) 
 
 Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.
 
@@ -259,7 +259,7 @@ P223
 
 Pose-guided video generation
 
-![](../assets/08-223.png) 
+![](../../assets/08-223.png) 
 
 Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.    
 
@@ -268,9 +268,9 @@ P224
 
 |||
 |--|--|
-| ![](../assets/08-224-1.png)  | **Dancing Avatar** (Qin et al.)<br> Pose-guided video editing <br> “Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model,” arXiv 2023. |
-| ![](../assets/08-224-2.png)  | **Follow Your Pose** (Ma et al.) <br> Pose-guided video editing  <br> “Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos,” arXiv 2023.  |
-| ![](../assets/08-224-3.png)  | **DisCo** (Wang et al.) <br> Pose-guided video editing <br> “Disco: Disentangled control for referring human dance generation in real world,” arXiv 2023.  |
+| ![](../../assets/08-224-1.png)  | **Dancing Avatar** (Qin et al.)<br> Pose-guided video editing <br> “Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model,” arXiv 2023. |
+| ![](../../assets/08-224-2.png)  | **Follow Your Pose** (Ma et al.) <br> Pose-guided video editing  <br> “Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos,” arXiv 2023.  |
+| ![](../../assets/08-224-3.png)  | **DisCo** (Wang et al.) <br> Pose-guided video editing <br> “Disco: Disentangled control for referring human dance generation in real world,” arXiv 2023.  |
 
 P225   
 ## Point-Control
@@ -285,7 +285,7 @@ Customized video subject swapping via point control
  - Subject replacement: change video subject to a **customized** subject    
  - Background preservation: preserve the unedited background same as the source video    
 
-![](../assets/08-226.png) 
+![](../../assets/08-226.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
@@ -300,7 +300,7 @@ Customized video subject swapping via point control
  - Existing methods are promising but still often motion not well aligned   
  - Need ensure precise correspondence of <u> **semantic points** </u> between the source and target   
 
-![](../assets/08-227.png) 
+![](../../assets/08-227.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -317,7 +317,7 @@ Customized video subject swapping via point control
  - **Question**: Can we <u> learn semantic point control </u> for a specific <u>source video subject</u> using only a <u>small number of source video frames</u>   
  - **Toy Experiment**: Manually define and annotate a set of semantic points on 8 frame; use such point maps as condition for training a control net, i.e., T2I-Adapter.    
 
-![](../assets/08-228.png) 
+![](../../assets/08-228.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
 
@@ -333,7 +333,7 @@ Customized video subject swapping via point control
 
  - **Observation 1**: If we can drag the points, the trained T2I-Aapter can generate new contents based on such dragged new points (new condition)  →  feasible to use semantic points as condition to control and maintain the source motion trajectory.
 
-![](../assets/08-229.png) 
+![](../../assets/08-229.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.  
 
@@ -349,7 +349,7 @@ Customized video subject swapping via point control
 
  - **Observation 2**: Further, we can drag the semantic points to control the subject’s shape   
  
-![](../assets/08-230.png) 
+![](../../assets/08-230.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -358,7 +358,7 @@ P231
 
 Customized video subject swapping via point control
 
-![](../assets/08-231.png) 
+![](../../assets/08-231.png) 
 
 **Framework**
 
@@ -385,7 +385,7 @@ Customized video subject swapping via point control
     - Propagate to other frames by point tracking/detector   
  - Embedding    
 
-![](../assets/08-232.png) 
+![](../../assets/08-232.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -402,7 +402,7 @@ Customized video subject swapping via point control
     - Extract DIFT embedding (intermediate U-Net feature) for each semantic point   
     - Aggregate over all frames   
 
-![](../assets/08-233.png) 
+![](../../assets/08-233.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -418,7 +418,7 @@ Customized video subject swapping via point control
     - Point Patch Loss: restrict diffusion loss to reconstruct local patch around the point    
     - Semantic-Enhanced Schedule: only sample higher timestep (0.5T, T), which prevents overfitting to low-level details    
 
-![](../assets/08-234.png) 
+![](../../assets/08-234.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
@@ -432,7 +432,7 @@ Customized video subject swapping via point control
  - After Step1 (Semantic Point Extraction) and Step2 (Semantic Point Registration), those semantic points can be used to guide motion   
  - User-point interaction for various applications   
 
-![](../assets/08-235.png) 
+![](../../assets/08-235.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
@@ -447,7 +447,7 @@ Customized video subject swapping via point control
     - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial, because of complex camera motion and subject motion in video.   
     - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.   
 
-![](../assets/08-236.png) 
+![](../../assets/08-236.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
@@ -462,7 +462,7 @@ Customized video subject swapping via point control
  - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial because of complex camera motion and subject motion in video.   
  - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.    
 
-![](../assets/08-237.png) 
+![](../../assets/08-237.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
@@ -471,7 +471,7 @@ P238
 
 Customized video subject swapping via point control
 
-![](../assets/08-238-1.png) 
+![](../../assets/08-238-1.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -480,7 +480,7 @@ P239
 
 Customized video subject swapping via point control
 
-![](../assets/08-239.png) 
+![](../../assets/08-239.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
@@ -496,6 +496,6 @@ Customized video subject swapping via point control
 
  - VideoSwap can **support shape change** in the target swap results, leading to the correct identity of target concept. 
 
-![](../assets/08-240.png) 
+![](../../assets/08-240.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
