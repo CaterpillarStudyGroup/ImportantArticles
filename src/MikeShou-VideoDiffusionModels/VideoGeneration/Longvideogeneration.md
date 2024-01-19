@@ -9,7 +9,7 @@ P126
 
 P127  
 
-![](../assets/08-127.png) 
+![](../../assets/08-127.png) 
 
 
 P128  
@@ -42,7 +42,7 @@ Recursive interpolations for generating very long videos
 
  - Storyboard through multiple text prompts   
 
-![](../assets/08-129.png) 
+![](../../assets/08-129.png) 
 
 Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
 
@@ -57,7 +57,7 @@ Recursive interpolations for generating very long videos
  - Global diffusion model: L text prompts → L keyframes
  - Local diffusion model: 2 text prompts + 2 keyframes → L keyframes   
 
-![](../assets/08-130.png) 
+![](../../assets/08-130.png) 
 
 Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.
 
@@ -71,7 +71,7 @@ Recursive interpolations for generating very long videos
 
  - A basic diffusion model for global & local diffusion models
 
-![](../assets/08-131.png) 
+![](../../assets/08-131.png) 
 
 
 Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
@@ -81,7 +81,7 @@ P133
 
 |||
 |--|--|
-| ![](../assets/08-133-1.png)  | **Latent Video Diffusion Models for High-Fidelity Long Video Generation** (He et al.) <br> Generate long videos via autoregressive generation & interpolation <br> “Latent Video Diffusion Models for High-Fidelity Long Video Generation,” arXiv 2022.|
-|  ![](../assets/08-133-2.png) | **VidRD** (Gu et al.) <br> Autoregressive long video generation <br> “Reuse and Diffuse: Iterative Denoising for Text-to-Video Generation,” arXiv 2023. |
-|  ![](../assets/08-133-3.png) | **VideoGen** (Li et al.) <br> Cascaded pipeline for long video generation <br> “VideoGen: A Reference-Guided Latent Diffusion Approach for High Definition Text-to-Video Generation,” arXiv 2023.|
+| ![](../../assets/08-133-1.png)  | **Latent Video Diffusion Models for High-Fidelity Long Video Generation** (He et al.) <br> Generate long videos via autoregressive generation & interpolation <br> “Latent Video Diffusion Models for High-Fidelity Long Video Generation,” arXiv 2022.|
+|  ![](../../assets/08-133-2.png) | **VidRD** (Gu et al.) <br> Autoregressive long video generation <br> “Reuse and Diffuse: Iterative Denoising for Text-to-Video Generation,” arXiv 2023. |
+|  ![](../../assets/08-133-3.png) | **VideoGen** (Li et al.) <br> Cascaded pipeline for long video generation <br> “VideoGen: A Reference-Guided Latent Diffusion Approach for High Definition Text-to-Video Generation,” arXiv 2023.|
 

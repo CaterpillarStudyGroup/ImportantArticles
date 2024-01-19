@@ -8,7 +8,7 @@ P66
 
 
 P67   
-![](../assets/08-67.png)
+![](../../assets/08-67.png)
 m
 P68   
 ## ModelScopeT2V
@@ -20,7 +20,7 @@ Leverage pretrained T2I models for video generation
 
 |||
 |--|--|
-| ![](../assets/08-68-1.png)  |  ![](../assets/08-68-2.png) |
+| ![](../../assets/08-68-1.png)  |  ![](../../assets/08-68-2.png) |
 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
@@ -36,7 +36,7 @@ Leverage pretrained T2I models for video generation
  - Inflate Stable Diffusion to a 3D model, preserving pretrained weights    
  - Insert spatio-temporal blocks   
 
-![](../assets/08-69.png) 
+![](../../assets/08-69.png) 
 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
@@ -53,7 +53,7 @@ Leverage pretrained T2I models for video generation
  - Inflate Stable Diffusion to a 3D model, preserving pretrained weights   
  - Insert spatio-temporal blocks, **can handle varying number of frames**   
 
-![](../assets/08-70.png) 
+![](../../assets/08-70.png) 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023. 
 
@@ -71,7 +71,7 @@ P72
 
 Leverage pretrained T2I models for video generation
 
-![](../assets/08-72.png) 
+![](../../assets/08-72.png) 
 
 
 ZeroScope: finetunes ModelScope on a small set of high-quality videos, resulting into higher resolution at 
@@ -98,7 +98,7 @@ Leverage pretrained T2I models for video generation
 |||||
 |--|--|--|--|
 | " Robot dancing in times square,” arXiv 2023.  | " Clown fish swimming through the coral reef,” arXiv 2023.| " Melting ice cream dripping down the cone,” arXiv 2023.| " Hyper-realistic photo of an abandoned industrial site during a storm,” arXiv 2023.|
-| ![](../assets/08-74-1.png)  |  ![](../assets/08-74-2.png) | ![](../assets/08-74-3.png)  |  ![](../assets/08-74-4.png) |
+| ![](../../assets/08-74-1.png)  |  ![](../../assets/08-74-2.png) | ![](../../assets/08-74-3.png)  |  ![](../../assets/08-74-4.png) |
 
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
@@ -109,7 +109,7 @@ P75
 
 Better text-video alignment? Generation in both pixel- and latent-domain
 
-![](../assets/08-75.png) 
+![](../../assets/08-75.png) 
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
 
@@ -127,7 +127,7 @@ Better text-video alignment? Generation in both pixel- and latent-domain
 
 |||
 |--|--|
-| ![](../assets/08-76-1.png) | ![](../assets/08-76-2.png) |
+| ![](../../assets/08-76-1.png) | ![](../../assets/08-76-2.png) |
 
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
@@ -145,7 +145,7 @@ Generation in both pixel- and latent-domain
  - Pixel-based VDM achieves better text-video alignment than latent-based VDM   
  - Pixel-based VDM takes much larger memory than latent-based VDM    
 
-![](../assets/08-77.png) 
+![](../../assets/08-77.png) 
 
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
@@ -161,7 +161,7 @@ Generation in both pixel- and latent-domain
  - Use Pixel-based VDM in low-res stage   
  - Use latent-based VDM in high-res stage   
 
-![](../assets/08-78.png) 
+![](../../assets/08-78.png) 
 
 Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
 
@@ -185,7 +185,7 @@ P80
 
 • Latent diffusion inserted with temporal layers
 
-![](../assets/08-80.png) 
+![](../../assets/08-80.png) 
 
 Chen et al., “VideoCrafter1: Open Diffusion Models for High-Quality Video Generation,” arXiv 2023.    
 
@@ -194,7 +194,7 @@ P81
 
 Joint image-video finetuning with curriculum learning
 
-![](../assets/08-81.png) 
+![](../../assets/08-81.png) 
 
 Wang et al., “LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models,” arXiv 2023.   
 
@@ -235,7 +235,7 @@ Scaling latent video diffusion models to large datasets
 
 **Data Processing and Annotation**  
 
-![](../assets/08-84.png) 
+![](../../assets/08-84.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
 
@@ -250,7 +250,7 @@ Scaling latent video diffusion models to large datasets
 
  - Initialize weights from Stable Diffusion 2.1 (text-to-image model)   
 
-![](../assets/08-85.png) 
+![](../../assets/08-85.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
 
@@ -267,7 +267,7 @@ Scaling latent video diffusion models to large datasets
     - Choose optimal filtering thresholds via Elo rankings for human preference votes
  - Well-curated beats un-curated pretraining dataset
 
-![](../assets/08-86.png) 
+![](../../assets/08-86.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.  
 
@@ -288,7 +288,7 @@ Scaling latent video diffusion models to large datasets
     - Multi-View Generation   
  - Performance gains from curation persists after finetuning   
 
-![](../assets/08-87.png) 
+![](../../assets/08-87.png) 
 
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
 
