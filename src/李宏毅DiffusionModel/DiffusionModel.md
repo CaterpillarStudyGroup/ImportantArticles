@@ -10,12 +10,6 @@ P2
 
 ![](../assets/lhy1-2.png) 
 
-2
-![](./assets/lhy1-2.png) 
-3
-![](./assets/lhy1-2.PNG) 
-33
-![](../assets/lhy1-2.PNG) 
 
 
 P3  
