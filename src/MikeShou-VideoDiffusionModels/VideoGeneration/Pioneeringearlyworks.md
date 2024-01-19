@@ -6,7 +6,7 @@ P32
 ## 2.1 Pioneering/early works
 
 
-![](../assets/08-33.png)
+![](../../assets/08-33.png)
 
 
 
@@ -22,7 +22,7 @@ Video from Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models f
 P35   
 ## Problem Definition   
 
-![](../assets/08-35.png)
+![](../../assets/08-35.png)
 
 
 > &#x2705; 从 2D 输出变成 3D 输出。   
@@ -34,7 +34,7 @@ Recap 3D Conv
 
 |||
 |--|--|
-| ![](../assets/08-36-1.png)  |  ![](../assets/08-36-2.png) |
+| ![](../../assets/08-36-1.png)  |  ![](../../assets/08-36-2.png) |
 
 Du et al., “Learning Spatiotemporal Features with 3D Convolutional Networks,” ICCV 2015.     
 
@@ -45,7 +45,7 @@ Recap (2+1)D Conv
 
 |||
 |--|--|
-| ![](../assets/08-37-1.png)  |  ![](../assets/08-37-2.png) |
+| ![](../../assets/08-37-1.png)  |  ![](../../assets/08-37-2.png) |
 
 Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.    
 
@@ -72,7 +72,7 @@ Early work on video generation
  - Spatial attention: remain the same   
  - Insert temporal attention layer: attend across the temporal dimension (spatial axes as batch)   
 
-![](../assets/08-39.png) 
+![](../../assets/08-39.png) 
 
 Ho et al., “Video Diffusion Models,” NeurIPS 2022.  
 
@@ -87,7 +87,7 @@ P40
 
 Cascaded generation
 
-![](../assets/08-40.png) 
+![](../../assets/08-40.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022. 
 
@@ -101,7 +101,7 @@ P41
 
 Cascaded generation
 
-![](../assets/08-41.png) 
+![](../../assets/08-41.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
 
@@ -112,7 +112,7 @@ P42
 
 Cascaded generation
 
-![](../assets/08-42.png) 
+![](../../assets/08-42.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
@@ -124,7 +124,7 @@ P43
 
 Cascaded generation
 
-![](../assets/08-43.png) 
+![](../../assets/08-43.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.   
 
@@ -148,7 +148,7 @@ P45
 
 The WebVid-10M Dataset
 
-![](../assets/08-45.png) 
+![](../../assets/08-45.png) 
 
 Bain et al., “Frozen in Time: A Joint Video and Image Encoder for End to End Paper,” ICCV 2021.    
 
@@ -157,7 +157,7 @@ Bain et al., “Frozen in Time: A Joint Video and Image Encoder for End to End P
 P46   
 ## Evaluation Metrics
 
-![](../assets/08-46.png) 
+![](../../assets/08-46.png) 
 
 
 P47   
@@ -186,7 +186,7 @@ P48
 
 Semantic similarity between images
 
-![](../assets/08-48.png) 
+![](../../assets/08-48.png) 
 
 **Lantern image generated with Stable Diffusion 2.1.**    
 
@@ -239,7 +239,7 @@ P51
 
 Image-caption similarity
 
-![](../assets/08-51.png) 
+![](../../assets/08-51.png) 
 
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.      
 
@@ -248,7 +248,7 @@ P52
 
 Semantic similarity and temporal coherence between two videos    
 
-![](../assets/08-52.png) 
+![](../../assets/08-52.png) 
 
 Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.    
 Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric & Challenges,” arXiv 2018.     
@@ -259,7 +259,7 @@ P53
 
 Video quality assessment via semantic features and MMD  
 
-![](../assets/08-53.png) 
+![](../../assets/08-53.png) 
 
 Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.    
 Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric & Challenges,” arXiv 2018.      
@@ -270,7 +270,7 @@ P54
 
 Video quality and diversity
 
-![](../assets/08-54.png) 
+![](../../assets/08-54.png) 
 
 Salimans et al., “Improved Techniques for Training GANs,” NeurIPS 2016.    
 Barratt et al., “A Note on the Inception Score,” ICML 2018.    
@@ -288,7 +288,7 @@ Frame temporal semantic consistency
  - Compute CLIP image embeddings for all frames   
  - Report average cosine similarity between all pairs of frames   
 
-![](../assets/08-55.png) 
+![](../../assets/08-55.png) 
 
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.    
 
@@ -304,7 +304,7 @@ Hybrid evaluation
  - **Multi-criteria decision analysis** on 18 metrics: visual quality, content quality…   
  - Regress the coefficients of all metrics to generate an overall score aligned with user opinions   
 
-![](../assets/08-57.png) 
+![](../../assets/08-57.png) 
 
 Liu et al., “EvalCrafter: Benchmarking and Evaluating Large Video Generation Models,” arXiv 2023.      
 
@@ -313,7 +313,7 @@ P58
 
 Cascaded generation
 
-![](../assets/08-58.png) 
+![](../../assets/08-58.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
@@ -324,7 +324,7 @@ P59
 
 Cascaded generation
 
-![](../assets/08-59.png) 
+![](../../assets/08-59.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
 
@@ -336,7 +336,7 @@ P60
 
 Cascaded generation
 
-![](../assets/08-60.png) 
+![](../../assets/08-60.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
@@ -350,7 +350,7 @@ Cascaded generation
 
 Add motion to a single image or fill-in the in-betw    
 
-![](../assets/08-62.png) 
+![](../../assets/08-62.png) 
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
@@ -362,7 +362,7 @@ Leverage pretrained T2I models for video generation; Cascaded generation
 
 |||
 |--|--|
-| ![](../assets/08-63-1.png)  |  ![](../assets/08-63-2.png) |
+| ![](../../assets/08-63-1.png)  |  ![](../../assets/08-63-2.png) |
 
 
 Imagen: Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding,” arXiv 2022.    
@@ -378,7 +378,7 @@ P64
 Leverage pretrained T2I models for video generation; 
 Cascaded generation   
 
-![](../assets/08-64.png)
+![](../../assets/08-64.png)
 
 Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
 
