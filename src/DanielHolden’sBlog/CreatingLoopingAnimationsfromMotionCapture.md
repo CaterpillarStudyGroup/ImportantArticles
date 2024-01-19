@@ -246,7 +246,7 @@ Unfortunately the spring-based inertializer has a problem here... if we slow dow
 > &#x2705; offset是以指数的形式下降的，因此只会无限接近0，会存在residual offset  
 
 <iframe 
-src="./assets/inertialize_slowmo.mp4" 
+src="../assets/inertialize_slowmo.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -290,7 +290,7 @@ Now we can be sure our offsets will definitely be blended out in time:
 Which removes the discontinuity.
 
 <iframe 
-src="./assets/inertialize_cubic.mp4" 
+src="../assets/inertialize_cubic.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -310,7 +310,7 @@ Something else we can do is spread the offset over the whole animation using a k
 The problem here is that doing so naively introduces a velocity discontinuity. Which again is visible if we watch the loop in slow-mo:
 
 <iframe 
-src="./assets/linear.mp4" 
+src="../assets/linear.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -393,7 +393,7 @@ Note that the velocity introduced by the linear fade needs to be accounted for w
 That aside, here is what this looks like on the character:
 
 <iframe 
-src="./assets/linear_inertialize.m4v" 
+src="../assets/linear_inertialize.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -406,7 +406,7 @@ width=800>
 This spreads the adjustment over the whole animation which in many cases is very useful and generally looks good for short animations. However, in certain cases it introduces a kind of "**drift**" to the animation which might not be what we want and can introduce foot sliding:
 
 <iframe 
-src="./assets/linear_comparison.mp4" 
+src="../assets/linear_comparison.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -610,7 +610,7 @@ Using this we can **adjust the fade-out time to just a section** of the animatio
 > &#x2705; fadeout会引入drift，因此控制fadeout的范围。  
 
 <iframe 
-src="./assets/softfade.mp4" 
+src="../assets/softfade.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -701,7 +701,7 @@ And here is a kind of top-down 2D visualization of what this is effectively doin
 Now when we play back the looped clip and let the displacement of the root accumulate we can see that even for clips with very different root velocities at the start and end we don't see any discontinuity:
 
 <iframe 
-src="./assets/root_motion.mp4" 
+src="../assets/root_motion.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
