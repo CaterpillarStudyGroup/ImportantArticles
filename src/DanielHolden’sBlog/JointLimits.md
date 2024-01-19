@@ -58,7 +58,7 @@ But if we consider local joint rotations as *relative* rotations, what exactly a
 And, if we actually do this, due to the way many character skeletons are constructed, we usually don't get something that makes much sense. For example, here is the skeleton from [this dataset](https://github.com/ubisoft/ubisoft-laforge-animation-dataset) with all the joint rotations set to the identity.
 
 <iframe 
-src="./assets/IdentityPose.m4v" 
+src="../assets/IdentityPose.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -75,7 +75,7 @@ So when we talk about joint limits, we want to instead think of our rotations as
 > &#x2705; reference pose怎么定义不重要，关键是要统一。  
 
 <iframe 
-src="./assets/ReferencePose.m4v" 
+src="../assets/ReferencePose.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -100,7 +100,7 @@ But this has only fixed half of our problem - because depending on exactly where
 If we look (with playback sped up) at the following motion capture clip (which we are going to use as the *range of motion* in this article) we might not see anything wrong.
 
 <iframe 
-src="./assets/JointLimitAnimation.m4v" 
+src="../assets/JointLimitAnimation.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -147,7 +147,7 @@ This allows for relative rotations of more than 180 degrees compared to the refe
 If we convert these rotations into the [scaled angle axis](https://theorangeduck.com/page/exponential-map-angle-axis-angular-velocity) representation, we end up with a 3d vector. And if we plot this for every frame in our dataset, we can get a *distribution of rotations* for each joint - we can see the full set of rotations used by each joint in our motion capture data. And the region where we have points describes the space of valid rotations for a particular joint - in other words - the joint limit. Here you can see these plots visualized for various different joints:
 
 <iframe 
-src="./assets/JointRotationPlot.m4v" 
+src="../assets/JointRotationPlot.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -206,7 +206,7 @@ int subsample_naive(
 This gives us sub-sampled data which is a bit more evenly distributed in our space. We can also see what movement in this space looks like as we rotate the character's joints, as shown in pink below.
 
 <iframe 
-src="./assets/JointRotationSubsample.m4v" 
+src="../assets/JointRotationSubsample.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -282,7 +282,7 @@ vec3 apply_rectangular_limit_basic(
 This already does a fair job at constraining rotations, but doesn't provide a very tight fit - it allows many rotations far from what we had in our data - as you can see if we visualize the result of this projection:
 
 <iframe 
-src="./assets/ProjectionRectangular.m4v" 
+src="../assets/ProjectionRectangular.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -469,7 +469,7 @@ vec3 apply_rectangular_limit(
 This oriented bounding box provides a tighter fit:
 
 <iframe 
-src="./assets/ProjectionOriented.m4v" 
+src="../assets/ProjectionOriented.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -599,7 +599,7 @@ vec3 apply_ellipsoid_limit(
 And here we can see it visualized on the character:
 
 <iframe 
-src="./assets/ProjectionEllipsoid.m4v" 
+src="../assets/ProjectionEllipsoid.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -694,7 +694,7 @@ A set of axes I like to use are each of the primary axes as well as all corners 
 > &#x1F50E; rhombicuboctahedron：菱方八面体  
 
 <iframe 
-src="./assets/ProjectionKDop.m4v" 
+src="../assets/ProjectionKDop.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -744,7 +744,7 @@ vec3 projection_soften(
 This nicely softens our limits, making transitions between faces of the limit surface smoother as well as allowing some small deviation from the limit when projecting large violations:
 
 <iframe 
-src="./assets/ProjectionSoften.m4v" 
+src="../assets/ProjectionSoften.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -812,7 +812,7 @@ void compute_twist_axes(
 Then, we can decompose each of our joint rotations into two, and essentially repeat the whole process outlined above but for two rotations at each joint instead of one.
 
 <iframe 
-src="./assets/ProjectionSwingTwist.m4v" 
+src="../assets/ProjectionSwingTwist.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -833,7 +833,7 @@ In general joint limits can be used to avoid bad posing produced by various othe
 For example, here I rigged up a little demo with some very basic inverse kinematics showing how we can use the joint limits to ensure the character never produces a bad pose.
 
 <iframe 
-src="./assets/InverseKinematics.m4v" 
+src="../assets/InverseKinematics.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -850,7 +850,7 @@ width=800>
 Here is another example. In this case I set up a basic procedural look-at system that rotates the spine and head toward the target:
 
 <iframe 
-src="./assets/LookAt.m4v" 
+src="../assets/LookAt.m4v" 
 scrolling="no" 
 border="0" 
 frameborder="no" 

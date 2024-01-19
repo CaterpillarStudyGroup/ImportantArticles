@@ -38,7 +38,7 @@ For some extreme rotations we can also face the issue of [gimbal lock](https://e
 > &#x2705; 属性四：gimbal lock
 
 <iframe 
-src="./assets/euler_angles.mp4" 
+src="../assets/euler_angles.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
@@ -110,7 +110,7 @@ Unlike the Euler angle space, which is shaped like a cube, the exponential map p
 > &#x2705; 半径为\\(\pi \\)的地方也是identity  
 
 <iframe 
-src="./assets/exponential_map.mp4" 
+src="../assets/exponential_map.mp4" 
 scrolling="no" 
 border="0" 
 frameborder="no" 
