@@ -15,7 +15,7 @@ P2
 3
 ![](./assets/lhy1-2.PNG) 
 33
-![](.。/assets/lhy1-2.PNG) 
+![](../assets/lhy1-2.PNG) 
 
 
 P3  
