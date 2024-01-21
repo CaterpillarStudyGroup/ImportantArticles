@@ -14,6 +14,10 @@
   - [Scalar Velocity](DanielHolden’sBlog/ScalarVelocity.md)
   - [Joint Limits](DanielHolden’sBlog/JointLimits.md)
   - [Visualizing Rotation Spaces](DanielHolden’sBlog/VisualizingRotationSpaces.md)
+- [李宏毅Diffusion Model]()
+  - [Diffusion Model 是如何運作的](李宏毅DiffusionModel/DiffusionModel.md)
+  - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
+  - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 - [Mike Shou - Video Diffusion Models]()
   - [Mike Shou](MikeShou-VideoDiffusionModels/MikeShou.md)
   - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
@@ -31,11 +35,6 @@
     - [Controlled Edifng](MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.md)
     - [3D-Aware](MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.md)
     - [Other Guidance](MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.md)
-- [李宏毅Diffusion Model]()
-  - [Diffusion Model 是如何運作的](李宏毅DiffusionModel/DiffusionModel.md)
-  - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
-  - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
-
 
   
 
