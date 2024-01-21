@@ -11,6 +11,10 @@ P189
 P190   
 ## Depth Control
 
+> &#x2705; RunwayML 主要做的是 style transfer, 强制加入 depth 作为 condition, 因此可移植性非常高。   
+
+P191    
+> &#x2705; MIDS 是已有的深度估计模型。   
 
 P192   
 ## Use MiDaS to offer depth condition
@@ -20,6 +24,7 @@ Depth estimating network
 
 Ranftl et al., “Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer,” TPAMI 2022.
 
+> &#x2705; 深变信息 Encode 成 latent code, 与 noise conca 到一起。   
 
 P193   
 ## Gen-1
@@ -36,6 +41,8 @@ Framewise depth-guided video editing
 
 
 Psser et al., “Structure and Content-Guided Video Synthesis with Diffusion Models,” ICCV 2023. 
+
+> &#x2705; 特点：(1) 不需要训练。 (2) 能保持前后一致性。   
 
 P194   
 ## Pix2Video
@@ -62,6 +69,11 @@ Framewise depth-guided video editing
 ![](../../assets/08-195.png) 
 
 Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
+
+> &#x2705; (1) 用每一帧的原始图像的 inversion 作为 init noise.   
+> &#x2705; (2) 下一帧的生成会引用上一帧的 latent.    
+> &#x2705; (3) 生成的中间结果上也会有融合。   
+
 
 P196   
 ## Pix2Video
@@ -110,6 +122,11 @@ ControlNet-like video editing
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
+> &#x2705; 使用预训练的 stable diffusion, 无需额外训练。   
+> &#x2705; contrd net 是与 stable diffusion 配对的。   
+> &#x2705; contrd net 以深度图或边缘图为条件，并在时间维度上 embed 以此得到的Z。与原始视频有比较好的对应关系，但仍存在 temporal consistency 问题。   
+
+
 P201   
 ## ControlVideo (Zhang et al. 2023)
 
@@ -123,6 +140,11 @@ ControlNet-like video editing
 
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
+
+> &#x2705; 解决 temporal consistency 问题，方法：
+> &#x2705; 在每个 timestep，让不同帧成为前后两帧的融合。    
+> &#x2753; control net 与 diffusion medel 是什么关系？     
+
 
 P202   
 ## ControlVideo (Zhang et al. 2023)  
@@ -146,6 +168,12 @@ ControlNet-like video editing
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.     
 
+P207    
+
+> &#x2705; 除了 control net, 还使用光流信息作为引导。   
+> &#x2705; Gop：Group of Pictures.    
+
+
 P208   
 ## VideoControlNet
 
@@ -155,6 +183,11 @@ Optical flow-guided video editing; I, P, B frames in video compression
 
 Hu et al., “VideoControlNet: A Motion-Guided Video-to-Video Translation Framework by Using Diffusion Model with ControlNet,” arXiv 2023.     
 
+> &#x2705; 内容一致性，适用于 style transfer, 但需要对物体都较大编辑力度时不适用(例如编辑物体形状)。   
+
+P209    
+
+> &#x2705; 也是control net 形式，但用到更多控制条件。   
 
 P210   
 ## CCEdit
@@ -165,6 +198,9 @@ Mulemodal-guided video edieng
 
 Feng et al., “CCEdit: Creative and Controllable Video Editing via Diffusion Models,” arXiv 2023.    
 
+> &#x2705; 使用了更多控制信息，并把它们 combine 到一起。   
+
+
 P211   
 ## VideoComposer
 
@@ -174,7 +210,10 @@ Image-, sketch-, motion-, depth-, mask-controlled video editing
 
 ![](../../assets/08-211.png)  
 
-Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.  
+Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.   
+
+> &#x2705; 每个 condition 进来，都过一个 STC-Encoder, 然后把不同 condition fuse 到一起，输入到 U-Net.    
+
 
 P212   
 ## VideoComposer
@@ -231,7 +270,12 @@ Pose- and image-guided video generaeon
 
 
 
-Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.  
+Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.    
+
+> &#x2705; 把 pose control net 加到核心的 U-Net 生成。   
+> &#x2705; 把原始 U-Net fix, copy- 分可以 train 的 U-Net.    
+> &#x2705; 输入：reference image, 两个 U-Net 在部分 layer 进行结合达到前景 appearance 和背景 appeorance 的 Encode 推断时输入多个 Sequence, 可以生成 long video.   
+
 
 P219   
 ## MagicAnimate
@@ -289,6 +333,9 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
+> &#x2705; 要求，背景一致，动作一致，仅替换前景 content.   
+> &#x2705; 因比对原视频提取关键点，基于关键点进行控制。   
+
 P227    
 ## VideoSwap
 
@@ -323,6 +370,8 @@ Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Sema
 
 
 > &#x2705; 实验证明，可以用 semantic point 作为 control．   
+> &#x2705; 结论：T2I 模型可以根据新的点的位置进行新的内容生成。   
+
 
 P229    
 ## VideoSwap
@@ -352,6 +401,11 @@ Customized video subject swapping via point control
 ![](../../assets/08-230.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
+
+> &#x2705; 虚线框为类似于 control net 的模块，能把 semanti point 抽出来并输入到 denoise 模块中。    
+> &#x2705; Latent Blend 能更好保留背景信息。   
+> &#x2705; 蓝色部分为 Motion layer.    
+
 
 P231    
 ## VideoSwap
@@ -389,6 +443,8 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
+> &#x2705; 什么是比较好的 Semantic point 的表达？   
+
 P233   
 ## VideoSwap
 
@@ -406,6 +462,9 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
+> &#x2753; Embedding, 怎么输人到网络中？   
+> &#x2705; 网络参数本身是 fix 的，增加一些小的 MLP, 把 Embeddin 转化为不同的 scales 的 condition map, 作为 U-Net 的 condition.   
+
 P234    
 ## VideoSwap
 
@@ -422,6 +481,9 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
 
+> &#x2705; 有些场景下需要去除部分 semanfic point, 或移动 point 的位置。   
+
+
 P235    
 ## VideoSwap
 
@@ -435,6 +497,9 @@ Customized video subject swapping via point control
 ![](../../assets/08-235.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+> &#x2705; 在一帧上做的 semantic point 的移动，迁移到其它帧上。   
+
 
 P236   
 ## VideoSwap
