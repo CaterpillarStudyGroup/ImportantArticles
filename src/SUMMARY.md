@@ -32,7 +32,7 @@
     - [3D-Aware](MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.md)
     - [Other Guidance](MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.md)
 - [李宏毅Diffusion Model]()
-  - [Diffusion Model](李宏毅DiffusionModel/DiffusionModel.md)
+  - [Diffusion Model 是如何運作的](李宏毅DiffusionModel/DiffusionModel.md)
   - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
   - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 

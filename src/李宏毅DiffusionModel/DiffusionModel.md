@@ -6,7 +6,9 @@ Denoising Diffusion Probabilistic Models (DDPM)
 
 
 P2   
-## Diffusion Model 是如何運作的？
+# Diffusion Model 是如何運作的？
+
+## Reverse Process
 
 ![](../assets/lhy1-2.png) 
 
@@ -17,8 +19,7 @@ P3
 
 The sculpture is already complete within the marble block, before I start my work. It is already there, I just have to chisel away the superfluous material. **-Michelangelo**    
 
-
-Powered by Midjourney   
+### Denoise 模組
 
 P4   
 ![](../assets/lhy1-4-1.png) 
@@ -27,7 +28,6 @@ P4
 > &#x2705; Denoise 模块需要根据当前的时间步做出不同程度的去噪。   
 
 P5   
-## Denoise 模組內部實際做的事情
 
 ![](../assets/lhy1-5.png) 
 
@@ -36,7 +36,7 @@ P5
 
 
 P6   
-## 如何訓練 Noise Predictor 
+### 如何訓練 Noise Predictor 
 
 
 ![](../assets/lhy1-6-1.png) 
@@ -49,7 +49,7 @@ P8
 
 
 P10   
-## Text-to-Image 
+### Text-to-Image 
 
 ![](../assets/lhy1-10-1.png) 
 
@@ -58,7 +58,6 @@ P10
 > &#x2705; 每一个 step 的 denoise 都要输入 text．    
 
 P11
-## Text-to-Image 
 
 ![](../assets/lhy1-11-1.png) 
 
