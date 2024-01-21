@@ -20,6 +20,8 @@ Decompose a video into two images
 
 Kasten et al., “Layered Neural Atlases for Consistent Video Editing,” arXiv 2023.   
 
+> &#x2705; 对背景进行编辑（图片编辑、风格迁移）再传播到不同帧上去。   
+
 P245    
 ## Layered Neural Atlases
 
@@ -46,6 +48,12 @@ Atlas-based video editing
 
 Video from Kasten et al., “Layered Neural Atlases for Consistent Video Edigng,” arXiv 2023.    
 Couairon et al., “VidEdit: Zero-Shot and Spagally Aware Text-Driven Video Edigng,” arXiv 2023.   
+
+> &#x2705; 前景编辑：(1) 抠出第一帧前景并进行编辑得到 Partial Atlas.     
+> &#x2705; (2) Partial Atlas 作为下一帧的 condition 整体上是自回归的。   
+> &#x2705; 所有 Partial 合起来得到一个整体。   
+> &#x2705; 背景使用深度信息作为 cordition.   
+
 
 P247    
 ## StableVideo & Shape-aware Text-drive Layered Video Editing
@@ -160,10 +168,12 @@ Edit a video = edit a canonical ~~image~~ 3D NeRF
 
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for arge-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
 
+> &#x2705; 利用现有成熟技术，把 3D 场景用 Nerf 表示出来编辑也是在 3D 上进行。    
+
 
 P256   
 > &#x2705; Nerf 在人体成像上比较好。   
-
+> &#x2705; Dynamic NeRF 本身也是比较难的。    
 
 P257   
 ## DynVideo-E
