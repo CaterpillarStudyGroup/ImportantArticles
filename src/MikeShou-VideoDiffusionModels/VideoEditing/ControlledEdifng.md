@@ -564,3 +564,7 @@ Customized video subject swapping via point control
 ![](../../assets/08-240.png) 
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
+
+
+P241   
+> &#x2705; 重建 3D 可以解决时间一致性问题。   
