@@ -141,7 +141,7 @@ ControlNet-like video editing
 
 Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
 
-> &#x2705; 解决 temporal consistency 问题，方法：
+> &#x2705; 解决 temporal consistency 问题，方法：   
 > &#x2705; 在每个 timestep，让不同帧成为前后两帧的融合。    
 > &#x2753; control net 与 diffusion medel 是什么关系？     
 
