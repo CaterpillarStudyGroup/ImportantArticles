@@ -8,6 +8,8 @@ P135
 
 ![](../../assets/08-135.png) 
 
+> &#x2705; 需要训练的模型，且针对一个模型进行训练。   
+
 
 P136  
 ## MCDiff  
@@ -30,6 +32,10 @@ Motion-guided video generation
 
 Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023.    
 
+> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
+> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。   
+
+
 P139   
 ## The Power of Sound (TPoS)
 
@@ -41,6 +47,9 @@ Sound- and text-guided video generation
 
 Jeong et al., “The Power of Sound (TPoS): Audio Reactive Video Generation with Stable Diffusion,” ICCV 2023.    
 
+> &#x2705; 用文生图模型生成 appearance, dynamics 来自于 reference video.    
+
+
 P140
 ## Sound-Guided Video Generation: More Works
 
@@ -50,6 +59,9 @@ P140
 | ![](../../assets/08-140-2.png) | **Generative Disco** (Liu et al.)<br> “Generative Disco: Text-to-Video Generation for Music Visualization,” arXiv 2023. |
 
 Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.   
+
+> &#x2705; 一些观察：文生图模型能生成动词，但动作没有一致性。可以通过引入 temperal attention 保证一致性。    
+
 
 P141  
 ## Image-Guided Video Generation: More Works
@@ -65,6 +77,10 @@ Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
 
 > &#x2705; 当前帧只与上帧和前一帧做 attention，大大减少计算量。  
+> &#x2705; 在所有帧上做 attention 开销比较大。   
+> &#x2705; 解决方法：前一帧与第一帧。   
+> &#x2753; 怎么保证生成动作与原视频动作的一致性呢?    
+
 
 P142  
 ## Cinematic Mindscapes   
@@ -79,6 +95,7 @@ Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Bra
 
 > &#x2705; 对要编辑的视频，先 DDIM Inversion，得到 inverfed noise，这是保留了原视频 pattern 的 noise.   
 > &#x2705; 用这个 noise 作为 init noise，还原出的视频跟原视频有比较好的结构化保留。   
+> &#x2705; 解法方法
 
 
 P144  
@@ -96,3 +113,4 @@ P144
 
 Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
+> &#x2705; 在物体改变比较大的情况下，diffusion 比其它生成方法效果更好。   
