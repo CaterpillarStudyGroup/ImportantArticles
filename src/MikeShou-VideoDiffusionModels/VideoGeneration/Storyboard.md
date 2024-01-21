@@ -5,9 +5,15 @@ P108
 # 2 Video Generation
 
 ## 2.5 Storyboard
+
+> &#x2705; Control Net，把文本转为 Pixel 图片。  
+
  
 P109  
 ![](../../assets/08-109.png) 
+
+> &#x2705; 用 GPT-4 In-context learning 机制生成结构化文本     
+
 
 P110 
 ## What is a storyboard?
@@ -52,6 +58,9 @@ Storyboard image from deviantart.com.
 
 
 > &#x2705; 没有训练 GPT／LLM，而是使用文本来引导，但是生成结果不合理。   
+> &#x2705; GPT 缺少一些视觉上的 commen sense 主要是缺少相关数据集。  
+> &#x2705; 因此这里提供了一个数据集。   
+
 
 
 P113   
@@ -77,6 +86,7 @@ Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” N
 
 P116    
 > &#x2705; 两层 diffusion    
+> &#x2705; 通过 recursive 的插帧生成非常长的视频。   
 
 
 P118   
@@ -88,6 +98,9 @@ Modeling Visual Prior via Generative Pre-Training
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
 
+> &#x2705; 递回的 Local Diffusion    
+
+
 P119  
 ## VisorGPT
 
@@ -98,6 +111,7 @@ Sample from the LLM which has learned visual prior
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
 
 > &#x2705; Global：文生图  \\(\quad\\)  Local：图序列补全。   
+> &#x2705; Global 和 Local 使用相似的模型，训练方法不同，主要是 MASK 的区别。   
 
 
 P120   
@@ -153,3 +167,5 @@ P125
 
 
 > &#x2705; （1）画运动轨迹（2）光流（3）做为 condition，可以细粒度地控制运动轨迹。   
+> &#x2705; (1) 画出的轨迹生成 derse 光流。
+> &#x2705; (2) 用光流作为 Condition 生成。   
