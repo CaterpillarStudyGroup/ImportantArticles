@@ -58,6 +58,7 @@ Leverage pretrained T2I models for video generation
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023. 
 
 > &#x2705; 时域卷积操作能指定 frame 数，因此可以“生成视频”与“生成图像”联合训练。   
+> &#x2753; 时序卷积不能做流式，能不能用 transformer.   
 
 
 P71   
