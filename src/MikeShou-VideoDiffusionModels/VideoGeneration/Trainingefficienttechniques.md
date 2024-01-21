@@ -7,6 +7,7 @@ P96
 ## 2.4 Training-efficient techniques
 
 > &#x2705; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
+> &#x2705; 优势：可以即插即用到各种用户定制化的模型中。   
 
 P97  
 
@@ -83,6 +84,9 @@ Use Stable Diffusion to generate videos without any finetuning
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.    
 
+> &#x2705; 完全没有经过训练，使用 stable diffusion 生成。  
+
+
 P103   
 ## Text2Video-Zero   
 
@@ -104,6 +108,10 @@ Use Stable Diffusion to generate videos without any finetuning
 ![](../../assets/08-104.png) 
 
 Khachatryan et al., “Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators,” arXiv 2023.    
+
+
+> &#x2705; 生成电影级别的视频，而不是几秒钟的视频。   
+
 
 P105   
 ## Text2Video-Zero
@@ -131,6 +139,7 @@ P107
 
 > &#x2705; 用纯文本的形式把图片描述出来。   
 > &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tome.    
-
+> &#x2705; 用结构化的中间表示生成图片。   
+> &#x2705; 先用 GPT 进行文本补全。   
 
 
