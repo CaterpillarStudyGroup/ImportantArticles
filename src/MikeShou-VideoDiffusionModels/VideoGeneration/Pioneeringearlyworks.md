@@ -79,7 +79,9 @@ Ho et al., “Video Diffusion Models,” NeurIPS 2022.
 > &#x2705; 2D U-Net 变为 3D U-Net，需要让其内部的 conv 操作和 attention 操作适配 3D.   
 > &#x2705; （1）2D conv 适配 3D，实际上只是扩充一个维度变成伪 3D，没有对时序信息做抽象。  
 > &#x2705; （2）attention 操作同样没有考虑时序。   
-> &#x2705; （3）时序上的抽象体现在 temporal attention layer上。   
+> &#x2705; （3）时序上的抽象体现在 temporal attention layer 上。   
+> &#x2753; temporal layer 是怎之设计的？   
+> &#x2753; 先 spatial 还是 temporal？二者怎拼合？   
 
 
 P40  
@@ -95,6 +97,8 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 > &#x2705; （1）SD：decoder 出关键帧的大概影像。  
 > &#x2705; （2）FI：补上中间帧。   
 > &#x2705; （3）SSR：时空上的超分。   
+> &#x2705; 时序上先生成关键帧再插帧，空间上先生成低质量图像再超分。   
+> &#x2705; 这种时序方法不能做流式输出。   
 
 P41   
 ## Make-A-Video
@@ -130,6 +134,7 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 
 
 > &#x2705; attention 操作也是（2＋1）D．   
+> &#x2753; 卷积层与 diffusion 层怎么结合？    
 
 P44  
 ## Make-A-Video
@@ -141,6 +146,9 @@ Cascaded generation
     - First trained on images alone    
     - Insert and finetune temporal layers on videos   
  - Train on WebVid-10M and 10M subset from HD-VILA-100M   
+
+
+> &#x2705; 先在图片上训练，再把 temporal layer 加上去。    
 
 
 P45   
@@ -370,6 +378,8 @@ Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with 
 
 > &#x2705; 先在 image 上做 cascade 生成      
 > &#x2705; 视频是在图像上增加时间维度的超分   
+> &#x2705; 每次的超分都是独立的 diffusion model?   
+> &#x2753; temporal 超分具体是怎么做的？   
 
 
 P64   
