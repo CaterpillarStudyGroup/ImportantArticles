@@ -26,3 +26,8 @@ P5
 3. **Video Editing**
 4. Summary
 
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

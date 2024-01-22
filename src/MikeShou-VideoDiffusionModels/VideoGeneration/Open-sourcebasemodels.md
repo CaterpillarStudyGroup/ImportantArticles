@@ -294,3 +294,9 @@ Scaling latent video diffusion models to large datasets
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
 
 > &#x2705; 在少量高质量数据上 finehune，质量提升很大。   
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

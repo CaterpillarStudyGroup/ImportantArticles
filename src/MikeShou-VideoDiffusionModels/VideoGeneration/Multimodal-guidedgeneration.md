@@ -114,3 +114,9 @@ P144
 Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
 > &#x2705; 在物体改变比较大的情况下，diffusion 比其它生成方法效果更好。   
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

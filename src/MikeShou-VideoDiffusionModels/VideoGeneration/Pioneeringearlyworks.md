@@ -407,3 +407,9 @@ Leverage pretrained T2I models for video generation
 
 
 > &#x2705; 所有工作的基本思路：（1）先从小的生成开始（2）充分利用 T2I．   
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

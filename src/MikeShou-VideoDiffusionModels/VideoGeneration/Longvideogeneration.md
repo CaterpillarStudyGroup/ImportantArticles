@@ -92,3 +92,9 @@ P133
 
 
 > &#x2705; 已有一段视频，通过 guidance 或文本描述，修改视频。    
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

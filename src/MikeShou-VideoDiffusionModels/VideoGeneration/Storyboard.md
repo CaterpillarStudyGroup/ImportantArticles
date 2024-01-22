@@ -169,3 +169,9 @@ P125
 > &#x2705; （1）画运动轨迹（2）光流（3）做为 condition，可以细粒度地控制运动轨迹。   
 > &#x2705; (1) 画出的轨迹生成 derse 光流。
 > &#x2705; (2) 用光流作为 Condition 生成。   
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
