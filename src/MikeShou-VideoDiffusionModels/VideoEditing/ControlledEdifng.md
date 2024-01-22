@@ -568,3 +568,8 @@ Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Sema
 
 P241   
 > &#x2705; 重建 3D 可以解决时间一致性问题。   
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
