@@ -348,3 +348,8 @@ Tune on multiple videos of a motion to be customised
 ![](../../assets/08-176.png) 
 
 Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion Models,” arXiv 2023.     
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

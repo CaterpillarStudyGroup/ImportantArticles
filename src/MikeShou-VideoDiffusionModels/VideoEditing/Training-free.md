@@ -134,3 +134,8 @@ P187
 
 
 > &#x2705; 基于不同信号的各种版的 control net.   
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
