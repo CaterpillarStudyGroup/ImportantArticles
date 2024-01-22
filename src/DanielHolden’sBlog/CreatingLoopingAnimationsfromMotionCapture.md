@@ -719,3 +719,8 @@ For example, I am sure we could take some ideas from [adjustment blending](https
 If you want to have a play around with the system shown in this post I've prepared a web-demo [here](https://www.daniel-holden.com/media/uploads/Looping/looping.html).
 
 And the source code for everything is available [here](https://github.com/orangeduck/Animation-Looping).
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

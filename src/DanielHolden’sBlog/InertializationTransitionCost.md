@@ -304,3 +304,8 @@ Finally, here you can see an [adaption of my motion matching demo](https://githu
 > &#x1F50E; https://www.daniel-holden.com/media/uploads/MotionMatchingCubicInertializeFeature.m4v
 
 Nice!
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

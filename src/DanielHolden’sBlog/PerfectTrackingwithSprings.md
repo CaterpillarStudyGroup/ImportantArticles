@@ -390,3 +390,8 @@ void tracking_spring_update_no_velocity_acceleration_exact(
 ```
 
 And that is about it! All the code for this article can be found on github. I hope you find it useful.
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

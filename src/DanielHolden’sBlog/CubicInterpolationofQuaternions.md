@@ -357,3 +357,8 @@ void scale_catmull_rom(
 And this is what it looks like in action:
 
 https://www.daniel-holden.com/media/uploads/CubicInterpolation/scale_catmull_rom.m4v
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/

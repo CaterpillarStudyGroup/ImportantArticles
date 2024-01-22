@@ -899,3 +899,8 @@ All the code for the examples shown here can also be found on [this repo](https:
 ## Conclusion
 
 I enjoyed writing this article because it combines a lot of things I like: an elegant and scalable data-driven solution to an interesting problem, some fun mathematics with a strong visual element, and some cool practical applications. I hope you've enjoyed it too, and perhaps it has spawned some ideas in your own heads about joint limits, or how data can be used to inform things like procedural animation, blending, and the other fundamental operations we do in animation. I'd love to hear if you come up with anything interesting. Until then, thanks for reading!
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
