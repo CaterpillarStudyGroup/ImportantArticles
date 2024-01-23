@@ -337,7 +337,7 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
 
-> &#x2705; 早期都在UCF数据上比较，但UCF本身质量比较低，新的生成方法生成的质量更高，因此不常用 UCF 了。  
+> &#x2705; 早期都在 UCF 数据上比较，但 UCF 本身质量比较低，新的生成方法生成的质量更高，因此不常用 UCF 了。  
 
 
 P60  
