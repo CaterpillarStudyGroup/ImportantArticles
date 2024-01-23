@@ -31,7 +31,7 @@ Consistent high-quality semantic edits
 
 Geyer et al., “TokenFlow: Consistent Diffusion Features for Consistent Video Edigng,” arXiv 2023.     
 
-> &#x2705; 在 UNet 中抽出 feature map 之后，找 corresponden 并记录下来。在 denoise 过程中把这个 correspondence 应用起来。   
+> &#x2705; 在 UNet 中抽出 feature map 之后，找 correspondence 并记录下来。在 denoise 过程中把这个 correspondence 应用起来。   
 > &#x2753; 什么是 inter-frame correspondence? 例如每一帧的狗的眼睛的运动。要让生成视频的狗的眼晴具有相同的运动。   
 
 
@@ -92,7 +92,7 @@ Attention map fusing for better temporal consistency
 
 Qi et al., “FateZero: Fusing Attentions for Zero-shot Text-based Video Editing,” ICCV 2023.    
 
-> &#x2705; 对于输入文本的每个 wordtoken, 都可以通过 attentior map 找到图像中的大相概位置，把要去除的 token mask 掉，剩下部保留。生成图像则把非 token 部分 mask 掉，以此进行两部分的融合。   
+> &#x2705; 对于输入文本的每个 wordtoken, 都可以通过 attentior map 找到图像中的大概位置，把要去除的 token mask 掉，剩下部分保留。生成图像则把非 token 部分 mask 掉，以此进行两部分的融合。   
 
 
 P185   
