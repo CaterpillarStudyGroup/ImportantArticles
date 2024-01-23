@@ -9,7 +9,8 @@ P66
 
 P67   
 ![](../../assets/08-67.png)
-m
+
+
 P68   
 ## ModelScopeT2V
 
@@ -25,7 +26,7 @@ Leverage pretrained T2I models for video generation
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.    
 
-> &#x2705; 基本思路：（1）以 Stable Diffusion 为基础，在 latent space 工作。（2）把 SD 中的 2D 操作扩展为 3D.   
+> &#x2705; 基本思路：(1) 以 Stable Diffusion 为基础，在 latent space 工作。 (2) 把 SD 中的 2D 操作扩展为 3D.   
 
 
 P69   
@@ -41,7 +42,7 @@ Leverage pretrained T2I models for video generation
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
 
-> &#x2705; 扩展方法为（2＋1）D，因此在 2D 时空 spatial 的卷积操作和 Attention 操作之后分别增加了 temporal 的卷积和 Attention.   
+> &#x2705; 扩展方法为 (2＋1)D，因此在 2D 时空 spatial 的卷积操作和 Attention 操作之后分别增加了 temporal 的卷积和 Attention.   
 
 
 P70   
