@@ -166,8 +166,8 @@ P125
 |  ![](../../assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
 
 
-> &#x2705; （1）画运动轨迹（2）光流（3）做为 condition，可以细粒度地控制运动轨迹。   
-> &#x2705; (1) 画出的轨迹生成 derse 光流。
+> &#x2705; (1) 画运动轨迹  (2) 光流 (3) 做为 condition，可以细粒度地控制运动轨迹。   
+> &#x2705; (1) 画出的轨迹生成 derse 光流。    
 > &#x2705; (2) 用光流作为 Condition 生成。   
 
 
