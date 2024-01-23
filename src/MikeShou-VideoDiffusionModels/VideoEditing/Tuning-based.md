@@ -13,8 +13,8 @@ P149
 ![](../../assets/08-149.png) 
 
 > &#x2705; 在一个视频上训练后可以对视频进行编辑。   
-> &#x2705; 训练过程：（1）对模型的时域模块 finetune．   
-> &#x2705; （2）对图像打乱后用图像 finetune．  
+> &#x2705; 训练过程：(1) 对模型的时域模块 finetune．   
+> &#x2705; (2) 对图像打乱后用图像 finetune．  
 > &#x2705; 把视频和图片进行 mix finetune.    
 > &#x2705; 图片 finetune 会把 tenmporal 模块 fix 住。   
 
@@ -28,10 +28,10 @@ One-shot tuning of T2I models for T2V generation/editing
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
-> &#x2705; 推断过程：（1）把视频 dounsample，维度变小。   
-> &#x2705; （2）加入噪声作为初始噪声，类似于 DDIM Inversion.     
-> &#x2705; （3）用 diffusion model 生成。   
-> &#x2705; （4）上采样。   
+> &#x2705; 推断过程：(1) 把视频 dounsample，维度变小。   
+> &#x2705; (2) 加入噪声作为初始噪声，类似于 DDIM Inversion.     
+> &#x2705; (3) 用 diffusion model 生成。   
+> &#x2705; (4) 上采样。   
 
 
 P152   
