@@ -240,7 +240,7 @@ Conditional generation with various guidances
 Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023.     
 
 > &#x2705; Control Net：更细粒度的 condition．   
-> &#x2705; 方法：（1）预训练好 Diffusion Model（2）参数复制一份，原始网络 fix（3）用各种 condition finetune 新的网络。（4）两个网络结合到一起。   
+> &#x2705; 方法：(1) 预训练好 Diffusion Model (2) 参数复制一份，原始网络 fix (3) 用各种 condition finetune 新的网络。 (4) 两个网络结合到一起。   
 
 
 P27   
