@@ -26,8 +26,8 @@ Transform domain-specific T2I models to T2V models
 
 Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
 
-> &#x2705; 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
-> &#x2705; （2）中间帧的特征保持一致。    
+> &#x2705; (1) 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
+> &#x2705; (2) 中间帧的特征保持一致。    
 
 
 P99  
@@ -138,7 +138,7 @@ P107
 | ![](../../assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
 
 > &#x2705; 用纯文本的形式把图片描述出来。   
-> &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tome.    
+> &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tune.    
 > &#x2705; 用结构化的中间表示生成图片。   
 > &#x2705; 先用 GPT 进行文本补全。   
 
