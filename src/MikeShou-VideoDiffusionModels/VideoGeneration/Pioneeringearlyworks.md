@@ -94,9 +94,9 @@ Cascaded generation
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022. 
 
 > &#x2705; 效果更好，框架在当下更主流。   
-> &#x2705; （1）SD：decoder 出关键帧的大概影像。  
-> &#x2705; （2）FI：补上中间帧。   
-> &#x2705; （3）SSR：时空上的超分。   
+> &#x2705; (1) SD：decoder 出关键帧的大概影像。  
+> &#x2705; (2) FI：补上中间帧。   
+> &#x2705; (3) SSR：时空上的超分。   
 > &#x2705; 时序上先生成关键帧再插帧，空间上先生成低质量图像再超分。   
 > &#x2705; 这种时序方法不能做流式输出。   
 
@@ -120,7 +120,7 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
-> &#x2705; 此处的伪 3D 是指（2＋1）D，它有时序上的抽像，与 VDM 不同。   
+> &#x2705; 此处的伪 3D 是指 (2＋1) D，它有时序上的抽像，与 VDM 不同。   
 > &#x2705; 空间卷积使用预训练好的图像模型。   
 
 P43   
