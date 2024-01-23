@@ -121,8 +121,8 @@ P157
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
 
 
-> &#x2705; （1）用几段视频学习 concept．   
-> &#x2705; （2）把 concept 接入到 diffusion model 中。   
+> &#x2705; (1) 用几段视频学习 concept．   
+> &#x2705; (2) 把 concept 接入到 diffusion model 中。   
 > &#x2705; 通过多段视频学习 motion concept.   
 
 
@@ -160,9 +160,9 @@ P160
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
 
 
-> &#x2705; 应用：（1）也可以用于 one shot       
-> &#x2705; （2）可以用于 appreace 和 motion 的组合   
-> &#x2705; （3）可以用于 Image Animation   
+> &#x2705; 应用：(1) 也可以用于 one shot       
+> &#x2705; (2) 可以用于 appreace 和 motion 的组合   
+> &#x2705; (3) 可以用于 Image Animation   
 
 P161
 ## Tune-A-Video
