@@ -80,8 +80,8 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
-> &#x2705; 虽然训练时是根据\\(x_t\\)预测\\(x_0\\).   
-> &#x2705; 但是推断时，\\(x_t\\)减去噪声后，又重新 sample 出一个噪声后加到图像上，变成\\(x_{t-1}\\)．   
+> &#x2705; 虽然训练时是根据 \\(x_t\\) 预测 \\(x_0\\).   
+> &#x2705; 但是推断时，\\(x_t\\) 减去噪声后，又重新 sample 出一个噪声后加到图像上，变成 \\(x_{t-1}\\)．   
 > &#x2705; 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。   
 
 
@@ -95,8 +95,8 @@ Song et al., “Score-Based Generative Modeling through Stochastic Differential 
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.   
 
 > &#x2753; 是否可以快速去噪？   
-> &#x2705; DDIM：可以直接从\\(t_2\\)去噪到\\(t_1\\).   
-> &#x2705; 把\\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
+> &#x2705; DDIM：可以直接从 \\(t_2\\) 去噪到 \\(t_1\\).   
+> &#x2705; 把 \\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
 
 
 P15   
@@ -139,7 +139,7 @@ Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,”
 Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.    
 
 
-> &#x2705; 前向过程与DDIM Inverse 的区别   
+> &#x2705; 前向过程与 DDIM Inverse 的区别   
 > &#x2705; DDIM Inverse 可用于图片编辑   
 
 
@@ -210,7 +210,7 @@ Few-shot finetuning of large models for personalized generation
 Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” arXiv 2021.    
 Gu et al., “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models,” arXiv 2023.   
 
-> &#x2705; LoRA:Low-Rank Adaptation    
+> &#x2705; LoRA：Low-Rank Adaptation    
 > &#x2705; 对已训好的大模型进行微调，生成想要的风格特点：要训练或调整的参数非常少。   
 
 P25   
