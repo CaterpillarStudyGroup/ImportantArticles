@@ -98,7 +98,7 @@ Modeling Visual Prior via Generative Pre-Training
 
 Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.    
 
-> &#x2705; 递回的 Local Diffusion    
+> &#x2705; 递归的 Local Diffusion    
 
 
 P119  
