@@ -42,7 +42,7 @@ Leverage pretrained T2I models for video generation
 
 Wang et al., “ModelScope Text-to-Video Technical Report,” arXiv 2023.     
 
-> &#x2705; 扩展方法为 (2＋1)D，因此在 2D 时空 spatial 的卷积操作和 Attention 操作之后分别增加了 temporal 的卷积和 Attention.   
+> &#x2705; 扩展方法为 (2＋1)D，因此在 2D spatial 的卷积操作和 Attention 操作之后分别增加了 temporal 的卷积和 Attention.   
 
 
 P70   
