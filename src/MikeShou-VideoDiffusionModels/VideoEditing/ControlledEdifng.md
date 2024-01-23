@@ -351,8 +351,8 @@ Customized video subject swapping via point control
 
 Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
 
-> &#x2705; （1）人工标注每一帧的 semantic point．（少量标注，8帧）    
-> &#x2705; （2）把 point map 作为 condition．   
+> &#x2705; (1) 人工标注每一帧的 semantic point．（少量标注，8帧）    
+> &#x2705; (2) 把 point map 作为 condition．   
 
 P228    
 ## VideoSwap
