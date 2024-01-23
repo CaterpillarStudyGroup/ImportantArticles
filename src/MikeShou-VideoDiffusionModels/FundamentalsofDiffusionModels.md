@@ -13,7 +13,7 @@ Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermo
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
 Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
-> &#x2705; DiffusionModel 的第一篇论文    
+> &#x2705; Diffusion Model 的第一篇论文    
 
 
 P8   
