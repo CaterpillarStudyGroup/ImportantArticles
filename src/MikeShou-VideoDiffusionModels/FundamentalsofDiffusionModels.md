@@ -211,7 +211,8 @@ Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” arXiv 2021.
 Gu et al., “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models,” arXiv 2023.   
 
 > &#x2705; LoRA：Low-Rank Adaptation    
-> &#x2705; 对已训好的大模型进行微调，生成想要的风格特点：要训练或调整的参数非常少。   
+> &#x2705; 对已训好的大模型进行微调，生成想要的风格。  
+> &#x2705; 特点：要训练或调整的参数非常少。   
 
 P25   
 ## DreamBooth   
