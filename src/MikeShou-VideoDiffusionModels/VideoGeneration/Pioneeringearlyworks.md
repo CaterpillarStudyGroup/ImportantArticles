@@ -120,7 +120,7 @@ Cascaded generation
 
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
 
-> &#x2705; 此处的伪 3D 是指 (2＋1) D，它有时序上的抽像，与 VDM 不同。   
+> &#x2705; 此处的伪 3D 是指 (2＋1)D，它有时序上的抽像，与 VDM 不同。   
 > &#x2705; 空间卷积使用预训练好的图像模型。   
 
 P43   
@@ -133,7 +133,7 @@ Cascaded generation
 Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.   
 
 
-> &#x2705; attention 操作也是（2＋1）D．   
+> &#x2705; attention 操作也是 (2＋1)D．   
 > &#x2753; 卷积层与 diffusion 层怎么结合？    
 
 P44  
