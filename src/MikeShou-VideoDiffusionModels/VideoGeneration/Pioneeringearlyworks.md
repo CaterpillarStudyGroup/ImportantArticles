@@ -201,7 +201,8 @@ Semantic similarity between images
 Heusel et al., “GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,” NeurIPS 2017.    
 Hung-Yi Lee, “Machine Learning 2023 Spring,” National Taiwan University.    
 
-> &#x2705; FID：评估两个 distribution 的差距有多大。由于使用了网络的高层 feature，可以评价 high／evel 的语义相似性。   
+> &#x2705; FID：评估两个 distribution 的差距有多大。   
+> &#x2705; 由于使用了网络的高层 feature，可以评价 high／evel 的语义相似性。   
 
 
 P49   
