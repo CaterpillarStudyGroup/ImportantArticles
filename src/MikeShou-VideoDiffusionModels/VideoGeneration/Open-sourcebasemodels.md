@@ -227,8 +227,8 @@ Scaling latent video diffusion models to large datasets
 Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.     
 
 > &#x2705; SVD：构建数据集    
-> &#x2705; （1）把视频切成小段，描述会更准确   
-> &#x2705; （2）用现有模型生成视频描述     
+> &#x2705; (1) 把视频切成小段，描述会更准确   
+> &#x2705; (2) 用现有模型生成视频描述     
 
 P84   
 ## Stable Video Diffusion   
