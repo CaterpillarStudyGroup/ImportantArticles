@@ -300,4 +300,4 @@ Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Mode
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
+> https://caterpillarstudygroup.github.io/ImportantArticles/
