@@ -1333,4 +1333,4 @@ I hope this article has piqued your interest in springs. Don't hesitate to get i
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
+> https://caterpillarstudygroup.github.io/ImportantArticles/

@@ -903,4 +903,4 @@ I enjoyed writing this article because it combines a lot of things I like: an el
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
+> https://caterpillarstudygroup.github.io/ImportantArticles/

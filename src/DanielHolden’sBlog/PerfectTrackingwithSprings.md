@@ -394,4 +394,4 @@ And that is about it! All the code for this article can be found on github. I ho
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
+> https://caterpillarstudygroup.github.io/ImportantArticles/

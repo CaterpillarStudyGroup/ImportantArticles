@@ -723,4 +723,4 @@ And the source code for everything is available [here](https://github.com/orange
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/ImportantArticles_mdbook/
+> https://caterpillarstudygroup.github.io/ImportantArticles/
