@@ -269,7 +269,9 @@ P36
 
 **Generative Reverse Diffusion SDE (stochastic):**    
 
-\\(d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+2s_\theta (\mathbf{x} _t,t)]dt+\sqrt{\beta (t)} d\varpi _t\\)
+$$
+d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+2s_\theta (\mathbf{x} _t,t)]dt+\sqrt{\beta (t)} d\varpi _t
+$$
 
 **Generative Probability Flow ODE (deterministic):**   
 
@@ -525,9 +527,89 @@ errors accumulated over the trajectories.
 <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.</u>   
 <u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>   
 
+P64   
+## “Momentum-based” diffusion      
 
+##### Introduce a velocity variable and run diffusion in extended space
 
+![](../assets/D1-64.png) 
 
+<u>Dockhorn et al., “Score-Based Generative Modeling with Critically-Damped Langevin Diffusion”, ICLR 2022.</u>     
+
+P65   
+## Additional Reading
+
+ - Schrödinger Bridge:    
+    - Bortoli et al., <u>"Diffusion Schrödinger Bridge",</u> NeurIPS 2021    
+    - Chen et al., <u>“Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory”, </u>ICLR 2022    
+ - Diffusion Processes on Manifolds:   
+    - Bortoli et al., <u>"Riemannian Score-Based Generative Modelling", </u>NeurIPS 2022    
+ - Cold Diffusion:    
+    - Bansal et al., <u>"Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise", </u>arXiv 2022      
+ - Diffusion for Corrupted Data:    
+    - Daras et al., <u>"Soft Diffusion: Score Matching for General Corruptions", </u>TMLR 2023      
+   - Delbracio and Milanfar, <u>"Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration", </u>arXiv 2023    
+   - Luo et al., <u>"Image Restoration with Mean-Reverting Stochastic Differential Equations", </u>ICML 2023    
+   - Liu et al., <u>“I2SB: Image-to-Image Schrödinger Bridge”, </u>ICML 2023    
+ - Blurring Diffusion Process:    
+    - Hoogeboom and Salimans, <u>"Blurring Diffusion Models", </u>ICLR 2023   
+   - Rissanen et al, <u>“Generative Modelling With Inverse Heat Dissipation”, </u>ICLR 2023    
+
+P66   
+## Outline
+
+Part (4): Conditional Generation and Guidance    
+
+P67   
+## Impressive Conditional Diffusion Models    
+##### Text-to-image generation   
+
+![](../assets/D1-67.png) 
+
+<u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>    
+<u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>    
+
+P68   
+## Conditioning and Guidance Techniques
+
+Explicit Conditions    
+Classifier Guidance    
+Classifier-free Guidance    
+
+P69   
+## Conditioning and Guidance Techniques
+
+Explicit Conditions    
+
+P70   
+## Explicit Conditional Training   
+
+Conditional sampling can be considered as training where y is the input conditioning (e.g., text) and x is generated 
+output (e.g., image)    
+
+Train the score model for x conditioned on y using:    
+
+$$
+\mathbb{E} _{(\mathbf{x,y} )\sim P\mathrm{data} (\mathbf{x,y} )}\mathbb{E}_{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\mathbb{E} _{t\sim u[0,T]}||\epsilon _\theta (\mathbf{x} _t,t;\mathbf{y} )-\epsilon ||^2_2 
+$$
+
+The conditional score is simply a U-Net with xt and y together in the input.    
+
+![](../assets/D1-70.png) 
+
+P71   
+## Conditioning and Guidance Techniques
+
+Classifier Guidance    
+
+P72   
+## Classifier Guidance: Bayes’ Rule in Action
+
+![](../assets/D1-72.png) 
+
+<u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, *ICLR*, 2021</u>    
+<u>Nie et al., “Controllable and Compositional Generation with Latent-Space Energy-Based Models”, NeurIPS 2021</u>    
+<u>Dhariwal and Nichol, “Diffusion models beat GANs on image synthesis”, NeurIPS 2021.</u>    
 
 
 ![](../assets/D1-24.png) 
