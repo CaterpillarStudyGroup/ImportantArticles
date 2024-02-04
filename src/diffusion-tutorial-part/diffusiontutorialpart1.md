@@ -612,4 +612,42 @@ P72
 <u>Dhariwal and Nichol, “Diffusion models beat GANs on image synthesis”, NeurIPS 2021.</u>    
 
 
-![](../assets/D1-24.png) 
+P73   
+## Classifier-free guidance   
+##### Get guidance by Bayes’ rule on conditional diffusion models
+
+ -Recall that classifier guidance requires training a classifier.   
+ - Using Bayes’ rule again:   
+
+![](../assets/D1-74-1.png) 
+
+ - Instead of training an additional classifier, get an “implicit classifier” by jointly training a conditional and  unconditional diffusion model. In practice, the conditional and unconditional models are trained together by randomly dropping the condition of the diffusion model at certain chance.     
+
+The modified score with this implicit classifier included is:   
+
+![](../assets/D1-74-2.png) 
+
+<u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
+
+P75   
+## Classifier-free guidance
+
+##### Trade-off for sample quality and sample diversity
+
+![](../assets/D1-75.png) 
+
+Large guidance weight \\((\omega  )\\) usually leads to better individual sample quality but less sample diversity.    
+
+<u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
+
+P76   
+## Summary   
+
+We reviewed diffusion fundamentals in 4 parts:     
+ - Discrete-time diffusion models    
+ - Continuous-time diffusion models     
+ - Accelerated sampling from diffusion models    
+ - Guidance and conditioning.    
+
+Next, we will review different applications and use cases of diffusion models after a break.    
+
