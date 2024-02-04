@@ -1,7 +1,7 @@
 
 P1  
 
-##　Denoising Diffusion Models: A Generative Learning Big Bang　　　
+## Denoising Diffusion Models: A Generative Learning Big Bang　　　
 
 Jiaming Song　　　Chenlin Meng 　　　Arash Vahdat　　　
 
