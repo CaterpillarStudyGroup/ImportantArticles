@@ -389,11 +389,11 @@ P56
 
 ![](../assets/D2-56-1.png)    
 
-***√ Plug-and-play.*** ***Not affect original network topology and generation ability***   
-\\({\color{Orange} \text{√ Simple and small.}  } \\) ***~77M parameters and ~300M storage***    
-√ Flexible. ***Various adapters for different control conditions***    
-√ Composable. ***Several adapters to achieve multi-condition control***    
-√ Generalizable. ***Can be directly used on customed models***    
+***√ Plug-and-play. Not affect original network topology and generation ability***   
+ *** √ Simple and small. ~77M parameters and ~300M storage***    
+***√ Flexible. Various adapters for different control conditions***    
+***√ Composable.  Several adapters to achieve multi-condition control***    
+***√ Generalizable. Can be directly used on customed models***    
 
 ![](../assets/D2-56-2.png)    
 
@@ -419,6 +419,47 @@ P59
 
 P60   
 ## Adding Conditional Control to Text-to-Image Diffusion Models
+
+Train objective   
+
+$$
+\mathcal{L} =\mathbb{E} _{z_0,t,\mathbf{c} _t,\mathbf{c}_f,\epsilon \sim \mathcal{N} (0,1)}[||\epsilon -\epsilon _\theta (z_t,t,\mathbf{c} _t,\mathbf{c}_f)||^2_2] 
+$$
+
+where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c}_f\\) is the task-specific conditions    
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+P63   
+## ControlNet
+
+![](../assets/D2-63.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023   
+
+
+P64   
+## ControlNet   
+
+![](../assets/D2-64.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+P65   
+## ControlNet
+
+![](../assets/D2-65.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+
+P66   
+## GLIGEN: Open-Set Grounded Text-to-Image Generation  
+
+![](../assets/D2-66.png) 
+
+Li et al., "GLIGEN: <u>Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023   
+
 
 
 
