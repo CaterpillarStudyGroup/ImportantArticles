@@ -40,7 +40,7 @@ P12
 P13   
 
 ## Denoising Diffusion Models    
-## Learning to generate by denoising   
+##### Learning to generate by denoising   
 
 Denoising diffusion models consist of two processes:    
  - Forward diffusion process that gradually adds noise to input   
@@ -105,14 +105,14 @@ Formal definition of forward and reverse processes in T steps:
 
 P19   
 ## Learning Denoising Model   
-## Variational upper bound   
+##### Variational upper bound   
 
 ![](../assets/D1-19.png) 
 
 
 P20   
 ## Summary   
-## Training and Sample Generation
+### Training and Sample Generation
 
 ![](../assets/D1-20.png) 
 
@@ -232,9 +232,288 @@ Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mat
 
 ![](../assets/D1-33.png) 
   
-After expectations, ! s✓(xt, t) ⇡ rxt log qt(xt)
+**After expectations**, \\(s_0(\mathbf{x} _t,t)\approx \mathbf{x} _t\log q_t(\mathbf{x} _t)\\)**!**    
+
+<u>Vincent, in Neural Computation, 2011</u>      
+<u>Song and Ermon, NeurIPS, 2019</u>   
+<u>Song et al. ICLR, 2021</u>   
+
+P34   
+## Denoising Score Matching    
+
+![](../assets/D1-34-1.png) 
+
+$$
+\min_{\mathbf{\theta}  } \mathbb{E} _{t\sim u(0,T)}\mathbb{E} _{\mathbf{x} _0\sim q_0(\mathbf{x} _0)}\mathbb{E}_{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _\theta (\mathbf{x} _t,t)||^2_2 
+$$
+
+**Same objectives in Part (1)!**    
 
 
+<u>Vincent, in Neural Computation, 2011</u>     
+<u>Song and Ermon, NeurIPS, 2019</u>   
+<u>Song et al. ICLR, 2021</u>   
+
+P35    
+## Different Parameterizations
+
+More sophisticated model    
+parametrizations and loss    
+weightings possible!  
+
+Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022    
+
+
+P36   
+## Synthesis with SDE vs. ODE
+
+**Generative Reverse Diffusion SDE (stochastic):**    
+
+\\(d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+2s_\theta (\mathbf{x} _t,t)]dt+\sqrt{\beta (t)} d\varpi _t\\)
+
+**Generative Probability Flow ODE (deterministic):**   
+
+$$
+d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+s_\theta (\mathbf{x} _t,t)]dt
+$$
+
+
+P37   
+## Probability Flow ODE  
+##### Diffusion Models as Neural ODEs  
+
+![](../assets/D1-37.png)   
+
+ - Chen et al., NeurIPS, 2018   
+ - Deterministic encoding and generation (semantic image interpolation, etc.)   
+ - Grathwohl, ICLR, 2019    
+ - Song et al., ICLR, 2021    
+
+<u>Chen et al., NeurIPS, 2018</u>    
+<u>Grathwohl, ICLR, 2019</u>   
+<u>Song et al., ICLR, 2021</u>    
+
+P37   
+## Outline
+
+Part (3): Accelerated Sampling    
+
+P39   
+## What makes a good generative model?    
+##### The generative learning trilemma
+
+![](../assets/D1-39.png) 
+
+<u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>    
+
+P40   
+## What makes a good generative model?    
+##### The generative learning trilemma   
+
+Tackle the trilemma by accelerating diffusion models    
+
+<u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>   
+
+
+P41  
+## Acceleration Techniques   
+
+Advanced ODE/SDE Solvers    
+Distillation Techniques    
+Low-dim. Diffusion Processes     
+Advanced Diffusion Processes    
+
+
+P43   
+## Generative ODEs    
+##### Solve ODEs with as little function evaluations as possible    
+
+$$
+dx=\epsilon _\theta (x,t)dt
+$$
+
+![](../assets/D1-43.png) 
+
+
+P44    
+
+![](../assets/D1-44.png) 
+
+Song et al., <u>"Denoising Diffusion Implicit Models (DDIM)",</u> ICLR 2021    
+
+P45   
+![](../assets/D1-45.png) 
+
+P46   
+## A Rich Body of Work on ODE/SDE Solvers for Diffusion Models
+
+ - Runge-Kutta adaptive step-size ODE solver:   
+    - <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, *ICLR*, 2021</u>   
+ - Higher-Order adaptive step-size SDE solver:    
+    - <u>Jolicoeur-Martineau et al., “Gotta Go Fast When Generating Data with Score-Based Models”, *arXiv*, 2021</u>    
+ - Reparametrized, smoother ODE:   
+    - <u>Song et al., “Denoising Diffusion Implicit Models”, *ICLR*, 2021</u>   
+    - <u>Zhang et al., "gDDIM: Generalized denoising diffusion implicit models", arXiv 2022</u>   
+ - Higher-Order ODE solver with linear multistepping:   
+    - <u>Liu et al., “Pseudo Numerical Methods for Diffusion Models on Manifolds”, *ICLR*, 2022</u>   
+ - Exponential ODE Integrators:   
+    - <u>Zhang and Chen, “Fast Sampling of Diffusion Models with Exponential Integrator”, *arXiv*, 2022</u>   
+    - <u>Lu et al., “DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps”, *NeurIPS*, 2022</u>   
+    - <u>Lu et al., "DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models", NeurIPS 2022</u>   
+ - Higher-Order ODE solver with Heun’s Method:   
+    - <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, *NeurIPS*, 2022</u>   
+ - Many more:   
+    - <u>Zhao et al., "UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models", arXiv 2023</u>    
+    - <u>Shih et al., "Parallel Sampling of Diffusion Models", arxiv 2023</u>     
+    - <u>Chen et al., "A Geometric Perspective on Diffusion Models", arXiv 2023</u>     
+
+P48    
+## ODE Distillation
+
+![](../assets/D1-48.png) 
+
+Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t\\)?    
+
+P49    
+## Progressive Distillation   
+
+ - Distill a deterministic ODE sampler to the same model architecture.     
+ - At each stage, a “student” model is learned to distill two adjacent sampling steps of the “teacher” model to one sampling step.    
+ - At next stage, the “student” model from previous stage will serve as the new “teacher” model.      
+
+![](../assets/D1-49.png) 
+
+<u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>     
+
+P50   
+## Progressive Distillation in Latent Space
+
+![](../assets/D1-50.png) 
+
+<u>Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (Award Candidate)</u>    
+
+P51    
+## Consistency Distillation
+
+![](../assets/D1-51.png) 
+
+Points on the same trajectory should generated the same \\(\mathbf{x} _0\\)    
+Assume \\(f_\theta (\mathbf{x} _t,t)\\) is the current estimation of \\(\mathbf{x} _0\\)    
+Basic idea:     
+ - Find  \\(\mathbf{x} _t\\) and \\(\mathbf{x} _{t}'\\) on a trajectory by solving generative ODE in \\([t,{t}' ]\\)    
+ - Minimize:    
+
+$$
+\min_{\theta } ||f_{EMA}(\mathbf{x} _t,t)-f_\theta ({\mathbf{x} }' _t,{t}' )||^2_2
+$$
+
+<u>Song et al., Consistency Models, ICML 2023</u>   
+
+P52   
+## SDE Distillation
+
+
+Can we train a neural network to directly predict distribution of \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t \\) ?    
+
+P53   
+## Advanced Approximation of Reverse Process    
+##### Normal assumption in denoising distribution holds only for small step    
+
+![](../assets/D1-53.png) 
+
+**Requires more complicated functional approximators!**
+
+<u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u>    
+<u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
+
+P54   
+## Training-based Sampling Techniques
+
+ - Knowledge distillation:   
+    - Luhman and Luhman, <u>Knowledge Distillation in Iterative Generative Models for Improved Sampling Speed,</u> arXiv 2021    
+ - Learned Samplers:   
+    - Watson et al., <u>"Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality",</u> ICLR 2022    
+ - Neural Operators:   
+    - Zheng et al., <u>Fast Sampling of Diffusion Models via Operator Learning, </u>ICML 2023
+ - Wavelet Diffusion Models:    
+    - Phung et al., <u>"Wavelet Diffusion Models Are Fast and Scalable Image Generators", </u> CVPR 2023    
+ - Distilled ODE Solvers:   
+    - Dockhorn et al., <u>"GENIE: Higher-Order Denoising Diffusion Solvers",</u> NeurIPS 2022    
+
+P56   
+## Cascaded Generation    
+##### Pipeline    
+
+![](../assets/D1-56.png) 
+
+Cascaded Diffusion Models outperform Big-GAN in FID and IS and VQ-VAE2 in Classification Accuracy Score.    
+
+<u>Ho et al., “Cascaded Diffusion Models for High Fidelity Image Generation”, 2021.</u>     
+<u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>     
+<u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>     
+
+
+P57   
+## Latent Diffusion Models   
+##### Variational autoencoder + score-based prior   
+
+![](../assets/D1-57.png) 
+
+##### Main Idea   
+
+Encoder maps the input data to an embedding space    
+Denoising diffusion models are applied in the latent space    
+
+<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>    
+
+P58   
+##### Advantages:    
+(1) The distribution of latent embeddings close to Normal distribution \\(\to \\) *Simpler denoising, Faster synthesis*!    
+(2) Latent space \\(\to \\) *More expressivity and flexibility in design*!    
+(3) Tailored Autoencoders \\(\to \\) *More expressivity, Application to any data type (graphs, text, 3D data, etc.)* !    
+
+<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>    
+
+P59
+## Latent Diffusion Models   
+##### End-to-End Training objective    
+
+![](../assets/D1-59.png) 
+
+<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
+
+P60   
+## Latent Diffusion Models    
+##### Two-stage Training   
+
+The seminal work from Rombach et al. CVPR 2022:    
+ - Two stage training: train autoencoder first, then train the diffusion prior   
+ - Focus on compression without of any loss in reconstruction quality   
+ - Demonstrated the expressivity of latent diffusion models on many conditional problems   
+The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
+
+<u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
+
+P61    
+## Additional Reading    
+
+More on low-dimensional diffusion models:    
+ - Sinha et al., <u>"D2C: Diffusion-Denoising Models for Few-shot Conditional Generation", </u> NeurIPS 2021    
+ - Daras et al., <u>"Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems",</u> ICML 2022    
+ - Zhang et al., <u>“Dimensionality-Varying Diffusion Process”, </u>arXiv 2022.    
+
+
+P63   
+## ODE interpretation    
+##### Deterministic generative process
+• DDIM sampler can be considered as an integration rule of the following ODE:
+• Karras et al. argue that the ODE of DDIM is favored, as the tangent of the solution trajectory always points 
+towards the denoiser output. 
+• This leads to largely linear solution trajectories with low curvature à Low curvature means less truncation 
+errors accumulated over the trajectories. 
+Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.
+Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.
+Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022. 
 
 
 
