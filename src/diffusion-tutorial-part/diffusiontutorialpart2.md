@@ -151,9 +151,10 @@ Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",<
 P25   
 ## Imagic: Text-Based Real Image Editing with Diffusion Models
 
-||||
-|--|--|--|
-| ![](../assets/D2-25-1.png) | ![](../assets/D2-25-2.png) | ![](../assets/D2-25-3.png)  |
+
+![](../assets/D2-25-1.png)     
+![](../assets/D2-25-2.png)     
+![](../assets/D2-25-3.png)   
 
 Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", </u> CVPR 2023    
 
@@ -196,9 +197,8 @@ Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instruction
 P31   
 ## InstructPix2Pix: Learning to Follow Image Editing Instructions   
 
-|||
-|--|--|
-|![](../assets/D2-31-1.png) |![](../assets/D2-31-2.png) |
+![](../assets/D2-31-1.png)    
+![](../assets/D2-31-2.png)    
 
 Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
 
@@ -390,13 +390,35 @@ P56
 ![](../assets/D2-56-1.png)    
 
 ***√ Plug-and-play.*** ***Not affect original network topology and generation ability***   
-\\({\color{Orange} \text{√ Simple and small.}  } \\) ~77M parameters and ~300M storage    
-√ Flexible. Various adapters for different control conditions    
-√ Composable. Several adapters to achieve multi-condition control    
-√ Generalizable. Can be directly used on customed models    
+\\({\color{Orange} \text{√ Simple and small.}  } \\) ***~77M parameters and ~300M storage***    
+√ Flexible. ***Various adapters for different control conditions***    
+√ Composable. ***Several adapters to achieve multi-condition control***    
+√ Generalizable. ***Can be directly used on customed models***    
 
 ![](../assets/D2-56-2.png)    
 
+Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023   
+
+P57   
+## T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models    
+
+![](../assets/D2-57.png)    
+
+Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+P58   
+## Adding Conditional Control to Text-to-Image Diffusion Models (ControlNet)
+
+![](../assets/D2-58.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+P59   
+
+![](../assets/D2-59.png) 
+
+P60   
+## Adding Conditional Control to Text-to-Image Diffusion Models
 
 
 
