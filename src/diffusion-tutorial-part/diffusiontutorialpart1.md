@@ -651,3 +651,8 @@ We reviewed diffusion fundamentals in 4 parts:
 
 Next, we will review different applications and use cases of diffusion models after a break.    
 
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles/
