@@ -151,9 +151,247 @@ Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",<
 P25   
 ## Imagic: Text-Based Real Image Editing with Diffusion Models
 
+||||
+|--|--|--|
+| ![](../assets/D2-25-1.png) | ![](../assets/D2-25-2.png) | ![](../assets/D2-25-3.png)  |
+
+Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", </u> CVPR 2023    
+
+P26   
+## Imagic: Text-Based Real Image Editing with Diffusion Models
+
+![](../assets/D2-26.png) 
+
+Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", </u>CVPR 2023   
+
+
+P27   
+## Prompt-to-Prompt Image Editing with Cross-Attention Control
+
+![](../assets/D2-27.png)
+
+Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
+
+P28   
+## Prompt-to-Prompt Image Editing with Cross￾Attention Control    
+
+![](../assets/D2-28.png)
+
+Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023    
+
+P29   
+## Prompt-to-Prompt Image Editing with Cross-Attention Control   
+
+![](../assets/D2-29.png)
+
+Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023     
+
+P30   
+## InstructPix2Pix: Learning to Follow Image Editing Instructions  
+
+![](../assets/D2-30.png)   
+
+Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
+
+P31   
+## InstructPix2Pix: Learning to Follow Image Editing Instructions   
+
+|||
+|--|--|
+|![](../assets/D2-31-1.png) |![](../assets/D2-31-2.png) |
+
+Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
+
+
+P32   
+## Personalization with diffusion models   
+
+![](../assets/D2-32.png) 
+
+Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+
+P33   
+## DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation    
+
+![](../assets/D2-33.png) 
+
+Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+
+P34   
+## The DreamBooth Method  
+
+![](../assets/D2-34.png) 
+
+Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
+ 
+P35   
+## DreamBooth Results
+
+![](../assets/D2-35.png) 
+
+Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
+
+P36   
+## DreamBooth Applications    
+
+![](../assets/D2-36.png) 
+
+Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+
+P37    
+## Textual Inversion: Optimizing Text Embedding   
+
+![](../assets/D2-37.png) 
+
+Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
+
+P38   
+## Textual Inversion: Optimizing Text Embedding  
+
+![](../assets/D2-38.png) 
+
+Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
+
+P39   
+## Textual Inversion Results   
+
+![](../assets/D2-39.png) 
+
+Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
+
+P40    
+## Works well for artistic styles    
+
+![](../assets/D2-40.png) 
+
+Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
+
+P41   
+## Low-rank Adaptation (LoRA)   
+
+ - Lora: Low-rank adaptation of large language models
+
+![](../assets/D2-41.png) 
+
+Lora [Edward J. Hu*, Yelong Shen*, et al., ICLR 2022]     
+Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>     
+
+P42   
+## Low-rank Adaptation (LoRA)
+
+![](../assets/D2-42.png) 
+
+Finetuned with only 9 images Visualized every 500 steps    
+
+Lora [Edward J. Hu*, Yelong Shen*, et al., ICLR 2022]    
+Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>    
+
+P43
+## Fine-tuning all model weights
+
+**Storage requirement**. 4GB storage for each fine-tuned model.    
+**Compute requirement**. It requires more VRAM/training time.      
+**Compositionality**. Hard to combine multiple models.    
+
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P45   
+## Analyze change in weights   
+
+![](../assets/D2-45.png) 
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P46   
+## Only fine-tune cross-attention layers
+
+![](../assets/D2-46.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P47   
+## How to prevent overfitting?    
+
+![](../assets/D2-47.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+
+P48   
+## Personalized concepts   
+
+![](../assets/D2-48.png)   
+
+How to describe personalized concepts?    
+
+V* dog   
+
+Where V* is a modifier token in the text embedding space    
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P49   
+## Personalized concepts
+
+Also fine-tune the modifier token V* that describes the personalized concept   
+
+![](../assets/D2-49.png)   
+
+P50   
+## Single concept results
+
+![](../assets/D2-50.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P51   
+## Multiple new concepts?    
+
+![](../assets/D2-51.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P52   
+## Joint training
+
+1. Combine the training dataset of multiple concepts    
+
+![](../assets/D2-52.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023     
+
+P53   
+## Two concept results
+
+![](../assets/D2-53.png)   
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+
+P54   
+## Two concept results   
+
+![](../assets/D2-54.png) 
+
+Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+P55   
+## Key-Locked Rank One Editing for Text-to-Image Personalization   
+
+![](../assets/D2-55.png)    
+
+Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u> SIGGRAPH 2023    
+
+
+P56   
+## T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models
+
+![](../assets/D2-56-1.png)    
 
 
 
+![](../assets/D2-56-2.png)    
 
 
 ![](../assets/D2-1.png) 
