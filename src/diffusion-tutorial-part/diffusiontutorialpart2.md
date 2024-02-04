@@ -460,9 +460,75 @@ P66
 
 Li et al., "GLIGEN: <u>Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023   
 
+P67  
+## GLIGEN: Open-Set Grounded Text-to-Image Generation
+
+![](../assets/D2-67-1.png)    
+![](../assets/D2-67-2.png)    
+
+Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",,</u> CVPR 2023   
+
+P68   
+## GLIGEN: Open-Set Grounded Text-to-Image Generation
+
+![](../assets/D2-68.png)  
+
+P69   
+## Other applications  
+
+P70   
+## Your Diffusion Model is Secretly a Zero-Shot Classifier
+
+![](../assets/D2-70.png)  
+
+Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arXiv 2023   
+
+P71  
+## Better Diffusion Models Further Improve Adversarial Training   
+
+![](../assets/D2-72.png)  
+
+Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",</u> ICML 2023    
 
 
+P74   
+## Reference   
 
+ - Bao et al., <u>"All are Worth Words: a ViT Backbone for Score-based Diffusion Models",</u> arXiv 2022   
+ - Peebles and Xie, <u>"Scalable Diffusion Models with Transformers",</u> arXiv 2022   
+ - Bao et al., <u>"One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale",</u> arXiv 2023    
+ - Jabri et al., <u>"Scalable Adaptive Computation for Iterative Generation",</u> arXiv 2022    
+ - Hoogeboomet al., <u>"simple diffusion: End-to-end diffusion for high resolution images",</u> arXiv 2023   
+ - Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations",</u> ICLR 2022    
+ - Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models",</u> NeurIPS 2022   
+ - Avrahami et al., <u>"Blended Diffusion for Text-driven Editing of Natural Images",</u> CVPR 2022   
+ - Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023   
+ - Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",</u> CVPR 2023   
+ - Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance",</u> ICLR 2023   
+ - Sarukkai et al., <u>"Collage Diffusion",</u>  arXiv 2023   
+ - Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u>  ICML 2023   
+ - Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023     
+ - Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+ - Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u>  CVPR 2023   
+ - Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u>  SIGGRAPH 2023   
+ - Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u>  arXiv 2023   
+ - Hu et al., <u>"LoRA: Low-Rank Adaptation of Large Language Models",</u> ICLR 2022   
+ - Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023   
+ - Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023   
+ - Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+ - Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023   
+ - Orgad et al., <u>"Editing Implicit Assumptions in Text-to-Image Diffusion Models",</u> arXiv 2023   
+ - Han et al., <u>"SVDiff: Compact Parameter Space for Diffusion Fine-Tuning",</u> arXiv 2023   
+ - Xie et al., <u>"DiffFit: Unlocking Transferability of Large Diffusion Models via Simple Parameter￾Efficient Fine-Tuning",</u> rXiv 2023   
+ - Saharia et al., <u>"Palette: Image-to-Image Diffusion Models",</u> SIGGRAPH 2022   
+ - Whang et al., <u>"Deblurring via Stochastic Refinement",</u> CVPR 2022   
+ - Xu et al., <u>"Open-Vocabulary Panoptic Segmentation with Text-to-Image Diffusion Models",</u> arXiv 2023   
+ - Saxena et al., <u>"Monocular Depth Estimation using Diffusion Models",</u> arXiv 2023   
+ - Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arXiv 2023  
+ - Gowal et al., <u>"Improving Robustness using Generated Data",</u> NeurIPS 2021   
+ - Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",</u> ICML 2023  
 
-
-![](../assets/D2-1.png) 
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles/
