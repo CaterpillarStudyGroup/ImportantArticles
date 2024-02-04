@@ -389,9 +389,17 @@ P56
 
 ![](../assets/D2-56-1.png)    
 
-
+***√ Plug-and-play.*** ***Not affect original network topology and generation ability***   
+\\({\color{Orange} \text{√ Simple and small.}  } \\) ~77M parameters and ~300M storage    
+√ Flexible. Various adapters for different control conditions    
+√ Composable. Several adapters to achieve multi-condition control    
+√ Generalizable. Can be directly used on customed models    
 
 ![](../assets/D2-56-2.png)    
+
+
+
+
 
 
 ![](../assets/D2-1.png) 
