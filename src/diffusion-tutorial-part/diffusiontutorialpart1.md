@@ -192,6 +192,48 @@ P28
 
 But what about the reverse direction, necessary for generation?    
 
+P29  
+## The Generative Reverse Stochastic Differential Equation
+
+![](../assets/D1-29.png) 
+
+\\(\Rightarrow \\) Simulate reverse diffusion process: Data generation from random noise!    
+
+<u>Song et al., ICLR, 2021</u>   
+<u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
+
+
+P31   
+## The Generative Reverse Stochastic Differential Equation
+
+But how to get the score function \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\)?   
+
+P32   
+## Score Matching
+
+Naïve idea, learn model for the score function by direct regression?    
+
+![](../assets/D1-32.png) 
+
+**But** \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\) **(score of the** ***marginal diffused density*** \\(q_t(\mathbf{x} _t)\\)**) is not tractable!**   
+
+<u>Vincent, “A Connection Between Score Matching and Denoising Autoencoders”, Neural Computation, 2011</u>    
+
+<u>Song and Ermon, “Generative Modeling by Estimating Gradients of the Data Distribution”, NeurIPS, 2019</u>    
+
+P33   
+## Denoising Score Matching
+
+![](../assets/D1-33.png) 
+
+Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
+
+**Denoising Score Matching**:     
+
+![](../assets/D1-33.png) 
+  
+After expectations, ! s✓(xt, t) ⇡ rxt log qt(xt)
+
 
 
 
