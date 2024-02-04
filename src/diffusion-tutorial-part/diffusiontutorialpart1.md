@@ -505,15 +505,28 @@ More on low-dimensional diffusion models:
 
 P63   
 ## ODE interpretation    
-##### Deterministic generative process
-• DDIM sampler can be considered as an integration rule of the following ODE:
-• Karras et al. argue that the ODE of DDIM is favored, as the tangent of the solution trajectory always points 
-towards the denoiser output. 
-• This leads to largely linear solution trajectories with low curvature à Low curvature means less truncation 
+##### Deterministic generative process   
+
+![](../assets/D1-63.png) 
+
+ - DDIM sampler can be considered as an integration rule of the following ODE:    
+
+$$
+d\mathbf{\bar{x} } (t)=\epsilon ^{(t)}_\theta(\frac{\mathbf{\bar{x} } (t)}{\sqrt{\eta ^2+1}} )d\eta (t); \mathbf{\bar{x} } =\mathbf{x} / \sqrt{\bar{a} },\eta = \sqrt{1-\bar{a}} / \sqrt{\bar{a } }
+$$
+
+ - Karras et al. argue that the ODE of DDIM is favored, as the tangent of the solution trajectory always points 
+towards the denoiser output.   
+
+ - This leads to largely linear solution trajectories with low curvature à Low curvature means less truncation 
 errors accumulated over the trajectories. 
-Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.
-Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.
-Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022. 
+
+<u>Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.</u>   
+<u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.</u>   
+<u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>   
+
+
+
 
 
 
