@@ -739,6 +739,130 @@ P69
 
 Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023    
 
+P70   
+## Diffusion Models for Large Contents   
+
+ - A “large” diffusion model from “small” diffusion models!   
+
+![](../assets/D3-70-1.png)    
+
+![](../assets/D3-70-2.png)    
+
+Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023   
+
+P71   
+## Diffusion Models for Large Contents
+
+ - Applications such as long images, looped motion, 360 images…   
+
+Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023   
+
+P72   
+## Related Works   
+
+• Based on similar ideas but differ in how overlapping regions are mixed.
+
+![](../assets/D3-72-1.png)    
+
+![](../assets/D3-72-2.png)    
+
+Jiménez, <u>"Mixture of Diffusers for scene composition and high resolution image generation",</u> arXiv 2023    
+Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> ICML 2023   
+
+P73   
+## Outline
+
+ - Safety and limitations of diffusion models   
+
+P74   
+## Data Memorization in Diffusion Models
+
+ - Due to the likelihood-base objective function, **diffusion models can ”memorize” data**.    
+ - And with a higher chance than GANs!   
+ - Nevertheless, a lot of “memorized images” are highly-duplicated in the dataset.    
+
+![](../assets/D3-74.png)  
+
+Carlini et al., <u>"Extracting Training Data from Diffusion Models",</u> arXiv 2023    
+
+P75   
+## Erasing Concepts in Diffusion Models   
+
+ - Fine-tune a model to remove unwanted concepts.   
+ - From original model, **obtain score via negative CFG**.   
+ - **A new model is fine-tuned** from the new score function.    
+
+Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
+
+P77   
+## Part I
+
+Ho et al., <u>"Denoising Diffusion Probabilistic Models",</u> NeurIPS 2020    
+Song et al., <u>"Score-Based Generative Modeling through Stochastic Differential Equations",</u> ICLR 2021   
+Kingma et al., <u>"Variational Diffusion Models",</u> arXiv 2021   
+Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022   
+Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021   
+Jolicoeur-Martineau et al., "Gotta Go Fast When Generating Data with Score-Based Models",</u> arXiv 2021   
+Liu et al., <u>"Pseudo Numerical Methods for Diffusion Models on Manifolds",</u> ICLR 2022   
+Lu et al., <u>"DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps",</u> NeurIPS 2022   
+Lu et al., <u>"DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models",</u> NeurIPS 2022   
+Zhang and Chen, <u>"Fast Sampling of Diffusion Models with Exponential Integrator",</u> arXiv 2022   
+Zhang et al., <u>"gDDIM: Generalized denoising diffusion implicit models",</u> arXiv 2022   
+Zhao et al., <u>"UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models",</u> arXiv 2023    
+Shih et al., <u>"Parallel Sampling of Diffusion Models",</u> arxiv 2023   
+Chen et al., <u>"A Geometric Perspective on Diffusion Models",</u> arXiv 2023   
+Xiao et al., <u>"Tackling the Generative Learning Trilemma with Denoising Diffusion GANs",</u> arXiv 2021   
+Salimans and Ho, <u>"Progressive Distillation for Fast Sampling of Diffusion Models",</u> ICLR 2022   
+Meng et al., <u>"On Distillation of Guided Diffusion Models",</u> arXiv 2022   
+Dockhorn et al., <u>"GENIE: Higher-Order Denoising Diffusion Solvers",</u> NeurIPS 2022   
+Watson et al., <u>"Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality",</u> ICLR 2022   
+Phung et al., <u>"Wavelet Diffusion Models Are Fast and Scalable Image Generators",</u> CVPR 2023   
+Dhariwal and Nichol, <u>"Diffusion Models Beat GANs on Image Synthesis",</u> arXiv 2021   
+Ho and Salimans, <u>"Classifier-Free Diffusion Guidance",</u> NeurIPS Workshop 2021     
+Automatic1111, <u>"Negative Prompt",</u> GitHub   
+Hong et al., <u>"Improving Sample Quality of Diffusion Models Using Self-Attention Guidance",</u> arXiv 2022   
+Saharia et al., <u>"Image Super-Resolution via Iterative Refinement",</u> arXiv 2021   
+Ho et al., <u>"Cascaded Diffusion Models for High Fidelity Image Generation",</u> JMLR 2021   
+Sinha et al., <u>"D2C: Diffusion-Denoising Models for Few-shot Conditional Generation",</u> NeurIPS 2021   
+Vahdat et al., <u>"Score-based Generative Modeling in Latent Space",</u> arXiv 2021   
+Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models",</u> CVPR 2022   
+Daras et al., <u>"Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems",</u> ICML 2022   
+
+P78   
+## Part I (cont’d)
+
+Bortoli et al.,<u> "Diffusion Schrödinger Bridge",</u> NeurIPS 2021       
+Bortoli et al.,<u> "Riemannian Score-Based Generative Modelling",</u> NeurIPS 2022  
+Neklyudov et al., <u>"Action Matching: Learning Stochastic Dynamics from Samples",</u> ICML 2023  
+Bansal et al., <u>"Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise",</u> arXiv 2022   
+Daras et al., <u>"Soft Diffusion: Score Matching for General Corruptions",</u> TMLR 2023   
+Delbracio and Milanfar, <u>"Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration",</u> arXiv 2023   
+Luo et al., <u>"Image Restoration with Mean-Reverting Stochastic Differential Equations",</u> ICML 2023   
+
+P79    
+## Part II
+
+Bao et al., "All are Worth Words: a ViT Backbone for Score-based Diffusion Models", arXiv 2022
+Peebles and Xie, "Scalable Diffusion Models with Transformers", arXiv 2022
+Bao et al., "One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale", arXiv 2023
+Jabri et al., "Scalable Adaptive Computation for Iterative Generation", arXiv 2022
+Hoogeboom et al., "simple diffusion: End-to-end diffusion for high resolution images", arXiv 2023
+Meng et al., "SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", ICLR 2022
+Li et al., "Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models", NeurIPS 2022
+Avrahami et al., "Blended Diffusion for Text-driven Editing of Natural Images", CVPR 2022
+Hertz et al., "Prompt-to-Prompt Image Editing with Cross-Attention Control", ICLR 2023
+Kawar et al., "Imagic: Text-Based Real Image Editing with Diffusion Models", CVPR 2023
+Couairon et al., "DiffEdit: Diffusion-based semantic image editing with mask guidance", ICLR 2023
+Sarukkai et al., "Collage Diffusion", arXiv 2023
+Bar-Tal et al., "MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation", ICML 2023
+Gal et al., "An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion", ICLR 2023
+Ruiz et al., "DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation", CVPR 2023
+Kumari et al., "Multi-Concept Customization of Text-to-Image Diffusion", CVPR 2023
+Tewel et al., "Key-Locked Rank One Editing for Text-to-Image Personalization", SIGGRAPH 2023
+Zhao et al., "A Recipe for Watermarking Diffusion Models", arXiv 2023
+Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models", ICLR 2022
+Li et al., "GLIGEN: Open-Set Grounded Text-to-Image Generation", CVPR 2023
+
 
 
 
