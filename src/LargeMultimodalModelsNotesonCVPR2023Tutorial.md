@@ -301,14 +301,7 @@ While LMMs have shown excellent visual recognition and reasoning in an open-set 
 > &#x2705; OCR：从图片中识别文本。LMM 不需要学习就具有的能力，其中 BLIP2 甚至优于专门训练的 OCR 任务 SOTA．   
 
 
-It is surprising that LMMs shows strong zero-shot OCR performance in the wild, without explicitly
-training on text recognition data. To shed light on the hidden mystery of OCR in LMMs, a compre￾hensive empirical study is conducted in [25] to compare open-source LMMs on 24 academic text
-recognition datasets, shown in Figure 22. Three observations are highlighted: (1) LLaVA consistently
-outperforms miniGPT-4 on 21 out of 24 datasets, despite LLaVA being trained with an order of mag￾nitude smaller training data. (2) Training with significantly larger training data leads to higher OCR
-performance, as demonstrated by BLIP2 [20] and mPLUG-Owl. (3) In most cases, supervised SoTA
-results significantly outperform zero-shot LMM. However, it is worth noting that in the WordArt
-dataset [55], which primarily features challenging artistic text, BLIP2 surpasses supervised SoTA.
-This reveals the potential of LMM in recognizing more complex text types.  
+It is surprising that LMMs shows strong zero-shot OCR performance in the wild, without explicitly training on text recognition data. To shed light on the hidden mystery of OCR in LMMs, a compre-hensive empirical study is conducted in [25] to compare open-source LMMs on 24 academic text recognition datasets, shown in Figure 22. Three observations are highlighted: (1) LLaVA consistently outperforms miniGPT-4 on 21 out of 24 datasets, despite LLaVA being trained with an order of magnitude smaller training data. (2) Training with significantly larger training data leads to higher OCR performance, as demonstrated by BLIP2 [20] and mPLUG-Owl. (3) In most cases, supervised SoTA results significantly outperform zero-shot LMM. However, it is worth noting that in the WordArt dataset [55], which primarily features challenging artistic text, BLIP2 surpasses supervised SoTA. This reveals the potential of LMM in recognizing more complex text types.     
 
 ![](./assets/N-20-2.png)    
 
