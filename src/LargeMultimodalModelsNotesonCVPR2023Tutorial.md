@@ -11,8 +11,7 @@ Microsoft Research, Redmond
 
 **Abstract**   
 
-This tutorial note summarizes the presentation on **Large Multimodal Models: To-wards Building and Surpassing Multimodal GPT-4, a part of CVPR 2023 tutorial on Recent Advances in Vision Foundation Models**. The tutorial consists of three parts.   
-We first **introduce the background on recent GPT-like large models for vision-and-language modeling** to motivate the research in instruction-tuned large multimodal models (LMMs). As a pre-requisite, **we describe the basics of instruction-tuning in large language models**, which is further extended to the multimodal space. Lastly, **we illustrate how to build the minimum prototype of multimodal GPT-4 like models**
+This tutorial note summarizes the presentation on **Large Multimodal Models: To-wards Building and Surpassing Multimodal GPT-4, a part of CVPR 2023 tutorial on Recent Advances in Vision Foundation Models**. The tutorial consists of three parts. We first **introduce the background on recent GPT-like large models for vision-and-language modeling** to motivate the research in instruction-tuned large multimodal models (LMMs). As a pre-requisite, **we describe the basics of instruction-tuning in large language models**, which is further extended to the multimodal space. Lastly, **we illustrate how to build the minimum prototype of multimodal GPT-4 like models**
 with the open-source resource, and review the recently emerged topics.    
 
 > &#x2753; GPT 是语言模型，为什么说它是多模态模型？   
