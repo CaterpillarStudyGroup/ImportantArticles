@@ -1,6 +1,8 @@
 
 P1   
-## Large Multimodal Models: Notes on CVPR 2023 Tutorial
+## Large Multimodal Models:     
+## Notes on CVPR 2023 Tutorial   
+
 
 
 **Chunyuan Li**   
