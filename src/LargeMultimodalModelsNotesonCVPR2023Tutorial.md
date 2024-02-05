@@ -55,7 +55,7 @@ We use some known LMMs as examples to illustrate how the network architecture fr
 
 **Case Study I: LMM trained with image-text pairwise instances.** Most LMMs are trained on a large number of image-text pairs, where each training sample is a pair. GIT and BLIP2 are two large models that achieve state-of-the-art (SoTA) performance on many datasets. The comparisons are shown in Figure 4(a). GIT [48] initializes image encoder with constrastive pre-trained Microsoft Florence model, and train a language model from scratch. On the other hand, BLIP2 freezes the weights of pre-trained image and language model, and a train lightweight Q-former. **BLIP2 [20] shows higher sample-efficiency with the bootstrapping training method.**   
 
-> &#x2705; GIT 对所有模块进行端到端训练。
+> &#x2705; GIT 对所有模块进行端到端训练。   
 > &#x2705; BLIP2 fix 已有模块，仅训练新增的 connection 模块。 
 
 p5   
