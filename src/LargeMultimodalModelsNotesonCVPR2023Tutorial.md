@@ -110,13 +110,13 @@ Note that instruction-following is a notion originated in natural language proce
 ![](./assets/N-8-2.png)    
 ![](./assets/N-8-3.png)    
  
-Traditional Language Data. As a typical data instance in NLP, seq2seq representation is quite common for many language tasks: each data instance consists of two parts: sequence as the input and sequence as the output. We provide two examples in Figure 8 (a). Without any task instruction specified, we know they are translation and summarization tasks, respectively.   
+**Traditional Language Data**. As a typical data instance in NLP, seq2seq representation is quite common for many language tasks: each data instance consists of two parts: sequence as the input and sequence as the output. We provide two examples in Figure 8 (a). Without any task instruction specified, we know they are translation and summarization tasks, respectively.   
 
 This seq2seq representation is also how NLP community used to use their data. **Task instructions are implicit**. Based on each data domain, **individual models are trained, or sometimes multi-tasking over multiple data domain without specifying the task instructions**. When such models are trained, they are **hard to generalize to new tasks in a zero-shot fashion**, because the models do not learn the skill to understand the task instruction, and have no ability to distinguish and generalize what task to perform in the testing stage.   
 
 **Instruct Language Data.** Instead, recently researchers start to **explicitly add task instructions in the model training,** as shown in Figure 8 (b). Interestingly, the task instructions of most NLP tasks can be **expressed in natural language** as well. It leads a new data format: instruction-input-output triplets. Based on the new format, **one single model can be trained, multi-tasking with specified instructions.** Since models have observed many task instructions and many instances for each task in training, it **is natural and easy for the models to generalize to new tasks by task composition** in the inference stage.   
 
-P8   
+P9   
 For example, in the evaluation stage, a new task that require both summarization and translation is provided in Figure 8 (c). Though the model has never seen this new task in training, it observes individual task basis, and learn to perform on new tasks. Note that we humans are always creating new tasks in our daily life, and presumably these new tasks would never been observed by models. It is thus appealing if a model is able to solve thousands of new tasks in the wild in without training. This is partially why ChatGPT is becoming popular and prevalent quickly.     
 
 **3.2 Self-Instruct and Open-Source LLMs**    
