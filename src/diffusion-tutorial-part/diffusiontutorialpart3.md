@@ -595,9 +595,149 @@ P56
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
 
+P57    
+## Video LDM: LDM Fine-tuning   
+
+ - Interleave spatial layers and temporal layers.    
+ - The spatial layers are frozen, whereas temporal layers are trained.    
+ - Temporal layers can be Conv3D or Temporal attentions.   
+ - Context can be added for autoregressive generation.    
+
+![](../assets/D3-57.png)     
+
+Optional context via learned down-sampling operation.   
+
+**For Conv3D,**    
+shape is [batch, time, channel, height, width]    
+
+**For Temporal attention,**   
+shape is [batch * height * width, time, channel]    
 
 
 
+Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023   
+
+P58   
+## Video LDM: Upsampling
+ - After key latent frames are generated, the latent frames go through temporal interpolation.   
+ - Then, they are decoded to pixel space and optionally upsampled.   
+
+![](../assets/D3-58.png)     
+
+Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
+
+P59   
+## Outline   
+
+ - Video style transfer / editing methods    
+
+P60   
+## Gen-1
+
+ - Transfer the style of a video using text prompts given a “driving video”
+
+![](../assets/D3-60.png)     
+
+Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023    
+
+P61   
+## Gen-1
+
+ - Condition on structure (depth) and content (CLIP) information.   
+ - Depth maps are passed with latents as input conditions.   
+ - CLIP image embeddings are provided via cross-attention blocks.   
+ - During inference, CLIP text embeddings are converted to CLIP image embeddings.    
+
+![](../assets/D3-61.png)     
+
+Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023     
+
+P62   
+## Pix2Video: Video Editing Using Image Diffusion   
+
+ - Given a sequence of frames, generate a new set of images that reflects an edit.   
+ - Editing methods on individual images fail to preserve temporal information.    
+
+Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
+
+P63   
+## Pix2Video: Video Editing Using Image Diffusion   
+
+![](../assets/D3-63-1.png)    
+
+ - **Self-Attention injection:** use the features of previous frame for Key and Values.   
+
+![](../assets/D3-63-2.png)    
+
+Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023   
+
+P64    
+## Pix2Video: Video Editing Using Image Diffusion   
+
+![](../assets/D3-64.png)    
+
+Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
+
+P65   
+## Pix2Video: Video Editing Using Image Diffusion  
+
+ - The two methods improve the temporal consistency of the final video!   
+
+Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023   
+
+P66    
+## Concurrent / Related Works   
+
+![](../assets/D3-66-1.png)    
+Video-P2P: Cross-Attention Control on text-to-video model    
+
+
+![](../assets/D3-66-2.png)    
+FateZero: Store attention maps from DDIM inversion for later use    
+
+
+![](../assets/D3-66-3.png)    
+Tune-A-Video: Fine-tune projection matrices of the attention layers, from text2image model to text2video model.    
+
+
+![](../assets/D3-66-4.png)    
+Vid2vid-zero: Learn a null-text embedding for inversion, then use cross-frame attention with original weights.    
+
+
+P67   
+## Outline
+
+ - Miscellaneous   
+ - Diffusion models for large contents   
+
+
+P68   
+## Diffusion Models for Large Contents   
+
+ - Suppose model is trained on small, squared images, how to extend it to larger images?   
+ - Outpainting is always a solution, but not a very efficient one!   
+
+Let us generate this image with a diffusion model only trained on squared regions:    
+
+![](../assets/D3-68-1.png)    
+
+1. Generate the center region \\(q(\mathbf{x} _1,\mathbf{x} _2)\\)    
+2. Generate the **surrounding region conditioned on parts of the center image** \\(q(\mathbf{x} _1|\mathbf{x} _2)\\)    
+
+![](../assets/D3-68-2.png)    
+
+Latency scales linearly with the content size!     
+   
+P69   
+## Diffusion Models for Large Contents
+
+ - Unlike autoregressive models, diffusion models can generate large contents **in parallel**!    
+
+![](../assets/D3-69-1.png)    
+
+
+
+Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023    
 
 
 
