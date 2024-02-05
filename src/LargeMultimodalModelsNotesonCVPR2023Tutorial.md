@@ -231,9 +231,9 @@ It is easy to lose track of all the recent papers for the readers, so as well in
 
 While LMM extends LLM by adding the vision modality into language, it is natural to further extend the framework to include more modalities beyond vision and language. Following this spirit, several attempts have been made. In Figure 18, PandaGPT leverages ImageBind to add more modalities into LMMs. The ImageBind model [12] **learns a single, shared representation space for text, image/video, audio, sensors that record depth (3D), thermal (infrared radiation), and inertial measurement units (IMU), which calculate motion and position.** ImageBind provides a holistic understanding of the visual world that connects objects in a photo with how they will sound, their 3D shape, how warm or cold they are, and how they move. **By training a projection layer for one modality in LMM, the model can zero-shot transfer to infer over other modalities due to the shared multimodal embedding space.** Another representative model is SpeechGPT, where language and speech modalities are enabled for both input and output ends. Despite of rich model variations, the idea to connect diverse modalities is similar to LMM that adds images into LLMs.   
 
-&#x1F50E; 把多种模态信息融合到同一空间，那多种骨骼动作也可以，哪来的 pairdata呢？   
-&#x1F50E; 只训一个模态，其它模态能自动迁移，这些模态是怎么对齐的？   
-&#x1F50E; 不同骨骨动作的迁移，BVH 能否作为中间的结构化文本？   
+> &#x2705; 把多种模态信息融合到同一空间，那多种骨骼动作也可以，哪来的 pairdata呢？   
+> &#x2705; 只训一个模态，其它模态能自动迁移，这些模态是怎么对齐的？   
+> &#x2705; 不同骨骨动作的迁移，BVH 能否作为中间的结构化文本？   
 
 ![](./assets/N-17.png)  
 
