@@ -39,6 +39,7 @@
     - [Controlled Edifng](MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.md)
     - [3D-Aware](MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.md)
     - [Other Guidance](MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.md)
+- [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
 
   
 
