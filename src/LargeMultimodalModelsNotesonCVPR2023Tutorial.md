@@ -305,6 +305,37 @@ It is surprising that LMMs shows strong zero-shot OCR performance in the wild, w
 
 ![](./assets/N-20-2.png)    
 
+P21   
+#### 4.2.6 Applications
+
+&#x1F50E; PathAsst: Redefining Pathology through Generative Foundation AI Assistant for Pathology [42]
+&#x1F50E; PMC-VQA: Visual Instruction Tuning for Medical Visual Question Answering [63]
+&#x1F50E; LLaVA-Med: Training a Large Language-and-Vision Assistant for Biomedicine in One Day [19]
+
+The success of ChatGPT/GPT-4 in the general domain has inspired the interests in building assistants
+in the vertical domains such as medicine, gaming and education. Such **domain-specific assistants** can
+have the several advantages over the general domain counterpart: (1) training high-quality domain
+knowledge makes the assistants more helpful, (2) the model size can be smaller, and thus severing
+cost is low, (3) the sensitive user prompt data can be maintained internally by serving the model at
+local, and the privacy issue can be avoided.
+
+> &#x2753; 为什么 domain-specific assistants 会更小？   
+
+LMMs have been recently explored in the biomedical domain [42, 63, 19], where conversational gener￾ative AI has demonstrated remarkable promise for empowering biomedical practitioners. LLaVA-Med
+is a cost-efficient approach for training a vision-language conversational assistant that can answer
+open-ended research questions of biomedical images. The key idea is to leverage a large-scale, broad￾coverage biomedical figure-caption dataset extracted from PubMed Central, use GPT-4 to self-instruct
+open-ended instruction-following data from the captions, and then fine-tune a large general-domain
+vision-language model LLaVA using a novel curriculum learning method. Specifically, the model
+first learns to align biomedical vocabulary using the figure-caption pairs as is, then learns to master
+open-ended conversational semantics using GPT-4 generated instruction-following data, broadly
+mimicking how a layperson gradually acquires biomedical knowledge. In Figure 23, we provide
+examples on the biomed visual conversations of different chatbots. LLaVA-Med precisely answers
+the questions with biomedical knowledge, while LLaVA behaves like a layperson, who hallucinate
+based on commonsense.
+
+
+
+
 
 
 ![](./assets/N-74.png)  
