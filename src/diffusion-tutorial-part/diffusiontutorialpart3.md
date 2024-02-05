@@ -264,7 +264,7 @@ P26
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023     
 
 
-P26   
+P27   
 ## DreamFusion: Score Distillation Sampling
 
 Consider the KL term to minimize (given t):   
@@ -278,7 +278,7 @@ distributions, conditioned on y!
 
 KL and its gradient is defined as:    
 
-![](../assets/D3-26.png)  
+![](../assets/D3-27.png)  
 
 (B) can be derived from chain rule    
 
@@ -289,6 +289,225 @@ $$
 (A) is the gradient of the entropy of the forward process with fixed variance = 0.    
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023   
+
+P28    
+## DreamFusion: Score Distillation Sampling  
+
+$$
+(A)+(B)=\frac{\alpha _t}{\sigma _t}\hat{\epsilon }_ \phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta }
+$$
+
+However, this objective can be quite noisy.     
+Alternatively, we can consider a “baseline” approach in reinforcement learning: add a component that has zero mean but reduces variance. Writing out (A) again:     
+
+![](../assets/D3-28-1.png)  
+
+Thus, we have:
+
+![](../assets/D3-28-2.png)  
+
+This has the same mean, but **reduced variance**, as we train \\(\hat{\epsilon } _\phi\\) to predict \\(\epsilon\\)    
+
+
+Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
+
+P29   
+## DreamFusion in Text-to-3D    
+
+ - SDS can be used to optimize a 3D representation, like NeRF.   
+
+![](../assets/D3-29.png)  
+
+Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
+
+P30   
+## Extensions to SDS: Magic3D
+
+2x speed and higher resolution   
+ - Accelerate NeRF with Instant-NGP, for coarse representations.    
+ - Optimize a fine mesh model with differentiable renderer.   
+
+![](../assets/D3-30.png)  
+
+Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation",</u> CVPR 2023   
+
+P31
+## Alternative to SDS: Score Jacobian Chaining
+
+A different formulation, motivated from approximating 3D score.   
+
+![](../assets/D3-31.png)  
+
+In principle, the diffusion model is the noisy 2D score (over clean images),   
+but in practice, the diffusion model suffers from out-of-distribution (OOD) issues!    
+
+For diffusion model on noisy images, **the non-noisy images are OOD**!    
+
+Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.     
+
+P32   
+## Score Jacobian Chaining   
+
+SJC approximates noisy score with “Perturb-and-Average Scoring”, which is not present in SDS.   
+ - Use score model on multiple noise-perturbed data, then average it.    
+
+![](../assets/D3-32.png)  
+
+Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
+
+P33    
+## SJC and SDS
+
+SJC is a competitive alternative to SDS.   
+
+![](../assets/D3-33.png) 
+
+Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
+
+P34   
+## Alternative to SDS: ProlificDreamer   
+
+ - SDS-based method often set classifier-guidance weight to 100, which limits the “diversity” of the generated samples.   
+ - ProlificDreamer reduces this to 7.5, leading to diverse samples.    
+
+![](../assets/D3-34.png) 
+
+Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+
+P35   
+## ProlificDreamer and Variational Score Distillation  
+
+Instead of maximizing the likelihood under diffusion model, VSD minimizes the KL divergence via variational inference.    
+
+$$
+\begin{matrix}
+\min_{\mu } D_{\mathrm{KL} }(q^\mu _0(x_0|y)||p_0(x_0|y)). \\\\
+\quad \mu \quad \text{is the distribution of NeRFs} .
+\end{matrix}
+$$
+
+Suppose is a \\(\theta _\tau \sim \mu \\) NeRF sample, then VSD simulates this ODE:    
+
+![](../assets/D3-35.png) 
+
+ - Diffusion model can be used to approximate score of noisy real images.   
+ - How about noisy rendered images?   sss
+
+P36   
+## ProlificDreamer and Variational Score Distillation
+
+ - Learn another diffusion model to approximate the score of noisy rendered images!
+
+![](../assets/D3-36.png) 
+
+Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+
+P37   
+## Why does VSD work in practice?    
+
+ - The valid text-to-image NeRFs form a distribution with infinite possibilities!    
+ - In SDS, epsilon is the score of noisy “dirac distribution” over finite renders, which converges to the true score with infinite renders!    
+ - In VSD, the LoRA model aims to **represent the (true) score of noisy distribution over infinite number of renders!**   
+ - If the generated NeRF distribution is only one point and LoRA overfits perfectly, then VSD = SDS!    
+ - But LoRA has good generalization (and learns from a trajectory of NeRFs), so closer to the true score!    
+
+ - This is analogous to    
+    - Representing the dataset score via mixture of Gaussians on the dataset (SDS), versus     
+    - Representing the dataset score via the LoRA UNet (VSD)    
+
+
+Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+
+P38   
+## Outline
+
+ - Diffusion models for view synthesis   
+
+P39
+## Novel-view Synthesis with Diffusion Models   
+
+ - These do not produce 3D as output, but synthesis the view at different angles.    
+
+Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> ICLR 2023    
+
+P40   
+## 3DiM   
+
+ - Condition on a frame and two poses, predict another frame.     
+
+![](../assets/D3-40-1.png)  
+
+UNet with frame cross-attention   
+
+![](../assets/D3-40-2.png)  
+
+Sample based on stochastic conditions,   
+allowing the use of multiple conditional frames.    
+
+
+Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> ICLR 2023    
+
+P41    
+## GenVS   
+
+ - 3D-aware architecture with latent feature field.    
+ - Use diffusion model to improve render quality based on structure.   
+
+![](../assets/D3-41.png)  
+
+Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models",</u> arXiv 2023    
+
+P42    
+## Outline   
+
+ - 3D reconstruction    
+
+P43    
+## NeuralLift-360 for 3D reconstruction
+
+ - SDS + Fine-tuned CLIP text embedding + Depth supervision    
+
+![](../assets/D3-43.png)  
+
+Xu et al., <u>"NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views",</u> CVPR 2023    
+
+P44    
+## Zero 1-to-3   
+
+ - Generate novel view from 1 view and pose, with 2d model.    
+ - Then, run SJC / SDS-like optimizations with view-conditioned model.   
+
+![](../assets/D3-44.png)  
+
+Liu et al., <u>"Zero-1-to-3: Zero-shot One Image to 3D Object",</u> arXiv 2023    
+
+P45    
+## Outline
+
+ - 3D editing
+
+P46   
+## Instruct NeRF2NeRF
+
+Edit a 3D scene with text instructions   
+
+![](../assets/D3-46.png)  
+
+Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023      
+
+P47   
+## Instruct NeRF2NeRF   
+
+**Edit a 3D scene with text instructions**   
+ -  Given existing scene, use Instruct Pix2Pix to edit image at different viewpoints.   
+ - Continue to train the NeRF and repeat the above process   
+
+![](../assets/D3-47.png)  
+
+Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023   
+
+
+
 
 
 
