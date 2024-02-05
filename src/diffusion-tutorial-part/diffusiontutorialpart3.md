@@ -232,12 +232,65 @@ Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023
 Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023    
 
 P22    
- - 2D diffusion models for 3D generation
+ - 2D diffusion models for 3D generation     
+
+P23   
+## 2D Diffusion Models for 3D Generation   
+
+ - Just now, we discussed diffusion models directly on 3d.   
+ - However, there are a lot fewer 3d data than 2d.   
+    - A lot of experiments are based on ShapeNet!   
+ - Can we use 2d diffusion models as a “prior” for 3d?   
+
+P25    
+## DreamFusion: Setup    
+
+ - Suppose there is a text-to-image diffusion model.    
+ -  Goal: optimize NeRF parameter such that each angle “looks 
+good” from the text-to-image model.    
+ - Unlike ancestral sampling (e.g., DDIM), the underlying 
+parameters are being optimized over some loss function.    
+
+![](../assets/D3-25-1.png)     
+![](../assets/D3-25-2.png)     
+
+Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
+
+P26   
+## DreamFusion: Score Distillation Sampling   
+
+![](../assets/D3-26.png)     
+
+Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023     
 
 
+P26   
+## DreamFusion: Score Distillation Sampling
+
+Consider the KL term to minimize (given t):   
+
+$$
+\mathbf{KL} (q(\mathbf{z} _t|g(\theta );y,t)||p\phi (\mathbf{z} _t;y,t))
+$$
+
+KL between noisy real image distribution and generated image 
+distributions, conditioned on y!     
+
+KL and its gradient is defined as:    
+
+![](../assets/D3-26.png)  
+
+(B) can be derived from chain rule    
+
+$$
+\nabla _\theta \log p_\phi (\mathbf{z} _t|y)=s_\phi (\mathbf{z} _t|y)\frac{\partial \mathbf{z} _t}{\partial \theta }=\alpha _ts_\phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta } =-\frac{\alpha _t}{\sigma _t}\hat{\epsilon }_ \phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta }   
+$$
+
+(A) is the gradient of the entropy of the forward process with fixed variance = 0.    
+
+Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023   
 
 
- 
 
 ![](../assets/D3-72.png)  
 
