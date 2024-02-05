@@ -92,7 +92,7 @@ P7
 
 ![](./assets/N-7.png)  
 
-**frozen models, where the latter shows higher generality and lower adaptation cost in task transfer.** (ii) ChatGPT and InstructGPT [34] shows the importance of instruction-following and alignment with human intents for LLMs, by fine-tuning the base language model GPT-3/GPT-3.5 on high quality instruction-following data, and improving them with a reward model via reinforcement learning with human feedback. (iii) GPT-4 not only improves the language ability of previous models, but also allows visual signals as additional input for understanding and reasoning. We see that the newer generation model maintains/improves the existing properties of the previous ones, and enable new properties.   
+**frozen models, where the latter shows higher generality and lower adaptation cost in task transfer.** (ii) ChatGPT and InstructGPT [34] shows the importance of instruction-following and alignment with human intents for LLMs, by fine-tuning the base language model GPT-3/GPT-3.5 on high quality instruction-following data, and improving them with a reward model via reinforcement learning with human feedback. (\\(iii\\)) GPT-4 not only improves the language ability of previous models, but also allows visual signals as additional input for understanding and reasoning. We see that the newer generation model maintains/improves the existing properties of the previous ones, and enable new properties.   
 
 > &#x2705; In-Context-learning 指通过新任务的例子学习新任务。   
 > &#x2705; Instruction-Following 指通过理解任务描述完成新任务。 
