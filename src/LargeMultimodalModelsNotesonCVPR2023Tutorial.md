@@ -258,7 +258,7 @@ As discussed earlier in Section 3, instruction tuning in the language domains is
 #### 4.2.3 Multimodal In-Context-Learning
 
 &#x1F50E; *OpenFlamingo [2]*   
-&#x1F50E; *Otter: A Multi-Modal Model with In-Context Instruction Tuning [18]*
+&#x1F50E; *Otter: A Multi-Modal Model with In-Context Instruction Tuning [18]*    
 &#x1F50E; \\(M^3\\)*IT: A Large-Scale Dataset towards Multi-Modal Multilingual Instruction Tuning [22]*    
 &#x1F50E; *MetaVL: Transferring In-Context Learning Ability From Language Models to Vision-Language Models [30]*    
 
