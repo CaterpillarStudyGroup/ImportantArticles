@@ -231,9 +231,9 @@ It is easy to lose track of all the recent papers for the readers, so as well in
 
 While LMM extends LLM by adding the vision modality into language, it is natural to further extend the framework to include more modalities beyond vision and language. Following this spirit, several attempts have been made. In Figure 18, PandaGPT leverages ImageBind to add more modalities into LMMs. The ImageBind model [12] **learns a single, shared representation space for text, image/video, audio, sensors that record depth (3D), thermal (infrared radiation), and inertial measurement units (IMU), which calculate motion and position.** ImageBind provides a holistic understanding of the visual world that connects objects in a photo with how they will sound, their 3D shape, how warm or cold they are, and how they move. **By training a projection layer for one modality in LMM, the model can zero-shot transfer to infer over other modalities due to the shared multimodal embedding space.** Another representative model is SpeechGPT, where language and speech modalities are enabled for both input and output ends. Despite of rich model variations, the idea to connect diverse modalities is similar to LMM that adds images into LLMs.   
 
-> &#x2705; 把多种模态信息融合到同一空间，那多种骨骼动作也可以，哪来的 pairdata呢？   
-> &#x2705; 只训一个模态，其它模态能自动迁移，这些模态是怎么对齐的？   
-> &#x2705; 不同骨骨动作的迁移，BVH 能否作为中间的结构化文本？   
+> &#x2753; 把多种模态信息融合到同一空间，那多种骨骼动作也可以，哪来的 pairdata呢？   
+> &#x2753; 只训一个模态，其它模态能自动迁移，这些模态是怎么对齐的？   
+> &#x2753; 不同骨骨动作的迁移，BVH 能否作为中间的结构化文本？   
 
 ![](./assets/N-17.png)  
 
@@ -249,7 +249,7 @@ P18
 &#x1F50E; *Multimodal-GPT: A vision and language model for dialogue with humans [13]*   
 &#x1F50E; *Instruction-ViT: Multi-Modal Prompts for Instruction Learning in ViT [54]*   
 
-As discussed earlier in Section 3, instruction tuning in the language domains is implemented in two different ways: **fine-tuning the model on a wide range of tasks using human-annotated prompts and feedback [34],** or **supervised fine-tuning using public benchmarks and datasets augmented with manually or automatically generated instructions [52]**. The former is good at user-oriented daily life tasks, and the latter is good at achieving good numbers on established benchmarks. LLaVA/MiniGPT-4 can be categorized as the former class. Several other works either target for the latter class or combine both classes.    
+As discussed earlier in Section 3, instruction tuning in the language domains is implemented in two different ways: **fine-tuning the model on a wide range of tasks using human-annotated prompts and feedback**[34], or **supervised fine-tuning using public benchmarks and datasets augmented with manually or automatically generated instructions [52]**. The former is good at user-oriented daily life tasks, and the latter is good at achieving good numbers on established benchmarks. LLaVA/MiniGPT-4 can be categorized as the former class. Several other works either target for the latter class or combine both classes.    
 
 > &#x2705; 用 prompt 使用更友好，但用数据 finetue 能得到更好的效果。   
 > &#x2705; 前者数据来自 daily conversation，因此没有明确的任务类型，属于通才。   
