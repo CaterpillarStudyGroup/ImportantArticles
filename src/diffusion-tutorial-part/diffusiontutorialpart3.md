@@ -187,7 +187,57 @@ Latent space diffusion for SDFs, where conditioning can be provided with cross a
 
 Chou et al., <u>"DiffusionSDF: Conditional Generative Modeling of Signed Distance Functions",</u> arXiv 2022    
 
+P19   
+## Diffusion Models for Other 3D Representations    
 
+Neural Radiance Fields (NeRF) is another representation of a 3D object.    
+
+![](../assets/D3-19.png)  
+ 
+P20   
+## Diffusion Models for Other 3D Representations
+
+![](../assets/D3-20-1.png)  
+NeRF    
+(Fully implicit)    
+
+![](../assets/D3-20-2.png)  
+Voxels    
+(Explicit / hybrid)    
+
+![](../assets/D3-20-3.png)  
+Triplanes    
+(Factorized, hybrid)    
+
+Image from EG3D paper.    
+
+P21   
+## Diffusion Models for Other 3D Representations     
+
+ - Triplanes, regularized ReLU Fields, the MLP of NeRFs...    
+ - A good representation is important!     
+
+![](../assets/D3-21-1.png)  
+Triplane diffusion    
+
+![](../assets/D3-21-2.png)  
+Regularized ReLU Fields    
+
+![](../assets/D3-21-3.png)  
+Implicit MLP of NeRFs     
+
+
+Shue et al., <u>"3D Neural Field Generation using Triplane Diffusion",</u> arXiv 2022    
+Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023    
+Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023    
+
+P22    
+ - 2D diffusion models for 3D generation
+
+
+
+
+ 
 
 ![](../assets/D3-72.png)  
 
