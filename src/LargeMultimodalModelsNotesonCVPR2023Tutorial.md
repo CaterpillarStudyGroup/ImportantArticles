@@ -189,7 +189,7 @@ As illustrated in Figure 13, the LLaVA network architecture is an instantiation 
 pre-trained CLIP ViT-L/14 visual encoder [37] and large language model Vicuna [47], using a simple
 projection matrix.** A two-stage instruction-tuning procedure is considered:   
 
- - *Stage 1: Pre-training for Feature Alignment.* Only the projection matrix is updated, based on a subset of CC3M [40]. The only task is image captioning.    
+ - *Stage 1: Pre-training for Feature Alignment.* Only the projection matrix is updated, based on a subset of CC3M [40]. The only task is **image captioning**.    
  - *Stage 2: Fine-tuning End-to-End.* Both the projection matrix and LLM are updated for two different use scenarios.    
 
 > &#x2705; 即使每个模块分工明确且单独训好，E2E 的 finetune 还是必不可少的。   
