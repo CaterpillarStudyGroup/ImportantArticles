@@ -493,7 +493,7 @@ P45
 ## Outline
 
  - Inverse problems    
- - 3D    
+ - **3D**    
  - Video    
  - Miscellaneous    
 
@@ -539,7 +539,7 @@ Sella et al., <u>"Vox-E: Text-guided Voxel Editing of 3D Objects",</u> arXiv 202
 P50   
 ## Outline   
 
- - Video   
+ - **Video**   
  - Video generative models   
 
 P51   
@@ -624,7 +624,7 @@ Optional context via learned down-sampling operation.
 shape is [batch, time, channel, height, width]    
 
 **For Temporal attention,**   
-shape is [batch * height * width, time, channel]    
+shape is [batch \\(^\ast \\)height\\(^\ast \\) width, time, channel]    
 
 
 
