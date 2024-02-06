@@ -275,13 +275,13 @@ P36
 **Generative Reverse Diffusion SDE (stochastic):**    
 
 $$
-d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+2s_\theta (\mathbf{x} _t,t)]dt+\sqrt{\beta (t)} d\varpi _t
+d\mathbf{x} _ t=-\frac{1}{2} \beta (t)[\mathbf{x} _ t+2s_ \theta (\mathbf{x} _ t,t)]dt+\sqrt{\beta (t)} d\varpi _ t
 $$
 
 **Generative Probability Flow ODE (deterministic):**   
 
 $$
-d\mathbf{x} _t=-\frac{1}{2} \beta (t)[\mathbf{x} _t+s_\theta (\mathbf{x} _t,t)]dt
+d\mathbf{x} _ t=-\frac{1}{2} \beta (t)[\mathbf{x} _ t+s_ \theta (\mathbf{x} _ t,t)]dt
 $$
 
 
