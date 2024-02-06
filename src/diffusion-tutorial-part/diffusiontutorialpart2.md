@@ -430,6 +430,22 @@ where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c}
 
 Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
 
+P61    
+## ControlNet
+
+![](../assets/D2-61.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+
+P62   
+## ControlNet  
+
+![](../assets/D2-62.png) 
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+
+
 P63   
 ## ControlNet
 
@@ -439,59 +455,56 @@ Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Mo
 
 
 P64   
-## ControlNet   
+## GLIGEN: Open-Set Grounded Text-to-Image Generation    
 
 ![](../assets/D2-64.png) 
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023        
 
 P65   
-## ControlNet
 
-![](../assets/D2-65.png) 
-
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
-
-
-P66   
-## GLIGEN: Open-Set Grounded Text-to-Image Generation  
-
-![](../assets/D2-66.png) 
-
-Li et al., "GLIGEN: <u>Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023   
-
-P67  
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation
 
-![](../assets/D2-67-1.png)    
-![](../assets/D2-67-2.png)    
+![](../assets/D2-65-1.png)    
+![](../assets/D2-65-2.png)    
 
 Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",,</u> CVPR 2023   
 
-P68   
+P66   
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation
+
+![](../assets/D2-66.png)  
+
+P67   
+## Other applications  
+
+P68   
+## Your Diffusion Model is Secretly a Zero-Shot Classifier
 
 ![](../assets/D2-68.png)  
 
-P69   
-## Other applications  
-
-P70   
-## Your Diffusion Model is Secretly a Zero-Shot Classifier
-
-![](../assets/D2-70.png)  
-
 Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arXiv 2023   
 
-P71  
+P69   
+## Improving Robustness using Generated Data
+
+![](../assets/D2-69.png)  
+
+**Overview of the approach:**     
+1. train a generative model and a non￾robust classifier, which are used to provide pseudo-labels to the generated data.    
+2. The generated and original training data are combined to train a robust classifier.    
+
+Gowal et al., <u>"Improving Robustness using Generated Data",</u> NeurIPS 2021    
+
+P70  
 ## Better Diffusion Models Further Improve Adversarial Training   
 
-![](../assets/D2-72.png)  
+![](../assets/D2-70.png)  
 
 Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",</u> ICML 2023    
 
 
-P74   
+P72   
 ## Reference   
 
  - Bao et al., <u>"All are Worth Words: a ViT Backbone for Score-based Diffusion Models",</u> arXiv 2022   
