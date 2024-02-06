@@ -231,9 +231,9 @@ P33
 
 ![](../assets/D1-33-1.png) 
 
-Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
+ - Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
 
-**Denoising Score Matching**:     
+ - **Denoising Score Matching**:     
 
 ![](../assets/D1-33-2.png) 
   
