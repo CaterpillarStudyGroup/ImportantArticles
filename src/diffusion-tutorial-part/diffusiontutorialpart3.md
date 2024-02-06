@@ -492,7 +492,12 @@ Liu et al., <u>"Zero-1-to-3: Zero-shot One Image to 3D Object",</u> arXiv 2023
 P45    
 ## Outline
 
- - 3D editing
+ - Inverse problems    
+ - 3D    
+ - Video    
+ - Miscellaneous    
+
+ - 3D editing    
 
 P46   
 ## Instruct NeRF2NeRF
