@@ -216,7 +216,7 @@ P31
 P32   
 ## Score Matching
 
-Naïve idea, learn model for the score function by direct regression?    
+ - Naïve idea, learn model for the score function by direct regression?    
 
 ![](../assets/D1-32.png) 
 
@@ -229,13 +229,13 @@ Naïve idea, learn model for the score function by direct regression?
 P33   
 ## Denoising Score Matching
 
-![](../assets/D1-33.png) 
+![](../assets/D1-33-1.png) 
 
 Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
 
 **Denoising Score Matching**:     
 
-![](../assets/D1-33.png) 
+![](../assets/D1-33-2.png) 
   
 **After expectations**, \\(s_0(\mathbf{x} _t,t)\approx \mathbf{x} _t\log q_t(\mathbf{x} _t)\\)**!**    
 
