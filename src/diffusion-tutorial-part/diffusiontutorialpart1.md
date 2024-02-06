@@ -501,7 +501,8 @@ P60
 The seminal work from Rombach et al. CVPR 2022:    
  - Two stage training: train autoencoder first, then train the diffusion prior   
  - Focus on compression without of any loss in reconstruction quality   
- - Demonstrated the expressivity of latent diffusion models on many conditional problems   
+ - Demonstrated the expressivity of latent diffusion models on many conditional problems    
+ 
 The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
 
 <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
