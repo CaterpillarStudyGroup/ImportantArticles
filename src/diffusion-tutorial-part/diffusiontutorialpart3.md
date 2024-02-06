@@ -389,7 +389,7 @@ Instead of maximizing the likelihood under diffusion model, VSD minimizes the KL
 
 $$
 \begin{matrix}
-\min_{\mu } D _ {\mathrm{KL} }(q^\mu _ 0(x _ 0|y)||p _ 0(x _ 0|y)). \\\\
+\min_{\mu } D _ {\mathrm{KL} }(q^\mu _ 0(\mathbf{x} _ 0|y)||p _ 0(\mathbf{x} _ 0|y)). \\\\
 \quad \mu \quad \text{is the distribution of NeRFs} .
 \end{matrix}
 $$
