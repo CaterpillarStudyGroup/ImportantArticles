@@ -89,13 +89,13 @@ P17
 ## Generative Learning by Denoising   
 
 Recall, that the diffusion parameters are designed such that 
-\\(q(X_T)\approx （X_T；0,I）\\)    
+\\(q(\mathbf{x}_T)\approx （\mathbf{x}_T；0,I）\\)    
 
 ![](../assets/D1-17-1.png) 
 
 ![](../assets/D1-17-2.png) 
 
-Can we approximate \\(q(X_{t-1}|X_t)\\)? Yes, we can use a **Normal distribution** if \\(\beta _t\\) is small in each forward diffusion step.    
+Can we approximate \\(q(\mathbf{x}_{t-1}|\mathbf{x}_t)\\)? Yes, we can use a **Normal distribution** if \\(\beta _t\\) is small in each forward diffusion step.    
 
 P18    
 ## Reverse Denoising Process
@@ -121,7 +121,7 @@ P20
 P21    
 ## Implementation Considerations   
 
-Diffusion models often use U-Net architectures with ResNet blocks and self-attention layers to represent \\(\epsilon _\theta (X_t,t)\\).    
+Diffusion models often use U-Net architectures with ResNet blocks and self-attention layers to represent \\(\epsilon _\theta (\mathbf{x}_t,t)\\).    
 
 ![](../assets/D1-21.png) 
 
