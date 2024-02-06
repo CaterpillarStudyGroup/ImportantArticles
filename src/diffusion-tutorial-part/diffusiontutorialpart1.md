@@ -120,6 +120,7 @@ P20
 
 P21    
 ## Implementation Considerations   
+##### Network Architectures
 
 Diffusion models often use U-Net architectures with ResNet blocks and self-attention layers to represent \\(\epsilon _\theta (\mathbf{x}_t,t)\\).    
 
