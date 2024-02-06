@@ -283,6 +283,8 @@ $$
 $$
 d\mathbf{x} _ t=-\frac{1}{2} \beta (t)[\mathbf{x} _ t+s_ \theta (\mathbf{x} _ t,t)]dt
 $$
+ 
+<u>Song et al., ICLR, 2021</u>    
 
 
 P37   
