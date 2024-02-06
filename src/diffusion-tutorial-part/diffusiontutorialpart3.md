@@ -188,7 +188,7 @@ P18
 
 ![](../assets/D3-18.png)  
 
-Latent space diffusion for SDFs, where conditioning can be provided with cross attention
+**Latent space diffusion for SDFs, where conditioning can be provided with cross attention**
 
 Chou et al., <u>"DiffusionSDF: Conditional Generative Modeling of Signed Distance Functions",</u> arXiv 2022    
 
@@ -203,15 +203,15 @@ P20
 ## Diffusion Models for Other 3D Representations
 
 ![](../assets/D3-20-1.png)  
-NeRF    
+**NeRF**    
 (Fully implicit)    
 
 ![](../assets/D3-20-2.png)  
-Voxels    
+**Voxels**    
 (Explicit / hybrid)    
 
 ![](../assets/D3-20-3.png)  
-Triplanes    
+**Triplanes**    
 (Factorized, hybrid)    
 
 Image from EG3D paper.    
