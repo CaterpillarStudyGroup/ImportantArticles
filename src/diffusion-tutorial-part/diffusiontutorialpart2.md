@@ -467,7 +467,7 @@ P65
 
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation
 
-![](../assets/D2-65-1.png)    
+![](../assets/D2-65.png)    
 ![](../assets/D2-65-2.png)    
 
 Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",,</u> CVPR 2023   
