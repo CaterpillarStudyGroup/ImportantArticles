@@ -74,7 +74,7 @@ P15
 P16   
 ## What happens to a distribution in the forward diffusion?
 
-So far, we discussed the diffusion kernel but what about \\(q(X_t)\\)?   
+So far, we discussed the diffusion kernel \\(q(\mathbf{x} _t|\mathbf{x} _0)\\) but what about \\(q(\mathbf{x}_t)\\)?   
 
 ![](../assets/D1-16-1.png) 
 
