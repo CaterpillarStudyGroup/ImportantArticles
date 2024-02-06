@@ -211,7 +211,7 @@ P29
 P31   
 ## The Generative Reverse Stochastic Differential Equation
 
-But how to get the score function \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\)?   
+**But how to get the score function** \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\)?   
 
 P32   
 ## Score Matching
