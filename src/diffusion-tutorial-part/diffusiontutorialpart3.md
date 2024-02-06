@@ -64,7 +64,7 @@ P8
 In the Gaussian case,    
 
 $$
-p(\mathbf{y} |\mathbb{E} [\mathbf{x} _0|\mathbf{x} _t])=-c||\mathcal{A} \mathbf{(\hat{x}}  _0)-\mathbf{y} ||^2_2
+p(\mathbf{y} |\mathbb{E} [\mathbf{x} _ 0|\mathbf{x} _ t])=-c||\mathcal{A} \mathbf{(\hat{x}}  _ 0)-\mathbf{y} ||^2_2
 $$
 
 Maximizing the likelihood is minimizing the L2 distance between measured and generated!     
@@ -270,7 +270,7 @@ P27
 Consider the KL term to minimize (given t):   
 
 $$
-\mathbf{KL} (q(\mathbf{z} _t|g(\theta );y,t)||p\phi (\mathbf{z} _t;y,t))
+\mathbf{KL} (q(\mathbf{z} _ t|g(\theta );y,t)||p\phi (\mathbf{z} _ t;y,t))
 $$
 
 KL between noisy real image distribution and generated image 
@@ -283,7 +283,7 @@ KL and its gradient is defined as:
 (B) can be derived from chain rule    
 
 $$
-\nabla _\theta \log p_\phi (\mathbf{z} _t|y)=s_\phi (\mathbf{z} _t|y)\frac{\partial \mathbf{z} _t}{\partial \theta }=\alpha _ts_\phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta } =-\frac{\alpha _t}{\sigma _t}\hat{\epsilon }_ \phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta }   
+\nabla _ \theta \log p _ \phi (\mathbf{z} _ t|y)=s _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{z} _ t}{\partial \theta }=\alpha _ ts _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta } =-\frac{\alpha _ t}{\sigma _ t}\hat{\epsilon }_ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta }   
 $$
 
 (A) is the gradient of the entropy of the forward process with fixed variance = 0.    
@@ -294,7 +294,7 @@ P28
 ## DreamFusion: Score Distillation Sampling  
 
 $$
-(A)+(B)=\frac{\alpha _t}{\sigma _t}\hat{\epsilon }_ \phi (\mathbf{z} _t|y)\frac{\partial \mathbf{x} }{\partial \theta }
+(A)+(B)=\frac{\alpha _ t}{\sigma _ t}\hat{\epsilon } _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta }
 $$
 
 However, this objective can be quite noisy.     
@@ -306,7 +306,7 @@ Thus, we have:
 
 ![](../assets/D3-28-2.png)  
 
-This has the same mean, but **reduced variance**, as we train \\(\hat{\epsilon } _\phi\\) to predict \\(\epsilon\\)    
+This has the same mean, but **reduced variance**, as we train \\(\hat{\epsilon } _ \phi\\) to predict \\(\epsilon\\)    
 
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
@@ -381,12 +381,12 @@ Instead of maximizing the likelihood under diffusion model, VSD minimizes the KL
 
 $$
 \begin{matrix}
-\min_{\mu } D_{\mathrm{KL} }(q^\mu _0(x_0|y)||p_0(x_0|y)). \\\\
+\min_{\mu } D _ {\mathrm{KL} }(q^\mu _ 0(x _ 0|y)||p _ 0(x _ 0|y)). \\\\
 \quad \mu \quad \text{is the distribution of NeRFs} .
 \end{matrix}
 $$
 
-Suppose is a \\(\theta _\tau \sim \mu \\) NeRF sample, then VSD simulates this ODE:    
+Suppose is a \\(\theta _ \tau \sim \mu \\) NeRF sample, then VSD simulates this ODE:    
 
 ![](../assets/D3-35.png) 
 
@@ -760,7 +760,7 @@ Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusi
 P72   
 ## Related Works   
 
-• Based on similar ideas but differ in how overlapping regions are mixed.
+ - Based on similar ideas but differ in how overlapping regions are mixed.
 
 ![](../assets/D3-72-1.png)    
 
