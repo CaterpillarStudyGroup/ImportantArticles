@@ -415,7 +415,9 @@ Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Mo
 
 P59   
 
-![](../assets/D2-59.png) 
+![](../assets/D2-59.png)   
+
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
 
 P60   
 ## Adding Conditional Control to Text-to-Image Diffusion Models
