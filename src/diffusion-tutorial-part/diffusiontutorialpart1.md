@@ -195,6 +195,8 @@ P28
 
 But what about the reverse direction, necessary for generation?    
 
+<u>Song et al., ICLR, 2021</u>
+
 P29  
 ## The Generative Reverse Stochastic Differential Equation
 
