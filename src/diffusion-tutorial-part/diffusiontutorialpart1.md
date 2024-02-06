@@ -420,8 +420,9 @@ $$
 P52   
 ## SDE Distillation
 
+![](../assets/D1-52.png) 
 
-Can we train a neural network to directly predict distribution of \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t \\) ?    
+Can we train a neural network to directly predict **distribution of** \\(\mathbf{x} _ {{t}'} \\) given \\(\mathbf{x} _ t \\) ?    
 
 P53   
 ## Advanced Approximation of Reverse Process    
