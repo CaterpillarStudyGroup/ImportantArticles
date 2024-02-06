@@ -89,7 +89,7 @@ P17
 ## Generative Learning by Denoising   
 
 Recall, that the diffusion parameters are designed such that 
-\\(q(\mathbf{x}_T)\approx （\mathbf{x}_T；0,I）\\)    
+\\(q(\mathbf{x}_T)\approx （\mathbf{x}_T；\mathbf{0,I}）\\)    
 
 ![](../assets/D1-17-1.png) 
 
@@ -109,7 +109,7 @@ P19
 ## Learning Denoising Model   
 ##### Variational upper bound   
 
-![](../assets/D1-19.png) 
+![](../assets/D1-19-1.png) 
 
 
 P20   
