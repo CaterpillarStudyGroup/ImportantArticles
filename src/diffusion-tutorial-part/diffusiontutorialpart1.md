@@ -25,7 +25,7 @@ P6
  
 ![](../assets/D1-6.png) 
 
-*Disclaimer: We rely on paper titles for counting the number of papers in each topic. Our statistics are likely to be biased.    
+\\(\ast \\)Disclaimer: We rely on paper titles for counting the number of papers in each topic. Our statistics are likely to be biased.    
 
 
 P7   
