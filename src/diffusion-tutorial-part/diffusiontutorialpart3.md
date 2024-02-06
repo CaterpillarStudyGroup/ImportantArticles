@@ -805,7 +805,12 @@ P75
  - From original model, **obtain score via negative CFG**.   
  - **A new model is fine-tuned** from the new score function.    
 
+![](../assets/D3-75-1.png)  
+
+![](../assets/D3-75-2.png)  
+
 Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
+
 
 P77   
 ## Part I
