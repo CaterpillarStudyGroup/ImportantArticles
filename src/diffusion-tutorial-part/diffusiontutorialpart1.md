@@ -82,7 +82,7 @@ So far, we discussed the diffusion kernel \\(q(\mathbf{x} _t|\mathbf{x} _0)\\) b
 
 The diffusion kernel is Gaussian convolution.    
 
-We can sample \\(\mathbf{x}_t~q(\mathbf{x}_t)\\) by first sampling and then sampling \\(\mathbf{x}_t~q(\mathbf{x}_t|\mathbf{x}_0)\\) (i.e., ancestral sampling).   
+We can sample \\(\mathbf{x}_t \sim q(\mathbf{x}_t)\\) by first sampling and then sampling \\(\mathbf{x}_t \sim q(\mathbf{x}_t|\mathbf{x}_0)\\) (i.e., ancestral sampling).   
 
 
 P17   
