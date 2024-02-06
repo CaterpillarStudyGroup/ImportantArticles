@@ -735,7 +735,7 @@ Let us generate this image with a diffusion model only trained on squared region
 ![](../assets/D3-68-1.png)    
 
 1. Generate the center region \\(q(\mathbf{x} _ 1,\mathbf{x} _ 2)\\)    
-2. Generate the **surrounding region conditioned on parts of the center image** \\(q(\mathbf{x} _ 1|\mathbf{x} _ 2)\\)    
+2. Generate the **surrounding region conditioned on parts of the center image** \\(q(\mathbf{x} _ 3|\mathbf{x} _ 2)\\)    
 
 ![](../assets/D3-68-2.png)    
 
