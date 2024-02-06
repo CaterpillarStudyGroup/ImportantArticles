@@ -281,7 +281,7 @@ P42
 
 ![](../assets/D2-42.png) 
 
-Finetuned with only 9 images Visualized every 500 steps    
+**Finetuned with only 9 images Visualized every 500 steps**    
 
 Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]    
 Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>    
@@ -325,7 +325,7 @@ P48
 
 How to describe personalized concepts?    
 
-V\\(^\ast \\) dog   
+V\\(^\ast \\) **dog**   
 
 Where V\\(^\ast \\) is a modifier token in the text embedding space    
 
