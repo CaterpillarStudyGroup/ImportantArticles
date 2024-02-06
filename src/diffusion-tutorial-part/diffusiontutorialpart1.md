@@ -480,9 +480,9 @@ Denoising diffusion models are applied in the latent space
 
 P58   
 ##### Advantages:    
-(1) The distribution of latent embeddings close to Normal distribution \\(\to \\) *Simpler denoising, Faster synthesis*!    
-(2) Latent space \\(\to \\) *More expressivity and flexibility in design*!    
-(3) Tailored Autoencoders \\(\to \\) *More expressivity, Application to any data type (graphs, text, 3D data, etc.)* !    
+(1) The distribution of latent embeddings close to Normal distribution \\(\to \\) ***Simpler denoising, Faster synthesis***!    
+(2) Latent space \\(\to \\) ***More expressivity and flexibility in design!***    
+(3) Tailored Autoencoders \\(\to \\) ***More expressivity, Application to any data type (graphs, text, 3D data, etc.)!***     
 
 <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>    
 
