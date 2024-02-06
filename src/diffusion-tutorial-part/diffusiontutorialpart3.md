@@ -237,6 +237,9 @@ Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023
 Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023    
 
 P22    
+## Outline
+
+
  - 2D diffusion models for 3D generation     
 
 P23   
