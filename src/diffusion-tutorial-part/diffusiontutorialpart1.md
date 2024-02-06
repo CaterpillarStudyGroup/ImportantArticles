@@ -293,7 +293,7 @@ P37
 
 ![](../assets/D1-37.png)   
 
- - Enables use of **advanced ODE** solvers   
+ - Enables use of **advanced ODE solvers**   
  - **Deterministic encoding and generation** (semantic image interpolation, etc.)     
  - **Log-likelihood computation** (instantaneous change of variables):       
 
@@ -412,7 +412,7 @@ Basic idea:
  - Minimize:    
 
 $$
-\min_{\theta } ||f_{EMA}(\mathbf{x} _t,t)-f_\theta ({\mathbf{x} }' _t,{t}' )||^2_2
+\min_ {\theta } ||f_ {EMA}(\mathbf{x} _ t,t)-f _ \theta ({\mathbf{x} }' _ t,{t}' )||^2_2
 $$
 
 <u>Song et al., Consistency Models, ICML 2023</u>   
@@ -520,7 +520,7 @@ P63
  - DDIM sampler can be considered as an integration rule of the following ODE:    
 
 $$
-d\mathbf{\bar{x} } (t)=\epsilon ^{(t)}_\theta(\frac{\mathbf{\bar{x} } (t)}{\sqrt{\eta ^2+1}} )d\eta (t); \mathbf{\bar{x} } =\mathbf{x} / \sqrt{\bar{a} },\eta = \sqrt{1-\bar{a}} / \sqrt{\bar{a } }
+d\mathbf{\bar{x} } (t)=\epsilon ^{(t)} _ \theta(\frac{\mathbf{\bar{x} } (t)}{\sqrt{\eta ^2+1}} )d\eta (t); \mathbf{\bar{x} } =\mathbf{x} / \sqrt{\bar{a} },\eta = \sqrt{1-\bar{a}} / \sqrt{\bar{a } }
 $$
 
  - Karras et al. argue that the ODE of DDIM is favored, as the tangent of the solution trajectory always points 
@@ -596,7 +596,7 @@ output (e.g., image)
 Train the score model for x conditioned on y using:    
 
 $$
-\mathbb{E} _{(\mathbf{x,y} )\sim P\mathrm{data} (\mathbf{x,y} )}\mathbb{E}_{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\mathbb{E} _{t\sim u[0,T]}||\epsilon _\theta (\mathbf{x} _t,t;\mathbf{y} )-\epsilon ||^2_2 
+\mathbb{E} _ {(\mathbf{x,y} )\sim P\mathrm{data} (\mathbf{x,y} )}\mathbb{E} _ {\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\mathbb{E} _{t\sim u[0,T]}||\epsilon _ \theta (\mathbf{x} _ t,t;\mathbf{y} )- \epsilon ||^2_2 
 $$
 
 The conditional score is simply a U-Net with xt and y together in the input.    
