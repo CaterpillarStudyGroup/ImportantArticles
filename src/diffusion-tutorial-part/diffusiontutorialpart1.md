@@ -255,9 +255,9 @@ $$
 **Same objectives in Part (1)!**    
 
 
-<u>Vincent, in Neural Computation, 2011</u>     
-<u>Song and Ermon, NeurIPS, 2019</u>   
-<u>Song et al. ICLR, 2021</u>   
+<u>Vincent, in *Neural Computation*, 2011</u>     
+<u>Song and Ermon, *NeurIPS*, 2019</u>   
+<u>Song et al. *ICLR*, 2021</u>   
 
 P35    
 ## Different Parameterizations
