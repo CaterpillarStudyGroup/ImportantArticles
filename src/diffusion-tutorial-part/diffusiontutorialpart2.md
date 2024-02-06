@@ -102,7 +102,7 @@ P18
 
 ![](../assets/D2-18.png) 
 
-Song et al., <u>"Denoising Diffusion Implicit Models", </u>ICLR 2021    
+Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021    
 
 P19   
 ## Style transfer with DDIM inversion
@@ -273,7 +273,7 @@ P41
 
 ![](../assets/D2-41.png) 
 
-Lora [Edward J. Hu*, Yelong Shen*, et al., ICLR 2022]     
+Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]     
 Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>     
 
 P42   
@@ -283,7 +283,7 @@ P42
 
 Finetuned with only 9 images Visualized every 500 steps    
 
-Lora [Edward J. Hu*, Yelong Shen*, et al., ICLR 2022]    
+Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]    
 Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>    
 
 P43
@@ -325,16 +325,16 @@ P48
 
 How to describe personalized concepts?    
 
-V* dog   
+V\\(^\ast \\) dog   
 
-Where V* is a modifier token in the text embedding space    
+Where V\\(^\ast \\) is a modifier token in the text embedding space    
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
 P49   
 ## Personalized concepts
 
-Also fine-tune the modifier token V* that describes the personalized concept   
+Also fine-tune the modifier token V\\(^\ast \\) that describes the personalized concept   
 
 ![](../assets/D2-49.png)   
 
@@ -390,7 +390,7 @@ P56
 ![](../assets/D2-56-1.png)    
 
 ***√ Plug-and-play. Not affect original network topology and generation ability***   
- *** √ Simple and small. ~77M parameters and ~300M storage***    
+***√ Simple and small. ~77M parameters and ~300M storage***    
 ***√ Flexible. Various adapters for different control conditions***    
 ***√ Composable.  Several adapters to achieve multi-condition control***    
 ***√ Generalizable. Can be directly used on customed models***    
@@ -423,10 +423,10 @@ P60
 Train objective   
 
 $$
-\mathcal{L} =\mathbb{E} _{z_0,t,\mathbf{c} _t,\mathbf{c}_f,\epsilon \sim \mathcal{N} (0,1)}[||\epsilon -\epsilon _\theta (z_t,t,\mathbf{c} _t,\mathbf{c}_f)||^2_2] 
+\mathcal{L} =\mathbb{E} _ {z_0,t,\mathbf{c} _ t,\mathbf{c} _ f,\epsilon \sim \mathcal{N} (0,1)}[||\epsilon -\epsilon _\theta (\mathbf{z} _ t,t,\mathbf{c} _ t,\mathbf{c}_f)||^2_2] 
 $$
 
-where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c}_f\\) is the task-specific conditions    
+where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c} _ f\\) is the task-specific conditions    
 
 Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
 
