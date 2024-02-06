@@ -430,7 +430,10 @@ P53
 
 ![](../assets/D1-53.png) 
 
-**Requires more complicated functional approximators!**
+**Requires more complicated functional approximators!**   
+GANs used by Xiao et al.    
+Energy-based models by Gao et al.    
+
 
 <u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u>    
 <u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
