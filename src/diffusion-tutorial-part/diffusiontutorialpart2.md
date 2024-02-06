@@ -174,7 +174,7 @@ P27
 Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
 
 P28   
-## Prompt-to-Prompt Image Editing with Cross￾Attention Control    
+## Prompt-to-Prompt Image Editing with Cross-Attention Control    
 
 ![](../assets/D2-28.png)
 
