@@ -622,11 +622,16 @@ P72
 <u>Dhariwal and Nichol, “Diffusion models beat GANs on image synthesis”, NeurIPS 2021.</u>    
 
 
-P73   
+P73    
+## Conditioning and Guidance Techniques
+
+Classifier-free Guidance    
+
+P74    
 ## Classifier-free guidance   
 ##### Get guidance by Bayes’ rule on conditional diffusion models
 
- -Recall that classifier guidance requires training a classifier.   
+ - Recall that classifier guidance requires training a classifier.   
  - Using Bayes’ rule again:   
 
 ![](../assets/D1-74-1.png) 
