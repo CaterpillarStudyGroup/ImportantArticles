@@ -16,6 +16,8 @@ Normalizing Flows
 Energy-based Models   
 Autoregressive Models   
 Denoising Diffusion Models    
+
+
 Generative Adversarial Networks    
 
 P6    
