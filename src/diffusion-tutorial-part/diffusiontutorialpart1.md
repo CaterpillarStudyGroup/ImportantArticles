@@ -595,7 +595,7 @@ Explicit Conditions
 P70   
 ## Explicit Conditional Training   
 
-Conditional sampling can be considered as training \\(p(\mathbf{x} |\mathbf{y} )\\) where y is the input conditioning (e.g., text) and \\(\mathbf{x}\\) is generated output (e.g., image)    
+Conditional sampling can be considered as training \\(p(\mathbf{x} |\mathbf{y} )\\) where \\(\mathbf{y}\\) is the input conditioning (e.g., text) and \\(\mathbf{x}\\) is generated output (e.g., image)    
 
 Train the score model for \\(\mathbf{x}\\) conditioned on \\(\mathbf{y}\\) using:    
 
@@ -638,7 +638,7 @@ P74
 
  - Instead of training an additional classifier, get an “implicit classifier” by jointly training a conditional and  unconditional diffusion model. In practice, the conditional and unconditional models are trained together by randomly dropping the condition of the diffusion model at certain chance.     
 
-The modified score with this implicit classifier included is:   
+ - The modified score with this implicit classifier included is:   
 
 ![](../assets/D1-74-2.png) 
 
