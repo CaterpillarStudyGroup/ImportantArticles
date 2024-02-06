@@ -31,6 +31,9 @@ Goal: recover the masked region of an image
 
 ![](../assets/D3-4.png)  
 
+We want to use the same diffusion model for different problems!    
+
+
 P5   
 ## Diffusion Models for Inverse Problems: Two Paradigms
 
@@ -153,7 +156,9 @@ P15
 
 Point-E uses a synthetic view from fine-tuned GLIDE, and then ”lifts” the image to a 3d point cloud.
 
-![](../assets/D3-15.png)  
+![](../assets/D3-15-1.png)  
+
+![](../assets/D3-15-2.png)  
 
 Nichol et al., <u>"Point-E: A System for Generating 3D Point Clouds from Complex Prompts",</u> arXiv 2022     
 
