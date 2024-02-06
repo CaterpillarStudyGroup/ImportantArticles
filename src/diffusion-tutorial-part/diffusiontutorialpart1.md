@@ -293,16 +293,15 @@ P37
 
 ![](../assets/D1-37.png)   
 
- - Chen et al., NeurIPS, 2018   
- - Deterministic encoding and generation (semantic image interpolation, etc.)   
- - Grathwohl, ICLR, 2019    
- - Song et al., ICLR, 2021    
+ - Enables use of **advanced ODE** solvers   
+ - **Deterministic encoding and generation** (semantic image interpolation, etc.)     
+ - **Log-likelihood computation** (instantaneous change of variables):       
 
-<u>Chen et al., NeurIPS, 2018</u>    
-<u>Grathwohl, ICLR, 2019</u>   
-<u>Song et al., ICLR, 2021</u>    
+<u>Chen et al., *NeurIPS*, 2018</u>    
+<u>Grathwohl, *ICLR*, 2019</u>   
+<u>Song et al., *ICLR*, 2021</u>    
 
-P37   
+P38   
 ## Outline
 
 Part (3): Accelerated Sampling    
