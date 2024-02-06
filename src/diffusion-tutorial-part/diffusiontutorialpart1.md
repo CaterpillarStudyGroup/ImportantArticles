@@ -249,7 +249,7 @@ P34
 ![](../assets/D1-34-1.png) 
 
 $$
-\min_{\mathbf{\theta}  } \mathbb{E} _{t\sim u(0,T)}\mathbb{E} _{\mathbf{x} _0\sim q_0(\mathbf{x} _0)}\mathbb{E}_{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _\theta (\mathbf{x} _t,t)||^2_2 
+\min_ {\mathbf{\theta}  } \mathbb{E} _ {t\sim u(0,T)}\mathbb{E} _ {\mathbf{x} _ 0\sim q_ 0(\mathbf{x} _ 0)}\mathbb{E} _{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _ \theta (\mathbf{x} _ t,t)||^2_2 
 $$
 
 **Same objectives in Part (1)!**    
