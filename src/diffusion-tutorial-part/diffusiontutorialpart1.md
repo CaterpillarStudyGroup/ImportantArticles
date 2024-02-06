@@ -202,7 +202,7 @@ P29
 
 ![](../assets/D1-29.png) 
 
-\\(\Rightarrow \\) Simulate reverse diffusion process: Data generation from random noise!    
+\\(\Rightarrow \\) **Simulate reverse diffusion process: Data generation from random noise!**    
 
 <u>Song et al., ICLR, 2021</u>   
 <u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
