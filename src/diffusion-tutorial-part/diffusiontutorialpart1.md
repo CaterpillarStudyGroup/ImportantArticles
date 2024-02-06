@@ -405,10 +405,10 @@ P51
 
 ![](../assets/D1-51.png) 
 
-Points on the same trajectory should generated the same \\(\mathbf{x} _0\\)    
-Assume \\(f_\theta (\mathbf{x} _t,t)\\) is the current estimation of \\(\mathbf{x} _0\\)    
+Points on the same trajectory should generated the same \\(\mathbf{x} _ 0\\)    
+Assume \\(f _ \theta (\mathbf{x} _ t,t)\\) is the current estimation of \\(\mathbf{x} _ 0\\)    
 Basic idea:     
- - Find  \\(\mathbf{x} _t\\) and \\(\mathbf{x} _{t}'\\) on a trajectory by solving generative ODE in \\([t,{t}' ]\\)    
+ - Find  \\(\mathbf{x} _ t\\) and \\(\mathbf{x} _ {t}'\\) on a trajectory by solving generative ODE in \\([t,{t}' ]\\)    
  - Minimize:    
 
 $$
