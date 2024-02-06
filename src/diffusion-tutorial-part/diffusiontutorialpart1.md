@@ -502,7 +502,7 @@ The seminal work from Rombach et al. CVPR 2022:
  - Two stage training: train autoencoder first, then train the diffusion prior   
  - Focus on compression without of any loss in reconstruction quality   
  - Demonstrated the expressivity of latent diffusion models on many conditional problems    
- 
+
 The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
 
 <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
@@ -595,16 +595,15 @@ Explicit Conditions
 P70   
 ## Explicit Conditional Training   
 
-Conditional sampling can be considered as training where y is the input conditioning (e.g., text) and x is generated 
-output (e.g., image)    
+Conditional sampling can be considered as training \\(p(\mathbf{x} |\mathbf{y} )\\) where y is the input conditioning (e.g., text) and \\(\mathbf{x}\\) is generated output (e.g., image)    
 
-Train the score model for x conditioned on y using:    
+Train the score model for \\(\mathbf{x}\\) conditioned on \\(\mathbf{y}\\) using:    
 
 $$
 \mathbb{E} _ {(\mathbf{x,y} )\sim P\mathrm{data} (\mathbf{x,y} )}\mathbb{E} _ {\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\mathbb{E} _{t\sim u[0,T]}||\epsilon _ \theta (\mathbf{x} _ t,t;\mathbf{y} )- \epsilon ||^2_2 
 $$
 
-The conditional score is simply a U-Net with xt and y together in the input.    
+The conditional score is simply a U-Net with \\(\mathbf{x}_t\\) and \\(\mathbf{y}\\) together in the input.    
 
 ![](../assets/D1-70.png) 
 
