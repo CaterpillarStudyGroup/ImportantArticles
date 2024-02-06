@@ -72,7 +72,7 @@ First perturb the input with **Gaussian noise** and then progressively remove th
 
 ![](../assets/D2-12.png) 
 
-Gradually projects the input to the manifold of natural images.
+**Gradually projects the input to the manifold of natural images.**
 
 Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022   
 
