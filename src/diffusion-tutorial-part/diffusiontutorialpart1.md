@@ -569,7 +569,7 @@ P59
 
 <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
 
-> &#x2705; 这篇文章对 1. VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    
+> &#x2705; 这篇文章对 VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    
 
 
 P60   
