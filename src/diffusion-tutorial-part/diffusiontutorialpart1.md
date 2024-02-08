@@ -510,7 +510,7 @@ Energy-based models by Gao et al.
 <u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
 
 
-> &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q(\mathbf{x} _ {t}'｜\mathbf{x} _ t)\\).    
+> &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q(\mathbf{x} _ {{t}'}｜\mathbf{x} _ t)\\).    
 
 
 P54   
