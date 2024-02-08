@@ -89,8 +89,8 @@ The diffusion kernel is Gaussian convolution.
 We can sample \\(\mathbf{x}_t \sim q(\mathbf{x}_t)\\) by first sampling and then sampling \\(\mathbf{x}_t \sim q(\mathbf{x}_t|\mathbf{x}_0)\\) (i.e., ancestral sampling).   
 
 > &#x2705; convolution 是一种信号平滑方法。    
-> &#x2705; \\(q(\mathbf{x} _ t|\mathbf{x} _ 0)\\) 是标准高斯分布，因此 \\(q（\mathbf{x} _ t）\\) 是以高斯分布为真实数据的加权平均。     
-> &#x2705; 实际上，没有任意一个时间步的 \\(q（\mathbf{x}）\\) 的真实分布，只有这些分布的 sample.    
+> &#x2705; \\(q(\mathbf{x} _ t|\mathbf{x} _ 0)\\) 是标准高斯分布，因此 \\(q(\mathbf{x} _ t)\\) 是以高斯分布为真实数据的加权平均。     
+> &#x2705; 实际上，没有任意一个时间步的 \\(q(\mathbf{x})\\) 的真实分布，只有这些分布的 sample.    
 
 
 
@@ -98,7 +98,7 @@ P17
 ## Generative Learning by Denoising   
 
 Recall, that the diffusion parameters are designed such that 
-\\(q(\mathbf{x}_T)\approx （\mathbf{x}_T；\mathbf{0,I}）\\)    
+\\(q(\mathbf{x}_T)\approx (\mathbf{x}_T；\mathbf{0,I})\\)    
 
 ![](../assets/D1-17-1.png) 
 
@@ -118,7 +118,7 @@ Formal definition of forward and reverse processes in T steps:
 ![](../assets/D1-18.png) 
 
 
-> &#x2705; 虽然 \\(p（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(p (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\( \mathcal{N} (0,1 )\\).   
+> &#x2705; 虽然 \\(p(\mathbf{x} _ T)\\) 的真实分布未知，只有 \\(p (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\( \mathcal{N} (0,1)\\).   
 
 
 P19   
