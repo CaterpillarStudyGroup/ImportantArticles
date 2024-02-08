@@ -586,7 +586,7 @@ The efficiency and expressivity of latent diffusion models + open-source access 
 <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
 
 > &#x2705; 文章特点：1、VAE 和 diffusion 分开训练    
-> &#x2705; 2、但用的数据集质量比较高   
+> &#x2705; 2、使用的数据集质量比较高   
 > &#x2705; 3、Advanced Auto Encoders     
 > &#x2705; 4、Adveseral Training
 
