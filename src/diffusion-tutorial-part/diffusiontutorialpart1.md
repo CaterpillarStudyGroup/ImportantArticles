@@ -62,6 +62,10 @@ The formal definition of the forward process in T steps:
 
 ![](../assets/D1-14.png) 
 
+> &#x2705; 要让原始分布逼近 \\(\mathcal{N} (\mathbf{0,1} )\\)分布，通过逐步的 scale daun 让均值趋近于 0。通过引入噪声使方差趋近于 1。   
+> &#x2753; 怎么保证方差为1呢？答：根据P15公式。，只要 \\(\bar{\partial }t\\) 趋于0即可。   
+> &#x2753; 求联合分布有什么用?    
+
 
 P15   
 ## Diffusion Kernel
@@ -84,6 +88,11 @@ The diffusion kernel is Gaussian convolution.
 
 We can sample \\(\mathbf{x}_t \sim q(\mathbf{x}_t)\\) by first sampling and then sampling \\(\mathbf{x}_t \sim q(\mathbf{x}_t|\mathbf{x}_0)\\) (i.e., ancestral sampling).   
 
+> &#x2705; convolution 是一种信号平滑方法。    
+> &#x2705; \\(q(\mathbf{x} _ t|\mathbf{x} _ 0)\\) 是标准高斯分布，因此\\(q（\mathbf{x} _ t）\\) 是以高斯分布为真实数据的加权平均。     
+> &#x2705; 实际上，没有任意一个时间步的 \\(q（\mathbf{x}）\\) 的真实分布，只有这些分布的 sample.    
+
+
 
 P17   
 ## Generative Learning by Denoising   
@@ -97,6 +106,10 @@ Recall, that the diffusion parameters are designed such that
 
 Can we approximate \\(q(\mathbf{x}_{t-1}|\mathbf{x}_t)\\)? Yes, we can use a **Normal distribution** if \\(\beta _t\\) is small in each forward diffusion step.    
 
+
+> &#x2705; 这里的 Nomal distribution 是高斯分布的意思吧？不一定是 std 高斯。    
+
+
 P18    
 ## Reverse Denoising Process
 
@@ -105,18 +118,24 @@ Formal definition of forward and reverse processes in T steps:
 ![](../assets/D1-18.png) 
 
 
+> &#x2705; 虽然 \\(P（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(eta (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\(\mathcal{N} (\mathbf{0,1} )\\).   
+
+
 P19   
 ## Learning Denoising Model   
 ##### Variational upper bound   
 
 ![](../assets/D1-19-1.png) 
 
+> &#x2705; 网络只能产生 \\(\mathbf{x} _ t\\) 的均值，方差会有什么样的变化，对结果会有什么影响呢？求联合分布有什么用？     
 
 P20   
 ## Summary   
 ### Training and Sample Generation
 
 ![](../assets/D1-20.png) 
+
+> &#x2705; 推导过程参考李宏毅的课程。    
 
 P21    
 ## Implementation Considerations   
@@ -129,6 +148,8 @@ Diffusion models often use U-Net architectures with ResNet blocks and self-atten
 Time representation: sinusoidal positional embeddings or random Fourier features.    
 
 Time features are fed to the residual blocks using either simple spatial addition or using adaptive group normalization layers. (see <u>Dharivwal and Nichol NeurIPS 2021</u>).    
+
+> &#x2705; \\(\sigma \\) 是怎么定义的？    
 
 P22  
 ## Outline
@@ -171,6 +192,9 @@ $$
 ![](../assets/D1-24-4.png) 
 
 
+> &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
+> &#x2705; \\(\sigma \\) 描述 noise 的 scale。\\(\omega _ t\\) 描述噪声。    
+
 P25   
 ## Crash Course in Differential Equations
 
@@ -184,10 +208,17 @@ P26
 
 <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u>    
 
+
+> &#x2705; DDPM 是在时间上做了离散化的 SDE．    
+
 P27    
 ## Forward Diffusion Process as Stochastic Differential Equation
 
 ![](../assets/D1-27.png) 
+
+> &#x2705; drift term 使 \\(\mathbf{x} _ t\\) 趋向于 Origin.    
+> &#x2705; Origin 我理解为 \\(\vec{o} \\) 向量的意思。    
+> &#x2705; \(\mathbf{x} _ t\\) 最终趋向于 std normal.    
 
 
 P28   
@@ -206,6 +237,9 @@ P29
 
 <u>Song et al., ICLR, 2021</u>   
 <u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
+
+> &#x2705; \\(q _ t（\cdot ）\\) 描述 \\(t\\) 时刻的分布。    
+> &#x2705; \\(q _ t（\mathbf{x} _ t）\\) 为 \\(\mathbf{x} _ t\\) 在 \\(q _ t\\) 分布中的概率。    
 
 
 P31   
@@ -226,6 +260,8 @@ P32
 
 <u>Song and Ermon, “Generative Modeling by Estimating Gradients of the Data Distribution”, NeurIPS, 2019</u>    
 
+> &#x2705; 直接用一个网络拟合 score function．    
+
 P33   
 ## Denoising Score Matching
 
@@ -243,6 +279,9 @@ P33
 <u>Song and Ermon, NeurIPS, 2019</u>   
 <u>Song et al. ICLR, 2021</u>   
 
+> &#x2705; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
+> &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\)。对应的 score 的均值。    
+
 P34   
 ## Denoising Score Matching    
 
@@ -259,6 +298,8 @@ $$
 <u>Song and Ermon, *NeurIPS*, 2019</u>   
 <u>Song et al. *ICLR*, 2021</u>   
 
+> &#x2705; 时间离散的 diffusion model(DDPM) 和时间连续的 diffusion model(SDE),其目标函数是一致的，且两个版本可以互相转化。    
+
 P35    
 ## Different Parameterizations
 
@@ -267,6 +308,9 @@ parametrizations and loss
 weightings possible!  
 
 Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022    
+
+> &#x2705; 调参对生成质量影响很大。    
+> &#x2705; Best Paper.     
 
 
 P36   
@@ -301,6 +345,10 @@ P37
 <u>Grathwohl, *ICLR*, 2019</u>   
 <u>Song et al., *ICLR*, 2021</u>    
 
+> &#x2705; ODE 推断，可以使用成熟的 ODE solve 进行 sample 加速。    
+> &#x2753; 第三条没听懂，把 model 当成基于数据的 ODE 来用？    
+
+
 P38   
 ## Outline
 
@@ -330,6 +378,10 @@ Advanced ODE/SDE Solvers
 Distillation Techniques    
 Low-dim. Diffusion Processes     
 Advanced Diffusion Processes    
+
+P42   
+
+> &#x2705; ODE 实现 std normal 分布与真实数据分布之间的映射。    
 
 
 P43   
@@ -393,12 +445,21 @@ P49
 
 <u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>     
 
+> &#x2705; 假设有一个 solver，可以根据 \\(\mathbf{x} _ t\\) 预测\\( \mathbf{x} _ {t-2}\\)．    
+> &#x2705; 调用两次 solver，可以从 \\(\mathbf{x} _ t\\) 得到\\( \mathbf{x} _ {t-2}\\)，学习这个过程，可以直接得到 2 step 的 solver.    
+> &#x2705; 前一个 solver 称为 teacher，后一个称为 student.   
+> &#x2705; student 成为新的 teacher，训练新的 student.   
+
+
 P50   
 ## Progressive Distillation in Latent Space
 
 ![](../assets/D1-50.png) 
 
 <u>Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (Award Candidate)</u>    
+
+> &#x2705; 把比技术应用于 latent space，仅用 2 步 denoise 即可生成高质量结果。    
+
 
 P51    
 ## Consistency Distillation
@@ -417,12 +478,21 @@ $$
 
 <u>Song et al., Consistency Models, ICML 2023</u>   
 
+> &#x2705; \\(f _ \theta \\)，从任意一个 \\(t\\)预测 \\(\mathbf{x}_ 0 \\)，都应得到同一个结果。前提是所有 \\(\mathbf{x} _ t\\) 都来自于同一个 \\(\mathbf{x} _ 0\\)的加噪。    
+> &#x2753; \\(f _ {\mathrm{EMA} }\\) 是什么？Exponential Model Average.    
+> &#x2705; 目标函数第 1 项为 teacher，\\(t\\) 为数值较小的 step 第
+2 项为 student，\\({t}' \\) 为数值较大的 step.   
+> &#x2705; \\(t\\) 越小，\\(f _ \theta \\) 预测结果越准确，\\(t\\) 从小往大训。    
+
+
 P52   
 ## SDE Distillation
 
 ![](../assets/D1-52.png) 
 
 Can we train a neural network to directly predict **distribution of** \\(\mathbf{x} _ {{t}'} \\) given \\(\mathbf{x} _ t \\) ?    
+
+> &#x2705; \\(\mathbf{x} _ t\\)与 \\( \mathbf{x} _ {{t}' }\\) 没有必然的联系，得到的是 \\( \mathbf{x} _ {{t}' }\\) 的分布。    
 
 P53   
 ## Advanced Approximation of Reverse Process    
@@ -437,6 +507,10 @@ Energy-based models by Gao et al.
 
 <u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u>    
 <u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
+
+
+> &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q（\mathbf{x} _ {t}'｜\mathbf{x} _ t）\\).    
+
 
 P54   
 ## Training-based Sampling Techniques
@@ -494,6 +568,9 @@ P59
 
 <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
 
+> &#x2705; 这篇文章对 1. VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    
+
+
 P60   
 ## Latent Diffusion Models    
 ##### Two-stage Training   
@@ -506,6 +583,11 @@ The seminal work from Rombach et al. CVPR 2022:
 The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
 
 <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
+
+> &#x2705; 文章特点：1、VAE 和 diffusion 分开训练    
+2、但用的数据集质量比较高   
+3、Advanced Auto Encoders     
+4、Adveseral Training
 
 P61    
 ## Additional Reading    
@@ -607,6 +689,8 @@ The conditional score is simply a U-Net with \\(\mathbf{x}_t\\) and \\(\mathbf{y
 
 ![](../assets/D1-70.png) 
 
+> &#x2705; 需要 \\((x，y)\\) 的 pair data.            
+
 P71   
 ## Conditioning and Guidance Techniques
 
@@ -643,6 +727,10 @@ P74
 ![](../assets/D1-74-2.png) 
 
 <u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
+
+> &#x2705; Corditional 版本用前面的 Explicit 方法。两个 model 结合使用可以得到一个分类络器，这个分类器被称为 Implicit 分类器。   
+> &#x2753; 然后又用这个分类器再学一个 Conditional 生成？    
+
 
 P75   
 ## Classifier-free guidance
