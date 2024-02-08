@@ -118,7 +118,7 @@ Formal definition of forward and reverse processes in T steps:
 ![](../assets/D1-18.png) 
 
 
-> &#x2705; 虽然 \\(P（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(eta (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\(\mathcal{N} (\mathbf{0,1} )\\).   
+> &#x2705; 虽然 \\(P（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(p (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\(\mathcal{N} (\mathbf{0,1} )\\).   
 
 
 P19   
