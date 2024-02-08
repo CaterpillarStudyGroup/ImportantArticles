@@ -239,8 +239,8 @@ P29
 <u>Song et al., ICLR, 2021</u>   
 <u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
 
-> &#x2705; \\(q _ t（\cdot ）\\) 描述 \\(t\\) 时刻的分布。    
-> &#x2705; \\(q _ t（\mathbf{x} _ t）\\) 为 \\(\mathbf{x} _ t\\) 在 \\(q _ t\\) 分布中的概率。    
+> &#x2705; \\(q _ t(\cdot )\\) 描述 \\(t\\) 时刻的分布。    
+> &#x2705; \\(q _ t(\mathbf{x} _ t)\\) 为 \\(\mathbf{x} _ t\\) 在 \\(q _ t\\) 分布中的概率。    
 
 
 P31   
