@@ -729,7 +729,7 @@ P74
 
 <u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
 
-> &#x2705; Corditional 版本用前面的 Explicit 方法。两个 model 结合使用可以得到一个分类络器，这个分类器被称为 Implicit 分类器。   
+> &#x2705; Corditional 版本用前面的 Explicit 方法。两个 model 结合使用可以得到一个分类器，这个分类器被称为 Implicit 分类器。   
 > &#x2753; 然后又用这个分类器再学一个 Conditional 生成？    
 
 
