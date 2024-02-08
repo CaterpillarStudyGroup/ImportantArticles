@@ -62,7 +62,7 @@ The formal definition of the forward process in T steps:
 
 ![](../assets/D1-14.png) 
 
-> &#x2705; 要让原始分布逼近 \\(\mathcal{N} (\mathbf{0,1} )\\)分布，通过逐步的 scale daun 让均值趋近于 0。通过引入噪声使方差趋近于 1。   
+> &#x2705; 要让原始分布逼近 \\(\mathcal{N} (0,1 )\\)分布，通过逐步的 scale daun 让均值趋近于 0。通过引入噪声使方差趋近于 1。   
 > &#x2753; 怎么保证方差为1呢？答：根据P15公式。，只要 \\(\bar{\partial }t\\) 趋于0即可。   
 > &#x2753; 求联合分布有什么用?    
 
