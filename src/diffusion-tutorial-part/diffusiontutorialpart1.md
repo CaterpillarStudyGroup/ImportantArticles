@@ -459,7 +459,7 @@ P50
 
 <u>Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (Award Candidate)</u>    
 
-> &#x2705; 把比技术应用于 latent space，仅用 2 步 denoise 即可生成高质量结果。    
+> &#x2705; 把此技术应用于 latent space，仅用 2 步 denoise 即可生成高质量结果。    
 
 
 P51    
