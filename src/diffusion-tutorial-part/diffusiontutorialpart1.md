@@ -63,7 +63,7 @@ The formal definition of the forward process in T steps:
 ![](../assets/D1-14.png) 
 
 > &#x2705; 要让原始分布逼近 \\(\mathcal{N} (0,1 )\\)分布，通过逐步的 scale daun 让均值趋近于 0。通过引入噪声使方差趋近于 1。   
-> &#x2753; 怎么保证方差为 1 呢？答：根据P15公式。，只要 \\(\bar{\partial } _ t\\) 趋于 0 即可。   
+> &#x2753; 怎么保证方差为 1 呢？答：根据P15公式。只要 \\(\bar{\partial } _ t\\) 趋于 0 即可。   
 > &#x2753; 求联合分布有什么用?    
 
 
@@ -89,7 +89,7 @@ The diffusion kernel is Gaussian convolution.
 We can sample \\(\mathbf{x}_t \sim q(\mathbf{x}_t)\\) by first sampling and then sampling \\(\mathbf{x}_t \sim q(\mathbf{x}_t|\mathbf{x}_0)\\) (i.e., ancestral sampling).   
 
 > &#x2705; convolution 是一种信号平滑方法。    
-> &#x2705; \\(q(\mathbf{x} _ t|\mathbf{x} _ 0)\\) 是标准高斯分布，因此\\(q（\mathbf{x} _ t）\\) 是以高斯分布为真实数据的加权平均。     
+> &#x2705; \\(q(\mathbf{x} _ t|\mathbf{x} _ 0)\\) 是标准高斯分布，因此 \\(q（\mathbf{x} _ t）\\) 是以高斯分布为真实数据的加权平均。     
 > &#x2705; 实际上，没有任意一个时间步的 \\(q（\mathbf{x}）\\) 的真实分布，只有这些分布的 sample.    
 
 
@@ -118,7 +118,7 @@ Formal definition of forward and reverse processes in T steps:
 ![](../assets/D1-18.png) 
 
 
-> &#x2705; 虽然 \\(P（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(p (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\(\mathcal{N} (0,1 )\\).   
+> &#x2705; 虽然 \\(p（\mathbf{x} _ T）\\) 的真实分布未知，只有 \\(p (\mathbf{x} _ T)\\) 的 sample，但这里假设它是 \\( \mathcal{N} (0,1 )\\).   
 
 
 P19   
