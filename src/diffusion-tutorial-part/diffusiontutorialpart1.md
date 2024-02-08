@@ -217,9 +217,9 @@ P27
 
 ![](../assets/D1-27.png) 
 
-> &#x2705; drift term 使 \\(\mathbf{x} _ t\\) 趋向于 Origin.    
-> &#x2705; Origin 我理解为 \\(\vec{o} \\) 向量的意思。    
-> &#x2705; \(\mathbf{x} _ t\\) 最终趋向于 std normal.    
+> &#x2705; drift term 使 \\( \mathbf{x} _ t\\) 趋向于 Origin.    
+> &#x2705; Origin 我理解为 \\( \vec{o} \\) 向量的意思。    
+> &#x2705; \\( \mathbf{x} _ t\\) 最终趋向于 std normal.    
 
 
 P28   
