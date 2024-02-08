@@ -479,7 +479,7 @@ $$
 
 <u>Song et al., Consistency Models, ICML 2023</u>   
 
-> &#x2705; \\(f _ \theta \\)，从任意一个 \\(t\\)预测 \\(\mathbf{x}_ 0 \\)，都应得到同一个结果。前提是所有 \\(\mathbf{x} _ t\\) 都来自于同一个 \\(\mathbf{x} _ 0\\)的加噪。    
+> &#x2705; 一个网络 \\(f _ \theta \\)，从任意一个 \\(t\\)预测 \\(\mathbf{x}_ 0 \\)，都应得到同一个结果。前提是所有 \\(\mathbf{x} _ t\\) 都来自于同一个 \\(\mathbf{x} _ 0\\)的加噪。    
 > &#x2753; \\(f _ {\mathrm{EMA} }\\) 是什么？Exponential Model Average.    
 > &#x2705; 目标函数第 1 项为 teacher，\\(t\\) 为数值较小的 step 第
 2 项为 student，\\({t}' \\) 为数值较大的 step.   
