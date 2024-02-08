@@ -281,7 +281,7 @@ P33
 <u>Song et al. ICLR, 2021</u>   
 
 > &#x2705; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
-> &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\)。对应的 score 的均值。    
+> &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\) 对应的 score 的均值。    
 
 P34   
 ## Denoising Score Matching    
