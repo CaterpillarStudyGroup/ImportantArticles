@@ -274,7 +274,7 @@ P33
 
 ![](../assets/D1-33-2.png) 
   
-**After expectations**, \\(s_0(\mathbf{x} _t,t)\approx \mathbf{x} _t\log q_t(\mathbf{x} _t)\\)**!**    
+**After expectations**, \\(s _ \theta (\mathbf{x} _ t,t)\approx \nabla _ {\mathbf{x} _ t}\log q _ t(\mathbf{x} _ t)\\)**!**    
 
 <u>Vincent, in Neural Computation, 2011</u>      
 <u>Song and Ermon, NeurIPS, 2019</u>   
