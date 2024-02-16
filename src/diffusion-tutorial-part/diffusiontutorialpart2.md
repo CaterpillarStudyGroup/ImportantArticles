@@ -444,7 +444,7 @@ Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization"
 
 > &#x2753;  Perffusion？这个词从哪来的？    
 > &#x2705; 方法：dynamic random update.     
-> &#x2705; Perffusion 可以解决 Image Personalization 的 overfitting 问题 (1) Introducing new xxxx that lost the new concepts cross-attention keys to disordinate category.    
+> &#x2705; Perffusion 可以解决 Image Personalization 的 overfitting 问题 (1) Introducing new \\(\times \times \times \times \\) that lost the new concepts cross-attention keys to disordinate category.    
 > &#x2705; (2) 引入 a gate random approach 可用于控制 the learned concept —— 推断时。    
 > &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。    
 
