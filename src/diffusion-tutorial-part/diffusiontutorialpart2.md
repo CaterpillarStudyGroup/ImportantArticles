@@ -114,7 +114,7 @@ P18
 
 Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021    
 
-> &#x2705; DDIM 方法中，从 noise 到图像的映射关系是确定的。同样也可以让图像与 noise 的关系是确定的。这个过程称为 DOIM Inversion.    
+> &#x2705; DDIM 方法中，从 noise 到图像的映射关系是确定的。同样也可以让图像与 noise 的关系是确定的。这个过程称为 DDIM Inversion.    
 > &#x2705; DDIM Inversion 是图像编辑的常用方法。     
 
 P19   
