@@ -1,43 +1,5 @@
-
-P1  
-
-## Denoising Diffusion Models: A Generative Learning Big Bang　　　
-
-Jiaming Song　　　Chenlin Meng 　　　Arash Vahdat　　　
-
-P4  
-
-## The Landscape of Deep Generative Learning
-
-Restricted Boltzmann Machines   
-Bayesian Networks   
-Variational Autoencoders    
-Normalizing Flows   
-Energy-based Models   
-Autoregressive Models   
-Denoising Diffusion Models    
-
-
-Generative Adversarial Networks    
-
-P6    
-## We May Not Know Cosmology, But We Know CVPR 
- 
-![](../assets/D1-6.png) 
-
-\\(^\ast \\)Disclaimer: We rely on paper titles for counting the number of papers in each topic. Our statistics are likely to be biased.    
-
-
-P7   
-## Today’s Program   
-
-![](../assets/D1-7.png) 
-
-<https://cvpr2023-tutorial-diffusion-models.github.io/>  
-
-
 P12  
-## Part (1): Denoising Diffusion Probabilistic Models   
+# Denoising Diffusion Probabilistic Models   
 
 P13   
 
@@ -153,12 +115,8 @@ Time features are fed to the residual blocks using either simple spatial additio
 > &#x2705; \\(\sigma \\) 是怎么定义的？    
 
 P22  
-## Outline
 
-Part (1): Denoising Diffusion Probabilistic Models   
-**Part (2): Score-based Generative Modeling with Differential Equations**   
-Part (3): Accelerated Sampling   
-Part (4): Conditional Generation and Guidance   
+# Score-based Generative Modeling with Differential Equations
 
 P23   
 ## Crash Course in Differential Equations
@@ -351,9 +309,7 @@ P37
 
 
 P38   
-## Outline
-
-Part (3): Accelerated Sampling    
+# Accelerated Sampling    
 
 P39   
 ## What makes a good generative model?    
@@ -650,9 +606,7 @@ P65
    - Rissanen et al, <u>“Generative Modelling With Inverse Heat Dissipation”, </u>ICLR 2023    
 
 P66   
-## Outline
-
-Part (4): Conditional Generation and Guidance    
+# Conditional Generation and Guidance    
 
 P67   
 ## Impressive Conditional Diffusion Models    
