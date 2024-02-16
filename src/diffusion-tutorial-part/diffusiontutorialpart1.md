@@ -74,7 +74,7 @@ P15
 
 ![](../assets/D1-15-1.png) 
 
-> &#x2705; 把 \\(\mathbf{x}_0\\) 加噪为 init-noise，再从 init-noise 恢复出 \\(X_0\\)，这个操作是不可行的。     
+> &#x2705; 把 \\(\mathbf{x}_0\\) 加噪为 init-noise，再从 init-noise 恢复出 \\(\mathbf{x}_0\\)，这个操作是不可行的。     
 > &#x2705; 因为，根据公式 \\(\mathbf{x} _t=\sqrt{\bar{a} _t} \quad \mathbf{x} _0+\sqrt{(1-\bar{a} _t) } \quad \varepsilon  \\), 且 \\(\bar{a} _T\longrightarrow 0\\)，那么经过 \\(T\\) 步加噪后，\\(\mathbf{x} _t\approx \varepsilon \\). 而是 \\(\varepsilon \\) 是一个与 \\(\mathbf{x} _ 0\\) 没有任务关系的噪声，所以不可能从中恢复出 \\(\mathbf{x} _ 0\\).     
 
 P16   
