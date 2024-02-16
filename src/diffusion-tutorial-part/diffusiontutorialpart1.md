@@ -325,7 +325,7 @@ Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Mo
 
 > &#x2705; 调参对生成质量影响很大。    
 > &#x2705; Best Paper.     
-> &#x2705; 可以用 SDE 训练，用 ODE 推断，每个噪声对应特定的输出。  
+
 
 
 P36   
@@ -344,6 +344,8 @@ d\mathbf{x} _ t=-\frac{1}{2} \beta (t)[\mathbf{x} _ t+s_ \theta (\mathbf{x} _ t,
 $$
  
 <u>Song et al., ICLR, 2021</u>    
+
+> &#x2705; 可以用 SDE 训练，用 ODE 推断，每个噪声对应特定的输出。  
 
 
 P37   
