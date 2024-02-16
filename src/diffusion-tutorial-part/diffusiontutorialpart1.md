@@ -291,7 +291,7 @@ P33
 <u>Song and Ermon, NeurIPS, 2019</u>   
 <u>Song et al. ICLR, 2021</u>   
 
-> &#x2705; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
+> &#x2753; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
 > &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\) 对应的 score 的均值。    
 > &#x2753; 为什么 \\(\mathbf{s} _\theta (\mathbf{x} _t,t)\\) 不需要考虑 \\(\mathbf{x}_0\\)？    
 
