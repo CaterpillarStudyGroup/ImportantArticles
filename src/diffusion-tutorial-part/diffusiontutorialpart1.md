@@ -74,6 +74,8 @@ P15
 
 ![](../assets/D1-15-1.png) 
 
+> &#x2705; 把 \\(X_0\\) 加噪为 init-noise，再从 init-noise 恢复出 \\(X_0\\)，这个操作是不可行的。     
+> &#x2705; 因为，根据公式 \\(\mathbf{x} _t=\sqrt{\bar{a} _t} \quad \mathbf{x} _0+\sqrt{(1-\bar{a} _t) } \quad \varepsilon  \\), 且 \\(\bar{a} _T\longrightarrow 0\\)，那么经过 \\(T\\) 步加噪后，\\(\mathbf{x} _t\approx \varepsilon \\). 而是 \\(\varepsilon \\) 是一个与 \\(\mathbf{x} _ 0\\) 没有任务关系的噪声，所以不可能从中恢复出 \\(\mathbf{x} _ 0\\).     
 
 P16   
 ## What happens to a distribution in the forward diffusion?
@@ -108,6 +110,7 @@ Can we approximate \\(q(\mathbf{x}_{t-1}|\mathbf{x}_t)\\)? Yes, we can use a **N
 
 
 > &#x2705; 这里的 Nomal distribution 是高斯分布的意思吧？不一定是 std 高斯。    
+> &#x2753; 为什么认为 \\(q(\mathbf{x} _ {t-1}|\mathbf{x} _ t)\\) 是 Normal 分布？应该是特定均值和方差的高斯分布。    
 
 
 P18    
@@ -195,11 +198,16 @@ $$
 
 > &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
 > &#x2705; \\(\sigma \\) 描述 noise 的 scale。\\(\omega _ t\\) 描述噪声。    
+> &#x2705; 图中描述了一个 function，这个函数没有闭式解，而是 \\(\mathbf{x}\\) 随着时间的变化。    
+> &#x2705; SDE 在每个时间步注入高斯白噪声。    
 
 P25   
 ## Crash Course in Differential Equations
 
 ![](../assets/D1-25.png) 
+
+
+> &#x2705; 多次求解 \\(\mathbf{x}(t)\\) 的结果。   
 
 
 P26   
@@ -241,6 +249,7 @@ P29
 
 > &#x2705; \\(q _ t(\cdot )\\) 描述 \\(t\\) 时刻的分布。    
 > &#x2705; \\(q _ t(\mathbf{x} _ t)\\) 为 \\(\mathbf{x} _ t\\) 在 \\(q _ t\\) 分布中的概率。    
+> &#x2705; Generative 的关键是拟合 score funchon．    
 
 
 P31   
@@ -262,6 +271,8 @@ P32
 <u>Song and Ermon, “Generative Modeling by Estimating Gradients of the Data Distribution”, NeurIPS, 2019</u>    
 
 > &#x2705; 直接用一个网络拟合 score function．    
+> &#x2705; 存在的问题：只能 sample from \\(q_t\\)，但没有 \\(q_t\\) 的close form.    
+
 
 P33   
 ## Denoising Score Matching
@@ -282,6 +293,8 @@ P33
 
 > &#x2705; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
 > &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\) 对应的 score 的均值。    
+> &#x2753; 为什么 \\(\mathbf{s} _\theta (\mathbf{x} _t,t)\\) 不需要考虑 \\(\mathbf{x}_0\\)？    
+
 
 P34   
 ## Denoising Score Matching    
@@ -312,6 +325,7 @@ Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Mo
 
 > &#x2705; 调参对生成质量影响很大。    
 > &#x2705; Best Paper.     
+> &#x2705; 可以用 SDE 训练，用 ODE 推断，每个噪声对应特定的输出。  
 
 
 P36   
@@ -394,6 +408,9 @@ dx=\epsilon _\theta (x,t)dt
 $$
 
 ![](../assets/D1-43.png) 
+
+
+> &#x2705; Euler 方法：每个时间步简化为线性过程当 step 较大时，会与 GT 有较大的偏离。     
 
 
 P44    
@@ -707,6 +724,12 @@ P72
 <u>Dhariwal and Nichol, “Diffusion models beat GANs on image synthesis”, NeurIPS 2021.</u>    
 
 
+> &#x2705; \\(p(y)\\) 与 \\(\mathbf{x} _ t\\) 无关，因此可以去掉。     
+> &#x2705; 在 diffusion 的基础上再训练一个分类网络。   
+> &#x2705; \\(\omega \\) 决定分类器的影响力。   
+> &#x2705; 比方法只适用于少量的离散的 \\(y\\)。    
+
+
 P73    
 ## Conditioning and Guidance Techniques
 
@@ -731,6 +754,7 @@ P74
 
 > &#x2705; Corditional 版本用前面的 Explicit 方法。两个 model 结合使用可以得到一个分类器，这个分类器被称为 Implicit 分类器。   
 > &#x2753; 然后又用这个分类器再学一个 Conditional 生成？    
+> &#x2705; 训一个模型同时支持 Conditional 和 Unconditional 两个任务。    
 
 
 P75   
