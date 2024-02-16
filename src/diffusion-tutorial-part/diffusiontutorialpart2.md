@@ -157,7 +157,7 @@ Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask 
 > &#x2705; (1) 原始图像加噪。      
 > &#x2705; (2) 基于两个文本做去噪，生成 MASK.     
 > &#x2705; Step 2: DDIM Inversion      
-> &#x2753; Step l：如何训练？有 pair data 吗？    
+> &#x2753; Step 1：如何训练？有 pair data 吗？    
 
 
 P23   
