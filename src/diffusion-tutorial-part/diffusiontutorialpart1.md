@@ -271,7 +271,7 @@ P32
 <u>Song and Ermon, “Generative Modeling by Estimating Gradients of the Data Distribution”, NeurIPS, 2019</u>    
 
 > &#x2705; 直接用一个网络拟合 score function．    
-> &#x2705; 存在的问题：只能 sample from \\(q_t\\)，但没有 \\(q_t\\) 的close form.    
+> &#x2705; 存在的问题：只能 sample from \\(q_t\\)，但没有 \\(q_t\\) 的 close form.    
 
 
 P33   
