@@ -412,22 +412,11 @@ Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) give
 
 P49    
 
-Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ImportantArticles/diffusion-tutorial-part/diffusiontutorialpart1.html)
-
-> &#x2705; 假设有一个 solver，可以根据 \\(\mathbf{x} _ t\\) 预测\\( \mathbf{x} _ {t-1}\\)．    
-> &#x2705; 调用两次 solver，可以从 \\(\mathbf{x} _ t\\) 得到\\( \mathbf{x} _ {t-2}\\)，学习这个过程，可以直接得到 2 step 的 solver.    
-> &#x2705; 前一个 solver 称为 teacher，后一个称为 student.   
-> &#x2705; student 成为新的 teacher，训练新的 student.   
+Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)
 
 
-P50   
-## Progressive Distillation in Latent Space
+Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Candidate**). [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)
 
-![](../assets/D1-50.png) 
-
-<u>Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (Award Candidate)</u>    
-
-> &#x2705; 把此技术应用于 latent space，仅用 2 步 denoise 即可生成高质量结果。    
 
 
 P51    
