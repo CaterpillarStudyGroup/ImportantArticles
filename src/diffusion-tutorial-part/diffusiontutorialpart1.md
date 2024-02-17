@@ -411,15 +411,8 @@ P48
 Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t\\)?    
 
 P49    
-## Progressive Distillation   
 
- - Distill a deterministic ODE sampler to the same model architecture.     
- - At each stage, a “student” model is learned to distill two adjacent sampling steps of the “teacher” model to one sampling step.    
- - At next stage, the “student” model from previous stage will serve as the new “teacher” model.      
-
-![](../assets/D1-49.png) 
-
-<u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>     
+Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ImportantArticles/diffusion-tutorial-part/diffusiontutorialpart1.html)
 
 > &#x2705; 假设有一个 solver，可以根据 \\(\mathbf{x} _ t\\) 预测\\( \mathbf{x} _ {t-1}\\)．    
 > &#x2705; 调用两次 solver，可以从 \\(\mathbf{x} _ t\\) 得到\\( \mathbf{x} _ {t-2}\\)，学习这个过程，可以直接得到 2 step 的 solver.    
