@@ -16,7 +16,7 @@ P24
 
 \\(\frac{d\mathbf{x} }{dt} =\mathbf{f} (\mathbf{x},t) \quad  \mathrm{or}  \quad d\mathbf{x} =\mathbf{f} (\mathbf{x} ,t)dt \\)
 
-![](../assets/D1-24-3.png)   
+![](../../assets/D1-24-3.png)   
 
 Analytical Solution:   
 
@@ -32,7 +32,7 @@ $$
 
 **Stochastic Differential Equation (SDE):**   
 
-![](../assets/D1-24-4.png) 
+![](../../assets/D1-24-4.png) 
 
 
 > &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
@@ -43,7 +43,7 @@ $$
 P25   
 ## Crash Course in Differential Equations
 
-![](../assets/D1-25.png) 
+![](../../assets/D1-25.png) 
 
 
 > &#x2705; 多次求解 \\(\mathbf{x}(t)\\) 的结果。   
@@ -52,7 +52,7 @@ P25
 P26   
 ## Forward Diffusion Process as Stochastic Differential Equation
 
-![](../assets/D1-26.png) 
+![](../../assets/D1-26.png) 
 
 <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u>    
 
@@ -62,7 +62,7 @@ P26
 P27    
 ## Forward Diffusion Process as Stochastic Differential Equation
 
-![](../assets/D1-27.png) 
+![](../../assets/D1-27.png) 
 
 > &#x2705; drift term 使 \\( \mathbf{x} _ t\\) 趋向于 Origin.    
 > &#x2705; Origin 我理解为 \\( \vec{o} \\) 向量的意思。    
@@ -79,7 +79,7 @@ But what about the reverse direction, necessary for generation?
 P29  
 ## The Generative Reverse Stochastic Differential Equation
 
-![](../assets/D1-29.png) 
+![](../../assets/D1-29.png) 
 
 \\(\Rightarrow \\) **Simulate reverse diffusion process: Data generation from random noise!**    
 
@@ -101,7 +101,7 @@ P32
 
  - Naïve idea, learn model for the score function by direct regression?    
 
-![](../assets/D1-32.png) 
+![](../../assets/D1-32.png) 
 
 **But** \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\) **(score of the** ***marginal diffused density*** \\(q_t(\mathbf{x} _t)\\)**) is not tractable!**   
 
@@ -116,13 +116,13 @@ P32
 P33   
 ## Denoising Score Matching
 
-![](../assets/D1-33-1.png) 
+![](../../assets/D1-33-1.png) 
 
  - Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
 
  - **Denoising Score Matching**:     
 
-![](../assets/D1-33-2.png) 
+![](../../assets/D1-33-2.png) 
   
 **After expectations**, \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\approx \nabla _ {\mathbf{x} _ t}\log q _ t(\mathbf{x} _ t)\\)**!**    
 
@@ -138,7 +138,7 @@ P33
 P34   
 ## Denoising Score Matching    
 
-![](../assets/D1-34-1.png) 
+![](../../assets/D1-34-1.png) 
 
 $$
 \min_ {\mathbf{\theta}  } \mathbb{E} _ {t\sim u(0,T)}\mathbb{E} _ {\mathbf{x} _ 0\sim q_ 0(\mathbf{x} _ 0)}\mathbb{E} _{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _ \theta (\mathbf{x} _ t,t)||^2_2 
@@ -191,7 +191,7 @@ P37
 ## Probability Flow ODE  
 ##### Diffusion Models as Neural ODEs  
 
-![](../assets/D1-37.png)   
+![](../../assets/D1-37.png)   
 
  - Enables use of **advanced ODE solvers**   
  - **Deterministic encoding and generation** (semantic image interpolation, etc.)     
