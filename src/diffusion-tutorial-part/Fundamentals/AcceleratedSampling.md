@@ -6,7 +6,7 @@ P39
 ## What makes a good generative model?    
 ##### The generative learning trilemma
 
-![](../assets/D1-39.png) 
+![](../../assets/D1-39.png) 
 
 <u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>    
 
@@ -40,7 +40,7 @@ $$
 dx=\epsilon _\theta (x,t)dt
 $$
 
-![](../assets/D1-43.png) 
+![](../../assets/D1-43.png) 
 
 
 > &#x2705; Euler 方法：每个时间步简化为线性过程。当 step 较大时，会与 GT 有较大的偏离。     
@@ -48,12 +48,12 @@ $$
 
 P44    
 
-![](../assets/D1-44.png) 
+![](../../assets/D1-44.png) 
 
 Song et al., <u>"Denoising Diffusion Implicit Models (DDIM)",</u> ICLR 2021    
 
 P45   
-![](../assets/D1-45.png) 
+![](../../assets/D1-45.png) 
 
 P46   
 ## A Rich Body of Work on ODE/SDE Solvers for Diffusion Models
@@ -81,7 +81,7 @@ P46
 P48    
 ## ODE Distillation
 
-![](../assets/D1-48.png) 
+![](../../assets/D1-48.png) 
 
 Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t\\)?    
 
@@ -97,7 +97,7 @@ Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Ca
 P51    
 ## Consistency Distillation
 
-![](../assets/D1-51.png) 
+![](../../assets/D1-51.png) 
 
 Points on the same trajectory should generated the same \\(\mathbf{x} _ 0\\)    
 Assume \\(f _ \theta (\mathbf{x} _ t,t)\\) is the current estimation of \\(\mathbf{x} _ 0\\)    
@@ -121,7 +121,7 @@ $$
 P52   
 ## SDE Distillation
 
-![](../assets/D1-52.png) 
+![](../../assets/D1-52.png) 
 
 Can we train a neural network to directly predict **distribution of** \\(\mathbf{x} _ {{t}'} \\) given \\(\mathbf{x} _ t \\) ?    
 
@@ -131,7 +131,7 @@ P53
 ## Advanced Approximation of Reverse Process    
 ##### Normal assumption in denoising distribution holds only for small step    
 
-![](../assets/D1-53.png) 
+![](../../assets/D1-53.png) 
 
 **Requires more complicated functional approximators!**   
 GANs used by Xiao et al.    
@@ -163,7 +163,7 @@ P56
 ## Cascaded Generation    
 ##### Pipeline    
 
-![](../assets/D1-56.png) 
+![](../../assets/D1-56.png) 
 
 Cascaded Diffusion Models outperform Big-GAN in FID and IS and VQ-VAE2 in Classification Accuracy Score.    
 
@@ -176,7 +176,7 @@ P57
 ## Latent Diffusion Models   
 ##### Variational autoencoder + score-based prior   
 
-![](../assets/D1-57.png) 
+![](../../assets/D1-57.png) 
 
 ##### Main Idea   
 
@@ -197,7 +197,7 @@ P59
 ## Latent Diffusion Models   
 ##### End-to-End Training objective    
 
-![](../assets/D1-59.png) 
+![](../../assets/D1-59.png) 
 
 <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
 
@@ -235,7 +235,7 @@ P63
 ## ODE interpretation    
 ##### Deterministic generative process   
 
-![](../assets/D1-63.png) 
+![](../../assets/D1-63.png) 
 
  - DDIM sampler can be considered as an integration rule of the following ODE:    
 
@@ -258,7 +258,7 @@ P64
 
 ##### Introduce a velocity variable and run diffusion in extended space
 
-![](../assets/D1-64.png) 
+![](../../assets/D1-64.png) 
 
 <u>Dockhorn et al., “Score-Based Generative Modeling with Critically-Damped Langevin Diffusion”, ICLR 2022.</u>     
 
