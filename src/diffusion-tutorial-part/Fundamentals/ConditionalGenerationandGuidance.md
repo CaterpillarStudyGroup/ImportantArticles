@@ -5,7 +5,7 @@ P67
 ## Impressive Conditional Diffusion Models    
 ##### Text-to-image generation   
 
-![](../assets/D1-67.png) 
+![](../../assets/D1-67.png) 
 
 <u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>    
 <u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>    
@@ -35,7 +35,7 @@ $$
 
 The conditional score is simply a U-Net with \\(\mathbf{x}_t\\) and \\(\mathbf{y}\\) together in the input.    
 
-![](../assets/D1-70.png) 
+![](../../assets/D1-70.png) 
 
 > &#x2705; 需要 \\((x，y)\\) 的 pair data.            
 
@@ -47,7 +47,7 @@ Classifier Guidance
 P72   
 ## Classifier Guidance: Bayes’ Rule in Action
 
-![](../assets/D1-72.png) 
+![](../../assets/D1-72.png) 
 
 <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, *ICLR*, 2021</u>    
 <u>Nie et al., “Controllable and Compositional Generation with Latent-Space Energy-Based Models”, NeurIPS 2021</u>    
@@ -72,13 +72,13 @@ P74
  - Recall that classifier guidance requires training a classifier.   
  - Using Bayes’ rule again:   
 
-![](../assets/D1-74-1.png) 
+![](../../assets/D1-74-1.png) 
 
  - Instead of training an additional classifier, get an “implicit classifier” by jointly training a conditional and  unconditional diffusion model. In practice, the conditional and unconditional models are trained together by randomly dropping the condition of the diffusion model at certain chance.     
 
  - The modified score with this implicit classifier included is:   
 
-![](../assets/D1-74-2.png) 
+![](../../assets/D1-74-2.png) 
 
 <u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
 
@@ -92,7 +92,7 @@ P75
 
 ##### Trade-off for sample quality and sample diversity
 
-![](../assets/D1-75.png) 
+![](../../assets/D1-75.png) 
 
 Large guidance weight \\((\omega  )\\) usually leads to better individual sample quality but less sample diversity.    
 
