@@ -95,27 +95,8 @@ Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Ca
 
 
 P51    
-## Consistency Distillation
 
-![](../../assets/D1-51.png) 
-
-Points on the same trajectory should generated the same \\(\mathbf{x} _ 0\\)    
-Assume \\(f _ \theta (\mathbf{x} _ t,t)\\) is the current estimation of \\(\mathbf{x} _ 0\\)    
-Basic idea:     
- - Find  \\(\mathbf{x} _ t\\) and \\(\mathbf{x} _ {t}'\\) on a trajectory by solving generative ODE in \\([t,{t}' ]\\)    
- - Minimize:    
-
-$$
-\min_ {\theta } ||f_ {EMA}(\mathbf{x} _ t,t)-f _ \theta ({\mathbf{x} }' _ t,{t}' )||^2_2
-$$
-
-<u>Song et al., Consistency Models, ICML 2023</u>   
-
-> &#x2705; 一个网络 \\(f _ \theta \\)，从任意一个 \\(t\\) 预测 \\(\mathbf{x}_ 0 \\)，都应得到同一个结果。前提是所有 \\(\mathbf{x} _ t\\) 都来自于同一个 \\(\mathbf{x} _ 0\\) 的加噪。    
-> &#x2753; \\(f _ {\mathrm{EMA} }\\) 是什么？Exponential Model Average.    
-> &#x2705; 目标函数第 1 项为 teacher，\\(t\\) 为数值较小的 step 第
-2 项为 student，\\({t}' \\) 为数值较大的 step.   
-> &#x2705; \\(t\\) 越小，\\(f _ \theta \\) 预测结果越准确，\\(t\\) 从小往大训。    
+Song et al., **Consistency Models**, ICML 2023 [link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
 
 
 P52   
