@@ -87,16 +87,16 @@ Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) give
 
 P49    
 
-Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)
+> &#x1F50E; Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)
 
 
-Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Candidate**). [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)
+> &#x1F50E; Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Candidate**). [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)
 
 
 
 P51    
 
-Song et al., **Consistency Models**, ICML 2023 [link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
+> &#x1F50E; Song et al., **Consistency Models**, ICML 2023 [link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
 
 
 P52   

@@ -19,7 +19,7 @@
   - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
   - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 - [CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang](diffusion-tutorial-part/Introduction.md)
-  - [Fundamentals](./diffusion-tutorial-part/Introduction.md)
+  - [Fundamentals]()
     - [Denoising Diffusion Probabilistic Models](diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)
     - [Score-based Generative Modeling with Differential Equations](diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.md)
     - [Accelerated Sampling](diffusion-tutorial-part/Fundamentals/AcceleratedSampling.md)

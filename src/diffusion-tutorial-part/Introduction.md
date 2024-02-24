@@ -2,9 +2,11 @@
 
 Jiaming Song　　　Chenlin Meng 　　　Arash Vahdat　　　
 
+CVPR  #18546
+
 P4  
 
-## The Landscape of Deep Generative Learning
+## Generative Adversarial Networks    
 
 Restricted Boltzmann Machines   
 Bayesian Networks   
@@ -14,8 +16,6 @@ Energy-based Models
 Autoregressive Models   
 Denoising Diffusion Models    
 
-
-Generative Adversarial Networks    
 
 P6    
 ## We May Not Know Cosmology, But We Know CVPR 
