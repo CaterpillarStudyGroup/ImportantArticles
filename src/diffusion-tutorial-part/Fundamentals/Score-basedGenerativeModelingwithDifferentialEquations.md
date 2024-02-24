@@ -20,6 +20,8 @@ $$
 \mathbf{x} (t)=\mathbf{x} (0)+\int_{0}^{t} \mathbf{f} (\mathbf{x} ,\tau )d\tau 
 $$
 
+> &#x2705; 这个积分经常无法计算，因此把离散化。  
+
 Iterative Numerical Solution:    
 
 $$
@@ -34,114 +36,89 @@ $$
 > &#x2705; \\(\sigma \\) 描述 noise 的 scale。\\(\omega _ t\\) 描述噪声。    
 > &#x2705; SDE 在每个时间步注入高斯白噪声。因此多次求解 \\(\mathbf{x}(t)\\) 的结果是不一样的。    
 
-P25   
-
-![](../../assets/D1-25.png) 
-
 
 P26   
-## Forward Diffusion Process as Stochastic Differential Equation
+### DDPM VS Stochastic Differential Equation
 
 ![](../../assets/D1-26.png) 
 
 
 > &#x2705; DDPM 是在时间上做了离散化的 SDE．    
-> &#x1F50E; <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u>    
+> &#x1F50E; <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u> [link](https://caterpillarstudygroup.github.io/ReadPapers/8.html)    
 
 
 P27    
-## Forward Diffusion Process as Stochastic Differential Equation
+### Forward Diffusion Process as Stochastic Differential Equation
 
 ![](../../assets/D1-27.png) 
 
 > &#x2705; drift term 使 \\( \mathbf{x} _ t\\) 趋向于 Origin.    
-> &#x2705; Origin 我理解为 \\( \vec{o} \\) 向量的意思。    
+> &#x2705; Origin 我理解为 \\( \vec{0} \\) 向量的意思。    
 > &#x2705; \\( \mathbf{x} _ t\\) 最终趋向于 std normal.    
 
-
-P28   
-## The Generative Reverse Stochastic Differential Equation
-
-But what about the reverse direction, necessary for generation?    
-
-<u>Song et al., ICLR, 2021</u>
-
 P29  
-## The Generative Reverse Stochastic Differential Equation
+### The Generative Reverse Stochastic Differential Equation
 
 ![](../../assets/D1-29.png) 
 
-\\(\Rightarrow \\) **Simulate reverse diffusion process: Data generation from random noise!**    
-
-<u>Song et al., ICLR, 2021</u>   
-<u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
+> &#x1F50E; <u>Anderson, in Stochastic Processes and their Applications, 1982</u>    
 
 > &#x2705; \\(q _ t(\cdot )\\) 描述 \\(t\\) 时刻的分布。    
 > &#x2705; \\(q _ t(\mathbf{x} _ t)\\) 为 \\(\mathbf{x} _ t\\) 在 \\(q _ t\\) 分布中的概率。    
 > &#x2705; Generative 的关键是拟合 score funchon．    
-
-
-P31   
-## The Generative Reverse Stochastic Differential Equation
 
 **But how to get the score function** \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\)?   
 
 P32   
 ## Score Matching
 
- - Naïve idea, learn model for the score function by direct regression?    
+Naïve idea, learn model for the score function by direct regression?    
 
 ![](../../assets/D1-32.png) 
 
+> &#x2705; 直接用一个网络拟合 score function．    
+
 **But** \\(\nabla \mathbf{x} _t \log q_t(\mathbf{x} _t)\\) **(score of the** ***marginal diffused density*** \\(q_t(\mathbf{x} _t)\\)**) is not tractable!**   
+
+> &#x2705; 存在的问题：只能 sample from \\(q_t\\)，但没有 \\(q_t\\) 的 close form.    
 
 <u>Vincent, “A Connection Between Score Matching and Denoising Autoencoders”, Neural Computation, 2011</u>    
 
 <u>Song and Ermon, “Generative Modeling by Estimating Gradients of the Data Distribution”, NeurIPS, 2019</u>    
 
-> &#x2705; 直接用一个网络拟合 score function．    
-> &#x2705; 存在的问题：只能 sample from \\(q_t\\)，但没有 \\(q_t\\) 的 close form.    
 
 
 P33   
-## Denoising Score Matching
+### Denoising Score Matching
+
+Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
+
+> &#x1F50E; <u>Vincent, in Neural Computation, 2011</u>      
 
 ![](../../assets/D1-33-1.png) 
 
- - Instead, diffuse individual data points \\(\mathbf{x}_0\\). Diffused \\(q_t(\mathbf{x}_t|\mathbf{x}_0)\\) ***is*** tractable!     
+> &#x2753; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？ 答：见上一页DDPM的推导。   
 
- - **Denoising Score Matching**:     
+因此**Denoising Score Matching**的目标函数变为:     
 
 ![](../../assets/D1-33-2.png) 
   
 **After expectations**, \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\approx \nabla _ {\mathbf{x} _ t}\log q _ t(\mathbf{x} _ t)\\)**!**    
 
-<u>Vincent, in Neural Computation, 2011</u>      
-<u>Song and Ermon, NeurIPS, 2019</u>   
-<u>Song et al. ICLR, 2021</u>   
+> &#x1F50E; <u>Song and Ermon, NeurIPS, 2019</u>   
 
-> &#x2753; \\(\gamma _ t\\) 和 \\(\sigma\\) 怎么定义？    
 > &#x2705; 最后 \\(\mathbf{s} _ \theta (\mathbf{x} _ t,t)\\) 学到的是所有 \\(\mathbf{x} _ 0\\) 对应的 score 的均值。    
-> &#x2753; 为什么 \\(\mathbf{s} _\theta (\mathbf{x} _t,t)\\) 不需要考虑 \\(\mathbf{x}_0\\)？    
 
-
-P34   
-## Denoising Score Matching    
-
-![](../../assets/D1-34-1.png) 
+> &#x2705; 结果发现时间离散的 diffusion model(DDPM) 和时间连续的 diffusion model(SDE),其目标函数是一致的，且两个版本可以互相转化。    
 
 $$
 \min_ {\mathbf{\theta}  } \mathbb{E} _ {t\sim u(0,T)}\mathbb{E} _ {\mathbf{x} _ 0\sim q_ 0(\mathbf{x} _ 0)}\mathbb{E} _{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _ \theta (\mathbf{x} _ t,t)||^2_2 
 $$
 
-**Same objectives in Part (1)!**    
-
-
 <u>Vincent, in *Neural Computation*, 2011</u>     
 <u>Song and Ermon, *NeurIPS*, 2019</u>   
 <u>Song et al. *ICLR*, 2021</u>   
 
-> &#x2705; 时间离散的 diffusion model(DDPM) 和时间连续的 diffusion model(SDE),其目标函数是一致的，且两个版本可以互相转化。    
 
 P35    
 ## Different Parameterizations
