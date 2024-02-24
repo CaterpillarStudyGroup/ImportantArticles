@@ -2,19 +2,15 @@ P22
 
 # Score-based Generative Modeling with Differential Equations
 
-P23   
-## Crash Course in Differential Equations
-
-Ordinary Differential Equation (ODE):    
-\\(\frac{d\mathbf{x} }{dt} =\mathbf{f} (\mathbf{x},t) \quad  \mathrm{or}  \quad d\mathbf{x} =\mathbf{f} (\mathbf{x} ,t)dt \\)
-
-
 P24   
-## Crash Course in Differential Equations
+## Ordinary Differential Equation (ODE):    
 
-**Ordinary Differential Equation (ODE):**    
+$$
+\frac{d\mathbf{x} }{dt} =\mathbf{f} (\mathbf{x},t) \quad  \mathrm{or}  \quad d\mathbf{x} =\mathbf{f} (\mathbf{x} ,t)dt
+$$
 
-\\(\frac{d\mathbf{x} }{dt} =\mathbf{f} (\mathbf{x},t) \quad  \mathrm{or}  \quad d\mathbf{x} =\mathbf{f} (\mathbf{x} ,t)dt \\)
+> &#x2705; 图中描述了一个 function，这个函数没有闭式解，而是 \\(\mathbf{x}\\) 随着时间的变化。    
+> &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
 
 ![](../../assets/D1-24-3.png)   
 
@@ -30,23 +26,17 @@ $$
 \mathbf{x} (t+\Delta t)\approx \mathbf{x} (t)+\mathbf{f} (\mathbf{x} (t),t)\Delta t
 $$
 
-**Stochastic Differential Equation (SDE):**   
+## Stochastic Differential Equation (SDE):   
 
 ![](../../assets/D1-24-4.png) 
 
 
-> &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
 > &#x2705; \\(\sigma \\) 描述 noise 的 scale。\\(\omega _ t\\) 描述噪声。    
-> &#x2705; 图中描述了一个 function，这个函数没有闭式解，而是 \\(\mathbf{x}\\) 随着时间的变化。    
-> &#x2705; SDE 在每个时间步注入高斯白噪声。    
+> &#x2705; SDE 在每个时间步注入高斯白噪声。因此多次求解 \\(\mathbf{x}(t)\\) 的结果是不一样的。    
 
 P25   
-## Crash Course in Differential Equations
 
 ![](../../assets/D1-25.png) 
-
-
-> &#x2705; 多次求解 \\(\mathbf{x}(t)\\) 的结果。   
 
 
 P26   
@@ -54,10 +44,10 @@ P26
 
 ![](../../assets/D1-26.png) 
 
-<u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u>    
-
 
 > &#x2705; DDPM 是在时间上做了离散化的 SDE．    
+> &#x1F50E; <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u>    
+
 
 P27    
 ## Forward Diffusion Process as Stochastic Differential Equation
