@@ -115,11 +115,6 @@ $$
 \min_ {\mathbf{\theta}  } \mathbb{E} _ {t\sim u(0,T)}\mathbb{E} _ {\mathbf{x} _ 0\sim q_ 0(\mathbf{x} _ 0)}\mathbb{E} _{\epsilon \sim \mathcal{N}(\mathbf{0,I} ) }\frac{1}{\sigma ^2_t} ||\epsilon -\epsilon _ \theta (\mathbf{x} _ t,t)||^2_2 
 $$
 
-<u>Vincent, in *Neural Computation*, 2011</u>     
-<u>Song and Ermon, *NeurIPS*, 2019</u>   
-<u>Song et al. *ICLR*, 2021</u>   
-
-
 P35    
 ## Different Parameterizations
 
