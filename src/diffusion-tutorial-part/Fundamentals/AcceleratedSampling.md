@@ -3,21 +3,13 @@ P38
 # Accelerated Sampling    
 
 P39   
-## What makes a good generative model?    
-##### The generative learning trilemma
+## The generative learning trilemma
 
 ![](../../assets/D1-39.png) 
 
-<u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>    
-
-P40   
-## What makes a good generative model?    
-##### The generative learning trilemma   
+> &#x1F50E; <u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>  [link](https://caterpillarstudygroup.github.io/ReadPapers/10.html) 
 
 Tackle the trilemma by accelerating diffusion models    
-
-<u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>   
-
 
 P41  
 ## Acceleration Techniques   

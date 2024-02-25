@@ -2,6 +2,8 @@ P22
 
 # Score-based Generative Modeling with Differential Equations
 
+经典论文：[Score-Based Generative Modeling through Stochastic Differential Equations](https://caterpillarstudygroup.github.io/ReadPapers/8.html)
+
 P24   
 ## Ordinary Differential Equation (ODE):    
 
