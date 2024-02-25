@@ -9,17 +9,18 @@ P39
 
 > &#x1F50E; <u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>  [link](https://caterpillarstudygroup.github.io/ReadPapers/10.html) 
 
-Tackle the trilemma by accelerating diffusion models    
+其中Diffusion based生成模型的主要问题是生成速度慢，因此需要在保持高采样质量和多样性的前提下，针对采样速度慢的问题进行加速。   
 
 P41  
 ## Acceleration Techniques   
 
-Advanced ODE/SDE Solvers    
-Distillation Techniques    
-Low-dim. Diffusion Processes     
-Advanced Diffusion Processes    
+- Advanced ODE/SDE Solvers    
+- Distillation Techniques    
+- Low-dim. Diffusion Processes     
+- Advanced Diffusion Processes    
 
 P42   
+# Advanced ODE/SDE Solvers
 
 > &#x2705; ODE 实现 std normal 分布与真实数据分布之间的映射。    
 
