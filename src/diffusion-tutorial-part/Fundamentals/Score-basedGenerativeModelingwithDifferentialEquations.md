@@ -118,16 +118,9 @@ $$
 P35    
 ## Different Parameterizations
 
-More sophisticated model    
-parametrizations and loss    
-weightings possible!  
+> &#x1F50E; Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022 [link](https://caterpillarstudygroup.github.io/ReadPapers/9.html)   
 
-Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022    
-
-> &#x2705; 调参对生成质量影响很大。    
-> &#x2705; Best Paper.     
-
-
+> &#x2705; 调参对生成质量影响很大。       
 
 P36   
 ## Synthesis with SDE vs. ODE
