@@ -137,27 +137,26 @@ $$
 d\mathbf{x} _ t=-\frac{1}{2} \beta (t)[\mathbf{x} _ t+s_ \theta (\mathbf{x} _ t,t)]dt
 $$
  
-<u>Song et al., ICLR, 2021</u>    
-
-> &#x2705; 可以用 SDE 训练，用 ODE 推断，每个噪声对应特定的输出。  
+> &#x2705; [Song et al., ICLR, 2021](https://caterpillarstudygroup.github.io/ReadPapers/9.html)表明，可以把 SDE 模型转换为ODE模型。只需要对sample过程进行公式修改即可。每个噪声对应特定的输出。  
 
 
 P37   
-## Probability Flow ODE  
-##### Diffusion Models as Neural ODEs  
+
+#### Diffusion Models as Neural ODEs  
 
 ![](../../assets/D1-37.png)   
 
- - Enables use of **advanced ODE solvers**   
+使用ODE的sample公式有以下好处：
+ - ODE 推断，可以使用成熟的 ODE solver 进行 sample 加速。     
  - **Deterministic encoding and generation** (semantic image interpolation, etc.)     
  - **Log-likelihood computation** (instantaneous change of variables):       
+
+> &#x2753; 第三条没听懂，把 model 当成基于数据的 ODE 来用？    
 
 <u>Chen et al., *NeurIPS*, 2018</u>    
 <u>Grathwohl, *ICLR*, 2019</u>   
 <u>Song et al., *ICLR*, 2021</u>    
 
-> &#x2705; ODE 推断，可以使用成熟的 ODE solve 进行 sample 加速。    
-> &#x2753; 第三条没听懂，把 model 当成基于数据的 ODE 来用？    
 
 
 ---------------------------------------
