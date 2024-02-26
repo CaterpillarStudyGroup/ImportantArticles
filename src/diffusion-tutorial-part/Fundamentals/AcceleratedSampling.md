@@ -27,7 +27,8 @@ P42
 
 P43   
 ## Generative ODEs    
-##### Solve ODEs with as little function evaluations as possible    
+
+Solve ODEs with as little function evaluations as possible    
 
 $$
 dx=\epsilon _\theta (x,t)dt
@@ -36,15 +37,18 @@ $$
 ![](../../assets/D1-43.png) 
 
 
-> &#x2705; Euler 方法：每个时间步简化为线性过程。当 step 较大时，会与 GT 有较大的偏离。     
+### 一阶方法
+
+Euler 方法：每个时间步简化为线性过程。当 step 较大时，会与 GT 有较大的偏离。     
 
 
 P44    
 
 ![](../../assets/D1-44.png) 
 
-Song et al., <u>"Denoising Diffusion Implicit Models (DDIM)",</u> ICLR 2021    
+> &#x1F50E; Song et al., <u>"Denoising Diffusion Implicit Models (DDIM)",</u> ICLR 2021 [link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)  
 
+### 高阶方法
 P45   
 ![](../../assets/D1-45.png) 
 
@@ -71,6 +75,10 @@ P46
     - <u>Shih et al., "Parallel Sampling of Diffusion Models", arxiv 2023</u>     
     - <u>Chen et al., "A Geometric Perspective on Diffusion Models", arXiv 2023</u>     
 
+> &#x2705; 这些solvers可以以plug-in的方式使用，且通常能比DDPM更快收敛。  
+
+# Distillation Techniques
+
 P48    
 ## ODE Distillation
 
@@ -78,7 +86,11 @@ P48
 
 Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) given \\(\mathbf{x} _t\\)?    
 
+> &#x2705; \\(\mathbf{x} _{{t}'} \\)与\\(\mathbf{x} _t\\)的关系是确定的。  
+
 P49    
+
+### 相关方法
 
 > &#x1F50E; Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)
 
