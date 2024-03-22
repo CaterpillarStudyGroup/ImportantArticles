@@ -97,10 +97,6 @@ P49
 
 > &#x1F50E; Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Candidate**). [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)
 
-
-
-P51    
-
 > &#x1F50E; Song et al., **Consistency Models**, ICML 2023 [link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
 
 
@@ -114,25 +110,28 @@ Can we train a neural network to directly predict **distribution of** \\(\mathbf
 > &#x2705; \\(\mathbf{x} _ t\\) 与 \\( \mathbf{x} _ {{t}' }\\) 没有必然的联系，得到的是 \\( \mathbf{x} _ {{t}' }\\) 的分布。    
 
 P53   
-## Advanced Approximation of Reverse Process    
-##### Normal assumption in denoising distribution holds only for small step    
+### Advanced Approximation of Reverse Process    
+
+Normal assumption in denoising distribution holds only for small step    
+
+> &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q(\mathbf{x} _ {{t}'}｜\mathbf{x} _ t)\\).    
 
 ![](../../assets/D1-53.png) 
 
 **Requires more complicated functional approximators!**   
+
 GANs used by Xiao et al.    
+
+> &#x1F50E; <u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u> 
+
 Energy-based models by Gao et al.    
 
+> &#x1F50E; <u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
 
-<u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u>    
-<u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
-
-
-> &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q(\mathbf{x} _ {{t}'}｜\mathbf{x} _ t)\\).    
-
+> &#x2705; 通过GAN或Energy based得到复杂分布。
 
 P54   
-## Training-based Sampling Techniques
+### Training-based Sampling Techniques
 
  - Knowledge distillation:   
     - Luhman and Luhman, <u>Knowledge Distillation in Iterative Generative Models for Improved Sampling Speed,</u> arXiv 2021    
@@ -146,67 +145,64 @@ P54
     - Dockhorn et al., <u>"GENIE: Higher-Order Denoising Diffusion Solvers",</u> NeurIPS 2022    
 
 P56   
+# Low-dim Diffusion Process
+
 ## Cascaded Generation    
-##### Pipeline    
 
 ![](../../assets/D1-56.png) 
 
 Cascaded Diffusion Models outperform Big-GAN in FID and IS and VQ-VAE2 in Classification Accuracy Score.    
 
-<u>Ho et al., “Cascaded Diffusion Models for High Fidelity Image Generation”, 2021.</u>     
-<u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>     
-<u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>     
+> &#x1F50E; <u>Ho et al., “Cascaded Diffusion Models for High Fidelity Image Generation”, 2021.</u> [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)     
+> &#x1F50E; <u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>     
+> &#x1F50E; <u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>     
 
 
 P57   
 ## Latent Diffusion Models   
-##### Variational autoencoder + score-based prior   
+
+**Variational autoencoder + score-based prior**   
 
 ![](../../assets/D1-57.png) 
 
-##### Main Idea   
+### Main Idea：   
 
 Encoder maps the input data to an embedding space    
 Denoising diffusion models are applied in the latent space    
 
-<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>    
-
 P58   
-##### Advantages:    
+### Advantages:    
+
 (1) The distribution of latent embeddings close to Normal distribution \\(\to \\) ***Simpler denoising, Faster synthesis***!    
 (2) Latent space \\(\to \\) ***More expressivity and flexibility in design!***    
 (3) Tailored Autoencoders \\(\to \\) ***More expressivity, Application to any data type (graphs, text, 3D data, etc.)!***     
 
-<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>    
-
-P59
-## Latent Diffusion Models   
-##### End-to-End Training objective    
+### End-to-End Training objective    
 
 ![](../../assets/D1-59.png) 
 
-<u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
+> &#x1F50E; <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
 
 > &#x2705; 这篇文章对 VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    
 
 
 P60   
-## Latent Diffusion Models    
-##### Two-stage Training   
+### Two-stage Training   
 
 The seminal work from Rombach et al. CVPR 2022:    
  - Two stage training: train autoencoder first, then train the diffusion prior   
+
+ > &#x2705; VAE 和 diffusion 分开训练。每次需要训练的网络都不大。  
+
  - Focus on compression without of any loss in reconstruction quality   
+
+ > &#x2705; 使用Advanced Auto Encoders。由于使用的latent space比较小，diffusion model的大小也可以减小。       
+
  - Demonstrated the expressivity of latent diffusion models on many conditional problems    
 
 The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
 
-<u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>     
-
-> &#x2705; 文章特点：1. VAE 和 diffusion 分开训练    
-> &#x2705; 2. 使用的数据集质量比较高   
-> &#x2705; 3. Advanced Auto Encoders     
-> &#x2705; 4. Adveseral Training
+> &#x1F50E; <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>      
 
 P61    
 ## Additional Reading    
@@ -216,9 +212,11 @@ More on low-dimensional diffusion models:
  - Daras et al., <u>"Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems",</u> ICML 2022    
  - Zhang et al., <u>“Dimensionality-Varying Diffusion Process”, </u>arXiv 2022.    
 
+# Advanced Diffusion Models
 
 P63   
 ## ODE interpretation    
+
 ##### Deterministic generative process   
 
 ![](../../assets/D1-63.png) 
