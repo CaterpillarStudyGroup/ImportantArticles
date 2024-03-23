@@ -24,6 +24,7 @@
     - [Score-based Generative Modeling with Differential Equations](diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.md)
     - [Accelerated Sampling](diffusion-tutorial-part/Fundamentals/AcceleratedSampling.md)
     - [Conditional Generation and Guidance](diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.md)
+    - [Summary](./diffusion-tutorial-part/Fundamentals/Summary.md)
   - [Image Applications](diffusion-tutorial-part/diffusiontutorialpart2.md)
   - [Other domains](diffusion-tutorial-part/diffusiontutorialpart3.md)
 - [Mike Shou - Video Diffusion Models]()

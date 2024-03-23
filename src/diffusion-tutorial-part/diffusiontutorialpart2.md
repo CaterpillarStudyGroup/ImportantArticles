@@ -80,19 +80,18 @@ P9
 P10    
 ## RGB pixel guidance   
 
-### guided synthesis／editing Task   
+### SDEdit
+
+Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022 
+
+#### guided synthesis／editing Task   
 
 ![](../assets/D2-11.png) 
 
 > &#x2705; 过去的 guided synthesis／editing 任务是用 GAN based 方法实现的。    
 
 P12   
-#### SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations   
-
-Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022   
-
-##### Pipeline
-
+#### Pipeline
 
 ![](../assets/D2-12.png) 
 
@@ -103,21 +102,21 @@ Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Diff
 > 第二步：progressively remove the noise using a pretrained diffusion model.    
 > [?] 怎样保证Denoise的图像与原始图像有高度的一致性？
 
-##### 特点
+#### 特点
 
 > 只需要一个预训练模型，不需要额外的finetune。  
 
 P13   
-##### 其它应用场景
+#### 其它应用场景
 
-###### Fine-grained control using strokes
+##### Fine-grained control using strokes
 
 ![](../assets/D2-13.png) 
 
 > 可以在Image上加上草图，也可以直接使用草图生成图像  
 
 P16   
-###### Image compositing  
+##### Image compositing  
 
 ![](../assets/D2-16.png) 
 
@@ -125,7 +124,7 @@ P16
 > SDEdit的结果更合理且与原图更像。  
 
 P17   
-##### 效率提升
+#### 效率提升
 
 Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
 
@@ -136,7 +135,10 @@ Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
 Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models", </u>NeurIPS 2022    
 
 P18   
-## DDIM Inversion
+
+### Style Transfer with DDIM inversion
+
+#### Recap DDIM Inversion
 
 ![](../assets/D2-18.png) 
 
