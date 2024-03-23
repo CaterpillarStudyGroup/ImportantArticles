@@ -193,10 +193,7 @@ P23
 
 ![](../assets/D2-23.png) 
 
-Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023    
-
-## Text guidance   
-## Reference image guidance   
+Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023     
 
 P24   
 ## Imagic: Text-Based Real Image Editing with Diffusion Models   
