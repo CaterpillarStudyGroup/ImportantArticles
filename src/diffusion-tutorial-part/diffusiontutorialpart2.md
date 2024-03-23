@@ -148,13 +148,13 @@ Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021
 > &#x2705; DDIM Inversion 是图像编辑的常用方法。     
 
 P19   
-## Style transfer with DDIM inversion
+#### Pipeline
 
 ![](../assets/D2-19.png) 
 
 Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation", </u>ICLR 2023    
 
-> &#x2705; 假设已有一个 pretrained diffusion model．    
+> &#x2705; 假设已有一个 文生图的pretrained DDIM model．    
 > &#x2705; 任务：把老虎的图像变成猫的图像，且不改变 Sryle.     
 > &#x2705; (1) 老虎图像 ＋ DDIM Inversion ＋ “老虎”标签  → noise      
 > &#x2705; (2) noise ＋ DDIM ＋ “猫”标签 → 猫图像        
@@ -162,27 +162,31 @@ Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation", 
 
 
 P20   
-## Style transfer with DDIM inversion
+#### 效果
 
 ![](../assets/D2-20.png) 
 
 Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation",</u> ICLR 2023    
 
 P21    
-## DiffEdit: Diffusion-based semantic image editing with mask guidance    
-
-Instead of asking users to provide the mask, the model will generate the mask itself based on the caption and query.    
-
-![](../assets/D2-21.png) 
+### DiffEdit: Diffusion-based semantic image editing with mask guidance    
 
 Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023    
 
+#### 任务目标
+
+> SDEdit要求用户对想更新的区域打MASK。  
+
+Instead of asking users to provide the mask, the model will generate the mask itself based on the caption and query.    
+
+
+![](../assets/D2-21.png) 
+
+
 P22   
-## DiffEdit: Diffusion-based semantic image editing with mask guidance    
+#### Pipeline
 
-![](../assets/D2-22.png) 
-
-Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance",</u> ICLR 2023   
+![](../assets/D2-22.png)  
 
 > &#x2705; (1) 原始图像加噪。      
 > &#x2705; (2) 基于两个文本做去噪，生成 MASK.     
