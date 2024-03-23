@@ -4,6 +4,10 @@ Jiaming Song　　　Chenlin Meng 　　　Arash Vahdat　　　
 
 CVPR  #18546
 
+https://www.youtube.com/watch?v=1d4r19GEVos
+
+<https://cvpr2023-tutorial-diffusion-models.github.io/>  
+
 P4  
 
 ## Generative Adversarial Networks    
@@ -29,6 +33,3 @@ P7
 ## Today’s Program   
 
 ![](../assets/D1-7.png) 
-
-<https://cvpr2023-tutorial-diffusion-models.github.io/>  
-

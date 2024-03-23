@@ -1,6 +1,3 @@
-P1   
-## Applications of Denoising Diffusion Models on Images
-
 P2   
 ## Outline
 
@@ -8,49 +5,69 @@ P2
  - **Editing and customization with diffusion models**    
  - **Other applications of diffusion models**    
 
+# Diffusion model architectures
 P4   
 ## Architecture
 
-
 P5   
-## U-Net Architecture
+### U-Net Based Diffusion Architecture
+
+#### U-Net Architecture
 
 ![](../assets/D2-5-1.png) 
 
+> &#x2705; U-Net的是Large Scale Image Diffusion Model中最常用的backbone。  
+
+> &#x1F50E; Ronneberger et al., <u>“U-Net: Convolutional Networks for Biomedical Image Segmentation”, </u>MICCAI 2015    
+
+#### Pipeline 
+
 ![](../assets/D2-5-2.png) 
 
-Ronneberger et al., <u>“U-Net: Convolutional Networks for Biomedical Image Segmentation”, </u>MICCAI 2015      
-Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models",</u> CVPR 2022    
-
+> &#x2705; 包含Input、U-Net backbone、Condition。  
 > &#x2705; Condition 通常用 Concat 或 Cross attention 的方式与 Content 相结合。    
 
-P6   
-## U-Net Architecture
+> &#x1F50E; Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models",</u> CVPR 2022    
 
-**Imagen** aharia et al.   
-**Stable Diffusion** Rombach et al.    
-**eDiff-I** Balaji et al.    
- 
+U-Net Based Diffusion Architecture
+
+P6   
+#### Application
+
+**Imagen** Saharia et al.   
+
 Saharia et al. <u>“Photorealistic text-to-image diffusion models with deep language understanding”, </u>NeurIPS 2022    
+
+**Stable Diffusion** Rombach et al.    
+
 Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models", </u>CVPR 2022    
+
+**eDiff-I** Balaji et al.    
+
 Balaji et al.,” <u>ediffi: Text-to-image diffusion models with an ensemble of expert denoisers”, </u>arXiv 2022    
 
 P7    
-## Transformer Architecture
+### Transformer Architecture
+
+#### Vision Transformer(ViT)
 
 ![](../assets/D2-7-1.png) 
 
+Dosovitskiy et al., <u>“An image is worth 16x16 words: Transformers for image recognition at scale”, </u>ICLR 2021    
+
+#### Pipeline
+
 ![](../assets/D2-7-2.png) 
 
-Dosovitskiy et al., <u>“An image is worth 16x16 words: Transformers for image recognition at scale”, </u>ICLR 2021     
-Bao et al.,<u> "All are Worth Words: a ViT Backbone for Score-based Diffusion Models", </u>arXiv 2022    
-
-> &#x2705; 特点：1. 把 image patches 当作 token.    
+> &#x2705; 特点：  
+> &#x2705; 1. 把 image patches 当作 token.    
 > &#x2705; 2. 在 Shallow layer 与 deep layer 之间引入 long skip connection.    
+
+Bao et al.,<u> "All are Worth Words: a ViT Backbone for Score-based Diffusion Models", </u>arXiv 2022    
 
 
 P8   
-## Transformer Architecture
+#### Application
 
 Peebles and Xie, <u>"Scalable Diffusion Models with Transformers", </u>arXiv 2022    
 Bao et al., <u>"One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale", </u>arXiv 2023    
@@ -58,52 +75,63 @@ Hoogeboom et al., <u>"simple diffusion: End-to-end diffusion for high resolution
 
 
 P9    
-## Image editing and customization with diffusion models
+# Image editing and customization with diffusion models
 
 P10    
-## Image editing and customization with diffusion models
- - RGB pixel guidance   
- - Text guidance   
- - Reference image guidance   
+## RGB pixel guidance   
 
-P11   
-## How to perform guided synthesis/editing?   
+### guided synthesis／editing Task   
 
 ![](../assets/D2-11.png) 
 
-> &#x2705; 过去的 guided synthesis／editing 任务是用 CAN based 方法实现的。    
+> &#x2705; 过去的 guided synthesis／editing 任务是用 GAN based 方法实现的。    
 
 P12   
-## SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations   
+#### SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations   
 
-First perturb the input with **Gaussian noise** and then progressively remove the noise using a pretrained diffusion model.    
+Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022   
+
+##### Pipeline
+
 
 ![](../assets/D2-12.png) 
 
 **Gradually projects the input to the manifold of natural images.**
 
-Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022   
+> 准备工作：一个预训练好的Image Diffusion Model  
+> 第一步：perturb the input with **Gaussian noise**  
+> 第二步：progressively remove the noise using a pretrained diffusion model.    
+> [?] 怎样保证Denoise的图像与原始图像有高度的一致性？
 
-> &#x2705; 只是对 Guided Image 进行加噪和去噪。    
+##### 特点
+
+> 只需要一个预训练模型，不需要额外的finetune。  
 
 P13   
-## Fine-grained control using strokes
+##### 其它应用场景
+
+###### Fine-grained control using strokes
 
 ![](../assets/D2-13.png) 
 
-Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022    
+> 可以在Image上加上草图，也可以直接使用草图生成图像  
 
 P16   
-## Image compositing  
+###### Image compositing  
 
 ![](../assets/D2-16.png) 
 
-Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022    
+> 把上面图的指定pixel patches应用到下面图上。  
+> SDEdit的结果更合理且与原图更像。  
 
 P17   
-## Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
+##### 效率提升
+
+Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
 
 ![](../assets/D2-17.png) 
+
+原理：全图生成速度比较慢，因此针对被编辑区域进行部分生成。  
 
 Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models", </u>NeurIPS 2022    
 
@@ -166,6 +194,9 @@ P23
 ![](../assets/D2-23.png) 
 
 Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023    
+
+## Text guidance   
+## Reference image guidance   
 
 P24   
 ## Imagic: Text-Based Real Image Editing with Diffusion Models   
