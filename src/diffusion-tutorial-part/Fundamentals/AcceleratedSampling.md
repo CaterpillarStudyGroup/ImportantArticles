@@ -214,10 +214,12 @@ More on low-dimensional diffusion models:
 
 # Advanced Diffusion Models
 
+> &#x2705; 这一部分没有讲
+
 P63   
 ## ODE interpretation    
 
-##### Deterministic generative process   
+把ODE看作是Deterministic generative process   
 
 ![](../../assets/D1-63.png) 
 
@@ -233,9 +235,9 @@ towards the denoiser output.
  - This leads to largely linear solution trajectories with low curvature à Low curvature means less truncation 
 errors accumulated over the trajectories. 
 
-<u>Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.</u>   
-<u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.</u>   
-<u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>   
+> &#x1F50E; <u>Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.</u>   
+> &#x1F50E; <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.</u>   
+> &#x1F50E; <u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>   
 
 P64   
 ## “Momentum-based” diffusion      
@@ -250,20 +252,20 @@ P65
 ## Additional Reading
 
  - Schrödinger Bridge:    
-    - Bortoli et al., <u>"Diffusion Schrödinger Bridge",</u> NeurIPS 2021    
-    - Chen et al., <u>“Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory”, </u>ICLR 2022    
+> &#x1F50E; Bortoli et al., <u>"Diffusion Schrödinger Bridge",</u> NeurIPS 2021    
+> &#x1F50E; Chen et al., <u>“Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory”, </u>ICLR 2022    
  - Diffusion Processes on Manifolds:   
-    - Bortoli et al., <u>"Riemannian Score-Based Generative Modelling", </u>NeurIPS 2022    
+> &#x1F50E; Bortoli et al., <u>"Riemannian Score-Based Generative Modelling", </u>NeurIPS 2022    
  - Cold Diffusion:    
-    - Bansal et al., <u>"Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise", </u>arXiv 2022      
+> &#x1F50E; Bansal et al., <u>"Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise", </u>arXiv 2022      
  - Diffusion for Corrupted Data:    
-    - Daras et al., <u>"Soft Diffusion: Score Matching for General Corruptions", </u>TMLR 2023      
-   - Delbracio and Milanfar, <u>"Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration", </u>arXiv 2023    
-   - Luo et al., <u>"Image Restoration with Mean-Reverting Stochastic Differential Equations", </u>ICML 2023    
-   - Liu et al., <u>“I2SB: Image-to-Image Schrödinger Bridge”, </u>ICML 2023    
+> &#x1F50E; Daras et al., <u>"Soft Diffusion: Score Matching for General Corruptions", </u>TMLR 2023      
+> &#x1F50E; Delbracio and Milanfar, <u>"Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration", </u>arXiv 2023    
+> &#x1F50E; Luo et al., <u>"Image Restoration with Mean-Reverting Stochastic Differential Equations", </u>ICML 2023    
+> &#x1F50E; Liu et al., <u>“I2SB: Image-to-Image Schrödinger Bridge”, </u>ICML 2023    
  - Blurring Diffusion Process:    
-    - Hoogeboom and Salimans, <u>"Blurring Diffusion Models", </u>ICLR 2023   
-   - Rissanen et al, <u>“Generative Modelling With Inverse Heat Dissipation”, </u>ICLR 2023  
+> &#x1F50E; Hoogeboom and Salimans, <u>"Blurring Diffusion Models", </u>ICLR 2023   
+> &#x1F50E; Rissanen et al, <u>“Generative Modelling With Inverse Heat Dissipation”, </u>ICLR 2023  
 
 
 
