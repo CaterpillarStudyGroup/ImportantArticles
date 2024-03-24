@@ -315,8 +315,8 @@ P34
 
 Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
  
-> &#x2705; 使用 reference image 微调 model，
-> &#x2705; 目的：对输入图像做 encode，
+> &#x2705; 使用 reference image 微调 model，    
+> &#x2705; 目的：对输入图像做 encode，    
 > &#x2705; 方法：构造 pairdata，(包含特定 identifier 的文本，图像)    
 > &#x2705; 目的：多样性。   
 > &#x2705; 方法：用不含 identifer 的图像和文本调练，构造重建 loss 和对抗 loss.    
