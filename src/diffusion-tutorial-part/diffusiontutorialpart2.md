@@ -1,10 +1,3 @@
-P2   
-## Outline
-
- - **Diffusion model architectures**    
- - **Editing and customization with diffusion models**    
- - **Other applications of diffusion models**    
-
 # Diffusion model architectures
 P4   
 ## Architecture
@@ -78,20 +71,19 @@ P9
 # Image editing and customization with diffusion models
 
 P10    
-## RGB pixel guidance   
 
-### SDEdit
+## SDEdit
 
 Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022 
 
-#### guided synthesis／editing Task   
+### guided synthesis／editing Task   
 
 ![](../assets/D2-11.png) 
 
 > &#x2705; 过去的 guided synthesis／editing 任务是用 GAN based 方法实现的。    
 
 P12   
-#### Pipeline
+### Pipeline
 
 ![](../assets/D2-12.png) 
 
@@ -102,21 +94,21 @@ P12
 > 第二步：progressively remove the noise using a pretrained diffusion model.    
 > [?] 怎样保证Denoise的图像与原始图像有高度的一致性？
 
-#### 特点
+### 特点
 
 > 只需要一个预训练模型，不需要额外的finetune。  
 
 P13   
-#### 其它应用场景
+### 其它应用场景
 
-##### Fine-grained control using strokes
+#### Fine-grained control using strokes
 
 ![](../assets/D2-13.png) 
 
 > 可以在Image上加上草图，也可以直接使用草图生成图像  
 
 P16   
-##### Image compositing  
+#### Image compositing  
 
 ![](../assets/D2-16.png) 
 
@@ -124,7 +116,7 @@ P16
 > SDEdit的结果更合理且与原图更像。  
 
 P17   
-#### 效率提升
+### 效率提升
 
 Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
 
@@ -136,9 +128,9 @@ Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Dif
 
 P18   
 
-### Style Transfer with DDIM inversion
+## Style Transfer with DDIM inversion
 
-#### Recap DDIM Inversion
+### Recap DDIM Inversion
 
 ![](../assets/D2-18.png) 
 
@@ -148,7 +140,7 @@ Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021
 > &#x2705; DDIM Inversion 是图像编辑的常用方法。     
 
 P19   
-#### Pipeline
+### Pipeline
 
 ![](../assets/D2-19.png) 
 
@@ -162,7 +154,7 @@ Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation", 
 
 
 P20   
-#### 效果
+### 效果
 
 ![](../assets/D2-20.png) 
 
@@ -173,11 +165,11 @@ Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation",<
 
 
 P21    
-### DiffEdit: Diffusion-based semantic image editing with mask guidance    
+## DiffEdit: Diffusion-based semantic image editing with mask guidance    
 
 Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023    
 
-#### 任务目标
+### 任务目标
 
 > SDEdit要求用户对想更新的区域打MASK。  
 
@@ -191,26 +183,18 @@ Instead of asking users to provide the mask, the model will generate the mask it
 
 
 P22   
-#### Pipeline
+### Pipeline
 
 ![](../assets/D2-22.png)  
 
-> &#x2705; (1) 原始图像加噪。      
-> &#x2705; (2) 基于两个文本做去噪，生成 MASK.     
-> &#x2705; Step 2: DDIM Inversion      
-> &#x2753; Step 1：如何训练？有 pair data 吗？    
-> &#x2705; Step 2：DDIM Encoder 加噪    
-> &#x2705; DDIM Decoder condition MASK    
-
-
 P23   
-#### 效果
+### 效果
 ![](../assets/D2-23.png)      
 
 > 生成质量高且与原始相似度高。  
 
 P24   
-### Imagic: Text-Based Real Image Editing with Diffusion Models   
+## Imagic: Text-Based Real Image Editing with Diffusion Models   
 
 ![](../assets/D2-24.png) 
 
@@ -220,7 +204,7 @@ Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",<
 
 
 P25   
-#### Pipeline
+### Pipeline
 
 > 输入：Origin Image和target text promt
 
@@ -235,18 +219,16 @@ P25
 ![](../assets/D2-25-3.png)    
 
 > &#x2705; Step 3：用finetuned diffusion model生成target Image。其中condition为\\(e_{tgt}\\)和\\(e_{opt}\\)的插值。  
-> &#x2705; (1) eopt 来自 Step A   (2) Diffusion Process 来自 Step B．     
-> &#x2705; \\(\mathbf{e} _{\mathbf{tgt} }\\) 来自 step A 第1步   
 
 
 P26   
-#### 效果 Imagic
+### 效果
 
 ![](../assets/D2-26.png) 
 
 
 P27   
-### Prompt-to-Prompt Image Editing with Cross-Attention Control
+## Prompt-to-Prompt Image Editing with Cross-Attention Control
 
 ![](../assets/D2-27.png)
 
@@ -255,21 +237,19 @@ P27
 Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
 
 P28   
-## Prompt-to-Prompt Image Editing with Cross-Attention Control    
+### Pipeline
 
 ![](../assets/D2-28.png)
 
-Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023    
-
-> &#x2705; 控制 attention maps，在编辑图像过程中把原始图像的 attention map 注入到 diffusion 过程中。    
+> &#x2705; 控制生成过程中的 attention maps。其具体方法为，在每个step中，把原始图像的 attention map 注入到 diffusion 过程中。  
+> 图中上面步骤描述正常的文生图的cross attention设计。  
+> 图中下面步骤描述了如何控制cross attention过程中的attention map。三种控制方式分别对应三种图像编辑方法。      
 
 
 P29   
-## Prompt-to-Prompt Image Editing with Cross-Attention Control   
+### 效果
 
-![](../assets/D2-29.png)
-
-Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023     
+![](../assets/D2-29.png)    
 
 P30   
 ## InstructPix2Pix: Learning to Follow Image Editing Instructions  
@@ -278,238 +258,209 @@ P30
 
 Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
 
+> 控制特点：不需要完整的控制文本，只需要告诉模型要怎么修改图像。  
 > &#x2705; 优势：只修改推断过程，不需针对图像做 finetune.    
 
 P31   
-## InstructPix2Pix: Learning to Follow Image Editing Instructions   
 
+### Pipeline
 ![](../assets/D2-31-1.png)    
+
+> 生成Image Editing Dataset：  
+Step a：微调GPT-3，用于生成Instruction和Edited Caption。  
+Step b：使用预训练模型生成pair data。  
+
 ![](../assets/D2-31-2.png)    
 
-Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
-
-
-> &#x2705; 只是文本引导方式做了改变，哪里体现 pix 2 呢？     
+> &#x2705; [?]只是文本引导方式做了改变，哪里体现 pix 2 呢？     
 
 P32   
 ## Personalization with diffusion models   
 
 ![](../assets/D2-32.png) 
 
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
-
-> &#x2705; 基于目标的多张 reference，输入文本，生成包含目标的图像。   
-
-
-P33   
-## DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation    
+> &#x2705; 基于目标的多张 reference，输入文本，生成包含目标的图像。要求生成的结果与refernce一致，且具有高质量和多样性：     
 
 ![](../assets/D2-33.png) 
 
 Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
 
 P34   
-## The DreamBooth Method  
+### Pipeline  
 
-![](../assets/D2-34.png) 
-
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
+![](../assets/D2-34.png)     
  
-> &#x2705; 使用 reference image 微调 model，    
-> &#x2705; 目的：对输入图像做 encode，    
-> &#x2705; 方法：构造 pairdata，(包含特定 identifier 的文本，图像)    
-> &#x2705; 目的：多样性。   
-> &#x2705; 方法：用不含 identifer 的图像和文本调练，构造重建 loss 和对抗 loss.    
-
+> &#x2705; 使用 reference image 微调 model，具体方法为：    
+> &#x2705; 输入多张reference image，使用包含特定 identifier 的文本构造 pairdata。目的是对输入图像做 encode。    
+> &#x2705; 同时使用用不含 identifer 的图像和文本调练，构造重建 loss 和对抗 loss.目的是生成的多样性及防止过拟合。    
 
 P35   
-## DreamBooth Results
+### DreamBooth Results
 
-![](../assets/D2-35.png) 
+![](../assets/D2-35.png)  
 
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
+> Input Image的基本特征保持住了，但是细节还是有些丢失。比如书包右下角的三个贴图，在每个生成里面都不一样。  
 
 P36   
-## DreamBooth Applications    
+### DreamBooth Applications    
 
 ![](../assets/D2-36.png) 
 
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+> 用来生成动作照片还是可以的，因为人对动画的细节差异没有那么敏感。例如这只猫。额头上的花纹，在每张图像上都不一样。如果用来生成人，会发明显的差异。  
 
 P37    
 ## Textual Inversion: Optimizing Text Embedding   
 
 ![](../assets/D2-37.png) 
 
+> &#x2705; 输入3-5张reference iamge。可以把内容、风格、动作等编辑为 \\(S_ {\ast }\\)     
+> &#x2705; 用一个 word 来 Encode 源，因此称为 Textual Inversion.    
+
 Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
 
-> &#x2705; 可以把内容、风格、动作等编辑为 \\(S_ {\ast }\\)     
-> &#x2705; 用一个 word 来 Encode 源，称为 Textual Inversion.    
-
-
 P38   
-## Textual Inversion: Optimizing Text Embedding  
+### Pipeline
 
 ![](../assets/D2-38.png) 
 
-Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023   
-
 > &#x2705; 输入带 holder world 的 String，(1) 转为 token (2) token 转为“连续的表示”，即 embedding. (3) embedding 转为 conditional code，用于引导生成模型。    
-> &#x2705; 通过重建来优化 embedding.    
+> &#x2705; 通过生成的结果与GT比较，构造重建loss来优化 embedding.    
 
 
 P39   
-## Textual Inversion Results   
+### Textual Inversion Results   
 
 ![](../assets/D2-39.png) 
 
-Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
-
 P40    
-## Works well for artistic styles    
+Works well for artistic styles    
 
 ![](../assets/D2-40.png) 
-
-Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
 
 P41   
 ## Low-rank Adaptation (LoRA)   
 
  - Lora: Low-rank adaptation of large language models
 
+> &#x2705; 要解决的问题：finetune 所需的训练时间、参数存储，Computation 的成本很高。    
+
 ![](../assets/D2-41.png) 
+
+> &#x2705; 解决方法：仅仅拟合residual model 而不是 finetune entire model.  
+> 残差通常可以用low rank Matrix来拟合，因为称为low-rank adaptation。    
+
 
 Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]     
 Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>     
 
-> &#x2705; 要解决的问题：finetune 所需的训练时间、参数存储，Computation 的成本很高。    
-> &#x2705; 用 low rank 来优化 residual model 而不是 entire model.    
-> &#x2705; 极大提升 fineture 的速度。    
+### LoRA Results
 
-
-P42   
-## Low-rank Adaptation (LoRA)
-
-![](../assets/D2-42.png) 
-
-**Finetuned with only 9 images Visualized every 500 steps**    
-
-Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]    
-Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>    
+> &#x2705; LoRA对数据集要求少，收敛速度快。可以极大提升 finetune 效率，也更省空间。    
 
 P43
-## Fine-tuning all model weights
-
-**Storage requirement**. 4GB storage for each fine-tuned model.    
-**Compute requirement**. It requires more VRAM/training time.      
-**Compositionality**. Hard to combine multiple models.    
-
+## Multi-Concept Customization of Text-to-Image Diffusion
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
-> &#x2705; 用极少的图 finetune entire model too long 极容易发生过拟合。   
+### finetune的性能问题
 
+> 要解决的问题与上一篇相同，即finetune 所需的训练时间、参数存储，Computation 的成本很高。
+> 但解决方法有些区别。上一篇通过增加额外的残差模块，而这一篇通过只finetune原始模型的部分参数。  
 
 P45   
-## Analyze change in weights   
+#### Analyze change in weights   
+
+> &#x2705; 选择模型的部分参数进行 finetune．问题是怎么选择？    
+> 作者通过分析模型各参数的重要性，insights 应该 finetune 哪些参数。   
 
 ![](../assets/D2-45.png) 
 
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
-
-> &#x2705; insights 应该 finetune 哪些参数，分析模型各参数的重要性。   
 > &#x2705; Cross-Attn 层用于结合图像和文本的特征。     
 > &#x2705; Self-Attn 用于图像内部。    
 > &#x2705; Other 主要是卷积和 Normalization.    
 > &#x2705; 通过比较 pretrained 模型和 finetune 模型，change 主要发生成Cross-Attn 层，说明 Cross-Attn 层在 finetune 过程中更重要！    
-> &#x2753; 选择模型的部分参数进行 finetune．问题是怎么选择？    
-
 
 P46   
-## Only fine-tune cross-attention layers
+#### Only fine-tune cross-attention layers
 
-![](../assets/D2-46.png)   
-
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+![](../assets/D2-46.png)     
 
 > &#x2705; 由以上观察结果，finetune 时只更新 K 和 V 的参数。    
 
-P47   
-## How to prevent overfitting?    
+P47    
+### How to prevent overfitting?    
+
+> 用少量的数据finetune整个模型，容易造成过拟合。    
+> &#x2705; 解决方法：通过在训练过程中引入一个正则化项来防止过拟合   
 
 ![](../assets/D2-47.png)   
 
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
-
-
-> &#x2705; (1) 计算“标题相似度”。    
-> &#x2705; 通过引入一个正则化项来防止过拟合   
-> &#x2705; (1) 从 caption Image model 中生成正则化图像，即输入与训练数据相似的文本做为 caption 生成 Image.    
-
+> &#x2705; 从large scale image dataset中选择一些所标注文本与左图文本相似度比较高的图像。这些图像与文本的pair data用于计算正则化项。
 
 P48   
-## Personalized concepts   
+### Personalized concepts   
 
-![](../assets/D2-48.png)   
+#### 要解决的问题
+
+> &#x2705; 目的：finetune SD 得到这只狗的文生图模型。  
 
 How to describe personalized concepts?    
 
+![](../assets/D2-48.png)   
+
+> 但只有少量的关于这只狗的数据。
+
+#### 解决方法
+
+定义 V\\(^\ast \\) 为 modifier token in the text embedding space，例如：
+
+> 解决方法：定义 \\(V^ \ast \\) 为 modifier token，并把它作为一个新的 token.  
+
 V\\(^\ast \\) **dog**   
 
-Where V\\(^\ast \\) is a modifier token in the text embedding space    
-
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
-
-> &#x2705; 目的：finetune SD 得到这只狗的文生图模型。但只有少量的关于这只狗的数据定义 \\(V^ \ast \\) 为 modifier token，并把它作为一个新的 token.    
-
-
 P49   
-## Personalized concepts
+
+#### Pileline
 
 Also fine-tune the modifier token V\\(^\ast \\) that describes the personalized concept   
 
 ![](../assets/D2-49.png)   
 
-> &#x2705; 把 \\(V^ \ast \\) 代入 caption，并用这只狗的数据做 finetune。并同样只更新 K 和 V.    
+> &#x2705; 把 \\(V^ \ast \\) 代入 caption，并用这只狗的数据做 finetune。同样只更新 K 和 V.    
 
 
 P50   
-## Single concept results
+#### Single concept results
 
 ![](../assets/D2-50.png)   
 
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
-
 P51   
-## Multiple new concepts?    
+### Multiple new concepts?    
+
+#### 要解决的问题
 
 ![](../assets/D2-51.png)   
 
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+> 要生成同时包含moongate与这只狗的图像
 
 P52   
-## Joint training
+#### Joint training
 
-1. Combine the training dataset of multiple concepts    
+Combine the training dataset of multiple concepts    
 
 ![](../assets/D2-52.png)   
 
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023     
-
 > &#x2705; 同时使用两个小样本数据 finetune，且使用 modifier token 和正则化图像，可以得到二者结合的效果。    
 
-
 P53   
-## Two concept results
+#### Two concept results
 
 ![](../assets/D2-53.png)   
-
-Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
 > &#x2705; 也可以同时引入2个 modifier token．    
 
 P54   
-## Two concept results   
+### Two concept results   
 
 ![](../assets/D2-54.png) 
 
@@ -520,42 +471,60 @@ P55
 
 ![](../assets/D2-55.png)    
 
+> Image Personalization任务
+
 Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u> SIGGRAPH 2023    
 
-> &#x2753;  Perffusion？这个词从哪来的？    
-> &#x2705; 方法：dynamic random update.     
-> &#x2705; Perffusion 可以解决 Image Personalization 的 overfitting 问题 (1) Introducing new \\(\times \times \times \times \\) that lost the new concepts cross-attention keys to disordinate category.    
-> &#x2705; (2) 引入 a gate random approach 可用于控制 the learned concept —— 推断时。    
+#### 主要原理
+
+> &#x2705; 方法：dynamic rank one update.     
+> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  
+> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    
+> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    
 > &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。    
 
+#### Results
+
+> 可以很好地model the interaction of the two conception。  
 
 P56   
 ## T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models
 
 ![](../assets/D2-56-1.png)    
 
-***√ Plug-and-play. Not affect original network topology and generation ability***   
-***√ Simple and small. ~77M parameters and ~300M storage***    
-***√ Flexible. Various adapters for different control conditions***    
-***√ Composable.  Several adapters to achieve multi-condition control***    
-***√ Generalizable. Can be directly used on customed models***    
-
-![](../assets/D2-56-2.png)    
+> 通过引入一个额外的apapter来增加对已有文生图模型的控制方法。  
 
 Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023   
 
-> &#x2705; 引入一个简单的模型称为 Adapter，用于引导 Image Diffusion Model.    
-> &#x2705; Adapter 包含多次降采样，对应于 UNET 的不同 Level.    
-> &#x2705; 优点：简单、易训、易使用。    
-> &#x2705; Adapter 包含4个 feature extraction blocks 和3个 down sample blocks.   
+### Pipeline
 
+![](../assets/D2-56-2.png)    
+
+> &#x2705; Adapter 包含4个 feature extraction blocks 和3个 down sample blocks. 其中4个feature extraction block对应4个新增加的控制方法。3次降采样，对应于 UNET 的不同 Level.    
+
+### 优点
+
+> 这个方法具有以下优点：  
+
+- Plug-and-play. Not affect original network topology and generation ability      
+
+> 易使用
+
+- Simple and small. ~77M parameters and ~300M storage    
+
+> 简单、易训
+
+- Flexible. Various adapters for different control conditions    
+- Composable.  Several adapters to achieve multi-condition control    
+
+> 不同的adaper可以combine，成为新的guidance。  
+
+- Generalizable. Can be directly used on customed models    
 
 P57   
-## T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models    
+### Result    
 
 ![](../assets/D2-57.png)    
-
-Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023    
 
 > &#x2705; Adapter 可以使用于多种形式的 Control．     
 
@@ -563,28 +532,29 @@ Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Abil
 P58   
 ## Adding Conditional Control to Text-to-Image Diffusion Models (ControlNet)
 
-![](../assets/D2-58.png) 
-
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+### ControlNet
 
 > &#x2705; Control Net 是一种通过引入额外条件来控制 Diffusion Model 的网络架构。    
-> &#x2705; (a) 是预训练的 diffusion model.    
-> &#x2705; 把 (a) 的网络复制一份，finetune copy 的网络，结果叠加。C 是condition.    
+
+![](../assets/D2-58.png) 
+
+> &#x2705; (a) 是预训练的 diffusion model. C 是要添加的新的condition.   
+> &#x2705; 把 (a) 的网络复制一份，finetune copy 的网络，结果叠加。    
 > &#x2705; Zero Convolution：1-1 卷积层，初始的 \\(w\\) 和 \\(b\\) 都为 0．   
 
+Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
 
 P59   
 
+### Control Net 应用到 Stable Diffusion 的例子
+
+#### Pipeline
+
 ![](../assets/D2-59.png)   
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
-
-> &#x2705; Contrd Net 应用到 Stable Diffusion 的例子。   
-
 P60   
-## Adding Conditional Control to Text-to-Image Diffusion Models
 
-Train objective   
+#### Train objective   
 
 $$
 \mathcal{L} =\mathbb{E} _ {\mathbb{z}_0,t,\mathbf{c} _ t,\mathbf{c} _ f,\epsilon \sim \mathcal{N} (0,1)}[||\epsilon -\epsilon _\theta (\mathbf{z} _ t,t,\mathbf{c} _ t,\mathbf{c}_f)||^2_2] 
@@ -592,31 +562,20 @@ $$
 
 where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c} _ f\\) is the task-specific conditions    
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+> 需要（x, cf, ct）的pair data。  
 
 P61    
-## ControlNet
+### ControlNet Result
 
 ![](../assets/D2-61.png) 
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
-
-
 P62   
-## ControlNet  
 
 ![](../assets/D2-62.png) 
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
-
-
 P63   
-## ControlNet
 
 ![](../assets/D2-63.png) 
-
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023   
-
 
 P64   
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation    
@@ -629,7 +588,7 @@ Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 202
 
 P65   
 
-## GLIGEN: Open-Set Grounded Text-to-Image Generation
+### GLIGEN: Open-Set Grounded Text-to-Image Generation
 
 ![](../assets/D2-65.png)    
 ![](../assets/D2-65-2.png)    
@@ -640,7 +599,7 @@ Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",,</u> CVPR 20
 > &#x2705; GLIGEN 与 Control NET 的区别：GLIGEN 把 Condition 和 init feature 作 Concat，而 Control Net 分别处理 feature 和 Control 并把结果叠加。    
 
 P66   
-## GLIGEN: Open-Set Grounded Text-to-Image Generation
+### GLIGEN: Open-Set Grounded Text-to-Image Generation
 
 ![](../assets/D2-66.png)  
 
@@ -648,7 +607,7 @@ P67
 ## Other applications  
 
 P68   
-## Your Diffusion Model is Secretly a Zero-Shot Classifier
+# Your Diffusion Model is Secretly a Zero-Shot Classifier
 
 ![](../assets/D2-68.png)  
 
