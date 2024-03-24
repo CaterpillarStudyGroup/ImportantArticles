@@ -233,7 +233,7 @@ Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", 
 > &#x2705; (1) 对 target text 作 embedding (2) 用 text embedding 重建 Input Image，这一步会 finelue teat embedding.    
 > &#x2705; (1) finetue Diffusion Model 基于 stes A 中的 text embedding，目的没听懂。    
 > &#x2705; (1) eopt 来自 Step A   (2) Diffusion Process 来自 Step B．     
-> &#x2705; \\(e_{tgt}\\) 来自 step A 第1步   
+> &#x2705; \\(\mathbf{e} _{\mathbf{tgt} }\\) 来自 step A 第1步   
 
 
 P26   
