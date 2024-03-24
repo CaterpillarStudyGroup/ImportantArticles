@@ -168,6 +168,10 @@ P20
 
 Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation",</u> ICLR 2023    
 
+
+> &#x2705; 学习不同颜色空间的 transform    
+
+
 P21    
 ### DiffEdit: Diffusion-based semantic image editing with mask guidance    
 
@@ -183,6 +187,9 @@ Instead of asking users to provide the mask, the model will generate the mask it
 ![](../assets/D2-21.png) 
 
 
+> &#x2705; 作者认为让用户打 MASK 比较麻烦，因此生成 MASK    
+
+
 P22   
 #### Pipeline
 
@@ -192,6 +199,8 @@ P22
 > &#x2705; (2) 基于两个文本做去噪，生成 MASK.     
 > &#x2705; Step 2: DDIM Inversion      
 > &#x2753; Step 1：如何训练？有 pair data 吗？    
+> &#x2705; Step2：DDIM Encoder 加噪    
+> &#x2705; DDIM Decoder condition MASK    
 
 
 P23   
@@ -224,6 +233,7 @@ Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", 
 > &#x2705; (1) 对 target text 作 embedding (2) 用 text embedding 重建 Input Image，这一步会 finelue teat embedding.    
 > &#x2705; (1) finetue Diffusion Model 基于 stes A 中的 text embedding，目的没听懂。    
 > &#x2705; (1) eopt 来自 Step A   (2) Diffusion Process 来自 Step B．     
+> &#x2705; \\(e_{tgt}\\) 来自 step A 第1步   
 
 
 P26   
@@ -288,6 +298,9 @@ P32
 
 Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
 
+> &#x2705; 基于目标的多张 reference，输入文本，生成包含目标的图像。   
+
+
 P33   
 ## DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation    
 
@@ -302,6 +315,13 @@ P34
 
 Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023     
  
+> &#x2705; 使用 reference image 微调 model，
+> &#x2705; 目的：对输入图像做 encode，
+> &#x2705; 方法：构造 pairdata，(包含特定 identifier 的文本，图像)    
+> &#x2705; 目的：多样性。   
+> &#x2705; 方法：用不含 identifer 的图像和文本调练，构造重建 loss 和对抗 loss.    
+
+
 P35   
 ## DreamBooth Results
 
@@ -322,6 +342,10 @@ P37
 ![](../assets/D2-37.png) 
 
 Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
+
+> &#x2705; 可以把内容、风格、动作等编辑为 \\(S_ {\ast }\\)     
+> &#x2705; 用一个 word 来 Encode 源，称为 Textual Inversion.    
+
 
 P38   
 ## Textual Inversion: Optimizing Text Embedding  
@@ -359,6 +383,8 @@ Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]
 Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>     
 
 > &#x2705; 要解决的问题：finetune 所需的训练时间、参数存储，Computation 的成本很高。    
+> &#x2705; 用 low rank 来优化 residual model 而不是 entire model.    
+> &#x2705; 极大提升 fineture 的速度。    
 
 
 P42   
@@ -381,6 +407,9 @@ P43
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
+> &#x2705; 用极少的图 finetune entire model too long 极容易发生过拟合。   
+
+
 P45   
 ## Analyze change in weights   
 
@@ -393,6 +422,8 @@ Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> 
 > &#x2705; Self-Attn 用于图像内部。    
 > &#x2705; Other 主要是卷积和 Normalization.    
 > &#x2705; 通过比较 pretrained 模型和 finetune 模型，change 主要发生成Cross-Attn 层，说明 Cross-Attn 层在 finetune 过程中更重要！    
+> &#x2753; 选择模型的部分参数进行 finetune．问题是怎么选择？    
+
 
 P46   
 ## Only fine-tune cross-attention layers
@@ -400,6 +431,8 @@ P46
 ![](../assets/D2-46.png)   
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
+
+> &#x2705; 由以上观察结果，finetune 时只更新 \\(K\\) 和 \\(V\\) 的参数。    
 
 P47   
 ## How to prevent overfitting?    
@@ -410,6 +443,8 @@ Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> 
 
 
 > &#x2705; (1) 计算“标题相似度”。    
+> &#x2705; 通过引入一个正则化项来防止过拟合（1）从 caption Image model 中生成正则化图像，即输入与训练数据相似的文本做为 caption 生成 Image.    
+
 
 P48   
 ## Personalized concepts   
@@ -424,12 +459,18 @@ Where V\\(^\ast \\) is a modifier token in the text embedding space
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
+> &#x2705; 目的：finetune SD 得到这只狗的文生图模型。但只有少量的关于这只狗的数据定义 \\(V^ \ast \\) 为 modifier token，并把它作为一个新的 token.    
+
+
 P49   
 ## Personalized concepts
 
 Also fine-tune the modifier token V\\(^\ast \\) that describes the personalized concept   
 
 ![](../assets/D2-49.png)   
+
+> &#x2705; 把 \\(V^ \ast \\) 代入 caption，并用这只狗的数据做 finetune。并同样只更新 \\(K\\) 和\\(V\\).    
+
 
 P50   
 ## Single concept results
@@ -454,6 +495,9 @@ P52
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023     
 
+> &#x2705; 同时使用两个小样本数据 finetune，且使用 modifier token 和正则化图像，可以得到二者结合的效果。    
+
+
 P53   
 ## Two concept results
 
@@ -461,6 +505,7 @@ P53
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
+> &#x2705; 也可以同时引入2个 modifier token．    
 
 P54   
 ## Two concept results   
@@ -501,6 +546,7 @@ Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Abil
 > &#x2705; 引入一个简单的模型称为 Adapter，用于引导 Image Diffusion Model.    
 > &#x2705; Adapter 包含多次降采样，对应于 UNET 的不同 Level.    
 > &#x2705; 优点：简单、易训、易使用。    
+> &#x2705; Adapter 包含4个 feature extraction blocks 和3个 down sample blocks.   
 
 
 P57   
@@ -578,6 +624,8 @@ P64
 
 Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023        
 
+> &#x2705; GLIGEN 是另一种网络架构。    
+
 P65   
 
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation
@@ -606,6 +654,9 @@ P68
 Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arXiv 2023   
 
 > &#x2705; diffusion model 不经过额外的训练就能完成 Zero-shot 的分类任务。    
+> &#x2705; 一个预训练好的 stable diffusion model，无须额外训练可以用作分类器    
+> &#x2705; 输入图像\\(x\\)，用随机噪声\\(\varepsilon \\)加噪；再用 condition c 预测噪声 \\(\varepsilon _\theta \\)。优化条件 C 使得 \\(\varepsilon _\theta \\) 最接近 \\(\varepsilon\\). 得到的 C 就是分类。    
+
 
 P69   
 ## Improving Robustness using Generated Data
