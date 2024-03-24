@@ -432,7 +432,7 @@ P46
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 
-> &#x2705; 由以上观察结果，finetune 时只更新 \\(K\\) 和 \\(V\\) 的参数。    
+> &#x2705; 由以上观察结果，finetune 时只更新 K 和 V 的参数。    
 
 P47   
 ## How to prevent overfitting?    
@@ -443,7 +443,8 @@ Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> 
 
 
 > &#x2705; (1) 计算“标题相似度”。    
-> &#x2705; 通过引入一个正则化项来防止过拟合（1）从 caption Image model 中生成正则化图像，即输入与训练数据相似的文本做为 caption 生成 Image.    
+> &#x2705; 通过引入一个正则化项来防止过拟合   
+> &#x2705; (1) 从 caption Image model 中生成正则化图像，即输入与训练数据相似的文本做为 caption 生成 Image.    
 
 
 P48   
@@ -469,7 +470,7 @@ Also fine-tune the modifier token V\\(^\ast \\) that describes the personalized 
 
 ![](../assets/D2-49.png)   
 
-> &#x2705; 把 \\(V^ \ast \\) 代入 caption，并用这只狗的数据做 finetune。并同样只更新 \\(K\\) 和\\(V\\).    
+> &#x2705; 把 \\(V^ \ast \\) 代入 caption，并用这只狗的数据做 finetune。并同样只更新 K 和 V.    
 
 
 P50   
@@ -655,7 +656,7 @@ Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arX
 
 > &#x2705; diffusion model 不经过额外的训练就能完成 Zero-shot 的分类任务。    
 > &#x2705; 一个预训练好的 stable diffusion model，无须额外训练可以用作分类器    
-> &#x2705; 输入图像\\(x\\)，用随机噪声\\(\varepsilon \\)加噪；再用 condition c 预测噪声 \\(\varepsilon _\theta \\)。优化条件 C 使得 \\(\varepsilon _\theta \\) 最接近 \\(\varepsilon\\). 得到的 C 就是分类。    
+> &#x2705; 输入图像\\(x\\)，用随机噪声\\(\epsilon  \\)加噪；再用 condition c 预测噪声 \\(\epsilon  _\theta \\)。优化条件 C 使得 \\(\epsilon  _\theta \\) 最接近 \\(\epsilon \\). 得到的 C 就是分类。    
 
 
 P69   
