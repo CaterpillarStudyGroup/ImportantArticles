@@ -204,55 +204,55 @@ P22
 
 
 P23   
-## DiffEdit: Diffusion-based semantic image editing with mask guidance
+#### 效果
+![](../assets/D2-23.png)      
 
-![](../assets/D2-23.png) 
-
-Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023     
+> 生成质量高且与原始相似度高。  
 
 P24   
-## Imagic: Text-Based Real Image Editing with Diffusion Models   
+### Imagic: Text-Based Real Image Editing with Diffusion Models   
 
 ![](../assets/D2-24.png) 
 
 Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",</u> CVPR 2023     
 
-> &#x2705; 修改内容，但对不相关部分保留。    
+> &#x2705; 对内容进行复杂修改，但对不相关部分保留。    
 
 
 P25   
-## Imagic: Text-Based Real Image Editing with Diffusion Models
+#### Pipeline
 
+> 输入：Origin Image和target text promt
 
 ![](../assets/D2-25-1.png)     
+
+> &#x2705; Step 1： 对 target text 作 embedding，得到init text embedding \\(e_{tgt}\\)。然后优化init text embedding，使得Pre-Trained Diffusion Model可以根据Optimized text embedding \\(e_{opt}\\) 重建出Origin Image。
+ 
 ![](../assets/D2-25-2.png)     
-![](../assets/D2-25-3.png)   
 
-Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", </u> CVPR 2023    
+> &#x2705; Step 2： 用 Optimized text embedding \\(e_{opt}\\) 重建 Origin Image，这一步会 finetune diffusion model。   
 
-> &#x2705; (1) 对 target text 作 embedding (2) 用 text embedding 重建 Input Image，这一步会 finelue teat embedding.    
-> &#x2705; (1) finetue Diffusion Model 基于 stes A 中的 text embedding，目的没听懂。    
+![](../assets/D2-25-3.png)    
+
+> &#x2705; Step 3：用finetuned diffusion model生成target Image。其中condition为\\(e_{tgt}\\)和\\(e_{opt}\\)的插值。  
 > &#x2705; (1) eopt 来自 Step A   (2) Diffusion Process 来自 Step B．     
 > &#x2705; \\(\mathbf{e} _{\mathbf{tgt} }\\) 来自 step A 第1步   
 
 
 P26   
-## Imagic: Text-Based Real Image Editing with Diffusion Models
+#### 效果 Imagic
 
 ![](../assets/D2-26.png) 
 
-Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models", </u>CVPR 2023   
-
 
 P27   
-## Prompt-to-Prompt Image Editing with Cross-Attention Control
+### Prompt-to-Prompt Image Editing with Cross-Attention Control
 
 ![](../assets/D2-27.png)
 
-Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
-
 > &#x2705; 基于标题的图像编辑 (1) 修改某个单词的影响力；(2) 替换单词；(3) 添加单词；     
 
+Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
 
 P28   
 ## Prompt-to-Prompt Image Editing with Cross-Attention Control    
