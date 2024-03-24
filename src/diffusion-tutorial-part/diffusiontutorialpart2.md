@@ -604,10 +604,10 @@ P66
 ![](../assets/D2-66.png)  
 
 P67   
-## Other applications  
+# Other applications  
 
 P68   
-# Your Diffusion Model is Secretly a Zero-Shot Classifier
+## Your Diffusion Model is Secretly a Zero-Shot Classifier
 
 ![](../assets/D2-68.png)  
 
