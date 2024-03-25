@@ -1,24 +1,18 @@
-
-P1   
-## Denoising Diffusion Models A Generative Learning Big Bang 
-
-##### CVPR 2023 Tutorial
-
-Part III: Applications on other domains    
-
 P2   
-## Outline    
+# Outline    
  - Inverse problems
  - Setup
  - Replacement-based methods
  - Reconstruction-based methods
 
 P3   
-## Diffusion Models for Inverse Problems
+# Diffusion Models for Inverse Problems
 
-Goal: denoise and super-resolve an image    
+## Setup
 
-![](../assets/D3-3.png)  
+### Goal:   
+
+denoise and super-resolve an image ![](../assets/D3-3.png)  
 
 ![](../assets/D3-3-1.png)  
 
@@ -116,9 +110,7 @@ Mardani et al., <u>"A Variational Perspective on Solving Inverse Problems with D
 Feng et al., <u>"Score-Based Diffusion Models as Principled Priors for Inverse Imaging",</u> arXiv 2023   
 
 P11   
-## Outline
-
- - **3D**    
+# 3D    
  - **Diffusion on various 3D representations**    
  - 2D diffusion models for 3D generation    
  - Diffusion models for view synthesis    
@@ -537,10 +529,9 @@ P49
 Sella et al., <u>"Vox-E: Text-guided Voxel Editing of 3D Objects",</u> arXiv 2023   
 
 P50   
-## Outline   
+# Video   
 
- - **Video**   
- - Video generative models   
+- Video generative models   
 
 P51   
 ## Video Diffusion Models
@@ -718,9 +709,8 @@ Vid2vid-zero: Learn a null-text embedding for inversion, then use cross-frame at
 
 
 P67   
-## Outline
+# Miscellaneous   
 
- - Miscellaneous   
  - Diffusion models for large contents   
 
 
