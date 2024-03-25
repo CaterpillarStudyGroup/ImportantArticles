@@ -588,18 +588,17 @@ Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 202
 
 P65   
 
-### GLIGEN: Open-Set Grounded Text-to-Image Generation
+### Pipeline
 
-![](../assets/D2-65.png)    
-![](../assets/D2-65-2.png)    
+GLIGEN对比ControlNet：
 
-Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",,</u> CVPR 2023   
-
-> &#x2705; 新增 Gated Self-Attention 层，加在 Attention 和 Cross Attention 之间。     
-> &#x2705; GLIGEN 与 Control NET 的区别：GLIGEN 把 Condition 和 init feature 作 Concat，而 Control Net 分别处理 feature 和 Control 并把结果叠加。    
+|GLIGEN|ControlNet|
+|---|---|
+|![](../assets/D2-65.png)|![](../assets/D2-65-2.png)|    
+| &#x2705; 新增 Gated Self-Attention 层，加在 Attention 和 Cross Attention 之间。<br> &#x2705; GLIGEN 把 Condition 和 init feature 作 Concat  |&#x2705; Control Net 分别处理 feature 和 Control 并把结果叠加。    |
 
 P66   
-### GLIGEN: Open-Set Grounded Text-to-Image Generation
+### GLIGEN Result
 
 ![](../assets/D2-66.png)  
 
@@ -609,17 +608,21 @@ P67
 P68   
 ## Your Diffusion Model is Secretly a Zero-Shot Classifier
 
-![](../assets/D2-68.png)  
+> &#x2705; 一个预训练好的 diffusion model （例如stable diffusion model），无须额外训练可以用作分类器，甚至能完成 Zero-shot 的分类任务。  
 
 Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arXiv 2023   
 
-> &#x2705; diffusion model 不经过额外的训练就能完成 Zero-shot 的分类任务。    
-> &#x2705; 一个预训练好的 stable diffusion model，无须额外训练可以用作分类器    
+### Pipeline
+
+![](../assets/D2-68.png)  
+
 > &#x2705; 输入图像\\(x\\)，用随机噪声\\(\epsilon  \\)加噪；再用 condition c 预测噪声 \\(\epsilon  _\theta \\)。优化条件 C 使得 \\(\epsilon  _\theta \\) 最接近 \\(\epsilon \\). 得到的 C 就是分类。    
 
 
 P69   
 ## Improving Robustness using Generated Data
+
+> &#x2705; 使用 diffusion Model 做数据增强。    
 
 ![](../assets/D2-69.png)  
 
@@ -628,8 +631,6 @@ P69
 2. The generated and original training data are combined to train a robust classifier.    
 
 Gowal et al., <u>"Improving Robustness using Generated Data",</u> NeurIPS 2021    
-
-> &#x2705; 使用 diffusion Model 做数据增强。    
 
 P70  
 ## Better Diffusion Models Further Improve Adversarial Training   
@@ -640,7 +641,7 @@ Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",<
 
 
 P72   
-## Reference   
+# Reference   
 
  - Bao et al., <u>"All are Worth Words: a ViT Backbone for Score-based Diffusion Models",</u> arXiv 2022   
  - Peebles and Xie, <u>"Scalable Diffusion Models with Transformers",</u> arXiv 2022   
