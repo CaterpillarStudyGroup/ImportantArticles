@@ -10,16 +10,14 @@ P3
 
 ## Setup
 
-### Goal:   
+### Goal: denoise and super-resolve an image
 
-denoise and super-resolve an image ![](../assets/D3-3.png)  
+![](../assets/D3-3.png)  
 
 ![](../assets/D3-3-1.png)  
 
 P4   
-## Diffusion Models for Inverse Problems
-
-Goal: recover the masked region of an image
+### Goal: recover the masked region of an image
 
 ![](../assets/D3-4-2.png)  
 
