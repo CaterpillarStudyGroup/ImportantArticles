@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Perfect Tracking with Springs - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Important Articles</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Daniel Holden’s Blog</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/PerfectTrackingwithSprings.html" class="active"><strong aria-hidden="true">3.1.</strong> Perfect Tracking with Springs</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html"><strong aria-hidden="true">3.2.</strong> Cubic Interpolation of Quaternions</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.html"><strong aria-hidden="true">3.3.</strong> Creating Looping Animations from Motion Capture</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html"><strong aria-hidden="true">3.4.</strong> Exponential Map,Angle Axis, and Angular Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html"><strong aria-hidden="true">3.5.</strong> Spring-It-On: The Game Developer's Spring-Roll-Call</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/InertializationTransitionCost.html"><strong aria-hidden="true">3.6.</strong> Inertialization Transition Cost</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ScalarVelocity.html"><strong aria-hidden="true">3.7.</strong> Scalar Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/JointLimits.html"><strong aria-hidden="true">3.8.</strong> Joint Limits</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/VisualizingRotationSpaces.html"><strong aria-hidden="true">3.9.</strong> Visualizing Rotation Spaces</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 李宏毅 - Diffusion Model</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel.html"><strong aria-hidden="true">4.1.</strong> Diffusion Model 是如何運作的</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/StableDiffusion.html"><strong aria-hidden="true">4.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel背后的数掌原理.html"><strong aria-hidden="true">4.3.</strong> Diffusion Model背后的数掌原理</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">5.</strong> CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">5.1.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">5.1.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">5.1.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">5.1.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">5.1.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.2.</strong> Image Applications</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart3.html"><strong aria-hidden="true">5.3.</strong> Applications on other domains</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Mike Shou - Video Diffusion Models</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/MikeShou.html"><strong aria-hidden="true">6.1.</strong> Background</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html"><strong aria-hidden="true">6.2.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration.html"><strong aria-hidden="true">6.3.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">6.3.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">6.3.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">6.3.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">6.3.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">6.3.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">6.3.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">6.3.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">6.4.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">6.4.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">6.4.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">6.4.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">6.4.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">6.4.5.</strong> Other Guidance</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">7.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>转载出处：https://www.daniel-holden.com/page/perfect-tracking-springs</p>
+<blockquote>
+<p>💡 本文主题：</p>
+<ol>
+<li>“tracks the acceleration, velocity, and position of the input animation in different proportions”能够得到比较不错的tracking效果。</li>
+<li>直接的tracking在timestep改变时难以自适应，可以借鉴弹簧系统<code>spring_damper_exact_stiffness_damping</code>来解决。</li>
+<li>弹簧系统和tracking在公式上有相通之处，通过公式推导计算出弹簧系统的关键系数，可以使弹簧系统达到与tracking相同的效果。</li>
+</ol>
+</blockquote>
+<h1 id="perfect-tracking-with-springs"><a class="header" href="#perfect-tracking-with-springs">Perfect Tracking with Springs</a></h1>
+<p>Created on Jan. 25, 2023, 3:44 p.m.</p>
+<p>If you have some animation data with discontinuities you want to remove, you might have considered tracking that animation data with some kind of spring:</p>
+<blockquote>
+<p>✅ 为什么弹簧系统可以解决不连续性问题？因为弹簧系统中会考虑质量和惯性，因此运动（位置、速度、加速度。。。。等）都无法瞬间改变。<br />
+✅ 但是实际上animation data常常是离散数据，每一帧的运动变化都是通过差分算出来的，所以无法区分某一帧的运动数值变化到底是突变（不连续）还是只是运动变化过快（连续）。所以只能设置一个阈值，超过阈值的变化当作是突变。</p>
+</blockquote>
+<p>This does a good job at removing the discontinuities - but the spring needs to be very stiff - meaning the discontinuities get aggressively blended out - and even worse - it never quite reproduces exactly the input signal in places where nothing is wrong.</p>
+<blockquote>
+<p>✅ 弹簧非常stiff意味着什么呢？弹簧系数非常大，在这种情况下难以产生很快的运动变化。<br />
+✅ 为什么弹簧必须非常stiff呢？其实跟阈值限制是一个目的，就是防止物体运动变化太快。只不过阈值限制是非常暴力的一刀切，有可能产生高阶的不连续。而弹簧能保证每一阶的连续性。<br />
+🔎 使用弹簧系统来tracking的效果：
+https://www.daniel-holden.com/media/uploads/springs/tracking_bad.m4v<br />
+✅ 可以看出弹簧系统tracking的这样一些问题：（1）运动会有滞后 （2）跳变平滑之后难以快速跟上原始信号 （3）较快的运动变化会丢失。
+✅ 同时，弹簧系统的stiffness也比较难调整，stiffness过大，（3）会变严重。stiffness过小，（1）和（2）会变严重。</p>
+</blockquote>
+<p>For this reason, I've always tried to avoid going down this route whenever I could, and to me, inertialization always seemed like the &quot;correct&quot; way of dealing with these kind of discontinuities if you knew where they occurred.</p>
+<blockquote>
+<p>🔎 inertialization：惯性差值</p>
+</blockquote>
+<p>However, a few years ago, my old colleague Jack Potter showed me a kind of spring that can filter animation in exactly the way we want: it can remove discontinuities smoothly while still perfectly tracking the original signal when nothing is wrong.</p>
+<blockquote>
+<p>✅ 不只去跳变，任何以内容优化为目的的算法，都是这样的目标：在去除不好的同时尽可能地保留好的。</p>
+</blockquote>
+<p>The trick is to make a spring that <strong>tracks the acceleration, velocity, and position of the input animation in different proportions</strong>.</p>
+<p>In code it looks something like this:</p>
+<pre><code class="language-c++">void tracking_spring_update(
+    float&amp; x,
+    float&amp; v, // current velocity
+    float x_goal, // the position of the input animation
+    float v_goal, // the velocity of the input animation itself
+    float a_goal, // the acceleration of the input animation
+    float x_gain, // gain to control the strength, e.g. 0.01
+    float v_gain, // e.g. 0.2
+    float a_gain, // e.g. 1
+    float dt) // e.g. 60 frames per second
+{
+    // a对v的影响方式是a*dt
+    v = lerp(v, v + a_goal * dt, a_gain);
+    v = lerp(v, v_goal, v_gain);
+    // x对v的影响方式是dx/dt
+    v = lerp(v, (x_goal - x) / dt, x_gain);
+    x = x + dt * v;
+}
+</code></pre>
+<blockquote>
+<p>✅ <code>xxx_goal</code>代表原始运动（红线）的状态。<code>x</code>和<code>v</code>代表tracking moition（蓝线）的状态。</p>
+</blockquote>
+<p>First, we blend the current velocity with the current velocity plus the acceleration of the input animation multiplied by the dt. Then, we blend this with the velocity of the input animation itself. Finally, we blend this with a velocity that pulls us toward the position of the input animation.</p>
+<blockquote>
+<p>✅ 根据代码计算出每一项对下一帧速度的影响度：</p>
+</blockquote>
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>当前速度</td><td>v</td><td><code>a_gain * v_gain * x_gain</code></td></tr>
+<tr><td>原始轨迹的加速度</td><td><code>a_goal * dt</code></td><td><code>(1-a_gain) * v_gain * x_gain)</code></td></tr>
+<tr><td>原始轨迹的速度</td><td><code>v_goal</code></td><td><code>(1-v_gain * x_gain)</code></td></tr>
+<tr><td>原始轨迹的位置</td><td><code>(x_goal - x)/dt</code></td><td><code>(1-x_gain)</code></td></tr>
+</tbody></table>
+<p>For each of these blends we can use a gain to control the strength. For perfect tracking, we will want to set the acceleration gain to 1, the velocity gain to something like 0.2, and the position gain to something quite small such as 0.01 (when running at 60 frames per second).</p>
+<blockquote>
+<p>✅ 从建议的参数可以看出，tracking motion主要受原始轨迹的位置变化的影响，但不太关心原始轨迹的加速度。</p>
+</blockquote>
+<p>This spring will need to be fed the acceleration, velocity, and position of the input signal. The easiest way to get these is by finite difference:</p>
+<pre><code class="language-c++">float tracking_target_acceleration(
+    float x_next,
+    float x_curr,
+    float x_prev,
+    float dt)
+{
+    return (((x_next - x_curr) / dt) - ((x_curr - x_prev) / dt)) / dt;
+}
+
+float tracking_target_velocity(
+    float x_next,
+    float x_curr,
+    float dt)
+{
+    // 后向差分
+    return (x_next - x_curr) / dt;
+}
+</code></pre>
+<p>If we know there is a discontinuity in this signal, we know the values computed by this finite difference will not be good (at least the acceleration and velocity targets wont be) - so we just ignore them for those time steps and only blend the velocity with values we know are good:</p>
+<blockquote>
+<p>✅ 当原始轨迹的v和a不正确时，就不要受它们的影响了。可是怎么知道v和a是否正确呢？</p>
+</blockquote>
+<pre><code class="language-c++">void tracking_spring_update_no_acceleration(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float v_goal,
+    float x_gain,
+    float v_gain,
+    float dt)
+{
+    v = lerp(v, v_goal, v_gain);
+    v = lerp(v, (x_goal - x) / dt, x_gain);
+    x = x + dt * v;
+}
+
+void tracking_spring_update_no_velocity_acceleration(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float x_gain,
+    float dt)
+{
+    v = lerp(v, (x_goal - x) / dt, x_gain);
+    x = x + dt * v;
+}
+</code></pre>
+<p>This allows the spring to <strong>ignore</strong> the discontinuity and naturally converge back onto the input stream, tracking it perfectly:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/tracking_good.m4v</p>
+</blockquote>
+<p>If we don't know where the discontinuities are in the input signal we have two options - we can try to detect them and ignore them based on some kind of <strong>heuristic</strong> - or we can <strong>clip</strong> whatever we get to some maximum and minimum velocity and acceleration. Clipping can still sometimes give us a nasty jump when discontinuities occur but works okay given the imperfect situation we might be in:</p>
+<blockquote>
+<p>✅ 因此，当发现原始运动的v和a不合理时，有两种处理方法：（1）ignore，只参考原始动作的位置信息。（2）clip，截断。</p>
+</blockquote>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/tracking_clamp.m4v</p>
+</blockquote>
+<p>This can be useful when our input signal may jump around in hard to specify ways or when it is coming from some black box we can't control.</p>
+<p>One important thing to note here is that this code is not in any way robust to varying timesteps! The use of these gains will give us very different results if we tick at different rates:</p>
+<blockquote>
+<p>✅ timestep比较大的时候，似乎要花很久才能在跳变之后追上原始信号。</p>
+</blockquote>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/tracking_gain_dt.m4v</p>
+</blockquote>
+<p>We can improve things somewhat by switching <code>lerp</code> to <code>damper_exact</code> and using half-lives to control the blending (in this case I use 0.0 for the acceleration halflife, 0.05 for the velocity halflife and 1.0 for the position halflife).</p>
+<blockquote>
+<p>❓ <code>damper_exact</code>是什么？没有找到相关材料。</p>
+</blockquote>
+<pre><code class="language-c++">void tracking_spring_update_improved(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float v_goal,
+    float a_goal,
+    float x_halflife,
+    float v_halflife,
+    float a_halflife,
+    float dt)
+{
+    v = damper_exact(v, v + a_goal * dt, a_halflife, dt);
+    v = damper_exact(v, v_goal, v_halflife, dt);
+    v = damper_exact(v, (x_goal - x) / dt, x_halflife, dt);
+    x = x + dt * v;
+}
+</code></pre>
+<p>This version is certainly far from dt-invariant either, but feels a bit better than before to me.</p>
+<blockquote>
+<p>❓ dt-invariant version是指什么？<br />
+🔎 https://www.daniel-holden.com/media/uploads/springs/tracking_damper_dt.m4v</p>
+</blockquote>
+<p>Although basically stable, I would warn against ticking this spring at a variable timestep. Other than that I think it is pretty neat.</p>
+<p>If anyone wants to go through the maths to try and derive an exact, dt-invariant version of this spring that would be awesome - or if anyone knows if this spring exists under a different name in engineering/control theory I would love to know!</p>
+<p>That's all for now.</p>
+<hr />
+<h2 id="appendix-exact-tracking-spring"><a class="header" href="#appendix-exact-tracking-spring">Appendix: Exact Tracking Spring</a></h2>
+<p>So after a little discussion on Twitter it seemed that (although there were some good suggestions), no one could identify exactly what kind of spring this was. A couple of the replies however did seed some ideas in my head and I decided to try and see if I could derive a dt-invariant version of this spring by playing around with the equations. Spoiler: it turns out this spring is equivalent to our normal <a href="https://www.daniel-holden.com/page/spring-roll-call#springdamper%22">spring-damper</a> with specifically tuned stiffness, damping, goal position, and goal velocity.</p>
+<p>To see how this works, we need to break down the tracking spring velocity equation into its different parts.</p>
+<p>First, we have the continuation of the existing velocity, which will end up scaled by some amount depending on our gains. We will denote this scaling using some variable \( \theta_0 \):</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + ... \end{align*}</p>
+<p>Next, we have the contribution from the acceleration of the signal being tracked \( g_a \). This is multiplied by the delta time \( dt \), and again scaled by some amount depending on the gains. Similarly to before, we'll denote this as \( \theta_1 \):</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + dt \cdot \theta_1 \cdot g_a + ... \end{align*}</p>
+<p>Then, we have the contribution from the velocity of the signal being tracked \( g_v \), which we will multiply by the delta time \( dt \) and our third scaling variable \( \theta_2 \):</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + dt \cdot \theta_1 \cdot g_a + dt \cdot \theta_2 \cdot g_v + ... \end{align*}</p>
+<p>Finally, we have the term that pulls the spring toward the position of the signal being tracked \( g_x \). Like the others, this we will scale by the delta time \( dt \) and another variable \( \theta_3 \):</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + dt \cdot \theta_1 \cdot g_a + dt \cdot \theta_2 \cdot g_v + dt \cdot \theta_3 \cdot (g_x - x_{t}) \end{align*}</p>
+<blockquote>
+<p>✅ 最后一项应该除以dt，而不是乘
+✅ 参考上面的表格</p>
+</blockquote>
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>当前速度</td><td>v</td><td><code>theta_0 = a_gain * v_gain * x_gain</code></td></tr>
+<tr><td>原始轨迹的加速度</td><td><code>a_goal * dt</code></td><td><code>theta_1 = (1-a_gain) * v_gain * x_gain)</code></td></tr>
+<tr><td>原始轨迹的速度</td><td><code>v_goal</code></td><td><code>theta_2 = (1-v_gain * x_gain)</code></td></tr>
+<tr><td>原始轨迹的位置</td><td><code>(x_goal - x)/dt</code></td><td><code>theta_3 = (1-x_gain)</code></td></tr>
+</tbody></table>
+<p>We can think of this as simply another formulation of our tracking spring using a different set of variables. What we need to do now is find a way to compute these values \( \theta_0 \), \( \theta_1 \), \( \theta_2 \), \( \theta_3 \) from our gains. The way we are going to do this is to kind of work backwards to find assignments of these that reflect the behavior we expect from the lerp formulation.</p>
+<p>First, what are the values of \( \theta_0 \) and \( \theta_1 \) according to our acceleration gain \( \alpha_a \)? This one is simple - the acceleration gain \( \alpha_a \) doesn't affect the scale of the existing velocity, meanwhile when \( \alpha_a = 1 \) we expect to have the full contribution from \( g_a \) - effectively \( \theta_1 = \alpha_a \) in this case:</p>
+<p>\begin{align*} \theta_0 &amp;= 1 \\ \theta_1 &amp;= \alpha_a \ \end{align*}</p>
+<blockquote>
+<p>❓ 这里似乎跟我理解的不太一样，可能要先搞清楚<code>damper_exact</code>。</p>
+</blockquote>
+<p>Next, what happens when we introduce the velocity gain \( \alpha_v \)? As well as scaling our velocity target \( g_v \) up such that \( dt \cdot \theta_2 = 1 \) when \( \alpha_v = 1 \), it will also scale down the values of \( \theta_0 \) and \( \theta_1 \) in equal proportion.</p>
+<p>\begin{align*} \theta_0 &amp;= 1 - \alpha_v \\ \theta_1 &amp;= \alpha_a \cdot (1 - \alpha_v) \\ \theta_2 &amp;= \frac{\alpha_v}{dt} \end{align*}</p>
+<p>Finally, we need to account for our position gain \( \alpha_x \). When \( \alpha_x = 1 \) we expect the result to be pulled directly onto the tracking target \( g_x \), which means \( \alpha_3 = \tfrac{\alpha_x}{dt^2} \). Also, just like the velocity gain, the position gain will scale down the other terms as it grows larger:</p>
+<p>\begin{align*} \theta_0 &amp;= (1 - \alpha_v) \cdot (1 - \alpha_x) \\ \theta_1 &amp;= \alpha_a \cdot (1 - \alpha_v) \cdot (1 - \alpha_x) \\ \theta_2 &amp;= \frac{\alpha_v \cdot (1 - \alpha_x)}{dt} \\ \theta_3 &amp;= \frac{\alpha_x}{dt^2} \end{align*}</p>
+<p>But why is that useful? Well our goal now is going to be to rearrange our equation with \( \theta_0 \), \( \theta_1 \), \( \theta_2 \) and \( \theta_3 \) to put it in a similar form to our spring-damper velocity equation. If we can find a matching formulation then we can use the time-invariant derivation we've already worked out.</p>
+<blockquote>
+<p>❓ spring-damper velocity equation</p>
+</blockquote>
+<p>First let's re-arrange our spring-damper velocity equation a bit, where \( s = stiffness \), \( d = damping \), \( g \) is our goal position, and \( q \) is our goal velocity:</p>
+<blockquote>
+<p>✅ stiffness: 让弹簧快速回到目标位置<br />
+✅ damping：让速度变化不要太快</p>
+</blockquote>
+<p>\begin{align*} v_t = v_t + dt \cdot s \cdot (g - x_t) + dt \cdot d \cdot (q - v_t) \end{align*}</p>
+<p>First we'll multiply out the right-most term:</p>
+<p>\begin{align*} v_t = v_t + dt \cdot s \cdot (g - x_t) + dt \cdot d \cdot q - dt \cdot d \cdot v_t \end{align*}</p>
+<p>Then, we can re-factorize to put the single velocity term along with the rightmost term to get this:</p>
+<p>\begin{align*} v_t = dt \cdot s \cdot (g - x_t) + dt \cdot d \cdot q + (1 - dt \cdot d) \cdot v_t \end{align*}</p>
+<blockquote>
+<p>✅ 重新组合为当前速度项、目标速度项、目标位置项、目标加速度项（这一项没有）</p>
+</blockquote>
+<p>Now, let's take our other equation...</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + dt \cdot \theta_1 \cdot g_a + dt \cdot \theta_2 \cdot g_v + dt \cdot \theta_3 \cdot (g_x - x_{t}) \end{align*}</p>
+<p>... and factorize out the terms containing \( \theta_1 \) and \( \theta_2 \) so they share the same \( dt \):</p>
+<p>\begin{align*} v_{t} &amp;= \theta_0 \cdot v_t + dt \cdot \theta_1 \cdot g_a + dt \cdot \theta_2 \cdot g_v + dt \cdot \theta_3 \cdot (g_x - x_{t}) \\ v_{t} &amp;= dt \cdot \theta_3 \cdot (g_x - x_{t}) + dt \cdot (\theta_1 \cdot g_a + \theta_2 \cdot g_v) + \theta_0 \cdot v_t \end{align*}</p>
+<p>Aha! If we look carefully we can see some matches. For the first term we have \( s = \theta_3 \), and \( g = g_x \). For the second term we have \( d \cdot q = \theta_1 \cdot g_a + \theta_2 \cdot g_v \). And for the third term we have \( 1 - dt \cdot d = \theta_0 \). While the first two equations give us direct solutions, the second two will require a little re-arranging as we need to solve for \( d \) and \( q \).</p>
+<p>We can solve for \( d \) first:</p>
+<p>\begin{align*} 1 - dt \cdot d &amp;= \theta_0 \\ dt \cdot d &amp;= 1 - \theta_0 \\ d &amp;= \frac{1 - \theta_0}{dt} \end{align*}</p>
+<p>Which we can then use to solve for \( q \)</p>
+<p>\begin{align*} d \cdot q &amp;= \theta_1 \cdot g_a + \theta_2 \cdot g_v \\ q &amp;= \frac{\theta_1 \cdot g_a + \theta_2 \cdot g_v}{d} \end{align*}</p>
+<p>And with that we have our spring-damper parameters \( s \), \( d \), \( g \), \( q \), computed from our tracking spring parameters \( \theta_0 \), \( \theta_1 \), \( \theta_2 \) and \( \theta_3 \):</p>
+<p>\begin{align*} s &amp;= \theta_3 \\ d &amp;= \frac{1 - \theta_0}{dt} \\ g &amp;= g_x \\ q &amp;= \frac{\theta_1 \cdot g_a + \theta_2 \cdot g_v}{d} \\ \end{align*}</p>
+<p>Now all that remains is to plug these parameters into the exact spring damper equation we already derived and we are done. Here it is implemented in C++, where gain_dt is the timestep which we are emulating running our gains at:</p>
+<pre><code class="language-c++">void tracking_spring_update_exact(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float v_goal,
+    float a_goal,
+    float x_gain,
+    float v_gain,
+    float a_gain,
+    float dt,
+    float gain_dt)
+{
+    float t0 = (1.0f - v_gain) * (1.0f - x_gain);
+    float t1 = a_gain * (1.0f - v_gain) * (1.0f - x_gain);
+    float t2 = (v_gain * (1.0f - x_gain)) / gain_dt;
+    float t3 = x_gain / (gain_dt*gain_dt);
+    
+    float stiffness = t3;
+    float damping = (1.0f - t0) / gain_dt;
+    float spring_x_goal = x_goal;
+    float spring_v_goal = (t2*v_goal + t1*a_goal) / ((1.0f - t0) / gain_dt);
+    
+    spring_damper_exact_stiffness_damping(
+      x, 
+      v, 
+      spring_x_goal,
+      spring_v_goal,
+      stiffness,
+      damping,
+      dt);
+}
+</code></pre>
+<p>And this is what it looks like in action.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/tracking_exact.m4v</p>
+</blockquote>
+<p>In terms of dt-invariance definitely much better than what we had before!</p>
+<p>However, one thing you've probably noticed about this version is that it <strong>no longer tracks the input signal pixel perfectly</strong>. This is because the call to <code>spring_damper_exact</code> does not perfectly emulate what you would get evaluating the spring-damper with discrete ticks at a rate of <code>gain_dt</code> - which is what we are assuming when we compute our spring parameters. I think if we were to set <code>gain_dt</code> to a smaller value and tweak the gains we would get better tracking. Alternatively, we could switch to the normal integration based method when running at the framerate specified by <code>gain_dt</code>.</p>
+<blockquote>
+<p>❓ the spring-damper with discrete ticks 这句话怎么理解？<br />
+❓ 什么是normal integration based method？</p>
+</blockquote>
+<p>Another thing to note is that this derivation assumes that the target position, velocity and acceleration coming from the input signal are fixed over the full timestep. This means that if you make the \( dt \) very large and your signal becomes very coarse the behavior of this spring will be different to what you would get with smaller timesteps. In other words, this dt-invariant derivation becomes less and less effective if the tracking signal is changing quickly.</p>
+<blockquote>
+<p>❗ 这种推导假设来自输入信号的目标位置、速度和加速度在整个时间步长上是固定的。<br />
+✅ 因此timestep不能太大。</p>
+</blockquote>
+<p>Nonetheless, if you do have a timestep that varies, I think this version is still is far, far better than relying on the version we had before.</p>
+<p>The other variations we need where <strong>we don't have acceleration or velocity targets</strong> have pretty similar derivations so I wont go through the maths, but in C++ they can be implemented as follows:</p>
+<blockquote>
+<p>✅ 没有<code>a_goal</code>和<code>v_goal</code>的情况下，<br />
+第一步：\(\theta_1\)和\(\theta_2\)就不存在了，重新推导出\(\theta_0\)和\(\theta_3\)<br />
+第二步：需要\(\theta_1\)和\(\theta_2\)的地方用0代替。</p>
+</blockquote>
+<pre><code class="language-c++">void tracking_spring_update_no_acceleration_exact(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float v_goal,
+    float x_gain,
+    float v_gain,
+    float dt,
+    float gain_dt)
+{
+    float t0 = (1.0f - v_gain) * (1.0f - x_gain);
+    float t2 = (v_gain * (1.0f - x_gain)) / gain_dt;
+    float t3 = x_gain / (gain_dt*gain_dt);
+    
+    float stiffness = t3;
+    float damping = (1.0f - t0) / gain_dt;
+    float spring_x_goal = x_goal;
+    float spring_v_goal = t2*v_goal / ((1.0f - t0) / gain_dt);
+
+    spring_damper_exact_stiffness_damping(
+      x, 
+      v, 
+      spring_x_goal,
+      spring_v_goal,
+      stiffness,
+      damping,
+      dt);
+}
+
+void tracking_spring_update_no_velocity_acceleration_exact(
+    float&amp; x,
+    float&amp; v,
+    float x_goal,
+    float x_gain,
+    float dt,
+    float gain_dt)
+{
+    float t0 = 1.0f - x_gain;
+    float t3 = x_gain / (gain_dt*gain_dt);
+    
+    float stiffness = t3;
+    float damping = (1.0f - t0) / gain_dt;
+    float spring_x_goal = x_goal;
+    float spring_v_goal = 0.0f;
+  
+    spring_damper_exact_stiffness_damping(
+      x, 
+      v, 
+      spring_x_goal,
+      spring_v_goal,
+      stiffness,
+      damping,
+      dt);
+}
+</code></pre>
+<p>And that is about it! All the code for this article can be found on github. I hope you find it useful.</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../ReadPapers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../ReadPapers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>

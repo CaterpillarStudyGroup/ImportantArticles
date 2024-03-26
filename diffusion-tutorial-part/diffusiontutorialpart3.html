@@ -1,0 +1,944 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Applications on other domains - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Important Articles</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Daniel Holden’s Blog</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/PerfectTrackingwithSprings.html"><strong aria-hidden="true">3.1.</strong> Perfect Tracking with Springs</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html"><strong aria-hidden="true">3.2.</strong> Cubic Interpolation of Quaternions</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.html"><strong aria-hidden="true">3.3.</strong> Creating Looping Animations from Motion Capture</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html"><strong aria-hidden="true">3.4.</strong> Exponential Map,Angle Axis, and Angular Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html"><strong aria-hidden="true">3.5.</strong> Spring-It-On: The Game Developer's Spring-Roll-Call</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/InertializationTransitionCost.html"><strong aria-hidden="true">3.6.</strong> Inertialization Transition Cost</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ScalarVelocity.html"><strong aria-hidden="true">3.7.</strong> Scalar Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/JointLimits.html"><strong aria-hidden="true">3.8.</strong> Joint Limits</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/VisualizingRotationSpaces.html"><strong aria-hidden="true">3.9.</strong> Visualizing Rotation Spaces</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 李宏毅 - Diffusion Model</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel.html"><strong aria-hidden="true">4.1.</strong> Diffusion Model 是如何運作的</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/StableDiffusion.html"><strong aria-hidden="true">4.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel背后的数掌原理.html"><strong aria-hidden="true">4.3.</strong> Diffusion Model背后的数掌原理</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">5.</strong> CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">5.1.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">5.1.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">5.1.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">5.1.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">5.1.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.2.</strong> Image Applications</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart3.html" class="active"><strong aria-hidden="true">5.3.</strong> Applications on other domains</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Mike Shou - Video Diffusion Models</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/MikeShou.html"><strong aria-hidden="true">6.1.</strong> Background</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html"><strong aria-hidden="true">6.2.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration.html"><strong aria-hidden="true">6.3.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">6.3.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">6.3.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">6.3.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">6.3.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">6.3.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">6.3.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">6.3.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">6.4.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">6.4.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">6.4.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">6.4.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">6.4.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">6.4.5.</strong> Other Guidance</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">7.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P2</p>
+<h1 id="outline"><a class="header" href="#outline">Outline</a></h1>
+<ul>
+<li>Inverse problems</li>
+<li>Setup</li>
+<li>Replacement-based methods</li>
+<li>Reconstruction-based methods</li>
+</ul>
+<p>P3</p>
+<h1 id="diffusion-models-for-inverse-problems"><a class="header" href="#diffusion-models-for-inverse-problems">Diffusion Models for Inverse Problems</a></h1>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<h3 id="goal-denoise-and-super-resolve-an-image"><a class="header" href="#goal-denoise-and-super-resolve-an-image">Goal: denoise and super-resolve an image</a></h3>
+<p><img src="../assets/D3-3.png" alt="" /></p>
+<p><img src="../assets/D3-3-1.png" alt="" /></p>
+<p>P4</p>
+<h3 id="goal-recover-the-masked-region-of-an-image"><a class="header" href="#goal-recover-the-masked-region-of-an-image">Goal: recover the masked region of an image</a></h3>
+<p><img src="../assets/D3-4-2.png" alt="" /></p>
+<p><img src="../assets/D3-4.png" alt="" /></p>
+<p>We want to use the same diffusion model for different problems!</p>
+<p>P5</p>
+<h2 id="diffusion-models-for-inverse-problems-two-paradigms"><a class="header" href="#diffusion-models-for-inverse-problems-two-paradigms">Diffusion Models for Inverse Problems: Two Paradigms</a></h2>
+<p><img src="../assets/D3-5-1.png" alt="" /></p>
+<p><strong>Replacement-based methods</strong><br />
+(Overwrites model prediction with known information)</p>
+<p><img src="../assets/D3-5-2.png" alt="" /></p>
+<p><strong>Reconstruction-based methods</strong><br />
+(Approximate classifier-free guidance <strong>without additional training</strong>)</p>
+<p>P6</p>
+<h2 id="replacement-based-methods-an-example"><a class="header" href="#replacement-based-methods-an-example">Replacement-based Methods: An Example</a></h2>
+<p><img src="../assets/D3-6.png" alt="" /></p>
+<p>Song et al., <u>&quot;Score-Based Generative Modeling through Stochastic Differential Equations&quot;,</u> ICLR 2021</p>
+<p>P7</p>
+<h2 id="reconstruction-based-methods-an-example"><a class="header" href="#reconstruction-based-methods-an-example">Reconstruction-based Methods: An Example</a></h2>
+<p><img src="../assets/D3-7.png" alt="" /></p>
+<p>Chung et al., <u>&quot;Diffusion Posterior Sampling for General Noisy Inverse Problems&quot;,</u> ICLR 2023</p>
+<p>P8</p>
+<h2 id="diffusion-posterior-sampling"><a class="header" href="#diffusion-posterior-sampling">Diffusion Posterior Sampling</a></h2>
+<p>In the Gaussian case,</p>
+<p>$$
+p(\mathbf{y} |\mathbb{E} [\mathbf{x} _ 0|\mathbf{x} _ t])=-c||\mathcal{A} \mathbf{(\hat{x}}  _ 0)-\mathbf{y} ||^2_2
+$$</p>
+<p>Maximizing the likelihood is minimizing the L2 distance between measured and generated!</p>
+<p><img src="../assets/D3-8.png" alt="" /></p>
+<p>Chung et al., <u>&quot;Diffusion Posterior Sampling for General Noisy Inverse Problems&quot;,</u> ICLR 2023</p>
+<p>P9</p>
+<h2 id="solving-inverse-problems-with-diffusion-models"><a class="header" href="#solving-inverse-problems-with-diffusion-models">Solving Inverse Problems with Diffusion Models</a></h2>
+<p><strong>Reconstruction-based methods</strong></p>
+<ul>
+<li><strong>ScoreSDE</strong>: simple linear problems, e.g., inpainting, colorization; later extended to MRI and CT.</li>
+<li><strong>ILVR</strong>: more linear problems, e.g., super-resolution.</li>
+<li><strong>SNIP</strong>S: slow solution for noisy linear problems.</li>
+<li><strong>CCDF</strong>: better initializations.</li>
+<li><strong>DDRM</strong>: fast solution for all noisy linear problems, and JPEG.</li>
+</ul>
+<p>Choi et al., <u>&quot;ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models&quot;,</u> ICCV 2021<br />
+Kawar et al., <u>&quot;SNIPS: Solving Noisy Inverse Problems Stochastically&quot;,</u> NeurIPS 2021<br />
+Chung et al., <u>&quot;Come-Closer-Diffuse-Faster: Accelerating Conditional Diffusion Models for Inverse Problems through Stochastic Contraction&quot;,</u> CVPR 2022<br />
+Song et al., <u>&quot;Solving Inverse Problems in Medical Imaging with Score-Based Generative Models&quot;,</u> ICLR 2022<br />
+Kawar et al., <u>&quot;Denoising Diffusion Restoration Models&quot;,</u> NeurIPS 2022</p>
+<p>P10</p>
+<h2 id="solving-inverse-problems-with-diffusion-models-1"><a class="header" href="#solving-inverse-problems-with-diffusion-models-1">Solving Inverse Problems with Diffusion Models</a></h2>
+<p><strong>Replacement-based methods</strong></p>
+<ul>
+<li><strong>Video Diffusion/Pyramid DDPM</strong>: used for uper-resolution.</li>
+<li><strong>Pseudoinverse guidance</strong>: linear and some non-differentiable problems, e.g., JPEG</li>
+<li><strong>MCG</strong>: combines replacement &amp; reconstruction for linear problems.</li>
+</ul>
+<p><strong>Others</strong></p>
+<ul>
+<li><strong>CSGM</strong>: Posterior sampling with Langevin Dynamics based on the diffusion score model.</li>
+<li><strong>RED-Diff</strong>: A Regularizing-by-Denoising (RED), variational inference approach.</li>
+<li><strong>Posterior sampling</strong>: use RealNVP to approximate posterior samples from diffusion models.</li>
+</ul>
+<p>Ho et al., <u>&quot;Video Diffusion Models&quot;,</u> NeurIPS 2022<br />
+Chung et al., <u>&quot;Improving Diffusion Models for Inverse Problems using Manifold Constraints&quot;,</u> NeurIPS 2022<br />
+Ryu and Ye, <u>&quot;Pyramidal Denoising Diffusion Probabilistic Models&quot;,</u> arXiv 2022<br />
+Chung et al., <u>&quot;Diffusion Posterior Sampling for General Noisy Inverse Problems&quot;,</u> arXiv 2022<br />
+Song et al., <u>&quot;Pseudoinverse-Guided Diffusion Models for Inverse Problems&quot;,</u> ICLR 2023<br />
+Jalal et al., <u>&quot;Robust Compressed Sensing MRI with Deep Generative Priors&quot;,</u> NeurIPS 2021<br />
+Mardani et al., <u>&quot;A Variational Perspective on Solving Inverse Problems with Diffusion Models&quot;,</u> arXiv 2023<br />
+Feng et al., <u>&quot;Score-Based Diffusion Models as Principled Priors for Inverse Imaging&quot;,</u> arXiv 2023</p>
+<p>P11</p>
+<h1 id="3d"><a class="header" href="#3d">3D</a></h1>
+<ul>
+<li><strong>Diffusion on various 3D representations</strong></li>
+<li>2D diffusion models for 3D generation</li>
+<li>Diffusion models for view synthesis</li>
+<li>3D reconstruction</li>
+<li>3D editing</li>
+</ul>
+<p>P12</p>
+<h2 id="diffusion-models-for-point-clouds"><a class="header" href="#diffusion-models-for-point-clouds">Diffusion Models for Point Clouds</a></h2>
+<p>A set of points with location information.</p>
+<p><img src="../assets/D3-12.png" alt="" /></p>
+<p><img src="../assets/D3-12-1.png" alt="" /></p>
+<p>Zhou et al., <u>&quot;3D Shape Generation and Completion through Point-Voxel Diffusion&quot;,</u> ICCV 2021<br />
+Liu et al, <u>&quot;Point-Voxel CNN for Efficient 3D Deep Learning&quot;,</u> NeurIPS 2019</p>
+<p>P13</p>
+<h2 id="diffusion-models-for-point-clouds-1"><a class="header" href="#diffusion-models-for-point-clouds-1">Diffusion Models for Point Clouds</a></h2>
+<p><img src="../assets/D3-13.png" alt="" /></p>
+<p>Zhou et al., <u>&quot;3D Shape Generation and Completion through Point-Voxel Diffusion&quot;,</u> ICCV 2021</p>
+<p>P14</p>
+<h2 id="diffusion-models-for-point-clouds-2"><a class="header" href="#diffusion-models-for-point-clouds-2">Diffusion Models for Point Clouds</a></h2>
+<p><img src="../assets/D3-14.png" alt="" /></p>
+<p>Zeng et al., <u>&quot;LION: Latent Point Diffusion Models for 3D Shape Generation&quot;,</u> NeurIPS 2022</p>
+<p>P15</p>
+<h2 id="diffusion-models-for-point-clouds-3"><a class="header" href="#diffusion-models-for-point-clouds-3">Diffusion Models for Point Clouds</a></h2>
+<p>Point-E uses a synthetic view from fine-tuned GLIDE, and then ”lifts” the image to a 3d point cloud.</p>
+<p><img src="../assets/D3-15-1.png" alt="" /></p>
+<p><img src="../assets/D3-15-2.png" alt="" /></p>
+<p>Nichol et al., <u>&quot;Point-E: A System for Generating 3D Point Clouds from Complex Prompts&quot;,</u> arXiv 2022</p>
+<p>P16</p>
+<h2 id="diffusion-models-for-signed-distance-functions"><a class="header" href="#diffusion-models-for-signed-distance-functions">Diffusion Models for Signed Distance Functions</a></h2>
+<p>SDF is a function representation of a surface.<br />
+For each location x, |SDF(x)| = smallest distance to any point on the surface.</p>
+<p><img src="../assets/D3-16.png" alt="" /></p>
+<p>P17</p>
+<h2 id="diffusion-models-for-signed-distance-functions-1"><a class="header" href="#diffusion-models-for-signed-distance-functions-1">Diffusion Models for Signed Distance Functions</a></h2>
+<ul>
+<li>Memory of SDF grows cubically with resolution</li>
+<li>Wavelets can be used for compression!</li>
+<li>Diffusion for coarse coefficients, then predict detailed ones.</li>
+</ul>
+<p><img src="../assets/D3-17-1.png" alt="" /></p>
+<p><img src="../assets/D3-17-2.png" alt="" /></p>
+<p>Hui et al., <u>&quot;Neural Wavelet-domain Diffusion for 3D Shape Generation&quot;,</u> arXiv 2022</p>
+<p>P18</p>
+<h2 id="diffusion-models-for-signed-distance-functions-2"><a class="header" href="#diffusion-models-for-signed-distance-functions-2">Diffusion Models for Signed Distance Functions</a></h2>
+<p><img src="../assets/D3-18.png" alt="" /></p>
+<p><strong>Latent space diffusion for SDFs, where conditioning can be provided with cross attention</strong></p>
+<p>Chou et al., <u>&quot;DiffusionSDF: Conditional Generative Modeling of Signed Distance Functions&quot;,</u> arXiv 2022</p>
+<p>P19</p>
+<h2 id="diffusion-models-for-other-3d-representations"><a class="header" href="#diffusion-models-for-other-3d-representations">Diffusion Models for Other 3D Representations</a></h2>
+<p>Neural Radiance Fields (NeRF) is another representation of a 3D object.</p>
+<p><img src="../assets/D3-19.png" alt="" /></p>
+<p>P20</p>
+<h2 id="diffusion-models-for-other-3d-representations-1"><a class="header" href="#diffusion-models-for-other-3d-representations-1">Diffusion Models for Other 3D Representations</a></h2>
+<p><img src="../assets/D3-20-1.png" alt="" /><br />
+<strong>NeRF</strong><br />
+(Fully implicit)</p>
+<p><img src="../assets/D3-20-2.png" alt="" /><br />
+<strong>Voxels</strong><br />
+(Explicit / hybrid)</p>
+<p><img src="../assets/D3-20-3.png" alt="" /><br />
+<strong>Triplanes</strong><br />
+(Factorized, hybrid)</p>
+<p>Image from EG3D paper.</p>
+<p>P21</p>
+<h2 id="diffusion-models-for-other-3d-representations-2"><a class="header" href="#diffusion-models-for-other-3d-representations-2">Diffusion Models for Other 3D Representations</a></h2>
+<ul>
+<li>Triplanes, regularized ReLU Fields, the MLP of NeRFs...</li>
+<li>A good representation is important!</li>
+</ul>
+<p><img src="../assets/D3-21-1.png" alt="" /><br />
+Triplane diffusion</p>
+<p><img src="../assets/D3-21-2.png" alt="" /><br />
+Regularized ReLU Fields</p>
+<p><img src="../assets/D3-21-3.png" alt="" /><br />
+Implicit MLP of NeRFs</p>
+<p>Shue et al., <u>&quot;3D Neural Field Generation using Triplane Diffusion&quot;,</u> arXiv 2022<br />
+Yang et al., <u>&quot;Learning a Diffusion Prior for NeRFs&quot;,</u> ICLR Workshop 2023<br />
+Jun and Nichol, <u>&quot;Shap-E: Generating Conditional 3D Implicit Functions&quot;,</u> arXiv 2023</p>
+<p>P22</p>
+<h2 id="outline-1"><a class="header" href="#outline-1">Outline</a></h2>
+<ul>
+<li>2D diffusion models for 3D generation</li>
+</ul>
+<p>P23</p>
+<h2 id="2d-diffusion-models-for-3d-generation"><a class="header" href="#2d-diffusion-models-for-3d-generation">2D Diffusion Models for 3D Generation</a></h2>
+<ul>
+<li>Just now, we discussed diffusion models directly on 3d.</li>
+<li>However, there are a lot fewer 3d data than 2d.
+<ul>
+<li>A lot of experiments are based on ShapeNet!</li>
+</ul>
+</li>
+<li>Can we use 2d diffusion models as a “prior” for 3d?</li>
+</ul>
+<p>P25</p>
+<h2 id="dreamfusion-setup"><a class="header" href="#dreamfusion-setup">DreamFusion: Setup</a></h2>
+<ul>
+<li>Suppose there is a text-to-image diffusion model.</li>
+<li>Goal: optimize NeRF parameter such that each angle “looks 
+good” from the text-to-image model.</li>
+<li>Unlike ancestral sampling (e.g., DDIM), the underlying 
+parameters are being optimized over some loss function.</li>
+</ul>
+<p><img src="../assets/D3-25-1.png" alt="" /><br />
+<img src="../assets/D3-25-2.png" alt="" /></p>
+<p>Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> ICLR 2023</p>
+<p>P26</p>
+<h2 id="dreamfusion-score-distillation-sampling"><a class="header" href="#dreamfusion-score-distillation-sampling">DreamFusion: Score Distillation Sampling</a></h2>
+<p><img src="../assets/D3-26.png" alt="" /></p>
+<p>Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> ICLR 2023</p>
+<p>P27</p>
+<h2 id="dreamfusion-score-distillation-sampling-1"><a class="header" href="#dreamfusion-score-distillation-sampling-1">DreamFusion: Score Distillation Sampling</a></h2>
+<p>Consider the KL term to minimize (given t):</p>
+<p>$$
+\mathbf{KL} (q(\mathbf{z} _ t|g(\theta );y,t)||p\phi (\mathbf{z} _ t;y,t))
+$$</p>
+<p>KL between noisy real image distribution and generated image 
+distributions, conditioned on y!</p>
+<p>KL and its gradient is defined as:</p>
+<p><img src="../assets/D3-27.png" alt="" /></p>
+<p>(B) can be derived from chain rule</p>
+<p>$$
+\nabla _ \theta \log p _ \phi (\mathbf{z} _ t|y)=s _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{z} _ t}{\partial \theta }=\alpha _ ts _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta } =-\frac{\alpha _ t}{\sigma _ t}\hat{\epsilon }_ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta }<br />
+$$</p>
+<p>(A) is the gradient of the entropy of the forward process with fixed variance = 0.</p>
+<p>Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> ICLR 2023</p>
+<p>P28</p>
+<h2 id="dreamfusion-score-distillation-sampling-2"><a class="header" href="#dreamfusion-score-distillation-sampling-2">DreamFusion: Score Distillation Sampling</a></h2>
+<p>$$
+(A)+(B)=\frac{\alpha _ t}{\sigma _ t}\hat{\epsilon } _ \phi (\mathbf{z} _ t|y)\frac{\partial \mathbf{x} }{\partial \theta }
+$$</p>
+<p>However, this objective can be quite noisy.<br />
+Alternatively, we can consider a “baseline” approach in reinforcement learning: add a component that has zero mean but reduces variance. Writing out (A) again:</p>
+<p><img src="../assets/D3-28-1.png" alt="" /></p>
+<p>Thus, we have:</p>
+<p><img src="../assets/D3-28-2.png" alt="" /></p>
+<p>This has the same mean, but <strong>reduced variance</strong>, as we train \(\hat{\epsilon } _ \phi\) to predict \(\epsilon\)</p>
+<p>Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> ICLR 2023</p>
+<p>P29</p>
+<h2 id="dreamfusion-in-text-to-3d"><a class="header" href="#dreamfusion-in-text-to-3d">DreamFusion in Text-to-3D</a></h2>
+<ul>
+<li>SDS can be used to optimize a 3D representation, like NeRF.</li>
+</ul>
+<p><img src="../assets/D3-29.png" alt="" /></p>
+<p>Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> ICLR 2023</p>
+<p>P30</p>
+<h2 id="extensions-to-sds-magic3d"><a class="header" href="#extensions-to-sds-magic3d">Extensions to SDS: Magic3D</a></h2>
+<p>2x speed and higher resolution</p>
+<ul>
+<li>Accelerate NeRF with Instant-NGP, for coarse representations.</li>
+<li>Optimize a fine mesh model with differentiable renderer.</li>
+</ul>
+<p><img src="../assets/D3-30.png" alt="" /></p>
+<p>Lin et al., <u>&quot;Magic3D: High-Resolution Text-to-3D Content Creation&quot;,</u> CVPR 2023</p>
+<p>P31</p>
+<h2 id="alternative-to-sds-score-jacobian-chaining"><a class="header" href="#alternative-to-sds-score-jacobian-chaining">Alternative to SDS: Score Jacobian Chaining</a></h2>
+<p>A different formulation, motivated from approximating 3D score.</p>
+<p><img src="../assets/D3-31.png" alt="" /></p>
+<p>In principle, the diffusion model is the noisy 2D score (over clean images),<br />
+but in practice, the diffusion model suffers from out-of-distribution (OOD) issues!</p>
+<p>For diffusion model on noisy images, <strong>the non-noisy images are OOD</strong>!</p>
+<p>Wang et al., <u>&quot;Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation&quot;,</u> CVPR 2023.</p>
+<p>P32</p>
+<h2 id="score-jacobian-chaining"><a class="header" href="#score-jacobian-chaining">Score Jacobian Chaining</a></h2>
+<p>SJC approximates noisy score with “Perturb-and-Average Scoring”, which is not present in SDS.</p>
+<ul>
+<li>Use score model on multiple noise-perturbed data, then average it.</li>
+</ul>
+<p><img src="../assets/D3-32.png" alt="" /></p>
+<p>Wang et al., <u>&quot;Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation&quot;,</u> CVPR 2023.</p>
+<p>P33</p>
+<h2 id="sjc-and-sds"><a class="header" href="#sjc-and-sds">SJC and SDS</a></h2>
+<p>SJC is a competitive alternative to SDS.</p>
+<p><img src="../assets/D3-33.png" alt="" /> </p>
+<p>Wang et al., <u>&quot;Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation&quot;,</u> CVPR 2023.</p>
+<p>P34</p>
+<h2 id="alternative-to-sds-prolificdreamer"><a class="header" href="#alternative-to-sds-prolificdreamer">Alternative to SDS: ProlificDreamer</a></h2>
+<ul>
+<li>SDS-based method often set classifier-guidance weight to 100, which limits the “diversity” of the generated samples.</li>
+<li>ProlificDreamer reduces this to 7.5, leading to diverse samples.</li>
+</ul>
+<p><img src="../assets/D3-34.png" alt="" /> </p>
+<p>Wang et al., <u>&quot;ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation&quot;,</u> arXiv 2023</p>
+<p>P35</p>
+<h2 id="prolificdreamer-and-variational-score-distillation"><a class="header" href="#prolificdreamer-and-variational-score-distillation">ProlificDreamer and Variational Score Distillation</a></h2>
+<p>Instead of maximizing the likelihood under diffusion model, VSD minimizes the KL divergence via variational inference.</p>
+<p>$$
+\begin{matrix}
+\min_{\mu } D _ {\mathrm{KL} }(q^\mu _ 0(\mathbf{x} _ 0|y)||p _ 0(\mathbf{x} _ 0|y)). \\
+\quad \mu \quad \text{is the distribution of NeRFs} .
+\end{matrix}
+$$</p>
+<p>Suppose is a \(\theta _ \tau \sim \mu \) NeRF sample, then VSD simulates this ODE:</p>
+<p><img src="../assets/D3-35.png" alt="" /> </p>
+<ul>
+<li>Diffusion model can be used to approximate score of noisy real images.</li>
+<li>How about noisy rendered images?   sss</li>
+</ul>
+<p>P36</p>
+<h2 id="prolificdreamer-and-variational-score-distillation-1"><a class="header" href="#prolificdreamer-and-variational-score-distillation-1">ProlificDreamer and Variational Score Distillation</a></h2>
+<ul>
+<li>Learn another diffusion model to approximate the score of noisy rendered images!</li>
+</ul>
+<p><img src="../assets/D3-36.png" alt="" /> </p>
+<p>Wang et al., <u>&quot;ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation&quot;,</u> arXiv 2023</p>
+<p>P37</p>
+<h2 id="why-does-vsd-work-in-practice"><a class="header" href="#why-does-vsd-work-in-practice">Why does VSD work in practice?</a></h2>
+<ul>
+<li>
+<p>The valid text-to-image NeRFs form a distribution with infinite possibilities!</p>
+</li>
+<li>
+<p>In SDS, epsilon is the score of noisy “dirac distribution” over finite renders, which converges to the true score with infinite renders!</p>
+</li>
+<li>
+<p>In VSD, the LoRA model aims to <strong>represent the (true) score of noisy distribution over infinite number of renders!</strong></p>
+</li>
+<li>
+<p>If the generated NeRF distribution is only one point and LoRA overfits perfectly, then VSD = SDS!</p>
+</li>
+<li>
+<p>But LoRA has good generalization (and learns from a trajectory of NeRFs), so closer to the true score!</p>
+</li>
+<li>
+<p>This is analogous to</p>
+<ul>
+<li>Representing the dataset score via mixture of Gaussians on the dataset (SDS), versus</li>
+<li>Representing the dataset score via the LoRA UNet (VSD)</li>
+</ul>
+</li>
+</ul>
+<p>Wang et al., <u>&quot;ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation&quot;,</u> arXiv 2023</p>
+<p>P38</p>
+<h2 id="outline-2"><a class="header" href="#outline-2">Outline</a></h2>
+<ul>
+<li>Diffusion models for view synthesis</li>
+</ul>
+<p>P39</p>
+<h2 id="novel-view-synthesis-with-diffusion-models"><a class="header" href="#novel-view-synthesis-with-diffusion-models">Novel-view Synthesis with Diffusion Models</a></h2>
+<ul>
+<li>These do not produce 3D as output, but synthesis the view at different angles.</li>
+</ul>
+<p>Watson et al., <u>&quot;Novel View Synthesis with Diffusion Models&quot;,</u> ICLR 2023</p>
+<p>P40</p>
+<h2 id="3dim"><a class="header" href="#3dim">3DiM</a></h2>
+<ul>
+<li>Condition on a frame and two poses, predict another frame.</li>
+</ul>
+<p><img src="../assets/D3-40-1.png" alt="" /></p>
+<p>UNet with frame cross-attention</p>
+<p><img src="../assets/D3-40-2.png" alt="" /></p>
+<p>Sample based on stochastic conditions,<br />
+allowing the use of multiple conditional frames.</p>
+<p>Watson et al., <u>&quot;Novel View Synthesis with Diffusion Models&quot;,</u> ICLR 2023</p>
+<p>P41</p>
+<h2 id="genvs"><a class="header" href="#genvs">GenVS</a></h2>
+<ul>
+<li>3D-aware architecture with latent feature field.</li>
+<li>Use diffusion model to improve render quality based on structure.</li>
+</ul>
+<p><img src="../assets/D3-41.png" alt="" /></p>
+<p>Chan et al., <u>&quot;Generative Novel View Synthesis with 3D-Aware Diffusion Models&quot;,</u> arXiv 2023</p>
+<p>P42</p>
+<h2 id="outline-3"><a class="header" href="#outline-3">Outline</a></h2>
+<ul>
+<li>3D reconstruction</li>
+</ul>
+<p>P43</p>
+<h2 id="neurallift-360-for-3d-reconstruction"><a class="header" href="#neurallift-360-for-3d-reconstruction">NeuralLift-360 for 3D reconstruction</a></h2>
+<ul>
+<li>SDS + Fine-tuned CLIP text embedding + Depth supervision</li>
+</ul>
+<p><img src="../assets/D3-43.png" alt="" /></p>
+<p>Xu et al., <u>&quot;NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views&quot;,</u> CVPR 2023</p>
+<p>P44</p>
+<h2 id="zero-1-to-3"><a class="header" href="#zero-1-to-3">Zero 1-to-3</a></h2>
+<ul>
+<li>Generate novel view from 1 view and pose, with 2d model.</li>
+<li>Then, run SJC / SDS-like optimizations with view-conditioned model.</li>
+</ul>
+<p><img src="../assets/D3-44.png" alt="" /></p>
+<p>Liu et al., <u>&quot;Zero-1-to-3: Zero-shot One Image to 3D Object&quot;,</u> arXiv 2023</p>
+<p>P45</p>
+<h2 id="outline-4"><a class="header" href="#outline-4">Outline</a></h2>
+<ul>
+<li>
+<p>Inverse problems</p>
+</li>
+<li>
+<p><strong>3D</strong></p>
+</li>
+<li>
+<p>Video</p>
+</li>
+<li>
+<p>Miscellaneous</p>
+</li>
+<li>
+<p>3D editing</p>
+</li>
+</ul>
+<p>P46</p>
+<h2 id="instruct-nerf2nerf"><a class="header" href="#instruct-nerf2nerf">Instruct NeRF2NeRF</a></h2>
+<p>Edit a 3D scene with text instructions</p>
+<p><img src="../assets/D3-46.png" alt="" /></p>
+<p>Haque et al., <u>&quot;Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions&quot;,</u> arXiv 2023</p>
+<p>P47</p>
+<h2 id="instruct-nerf2nerf-1"><a class="header" href="#instruct-nerf2nerf-1">Instruct NeRF2NeRF</a></h2>
+<p><strong>Edit a 3D scene with text instructions</strong></p>
+<ul>
+<li>Given existing scene, use Instruct Pix2Pix to edit image at different viewpoints.</li>
+<li>Continue to train the NeRF and repeat the above process</li>
+</ul>
+<p><img src="../assets/D3-47.png" alt="" /></p>
+<p>Haque et al., <u>&quot;Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions&quot;,</u> arXiv 2023</p>
+<p>P48</p>
+<h2 id="instruct-nerf2nerf-2"><a class="header" href="#instruct-nerf2nerf-2">Instruct NeRF2NeRF</a></h2>
+<p>With each iteration, the edits become more consistent.</p>
+<p>Haque et al., <u>&quot;Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions&quot;,</u> arXiv 2023</p>
+<p>P49</p>
+<h2 id="vox-e-text-guided-voxel-editing-of-3d-objects"><a class="header" href="#vox-e-text-guided-voxel-editing-of-3d-objects">Vox-E: Text-guided Voxel Editing of 3D Objects</a></h2>
+<ul>
+<li>Text-guided object editing with SDS</li>
+<li>Regularize the structure of the new voxel grid.</li>
+</ul>
+<p><img src="../assets/D3-49.png" alt="" /></p>
+<p>Sella et al., <u>&quot;Vox-E: Text-guided Voxel Editing of 3D Objects&quot;,</u> arXiv 2023</p>
+<p>P50</p>
+<h1 id="video"><a class="header" href="#video">Video</a></h1>
+<ul>
+<li>Video generative models</li>
+</ul>
+<p>P51</p>
+<h2 id="video-diffusion-models"><a class="header" href="#video-diffusion-models">Video Diffusion Models</a></h2>
+<p>3D UNet from a 2D UNet.</p>
+<ul>
+<li>3x3 2d conv to 1x3x3 3d conv.</li>
+<li>Factorized spatial and temporal attentions.</li>
+</ul>
+<p><img src="../assets/D3-51.png" alt="" /><br />
+<img src="../assets/D3-51-2.png" alt="" /></p>
+<p>Ho et al., <u>&quot;Video Diffusion Models&quot;,</u> NeurIPS 2022</p>
+<p>P52</p>
+<h2 id="imagen-video-large-scale-text-to-video"><a class="header" href="#imagen-video-large-scale-text-to-video">Imagen Video: Large Scale Text-to-Video</a></h2>
+<ul>
+<li>7 cascade models in total.</li>
+<li>1 Base model (16x40x24)</li>
+<li>3 Temporal super-resolution models.</li>
+<li>3 Spatial super-resolution models.</li>
+</ul>
+<p><img src="../assets/D3-52.png" alt="" /></p>
+<p>Ho et al., <u>&quot;Imagen Video: High Definition Video Generation with Diffusion Models&quot;,</u> 2022</p>
+<p>P53</p>
+<h2 id="make-a-video"><a class="header" href="#make-a-video">Make-a-Video</a></h2>
+<ul>
+<li>Start with an unCLIP (DALL-E 2) base network.</li>
+</ul>
+<p><img src="../assets/D3-53.png" alt="" /></p>
+<p>Singer et al., <u>&quot;Make-A-Video: Text-to-Video Generation without Text-Video Data&quot;,</u> ICLR 2023</p>
+<p>P54</p>
+<h2 id="make-a-video-1"><a class="header" href="#make-a-video-1">Make-a-Video</a></h2>
+<p><img src="../assets/D3-54-1.png" alt="" /><br />
+3D Conv from Spatial Conv + Temporal Conv</p>
+<p><img src="../assets/D3-54-2.png" alt="" /><br />
+3D Attn from Spatial Attn + Temporal Attn</p>
+<p>Different from Imagen Video, only the image prior takes text as input!</p>
+<p>Singer et al., <u>&quot;Make-A-Video: Text-to-Video Generation without Text-Video Data&quot;,</u> ICLR 2023</p>
+<p>P55</p>
+<h2 id="video-ldm"><a class="header" href="#video-ldm">Video LDM</a></h2>
+<ul>
+<li>Similarly, fine-tune a text-to-video model from text-to-image model.</li>
+</ul>
+<p><img src="../assets/D3-55.png" alt="" /></p>
+<p>Blattmann et al., <u>&quot;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P56</p>
+<h2 id="video-ldm-decoder-fine-tuning"><a class="header" href="#video-ldm-decoder-fine-tuning">Video LDM: Decoder Fine-tuning</a></h2>
+<ul>
+<li>Fine-tune the decoder to be video-aware, keeping encoder frozen.</li>
+</ul>
+<p><img src="../assets/D3-56.png" alt="" /></p>
+<p>Blattmann et al., <u>&quot;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P57</p>
+<h2 id="video-ldm-ldm-fine-tuning"><a class="header" href="#video-ldm-ldm-fine-tuning">Video LDM: LDM Fine-tuning</a></h2>
+<ul>
+<li>Interleave spatial layers and temporal layers.</li>
+<li>The spatial layers are frozen, whereas temporal layers are trained.</li>
+<li>Temporal layers can be Conv3D or Temporal attentions.</li>
+<li>Context can be added for autoregressive generation.</li>
+</ul>
+<p><img src="../assets/D3-57.png" alt="" /></p>
+<p>Optional context via learned down-sampling operation.</p>
+<p><strong>For Conv3D,</strong><br />
+shape is [batch, time, channel, height, width]</p>
+<p><strong>For Temporal attention,</strong><br />
+shape is [batch \(^\ast \)height\(^\ast \) width, time, channel]</p>
+<p>Blattmann et al., <u>&quot;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P58</p>
+<h2 id="video-ldm-upsampling"><a class="header" href="#video-ldm-upsampling">Video LDM: Upsampling</a></h2>
+<ul>
+<li>After key latent frames are generated, the latent frames go through temporal interpolation.</li>
+<li>Then, they are decoded to pixel space and optionally upsampled.</li>
+</ul>
+<p><img src="../assets/D3-58.png" alt="" /></p>
+<p>Blattmann et al., <u>&quot;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P59</p>
+<h2 id="outline-5"><a class="header" href="#outline-5">Outline</a></h2>
+<ul>
+<li>Video style transfer / editing methods</li>
+</ul>
+<p>P60</p>
+<h2 id="gen-1"><a class="header" href="#gen-1">Gen-1</a></h2>
+<ul>
+<li>Transfer the style of a video using text prompts given a “driving video”</li>
+</ul>
+<p><img src="../assets/D3-60.png" alt="" /></p>
+<p>Esser et al., <u>&quot;Structure and Content-Guided Video Synthesis with Diffusion Models&quot;,</u> arXiv 2023</p>
+<p>P61</p>
+<h2 id="gen-1-1"><a class="header" href="#gen-1-1">Gen-1</a></h2>
+<ul>
+<li>Condition on structure (depth) and content (CLIP) information.</li>
+<li>Depth maps are passed with latents as input conditions.</li>
+<li>CLIP image embeddings are provided via cross-attention blocks.</li>
+<li>During inference, CLIP text embeddings are converted to CLIP image embeddings.</li>
+</ul>
+<p><img src="../assets/D3-61.png" alt="" /></p>
+<p>Esser et al., <u>&quot;Structure and Content-Guided Video Synthesis with Diffusion Models&quot;,</u> arXiv 2023</p>
+<p>P62</p>
+<h2 id="pix2video-video-editing-using-image-diffusion"><a class="header" href="#pix2video-video-editing-using-image-diffusion">Pix2Video: Video Editing Using Image Diffusion</a></h2>
+<ul>
+<li>Given a sequence of frames, generate a new set of images that reflects an edit.</li>
+<li>Editing methods on individual images fail to preserve temporal information.</li>
+</ul>
+<p>Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023</p>
+<p>P63</p>
+<h2 id="pix2video-video-editing-using-image-diffusion-1"><a class="header" href="#pix2video-video-editing-using-image-diffusion-1">Pix2Video: Video Editing Using Image Diffusion</a></h2>
+<p><img src="../assets/D3-63-1.png" alt="" /></p>
+<ul>
+<li><strong>Self-Attention injection:</strong> use the features of previous frame for Key and Values.</li>
+</ul>
+<p><img src="../assets/D3-63-2.png" alt="" /></p>
+<p>Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023</p>
+<p>P64</p>
+<h2 id="pix2video-video-editing-using-image-diffusion-2"><a class="header" href="#pix2video-video-editing-using-image-diffusion-2">Pix2Video: Video Editing Using Image Diffusion</a></h2>
+<p><img src="../assets/D3-64.png" alt="" /></p>
+<p>Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023</p>
+<p>P65</p>
+<h2 id="pix2video-video-editing-using-image-diffusion-3"><a class="header" href="#pix2video-video-editing-using-image-diffusion-3">Pix2Video: Video Editing Using Image Diffusion</a></h2>
+<ul>
+<li>The two methods improve the temporal consistency of the final video!</li>
+</ul>
+<p>Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023</p>
+<p>P66</p>
+<h2 id="concurrent--related-works"><a class="header" href="#concurrent--related-works">Concurrent / Related Works</a></h2>
+<p><img src="../assets/D3-66-1.png" alt="" /><br />
+Video-P2P: Cross-Attention Control on text-to-video model</p>
+<p><img src="../assets/D3-66-2.png" alt="" /><br />
+FateZero: Store attention maps from DDIM inversion for later use</p>
+<p><img src="../assets/D3-66-3.png" alt="" /><br />
+Tune-A-Video: Fine-tune projection matrices of the attention layers, from text2image model to text2video model.</p>
+<p><img src="../assets/D3-66-4.png" alt="" /><br />
+Vid2vid-zero: Learn a null-text embedding for inversion, then use cross-frame attention with original weights.</p>
+<p>P67</p>
+<h1 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h1>
+<ul>
+<li>Diffusion models for large contents</li>
+</ul>
+<p>P68</p>
+<h2 id="diffusion-models-for-large-contents"><a class="header" href="#diffusion-models-for-large-contents">Diffusion Models for Large Contents</a></h2>
+<ul>
+<li>Suppose model is trained on small, squared images, how to extend it to larger images?</li>
+<li>Outpainting is always a solution, but not a very efficient one!</li>
+</ul>
+<p>Let us generate this image with a diffusion model only trained on squared regions:</p>
+<p><img src="../assets/D3-68-1.png" alt="" /></p>
+<ol>
+<li>Generate the center region \(q(\mathbf{x} _ 1,\mathbf{x} _ 2)\)</li>
+<li>Generate the <strong>surrounding region conditioned on parts of the center image</strong> \(q(\mathbf{x} _ 3|\mathbf{x} _ 2)\)</li>
+</ol>
+<p><img src="../assets/D3-68-2.png" alt="" /></p>
+<p>Latency scales linearly with the content size!</p>
+<p>P69</p>
+<h2 id="diffusion-models-for-large-contents-1"><a class="header" href="#diffusion-models-for-large-contents-1">Diffusion Models for Large Contents</a></h2>
+<ul>
+<li>Unlike autoregressive models, diffusion models can generate large contents <strong>in parallel</strong>!</li>
+</ul>
+<p><img src="../assets/D3-69-1.png" alt="" /></p>
+<p>Zhang et al., <u>&quot;DiffCollage: Parallel Generation of Large Content with Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P70</p>
+<h2 id="diffusion-models-for-large-contents-2"><a class="header" href="#diffusion-models-for-large-contents-2">Diffusion Models for Large Contents</a></h2>
+<ul>
+<li>A “large” diffusion model from “small” diffusion models!</li>
+</ul>
+<p><img src="../assets/D3-70-1.png" alt="" /></p>
+<p><img src="../assets/D3-70-2.png" alt="" /></p>
+<p>Zhang et al., <u>&quot;DiffCollage: Parallel Generation of Large Content with Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P71</p>
+<h2 id="diffusion-models-for-large-contents-3"><a class="header" href="#diffusion-models-for-large-contents-3">Diffusion Models for Large Contents</a></h2>
+<ul>
+<li>Applications such as long images, looped motion, 360 images…</li>
+</ul>
+<p>Zhang et al., <u>&quot;DiffCollage: Parallel Generation of Large Content with Diffusion Models&quot;,</u> CVPR 2023</p>
+<p>P72</p>
+<h2 id="related-works"><a class="header" href="#related-works">Related Works</a></h2>
+<ul>
+<li>Based on similar ideas but differ in how overlapping regions are mixed.</li>
+</ul>
+<p><img src="../assets/D3-72-1.png" alt="" /></p>
+<p><img src="../assets/D3-72-2.png" alt="" /></p>
+<p>Jiménez, <u>&quot;Mixture of Diffusers for scene composition and high resolution image generation&quot;,</u> arXiv 2023<br />
+Bar-Tal et al., <u>&quot;MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation&quot;,</u> ICML 2023</p>
+<p>P73</p>
+<h2 id="outline-6"><a class="header" href="#outline-6">Outline</a></h2>
+<ul>
+<li>Safety and limitations of diffusion models</li>
+</ul>
+<p>P74</p>
+<h2 id="data-memorization-in-diffusion-models"><a class="header" href="#data-memorization-in-diffusion-models">Data Memorization in Diffusion Models</a></h2>
+<ul>
+<li>Due to the likelihood-base objective function, <strong>diffusion models can ”memorize” data</strong>.</li>
+<li>And with a higher chance than GANs!</li>
+<li>Nevertheless, a lot of “memorized images” are highly-duplicated in the dataset.</li>
+</ul>
+<p><img src="../assets/D3-74.png" alt="" /></p>
+<p>Carlini et al., <u>&quot;Extracting Training Data from Diffusion Models&quot;,</u> arXiv 2023</p>
+<p>P75</p>
+<h2 id="erasing-concepts-in-diffusion-models"><a class="header" href="#erasing-concepts-in-diffusion-models">Erasing Concepts in Diffusion Models</a></h2>
+<ul>
+<li>Fine-tune a model to remove unwanted concepts.</li>
+<li>From original model, <strong>obtain score via negative CFG</strong>.</li>
+<li><strong>A new model is fine-tuned</strong> from the new score function.</li>
+</ul>
+<p><img src="../assets/D3-75-1.png" alt="" /></p>
+<p><img src="../assets/D3-75-2.png" alt="" /></p>
+<p>Gandikota et al., <u>&quot;Erasing Concepts from Diffusion Models&quot;,</u> arXiv 2023</p>
+<p>P77</p>
+<h2 id="part-i"><a class="header" href="#part-i">Part I</a></h2>
+<p>Ho et al., <u>&quot;Denoising Diffusion Probabilistic Models&quot;,</u> NeurIPS 2020<br />
+Song et al., <u>&quot;Score-Based Generative Modeling through Stochastic Differential Equations&quot;,</u> ICLR 2021<br />
+Kingma et al., <u>&quot;Variational Diffusion Models&quot;,</u> arXiv 2021<br />
+Karras et al., <u>&quot;Elucidating the Design Space of Diffusion-Based Generative Models&quot;,</u> NeurIPS 2022<br />
+Song et al., <u>&quot;Denoising Diffusion Implicit Models&quot;,</u> ICLR 2021<br />
+Jolicoeur-Martineau et al., &quot;Gotta Go Fast When Generating Data with Score-Based Models&quot;,</u> arXiv 2021<br />
+Liu et al., <u>&quot;Pseudo Numerical Methods for Diffusion Models on Manifolds&quot;,</u> ICLR 2022<br />
+Lu et al., <u>&quot;DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps&quot;,</u> NeurIPS 2022<br />
+Lu et al., <u>&quot;DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models&quot;,</u> NeurIPS 2022<br />
+Zhang and Chen, <u>&quot;Fast Sampling of Diffusion Models with Exponential Integrator&quot;,</u> arXiv 2022<br />
+Zhang et al., <u>&quot;gDDIM: Generalized denoising diffusion implicit models&quot;,</u> arXiv 2022<br />
+Zhao et al., <u>&quot;UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models&quot;,</u> arXiv 2023<br />
+Shih et al., <u>&quot;Parallel Sampling of Diffusion Models&quot;,</u> arxiv 2023<br />
+Chen et al., <u>&quot;A Geometric Perspective on Diffusion Models&quot;,</u> arXiv 2023<br />
+Xiao et al., <u>&quot;Tackling the Generative Learning Trilemma with Denoising Diffusion GANs&quot;,</u> arXiv 2021<br />
+Salimans and Ho, <u>&quot;Progressive Distillation for Fast Sampling of Diffusion Models&quot;,</u> ICLR 2022<br />
+Meng et al., <u>&quot;On Distillation of Guided Diffusion Models&quot;,</u> arXiv 2022<br />
+Dockhorn et al., <u>&quot;GENIE: Higher-Order Denoising Diffusion Solvers&quot;,</u> NeurIPS 2022<br />
+Watson et al., <u>&quot;Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality&quot;,</u> ICLR 2022<br />
+Phung et al., <u>&quot;Wavelet Diffusion Models Are Fast and Scalable Image Generators&quot;,</u> CVPR 2023<br />
+Dhariwal and Nichol, <u>&quot;Diffusion Models Beat GANs on Image Synthesis&quot;,</u> arXiv 2021<br />
+Ho and Salimans, <u>&quot;Classifier-Free Diffusion Guidance&quot;,</u> NeurIPS Workshop 2021<br />
+Automatic1111, <u>&quot;Negative Prompt&quot;,</u> GitHub<br />
+Hong et al., <u>&quot;Improving Sample Quality of Diffusion Models Using Self-Attention Guidance&quot;,</u> arXiv 2022<br />
+Saharia et al., <u>&quot;Image Super-Resolution via Iterative Refinement&quot;,</u> arXiv 2021<br />
+Ho et al., <u>&quot;Cascaded Diffusion Models for High Fidelity Image Generation&quot;,</u> JMLR 2021<br />
+Sinha et al., <u>&quot;D2C: Diffusion-Denoising Models for Few-shot Conditional Generation&quot;,</u> NeurIPS 2021<br />
+Vahdat et al., <u>&quot;Score-based Generative Modeling in Latent Space&quot;,</u> arXiv 2021<br />
+Rombach et al., <u>&quot;High-Resolution Image Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2022<br />
+Daras et al., <u>&quot;Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems&quot;,</u> ICML 2022</p>
+<p>P78</p>
+<h2 id="part-i-contd"><a class="header" href="#part-i-contd">Part I (cont’d)</a></h2>
+<p>Bortoli et al.,<u> &quot;Diffusion Schrödinger Bridge&quot;,</u> NeurIPS 2021<br />
+Bortoli et al.,<u> &quot;Riemannian Score-Based Generative Modelling&quot;,</u> NeurIPS 2022<br />
+Neklyudov et al., <u>&quot;Action Matching: Learning Stochastic Dynamics from Samples&quot;,</u> ICML 2023<br />
+Bansal et al., <u>&quot;Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise&quot;,</u> arXiv 2022<br />
+Daras et al., <u>&quot;Soft Diffusion: Score Matching for General Corruptions&quot;,</u> TMLR 2023<br />
+Delbracio and Milanfar, <u>&quot;Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration&quot;,</u> arXiv 2023<br />
+Luo et al., <u>&quot;Image Restoration with Mean-Reverting Stochastic Differential Equations&quot;,</u> ICML 2023</p>
+<p>P79</p>
+<h2 id="part-ii"><a class="header" href="#part-ii">Part II</a></h2>
+<p>Bao et al., <u>&quot;All are Worth Words: a ViT Backbone for Score-based Diffusion Models&quot;,</u> arXiv 2022<br />
+Peebles and Xie, <u>&quot;Scalable Diffusion Models with Transformers&quot;,</u> arXiv 2022<br />
+Bao et al., <u>&quot;One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale&quot;,</u> arXiv 2023<br />
+Jabri et al., <u>&quot;Scalable Adaptive Computation for Iterative Generation&quot;,</u> arXiv 2022<br />
+Hoogeboom et al., <u>&quot;simple diffusion: End-to-end diffusion for high resolution images&quot;,</u> arXiv 2023<br />
+Meng et al., <u>&quot;SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations&quot;,</u> ICLR 2022<br />
+Li et al., <u>&quot;Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models&quot;,</u> NeurIPS 2022<br />
+Avrahami et al., <u>&quot;Blended Diffusion for Text-driven Editing of Natural Images&quot;,</u> CVPR 2022<br />
+Hertz et al., <u>&quot;Prompt-to-Prompt Image Editing with Cross-Attention Control&quot;,</u> ICLR 2023<br />
+Kawar et al., <u>&quot;Imagic: Text-Based Real Image Editing with Diffusion Models&quot;,</u> CVPR 2023<br />
+Couairon et al., <u>&quot;DiffEdit: Diffusion-based semantic image editing with mask guidance&quot;,</u> ICLR 2023<br />
+Sarukkai et al., <u>&quot;Collage Diffusion&quot;,</u> arXiv 2023<br />
+Bar-Tal et al., <u>&quot;MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation&quot;,</u> ICML 2023<br />
+Gal et al., <u>&quot;An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion&quot;,</u> ICLR 2023<br />
+Ruiz et al., <u>&quot;DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation&quot;,</u> CVPR 2023<br />
+Kumari et al., <u>&quot;Multi-Concept Customization of Text-to-Image Diffusion&quot;,</u> CVPR 2023<br />
+Tewel et al., <u>&quot;Key-Locked Rank One Editing for Text-to-Image Personalization&quot;,</u> SIGGRAPH 2023<br />
+Zhao et al., <u>&quot;A Recipe for Watermarking Diffusion Models&quot;,</u> arXiv 2023<br />
+Hu et al., <u>&quot;LoRA: Low-Rank Adaptation of Large Language Models&quot;,</u> ICLR 2022<br />
+Li et al., <u>&quot;GLIGEN: Open-Set Grounded Text-to-Image Generation&quot;,</u> CVPR 2023</p>
+<p>P80</p>
+<h2 id="part-ii-contd"><a class="header" href="#part-ii-contd">Part II (cont’d)</a></h2>
+<p>Avrahami et al., <u>&quot;SpaText: Spatio-Textual Representation for Controllable Image Generation&quot;,</u> CVPR 2023<br />
+Zhang and Agrawala, <u>&quot;Adding Conditional Control to Text-to-Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Mou et al., <u>&quot;T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Orgad et al., <u>&quot;Editing Implicit Assumptions in Text-to-Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Han et al., <u>&quot;SVDiff: Compact Parameter Space for Diffusion Fine-Tuning&quot;,</u> arXiv 2023<br />
+Xie et al., <u>&quot;DiffFit: Unlocking Transferability of Large Diffusion Models via Simple Parameter-Efficient Fine-Tuning&quot;,</u> arXiv 2023<br />
+Saharia et al., <u>&quot;Palette: Image-to-Image Diffusion Models&quot;,</u> SIGGRAPH 2022<br />
+Whang et al., <u>&quot;Deblurring via Stochastic Refinement&quot;,</u> CVPR 2022<br />
+Xu et al., <u>&quot;Open-Vocabulary Panoptic Segmentation with Text-to-Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Saxena et al., <u>&quot;Monocular Depth Estimation using Diffusion Models&quot;,</u> arXiv 2023<br />
+Li et al., <u>&quot;Your Diffusion Model is Secretly a Zero-Shot Classifier&quot;,</u> arXiv 2023<br />
+Gowal et al., <u>&quot;Improving Robustness using Generated Data&quot;,</u> NeurIPS 2021<br />
+Wang et al., <u>&quot;Better Diffusion Models Further Improve Adversarial Training&quot;,</u> ICML 2023</p>
+<p>P81</p>
+<h2 id="part-iii"><a class="header" href="#part-iii">Part III</a></h2>
+<p>Jalal et al., <u>&quot;Robust Compressed Sensing MRI with Deep Generative Priors&quot;,</u> NeurIPS 2021<br />
+Song et al., <u>&quot;Solving Inverse Problems in Medical Imaging with Score-Based Generative Models&quot;,</u> ICLR 2022<br />
+Kawar et al., <u>&quot;Denoising Diffusion Restoration Models&quot;,</u> NeurIPS 2022<br />
+Chung et al., <u>&quot;Improving Diffusion Models for Inverse Problems using Manifold Constraints&quot;,</u> NeurIPS 2022<br />
+Ryu and Ye, <u>&quot;Pyramidal Denoising Diffusion Probabilistic Models&quot;,</u> arXiv 2022<br />
+Chung et al., <u>&quot;Diffusion Posterior Sampling for General Noisy Inverse Problems&quot;,</u> arXiv 2022<br />
+Feng et al., <u>&quot;Score-Based Diffusion Models as Principled Priors for Inverse Imaging&quot;,</u> arXiv 2023<br />
+Song et al., <u>&quot;Pseudoinverse-Guided Diffusion Models for Inverse Problems&quot;,</u> ICLR 2023<br />
+Mardani et al., <u>&quot;A Variational Perspective on Solving Inverse Problems with Diffusion Models&quot;,</u> arXiv 2023<br />
+Delbracio and Milanfar, <u>&quot;Inversion by Direct Iteration: An Alternative to Denoising Diffusion for Image Restoration&quot;,</u> arxiv 2023<br />
+Stevens et al., <u>&quot;Removing Structured Noise with Diffusion Models&quot;,</u> arxiv 2023<br />
+Wang et al., <u>&quot;Zero-Shot Image Restoration Using Denoising Diffusion Null-Space Model&quot;,</u> ICLR 2023<br />
+Zhou et al., <u>&quot;3D Shape Generation and Completion through Point-Voxel Diffusion&quot;,</u> ICCV 2021<br />
+Zeng et al., <u>&quot;LION: Latent Point Diffusion Models for 3D Shape Generation&quot;,</u> NeurIPS 2022<br />
+Nichol et al., <u>&quot;Point-E: A System for Generating 3D Point Clouds from Complex Prompts&quot;,</u> arXiv 2022<br />
+Chou et al., <u>&quot;DiffusionSDF: Conditional Generative Modeling of Signed Distance Functions&quot;,</u> arXiv 2022<br />
+Cheng et al., <u>&quot;SDFusion: Multimodal 3D Shape Completion, Reconstruction, and Generation&quot;,</u> arXiv 2022<br />
+Hui et al., <u>&quot;Neural Wavelet-domain Diffusion for 3D Shape Generation&quot;,</u> arXiv 2022<br />
+Shue et al., <u>&quot;3D Neural Field Generation using Triplane Diffusion&quot;,</u> arXiv 2022<br />
+Yang et al., <u>&quot;Learning a Diffusion Prior for NeRFs&quot;,</u> ICLR Workshop 2023<br />
+Jun and Nichol, <u>&quot;Shap-E: Generating Conditional 3D Implicit Functions&quot;,</u> arXiv 2023<br />
+Poole et al., <u>&quot;DreamFusion: Text-to-3D using 2D Diffusion&quot;,</u> arXiv 2022<br />
+Lin et al., <u>&quot;Magic3D: High-Resolution Text-to-3D Content Creation&quot;,</u> arXiv 2022<br />
+Wang et al., <u>&quot;Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation&quot;,</u> arXiv 2022<br />
+Metzer et al., <u>&quot;Latent-NeRF for Shape-Guided Generation of 3D Shapes and Textures&quot;,</u> arXiv 2022<br />
+Hong et al., <u>&quot;Debiasing Scores and Prompts of 2D Diffusion for Robust Text-to-3D Generation&quot;,</u> CVPR Workshop 2023<br />
+Watson et al., <u>&quot;Novel View Synthesis with Diffusion Models&quot;,</u> arXiv 2022<br />
+Chan et al., <u>&quot;Generative Novel View Synthesis with 3D-Aware Diffusion Models&quot;,</u> arXiv 2023<br />
+Xu et al., <u>&quot;NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views&quot;,</u> arXiv 2022<br />
+Zhou and Tulsiani, <u>&quot;SparseFusion: Distilling View-conditioned Diffusion for 3D Reconstruction&quot;,</u> arXiv 2022</p>
+<p>P82</p>
+<h2 id="part-iii-contd"><a class="header" href="#part-iii-contd">Part III (cont’d)</a></h2>
+<p>Seo et al., <u>&quot;DITTO-NeRF: Diffusion-based Iterative Text To Omni-directional 3D Model&quot;,</u> arXiv 2023<br />
+Haque et al., <u>&quot;Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions&quot;,</u> arXiv 2023<br />
+Sella et al., <u>&quot;Vox-E: Text-guided Voxel Editing of 3D Objects&quot;,</u> arXiv 2023<br />
+Ho et al., <u>&quot;Video Diffusion Models&quot;,</u> NeurIPS 2022<br />
+Harvey et al., <u>&quot;Flexible Diffusion Modeling of Long Videos&quot;,</u> arXiv 2022<br />
+Voleti et al., <u>&quot;MCVD: Masked Conditional Video Diffusion for Prediction, Generation, and Interpolation&quot;,</u> NeurIPS 2022<br />
+Ho et al., <u>&quot;Imagen Video: High Definition Video Generation with Diffusion Models&quot;,</u> Oct 2022<br />
+Singer et al., <u>&quot;Make-A-Video: Text-to-Video Generation without Text-Video Data&quot;,</u> arXiv 2022<br />
+Mei and Patel, <u>&quot;VIDM: Video Implicit Diffusion Models&quot;,</u> arXiv 2022<br />
+Blattmann et al., <u>&quot;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&quot;,</u> CVPR 2023<br />
+Wang et al., <u>&quot;Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023<br />
+Esser et al., <u>&quot;Structure and Content-Guided Video Synthesis with Diffusion Models&quot;,</u> arXiv 2023<br />
+Jiménez, <u>&quot;Mixture of Diffusers for scene composition and high resolution image generation&quot;,</u> arXiv 2023<br />
+Bar-Tal et al., <u>&quot;MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation&quot;,</u> arXiv 2023<br />
+Zhang et al., <u>&quot;DiffCollage: Parallel Generation of Large Content with Diffusion Models&quot;,</u> CVPR 2023<br />
+Zhang et al., <u>&quot;MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model&quot;,</u> arXiv 2022<br />
+Tevet et al., <u>&quot;Human Motion Diffusion Model&quot;,</u> arXiv 2022<br />
+Chen et al., <u>&quot;Executing your Commands via Motion Diffusion in Latent Space&quot;,</u> CVPR 2023<br />
+Du et al., <u>&quot;Avatars Grow Legs: Generating Smooth Human Motion from Sparse Tracking Inputs with Diffusion Model&quot;,</u> CVPR 2023<br />
+Shafir et al., <u>&quot;Human Motion Diffusion as a Generative Prior&quot;,</u> arXiv 2023<br />
+Somepalli et al., <u>&quot;Diffusion Art or Digital Forgery? Investigating Data Replication in Diffusion Models&quot;,</u> CVPR 2023<br />
+Carlini et al., <u>&quot;Extracting Training Data from Diffusion Models&quot;,</u> arXiv 2023<br />
+Gandikota et al., <u>&quot;Erasing Concepts from Diffusion Models&quot;,</u> arXiv 2023<br />
+Kumari et al., <u>&quot;Ablating Concepts in Text-to-Image Diffusion Models&quot;,</u> arXiv 2023<br />
+Somepalli et al., <u>&quot;Understanding and Mitigating Copying in Diffusion Models&quot;,</u> arXiv 2023</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../diffusion-tutorial-part/diffusiontutorialpart2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../MikeShou-VideoDiffusionModels/MikeShou.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../diffusion-tutorial-part/diffusiontutorialpart2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../MikeShou-VideoDiffusionModels/MikeShou.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
