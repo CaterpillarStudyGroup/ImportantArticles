@@ -45,7 +45,7 @@
     - [3D-Aware](MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.md)
     - [Other Guidance](MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.md)
 - [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
-
+- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](HPE_HMR_Summary.md)
   
 
 
