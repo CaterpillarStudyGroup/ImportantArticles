@@ -37,7 +37,8 @@
 |[136]|2021|
 |[137]|2021|
 |[138]|2022|
-|[139]|2023|Global-to-local modeling for video-based 3d human pose and shape estimation|To effec- tively balance the learning of short-term and long-term temporal correlations, Global-to-Local Transformer (GLoT) [139] structurally decouples the modeling of long-term and short-term correlations.|视频，单人，SMPL，非流式，transformer|https://caterpillarstudygroup.github.io/ReadPapers/12.html|
+|[139]|2023|Global-to-local modeling for video-based 3d human pose and shape estimation|To effec-tively balance the learning of short-term and long-term temporal correlations, Global-to-Local Transformer (GLoT) [139] structurally decouples the modeling of long-term and short-term correlations.|视频，单人，SMPL，非流式，transformer|[link](https://caterpillarstudygroup.github.io/ReadPapers/12.html)|
+||2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|训练时有后验概率信息，而推时只有先验概率信息。因此分别构造先验概率模型和后验概率模型，并让先验概率逼迫后验概率|开源|[link][link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)
 
 #### Multi-view Methods.
 #### Boosting Efficiency
@@ -55,10 +56,10 @@
 |214|2021|
 |165|2022|
 |166|2022|
-|167|2023|Jotr: 3d joint con- trastive learning with transformers for occluded human mesh recovery|fuses 2D and 3D features and incorporates supervision for the 3D feature through a Transformer-based contrastive learning framework||
+|167|2023|Jotr: 3d joint con-trastive learning with transformers for occluded human mesh recovery|fuses 2D and 3D features and incorporates supervision for the 3D feature through a Transformer-based contrastive learning framework||
 |162|2023|Refit: Recurrent fitting network for 3d human recovery|reprojects keypoints and refines the human model via a feedback-update loop mechanism||
-|4|2023|Co-evolution of pose and mesh for 3d human body estimation from video|introduced a co-evolution method for human mesh recovery that utilizes 3D pose as an intermediary. This method divides the process into two distinct stages: initially, it estimates the 3D human pose from video, and subsequently, it regresses mesh vertices based on the estimated 3D pose, combined with temporal image features|开源|
-|168|2023|Cyclic test-time adaptation on monocular video for 3d human mesh reconstruction|To bridge the gap between training and test data, CycleAdapt [168] proposed a domain adaptation method including a mesh reconstruction network and a motion denoising network en- abling more effective adaptation.||
+|4|2023|Co-evolution of pose and mesh for 3d human body estimation from video|introduced a co-evolution method for human mesh recovery that utilizes 3D pose as an intermediary. This method divides the process into two distinct stages: initially, it estimates the 3D human pose from video, and subsequently, it regresses mesh vertices based on the estimated 3D pose, combined with temporal image features|开源、单人、视频|[link](https://caterpillarstudygroup.github.io/ReadPapers/13.html)
+|168|2023|Cyclic test-time adaptation on monocular video for 3d human mesh reconstruction|To bridge the gap between training and test data, CycleAdapt [168] proposed a domain adaptation method including a mesh reconstruction network and a motion denoising network en-abling more effective adaptation.||
 
 ### Detailed human body recovery
 ## Template-free human body recovery
