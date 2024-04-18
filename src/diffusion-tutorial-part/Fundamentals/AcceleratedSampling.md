@@ -56,12 +56,24 @@ P46
 ## A Rich Body of Work on ODE/SDE Solvers for Diffusion Models
 
  - Runge-Kutta adaptive step-size ODE solver:   
-    - <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, *ICLR*, 2021</u>   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Score-Based Generative Modeling through Stochastic Differential Equations|
+
  - Higher-Order adaptive step-size SDE solver:    
-    - <u>Jolicoeur-Martineau et al., “Gotta Go Fast When Generating Data with Score-Based Models”, *arXiv*, 2021</u>    
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Gotta Go Fast When Generating Data with Score-Based Models|
+    
  - Reparametrized, smoother ODE:   
-    - <u>Song et al., “Denoising Diffusion Implicit Models”, *ICLR*, 2021</u>   
-    - <u>Zhang et al., "gDDIM: Generalized denoising diffusion implicit models", arXiv 2022</u>   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Denoising Diffusion Implicit Models|   
+||2022|gDDIM: Generalized denoising diffusion implicit models|
+
  - Higher-Order ODE solver with linear multistepping:   
     - <u>Liu et al., “Pseudo Numerical Methods for Diffusion Models on Manifolds”, *ICLR*, 2022</u>   
  - Exponential ODE Integrators:   
@@ -90,14 +102,11 @@ Can we train a neural network to directly predict \\(\mathbf{x} _{{t}'} \\) give
 
 P49    
 
-### 相关方法
-
-> &#x1F50E; Salimans & Ho, “**Progressive distillation** for fast sampling of diffusion models”, ICLR 2022. [link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)
-
-
-> &#x1F50E; Meng et al., "On Distillation of Guided Diffusion Models", CVPR 2023 (**Award Candidate**). [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)
-
-> &#x1F50E; Song et al., **Consistency Models**, ICML 2023 [link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|**Progressive distillation** for fast sampling of diffusion models|||[link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)|
+||2023|On Distillation of Guided Diffusion Models|**Award Candidate**|| [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)|
+||2023|**Consistency Models**|||[link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
 
 
 P52   

@@ -38,7 +38,7 @@
 |[137]|2021|
 |[138]|2022|
 |[139]|2023|Global-to-local modeling for video-based 3d human pose and shape estimation|To effec-tively balance the learning of short-term and long-term temporal correlations, Global-to-Local Transformer (GLoT) [139] structurally decouples the modeling of long-term and short-term correlations.|视频，单人，SMPL，非流式，transformer|[link](https://caterpillarstudygroup.github.io/ReadPapers/12.html)|
-||2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|训练时有后验概率信息，而推时只有先验概率信息。因此分别构造先验概率模型和后验概率模型，并让先验概率逼迫后验概率|开源|[link][link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)
+
 
 #### Multi-view Methods.
 #### Boosting Efficiency
