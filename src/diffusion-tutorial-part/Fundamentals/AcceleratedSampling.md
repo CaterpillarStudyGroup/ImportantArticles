@@ -55,27 +55,14 @@ P45
 P46   
 ## A Rich Body of Work on ODE/SDE Solvers for Diffusion Models
 
- - Runge-Kutta adaptive step-size ODE solver:   
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2021|Score-Based Generative Modeling through Stochastic Differential Equations|
+||2021|Score-Based Generative Modeling through Stochastic Differential Equations|Runge-Kutta adaptive step-size ODE solver|
+||2021|Gotta Go Fast When Generating Data with Score-Based Models|Higher-Order adaptive step-size SDE solver|
+||2021|Denoising Diffusion Implicit Models|Reparametrized, smoother ODE|   
+||2022|gDDIM: Generalized denoising diffusion implicit models|Reparametrized, smoother ODE|
+||2022|Pseudo Numerical Methods for Diffusion Models on Manifolds|Higher-Order ODE solver with linear multistepping|
 
- - Higher-Order adaptive step-size SDE solver:    
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2021|Gotta Go Fast When Generating Data with Score-Based Models|
-    
- - Reparametrized, smoother ODE:   
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2021|Denoising Diffusion Implicit Models|   
-||2022|gDDIM: Generalized denoising diffusion implicit models|
-
- - Higher-Order ODE solver with linear multistepping:   
-    - <u>Liu et al., “Pseudo Numerical Methods for Diffusion Models on Manifolds”, *ICLR*, 2022</u>   
  - Exponential ODE Integrators:   
     - <u>Zhang and Chen, “Fast Sampling of Diffusion Models with Exponential Integrator”, *arXiv*, 2022</u>   
     - <u>Lu et al., “DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps”, *NeurIPS*, 2022</u>   
