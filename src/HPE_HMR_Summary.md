@@ -62,4 +62,29 @@
 |168|2023|Cyclic test-time adaptation on monocular video for 3d human mesh reconstruction|To bridge the gap between training and test data, CycleAdapt [168] proposed a domain adaptation method including a mesh reconstruction network and a motion denoising network en-abling more effective adaptation.||
 
 ### Detailed human body recovery
+
+#### With Clothes
+
+#### With Hands
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|173|SGNify, a model that captures hand pose, facial expression, and body movement from sign language videos. It employs linguistic priors and constraints on 3D hand pose to effectively address the ambiguities in isolated signs.|
+|174|the relationship between Two- Hands|
+|175|the relationship between Hand-Object|
+
+#### Whole Body
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|176|
+|177|
+|178|2021|independently running 3D mesh recovery regression for face, hands, and body and subsequently combining the outputs through an integration module|
+|179|2021|integrates independent es- timates from the body, face, and hands using the shared shape space of SMPL-X across all body parts|
+|180|2022|Accurate 3d hand pose estimation for whole-body 3d human mesh estimation|end-to-end framework for whole-body human mesh recovery named Hand4Whole, which employs joint features for 3D joint rotations to enhance the accuracy of 3D hand predictions|
+|181|2023|Pymaf-x: Towards well-aligned full-body model regression from monocular images|to resolve the misalignment issues in regression-based, one-stage human mesh recovery methods by employing a feature pyramid approach and refining the mesh-image alignment parameters.|
+|215|
+|182|2023|One-stage 3d whole-body mesh recovery with component aware transformer|a simple yet effective component-aware transformer that includes a global body encoder and a lo- cal face/hand decoder instead of separate networks for each part|
+|183|
+
 ## Template-free human body recovery

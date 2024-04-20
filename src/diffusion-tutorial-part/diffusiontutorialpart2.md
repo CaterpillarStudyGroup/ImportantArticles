@@ -20,24 +20,11 @@ P5
 > &#x2705; 包含Input、U-Net backbone、Condition。  
 > &#x2705; Condition 通常用 Concat 或 Cross attention 的方式与 Content 相结合。    
 
-> &#x1F50E; Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models",</u> CVPR 2022    
-
-U-Net Based Diffusion Architecture
-
-P6   
-#### Application
-
-**Imagen** Saharia et al.   
-
-Saharia et al. <u>“Photorealistic text-to-image diffusion models with deep language understanding”, </u>NeurIPS 2022    
-
-**Stable Diffusion** Rombach et al.    
-
-Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models", </u>CVPR 2022    
-
-**eDiff-I** Balaji et al.    
-
-Balaji et al.,” <u>ediffi: Text-to-image diffusion models with an ensemble of expert denoisers”, </u>arXiv 2022    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture|
+||2022|Photorealistic text-to-image diffusion models with deep language understanding|Imagen|
+||2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|eDiff-I|
 
 P7    
 ### Transformer Architecture
@@ -61,10 +48,11 @@ Bao et al.,<u> "All are Worth Words: a ViT Backbone for Score-based Diffusion Mo
 
 P8   
 #### Application
-
-Peebles and Xie, <u>"Scalable Diffusion Models with Transformers", </u>arXiv 2022    
-Bao et al., <u>"One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale", </u>arXiv 2023    
-Hoogeboom et al., <u>"simple diffusion: End-to-end diffusion for high resolution images", </u>arXiv 2023    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|Scalable Diffusion Models with Transformers|    
+||2023|One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale|
+||2023|simple diffusion: End-to-end diffusion for high resolution images|
 
 
 P9    
