@@ -69,9 +69,10 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|173|SGNify, a model that captures hand pose, facial expression, and body movement from sign language videos. It employs linguistic priors and constraints on 3D hand pose to effectively address the ambiguities in isolated signs.|
-|174|the relationship between Two- Hands|
-|175|the relationship between Hand-Object|
+|173|2023|SGNify, a model that captures hand pose, facial expression, and body movement from sign language videos. It employs linguistic priors and constraints on 3D hand pose to effectively address the ambiguities in isolated signs.|
+|174|2021|the relationship between Two- Hands|
+|175|2021|the relationship between Hand-Object|
+||2023|HMP: Hand Motion Priors for Pose and Shape Estimation from Video|先用无视频信息的手势数据做手势动作先验。基于先验再做手势识别|手、开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/15.html)|
 
 #### Whole Body
 
@@ -88,3 +89,11 @@
 |183|
 
 ## Template-free human body recovery
+
+# 运动相机场景
+
+## 提取相机轨迹
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|
