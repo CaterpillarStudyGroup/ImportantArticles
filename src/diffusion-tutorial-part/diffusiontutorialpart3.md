@@ -142,7 +142,7 @@ Liu et al, <u>"Point-Voxel CNN for Efficient 3D Deep Learning",</u> NeurIPS 2019
 > &#x2705; 分支2：VOX 可以看作是低分辨率的 points    
 > &#x2705; 优点是结构化，可用于 CNN    
 > &#x2753; VOX → points，低分辨到高分辨率要怎么做？   
-> &#x2753; 怎么用把 voxel 内的点转换为 voxel 的特征？     
+> &#x2753; 怎么把 voxel 内的点转换为 voxel 的特征？     
 
 P13    
 ## Diffusion Models for Point Clouds    
