@@ -799,7 +799,7 @@ P75
 
 Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
 
-
+# Reference
 P77   
 ## Part I
 
