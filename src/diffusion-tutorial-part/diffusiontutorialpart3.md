@@ -204,7 +204,7 @@ P17
 Hui et al., <u>"Neural Wavelet-domain Diffusion for 3D Shape Generation",</u> arXiv 2022    
 
 > &#x2705; 这里说的 SDF，是用离散的方式来记录每个点的 distance.     
-> &#x2705; Wavelet 把 SDF 变为 coarse 系数，diffusion model 生成 coarse系数，再通过另一模型变为 detailed   
+> &#x2705; Wavelet 把 SDF 变为 coarse 系数，diffusion model 生成 coarse 系数，再通过另一模型变为 detailed   
 
 P18   
 ## Diffusion Models for Signed Distance Functions
