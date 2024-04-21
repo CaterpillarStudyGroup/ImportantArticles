@@ -353,7 +353,7 @@ Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023
 > &#x2705; A: the gradient of the entropy of the forward process。由于前向只是加噪，因此 A 是固定值。即 0.    
 > &#x2705; P27 和 P28 证明 P26 中的第二项可以不需要。  
 > &#x2753; KL 散度用来做什么？LOSS 里没有这一项。    
-> &#x2705; KL 用于度量 \\(P(Z_t｜t)\\) 和 \\(q(Z_t｜t)\\)．
+> &#x2705; KL 用于度量 \\(P(Z_t｜t)\\) 和 \\(q(Z_t｜t)\\)．  
 > &#x2705; KL 第一项为 Nerf 的渲染结果加噪，KL 第二项为真实数据加噪。    
 
 P28    
