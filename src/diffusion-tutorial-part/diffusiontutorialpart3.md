@@ -59,7 +59,7 @@ P7
 
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> ICLR 2023   
 
-> &#x2705; cfg 使用\\((\mathbf{x,t})\\)的 pair data 来近似 \\(\nabla _{xt} \log p_t(\mathbf{y}|\mathbf{x}_t)\\)，但此处没有 pair data，希望通过非训练的方法来得出。    
+> &#x2705; cfg 使用\\((x,t)\\)的 pair data 来近似 \\(\nabla _{x_t} \log p_t(\mathbf{y}|\mathbf{x}_t)\\)，但此处没有 pair data，希望通过非训练的方法来得出。    
 > &#x2705; 公式基于马尔可夫推导。\\(p(\mathbf{y}|\mathbf{x}_t)\\) 可描述为 \\(p(\mathbf{y}|\mathbf{x}_0)\\) 的期望。然后把期望从外面移到里面。    
 
 P8    
