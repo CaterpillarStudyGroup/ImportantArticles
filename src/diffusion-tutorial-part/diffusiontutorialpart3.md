@@ -317,6 +317,12 @@ Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023
 > &#x2705; 第二项：\\( \partial \\) Output／ \\( \partial \\) Input．   
 > &#x2705; 第三项：\\( \partial \\) Input Image／ \\( \partial \\)  Nerf Angle    
 > &#x2705; 第二项要计算 diffusion model 的梯度，成本非常高。    
+> &#x2705; 第二项要求反向传播 through the diffuson model，很慢，且费内存。 
+> &#x2705; 这一页描述 Image → Loss 的过程。    
+> &#x2705; 公式 1 为 diffusion model objective fanction.    
+> &#x2705; 公式 2 为算法中使用的 loss，由于\\(\lambda =g(\theta )\\)，\\(\frac{\partial L}{\partial \theta } =\frac{\partial L}{\partial \lambda } \cdot \frac{\partial \lambda }{\partial \theta } \\)，其中 \\(\frac{\partial L}{\partial \lambda }\\) 又分为第一项和第二项。    
+> &#x2705; 公式 2 中的常系数都省掉了。    
+> &#x2705; 公式 3 把公式 2 中的第二项去掉了，为本文最终使用的 loss.  
 
 P27   
 ## DreamFusion: Score Distillation Sampling
@@ -345,6 +351,10 @@ $$
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023   
 
 > &#x2705; A: the gradient of the entropy of the forward process。由于前向只是加噪，因此 A 是固定值。即 0.    
+> &#x2705; P27 和 P28 证明 P26 中的第二项可以不需要。  
+> &#x2753; KL 散度用来做什么？LOSS 里没有这一项。    
+> &#x2705; KL 用于度量 \\(P(Z_t｜t)\\) 和 \\(q(Z_t｜t)\\)．
+> &#x2705; KL 第一项为 Nerf 的渲染结果加噪，KL 第二项为真实数据加噪。    
 
 P28    
 ## DreamFusion: Score Distillation Sampling  
@@ -377,6 +387,14 @@ P29
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
 
 > &#x2705; (1) 生成 Nerf (2) Nerf 投影 (3) 投影图加噪再去噪 (4) 对生成结果求 loss    
+> &#x2705; entire pipeline.    
+> &#x2705; 左中上：从相机视角，生成 object 的投影。   
+> &#x2705; 左下：以相机视角为参数，推断出每个点的 Nerf 参数。   
+> &#x2705; 左中：左上和左下结合，得到渲染图像。    
+> &#x2705; 生成随机噪声，对渲染图像加噪。   
+> &#x2705; 右上：使用 diffusion model 从加噪图像中恢复出原始图像。（包含多个 step）   
+> &#x2705; 右下：得到噪声，并与原始噪声求 loss.    
+> &#x2705; 根据 loss 反传梯度优化左下的 MLP.    
 
 P30   
 ## Extensions to SDS: Magic3D
@@ -388,6 +406,8 @@ P30
 ![](../assets/D3-30.png)  
 
 Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation",</u> CVPR 2023   
+
+> &#x2705; Instant NGP 代替左下的 Nerf MLP．以 coarse representetion 作为 condition 来生成 fine mesh model.    
 
 P31
 ## Alternative to SDS: Score Jacobian Chaining
@@ -515,7 +535,10 @@ allowing the use of multiple conditional frames.
 Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> ICLR 2023    
 
 > &#x2705; UNet，2 branch，分别用于原始角度和要生成的角度。   
-> &#x2705; 引入 step 2 是为了内容一致性。    
+> &#x2705; 引入 step 2 是为了内容一致性。   
+> &#x2705; frame：坐标系。在不同的坐标系下看到的是不同的视角。    
+> &#x2753; 为什么有两个pose？
+> &#x2705; 每个 frame 的内部由 cross-attention 连接。    
 
 P41    
 ## GenVS   
