@@ -226,8 +226,7 @@ Neural Radiance Fields (NeRF) is another representation of a 3D object.
 
 > &#x2705; NeRF：用体的方式来描述 3D 物体     
 > &#x2705; (1) 从 diffusion 中提取 image （2）从 image 计算 loss (3) loss 更新 image (4) image 更新 NeRF．    
-> &#x2705; \\(（x,y,z,\theta ,\phi ）\\) 是每个点在向量中的表
-示，其中前三维是 world coordinate，后面两维是 viewing direction     
+> &#x2705; \\(（x,y,z,\theta ,\phi ）\\) 是每个点在向量中的表示，其中前三维是 world coordinate，后面两维是 viewing direction     
 > &#x2705; density 描述这个点有多透明。    
 > &#x2705; F 是一个小型的网络，例如 MLP.    
 
