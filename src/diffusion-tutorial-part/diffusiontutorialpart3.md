@@ -16,6 +16,8 @@ P3
 
 ![](../assets/D3-3-1.png)  
 
+> &#x2705; 处理对象是一个特定的 Image． 虽然 Diffusion Prior 中包含大量高质量图像，但对于这个特定的处理对象，应当基于其中的部分 prior.    
+
 P4   
 ### Goal: recover the masked region of an image
 
@@ -25,6 +27,7 @@ P4
 
 We want to use the same diffusion model for different problems!    
 
+> &#x2705; super-resolve 和 inpaint．    
 
 P5   
 ## Diffusion Models for Inverse Problems: Two Paradigms
@@ -38,6 +41,9 @@ P5
 
 **Reconstruction-based methods**    
 (Approximate classifier-free guidance **without additional training**)    
+
+> &#x2705; 第 3 种方法，在 noise 上覆盖，可以得到类似 reconstruction-based 方法的效果。    
+> &#x2753; 重建方法与 cfg 有什么关系？答：见P7．     
 
 P6   
 ## Replacement-based Methods: An Example   
@@ -53,6 +59,9 @@ P7
 
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> ICLR 2023   
 
+> &#x2705; cfg 使用\\((x,t)\\)的 pair data 来近似 \\(\nabla _{xt} \log p_t(y|x_t)\\)，但此处没有 pair data，希望通过非训练的方法来得出。    
+> &#x2705; 公式基于马尔可夫推导。\\(p(y|x_t)\\) 可描述为 \\(p(y|x_0)\\) 的期望。然后把期望从外面移到里面。    
+
 P8    
 ## Diffusion Posterior Sampling   
 
@@ -67,6 +76,8 @@ Maximizing the likelihood is minimizing the L2 distance between measured and gen
 ![](../assets/D3-8.png)  
 
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> ICLR 2023    
+
+> &#x2705; 在 diffusion 的同时做重建。    
 
 
 P9   
@@ -131,6 +142,7 @@ Liu et al, <u>"Point-Voxel CNN for Efficient 3D Deep Learning",</u> NeurIPS 2019
 > &#x2705; 分支2：VOX 可以看作是低分辨率的 points    
 > &#x2705; 优点是结构化，可用于 CNN    
 > &#x2753; VOX → points，低分辨到高分辨率要怎么做？
+> &#x2753;  怎么用把 voxel 内的点转换为 voxel 的特征？     
 
 P13    
 ## Diffusion Models for Point Clouds    
@@ -141,6 +153,7 @@ Zhou et al., <u>"3D Shape Generation and Completion through Point-Voxel Diffusio
 
 > &#x2705; Completion：深度图 → 完整点    
 > &#x2705; 方法：(1) 基于深度图生成点云 (2) 用 inpainting 技术补全    
+> &#x2705; generation 和 completion 是两种不同的 task.    
 
 P14     
 ## Diffusion Models for Point Clouds   
@@ -148,6 +161,11 @@ P14
 ![](../assets/D3-14.png)  
 
 Zeng et al., <u>"LION: Latent Point Diffusion Models for 3D Shape Generation",</u> NeurIPS 2022    
+
+> &#x2705; 特点：    
+> &#x2705; 1、latent diffusion model for point clouds.    
+> &#x2705; 2、point-voxel CNN 架构，用于把 shape 编码成 latent shape 及 lantent point.    
+> &#x2705; 3、diffusion model 把 latent point 重建出原始点。    
 
 P15   
 ## Diffusion Models for Point Clouds
@@ -159,6 +177,10 @@ Point-E uses a synthetic view from fine-tuned GLIDE, and then ”lifts” the im
 ![](../assets/D3-15-2.png)  
 
 Nichol et al., <u>"Point-E: A System for Generating 3D Point Clouds from Complex Prompts",</u> arXiv 2022     
+
+> &#x2705; point E task：文生成点云。    
+> &#x2705; 第1步：文生图，用 fine-tuned GLIDE     
+> &#x2705; 第2步：图生点，用 transformer-based diffusion model.     
 
 P16   
 ## Diffusion Models for Signed Distance Functions   
@@ -193,6 +215,8 @@ P18
 
 Chou et al., <u>"DiffusionSDF: Conditional Generative Modeling of Signed Distance Functions",</u> arXiv 2022    
 
+> &#x2705; 原理与上一页相似，只是把 waveles 换成了 VAE.    
+
 P19   
 ## Diffusion Models for Other 3D Representations    
 
@@ -202,6 +226,11 @@ Neural Radiance Fields (NeRF) is another representation of a 3D object.
 
 > &#x2705; NeRF：用体的方式来描述 3D 物体     
 > &#x2705; (1) 从 diffusion 中提取 image （2）从 image 计算 loss (3) loss 更新 image (4) image 更新 NeRF．    
+> &#x2705; \\(（x,y,z,\theta ,\phi ）\\) 是每个点在向量中的表
+示，其中前三维是 world coordinate，后面两维是 viewing direction 
+> &#x2705; density 描述这个点有多透明。    
+> &#x2705; F 是一个小型的网络，例如 MLP.    
+
  
 P20   
 ## Diffusion Models for Other 3D Representations
@@ -219,6 +248,8 @@ P20
 (Factorized, hybrid)    
 
 Image from EG3D paper.    
+
+> &#x2705; Nenf 可以有三种表示形式    
 
 P21   
 ## Diffusion Models for Other 3D Representations     
@@ -239,6 +270,8 @@ Implicit MLP of NeRFs
 Shue et al., <u>"3D Neural Field Generation using Triplane Diffusion",</u> arXiv 2022    
 Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023    
 Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023    
+
+> &#x2705; 这三种表示形式都可以与 diffuson 结合好的表示形式对diffusion 的效果很重要。    
 
 P22    
 ## Outline
@@ -267,6 +300,11 @@ parameters are being optimized over some loss function.
 ![](../assets/D3-25-2.png)     
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
+
+> &#x2705; 参数不在 2D 空间而是在 Nerf 空间，构成优化问题，通过更新 Nerf 参数来满足 loss.    
+![](../assets/D3-25-3.png)  
+
+
 
 P26   
 ## DreamFusion: Score Distillation Sampling   
