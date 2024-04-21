@@ -377,6 +377,9 @@ SJC approximates noisy score with “Perturb-and-Average Scoring”, which is no
 
 Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
 
+> &#x2705; 通过这种方法来近似 clean image 的输出，解决 clean image 的 OOD 问题。    
+
+
 P33    
 ## SJC and SDS
 
@@ -415,6 +418,8 @@ Suppose is a \\(\theta _ \tau \sim \mu \\) NeRF sample, then VSD simulates this 
  - Diffusion model can be used to approximate score of noisy real images.   
  - How about noisy rendered images?   sss
 
+> &#x2705; 第一项由 diffusion model 得到，在此处当作 GT．   
+
 P36   
 ## ProlificDreamer and Variational Score Distillation
 
@@ -423,6 +428,8 @@ P36
 ![](../assets/D3-36.png) 
 
 Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+
+> &#x2705; 使用 LoRA 近第二项。    
 
 P37   
 ## Why does VSD work in practice?    
@@ -469,6 +476,9 @@ allowing the use of multiple conditional frames.
 
 Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> ICLR 2023    
 
+> &#x2705; UNet，2 branch，分别用于原始角度和要生成的角度。   
+> &#x2705; 引入 step 2 是为了内容一致性。    
+
 P41    
 ## GenVS   
 
@@ -478,6 +488,9 @@ P41
 ![](../assets/D3-41.png)  
 
 Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models",</u> arXiv 2023    
+
+> &#x2705; (1) 生成 feature field (2) render 其中一个视角 (3) 优化渲染效果     
+> &#x2705; (2) 是 MLP (3) 是 diffusion．    
 
 P42    
 ## Outline   
@@ -533,6 +546,8 @@ P47
 
 Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023   
 
+> &#x2705; 首先有一个训好的 Nerf. 对一个特定的场景使用 Instruct Pix 2 pix 在 2D 上编辑训练新的 Werf.    
+
 P48   
 ## Instruct NeRF2NeRF
 
@@ -565,7 +580,9 @@ P51
 ![](../assets/D3-51.png)     
 ![](../assets/D3-51-2.png)     
 
-Ho et al., <u>"Video Diffusion Models",</u> NeurIPS 2022    
+Ho et al., <u>"Video Diffusion Models",</u> NeurIPS 2022   
+
+> &#x2705; 利用 2D 做 3D，因为 3D 难训且数据少。    
 
 P52   
 ## Imagen Video: Large Scale Text-to-Video   
@@ -752,6 +769,8 @@ Let us generate this image with a diffusion model only trained on squared region
 ![](../assets/D3-68-2.png)    
 
 Latency scales linearly with the content size!     
+
+> &#x2705; 根据左边的图生成右边的图，存在的问题：慢     
    
 P69   
 ## Diffusion Models for Large Contents
@@ -822,6 +841,8 @@ P75
 ![](../assets/D3-75-2.png)  
 
 Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
+
+> &#x2705; 考虑到版权等问题。    
 
 # Reference
 P77   
