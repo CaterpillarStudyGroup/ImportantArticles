@@ -567,6 +567,10 @@ P43
 
 Xu et al., <u>"NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views",</u> CVPR 2023    
 
+> &#x2705; 整体上是类似 SDS 的优化方法，再结合其它的损失函数。    
+> &#x2705; (1) 渲染不同视角，并对渲染结果用 clip score打分。    
+> &#x2705; (2) 监督深度信息。    
+
 P44    
 ## Zero 1-to-3   
 
@@ -576,6 +580,8 @@ P44
 ![](../assets/D3-44.png)  
 
 Liu et al., <u>"Zero-1-to-3: Zero-shot One Image to 3D Object",</u> arXiv 2023    
+
+> &#x2705; (1) 用 2D diffusion 生成多视角。用 SDS 对多视角图像生成3D．   
 
 P45    
 ## Outline
@@ -596,6 +602,8 @@ Edit a 3D scene with text instructions
 
 Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023      
 
+> &#x2705; 用 Nerf 来描述 3D scene。通过文件条件把原 Nerf，变成另一个 Nerf，从而得到新的 3D scene.    
+
 P47   
 ## Instruct NeRF2NeRF   
 
@@ -608,6 +616,7 @@ P47
 Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023   
 
 > &#x2705; 首先有一个训好的 Nerf. 对一个特定的场景使用 Instruct Pix 2 pix 在 2D 上编辑训练新的 Werf.    
+> &#x2705; 基于 score disllation sampling.    
 
 P48   
 ## Instruct NeRF2NeRF
@@ -643,7 +652,9 @@ P51
 
 Ho et al., <u>"Video Diffusion Models",</u> NeurIPS 2022   
 
-> &#x2705; 利用 2D 做 3D，因为 3D 难训且数据少。    
+> &#x2705; 利用 2D 做 3D，因为 3D 难训且数据少。  
+> &#x2705; 通到添加时序信息，把图像变成视频。此处的 3D 是 2D＋时间，而不是立体。对向量增加一个维度，并在新的维度上做 attention.   
+
 
 P52   
 ## Imagen Video: Large Scale Text-to-Video   
@@ -658,6 +669,9 @@ P52
 
 Ho et al., <u>"Imagen Video: High Definition Video Generation with Diffusion Models",</u> 2022    
 
+
+> &#x2705; 通过 7 次 cascade，逐步提升顺率和像素的分辨率，每一步的训练对上一步是依赖的。    
+
 P53   
 ## Make-a-Video  
 
@@ -666,6 +680,8 @@ P53
 ![](../assets/D3-53.png)     
 
 Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Data",</u> ICLR 2023    
+
+> &#x2705; 把 text 2 image model 变成 text to video model，但不需要 text-video 的 pair data.    
 
 P54   
 ## Make-a-Video   
@@ -681,6 +697,9 @@ Different from Imagen Video, only the image prior takes text as input!
 
 Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Data",</u> ICLR 2023     
 
+> &#x2705; 与 Imagin 的相同点：(1) 使用 cascade 提升分辨率， (2) 分为时间 attention 和空间 attention.    
+> &#x2705; 不同点：(1) 时间 conv＋空间 conv.    
+
 P55   
 ## Video LDM   
 
@@ -689,6 +708,8 @@ P55
 ![](../assets/D3-55.png)     
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
+
+> &#x2705; 特点：(1) 使用 latent space． (2) Encoder fix．用 video 数据 fineture Decoder.    
 
 P56   
 ## Video LDM: Decoder Fine-tuning   
@@ -720,6 +741,9 @@ shape is [batch \\(^\ast \\)height\\(^\ast \\) width, time, channel]
 
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023   
+
+> &#x2705; 时序层除了时序 attention，还有 3D conv，是真正的 3D，但是更复杂，且计算、内存等消耗更大。   
+
 
 P58   
 ## Video LDM: Upsampling
@@ -756,6 +780,10 @@ P61
 
 Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023     
 
+> &#x2705; 用 depth estimator 从源视频提取 struct 信息，用 CLIP 从文本中提取 content 信息。   
+> &#x2705; depth 和 content 分别用两种形式注入。depth 作为条件，与 lantent concat 到一起。content 以 cross attention 的形式注入。    
+
+
 P62   
 ## Pix2Video: Video Editing Using Image Diffusion   
 
@@ -763,6 +791,8 @@ P62
  - Editing methods on individual images fail to preserve temporal information.    
 
 Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
+
+> &#x2705; 没有 3D diffusion model，只是用 2D diffusion model 生成多张图像并拼成序列。关键在于保持时序的连续性。    
 
 P63   
 ## Pix2Video: Video Editing Using Image Diffusion   
@@ -775,12 +805,19 @@ P63
 
 Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023   
 
+> &#x2705; (1) 使用 DDIM inversion 把图像转为 noise．   
+> &#x2705; (2) 相邻的 fram 应 inversion 出相似的 noise．    
+> &#x2705; 使用 self-attention injection 得到相似的 noise.    
+
+
 P64    
 ## Pix2Video: Video Editing Using Image Diffusion   
 
 ![](../assets/D3-64.png)    
 
 Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
+
+> &#x2705; reconstruction guidance，使生成的 latent code 与上一帧接近。    
 
 P65   
 ## Pix2Video: Video Editing Using Image Diffusion  
@@ -832,6 +869,8 @@ Let us generate this image with a diffusion model only trained on squared region
 Latency scales linearly with the content size!     
 
 > &#x2705; 根据左边的图生成右边的图，存在的问题：慢     
+> &#x2705; 直接生成大图没有这样的数据。   
+> &#x2705; 并行化的生成。    
    
 P69   
 ## Diffusion Models for Large Contents
@@ -874,6 +913,8 @@ P72
 Jiménez, <u>"Mixture of Diffusers for scene composition and high resolution image generation",</u> arXiv 2023    
 Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> ICML 2023   
 
+> &#x2705; 这种并行化方法可以用于各种 overlapping 的场景。    
+
 P73   
 ## Outline
 
@@ -904,6 +945,8 @@ P75
 Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
 
 > &#x2705; 考虑到版权等问题。    
+> &#x2705; finetune 已有的 text-2-image model．   
+> &#x2705; 使用 negative CFG 原有信息不会受到影响。    
 
 # Reference
 P77   
