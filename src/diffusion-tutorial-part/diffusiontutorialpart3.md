@@ -948,6 +948,7 @@ Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023
 > &#x2705; finetune 已有的 text-2-image model．   
 > &#x2705; 使用 negative CFG 原有信息不会受到影响。    
 
+
 # Reference
 P77   
 ## Part I
