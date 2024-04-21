@@ -37,36 +37,32 @@ $$
 ![](../../assets/D1-43.png) 
 
 
-### 一阶方法
-
-Euler 方法：每个时间步简化为线性过程。当 step 较大时，会与 GT 有较大的偏离。     
+- 一阶方法（Euler 方法）：每个时间步简化为线性过程。当 step 较大时，会与 GT 有较大的偏离。     
 
 
 P44    
 
 ![](../../assets/D1-44.png) 
 
-> &#x1F50E; Song et al., <u>"Denoising Diffusion Implicit Models (DDIM)",</u> ICLR 2021 [link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)  
 
-### 高阶方法
+- 高阶方法
 P45   
 ![](../../assets/D1-45.png) 
 
 P46   
-## A Rich Body of Work on ODE/SDE Solvers for Diffusion Models
+## 扩散模型 ODE/SDE 求解器的相关工作
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2021|Denoising Diffusion Implicit Models (DDIM)|||[link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)|
 ||2021|Score-Based Generative Modeling through Stochastic Differential Equations|Runge-Kutta adaptive step-size ODE solver|
 ||2021|Gotta Go Fast When Generating Data with Score-Based Models|Higher-Order adaptive step-size SDE solver|
 ||2021|Denoising Diffusion Implicit Models|Reparametrized, smoother ODE|   
 ||2022|gDDIM: Generalized denoising diffusion implicit models|Reparametrized, smoother ODE|
 ||2022|Pseudo Numerical Methods for Diffusion Models on Manifolds|Higher-Order ODE solver with linear multistepping|
-
- - Exponential ODE Integrators:   
-    - <u>Zhang and Chen, “Fast Sampling of Diffusion Models with Exponential Integrator”, *arXiv*, 2022</u>   
-    - <u>Lu et al., “DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps”, *NeurIPS*, 2022</u>   
-    - <u>Lu et al., "DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models", NeurIPS 2022</u>   
+||2022|Fast Sampling of Diffusion Models with Exponential Integrator|Exponential ODE Integrators|
+||2022|DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps|Exponential ODE Integrators|
+||2022|DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models|Exponential ODE Integrators|
  - Higher-Order ODE solver with Heun’s Method:   
     - <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, *NeurIPS*, 2022</u>   
  - Many more:   
@@ -105,40 +101,32 @@ Can we train a neural network to directly predict **distribution of** \\(\mathbf
 
 > &#x2705; \\(\mathbf{x} _ t\\) 与 \\( \mathbf{x} _ {{t}' }\\) 没有必然的联系，得到的是 \\( \mathbf{x} _ {{t}' }\\) 的分布。    
 
-P53   
-### Advanced Approximation of Reverse Process    
-
-Normal assumption in denoising distribution holds only for small step    
+但Normal assumption in denoising distribution holds only for small step    
 
 > &#x2705; 从 \\(t\\) 与 \\({t}'\\) 的差距过大时，normal 分布不足以表达 \\(q(\mathbf{x} _ {{t}'}｜\mathbf{x} _ t)\\).    
 
 ![](../../assets/D1-53.png) 
 
-**Requires more complicated functional approximators!**   
+因此**Requires more complicated functional approximators!**，例如GAN或energy-based。   
 
 GANs used by Xiao et al.    
 
-> &#x1F50E; <u>Xiao et al., “Tackling the Generative Learning Trilemma with Denoising Diffusion GANs”, ICLR 2022.</u> 
-
-Energy-based models by Gao et al.    
-
-> &#x1F50E; <u>Gao et al., “Learning energy-based models by diffusion recovery likelihood”, ICLR 2021.</u>    
-
-> &#x2705; 通过GAN或Energy based得到复杂分布。
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|Tackling the Generative Learning Trilemma with Denoising Diffusion GANs|GAN|
+||2021|Learning energy-based models by diffusion recovery likelihood|Energy-based models|
 
 P54   
-### Training-based Sampling Techniques
+## Training-based Sampling Techniques
 
- - Knowledge distillation:   
-    - Luhman and Luhman, <u>Knowledge Distillation in Iterative Generative Models for Improved Sampling Speed,</u> arXiv 2021    
- - Learned Samplers:   
-    - Watson et al., <u>"Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality",</u> ICLR 2022    
- - Neural Operators:   
-    - Zheng et al., <u>Fast Sampling of Diffusion Models via Operator Learning, </u>ICML 2023
- - Wavelet Diffusion Models:    
-    - Phung et al., <u>"Wavelet Diffusion Models Are Fast and Scalable Image Generators", </u> CVPR 2023    
- - Distilled ODE Solvers:   
-    - Dockhorn et al., <u>"GENIE: Higher-Order Denoising Diffusion Solvers",</u> NeurIPS 2022    
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Knowledge Distillation in Iterative Generative Models for Improved Sampling Speed|Knowledge distillation|
+||2022|Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality|Learned Samplers|
+||2023|Fast Sampling of Diffusion Models via Operator Learning|Neural Operators|
+||2023|Wavelet Diffusion Models Are Fast and Scalable Image Generators|Wavelet Diffusion Models|
+||2022|GENIE: Higher-Order Denoising Diffusion Solvers|Distilled ODE Solvers|
 
 P56   
 # Low-dim Diffusion Process

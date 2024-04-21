@@ -56,10 +56,10 @@
 |214|2021|
 |165|2022|
 |166|2022|
-|167|2023|Jotr: 3d joint con-trastive learning with transformers for occluded human mesh recovery|fuses 2D and 3D features and incorporates supervision for the 3D feature through a Transformer-based contrastive learning framework||
-|162|2023|Refit: Recurrent fitting network for 3d human recovery|reprojects keypoints and refines the human model via a feedback-update loop mechanism||
-|4|2023|Co-evolution of pose and mesh for 3d human body estimation from video|introduced a co-evolution method for human mesh recovery that utilizes 3D pose as an intermediary. This method divides the process into two distinct stages: initially, it estimates the 3D human pose from video, and subsequently, it regresses mesh vertices based on the estimated 3D pose, combined with temporal image features|开源、单人、视频|[link](https://caterpillarstudygroup.github.io/ReadPapers/13.html)
-|168|2023|Cyclic test-time adaptation on monocular video for 3d human mesh reconstruction|To bridge the gap between training and test data, CycleAdapt [168] proposed a domain adaptation method including a mesh reconstruction network and a motion denoising network en-abling more effective adaptation.||
+|167|2023|Jotr: 3d joint con-trastive learning with transformers for occluded human mesh recovery|融合 2D 和 3D 特征，并通过基于 Transformer 的对比学习框架结合对 3D 特征的监督||
+|162|2023|Refit: Recurrent fitting network for 3d human recovery|通过反馈-更新循环机制重新投影关键点并完善人体模型||
+|4|2023|Co-evolution of pose and mesh for 3d human body estimation from video|引入了一种利用 3D 姿势作为中介的人体mesh恢复的共同进化方法。该方法将过程分为两个不同的阶段：首先，它从视频中估计 3D 人体姿势，随后，根据估计的 3D 姿势并结合时间图像特征对mesh顶点进行回归|开源、单人、视频、mesh|[link](https://caterpillarstudygroup.github.io/ReadPapers/13.html)
+|168|2023|Cyclic test-time adaptation on monocular video for 3d human mesh reconstruction|为了弥合训练和测试数据之间的差距，CycleAdapt [168]提出了一种域自适应方法，包括mesh重建网络和运动降噪网络，能够实现更有效的自适应。||
 
 ### Detailed human body recovery
 
@@ -96,4 +96,4 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|
+||2023|Decoupling Human and Camera Motion from Videos in the Wild||多人|
