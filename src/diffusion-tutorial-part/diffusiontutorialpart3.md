@@ -270,7 +270,8 @@ Shue et al., <u>"3D Neural Field Generation using Triplane Diffusion",</u> arXiv
 Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023    
 Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023    
 
-> &#x2705; 这三种表示形式都可以与 diffuson 结合好的表示形式对diffusion 的效果很重要。    
+> &#x2705; 这三种表示形式都可以与 diffuson 结合。   
+> &#x2705; 好的表示形式对diffusion 的效果很重要。    
 
 P22    
 ## Outline
