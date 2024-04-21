@@ -127,12 +127,20 @@ A set of points with location information.
 Zhou et al., <u>"3D Shape Generation and Completion through Point-Voxel Diffusion",</u> ICCV 2021    
 Liu et al, <u>"Point-Voxel CNN for Efficient 3D Deep Learning",</u> NeurIPS 2019    
 
+> &#x2705; 分支1：逐顶点的 MLP (对应图中 b)   
+> &#x2705; 分支2：VOX 可以看作是低分辨率的 points    
+> &#x2705; 优点是结构化，可用于 CNN    
+> &#x2753; VOX → points，低分辨到高分辨率要怎么做？
+
 P13    
 ## Diffusion Models for Point Clouds    
 
 ![](../assets/D3-13.png)  
 
 Zhou et al., <u>"3D Shape Generation and Completion through Point-Voxel Diffusion",</u> ICCV 2021    
+
+> &#x2705; Completion：深度图 → 完整点    
+> &#x2705; 方法：(1) 基于深度图生成点云 (2) 用 inpainting 技术补全    
 
 P14     
 ## Diffusion Models for Point Clouds   
@@ -173,6 +181,9 @@ P17
 
 Hui et al., <u>"Neural Wavelet-domain Diffusion for 3D Shape Generation",</u> arXiv 2022    
 
+> &#x2705; 这里说的 SDF，是用离散的方式来记录每个点的 distance.     
+> &#x2705; Wavelet 把 SDF 变为 coarse 系数，diffusion model 生成 coarse系数，再通过另一模型变为 detailed   
+
 P18   
 ## Diffusion Models for Signed Distance Functions
 
@@ -188,6 +199,9 @@ P19
 Neural Radiance Fields (NeRF) is another representation of a 3D object.    
 
 ![](../assets/D3-19.png)  
+
+> &#x2705; NeRF：用体的方式来描述 3D 物体     
+> &#x2705; (1) 从 diffusion 中提取 image （2）从 image 计算 loss (3) loss 更新 image (4) image 更新 NeRF．    
  
 P20   
 ## Diffusion Models for Other 3D Representations
@@ -262,6 +276,10 @@ P26
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023     
 
 
+> &#x2705; 第二项：\\( \partial \\) Output／ \\( \partial \\) Input．   
+> &#x2705; 第三项：\\( \partial \\) Input Image／ \\( \partial \\)  Nerf Angle    
+> &#x2705; 第二项要计算 diffusion model 的梯度，成本非常高。    
+
 P27   
 ## DreamFusion: Score Distillation Sampling
 
@@ -287,6 +305,8 @@ $$
 (A) is the gradient of the entropy of the forward process with fixed variance = 0.    
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023   
+
+> &#x2705; A: the gradient of the entropy of the forward process。由于前向只是加噪，因此 A 是固定值。即 0.    
 
 P28    
 ## DreamFusion: Score Distillation Sampling  
@@ -318,6 +338,8 @@ P29
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
 
+> &#x2705; (1) 生成 Nerf (2) Nerf 投影 (3) 投影图加噪再去噪 (4) 对生成结果求 loss    
+
 P30   
 ## Extensions to SDS: Magic3D
 
@@ -342,6 +364,8 @@ but in practice, the diffusion model suffers from out-of-distribution (OOD) issu
 For diffusion model on noisy images, **the non-noisy images are OOD**!    
 
 Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.     
+
+> &#x2705; 2D sample, 3D score    
 
 P32   
 ## Score Jacobian Chaining   
