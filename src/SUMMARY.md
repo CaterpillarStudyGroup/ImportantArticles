@@ -26,7 +26,9 @@
     - [Conditional Generation and Guidance](diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.md)
     - [Summary](./diffusion-tutorial-part/Fundamentals/Summary.md)
   - [Image Applications](diffusion-tutorial-part/diffusiontutorialpart2.md)
-  - [Applications on other domains](diffusion-tutorial-part/diffusiontutorialpart3.md)
+  - [Applications on other domains]()
+    - [Diffusion Models for Inverse Problems](diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.md)
+  
 - [Mike Shou - Video Diffusion Models]()
   - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
   - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
