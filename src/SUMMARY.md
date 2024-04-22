@@ -34,7 +34,7 @@
     - [3D reconstruction](iffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.md)
     - [Inverse problems](iffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.md)
     - [Video style transfer / editing methods](iffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.md)
-  
+    - [Safety and limitations of diffusion models](iffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.md)
 - [Mike Shou - Video Diffusion Models]()
   - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
   - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
