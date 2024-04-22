@@ -15,7 +15,7 @@ P46
 
 Edit a 3D scene with text instructions   
 
-![](../assets/D3-46.png)  
+![](../../assets/D3-46.png)  
 
 Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023      
 
@@ -28,7 +28,7 @@ P47
  -  Given existing scene, use Instruct Pix2Pix to edit image at different viewpoints.   
  - Continue to train the NeRF and repeat the above process   
 
-![](../assets/D3-47.png)  
+![](../../assets/D3-47.png)  
 
 Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> arXiv 2023   
 
@@ -48,7 +48,7 @@ P49
  - Text-guided object editing with SDS
  - Regularize the structure of the new voxel grid.
 
-![](../assets/D3-49.png)  
+![](../../assets/D3-49.png)  
 
 Sella et al., <u>"Vox-E: Text-guided Voxel Editing of 3D Objects",</u> arXiv 2023   
 
@@ -64,8 +64,8 @@ P51
  - 3x3 2d conv to 1x3x3 3d conv.   
  - Factorized spatial and temporal attentions.   
 
-![](../assets/D3-51.png)     
-![](../assets/D3-51-2.png)     
+![](../../assets/D3-51.png)     
+![](../../assets/D3-51-2.png)     
 
 Ho et al., <u>"Video Diffusion Models",</u> NeurIPS 2022   
 
@@ -83,7 +83,7 @@ P52
  - 3 Temporal super-resolution models.   
  - 3 Spatial super-resolution models.   
 
-![](../assets/D3-52.png)     
+![](../../assets/D3-52.png)     
 
 Ho et al., <u>"Imagen Video: High Definition Video Generation with Diffusion Models",</u> 2022    
 
@@ -95,7 +95,7 @@ P53
 
  - Start with an unCLIP (DALL-E 2) base network.    
 
-![](../assets/D3-53.png)     
+![](../../assets/D3-53.png)     
 
 Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Data",</u> ICLR 2023    
 
@@ -104,10 +104,10 @@ Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Dat
 P54   
 ## Make-a-Video   
 
-![](../assets/D3-54-1.png)     
+![](../../assets/D3-54-1.png)     
 3D Conv from Spatial Conv + Temporal Conv   
 
-![](../assets/D3-54-2.png)     
+![](../../assets/D3-54-2.png)     
 3D Attn from Spatial Attn + Temporal Attn   
 
 Different from Imagen Video, only the image prior takes text as input!   
@@ -123,7 +123,7 @@ P55
 
  - Similarly, fine-tune a text-to-video model from text-to-image model.    
 
-![](../assets/D3-55.png)     
+![](../../assets/D3-55.png)     
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
 
@@ -134,7 +134,7 @@ P56
 
  - Fine-tune the decoder to be video-aware, keeping encoder frozen.    
 
-![](../assets/D3-56.png)     
+![](../../assets/D3-56.png)     
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
 
@@ -146,7 +146,7 @@ P57
  - Temporal layers can be Conv3D or Temporal attentions.   
  - Context can be added for autoregressive generation.    
 
-![](../assets/D3-57.png)     
+![](../../assets/D3-57.png)     
 
 Optional context via learned down-sampling operation.   
 
@@ -168,7 +168,7 @@ P58
  - After key latent frames are generated, the latent frames go through temporal interpolation.   
  - Then, they are decoded to pixel space and optionally upsampled.   
 
-![](../assets/D3-58.png)     
+![](../../assets/D3-58.png)     
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
 
