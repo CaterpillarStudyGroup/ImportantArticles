@@ -96,4 +96,5 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Decoupling Human and Camera Motion from Videos in the Wild||多人|
+||2023|Decoupling Human and Camera Motion from Videos in the Wild||多人|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2024|TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Video|||[link](https://caterpillarstudygroup.github.io/ReadPapers/18.html)|
