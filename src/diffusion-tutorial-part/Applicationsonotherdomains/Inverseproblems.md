@@ -172,10 +172,7 @@ P58
 
 Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
 
-P59   
-## Outline   
 
- - Video style transfer / editing methods    
 
 
 ---------------------------------------
