@@ -29,6 +29,7 @@
   - [Applications on other domains]()
     - [Diffusion Models for Inverse Problems](diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.md)
     - [3D](diffusion-tutorial-part/Applicationsonotherdomains/3D.md)
+    - [2D diffusion models for 3D generation](diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.md)
   
 - [Mike Shou - Video Diffusion Models]()
   - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
