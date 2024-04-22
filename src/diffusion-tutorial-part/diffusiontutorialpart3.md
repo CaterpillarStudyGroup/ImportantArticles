@@ -320,7 +320,7 @@ Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023
 > &#x2705; 第二项要求反向传播 through the diffuson model，很慢，且费内存。   
 > &#x2705; 这一页描述 Image → Loss 的过程。    
 > &#x2705; 公式 1 为 diffusion model objective fanction.    
-> &#x2705; 公式 2 为算法中使用的 loss，由于\\(\lambda =g(\theta )\\)，\\(\frac{\partial L}{\partial \theta } =\frac{\partial L}{\partial \lambda } \cdot \frac{\partial \lambda }{\partial \theta } \\)，其中 \\(\frac{\partial L}{\partial \lambda }\\) 又分为第一项和第二项。    
+> &#x2705; 公式 2 为算法中使用的 loss，由于\\(x =g(\theta )\\)，\\(\frac{\partial L}{\partial \theta } =\frac{\partial L}{\partial x } \cdot \frac{\partial x }{\partial \theta } \\)，其中 \\(\frac{\partial L}{\partial x }\\) 又分为第一项和第二项。    
 > &#x2705; 公式 2 中的常系数都省掉了。    
 > &#x2705; 公式 3 把公式 2 中的第二项去掉了，为本文最终使用的 loss.   
 
