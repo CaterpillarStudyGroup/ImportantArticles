@@ -388,7 +388,7 @@ Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023
 
 > &#x2705; (1) 生成 Nerf (2) Nerf 投影 (3) 投影图加噪再去噪 (4) 对生成结果求 loss    
 > &#x2705; entire pipeline.    
-> &#x2705; 左中上：从相机视角，生成 object 的投影。   
+> &#x2705; 左上：从相机视角，生成 object 的投影。   
 > &#x2705; 左下：以相机视角为参数，推断出每个点的 Nerf 参数。   
 > &#x2705; 左中：左上和左下结合，得到渲染图像。    
 > &#x2705; 生成随机噪声，对渲染图像加噪。   
