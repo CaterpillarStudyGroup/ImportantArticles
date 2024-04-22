@@ -32,6 +32,7 @@
     - [2D diffusion models for 3D generation](diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.md)
     - [Diffusion models for view synthesis](iffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.md)
     - [3D reconstruction](iffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.md)
+    - [Inverse problems](iffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.md)
   
 - [Mike Shou - Video Diffusion Models]()
   - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
