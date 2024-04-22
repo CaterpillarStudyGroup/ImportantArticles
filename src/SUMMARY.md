@@ -26,7 +26,7 @@
     - [Conditional Generation and Guidance](diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.md)
     - [Summary](./diffusion-tutorial-part/Fundamentals/Summary.md)
   - [Image Applications](diffusion-tutorial-part/diffusiontutorialpart2.md)
-  - [Applications on other domains]()
+  - [Applicationsonotherdomains]()
     - [Diffusion Models for Inverse Problems](diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.md)
     - [3D](diffusion-tutorial-part/Applicationsonotherdomains/3D.md)
     - [2D diffusion models for 3D generation](diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.md)
