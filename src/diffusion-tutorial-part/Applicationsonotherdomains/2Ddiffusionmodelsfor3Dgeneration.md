@@ -23,20 +23,20 @@ good” from the text-to-image model.
  - Unlike ancestral sampling (e.g., DDIM), the underlying 
 parameters are being optimized over some loss function.    
 
-![](../assets/D3-25-1.png)     
-![](../assets/D3-25-2.png)     
+![](../../assets/D3-25-1.png)     
+![](../../assets/D3-25-2.png)     
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
 
 > &#x2705; 参数不在 2D 空间而是在 Nerf 空间，构成优化问题，通过更新 Nerf 参数来满足 loss.    
-![](../assets/D3-25-3.png)  
+![](../../assets/D3-25-3.png)  
 
 
 
 P26   
 ## DreamFusion: Score Distillation Sampling   
 
-![](../assets/D3-26.png)     
+![](../../assets/D3-26.png)     
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023     
 
@@ -65,7 +65,7 @@ distributions, conditioned on y!
 
 KL and its gradient is defined as:    
 
-![](../assets/D3-27.png)  
+![](../../assets/D3-27.png)  
 
 (B) can be derived from chain rule    
 
@@ -93,11 +93,11 @@ $$
 However, this objective can be quite noisy.     
 Alternatively, we can consider a “baseline” approach in reinforcement learning: add a component that has zero mean but reduces variance. Writing out (A) again:     
 
-![](../assets/D3-28-1.png)  
+![](../../assets/D3-28-1.png)  
 
 Thus, we have:
 
-![](../assets/D3-28-2.png)  
+![](../../assets/D3-28-2.png)  
 
 This has the same mean, but **reduced variance**, as we train \\(\hat{\epsilon } _ \phi\\) to predict \\(\epsilon\\)    
 
@@ -109,7 +109,7 @@ P29
 
  - SDS can be used to optimize a 3D representation, like NeRF.   
 
-![](../assets/D3-29.png)  
+![](../../assets/D3-29.png)  
 
 Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> ICLR 2023    
 
@@ -130,7 +130,7 @@ P30
  - Accelerate NeRF with Instant-NGP, for coarse representations.    
  - Optimize a fine mesh model with differentiable renderer.   
 
-![](../assets/D3-30.png)  
+![](../../assets/D3-30.png)  
 
 Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation",</u> CVPR 2023   
 
@@ -141,7 +141,7 @@ P31
 
 A different formulation, motivated from approximating 3D score.   
 
-![](../assets/D3-31.png)  
+![](../../assets/D3-31.png)  
 
 In principle, the diffusion model is the noisy 2D score (over clean images),   
 but in practice, the diffusion model suffers from out-of-distribution (OOD) issues!    
@@ -158,7 +158,7 @@ P32
 SJC approximates noisy score with “Perturb-and-Average Scoring”, which is not present in SDS.   
  - Use score model on multiple noise-perturbed data, then average it.    
 
-![](../assets/D3-32.png)  
+![](../../assets/D3-32.png)  
 
 Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
 
@@ -170,7 +170,7 @@ P33
 
 SJC is a competitive alternative to SDS.   
 
-![](../assets/D3-33.png) 
+![](../../assets/D3-33.png) 
 
 Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
 
@@ -180,7 +180,7 @@ P34
  - SDS-based method often set classifier-guidance weight to 100, which limits the “diversity” of the generated samples.   
  - ProlificDreamer reduces this to 7.5, leading to diverse samples.    
 
-![](../assets/D3-34.png) 
+![](../../assets/D3-34.png) 
 
 Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
 
@@ -198,7 +198,7 @@ $$
 
 Suppose is a \\(\theta _ \tau \sim \mu \\) NeRF sample, then VSD simulates this ODE:    
 
-![](../assets/D3-35.png) 
+![](../../assets/D3-35.png) 
 
  - Diffusion model can be used to approximate score of noisy real images.   
  - How about noisy rendered images?   sss
@@ -210,7 +210,7 @@ P36
 
  - Learn another diffusion model to approximate the score of noisy rendered images!
 
-![](../assets/D3-36.png) 
+![](../../assets/D3-36.png) 
 
 Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
 

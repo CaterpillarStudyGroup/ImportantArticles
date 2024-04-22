@@ -12,18 +12,18 @@ P3
 
 ### Goal: denoise and super-resolve an image
 
-![](../assets/D3-3.png)  
+![](../../assets/D3-3.png)  
 
-![](../assets/D3-3-1.png)  
+![](../../assets/D3-3-1.png)  
 
 > &#x2705; 处理对象是一个特定的 Image． 虽然 Diffusion Prior 中包含大量高质量图像，但对于这个特定的处理对象，应当基于其中的部分 prior.    
 
 P4   
 ### Goal: recover the masked region of an image
 
-![](../assets/D3-4-2.png)  
+![](../../assets/D3-4-2.png)  
 
-![](../assets/D3-4.png)  
+![](../../assets/D3-4.png)  
 
 We want to use the same diffusion model for different problems!    
 
@@ -32,12 +32,12 @@ We want to use the same diffusion model for different problems!
 P5   
 ## Diffusion Models for Inverse Problems: Two Paradigms
 
-![](../assets/D3-5-1.png)  
+![](../../assets/D3-5-1.png)  
 
 **Replacement-based methods**    
 (Overwrites model prediction with known information)    
 
-![](../assets/D3-5-2.png)  
+![](../../assets/D3-5-2.png)  
 
 **Reconstruction-based methods**    
 (Approximate classifier-free guidance **without additional training**)    
@@ -48,14 +48,14 @@ P5
 P6   
 ## Replacement-based Methods: An Example   
 
-![](../assets/D3-6.png)  
+![](../../assets/D3-6.png)  
 
 Song et al., <u>"Score-Based Generative Modeling through Stochastic Differential Equations",</u> ICLR 2021    
 
 P7   
 ## Reconstruction-based Methods: An Example
 
-![](../assets/D3-7.png)  
+![](../../assets/D3-7.png)  
 
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> ICLR 2023   
 
@@ -73,7 +73,7 @@ $$
 
 Maximizing the likelihood is minimizing the L2 distance between measured and generated!     
 
-![](../assets/D3-8.png)  
+![](../../assets/D3-8.png)  
 
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> ICLR 2023    
 

@@ -16,11 +16,11 @@ P40
 
  - Condition on a frame and two poses, predict another frame.     
 
-![](../assets/D3-40-1.png)  
+![](../../assets/D3-40-1.png)  
 
 UNet with frame cross-attention   
 
-![](../assets/D3-40-2.png)  
+![](../../assets/D3-40-2.png)  
 
 Sample based on stochastic conditions,   
 allowing the use of multiple conditional frames.    
@@ -40,7 +40,7 @@ P41
  - 3D-aware architecture with latent feature field.    
  - Use diffusion model to improve render quality based on structure.   
 
-![](../assets/D3-41.png)  
+![](../../assets/D3-41.png)  
 
 Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models",</u> arXiv 2023    
 

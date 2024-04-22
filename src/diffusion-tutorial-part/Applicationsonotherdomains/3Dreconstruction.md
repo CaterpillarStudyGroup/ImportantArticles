@@ -9,7 +9,7 @@ P43
 
  - SDS + Fine-tuned CLIP text embedding + Depth supervision    
 
-![](../assets/D3-43.png)  
+![](../../assets/D3-43.png)  
 
 Xu et al., <u>"NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views",</u> CVPR 2023    
 
@@ -23,7 +23,7 @@ P44
  - Generate novel view from 1 view and pose, with 2d model.    
  - Then, run SJC / SDS-like optimizations with view-conditioned model.   
 
-![](../assets/D3-44.png)  
+![](../../assets/D3-44.png)  
 
 Liu et al., <u>"Zero-1-to-3: Zero-shot One Image to 3D Object",</u> arXiv 2023    
 
