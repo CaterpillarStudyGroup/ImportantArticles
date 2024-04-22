@@ -33,7 +33,7 @@
     - [Diffusion models for view synthesis](iffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.md)
     - [3D reconstruction](iffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.md)
     - [Inverse problems](iffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.md)
-    - [Video style transfer / editing methods](iffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer/editingmethods.md)
+    - [Video style transfer / editing methods](iffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.md)
   
 - [Mike Shou - Video Diffusion Models]()
   - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
