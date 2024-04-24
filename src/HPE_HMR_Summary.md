@@ -94,7 +94,12 @@
 
 ## 提取相机轨迹
 
+### 结合额外的传感器或摄像头
+
+### 仅从视频中提取
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Decoupling Human and Camera Motion from Videos in the Wild||多人|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2022|BodySLAM: Joint Camera Localisation, Mapping, and Human Motion Tracking|
+||2023|Decoupling Human and Camera Motion from Videos in the Wild|联合优化人体姿势和相机scale，使人体位移与学习的运动模型相匹配|多人|[link](https://caterpillarstudygroup.github.io/ReadPapers/16.html)|
 ||2024|TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Video|||[link](https://caterpillarstudygroup.github.io/ReadPapers/18.html)|
