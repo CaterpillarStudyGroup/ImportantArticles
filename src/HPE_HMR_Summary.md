@@ -20,12 +20,13 @@
 ### Naked human body recovery
 #### **Multimodal Methods**
 
-|ID|Year|Name|link|
-|---|---|---|---|
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
 |[123]|2019|
 |[124]|2022|
 |[125]|2022|
 |[126]|2022|
+||2023|WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion||单人，移动相机|[link](https://caterpillarstudygroup.github.io/ReadPapers/11.html)
 
 #### Utilizing Attention Mechanism
 #### **Exploiting Temporal Information**
@@ -103,3 +104,29 @@
 ||2022|BodySLAM: Joint Camera Localisation, Mapping, and Human Motion Tracking|
 ||2023|Decoupling Human and Camera Motion from Videos in the Wild|联合优化人体姿势和相机scale，使人体位移与学习的运动模型相匹配|多人|[link](https://caterpillarstudygroup.github.io/ReadPapers/16.html)|
 ||2024|TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Video|||[link](https://caterpillarstudygroup.github.io/ReadPapers/18.html)|
+
+# Evaluation
+
+## Evaluation metrics
+
+### For pose and shape reconstruction
+
+mean per-joint error (MPJPE),   Procrustes-aligned perjoint error (PA-MPJPE),   
+per-vertex error (PVE)
+
+### To evaluate the motion smoothness
+
+ acceleration error (ACCEL) against the ground truth acceleration
+ 
+### For human trajectory evaluation, 
+ 
+we slice a sequence into 100-frame segments and evaluate 3D joint error after aligning the first two frames (W-MPJPE100) or the entire segment (WA-MPJPE100) [93].   
+evaluate the error of the entire trajectory after aligning the first frame, with root translation error (RTE), root orientation error (ROE), and egocentric root velocity error (ERVE).   
+
+### For camera trajectory evaluation
+
+absolute trajectory error (ATE) [75], which performs Procrustes with scaling to align the estimation with ground truth before computing error.  
+
+### To evaluate the accuracy of our scale estimation
+
+evaluate ATE using our estimated scale (ATE-S) [35].
