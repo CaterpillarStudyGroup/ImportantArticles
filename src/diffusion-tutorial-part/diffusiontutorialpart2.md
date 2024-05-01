@@ -22,7 +22,7 @@ P5
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture|
+||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture||[pdf](https://arxiv.org/abs/2112.10752)
 ||2022|Photorealistic text-to-image diffusion models with deep language understanding|Imagen|
 ||2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|eDiff-I|
 
@@ -221,51 +221,14 @@ P26
 
 
 P27   
-## Prompt-to-Prompt Image Editing with Cross-Attention Control
 
-![](../assets/D2-27.png)
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|通过控制生成过程中的 attention maps进行图像编辑|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
+||2023|NULL-text Inversion for Editing Real Images Using Guided Diffusion Models|针对真实图像（非生成图像）的编辑，以[CFG](https://caterpillarstudygroup.github.io/ReadPapers/6.html)为基础，fix condition分支，优化无condition分支，使其embedding向condition分支的embedding靠近|attention控制|
+|||Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
+||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
 
-> &#x2705; 基于标题的图像编辑 (1) 修改某个单词的影响力；(2) 替换单词；(3) 添加单词；     
-
-Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control", </u>ICLR 2023    
-
-P28   
-### Pipeline
-
-![](../assets/D2-28.png)
-
-> &#x2705; 控制生成过程中的 attention maps。其具体方法为，在每个step中，把原始图像的 attention map 注入到 diffusion 过程中。  
-> 图中上面步骤描述正常的文生图的cross attention设计。  
-> 图中下面步骤描述了如何控制cross attention过程中的attention map。三种控制方式分别对应三种图像编辑方法。      
-
-
-P29   
-### 效果
-
-![](../assets/D2-29.png)    
-
-P30   
-## InstructPix2Pix: Learning to Follow Image Editing Instructions  
-
-![](../assets/D2-30.png)   
-
-Brooks et al., <u>"Instructpix2pix: Learning to follow image editing instructions”,</u> CVPR 2023    
-
-> 控制特点：不需要完整的控制文本，只需要告诉模型要怎么修改图像。  
-> &#x2705; 优势：只修改推断过程，不需针对图像做 finetune.    
-
-P31   
-
-### Pipeline
-![](../assets/D2-31-1.png)    
-
-> 生成Image Editing Dataset：  
-Step a：微调GPT-3，用于生成Instruction和Edited Caption。  
-Step b：使用预训练模型生成pair data。  
-
-![](../assets/D2-31-2.png)    
-
-> &#x2705; [?]只是文本引导方式做了改变，哪里体现 pix 2 呢？     
 
 P32   
 ## Personalization with diffusion models   

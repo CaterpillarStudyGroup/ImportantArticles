@@ -223,10 +223,15 @@ Molad et al, “Dreamix: Video Diffusion Models are General Video Editors,” ar
 P164   
 ## One-Shot Tuned Video Editing: More Works
 
+> 部分笔记移至Mike Shou章节
+
 |||
 |--|--|
 | ![](../../assets/08-164-1.png)  | \\(\mathbf{EI^2}\\) (Zhang et al.)<br> Modify self-attention for better temporal consistency <br> “Towards Consistent Video Editing with Text-to-Image rDiffusion Models,” arXiv 2023. |
-| ![](../../assets/08-164-2.png)  |  **Video-P2P** (Liu et al.) <br> Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control <br> “Video-P2P: Video Editing with Cross-attention Control,” arXiv 2023. |
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Video-P2P: Video Editing with Cross-attention Control|Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control。<br>![](../../assets/08-164-2.png)|attention控制|
 
 > &#x2705; 不需要训练的方式。   
 

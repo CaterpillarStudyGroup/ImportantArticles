@@ -74,10 +74,6 @@ Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 20
 P66    
 ## Concurrent / Related Works   
 
-![](../../assets/D3-66-1.png)    
-Video-P2P: Cross-Attention Control on text-to-video model    
-
-
 ![](../../assets/D3-66-2.png)    
 FateZero: Store attention maps from DDIM inversion for later use    
 

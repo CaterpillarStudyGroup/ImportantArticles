@@ -9,17 +9,9 @@ P264
 
 ![](../../assets/08-264.png)   
 
-> &#x2705; 在已有图片的情况，直接输入 Prompt 不符合用户习惯，用户只需描述要修改的点，通过 Prompt 2 Prompr 转化为完整 prompt.    
-
-P265   
-## InstructPix2Pix
-
-Instruction-guided image editing
-
-![](../../assets/08-265.png) 
-
-Brooks et al., “InstructPix2Pix: Learning to Follow Image diting Instructions,” CVPR 2023.  
-
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/21.html)|
 
 P266   
 ## InstructVid2Vid
