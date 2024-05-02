@@ -2,52 +2,19 @@ P22
 
 # Score-based Generative Modeling with Differential Equations
 
-经典论文：[Score-Based Generative Modeling through Stochastic Differential Equations](https://caterpillarstudygroup.github.io/ReadPapers/8.html)
-
-P24   
-## Ordinary Differential Equation (ODE):    
-
-$$
-\frac{d\mathbf{x} }{dt} =\mathbf{f} (\mathbf{x},t) \quad  \mathrm{or}  \quad d\mathbf{x} =\mathbf{f} (\mathbf{x} ,t)dt
-$$
-
-> &#x2705; 图中描述了一个 function，这个函数没有闭式解，而是 \\(\mathbf{x}\\) 随着时间的变化。    
-> &#x2705; \\(f(\mathbf{x},t)\\) 描述的是一个随时间变化的场 \\(f(\mathbf{x},t)\\) 可以是一个用网络拟合的结果。    
-
-![](../../assets/D1-24-3.png)   
-
-Analytical Solution:   
-
-$$
-\mathbf{x} (t)=\mathbf{x} (0)+\int_{0}^{t} \mathbf{f} (\mathbf{x} ,\tau )d\tau 
-$$
-
-> &#x2705; 这个积分经常无法计算，因此把离散化。  
-
-Iterative Numerical Solution:    
-
-$$
-\mathbf{x} (t+\Delta t)\approx \mathbf{x} (t)+\mathbf{f} (\mathbf{x} (t),t)\Delta t
-$$
-
-## Stochastic Differential Equation (SDE):   
-
-![](../../assets/D1-24-4.png) 
-
-
-> &#x2705; \\(\sigma \\) 描述 noise 的 scale。\\(\omega _ t\\) 描述噪声。    
-> &#x2705; SDE 在每个时间步注入高斯白噪声。因此多次求解 \\(\mathbf{x}(t)\\) 的结果是不一样的。    
-
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Score-Based Generative Modeling through Stochastic Differential Equations|||[link](https://caterpillarstudygroup.github.io/ReadPapers/8.html)
 
 P26   
-### DDPM VS Stochastic Differential Equation
+## DDPM VS Stochastic Differential Equation
 
+> &#x1F50E; [SDE](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/NumericalComputation/ODE_SDE.html)
 ![](../../assets/D1-26.png) 
 
 
-> &#x2705; DDPM 是在时间上做了离散化的 SDE．    
-> &#x1F50E; <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, ICLR, 2021</u> [link](https://caterpillarstudygroup.github.io/ReadPapers/8.html)    
 
+> &#x2705; DDPM 是在时间上做了离散化的 SDE．    
 
 P27    
 ### Forward Diffusion Process as Stochastic Differential Equation
@@ -154,12 +121,6 @@ P37
  - **Log-likelihood computation** (instantaneous change of variables):       
 
 > &#x2753; 第三条没听懂，把 model 当成基于数据的 ODE 来用？    
-
-<u>Chen et al., *NeurIPS*, 2018</u>    
-<u>Grathwohl, *ICLR*, 2019</u>   
-<u>Song et al., *ICLR*, 2021</u>    
-
-
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

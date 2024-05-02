@@ -27,6 +27,7 @@
 |[125]|2022|
 |[126]|2022|
 ||2023|WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion||单人，移动相机|[link](https://caterpillarstudygroup.github.io/ReadPapers/11.html)
+||2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)|
 
 #### Utilizing Attention Mechanism
 #### **Exploiting Temporal Information**
@@ -49,7 +50,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2024|PhysPT: Physics-aware Pretrained Transformer for Estimating Human
-Dynamics from Monocular Videos||物理|
+Dynamics from Monocular Videos|
 
 
 #### Choosing Appropriate Learning Strategies

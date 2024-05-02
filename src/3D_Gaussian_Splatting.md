@@ -1,3 +1,5 @@
+![](./assets/7b6ce0e0b104d36e8331f86fd4c9ab5a_1_Figure_2_1330436394.png)
+
 # INTRODUCTION
 
 需求：基于图像的3D场景重建
@@ -18,7 +20,24 @@
 
 # BACKGROUND
 
-# 
+# 3D GAUSSIAN SPLATTING: PRINCIPLES
+
+# 3D GAUSSIAN SPLATTING: DIRECTIONS
+
+# APPLICATION AREAS AND TASKS
+
+## Simultaneous Localization and Mapping (SLAM)
+
+## Dynamic Scene Reconstruction
+
+## AI-Generated Content (AIGC)
+
+## Autonomous Driving
+
+## Endoscopic Scene Reconstruction
+
+## Medical Image
+
 
 # Reference
 
