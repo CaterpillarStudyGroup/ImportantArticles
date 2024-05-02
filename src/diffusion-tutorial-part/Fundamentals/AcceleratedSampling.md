@@ -7,7 +7,7 @@ P39
 
 ![](../../assets/D1-39.png) 
 
-> &#x1F50E; <u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u>  [link](https://caterpillarstudygroup.github.io/ReadPapers/10.html) 
+> &#x1F50E; <u>Tackling the Generative Learning Trilemma with Denoising Diffusion GANs, ICLR 2022</u> 
 
 其中Diffusion based生成模型的主要问题是生成速度慢，因此需要在保持高采样质量和多样性的前提下，针对采样速度慢的问题进行加速。   
 
@@ -63,12 +63,10 @@ P46
 ||2022|Fast Sampling of Diffusion Models with Exponential Integrator|Exponential ODE Integrators|
 ||2022|DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps|Exponential ODE Integrators|
 ||2022|DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models|Exponential ODE Integrators|
- - Higher-Order ODE solver with Heun’s Method:   
-    - <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, *NeurIPS*, 2022</u>   
- - Many more:   
-    - <u>Zhao et al., "UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models", arXiv 2023</u>    
-    - <u>Shih et al., "Parallel Sampling of Diffusion Models", arxiv 2023</u>     
-    - <u>Chen et al., "A Geometric Perspective on Diffusion Models", arXiv 2023</u>     
+||2022|Elucidating the Design Space of Diffusion-Based Generative Models|Higher-Order ODE solver with Heun’s Method|
+||2023|UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models|
+||2023|Parallel Sampling of Diffusion Model|
+||2023|A Geometric Perspective on Diffusion Models|
 
 > &#x2705; 这些solvers可以以plug-in的方式使用，且通常能比DDPM更快收敛。  
 
@@ -109,11 +107,9 @@ Can we train a neural network to directly predict **distribution of** \\(\mathbf
 
 因此**Requires more complicated functional approximators!**，例如GAN或energy-based。   
 
-GANs used by Xiao et al.    
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|Tackling the Generative Learning Trilemma with Denoising Diffusion GANs|GAN|
+||2022|Tackling the Generative Learning Trilemma with Denoising Diffusion GANs|GAN|| [link](https://caterpillarstudygroup.github.io/ReadPapers/10.html) |
 ||2021|Learning energy-based models by diffusion recovery likelihood|Energy-based models|
 
 P54   
@@ -137,19 +133,21 @@ P56
 
 Cascaded Diffusion Models outperform Big-GAN in FID and IS and VQ-VAE2 in Classification Accuracy Score.    
 
-> &#x1F50E; <u>Ho et al., “Cascaded Diffusion Models for High Fidelity Image Generation”, 2021.</u> [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)     
-> &#x1F50E; <u>Ramesh et al., “Hierarchical Text-Conditional Image Generation with CLIP Latents”, arXiv 2022.</u>     
-> &#x1F50E; <u>Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding”, arXiv 2022.</u>     
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Cascaded Diffusion Models for High Fidelity Image Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)|
+||2022|Hierarchical Text-Conditional Image Generation with CLIP Latents|
+||2022|Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding|     
 
 
 P57   
 ## Latent Diffusion Models   
 
+### Main Idea：  
+
 **Variational autoencoder + score-based prior**   
 
 ![](../../assets/D1-57.png) 
-
-### Main Idea：   
 
 Encoder maps the input data to an embedding space    
 Denoising diffusion models are applied in the latent space    
@@ -161,40 +159,15 @@ P58
 (2) Latent space \\(\to \\) ***More expressivity and flexibility in design!***    
 (3) Tailored Autoencoders \\(\to \\) ***More expressivity, Application to any data type (graphs, text, 3D data, etc.)!***     
 
-### End-to-End Training objective    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Score-based generative modeling in latent space|**End-to-End** Training objective<br>![](../../assets/D1-59.png) <br> &#x2705; 这篇文章对 VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    |
+||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Two-stage** Training: train autoencoder first, then train the diffusion prior<br>&#x2705; VAE 和 diffusion 分开训练。每次需要训练的网络都不大。<br>Focus on compression without of any loss in reconstruction quality<br>&#x2705; 使用Advanced Auto Encoders。由于使用的latent space比较小，diffusion model的大小也可以减小。<br> Demonstrated the expressivity of latent diffusion models on many conditional problems|    
+||2021|D2C: Diffusion-Denoising Models for Few-shot Conditional Generation|
+||2022|Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems|
+||2022|Dimensionality-Varying Diffusion Process|   
 
-![](../../assets/D1-59.png) 
-
-> &#x1F50E; <u>Vahdat et al., “Score-based generative modeling in latent space”, NeurIPS 2021.</u>   
-
-> &#x2705; 这篇文章对 VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    
-
-
-P60   
-### Two-stage Training   
-
-The seminal work from Rombach et al. CVPR 2022:    
- - Two stage training: train autoencoder first, then train the diffusion prior   
-
- > &#x2705; VAE 和 diffusion 分开训练。每次需要训练的网络都不大。  
-
- - Focus on compression without of any loss in reconstruction quality   
-
- > &#x2705; 使用Advanced Auto Encoders。由于使用的latent space比较小，diffusion model的大小也可以减小。       
-
- - Demonstrated the expressivity of latent diffusion models on many conditional problems    
-
-The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community    
-
-> &#x1F50E; <u>Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models”, CVPR 2022.</u>      
-
-P61    
-## Additional Reading    
-
-More on low-dimensional diffusion models:    
- - Sinha et al., <u>"D2C: Diffusion-Denoising Models for Few-shot Conditional Generation", </u> NeurIPS 2021    
- - Daras et al., <u>"Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems",</u> ICML 2022    
- - Zhang et al., <u>“Dimensionality-Varying Diffusion Process”, </u>arXiv 2022.    
+The efficiency and expressivity of latent diffusion models + open-source access fueled a large body of work in the community           
 
 # Advanced Diffusion Models
 

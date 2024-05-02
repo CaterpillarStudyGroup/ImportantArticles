@@ -45,6 +45,13 @@
 #### Boosting Efficiency
 #### Developing Various Representations
 #### Utilizing Structural Information
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2024|PhysPT: Physics-aware Pretrained Transformer for Estimating Human
+Dynamics from Monocular Videos||物理|
+
+
 #### Choosing Appropriate Learning Strategies
 
 |ID|Year|Name|Note|Tags|Link|
@@ -116,7 +123,7 @@ per-vertex error (PVE)
 
 ### To evaluate the motion smoothness
 
- acceleration error (ACCEL) against the ground truth acceleration
+acceleration error (ACCEL) against the ground truth acceleration
  
 ### For human trajectory evaluation, 
  

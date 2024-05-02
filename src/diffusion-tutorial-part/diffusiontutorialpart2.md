@@ -59,168 +59,21 @@ P9
 # Image editing and customization with diffusion models
 
 P10    
+## Gaussian Noise方法
 
-## SDEdit
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|DEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
 
-Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations", </u>ICLR 2022 
+## DDIM Inversion方法
 
-### guided synthesis／editing Task   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Dual diffusion implicit bridges for image-to-image translation||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
+||2023|DiffEdit: Diffusion-based semantic image editing with mask guidance||[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
+||2023|Imagic: Text-Based Real Image Editing with Diffusion Models||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
 
-![](../assets/D2-11.png) 
-
-> &#x2705; 过去的 guided synthesis／editing 任务是用 GAN based 方法实现的。    
-
-P12   
-### Pipeline
-
-![](../assets/D2-12.png) 
-
-**Gradually projects the input to the manifold of natural images.**
-
-> 准备工作：一个预训练好的Image Diffusion Model  
-> 第一步：perturb the input with **Gaussian noise**  
-> 第二步：progressively remove the noise using a pretrained diffusion model.    
-> [?] 怎样保证Denoise的图像与原始图像有高度的一致性？
-
-### 特点
-
-> 只需要一个预训练模型，不需要额外的finetune。  
-
-P13   
-### 其它应用场景
-
-#### Fine-grained control using strokes
-
-![](../assets/D2-13.png) 
-
-> 可以在Image上加上草图，也可以直接使用草图生成图像  
-
-P16   
-#### Image compositing  
-
-![](../assets/D2-16.png) 
-
-> 把上面图的指定pixel patches应用到下面图上。  
-> SDEdit的结果更合理且与原图更像。  
-
-P17   
-### 效率提升
-
-Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models
-
-![](../assets/D2-17.png) 
-
-原理：全图生成速度比较慢，因此针对被编辑区域进行部分生成。  
-
-Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models", </u>NeurIPS 2022    
-
-P18   
-
-## Style Transfer with DDIM inversion
-
-### Recap DDIM Inversion
-
-![](../assets/D2-18.png) 
-
-Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021    
-
-> &#x2705; DDIM 方法中，从 noise 到图像的映射关系是确定的。同样也可以让图像与 noise 的关系是确定的。这个过程称为 DDIM Inversion.    
-> &#x2705; DDIM Inversion 是图像编辑的常用方法。     
-
-P19   
-### Pipeline
-
-![](../assets/D2-19.png) 
-
-Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation", </u>ICLR 2023    
-
-> &#x2705; 假设已有一个 文生图的pretrained DDIM model．    
-> &#x2705; 任务：把老虎的图像变成猫的图像，且不改变 Sryle.     
-> &#x2705; (1) 老虎图像 ＋ DDIM Inversion ＋ “老虎”标签  → noise      
-> &#x2705; (2) noise ＋ DDIM ＋ “猫”标签 → 猫图像        
-> &#x2705; 优点：不需要重训。     
-
-
-P20   
-### 效果
-
-![](../assets/D2-20.png) 
-
-Su et al., <u>"Dual diffusion implicit bridges for image-to-image translation",</u> ICLR 2023    
-
-
-> &#x2705; 学习不同颜色空间的 transform    
-
-
-P21    
-## DiffEdit: Diffusion-based semantic image editing with mask guidance    
-
-Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance", </u>ICLR 2023    
-
-### 任务目标
-
-> SDEdit要求用户对想更新的区域打MASK。  
-
-Instead of asking users to provide the mask, the model will generate the mask itself based on the caption and query.    
-
-
-![](../assets/D2-21.png) 
-
-
-> &#x2705; 作者认为让用户打 MASK 比较麻烦，因此生成 MASK    
-
-
-P22   
-### Pipeline
-
-![](../assets/D2-22.png)  
-
-> &#x2705; Step 1：对原始图像加噪分别根据两个文本，Q 和 R 对加噪结果去噪。对两个去噪结果求差，得出哪些区域应该被重新生成。    
-> &#x2705; Step 2：用 DDIM 对原始图像编码，得到 noise.    
-> &#x2705; 注意：step 1 的加高斯噪声与 step 2 的 DDIM Encoding 不同。前者是非确定的，后者是确定的。    
-> &#x2705; Step 3：DDIM Decoding，但对于非 MASK 区域，用 Step 2 相同 step 的对应值覆盖。    
-
-P23   
-### 效果
-![](../assets/D2-23.png)      
-
-> 生成质量高且与原始相似度高。  
-
-P24   
-## Imagic: Text-Based Real Image Editing with Diffusion Models   
-
-![](../assets/D2-24.png) 
-
-Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",</u> CVPR 2023     
-
-> &#x2705; 对内容进行复杂修改，但对不相关部分保留。    
-
-
-P25   
-### Pipeline
-
-> 输入：Origin Image和target text promt
-
-![](../assets/D2-25-1.png)     
-
-> &#x2705; Step 1： 对 target text 作 embedding，得到init text embedding \\(e_{tgt}\\)。然后优化init text embedding，使得Pre-Trained Diffusion Model可以根据Optimized text embedding \\(e_{opt}\\) 重建出Origin Image。
- 
-![](../assets/D2-25-2.png)     
-
-> &#x2705; Step 2： 用 Optimized text embedding \\(e_{opt}\\) 重建 Origin Image，这一步会 finetune diffusion model。   
-
-![](../assets/D2-25-3.png)    
-
-> &#x2705; Step 3：用finetuned diffusion model生成target Image。其中condition为\\(e_{tgt}\\)和\\(e_{opt}\\)的插值。  
-
-
-P26   
-### 效果
-
-![](../assets/D2-26.png) 
-
-
-P27   
+## Attention based 方法
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
@@ -231,7 +84,9 @@ P27
 
 
 P32   
-## Personalization with diffusion models   
+# Personalization with diffusion models   
+
+## DreamBooth
 
 ![](../assets/D2-32.png) 
 

@@ -13,6 +13,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |158|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 ### Normalizing Flows.
 
@@ -39,5 +40,9 @@
 ## Scene representation
 
 ## Generation pipeline
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 # Datasets

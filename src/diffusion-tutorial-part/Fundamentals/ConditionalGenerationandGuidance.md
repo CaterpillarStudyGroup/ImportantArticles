@@ -58,48 +58,15 @@ P72
 
 ## 相关论文
 
-> &#x1F50E; <u>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations”, *ICLR*, 2021</u>    
-> &#x1F50E; <u>Nie et al., “Controllable and Compositional Generation with Latent-Space Energy-Based Models”, NeurIPS 2021</u>    
-> &#x1F50E; <u>Dhariwal and Nichol, “Diffusion models beat GANs on image synthesis”, NeurIPS 2021.</u>    
-
-P73    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Score-Based Generative Modeling through Stochastic Differential Equations|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2021|Controllable and Compositional Generation with Latent-Space Energy-Based Models|
+||2021|Diffusion models beat GANs on image synthesis|
 
 # Classifier-free Guidance    
 
-P74   
-Instead of training an additional classifier, get an “implicit classifier” by jointly training a conditional and  unconditional diffusion model. In practice, the conditional and unconditional models are trained together by randomly dropping the condition of the diffusion model at certain chance.     
-
-> &#x2705; Classifier Guidance 的问题:  
-> &#x2705; 1. 需要额外训练一个噪声版本的图像分类器  
-> &#x2705; 2. 分类器的质量会影响按类别生成的效果  
-> &#x2705; 3. 过梯度更新图像会导致对抗攻击效应，生成图像可能会通过人眼不可察觉的细节欺骗分类器，实际上并没有按条件生成。
-
-## implicit classifier
-
-Recall that classifier guidance requires training a classifier. Using Bayes’ rule again:   
-
-![](../../assets/D1-74-1.png) 
-
- - The modified score with this implicit classifier included is:   
-
-![](../../assets/D1-74-2.png) 
-
-> &#x2705; 把公式1代入Classifier Guidance Diffusion Model的公式中，得到公式2  
-
-## 训练方法
-
-> &#x2705; 训一个模型同时支持 Conditional 和 Unconditional 两个任务。    
-> &#x2705; 训练时随机地使用“条件+数据”和“None+数据”进行训练。  
-
-> &#x1F50E; <u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
-
-P75   
-
-## Trade-off for sample quality and sample diversity
-
-![](../../assets/D1-75.png) 
-
-Large guidance weight \\((\omega  )\\) usually leads to better individual sample quality but less sample diversity.    
-
-<u>Ho & Salimans, “Classifier-Free Diffusion Guidance”, 2021.</u>     
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|Classifier-Free Diffusion Guidance|||[link](https://caterpillarstudygroup.github.io/ReadPapers/6.html)|     
 
