@@ -39,10 +39,14 @@
 
 ## Scene representation
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹的动作生成|
+
 ## Generation pipeline
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
+||2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 # Datasets
