@@ -27,9 +27,20 @@
 |[125]|2022|
 |[126]|2022|
 ||2023|WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion||单人，移动相机|[link](https://caterpillarstudygroup.github.io/ReadPapers/11.html)
-||2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)|
+||2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment||2D to 3D lifting|[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)|
+|Moritz Einfalt, Katja Ludwig, and Rainer Lienhart. Uplift and upsample: Efficient 3d human pose estimation with uplifting transformers. In IEEE Winter Conf. Appl. Comput. Vis., pages 2903–2913, 2023.|
+|Wenhao Li, Hong Liu, Runwei Ding, Mengyuan Liu, Pichao Wang, and Wenming Yang. Exploiting temporal contexts with strided transformer for 3d human pose estimation. IEEE Trans. Multimedia, 25:1282–1293, 2022a.|
+|Wenkang Shan, Zhenhua Liu, Xinfeng Zhang, Shanshe Wang, Siwei Ma, and Wen Gao. P-stmo: Pre-trained spatial temporal many-to-one model for 3d human pose estimation. In Eur. Conf. Comput. Vis., pages 461–478. Springer, 2022.|
+|Jinlu Zhang, Zhigang Tu, Jianyu Yang, Yujin Chen, and Junsong Yuan. Mixste: Seq2seq mixed spatio-temporal encoder for 3d human pose estimation in video. In IEEE Conf. Comput. Vis. Pattern Recog., pages 13232– 13242, 2022.|
+|Zhenhua Tang, Zhaofan Qiu, Yanbin Hao, Richang Hong, and Ting Yao. 3d human pose estimation with spatio-temporal criss-cross attention. In IEEE Conf. Comput. Vis. Pattern Recog., pages 4790–4799, 2023.|
+|Qitao Zhao, Ce Zheng, Mengyuan Liu, Pichao Wang, and Chen Chen. Poseformerv2: Exploring frequency domain for efficient and robust 3d human pose estimation. In IEEE Conf. Comput. Vis. Pattern Recog., pages 8877–8886, 2023.|
 
 #### Utilizing Attention Mechanism
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Humans in 4D: Reconstructing and Tracking Humans with Transformers||图像，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/28.html)|
+
 #### **Exploiting Temporal Information**
 
 |ID|Year|Name|Note|Tags|Link|
@@ -49,8 +60,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2024|PhysPT: Physics-aware Pretrained Transformer for Estimating Human
-Dynamics from Monocular Videos|
+||2024|PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos|
 
 
 #### Choosing Appropriate Learning Strategies
