@@ -51,7 +51,7 @@
 |[137]|2021|
 |[138]|2022|
 |[139]|2023|Global-to-local modeling for video-based 3d human pose and shape estimation|To effec-tively balance the learning of short-term and long-term temporal correlations, Global-to-Local Transformer (GLoT) [139] structurally decouples the modeling of long-term and short-term correlations.|视频，单人，SMPL，非流式，transformer|[link](https://caterpillarstudygroup.github.io/ReadPapers/12.html)|
-
+||2024|TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Video|仅图像特征恢复3D动作||[link](https://caterpillarstudygroup.github.io/ReadPapers/18.html)|
 
 #### Multi-view Methods.
 #### Boosting Efficiency
@@ -113,15 +113,11 @@
 
 ## 提取相机轨迹
 
-### 结合额外的传感器或摄像头
-
-### 仅从视频中提取
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2022|BodySLAM: Joint Camera Localisation, Mapping, and Human Motion Tracking|
 ||2023|Decoupling Human and Camera Motion from Videos in the Wild|联合优化人体姿势和相机scale，使人体位移与学习的运动模型相匹配|多人|[link](https://caterpillarstudygroup.github.io/ReadPapers/16.html)|
-||2024|TRAM: Global Trajectory and Motion of 3D Humans from in-the-wild Video|||[link](https://caterpillarstudygroup.github.io/ReadPapers/18.html)|
+
 
 # Evaluation
 
