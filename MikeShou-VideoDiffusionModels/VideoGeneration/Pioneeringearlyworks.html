@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pioneering/early works - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Important Articles</div></li><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Daniel Holden’s Blog</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/PerfectTrackingwithSprings.html"><strong aria-hidden="true">3.1.</strong> Perfect Tracking with Springs</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/CubicInterpolationofQuaternions.html"><strong aria-hidden="true">3.2.</strong> Cubic Interpolation of Quaternions</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.html"><strong aria-hidden="true">3.3.</strong> Creating Looping Animations from Motion Capture</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html"><strong aria-hidden="true">3.4.</strong> Exponential Map,Angle Axis, and Angular Velocity</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html"><strong aria-hidden="true">3.5.</strong> Spring-It-On: The Game Developer's Spring-Roll-Call</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/InertializationTransitionCost.html"><strong aria-hidden="true">3.6.</strong> Inertialization Transition Cost</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/ScalarVelocity.html"><strong aria-hidden="true">3.7.</strong> Scalar Velocity</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/JointLimits.html"><strong aria-hidden="true">3.8.</strong> Joint Limits</a></li><li class="chapter-item expanded "><a href="../../DanielHolden’sBlog/VisualizingRotationSpaces.html"><strong aria-hidden="true">3.9.</strong> Visualizing Rotation Spaces</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 李宏毅 - Diffusion Model</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../李宏毅DiffusionModel/DiffusionModel.html"><strong aria-hidden="true">4.1.</strong> Diffusion Model 是如何運作的</a></li><li class="chapter-item expanded "><a href="../../李宏毅DiffusionModel/StableDiffusion.html"><strong aria-hidden="true">4.2.</strong> Stable Diffusion</a></li><li class="chapter-item expanded "><a href="../../李宏毅DiffusionModel/DiffusionModel背后的数掌原理.html"><strong aria-hidden="true">4.3.</strong> Diffusion Model背后的数掌原理</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">5.</strong> CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">5.1.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">5.1.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">5.1.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">5.1.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">5.1.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.2.</strong> Image Applications</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Applicationsonotherdomains</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.html"><strong aria-hidden="true">5.3.1.</strong> Diffusion Models for Inverse Problems</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/3D.html"><strong aria-hidden="true">5.3.2.</strong> 3D</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">5.3.3.</strong> 2D diffusion models for 3D generation</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">5.3.4.</strong> Diffusion models for view synthesis</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.html"><strong aria-hidden="true">5.3.5.</strong> 3D reconstruction</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.html"><strong aria-hidden="true">5.3.6.</strong> Inverse problems</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.html"><strong aria-hidden="true">5.3.7.</strong> Video style transfer / editing methods</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">5.3.8.</strong> Safety and limitations of diffusion models</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Mike Shou - Video Diffusion Models</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/MikeShou.html"><strong aria-hidden="true">6.1.</strong> Background</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html"><strong aria-hidden="true">6.2.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration.html"><strong aria-hidden="true">6.3.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html" class="active"><strong aria-hidden="true">6.3.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">6.3.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">6.3.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">6.3.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">6.3.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">6.3.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">6.3.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">6.4.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">6.4.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">6.4.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">6.4.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">6.4.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">6.4.5.</strong> Other Guidance</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">7.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../../HPE_HMR_Summary.html"><strong aria-hidden="true">8.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../../3D_Gaussian_Splatting.html"><strong aria-hidden="true">9.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../../HumanMotionGenerationSummary.html"><strong aria-hidden="true">10.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../../数据集.html"><strong aria-hidden="true">11.</strong> 数据集</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P32</p>
+<h1 id="2-video-generation"><a class="header" href="#2-video-generation">2 Video Generation</a></h1>
+<h2 id="21-pioneeringearly-works"><a class="header" href="#21-pioneeringearly-works">2.1 Pioneering/early works</a></h2>
+<p><img src="../../assets/08-33.png" alt="" /></p>
+<p>P34</p>
+<h2 id="problem-definition"><a class="header" href="#problem-definition">Problem Definition</a></h2>
+<p><strong>Text-Guided Video Generation</strong></p>
+<p>Text prompt → video</p>
+<p>Video from Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.</p>
+<p>P35</p>
+<h2 id="problem-definition-1"><a class="header" href="#problem-definition-1">Problem Definition</a></h2>
+<p><img src="../../assets/08-35.png" alt="" /></p>
+<blockquote>
+<p>✅ 从 2D 输出变成 3D 输出。</p>
+</blockquote>
+<p>P36</p>
+<h2 id="video-diffusion-models"><a class="header" href="#video-diffusion-models">Video Diffusion Models</a></h2>
+<p>Recap 3D Conv</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-36-1.png" alt="" /></td><td><img src="../../assets/08-36-2.png" alt="" /></td></tr>
+</tbody></table>
+<p>Du et al., “Learning Spatiotemporal Features with 3D Convolutional Networks,” ICCV 2015.</p>
+<p>P37</p>
+<h2 id="video-diffusion-models-1"><a class="header" href="#video-diffusion-models-1">Video Diffusion Models</a></h2>
+<p>Recap (2+1)D Conv</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-37-1.png" alt="" /></td><td><img src="../../assets/08-37-2.png" alt="" /></td></tr>
+</tbody></table>
+<p>Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.</p>
+<blockquote>
+<p>✅ \(t\times d\times d\) 卷积 kenal 数量非常大，可以对 kernel 做分解，先在 spatial 上做卷积，然后在 temporal 上做卷积。<br />
+✅ 特点：效果还不错，效率也高。</p>
+</blockquote>
+<p>P38</p>
+<h2 id="video-diffusion-models-2"><a class="header" href="#video-diffusion-models-2">Video Diffusion Models</a></h2>
+<p>Early work on video generation</p>
+<p>Ho et al., “Video Diffusion Models,” NeurIPS 2022.</p>
+<p>P39</p>
+<h2 id="video-diffusion-models-3"><a class="header" href="#video-diffusion-models-3">Video Diffusion Models</a></h2>
+<p>Early work on video generation</p>
+<ul>
+<li>3D U-Net factorized over space and time</li>
+<li>Image 2D conv inflated as → space-only 3D conv, i.e., 2 in (2+1)D Conv
+<ul>
+<li>Kernel size: (3×3) → (<u>1</u>×3×3)</li>
+<li>Feature vectors: (height × weight × channel) → (<u>frame</u> × height × width × channel)</li>
+</ul>
+</li>
+<li>Spatial attention: remain the same</li>
+<li>Insert temporal attention layer: attend across the temporal dimension (spatial axes as batch)</li>
+</ul>
+<p><img src="../../assets/08-39.png" alt="" /> </p>
+<p>Ho et al., “Video Diffusion Models,” NeurIPS 2022.</p>
+<blockquote>
+<p>✅ 2D U-Net 变为 3D U-Net，需要让其内部的 conv 操作和 attention 操作适配 3D.<br />
+✅ (1) 2D conv 适配 3D，实际上只是扩充一个维度变成伪 3D，没有对时序信息做抽象。<br />
+✅ (2) attention 操作同样没有考虑时序。<br />
+✅ (3) 时序上的抽象体现在 temporal attention layer 上。<br />
+❓ temporal layer 是怎之设计的？<br />
+❓ 先 spatial 还是 temporal？二者怎拼合？</p>
+</blockquote>
+<p>P40</p>
+<h2 id="make-a-video"><a class="header" href="#make-a-video">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-40.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022. </p>
+<blockquote>
+<p>✅ 效果更好，框架在当下更主流。<br />
+✅ (1) SD：decoder 出关键帧的大概影像。<br />
+✅ (2) FI：补上中间帧。<br />
+✅ (3) SSR：时空上的超分。<br />
+✅ 时序上先生成关键帧再插帧，空间上先生成低质量图像再超分。<br />
+✅ 这种时序方法不能做流式输出。</p>
+</blockquote>
+<p>P41</p>
+<h2 id="make-a-video-1"><a class="header" href="#make-a-video-1">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-41.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<blockquote>
+<p>❓ 第 3 步时间上的超分为什么没有增加帧数？</p>
+</blockquote>
+<p>P42</p>
+<h2 id="make-a-video-2"><a class="header" href="#make-a-video-2">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-42.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<blockquote>
+<p>✅ 此处的伪 3D 是指 (2＋1)D，它有时序上的抽像，与 VDM 不同。<br />
+✅ 空间卷积使用预训练好的图像模型。</p>
+</blockquote>
+<p>P43</p>
+<h2 id="make-a-video-3"><a class="header" href="#make-a-video-3">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-43.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<blockquote>
+<p>✅ attention 操作也是 (2＋1)D．<br />
+❓ 卷积层与 diffusion 层怎么结合？</p>
+</blockquote>
+<p>P44</p>
+<h2 id="make-a-video-4"><a class="header" href="#make-a-video-4">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><strong>Training</strong></p>
+<ul>
+<li>4 main networks (decoder + interpolation + 2 super-res)
+<ul>
+<li>First trained on images alone</li>
+<li>Insert and finetune temporal layers on videos</li>
+</ul>
+</li>
+<li>Train on WebVid-10M and 10M subset from HD-VILA-100M</li>
+</ul>
+<blockquote>
+<p>✅ 先在图片上训练，再把 temporal layer 加上去。</p>
+</blockquote>
+<p>P45</p>
+<h2 id="datasets"><a class="header" href="#datasets">Datasets</a></h2>
+<p>The WebVid-10M Dataset</p>
+<p><img src="../../assets/08-45.png" alt="" /> </p>
+<p>Bain et al., “Frozen in Time: A Joint Video and Image Encoder for End to End Paper,” ICCV 2021.</p>
+<blockquote>
+<p>✅ WebVid 是常用的视频数据集，有高清视频及配对文本。</p>
+</blockquote>
+<p>P46</p>
+<h2 id="evaluation-metrics"><a class="header" href="#evaluation-metrics">Evaluation Metrics</a></h2>
+<p><img src="../../assets/08-46.png" alt="" /> </p>
+<p>P47</p>
+<h2 id="evaluation-metrics-1"><a class="header" href="#evaluation-metrics-1">Evaluation Metrics</a></h2>
+<p>Quantitative evaluations</p>
+<p><strong>Image-level Evaluation Metrics</strong></p>
+<ul>
+<li>Fréchet Inception Distance (FID, ↓): semantic similarity between images</li>
+<li>Peak Signal-to-Noise Ratio (PSNR, ↑): pixel-level similarity between images</li>
+<li>Structural Similarity Index (SSIM, ↓): pixel-level similarity between images</li>
+<li>CLIPSIM (↑): image-text relevance</li>
+</ul>
+<p><strong>Video-level Evaluation Metrics</strong></p>
+<ul>
+<li>Fréchet Video Distance (FVD, ↓): semantic similarity &amp; temporal coherence</li>
+<li>Kernel Video Distance (KVD, ↓): video quality (via semantic features and MMD)</li>
+<li>Video Inception Score (IS, ↑): video quality and diversity</li>
+<li>Frame Consistency CLIP Score (↑): frame temporal semantic consistency</li>
+</ul>
+<p>P48</p>
+<h2 id="fréchet-inception-distance-fid"><a class="header" href="#fréchet-inception-distance-fid">Fréchet Inception Distance (FID)</a></h2>
+<p>Semantic similarity between images</p>
+<p><img src="../../assets/08-48.png" alt="" /> </p>
+<p><strong>Lantern image generated with Stable Diffusion 2.1.</strong></p>
+<p>Heusel et al., “GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium,” NeurIPS 2017.<br />
+Hung-Yi Lee, “Machine Learning 2023 Spring,” National Taiwan University.</p>
+<blockquote>
+<p>✅ FID：评估两个 distribution 的差距有多大。<br />
+✅ 由于使用了网络的高层 feature，可以评价 high／evel 的语义相似性。</p>
+</blockquote>
+<p>P49</p>
+<h2 id="peak-signal-to-noise-ratio-psnr"><a class="header" href="#peak-signal-to-noise-ratio-psnr">Peak Signal-to-Noise Ratio (PSNR)</a></h2>
+<p>Pixel-level similarity between images</p>
+<ul>
+<li>For two images \(x,y \text{ of shape }  M\times N\):</li>
+</ul>
+<p>\begin{align*} \mathrm{PSNR} (x,y) = 10 \log_{10}{} \frac{255^2}{\mathrm{MSE} (x,y)}  \end{align*}</p>
+<p>where</p>
+<p>\begin{align*} \mathrm{MSE} (x,y) = \frac{1}{MN} \sum_{i=1}^{M} \sum_{j=1}^{N} (x_{ij}-y_{ij})^2\end{align*}</p>
+<p>Horé et al., “Image Quality Metrics: PSNR vs. SSIM,” ICPR 2010.</p>
+<p>P50</p>
+<h2 id="structural-similarity-index-measure-ssim"><a class="header" href="#structural-similarity-index-measure-ssim">Structural Similarity Index Measure (SSIM)</a></h2>
+<p>Pixel-level similarity between images</p>
+<ul>
+<li>
+<p>Model any image distortion as a combination of:<br />
+(1) loss of correlation, (2) luminance distortion, (3) contrast distortion</p>
+</li>
+<li>
+<p>For two images \(x,y \text{ of shape }  M\times N\):</p>
+</li>
+</ul>
+<p>\begin{align*}  \mathrm{SSIM} (x,y)=l(x,y)\cdot c(x,y)\cdot s(x,y)\end{align*}</p>
+<p>where</p>
+<p>\begin{align*} \begin{cases}
+\text{Lumiannce Comparison Funckon:} l(x,y)=\frac{2\mu _x\mu _y+C_1}{\mu _x^2+\mu _y^2+C_1}  \\ 
+\text{Contrast Comparison Funckon:} c(x,y)=\frac{2\sigma  _x\sigma  _y+C_2}{\sigma  _x^2+\sigma  _y^2+C_2}  \\ 
+\text{Structure Comparison Funckon:} s(x,y)=\frac{\sigma  _{xy}+C_3}{\sigma  _{x}\sigma  _{y}+C_3}  \end{cases}\end{align*}</p>
+<p>Wang et al., “Image Quality Assessment: from Error Visibility to Structural Similarity,” IEEE Transactions on Image Processing, April 2004.<br />
+Horé et al., “Image Quality Metrics: PSNR vs. SSIM,” ICPR 2010.</p>
+<p>P51</p>
+<h2 id="clip-similarity"><a class="header" href="#clip-similarity">CLIP Similarity</a></h2>
+<p>Image-caption similarity</p>
+<p><img src="../../assets/08-51.png" alt="" /> </p>
+<p>Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.</p>
+<p>P52</p>
+<h2 id="fréchet-video-distance-fvd"><a class="header" href="#fréchet-video-distance-fvd">Fréchet Video Distance (FVD)</a></h2>
+<p>Semantic similarity and temporal coherence between two videos</p>
+<p><img src="../../assets/08-52.png" alt="" /> </p>
+<p>Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.<br />
+Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric &amp; Challenges,” arXiv 2018.</p>
+<p>P53</p>
+<h2 id="kernel-video-distance"><a class="header" href="#kernel-video-distance">Kernel Video Distance</a></h2>
+<p>Video quality assessment via semantic features and MMD</p>
+<p><img src="../../assets/08-53.png" alt="" /> </p>
+<p>Unterthiner et al., “FVD: A new Metric for Video Generation,” ICLR 2019.<br />
+Unterthiner et al., “Towards Accurate Generative Models of Video: A New Metric &amp; Challenges,” arXiv 2018.</p>
+<p>P54</p>
+<h2 id="video-inception-score-is"><a class="header" href="#video-inception-score-is">Video Inception Score (IS)</a></h2>
+<p>Video quality and diversity</p>
+<p><img src="../../assets/08-54.png" alt="" /> </p>
+<p>Salimans et al., “Improved Techniques for Training GANs,” NeurIPS 2016.<br />
+Barratt et al., “A Note on the Inception Score,” ICML 2018.<br />
+Saito et al., “Train Sparsely, Generated Densely: Memory-Efficient Unsupervised Training of High-Resolution Temporal GAN,” IJCV 2020. </p>
+<blockquote>
+<p>✅ 多样性，在不给定 condition 的情况生成的分布的多样性。<br />
+✅ 质量：在给 condition 的条件下应生成特定的类别。</p>
+</blockquote>
+<p>P55</p>
+<h2 id="frame-consistence-clip-scores"><a class="header" href="#frame-consistence-clip-scores">Frame Consistence CLIP scores</a></h2>
+<p>Frame temporal semantic consistency</p>
+<ul>
+<li>Compute CLIP image embeddings for all frames</li>
+<li>Report average cosine similarity between all pairs of frames</li>
+</ul>
+<p><img src="../../assets/08-55.png" alt="" /> </p>
+<p>Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.</p>
+<p>P57</p>
+<h2 id="evaluation-metrics-2"><a class="header" href="#evaluation-metrics-2">Evaluation Metrics</a></h2>
+<p>Hybrid evaluation</p>
+<p><strong>EvalCrafter</strong></p>
+<ul>
+<li>Creates a balanced prompt list for evaluation</li>
+<li><strong>Multi-criteria decision analysis</strong> on 18 metrics: visual quality, content quality…</li>
+<li>Regress the coefficients of all metrics to generate an overall score aligned with user opinions</li>
+</ul>
+<p><img src="../../assets/08-57.png" alt="" /> </p>
+<p>Liu et al., “EvalCrafter: Benchmarking and Evaluating Large Video Generation Models,” arXiv 2023.</p>
+<p>P58</p>
+<h2 id="make-a-video-5"><a class="header" href="#make-a-video-5">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-58.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<p>P59</p>
+<h2 id="make-a-video-6"><a class="header" href="#make-a-video-6">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-59.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<blockquote>
+<p>✅ 早期都在 UCF 数据上比较，但 UCF 本身质量比较低，新的生成方法生成的质量更高，因此不常用 UCF 了。</p>
+</blockquote>
+<p>P60</p>
+<h2 id="make-a-video-7"><a class="header" href="#make-a-video-7">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><img src="../../assets/08-60.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<p>P62</p>
+<h2 id="make-a-video-8"><a class="header" href="#make-a-video-8">Make-A-Video</a></h2>
+<p>Cascaded generation</p>
+<p><strong>From static to magic</strong></p>
+<p>Add motion to a single image or fill-in the in-betw</p>
+<p><img src="../../assets/08-62.png" alt="" /> </p>
+<p>Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.</p>
+<p>P63</p>
+<h2 id="imagen--imagen-video"><a class="header" href="#imagen--imagen-video">Imagen &amp; Imagen Video</a></h2>
+<p>Leverage pretrained T2I models for video generation; Cascaded generation</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-63-1.png" alt="" /></td><td><img src="../../assets/08-63-2.png" alt="" /></td></tr>
+</tbody></table>
+<p>Imagen: Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding,” arXiv 2022.<br />
+Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with Diffusion Models,” arXiv 2022.</p>
+<blockquote>
+<p>✅ 先在 image 上做 cascade 生成<br />
+✅ 视频是在图像上增加时间维度的超分<br />
+✅ 每次的超分都是独立的 diffusion model?<br />
+❓ temporal 超分具体是怎么做的？</p>
+</blockquote>
+<p>P64</p>
+<h2 id="align-your-latents"><a class="header" href="#align-your-latents">Align your Latents</a></h2>
+<p>Leverage pretrained T2I models for video generation; 
+Cascaded generation</p>
+<p><img src="../../assets/08-64.png" alt="" /></p>
+<p>Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.</p>
+<blockquote>
+<p>✅ 在 latent space 工作，因此 “生成关键帧 + 插帧 + 超分” 之后要 Decoder.</p>
+</blockquote>
+<p>P65</p>
+<h2 id="align-your-latents-1"><a class="header" href="#align-your-latents-1">Align your Latents</a></h2>
+<p>Leverage pretrained T2I models for video generation</p>
+<p><strong>Inserting Temporal Layers</strong></p>
+<ul>
+<li>Latent space diffusion model: insert temporal convolutional &amp; 3D attention layers</li>
+<li>Decoder: add 3D convolutional layers</li>
+<li>Upsampler diffusion model: add 3D convolution layers</li>
+</ul>
+<blockquote>
+<p>✅ 所有工作的基本思路：(1) 先从小的生成开始 (2) 充分利用 T2I．</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../MikeShou-VideoDiffusionModels/VideoGeneration.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../MikeShou-VideoDiffusionModels/VideoGeneration.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../theme/pagetoc.js"></script>
+    </body>
+</html>
