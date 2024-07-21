@@ -103,3 +103,4 @@ SD 和 SVD 等扩散模型因其卓越的性能和多样性而广泛应用于各
 # Reference
 
 1. https://arxiv.org/pdf/2407.08428
+2. https://github.com/wentaoL86/Awesome-Human-Video-Generation
