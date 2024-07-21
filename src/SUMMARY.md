@@ -56,6 +56,7 @@
 - [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](HPE_HMR_Summary.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Human Motion Generation: A Survey](HumanMotionGenerationSummary.md)
+- [Human Video Generation](HumanVideoGeneration.md)
 - [数据集](数据集.md)
   
 
