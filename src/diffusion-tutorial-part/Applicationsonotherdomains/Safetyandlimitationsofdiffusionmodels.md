@@ -102,10 +102,6 @@ Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization"
 Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u> arXiv 2023    
 Hu et al., <u>"LoRA: Low-Rank Adaptation of Large Language Models",</u> ICLR 2022    
 Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023    
-
-P80    
-## Part II (cont’d)
-
 Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023    
 Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
 Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023    

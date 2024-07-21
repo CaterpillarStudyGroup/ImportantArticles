@@ -151,22 +151,17 @@ Works well for artistic styles
 P41   
 ## Low-rank Adaptation (LoRA)   
 
- - Lora: Low-rank adaptation of large language models
-
 > &#x2705; 要解决的问题：finetune 所需的训练时间、参数存储，Computation 的成本很高。    
+> &#x2705; 解决方法：仅仅拟合residual model 而不是 finetune entire model.  
+> &#x2705; Results：LoRA对数据集要求少，收敛速度快。可以极大提升 finetune 效率，也更省空间。    
 
 ![](../assets/D2-41.png) 
 
-> &#x2705; 解决方法：仅仅拟合residual model 而不是 finetune entire model.  
-> 残差通常可以用low rank Matrix来拟合，因为称为low-rank adaptation。    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|38|2021|Lora: Low-rank adaptation of large language models|残差通常可以用low rank Matrix来拟合，因为称为low-rank adaptation。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+|||Lora + Dreambooth (by Simo Ryu)||| <https://github.com/cloneofsimo/lora> |
 
-
-Lora [Edward J. Hu\\(^\ast \\), Yelong Shen\\(^\ast \\), et al., ICLR 2022]     
-Lora + Dreambooth (by Simo Ryu): <https://github.com/cloneofsimo/lora>     
-
-### LoRA Results
-
-> &#x2705; LoRA对数据集要求少，收敛速度快。可以极大提升 finetune 效率，也更省空间。    
 
 P43
 ## Multi-Concept Customization of Text-to-Image Diffusion

@@ -200,19 +200,10 @@ Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,
 P24   
 ## LoRA: Low-Rank Adaptation   
 
-Few-shot finetuning of large models for personalized generation
-
-|||
-|--|--|
-| ![](../assets/08-24-1.png)  |  ![](../assets/08-24-2.png) |
-
-
-Hu et al., “LoRA: Low-Rank Adaptation of Large Language Models,” arXiv 2021.    
-Gu et al., “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models,” arXiv 2023.   
-
-> &#x2705; LoRA：Low-Rank Adaptation    
-> &#x2705; 对已训好的大模型进行微调，生成想要的风格。  
-> &#x2705; 特点：要训练或调整的参数非常少。   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|38|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|
 
 P25   
 ## DreamBooth   

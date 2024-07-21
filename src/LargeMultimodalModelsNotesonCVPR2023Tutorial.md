@@ -275,6 +275,7 @@ OpenFlamingo [2] is an open source version of DeepMind’s Flamingo model, train
 
 &#x1F50E;  *LLaMA-Adapter V2: Parameter-Efficient Visual Instruction Model [10]*   
 &#x1F50E;  *Cheap and Quick: Efficient Vision-Language Instruction Tuning for Large Language Models [27]*   
+
 &#x1F50E;  *QLoRA: Efficient Finetuning of Quantized LLMs [7]*   
 
 While fine-tuning very large models often leads to high performance, it is prohibitively expensive; For example, regular 16-bit fine-tuning of a LLaMA 65B parameter model [45] requires more than 780 GB of GPU memory [7]. Therefore, it is critical to reduce the memory footprint of LLMs/LMMs, especially when it comes to improve the accessibility of large models to a wider community. Parameter-efficient training is an effective approach for LMM adaptation. Two representative methods are illustrated in Figure 21. **They freeze most of the model parameters, and only allow a small of trainable parameter to update with domain specific data.** For example, LLaMA Adapter v2 and LAVIN only has 14M and 3.8M trainable parameters, compared with 7B/13B LLM parameters. **Another efficient training method is quantization.** The recent QLoRA finetunes 65B LLaMA for 24 hours on a single GPU, reaching 99.3% of the performance level of ChatGPT. Since instruction tuning typically involves a small amount of data, it makes parameter-efficient training or model quantization feasible with limited GPU resources.
