@@ -182,19 +182,9 @@ P21
 > &#x2705; 把图片转为 high leve sematic space    
 > &#x2705; semanic 更抽像，维度更低，因此模型更高效。   
 
-
-P22   
-## Stable Diffusion
-
-Conditional/unconditional image generation    
-
-![](../assets/08-22.png) 
-
-Rombach et al., “High-Resolution Image Synthesis with Latent Diffusion Models,” CVPR 2022.      
-
-> &#x2705; Stable Diffusion 特点：   
-> &#x2705; (1)：在 latent space 上工作   
-> &#x2705; (2)：引入多种 condition．   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|   
 
 
 P24   

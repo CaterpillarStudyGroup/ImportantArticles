@@ -65,7 +65,6 @@ Saharia et al., <u>"Image Super-Resolution via Iterative Refinement",</u> arXiv 
 Ho et al., <u>"Cascaded Diffusion Models for High Fidelity Image Generation",</u> JMLR 2021   
 Sinha et al., <u>"D2C: Diffusion-Denoising Models for Few-shot Conditional Generation",</u> NeurIPS 2021   
 Vahdat et al., <u>"Score-based Generative Modeling in Latent Space",</u> arXiv 2021   
-Rombach et al., <u>"High-Resolution Image Synthesis with Latent Diffusion Models",</u> CVPR 2022   
 Daras et al., <u>"Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems",</u> ICML 2022   
 
 P78   

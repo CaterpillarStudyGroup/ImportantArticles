@@ -16,7 +16,7 @@
   - [Visualizing Rotation Spaces](DanielHolden’sBlog/VisualizingRotationSpaces.md)
 - [李宏毅 - Diffusion Model]()
   - [Diffusion Model 是如何運作的](李宏毅DiffusionModel/DiffusionModel.md)
-  - [Stable Diffusion](李宏毅DiffusionModel/StableDiffusion.md)
+  - [文生图模型的基本结构](李宏毅DiffusionModel/StableDiffusion.md)
   - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 - [CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang](diffusion-tutorial-part/Introduction.md)
   - [Fundamentals]()

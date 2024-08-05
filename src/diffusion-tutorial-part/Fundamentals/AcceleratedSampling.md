@@ -162,7 +162,7 @@ P58
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2021|Score-based generative modeling in latent space|**End-to-End** Training objective<br>![](../../assets/D1-59.png) <br> &#x2705; 这篇文章对 VAE 和 diffusion 一起进行训练，文章的创新点是，利用 score matching 中的信息来计算 cross entropy.    |
-||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Two-stage** Training: train autoencoder first, then train the diffusion prior<br>&#x2705; VAE 和 diffusion 分开训练。每次需要训练的网络都不大。<br>Focus on compression without of any loss in reconstruction quality<br>&#x2705; 使用Advanced Auto Encoders。由于使用的latent space比较小，diffusion model的大小也可以减小。<br> Demonstrated the expressivity of latent diffusion models on many conditional problems|    
+|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Two-stage** Training，先训E&D，再训diffusion。每次需要训练的网络都不大。|| [link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|   
 ||2021|D2C: Diffusion-Denoising Models for Few-shot Conditional Generation|
 ||2022|Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems|
 ||2022|Dimensionality-Varying Diffusion Process|   

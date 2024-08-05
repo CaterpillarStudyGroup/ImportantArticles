@@ -22,7 +22,7 @@ P5
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture||[pdf](https://arxiv.org/abs/2112.10752)
+|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture<br>&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．|UNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|
 ||2022|Photorealistic text-to-image diffusion models with deep language understanding|Imagen|
 ||2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|eDiff-I|
 

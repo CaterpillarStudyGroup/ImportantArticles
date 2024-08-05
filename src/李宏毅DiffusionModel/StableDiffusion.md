@@ -9,17 +9,22 @@ P2
 P3   
 ## Stable Diffusion 
 
-<https://arxiv.org/abs/2112.10752>  
-
 ![](../assets/lhy2-3.png) 
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|   
+
 
 P4   
 ## DALL-E series 
-<https://arxiv.org/abs/2204.06125>
-
-<https://arxiv.org/abs/2102.12092>
 
 ![](../assets/lhy2-4.png) 
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|https://arxiv.org/abs/2204.06125|
+||2021|https://arxiv.org/abs/2102.12092|
 
 > &#x2705; DALL-E 的生成模型有两种：Auoregressive 和 Diffusion.   
 
