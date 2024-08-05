@@ -1,0 +1,1190 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Spring-It-On: The Game Developer&#x27;s Spring-Roll-Call - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Important Articles</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Daniel Holden’s Blog</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/PerfectTrackingwithSprings.html"><strong aria-hidden="true">3.1.</strong> Perfect Tracking with Springs</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html"><strong aria-hidden="true">3.2.</strong> Cubic Interpolation of Quaternions</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.html"><strong aria-hidden="true">3.3.</strong> Creating Looping Animations from Motion Capture</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html"><strong aria-hidden="true">3.4.</strong> Exponential Map,Angle Axis, and Angular Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html" class="active"><strong aria-hidden="true">3.5.</strong> Spring-It-On: The Game Developer's Spring-Roll-Call</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/InertializationTransitionCost.html"><strong aria-hidden="true">3.6.</strong> Inertialization Transition Cost</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ScalarVelocity.html"><strong aria-hidden="true">3.7.</strong> Scalar Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/JointLimits.html"><strong aria-hidden="true">3.8.</strong> Joint Limits</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/VisualizingRotationSpaces.html"><strong aria-hidden="true">3.9.</strong> Visualizing Rotation Spaces</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 李宏毅 - Diffusion Model</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel.html"><strong aria-hidden="true">4.1.</strong> Diffusion Model 是如何運作的</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/StableDiffusion.html"><strong aria-hidden="true">4.2.</strong> 文生图模型的基本结构</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel背后的数掌原理.html"><strong aria-hidden="true">4.3.</strong> Diffusion Model背后的数掌原理</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">5.</strong> CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">5.1.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">5.1.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">5.1.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">5.1.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">5.1.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.2.</strong> Image Applications</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Applicationsonotherdomains</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.html"><strong aria-hidden="true">5.3.1.</strong> Diffusion Models for Inverse Problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3D.html"><strong aria-hidden="true">5.3.2.</strong> 3D</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">5.3.3.</strong> 2D diffusion models for 3D generation</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">5.3.4.</strong> Diffusion models for view synthesis</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.html"><strong aria-hidden="true">5.3.5.</strong> 3D reconstruction</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.html"><strong aria-hidden="true">5.3.6.</strong> Inverse problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.html"><strong aria-hidden="true">5.3.7.</strong> Video style transfer / editing methods</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">5.3.8.</strong> Safety and limitations of diffusion models</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Mike Shou - Video Diffusion Models</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/MikeShou.html"><strong aria-hidden="true">6.1.</strong> Background</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html"><strong aria-hidden="true">6.2.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration.html"><strong aria-hidden="true">6.3.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">6.3.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">6.3.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">6.3.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">6.3.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">6.3.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">6.3.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">6.3.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">6.4.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">6.4.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">6.4.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">6.4.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">6.4.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">6.4.5.</strong> Other Guidance</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">7.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../HPE_HMR_Summary.html"><strong aria-hidden="true">8.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">9.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../HumanMotionGenerationSummary.html"><strong aria-hidden="true">10.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../HumanVideoGeneration.html"><strong aria-hidden="true">11.</strong> Human Video Generation</a></li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">12.</strong> 数据集</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>转载出处：https://www.daniel-holden.com/page/spring-roll-call</p>
+<h1 id="spring-it-on-the-game-developers-spring-roll-call"><a class="header" href="#spring-it-on-the-game-developers-spring-roll-call">Spring-It-On: The Game Developer's Spring-Roll-Call</a></h1>
+<p>Created on March 4, 2021, 5:49 p.m.</p>
+<p>Springs! What do springs have to do with game development? We'll if you're asking that question and reading this article you're in the right place. Because we're about to do a lot of talking about springs... and, while some of you may well have used springs before, I'm guessing that even if you did the code you used resided in the dark depths of your project as a set of mysterious equations that no one ever touched.</p>
+<p>And that's sad, because although the maths can undeniably be tricky, springs are interesting, and a surprisingly versatile tool, with lots of applications in Computer Science that I never even realized were possible until I thought &quot;wouldn't it be nice to know how those equations came about?&quot; and dug a bit deeper.</p>
+<p>So I think every Computer Scientist, and in particular those interested in game development, animation, or physics, could probably benefit from a bit of knowledge of springs. In the very least this: what they are, what they do, how they do it, and what they can be used for. So with that in mind, let's start right from the beginning: <em>The Damper</em>.</p>
+<blockquote>
+<p>✅ Damper：阻尼器</p>
+</blockquote>
+<hr />
+<h2 id="the-damper"><a class="header" href="#the-damper">The Damper</a></h2>
+<p>As a game developer here is a situation you've probably come across: for some reason there is an object which suddenly we realize should be at a different position - perhaps we got some information from a game server about where it should really be, or the player did something and now the object needs to be moved. Well, when we move this object we probably don't want it to pop - instead we would prefer if it moved more smoothly towards the new position.</p>
+<p>A simple thing we might try to achieve this is to just blend the object's position <code>x</code> with the new goal position <code>g</code> by some fixed <code>factor</code> such as <code>0.1</code> each frame.</p>
+<p>In C++ we might write something like this, and while this code is for a single <code>float</code> the same can be done for a position just by applying it to each component of the vector independently.</p>
+<pre><code class="language-c++">float lerp(float x, float y, float a)
+{
+    return (1.0f - a) * x + a * y;
+}
+
+float damper(float x, // 当前位置
+             float g, // 期望位置
+             float factor // 混合速度)
+{
+    return lerp(x, g, factor);
+}
+</code></pre>
+<p>By applying this <code>damper</code> function each frame we can smoothly move toward the goal without popping. We can even control the speed of this movement using the <code>factor</code> argument:</p>
+<p>\begin{align*} x = \text{damper}(x, g,\text{factor}); \end{align*}</p>
+<p>Below you can see a visualization of this in action where the horizontal axis represents time and the vertical axis represents the position of the object.</p>
+<p><img src="assets/damper.jpg" alt="" /></p>
+<p>But this solution has a problem: if we change the framerate of our game (or the timestep of our system) we get different behavior from the <code>damper</code>. More specifically, it moves the object slower when we have a lower framerate:</p>
+<blockquote>
+<p>✅ 移动速度与帧率有关。<br />
+❓ 在指定帧数内到达目标状态，还是在指定时间内到达目标状态，插值需要考虑这个问题吗？</p>
+</blockquote>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/damper_dt.m4v</p>
+</blockquote>
+<p>And this makes sense if we think about it - if the game is running at 30 frames per second you are going to perform half as many calls to <code>damper</code> as if you were running at 60 frames per second, so the object is not going to get pulled toward the goal as quickly. One simple idea for a fix might be to just multiply the factor by the timestep <code>dt</code> - now at least when the timestep is larger the object will move more quickly toward the goal...</p>
+<pre><code class="language-c++">float damper_bad(float x, float t, float damping, float dt)
+{
+    return lerp(x, t, damping * dt);
+}
+</code></pre>
+<p>This might appear like it works on face value but there are two big problems with this solution which can come back to bite us badly. Firstly, we now have a mysterious <code>damping</code> variable which is difficult to set and interpret. But secondly, and more importantly, if we set the <code>damping</code> or the <code>dt</code> too high (such that <code>damping * dt &gt; 1</code>) the whole thing becomes unstable, and in the worst case explodes:</p>
+<blockquote>
+<p>✅ 问题1：由于<code>damping * dt</code>代表了混合的系数，因此必须在(0,1)范围内。</p>
+</blockquote>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/damper_bad.m4v</p>
+</blockquote>
+<p>We could use various hacks like clamping <code>damping * dt</code> to be less than <code>1</code> but there is fundamentally something wrong with what we've done here. We can see this if we imagine that <code>damping * dt</code> is roughly equal to <code>0.5</code> - here, doubling the <code>dt</code> does not produce the same result as applying the damper twice: lerping with a factor of <code>0.5</code> twice will take us 75% of the way toward the goal, while lerping with a <code>factor</code> of <code>1.0</code> once will bring us 100% of the way there. So what's the real fix?</p>
+<blockquote>
+<p>✅ 问题1解决方法：遇1截断。<br />
+✅ 问题2：
+场景1：damping = 1， dt=0.5，执行一次，x' = 0.5x + 0.5y，再执行一次，x'' = 0.5x' + 0.5y = 0.25x + 0.75y<br />
+场景2：damping = 1， dt=1，执行一次，x' = y
+两次结果不一样，作者认为这是一个问题。<br />
+✅ 这为什么是个问题呢？直觉上来讲，两个damping场景下damping是一样的，会希望同样的时间后应该到达同样的状态。事实上呢，同时是执行了1时间，只是场景1分了更小的时间片，得到的结果就不一样了。所以作者认为没有真正解决“适配不同dt”的问题了。<br />
+❓ 这里还有一个问题，只要<code>damping * dt</code>不为1，似乎x永远也不可能真正到达target的位置。</p>
+</blockquote>
+<hr />
+<h2 id="the-exact-damper"><a class="header" href="#the-exact-damper">The Exact Damper</a></h2>
+<p>Let's start our investigation by plotting the behavior of <code>x</code> using the normal <code>damper</code> with a fixed <code>dt</code> of <code>1.0</code>, a <code>goal</code> of <code>0</code>, and a <code>factor</code> of <code>0.5</code>:</p>
+<p><img src="../assets/06-1.png" alt="" /></p>
+<p>Here we can see repeated calls to <code>lerp</code> actually produce a kind of exponential decay toward the goal:</p>
+<p>\begin{align*} t=0, &amp; x=1.0 \\ t=1, &amp; x=0.5 \\t=2, &amp; x=0.25 \\t=3, &amp; x=0.125 \end{align*}</p>
+<p>And for a <code>lerp</code> factor of <code>0.5</code>, we can see that this pattern is exactly the equation \( x_t=0.5^t \) . So it looks like somehow there is an exponential function governing this relationship, but how did this appear? The trick to uncovering this exponential form is to write our system as a recurrence relation.</p>
+<blockquote>
+<p>🔎 recurrence relation：递推关系</p>
+</blockquote>
+<h2 id="recurrence-relation"><a class="header" href="#recurrence-relation">Recurrence Relation</a></h2>
+<p>We'll start by defining a separate variable  <code>y=1−damping⋅ft</code> , which will make the maths a bit easier later on. In this case <code> ft</code> is a fixed, small <code>dt</code> such as \( \frac{1}{60} \) . Then we will expand the <code>lerp</code> function:</p>
+<p>\begin{align*} x_{t+1} &amp; = \text{lerp } (x_t,g,1-y) \\ x_{t+1} &amp; = (1-(1-y)) \cdot x_t+(1-y) \cdot g\\x_{t+1} &amp; = y\cdot x_t-(y-1)\cdot g \\x_{t+1} &amp; = y\cdot x_t- y\cdot g +g \end{align*}</p>
+<p>Now for the recurrence relation: by plugging this equation into itself we are going to see how the exponent appears. First we need to <code> t+1</code> to <code>t+2</code> and then replace the new  \(x_{t+1}\)  which appears on the right hand side with the same equation again.</p>
+<p>\begin{align*} x_{t+1} &amp; = y \cdot x_t-y \cdot g + g \\ x_{t+2} &amp; = y \cdot x_{t+1}-y \cdot g + g \\ x_{t+2} &amp; = y \cdot (y\cdot x_t-y\cdot  g+g)-y\cdot g+g  \\x_{t+2} &amp; = y \cdot y \cdot x_t- y\cdot y \cdot  g +y \cdot g-y \cdot g+g  \\x_{t+2} &amp; = y \cdot y \cdot x_t- y\cdot y \cdot  g +g \end{align*}</p>
+<p>If we repeat this process again and we can start to see a pattern emerging:</p>
+<p>\begin{align*} x_{t+2} &amp; = y \cdot y \cdot x_t-y \cdot y \cdot g + g \\ x_{t+3} &amp; = y \cdot y \cdot x_{t+1}-y \cdot y \cdot g + g  \\ x_{t+3} &amp; = y \cdot y \cdot (y \cdot x_t-y  \cdot g + g ) -y \cdot y \cdot g + g  \\x_{t+3} &amp; = y \cdot y \cdot y \cdot x_t- y \cdot y \cdot y \cdot  g +y \cdot y \cdot y  \cdot g -y \cdot y  \cdot  g+g  \\x_{t+3} &amp; = y \cdot y \cdot y \cdot x_t- y \cdot y \cdot y \cdot   g + g \end{align*}</p>
+<p>More generally we can see that:</p>
+<p>\begin{align*} x_{t+n} &amp; = y^n \cdot  x_t-y ^n \cdot g + g \end{align*}</p>
+<p>​</p>
+<p>Ah-ha! Our exponent has appeared. And by rearranging a bit we can even write this in terms of 
+<code>lerp</code> again:</p>
+<p>\begin{align*} x_{t+n} &amp; = y^n \cdot  x_t-y ^n \cdot g + g  \\ x_{t+n} &amp; = y^n \cdot  x_t+g \cdot (1-y^n)  \\ x_{t+n} &amp; = \text{lerp } (x_t,g,1-y^n) \end{align*}</p>
+<blockquote>
+<p>✅ 以1-y为factor做n次相当于以\(1-y^n\)为factor做一次</p>
+</blockquote>
+<p>As a small tweak, we can make the exponent negative:</p>
+<p>\begin{align*} x_{t+n} &amp; = \text {lerp }(x_t,g,1-y^n)  \\ x_{t+n} &amp; = \text {lerp }(x_t,g,1-\frac{1 }{y}^{-n})   \end{align*}
+​</p>
+<p>Remember that <code>n</code> represents a multiple of <code>ft</code>, so if we have a new arbitrary <code>dt</code> we will need to convert it to <code>n</code> first using \(n=\frac{dt }{ft} \) . In C++ we would write it as follows:</p>
+<blockquote>
+<p>✅ n代表dt时间内会执行lerp的次数，dt时间内有多少帧就会执行多少次。ft代表一帧的时长。因此\(n=\frac{dt }{ft} \)。</p>
+</blockquote>
+<pre><code class="language-c++">float damper_exponential(
+    float x,
+    float g, 
+    float damping, 
+    float dt, 
+    float ft = 1.0f / 60.0f)
+{
+    return lerp(x, g, 1.0f - powf(1.0 / (1.0 - ft * damping), -dt / ft));
+} 
+</code></pre>
+<blockquote>
+<p>✅ 这样解决了两个问题：</p>
+<ol>
+<li>factor永远不会大于1</li>
+<li>在damping和ft确定的情况下，执行一次dt=1或者两次dt=0.5，结果是一样的。</li>
+</ol>
+</blockquote>
+<p>Let's see it action! Notice how it produces the same, identical and stable behavior even when we make the <code>dt</code> and <code>damping</code> large.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/damper_exponent.m4v</p>
+</blockquote>
+<p>So have we fixed it? Well, in this formulation we've essentially solved the problem by letting the behavior of the damper match one particular timestep while allowing the rate of decay to still vary. In this case <code>1.0f - ft * damping</code> is our rate of decay, and it dictates what proportion of the distance toward the goal will remain after <code>ft</code> in time. As long as we make the fixed timestep <code>ft</code> small enough, <code>ft * damping</code> should never exceed <code>1.0</code> and the system remains stable and well behaved.</p>
+<blockquote>
+<p>✅ 上面这个方法能解决问题的原理是，不管dt多大，都把它分解为以ft为步长走n次，那么总的dt一样多，一次对应的n一样多，结果就会是一样的。</p>
+</blockquote>
+<h2 id="the-half-life"><a class="header" href="#the-half-life">The Half-Life</a></h2>
+<p>But there is another, potentially better way to fix the problem. Instead of fixing the timestep, we can fix the <em>rate of decay</em> and let the timestep vary. This sounds a little odd at first but in practice it makes things much easier. The basic idea is simple: let's set the rate of decay to <code>0.5</code> and instead scale the timestep such that we can control the exact <em>half-life</em> of the damper - a.k.a the time it takes for the distance to the goal to reduce by half:</p>
+<p>\begin{align*} x_{t+dt} &amp; = \text {lerp }(x_t,g,1-\frac{1 }{0.5}^{-dt/halflife})  \\ x_{t+dt} &amp; = \text {lerp }(x_t,g,1-2^{-dt/halflife})   \end{align*}
+​</p>
+<blockquote>
+<p>✅ 似乎是在上一段的基础上，固定住factor并把ft变成一个更有意义的可调参数。</p>
+</blockquote>
+<p>This simplifies the code and gives a more intuitive parameter to control the damper. Now we don't ever need to worry about if we've set the <code>damping</code> too large or made the fixed timestep <code>ft</code> small enough.</p>
+<pre><code class="language-c++">float damper_exact(float x, float g, float halflife, float dt)
+{
+    return lerp(x, g, 1.0f - powf(2, -dt / halflife));
+}
+</code></pre>
+<p>For neatness, we can also switch to an exponential base using the change of base theorem: just multiply the <code>dt</code> by <code>ln(2)=0.69314718056</code> and switch to using <code>expf</code>. Finally, we should add some small epsilon value like <code>1e-5f</code> to avoid division by zero when our <code>halflife</code> is very small:</p>
+<pre><code class="language-c++">float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
+{
+    return lerp(x, g, 1.0f - expf(-(0.69314718056f * dt) / (halflife + eps)));
+}
+</code></pre>
+<blockquote>
+<p>✅ 公式推导：
+定义
+$$
+2^{-\frac{dt}{halflife}} = y，
+$$
+对两边取以2为底对的对数，并把以2为底转换为以e为底，得：
+$$
+-\frac{dt}{halflife} = \log_2^y = \frac{\ln y}{\ln 2}
+$$
+通过化简，求出：
+$$
+y = \exp(-\frac{dt * \ln 2}{halflife})
+$$</p>
+</blockquote>
+<p>The change of base theorem tells us another thing: that changing the rate <em>of decay</em> is no different from scaling the <code>dt</code> in the exponent. So using the <code>halflife</code> to control the damper should not limit us in any of the behaviors we want to achieve compared to if we changed the <em>rate of decay</em> like in our previous setup.</p>
+<p>There is one more nice little trick we can do - a fast approximation of the negative exponent function using one over a simple polynomial (or we could use this <a href="https://twitter.com/Mr_Rowl/status/1577454895652708352">even better approximation from Danny Chapman</a>):</p>
+<pre><code class="language-c++">float fast_negexp(float x)
+{
+    return 1.0f / (1.0f + x + 0.48f*x*x + 0.235f*x*x*x);
+}
+</code></pre>
+<p>And that's it - we've converted our unstable damper into one that is fast, stable, and has intuitive parameters!</p>
+<pre><code class="language-c++">float damper_exact(float x, float g, float halflife, float dt, float eps=1e-5f)
+{
+    return lerp(x, g, 1.0f-fast_negexp((0.69314718056f * dt) / (halflife + eps)));
+}
+</code></pre>
+<p>Let's see how it looks...</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/damper_implicit.m4v</p>
+</blockquote>
+<p>Perfect!</p>
+<hr />
+<h2 id="the-spring-damper"><a class="header" href="#the-spring-damper">The Spring Damper</a></h2>
+<p>The exact damper works well in a lot of cases, but has one major issue - it creates discontinuities when the goal position changes quickly. For example, even if the object is moving in one direction, it will immediately switch to moving in the opposite direction if the goal changes direction. This can create a kind of annoying sudden movement which you can see in the previous videos.</p>
+<p>The problem is that there is no <strong>velocity continuity</strong> - no matter what happened in the previous frames the damper will always move toward the goal. Let's see how we might be able to fix that. We can start by looking again at our old broken bad damper, and examining it in a bit more detail:</p>
+<p>\begin{align*} x_{t+dt} &amp; = \text {lerp }(x_t,g,dt \cdot damping)  \\ x_{t+dt} &amp; =  x_t + dt \cdot damping \cdot (g-x_t)   \end{align*}</p>
+<p>​
+We can see that this looks a bit like a physics equation where \(damping \cdot (g−x_t ) \) represents the velocity.</p>
+<p>​\begin{align*} \upsilon_t &amp; = damping \cdot (g-x_t)  \\ x_{t+dt} &amp; =  x_t + dt \cdot \upsilon_t \end{align*}</p>
+<p>This system is like a kind of <strong>particle with a velocity always proportional to the difference between the current particle position and the goal position</strong>. This explains the discontinuity - the velocity of our damper will always be directly proportional to the difference between the current position and the goal without ever taking any previous velocities into account.</p>
+<p>What if instead of setting the velocity directly each step we made it something that changed more smoothly? For example, we could instead add a velocity taking us toward the goal to the current velocity, scaled by a different parameter which for now we will call the <em>stiffness</em>.</p>
+<p>​\begin{align*} \upsilon_{t+dt} &amp; = \upsilon_t +dt \cdot stiffness \cdot (g-x_t)  \\ x_{t+dt} &amp; =  x_t + dt \cdot \upsilon_t \end{align*}</p>
+<blockquote>
+<p>✅ 速度第一项：当前速度，速度第二项：使达到目标状态的速度</p>
+</blockquote>
+<p>But the problem now is that this particle wont slow down until it has already over-shot the goal and is pulled back in the opposite direction. To fix this we can add a <code>q</code> variable which represents a goal velocity, and add another term which takes us toward this goal velocity. This we will scale by another new parameter which we will call the <em>damping</em> (for reasons which will become clearer later in the article).</p>
+<p>​\begin{align*} \upsilon_{t+dt} &amp; = \upsilon_t +dt \cdot stiffness \cdot (g-x_t) + dt \cdot damping \cdot (q-\upsilon_t)   \\ x_{t+dt} &amp; =  x_t + dt \cdot \upsilon_t \end{align*}</p>
+<blockquote>
+<p>✅ 速度第一项：当前速度，速度第二项：使达到目标状态的速度，速度第三项：目标速度</p>
+</blockquote>
+<p>When <code>q</code> is very small we can think of this like a kind of friction term which simply subtracts the current velocity. And when <code>q=0</code> and <code>dt⋅damping=1</code> we can see that this friction term actually completely removes the existing velocity, reverting our system back to something just like our original damper.</p>
+<p>Another way to think about these terms is by thinking of them as accelerations, which can be shown more clearly by factoring out the <code>dt</code>:</p>
+<p>​​\begin{align*} a_t &amp; = stiffness \cdot (g-x_t) + damping \cdot (q-\upsilon_t)   \\ \upsilon_{t+dt} &amp; =  \upsilon_t + dt \cdot a_t \\ x_{t+dt} &amp; =  x_t + dt \cdot \upsilon_t \end{align*}</p>
+<p>Assuming the mass of our particle is exactly one, it really is possible to think about this as two individual forces - one pulling the particle in the direction of the goal velocity, and one pulling it toward the goal position. If we use a small enough <code>dt</code> we can actually plug these functions together and simulate a simple damped spring with exactly the velocity continuity we wanted. Here is a function which does that (using <a href="https://gafferongames.com/post/integration_basics/">semi-implicit euler integration</a>).</p>
+<pre><code class="language-c++">void spring_damper_bad(
+    float&amp; x,
+    float&amp; v, 
+    float g,
+    float q, 
+    float stiffness, 
+    float damping, 
+    float dt)
+{
+    v += dt * stiffness * (g - x) + dt * damping * (q - v);
+    x += dt * v;
+}
+</code></pre>
+<p>Let's see how it looks:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/springdamper_bad.m4v</p>
+</blockquote>
+<p>But unfortunately just like before we have problems when the <code>dt</code> is large, and certain settings for <code>stiffness</code> and <code>dampi</code>ng can make the system unstable. These unintuitive parameters like <code>damping</code> and <code>stiffness</code> are also back again... arg!</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/springdamper_unstable.m4v</p>
+</blockquote>
+<p>Can we give this spring the same treatment as we did for our damper by fiddling around with the maths? Well yes we can, but unfortunately from here on in things are going to get a bit more complicated...</p>
+<hr />
+<h2 id="the-exact-spring-damper"><a class="header" href="#the-exact-spring-damper">The Exact Spring Damper</a></h2>
+<p>This time the exact version of our model is too complicated to solve using a simple recurrence relation. Instead we're going to have to try a different tactic: we're going to guess an equation we think models the spring and then try to work out how to compute all the different parameters of that equation based on the parameters we do know such as the <code>damping</code> and <code>stiffness</code>.</p>
+<p>If we take a look at the movement of the spring in the previous section we can see there are basically two features - an exponential decay toward the goal position, and a kind of oscillation, a bit like a <code>cos</code> or <code>sin</code> function. So let's try and come up with an equation which fits that kind of shape and go from there. What about something like this?</p>
+<p>​​\begin{align*} x_t &amp; = j \cdot e^{-y \cdot t} \cdot cos (w \cdot t+p)+c \end{align*}</p>
+<p>​
+Where <code>j</code> is the amplitude, <code>y</code> controls the time it takes to decay, a bit like our half-life parameter, <code>t</code> is the time, <code>w</code> is the frequency of oscillations, <code>p</code> is the phase of oscillations, and <code>c</code> is an offset on the vertical axis. This seems like a reasonable formulation of the behavior we saw previously.</p>
+<p>But before we try to find all of these unknown parameters, let's write down the derivatives of this function with respect to <code>t</code> too. We'll use <code>vt</code> to denote the velocity, and <code>at</code> to denote the acceleration.</p>
+<p>​\begin{align*} x_t &amp; = j \cdot e^{-y \cdot t} \cdot cos (w \cdot t+p)+c \end{align*}
+​
+​\begin{align*} x_t &amp; =j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)+c\\
+\upsilon _t &amp; =-y\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)\\
+&amp; -w\cdot j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p) \\
+a_t &amp; =y^2\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p)\\
+&amp; -w^2\cdot j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p) \\
+&amp; +2\cdot w\cdot y\cdot j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}</p>
+<p>Those might look a bit scary but we can make them a lot less scary by just summarizing some of the common terms:</p>
+<p>​\begin{align*} C&amp;=j\cdot e^{-y\cdot t}\cdot \cos (w\cdot t+p) \\S&amp;=j\cdot e^{-y\cdot t}\cdot \sin (w\cdot t+p)  \end{align*}
+​ </p>
+<p>Giving us the following:</p>
+<p>​\begin{align*} x_t&amp;=C+c\\ \upsilon _t&amp;=-j\cdot C-w \cdot S \\ a_t&amp;=y^2 \cdot C-w^2\cdot C+2\cdot w\cdot y\cdot S \end{align*}
+​ 
+​</p>
+<h2 id="finding-the-spring-parameters"><a class="header" href="#finding-the-spring-parameters">Finding the Spring Parameters</a></h2>
+<p>Our plan for finding the first set of unknown parameters is as follows: we're going to substitute these new equations for \(x_t\),\(v_t\) , and <code>at</code> into our previous equation of motion 
+\(a_t=s\cdot (g-x_t)+d\cdot (q-v_t)\) (where <code>d=damping</code> and <code>s=stiffness</code> ) and try to rearrange to solve for <code>y</code>, <code>w</code>, and <code>c</code> using all the other values we know: <code>s</code>,<code>d</code>,<code>q</code>, and <code>g</code>.</p>
+<p>But first let's shuffle around some terms in this equation of motion: expanding the <code>stiffness</code> and <code>damping</code> terms, moving some values onto the left hand side, and finally negating everything. This will make the next steps much easier for us.</p>
+<p>​​\begin{align*} a_t&amp;=s\cdot (g-x_t)+d\cdot (q-v_t)\\
+0&amp;=s\cdot (g-x_t)+d\cdot (q-v_t)-a_t\\
+0&amp;=s\cdot g-s\cdot x_t +d\cdot q-d\cdot v_t -a_t\\
+-s\cdot g-d\cdot q&amp;=-s\cdot x_t-d\cdot v_t  -a_t\\
+s\cdot g+d\cdot q&amp;=s\cdot x_t+d\cdot v_t  +a_t\\ \end{align*}</p>
+<p>Now let's substitute in our three new equations we just created for \(x_t\), \(v_t\),and \(a_t\):</p>
+<p>\begin{align*} s\cdot g+d\cdot q&amp; =s\cdot x_t+d\cdot v_t +a_t \\
+s\cdot g+d\cdot q&amp;=s\cdot (C+c) + d\cdot (-y\cdot C-w\cdot S)+((y^2-w^2)\cdot C+2\cdot w\cdot j\cdot S) \end{align*}</p>
+<p>And by multiplying out and then gathering all the coefficients of <code>C</code> and <code>S</code> together we can get:</p>
+<p>\begin{align*} s\cdot g+d\cdot q&amp;=s\cdot (C+c) + d\cdot (-y\cdot C-w\cdot S)+((y^2-w^2)\cdot C+2\cdot w\cdot j\cdot S) \\ 
+s\cdot g+d\cdot q-s\cdot c&amp;=s\cdot C+d\cdot -y\cdot C-d\cdot w\cdot S+y^2\cdot C-w^2\cdot C+2\cdot w\cdot y\cdot S\\ 
+s\cdot g+d\cdot q-s\cdot c&amp;=((y^2-w^2)-d\cdot y+s)\cdot C+(2\cdot w\cdot y-d\cdot w)\cdot S \end{align*}</p>
+<p>There is one more additional fact we can use to get the variables we need from this equation: because <code>C</code> and <code>S</code> are essentially <code>cos</code> and <code>sin</code> functions with the same phase, amplitude, and frequency, the only way this equation can be balanced for all potential values of <code>t</code>, <code>w</code>, <code>y</code>,<code>j</code> and <code>c</code> is when both the coefficients of <code>C</code> and <code>S</code> are zero and when the left hand side equals zero. This gives us three smaller equations to solve:</p>
+<p>​\begin{align*} s\cdot g+d\cdot q-s\cdot c&amp;=0&amp;(1) \\ 
+(y^2-w^2)-d\cdot y+s&amp;=0&amp;(2)\\ 
+2\cdot w\cdot y-d\cdot w&amp;=0 &amp;(3) \end{align*}</p>
+<h2 id="finding-c"><a class="header" href="#finding-c">Finding \(c\)</a></h2>
+<p>Using equation <code>(1) </code> we can solve for <code>c</code> right away to get our first unknown!</p>
+<p>\begin{align*} s\cdot g+d\cdot q-s\cdot c&amp;=0\\ 
+s\cdot g+d\cdot q&amp;=s\cdot c\\ 
+g+\frac{d\cdot q}{s} &amp;=c \end{align*}</p>
+<h2 id="finding-y"><a class="header" href="#finding-y">Finding \(y\)</a></h2>
+<p>And by rearranging equation <code>(3)</code> we can also find a solution for <code>y</code>:</p>
+<p>\begin{align*} 2\cdot w\cdot y-d\cdot w&amp;=0\\ 
+d\cdot w&amp;=2\cdot w\cdot y\\ 
+d &amp;=2\cdot y\\
+\frac{d}{2} &amp;=y \end{align*}</p>
+<h2 id="finding-w"><a class="header" href="#finding-w">Finding \(w\)</a></h2>
+<p>Which we can substitute into equation <code>(2)</code> to solve for <code>w</code>:</p>
+<p>\begin{align*} (y^2- w^2)-d\cdot y+s&amp;=0\\ 
+((\frac{d}{2}) ^2-w^2)-d\cdot \frac{d}{2}+s&amp;=0\\ 
+\frac{d^2}{4}-w^2- \frac{d^2}{2}+s&amp;=0\\ 
+\frac{d^2}{4}- \frac{d^2}{2}+s&amp;=w^2\\ 
+s- \frac{d^2}{4}&amp;=w^2\\ 
+\sqrt{s-\frac{d^2}{4}}  &amp;=w \end{align*}</p>
+<h2 id="finding-the-spring-state"><a class="header" href="#finding-the-spring-state">Finding the Spring State</a></h2>
+<p>There are two final unknown variables remaining: <code>j</code>, and <code>p</code> - the amplitude and the phase. Unlike <code>y</code>,<code>w</code>, and <code>c</code>, these two are determined by the initial conditions of the spring. Therefore, given some initial position and velocity, \(x_0\) and \(v_0\), we can plug these in our equations along with \(t=0\) to get some more equations we will use to find <code>j</code> and <code>p</code>:</p>
+<p>​\begin{align*} x_0&amp;=j \cdot e^{−y \cdot 0} \cdot \cos(w⋅0+p)+c\\
+x_0&amp;=j \cdot \cos(p)+c\\
+\\
+v_0&amp;=−y \cdot j \cdot e ^{−y \cdot 0} \cdot \cos(w \cdot 0+p)−w \cdot j \cdot e^{−y\cdot 0}\cdot \sin(w \cdot 0+p)\\
+v_0&amp;=−y \cdot j \cdot \cos(p)−w \cdot j \cdot \sin(p) \end{align*}
+​</p>
+<h2 id="finding-j"><a class="header" href="#finding-j">Finding \(j\)</a></h2>
+<p>Let's start with <code>j</code>. First we'll re-arrange our equation for \(x_0\) in terms of <code>p</code>:</p>
+<p>\begin{align*} x_0&amp;=j\cdot ​\cos(p)+c\\
+x_0-c&amp;=j\cdot \cos(p)\\
+\frac{x_0-c}{j} &amp;=\cos(p)\\
+\text{arccos} (\frac{x_0-c}{j})&amp;=p \end{align*}</p>
+<p>And substitute this into our equation for \(v_0\):</p>
+<p>\begin{align*} v_0&amp;=−y\cdot j\cdot \cos(p)−w\cdot j\cdot \sin(p)\\
+v_0&amp;=−y\cdot j\cdot \cos(\text{arccos}(\frac{x_0-c}{j}))-w\cdot j\cdot \sin (\text{arccos} (\frac{x_0-c}{j}))\\ 
+v_0&amp;=-y\cdot j\cdot \frac{x_0-c}{j}-w \cdot j\cdot \sqrt{1-\frac{(x_0-c)^2}{j^2}} \\ 
+v_0&amp;=-y\cdot (x_0-c)-w \cdot j\cdot \sqrt{1-\frac{(x_0-c)^2}{j^2}}\end{align*}</p>
+<p>Which we can now rearrange for <code>j</code>:</p>
+<p>​\begin{align*} v_0+y\cdot (x_0-c)&amp;=-w \cdot j\cdot \sqrt{1-\frac{(x_0-c)^2}{j^2}} \\
+\frac{v_0+y\cdot (x_0-c)}{-w \cdot j} &amp;= \sqrt{1-\frac{(x_0-c)^2}{j^2}} \\ 
+\frac{(v_0+y\cdot (x_0-c))^2}{(-w \cdot j)^2} &amp;=1-\frac{(x_0-c)^2}{j^2} \\ 
+\frac{(v_0+y\cdot (x_0-c))^2}{w^2} &amp;=j^2-(x_0-c)^2 \\ 
+\frac{(v_0+y\cdot (x_0-c))^2}{w^2} +(x_0-c)^2&amp;={j^2}\\
+\sqrt{\frac{(v_0+y\cdot (x_0-c))^2}{w^2} +(x_0-c)^2} &amp;=j\end{align*}</p>
+<p>Nice! Since this relies on squares and a square root, some sign information is lost. This means that in our code we will also need to negate <code>j</code> in the case that \(x_0-c&lt; 0\) :</p>
+<h2 id="finding-p"><a class="header" href="#finding-p">Finding \(p\)</a></h2>
+<p>Finally, we are ready to find <code>p</code>. We can start by rearranging our velocity equation \(v_0\) for <code>j</code>:</p>
+<p>\begin{align*} v_0&amp;=-y \cdot j\cdot \cos(p)-w\cdot j\cdot  \sin(p)\\
+v_0&amp;=j \cdot (-y\cdot \cos(p)-w\cdot \sin(p)) \\ 
+\frac{v_0}{-y\cdot \cos(p)-w\cdot \sin(p)} &amp;=j \end{align*}</p>
+<p>And then substitute this into our equation for \(x_0\) to solve for <code>p</code>:</p>
+<p>\begin{align*} x_0&amp;=j \cdot \cos(p)+c \\
+x_0&amp;=(\frac{v_0}{-y\cdot \cos(p)-w\cdot \sin(p)}) \cdot \cos(p)+c  \\ 
+x_0-c&amp;=(\frac{v_0\cdot \cos(p)}{-y\cdot \cos(p)-w\cdot \sin(p)})\cdot \cos(p)+c  \\ 
+x_0-c&amp;=\frac{v_0}{-y-w\cdot \frac{\sin(p)}{\cos(p)}}\\ 
+x_0-c&amp;=\frac{v_0}{-y-w\cdot \tan(p)}\\ 
+(x_0-c)\cdot (-y-w\cdot \tan(p))&amp;=v_0\\ 
+-(x_0-c)\cdot y-(x_0-c)\cdot w\cdot \tan(p)&amp;=v_0\\ 
+-(x_0-c)\cdot w\cdot \tan(p)&amp;=v_0+(x_0-c)\cdot y\\ 
+\tan(p)&amp;=\frac{v_0+(x_0-c)\cdot y}{-(x_0-c)\cdot w} \\ 
+p&amp;=\text{arctan }(\frac{v_0+(x_0-c)\cdot y}{-(x_0-c)\cdot w} )  \end{align*}</p>
+<h2 id="putting-it-together"><a class="header" href="#putting-it-together">Putting it together</a></h2>
+<p>Putting all of this together, and throwing in a fast approximate <code>atanf</code> for fun, we get the following...</p>
+<pre><code class="language-c++">float fast_atan(float x)
+{
+    float z = fabs(x);
+    float w = z &gt; 1.0f ? 1.0f / z : z;
+    float y = (M_PI / 4.0f)*w - w*(w - 1)*(0.2447f + 0.0663f*w);
+    return copysign(z &gt; 1.0f ? M_PI / 2.0 - y : y, x);
+}
+
+float squaref(float x)
+{
+    return x*x;
+}
+
+void spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float v_goal, 
+    float stiffness, 
+    float damping, 
+    float dt, 
+    float eps = 1e-5f)
+{
+    float g = x_goal;
+    float q = v_goal;
+    float s = stiffness;
+    float d = damping;
+    float c = g + (d*q) / (s + eps);
+    float y = d / 2.0f;
+    float w = sqrtf(s - (d*d)/4.0f);
+    float j = sqrtf(squaref(v + y*(x - c)) / (w*w + eps) + squaref(x - c));
+    float p = fast_atan((v + (x - c) * y) / (-(x - c)*w + eps));
+
+    j = (x - c) &gt; 0.0f ? j : -j;
+
+    float eydt = fast_negexp(y*dt);
+
+    x = j*eydt*cosf(w*dt + p) + c;
+    v = -y*j*eydt*cosf(w*dt + p) - w*j*eydt*sinf(w*dt + p);
+}
+</code></pre>
+<p>Phew - that was a lot of equations and re-arranging, but it worked, and produces a smooth, stable motion even with a very large <code>dt</code> or <code>stiffness</code>. And anyway, doesn't it feel nice to actually use those high school trig identities and do some old school equation manipulation for once!</p>
+<p><img src="../assets/06-2.png" alt="" /></p>
+<hr />
+<h2 id="over-under-and-critical-damping"><a class="header" href="#over-under-and-critical-damping">Over, Under, and Critical Damping</a></h2>
+<p>But hold on... one of the steps we took in the previous section wasn't really legit... can you spot it? Here is the problem:</p>
+<p>​​\begin{align*} w&amp;= \sqrt{s-\frac{d^2}{4} } \end{align*}</p>
+<p>It's a square root... but I never assured you the input to this square root couldn't be negative. In fact it can be... and definitely will be if <code>d</code> is large!</p>
+<p>But what does this negative square root actually correspond to? Does it mean that there is no exact solution to this spring when the <code>damping</code> is large? Do we just have to give up? Well, not exactly...</p>
+<p>In fact we didn't notice when we came up with our original equation to model the behavior of the spring, but there are three different ways this spring can act depending on the relative sizes of the <code>damping</code> and <code>stiffness</code> values.</p>
+<p>If \(s-\frac{d^2}{4} &gt; 0\) it means the spring is <em>under</em> damped, causing oscillations to appear with motions governed by the equations we already derived. If \(s-\frac{d^2}{4} = 0\) it means the spring is <em>critically</em> damped, meaning it returns to the goal as fast as possible without extra oscillation, and if \(s-\frac{d^2}{4} &lt; 0\) it means the spring is <em>over</em> damped, and will return slowly toward the goal.</p>
+<p>In each of these cases there is a different set of basic equations governing the system, leading to a different derivation just like the one we completed. I'm going to save us a bit of time and write them all our here rather than going through the trial and error process of examining different guesses at equations and seeing if they fit:</p>
+<h2 id="under-damped"><a class="header" href="#under-damped">Under Damped:</a></h2>
+<p>\begin{align*} x_t&amp;=j\cdot e ^{−y\cdot t} \cdot \cos(w\cdot t+p)+c \\
+v_t&amp;=−y\cdot j\cdot e ^{−y\cdot t} \cdot \cos(w\cdot t+p)\\
+&amp;−w\cdot j\cdot e^{ −y\cdot t} \cdot \sin(w\cdot t+p)\\
+a_t&amp;=y^2 \cdot j\cdot e^{−y\cdot t}\cdot \cos(w\cdot t+p)\\
+&amp;−w^2 \cdot j\cdot e^{−y\cdot t} \cdot \cos(w\cdot t+p)\\
+&amp;+2\cdot w\cdot y\cdot j\cdot e^{−y\cdot t} \cdot \sin(w\cdot t+p)  \end{align*}</p>
+<h2 id="critically-damped"><a class="header" href="#critically-damped">Critically Damped:</a></h2>
+<p>\begin{align*} x_t&amp;=j_0\cdot e ^{−y\cdot t} +t\cdot y_1\cdot e ^{−y\cdot t}+c \\
+v_t&amp;=-y\cdot j_0\cdot e ^{−y\cdot t} -y\cdot t\cdot y_1\cdot e ^{−y\cdot t}+y_1\cdot e ^{−y\cdot t}\\
+a_t&amp;=j^2\cdot j_0\cdot e ^{−y\cdot t} +y^2\cdot t\cdot y_1\cdot e ^{−y\cdot t}-2\cdot y\cdot j_1\cdot e^{-y\cdot t}\end{align*}
+​</p>
+<h2 id="over-damped"><a class="header" href="#over-damped">Over Damped:</a></h2>
+<p>\begin{align*} x_t&amp;=j_0\cdot e ^{−y_0\cdot t} +j_1\cdot e ^{−y_1\cdot t}+c \\
+v_t&amp;=-y_0\cdot j_0\cdot e ^{−y_0\cdot t} -y_1\cdot j_1\cdot e ^{−y_1\cdot t}\\
+a_t&amp;=j^2_0\cdot j_0\cdot e ^{−y_0\cdot t} +y^2_1\cdot j_1\cdot e ^{−y_1\cdot t} \end{align*}</p>
+<p>What we did in the previous section was solve for the under damped case, but the other two cases require exactly the same style of derivation to get them working.</p>
+<h2 id="solving-the-critically-damped-case"><a class="header" href="#solving-the-critically-damped-case">Solving the Critically Damped Case</a></h2>
+<p>Let's start with the easiest: the critically damped case. The first two unknowns <code>c</code> and <code>y</code> have exactly the same solution as in the under-damped case, \(c=g+ \frac{d\cdot q}{s}\) and \(y=\frac{d}{2}\), while the other two unknowns \(j_0\) and \(j_1\) can be found easily from the initial conditions \(x_0\), \(v_0\), and \(t=0\):
+​
+\begin{align*} x_0&amp;=j_0\cdot e^{−y\cdot 0} +0\cdot j_1\cdot e^{−y\cdot 0} +c \\
+x_0&amp;=j_0 +c \end{align*}</p>
+<p>And for the velocity...</p>
+<p>\begin{align*} v_0&amp;=-y\cdot j_0\cdot e^{−y\cdot 0} -y\cdot 0\cdot j_1\cdot e^{−y\cdot t}+j_1\cdot e^{−y\cdot 0} \\
+v_0&amp;=-y\cdot j_0 +j_1 \end{align*}
+​</p>
+<p>Giving us...</p>
+<p>\begin{align*} j_0&amp;=x_0-c \\
+j_1&amp;=v_0 +j_0\cdot y \end{align*}
+​
+And that's it, easy!</p>
+<h2 id="solving-the-over-damped-case"><a class="header" href="#solving-the-over-damped-case">Solving the Over Damped Case</a></h2>
+<p>The over-damped case is a little more difficult so let's first summarize some terms again to make our equations clearer.</p>
+<p>\begin{align*} E_0&amp;=j_0\cdot e^{−y_0\cdot t} \\
+E_1&amp;=j_1\cdot e^{−y_1\cdot t} \end{align*}</p>
+<p>Giving us...</p>
+<p>\begin{align*} x_t&amp;=E_0+E_1+c \\
+v_t&amp;=-j_0\cdot E_0-y_1\cdot E_1 \\
+a_t&amp;=j^2_0\cdot E_0+y^2_1\cdot E_1 \end{align*}</p>
+<p>We'll start by finding the two unknowns \(y_0\), and \(y_1\). Just like before we are going to substitute these equations into our equation of motion, gathering up the coefficients for the exponential terms:</p>
+<p>\begin{align*} s\cdot g+d\cdot q&amp;=s\cdot x_t +d\cdot v_t +a_t \\
+s\cdot g+d\cdot q&amp;=s\cdot (E_0 +E_1 +c)+d\cdot (−y_0\cdot E_0 −y_1\cdot E_1 )+(y_0^2\cdot E_0 +y_1^2 ⋅E_1 )\\
+s\cdot g+d\cdot q&amp;=s\cdot E_0 +s\cdot E_1 +s\cdot c−d\cdot y_0\cdot E_0 −d\cdot y_1 \cdot E_1 +y_0^2\cdot E_0 +y_1^2\cdot E_1\\
+s\cdot g+d\cdot q−s\cdot c&amp;=(s−d\cdot y_0 +y_0^2 )\cdot E_0 +(s−d\cdot y_1 +y_1^2​ )\cdot E_1 \end{align*}</p>
+<p>Again, just like before, this equation is only solved when both coefficients and the left hand side equal zero. This gives us our existing solution for <code>c</code> plus two more quadratic equations to solve:</p>
+<p>​\begin{align*} s-d\cdot y_0+y^2_0&amp;=0 \\
+s-d\cdot y_1+y^2_1&amp;=0  \end{align*}</p>
+<p>In this case \( y_0\) and  \( y_1\) represent the two different solutions to the same quadratic, so we can use the quadratic formula to get these:</p>
+<p>\begin{align*} y_0&amp;=\frac{d+\sqrt{d^2-4\cdot s}}{2}   \\
+y_1&amp;=\frac{d-\sqrt{d^2-4\cdot s}}{2}  \end{align*}
+​</p>
+<p>Now that these are found we're ready to solve for \( j_0\) and 
+\( j_1\) using the initial conditions \( x_0\), \( v_0\) and \(t=0\):</p>
+<p>\begin{align*} x_0&amp;=j_0\cdot e ^{−y_0\cdot 0} +j_1\cdot e ^{−y_1\cdot 0}+c \\
+x_0&amp;=j_0+j_1+c\\
+\\
+v_0&amp;=-y_0\cdot j_0\cdot e ^{−y_0\cdot 0} -y_1\cdot j_1\cdot e ^{−y_1\cdot 0}\\
+v_0&amp;=-y_0\cdot j_0 −y_1\cdot j_1 \end{align*}</p>
+<p>First we'll re-arrange our eqiation for \(x_0\) in terms of  \(j_0\): 
+​
+\begin{align*} x_0&amp;=j_0+j_1+c \\
+x_0-j_1-c&amp;=j_0 \end{align*}</p>
+<p>Which we'll substitute into our equation for \(v_0\) to solve for 
+\(j_1\) :</p>
+<p>\begin{align*} v_0&amp;=-y_0\cdot j_0-y_1\cdot j_1 \\
+v_0&amp;=-y_0\cdot (x_0-j_1-c)-y_1\cdot j_1 \\
+v_0&amp;=-y_0\cdot x_0+y_0\cdot j_1+y_0\cdot c-y_1\cdot j_1 \\
+-v_0&amp;=y_0\cdot x_0-y_0\cdot j_1-y_0\cdot c+y_1\cdot j_1 \\
+y_0\cdot c-v_0-y_0\cdot x_0&amp;=-y_0\cdot j_1+y_1\cdot j_1 \\
+y_0\cdot c-v_0-y_0\cdot x_0&amp;=j_1\cdot (y_1-y_0) \\
+\frac{y_0\cdot c-v_0-y_0\cdot x_0}{y_1-y_0}&amp;=j_1  \end{align*}</p>
+<p>After which is is easy to get \(j_0\):</p>
+<p>​\begin{align*} x_0&amp;=j_0+j_1+c \\
+x_0-j_1-c&amp;=j_0 \end{align*}</p>
+<p>And that's it! Let's add all of these different cases to our spring damper function:</p>
+<pre><code class="language-c++">void spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float v_goal, 
+    float stiffness, 
+    float damping, 
+    float dt, 
+    float eps = 1e-5f)
+{
+    float g = x_goal;
+    float q = v_goal;
+    float s = stiffness;
+    float d = damping;
+    float c = g + (d*q) / (s + eps);
+    float y = d / 2.0f; 
+    
+    if (fabs(s - (d*d) / 4.0f) &lt; eps) // Critically Damped
+    {
+        float j0 = x - c;
+        float j1 = v + j0*y;
+        
+        float eydt = fast_negexp(y*dt);
+        
+        x = j0*eydt + dt*j1*eydt + c;
+        v = -y*j0*eydt - y*dt*j1*eydt + j1*eydt;
+    }
+    else if (s - (d*d) / 4.0f &gt; 0.0) // Under Damped
+    {
+        float w = sqrtf(s - (d*d)/4.0f);
+        float j = sqrtf(squaref(v + y*(x - c)) / (w*w + eps) + squaref(x - c));
+        float p = fast_atan((v + (x - c) * y) / (-(x - c)*w + eps));
+        
+        j = (x - c) &gt; 0.0f ? j : -j;
+        
+        float eydt = fast_negexp(y*dt);
+        
+        x = j*eydt*cosf(w*dt + p) + c;
+        v = -y*j*eydt*cosf(w*dt + p) - w*j*eydt*sinf(w*dt + p);
+    }
+    else if (s - (d*d) / 4.0f &lt; 0.0) // Over Damped
+    {
+        float y0 = (d + sqrtf(d*d - 4*s)) / 2.0f;
+        float y1 = (d - sqrtf(d*d - 4*s)) / 2.0f;
+        float j1 = (c*y0 - x*y0 - v) / (y1 - y0);
+        float j0 = x - j1 - c;
+        
+        float ey0dt = fast_negexp(y0*dt);
+        float ey1dt = fast_negexp(y1*dt);
+
+        x = j0*ey0dt + j1*ey1dt + c;
+        v = -y0*j0*ey0dt - y1*j1*ey1dt;
+    }
+}
+</code></pre>
+<p>Awesome! Now it works even for very high <code>damping</code> values!</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_fixed.m4v</p>
+</blockquote>
+<hr />
+<h2 id="the-half-life-and-the-frequency"><a class="header" href="#the-half-life-and-the-frequency">The Half-life and the Frequency</a></h2>
+<p>We're almost there, but our functions still use these mysterious <code>damping</code> and <code>stiffness</code> parameters. Can we turn these into something a bit more meaningful? Yes! Just like before we can use a <code>halflife</code> parameter instead of a <code>damping</code> parameter by controlling what we give as input to the <code>exp</code> functions:</p>
+<pre><code class="language-c++">float halflife_to_damping(float halflife, float eps = 1e-5f)
+{
+    return (4.0f * 0.69314718056f) / (halflife + eps);
+}
+    
+float damping_to_halflife(float damping, float eps = 1e-5f)
+{
+    return (4.0f * 0.69314718056f) / (damping + eps);
+}
+</code></pre>
+<p>Here as well as our previous constant of <code>ln(2)</code> we need to multiply by <code>4</code>. This is a bit of a fudge factor but roughly it corresponds to the fact that we divide by two once to get <code>y</code> from <code>d</code>, and that the spring equation is usually a sum of two exponential terms instead of the single one we had for the damper.</p>
+<p>What about the <code>stiffness</code> parameter? Well this one we can turn into a parameter called <code>frequency</code>:</p>
+<pre><code class="language-c++">float frequency_to_stiffness(float frequency)
+{
+   return squaref(2.0f * M_PI * frequency);
+}
+
+float stiffness_to_frequency(float stiffness)
+{
+    return sqrtf(stiffness) / (2.0f * M_PI);
+}
+</code></pre>
+<p>Which is close to what will become <code>w</code> in the under-damped case.</p>
+<p>Both are not completely honest names - the velocity continuity and oscillations of the spring means that the position will not be exactly half way toward the goal in <code>halflife</code> time, while the <code>frequency</code> parameter is more like a pseudo-frequency as the rate of oscillation is also affected by the <code>damping</code> value. Nonetheless, both give more intuitive controls for the spring than the <code>damping</code> and <code>stiffness</code> alternatives.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_halflife.m4v</p>
+</blockquote>
+<p>Along these lines, another useful set of functions are those that give us settings for these two parameters in the critical case (i.e. when \(\frac{d^2}{4}=s\)). These can be useful for setting defaults or in other cases when we only want to set one of these parameters.</p>
+<pre><code class="language-c++">float critical_halflife(float frequency)
+{
+    return damping_to_halflife(sqrtf(frequency_to_stiffness(frequency) * 4.0f));
+}
+
+float critical_frequency(float halflife)
+{
+    return stiffness_to_frequency(squaref(halflife_to_damping(halflife)) / 4.0f);
+}
+</code></pre>
+<p>The <code>critical_halflife</code> function doesn't make that much sense since when critical there aren't any oscillations, but it can still be useful in certain cases. Putting it all together we can provide our spring with a nicer interface:</p>
+<pre><code class="language-c++">void spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float v_goal, 
+    float frequency, 
+    float halflife, 
+    float dt, 
+    float eps = 1e-5f)
+{    
+    float g = x_goal;
+    float q = v_goal;
+    float s = frequency_to_stiffness(frequency);
+    float d = halflife_to_damping(halflife);
+    float c = g + (d*q) / (s + eps);
+    float y = d / 2.0f; 
+    
+    ...
+
+}
+</code></pre>
+<p>Below you can see which critical <code>frequency</code> corresponds to a given <code>halflife</code>. And now I promise we really are done: that's it, an exact damped spring!</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/springdamper_implicit_critical.m4v</p>
+</blockquote>
+<hr />
+<h2 id="the-damping-ratio"><a class="header" href="#the-damping-ratio">The Damping Ratio</a></h2>
+<p>Although controlling the frequency is nice, there is a different control which may be even better for users as it resembles a bit more the scale from less springy to more springy they might want. This is the damping ratio, where a value of <code>1</code> means a critically damped spring, a value <code>&lt;1</code> means an under-damped spring, and a value <code>&gt;1</code> means a over-damped spring.</p>
+<p>The equation for the damping ratio <code>r</code> is as follows, where <code>d</code> is the damping and <code>s</code> is the stiffness:</p>
+<p>\begin{align*} r=\frac{d}{2\sqrt{s} } \end{align*}</p>
+<p>This we can re-arrange to solve for stiffness or damping as required.</p>
+<pre><code class="language-c++">float damping_ratio_to_stiffness(float ratio, float damping)
+{
+    return squaref(damping / (ratio * 2.0f));
+}
+
+float damping_ratio_to_damping(float ratio, float stiffness)
+{
+    return ratio * 2.0f * sqrtf(stiffness);
+}
+</code></pre>
+<p>And use instead of the frequency.</p>
+<pre><code class="language-c++">void spring_damper_exact_ratio(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float v_goal, 
+    float damping_ratio, 
+    float halflife, 
+    float dt, 
+    float eps = 1e-5f)
+{    
+    float g = x_goal;
+    float q = v_goal;
+    float d = halflife_to_damping(halflife);
+    float s = damping_ratio_to_stiffness(damping_ratio, d);
+    float c = g + (d*q) / (s + eps);
+    float y = d / 2.0f; 
+    
+    ...
+
+}
+</code></pre>
+<p>And here it is in action!</p>
+<blockquote>
+<p>🔎https://www.daniel-holden.com/media/uploads/springs/damping_ratio.m4v</p>
+</blockquote>
+<hr />
+<h2 id="the-critical-spring-damper"><a class="header" href="#the-critical-spring-damper">The Critical Spring Damper</a></h2>
+<p>Looking at our exact spring damper, the critical case is particularly interesting for us (and is most likely the case you may have actually used in your games) - not only because it's the situation where the spring moves toward the goal as fast as possible without additional oscillation, but because it's the easiest to compute and also to use as it has fewer parameters. We can therefore make a special function for it, which will allow us to remove the <code>frequency</code> parameter and throw in a few more basic optimizations:</p>
+<pre><code class="language-c++">void critical_spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float v_goal, 
+    float halflife, 
+    float dt)
+{
+    float g = x_goal;
+    float q = v_goal;
+    float d = halflife_to_damping(halflife);
+    float c = g + (d*q) / ((d*d) / 4.0f);
+    float y = d / 2.0f;	
+    float j0 = x - c;
+    float j1 = v + j0*y;
+    float eydt = fast_negexp(y*dt);
+
+    x = eydt*(j0 + j1*dt) + c;
+    v = eydt*(v - j1*y*dt);
+}
+</code></pre>
+<p>With no special cases for over-damping and under-damping this can compile down to something very fast. Separate functions for other common situations can be useful too, such as when the goal velocity <code>q</code> is zero...</p>
+<pre><code class="language-c++">void simple_spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float x_goal, 
+    float halflife, 
+    float dt)
+{
+    float y = halflife_to_damping(halflife) / 2.0f;	
+    float j0 = x - x_goal;
+    float j1 = v + j0*y;
+    float eydt = fast_negexp(y*dt);
+
+    x = eydt*(j0 + j1*dt) + x_goal;
+    v = eydt*(v - j1*y*dt);
+}
+</code></pre>
+<p>or when the goal position is zero too...</p>
+<pre><code class="language-c++">void decay_spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float halflife, 
+    float dt)
+{
+    float y = halflife_to_damping(halflife) / 2.0f;	
+    float j1 = v + x*y;
+    float eydt = fast_negexp(y*dt);
+
+    x = eydt*(x + j1*dt);
+    v = eydt*(v - j1*y*dt);
+}
+</code></pre>
+<p>Another optimization that can be useful is to pre-compute <code>y</code> and <code>eydt</code> for a given <code>halflife</code>. If there are many springs that need to be updated with the same <code>halflife</code> and <code>dt</code> this can provide a big speed-up.</p>
+<hr />
+<h1 id="applications"><a class="header" href="#applications">Applications</a></h1>
+<h2 id="smoothing"><a class="header" href="#smoothing">Smoothing</a></h2>
+<p>Probably the most common application of springs in game development is smoothing - any noisy signal can be easily smoothed in real time by a spring damper and the half life can be used to control the amount of smoothing applied vs how responsive it is to changes.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_smoothing.m4v</p>
+</blockquote>
+<hr />
+<h2 id="filtering"><a class="header" href="#filtering">Filtering</a></h2>
+<p>Springs also work well for filtering out sudden changes or jitters in signals, and even springs with quite a small <code>halflife</code> will do really well at removing any sudden jitters.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_filtering.m4v</p>
+</blockquote>
+<hr />
+<h2 id="controllers"><a class="header" href="#controllers">Controllers</a></h2>
+<p>Another common application of springs in game development is for moving characters. The usual process is to take the user input from the gamepad and turn it into a desired character velocity, which we then set as the goal for a spring. Each timestep we tick this spring and use what it produces as a velocity with which to move the character. By tweaking the parameters of the spring we can achieve movement with different levels of smoothness and responsiveness.</p>
+<p>The slightly unintuitive thing to remember about this setup is that we are using the spring in a way such that its position corresponds to the character's velocity - meaning the spring's velocity will correspond to the character's acceleration.</p>
+<p>Assuming the desired character velocity remains fixed we can also use this spring to predict the future character velocity by simply by evaluating the spring with a larger <code>dt</code> than we normally would and seeing what the result is.</p>
+<p>If we want the character's position after some timestep (not just the velocity) we can compute it more accurately by using the the integral of our critical spring equation with respect to time. This will give us an accurate prediction of the future position of the character too.</p>
+<p>\begin{align*} x_t&amp;=\int (j_0 \cdot e^{-y\cdot t}+t\cdot j_1 \cdot e^{-y\cdot t}+c)dt\\</p>
+<p>x_t&amp;=\frac{-j_1}{y_2} \cdot e^{-y\cdot t}+\frac{-j_0-j_1\cdot t}{y} \cdot e^{-y\cdot t}+\frac{j_1}{y_2}+\frac{j_0}{y}+c\cdot t+x_0\end{align*}</p>
+<p>And translated into code...</p>
+<pre><code class="language-c++">void spring_character_update(
+    float&amp; x, 
+    float&amp; v, 
+    float&amp; a, 
+    float v_goal, 
+    float halflife, 
+    float dt)
+{
+    float y = halflife_to_damping(halflife) / 2.0f;	
+    float j0 = v - v_goal;
+    float j1 = a + j0*y;
+    float eydt = fast_negexp(y*dt);
+
+    x = eydt*(((-j1)/(y*y)) + ((-j0 - j1*dt)/y)) + 
+        (j1/(y*y)) + j0/y + v_goal * dt + x;
+    v = eydt*(j0 + j1*dt) + v_goal;
+    a = eydt*(a - j1*y*dt);
+}
+</code></pre>
+<p>This code is the same as the critically damped spring, but applied to the character velocity and the integral used to compute the character position. If we want to predict the future trajectory we can use this to update arrays of data each with a different <code>dt</code>:</p>
+<pre><code class="language-c++">void spring_character_predict(
+    float px[], 
+    float pv[], 
+    float pa[], 
+    int count,
+    float x, 
+    float v, 
+    float a, 
+    float v_goal, 
+    float halflife,
+    float dt)
+{
+    for (int i = 0; i &lt; count; i++)
+    {
+        px[i] = x; 
+        pv[i] = v; 
+        pa[i] = a;
+    }
+
+    for (int i = 0; i &lt; count; i++)
+    {
+        spring_character_update(px[i], pv[i], pa[i], v_goal, halflife, i * dt);
+    }
+}
+</code></pre>
+<p>This really shows how using a completely exact spring equation comes in handy - we can accurately predict the state of the spring at any arbitrary point in the future without having to simulate what happens in between.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_controller.m4v</p>
+</blockquote>
+<p>Here you can see me moving around a point in the world using the above code and a desired character velocity coming from the gamepad. By adjusting the <code>halflife</code> of the spring we can achieve different levels of responsiveness and smoothness, and by evaluating the spring at various different times in the future we can predict where the character would be if the current input were to remain fixed (shown in red).</p>
+<p>This is exactly the method we use to predict the future character trajectory in <a href="https://www.daniel-holden.com/page/learned-motion-matching">Learned Motion Matching</a>.</p>
+<hr />
+<h2 id="inertialization"><a class="header" href="#inertialization">Inertialization</a></h2>
+<p>In game animation, <a href="https://www.youtube.com/watch?v=BYyv4KTegJI">inertialization</a> is the name given to a kind of blending that fades in or out an offset between two animations. Generally it can be use as a more performant alternative to a cross-fade blend since it only needs to evaluate one animation at a time. In the original presentation a polynomial is used blend out this offset smoothly, but springs can be used for this too.</p>
+<blockquote>
+<p>❓ cross-fade blend是什么？</p>
+</blockquote>
+<p>The idea is this: if we have two different streams of animation we wish to switch between, at the point of transition we record the offset between the currently playing animation and the one we want to switch to. Then, we switch to this new animation but add back the previously recorded offset. We then decay this offset smoothly toward zero over time - in this case using a spring damper.</p>
+<blockquote>
+<p>✅ transition point：转换点，第一段动画开始往第二段动画切的点</p>
+</blockquote>
+<p>In code it looks something like this. First at the transition point we record the offset in terms of position and velocity between the currently playing animation <code>src</code> and the one we're going to switch to <code>dst</code>:</p>
+<pre><code class="language-c++">void inertialize_transition(
+    float&amp; off_x, float&amp; off_v, 
+    float src_x, float src_v,
+    float dst_x, float dst_v)
+{
+    off_x = (src_x + off_x) - dst_x;
+    off_v = (src_v + off_v) - dst_v;
+}
+</code></pre>
+<p>We then switch to this animation, and at every frame we decay this offset toward zero, adding the result back to our currently playing animation.</p>
+<pre><code class="language-c++">void inertialize_update(
+    float&amp; out_x, float&amp; out_v,
+    float&amp; off_x, float&amp; off_v,
+    float in_x, float in_v,
+    float halflife,
+    float dt)
+{
+    decay_spring_damper_exact(off_x, off_v, halflife, dt);
+    out_x = in_x + off_x;
+    out_v = in_v + off_v;
+}
+</code></pre>
+<p>Here you can see it in action:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_inertialization.m4v</p>
+</blockquote>
+<p>As you can see, each time we toggle the button there is a transition between the two different streams of animation (in this case two different <code>sin</code> waves shown in red), while the inertialization smoothly fills in the difference (shown in blue).</p>
+<p>Unlike the original presentation which uses a polynomial to blend out the offset over a specific period, a spring does not provide a fixed blend time and can easily overshoot. However the exponential decay does mean it tends to look smooth and blends out to something negligible at a very fast rate. In addition, since there is no need to remember the last transition time the code is very simple, and because we use the <code>decay_spring_damper_exact</code> variant of the spring it can be made exceptionally fast, in particular when all the blends for the different bones use the same <code>halflife</code> and <code>dt</code> to update.</p>
+<blockquote>
+<p>用spring的做动作切换的特点：</p>
+<ol>
+<li>没有固定的blender时间</li>
+<li>很容易会overshoot</li>
+<li>结果平滑</li>
+<li>混合速度快</li>
+<li>不需要记住上一帧的状态</li>
+</ol>
+</blockquote>
+<p>This is exactly the method we use for switching between animations in our Motion Matching implementation as demonstrated in <a href="https://www.daniel-holden.com/page/learned-motion-matching">Learned Motion Matching</a>.</p>
+<hr />
+<h2 id="interpolation"><a class="header" href="#interpolation">Interpolation</a></h2>
+<p>The time dimension of a spring doesn't have to always be the real time that ticks by - it can be any variable that increases monotonically. For example we could use the parameterization along a curve as the time dimension to feed to a spring to produce a kind of spline.</p>
+<p>Here I set up a piecewise interpolation of some 2D control points and used that as position and velocity goal for two springs (one for each dimension in 2D).</p>
+<pre><code class="language-c++">void piecewise_interpolation(
+    float&amp; x,
+    float&amp; v,
+    float t,
+    float pnts[],
+    int npnts)
+{
+    t = t * (npnts - 1);
+    int i0 = floorf(t);
+    int i1 = i0 + 1;
+    i0 = i0 &gt; npnts - 1 ? npnts - 1 : i0;
+    i1 = i1 &gt; npnts - 1 ? npnts - 1 : i1;
+    float alpha = fmod(t, 1.0f);
+    
+    x = lerp(pnts[i0], pnts[i1], alpha);
+    v = (pnts[i0] - pnts[i1]) / npnts;
+}
+</code></pre>
+<p>The result is a kind of funky spline which <em>springs</em> toward the control points. By adjusting the <code>halflife</code> and <code>frequency</code> we can produce some interesting shapes but overall the result has an odd feel to it since it's not symmetric and usually doesn't quite reach the last control point. Perhaps some more experimentation here could be interesting, such as running two springs along the control points in opposite directions and mixing the result.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_interpolation.m4v</p>
+</blockquote>
+<p>I think there is probably still a way to formulate an interesting and useful type of spline using springs. Tell me if you manage to come up with anything interesting!</p>
+<hr />
+<h2 id="resonance"><a class="header" href="#resonance">Resonance</a></h2>
+<p>If you've got a signal which you think contains at specific frequency but you don't know exactly which frequency it is what do you do? Well, I can already see you starting to type &quot;fast fourier transform&quot; into google but hold on a second, do you really need to do something that complicated?</p>
+<p>Springs can be used to see if a signal is oscillating at a specific frequency! Fed with a goal moving at their resonate frequency springs will oscillate and build up energy, while fed a goal moving at any other frequency will make them die out and lose energy.</p>
+<p>We can measure the energy of the spring using the sum of potential and kinematic energies.</p>
+<pre><code class="language-c++">float spring_energy(
+    float x, 
+    float v, 
+    float frequency,
+    float x_rest = 0.0f, 
+    float v_rest = 0.0f,
+    float scale = 1.0f)
+{
+    float s = frequency_to_stiffness(frequency);
+    
+    return (
+        squaref(scale * (v - v_rest)) + s * 
+        squaref(scale * (x - x_rest))) / 2.0f;
+}
+</code></pre>
+<p>Then, if we want to see which frequency is contained in a signal we can simply drive a spring (or multiple springs at different frequencies) and see which setting produces the most energy.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/application_resonance.m4v</p>
+</blockquote>
+<p>As mentioned in the previous sections, the <code>frequency</code> parameter we're using doesn't actually reflect the true resonate frequency of the spring (the true resonate frequency is also affected by the <code>damping</code>), but we can find the frequency we need to set a spring to match some resonant frequency by fixing the <code>halflife</code>:</p>
+<pre><code class="language-c++">float resonant_frequency(float goal_frequency, float halflife)
+{
+    float d = halflife_to_damping(halflife);
+    float goal_stiffness = frequency_to_stiffness(goal_frequency);
+    float resonant_stiffness = goal_stiffness - (d*d)/4.0f;
+    return stiffness_to_frequency(resonant_stiffness);
+}
+</code></pre>
+<p>When trying to pick out specific frequencies the <code>halflife</code> of the spring affects the sensitivity. A long <code>halflife</code> (or low <code>damping</code>) means the spring will only build up energy when driven at frequencies very close to its resonate frequency, and it will build up more energy too. While a shorter <code>halflife</code> means a broader range of frequencies that build up energy.</p>
+<p>For a really cool application of this idea check out <a href="https://quazikb.github.io/WaveEq/index.html">this blog post</a> by <a href="https://quazikb.github.io/">Kevin Bergamin</a>.</p>
+<hr />
+<h2 id="extrapolation"><a class="header" href="#extrapolation">Extrapolation</a></h2>
+<p>If we have an object moving at a velocity with damping applied we can use a damper to estimate a what the position might be at some time in the future.</p>
+<p>The idea is to assume the velocity is being reduced over time via an exponential decay (i.e. via a damper):</p>
+<p>\begin{align*} v_t&amp;=v_0 \cdot e^{-y\cdot t} \end{align*}</p>
+<p>Then, like in the controller example, we can then take the integral of this equation to work out the exact future position at some time <code>t</code>:</p>
+<p>\begin{align*} x_t&amp;=\int v_0 \cdot e^{-y\cdot t}dt\\
+x_t&amp;=\frac{v_0}{y} (1- e^{-y\cdot t} )+x_0 \end{align*}</p>
+<p>In code it looks something like this where <code>halflife</code> controls the decay rate of the velocity.</p>
+<pre><code class="language-c++">void extrapolate(
+    float&amp; x,
+    float&amp; v,
+    float dt,
+    float halflife,
+    float eps = 1e-5f)
+{
+    float y = 0.69314718056f / (halflife + eps);
+    x = x + (v / (y + eps)) * (1.0f - fast_negexp(y * dt));
+    v = v * fast_negexp(y * dt);
+}
+</code></pre>
+<p>And here is a little demo showing it in action:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/extrapolation.m4v</p>
+</blockquote>
+<hr />
+<h1 id="other-springs"><a class="header" href="#other-springs">Other Springs</a></h1>
+<h2 id="double-spring"><a class="header" href="#double-spring">Double Spring</a></h2>
+<p>You'll notice that the spring damper has a kind of asymmetric look to it - the start is very steep and it quickly evens out. We can achieve more of an &quot;S&quot; shape to the spring by using another spring on the goal. We'll deem this the &quot;double spring&quot;:</p>
+<pre><code class="language-c++">void double_spring_damper_exact(
+    float&amp; x, 
+    float&amp; v, 
+    float&amp; xi,
+    float&amp; vi,
+    float x_goal,
+    float halflife, 
+    float dt)
+{
+    simple_spring_damper_exact(xi, vi, x_goal, 0.5f * halflife, dt);
+    simple_spring_damper_exact(x, v, xi, 0.5f * halflife, dt);
+}
+</code></pre>
+<p>And here you can see it in action:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/double_spring.m4v</p>
+</blockquote>
+<p>In red you can see the intermediate spring <code>xi</code> while in blue you can see the &quot;double spring&quot; which has a slightly more &quot;S&quot; shaped start and end.</p>
+<hr />
+<h2 id="timed-spring"><a class="header" href="#timed-spring">Timed Spring</a></h2>
+<p>In some cases we might not want the spring to reach the goal immediately but at some specific time in the future - yet we might still want to keep the smoothing and filtering properties the spring brings when the goal changes quickly. Here is a spring variant that takes as input a goal time as well as a goal position and tries to achieve the goal at approximately the correct time. The idea is to track a linear interpolation directly toward the goal but to do so some time in the future (to give the spring time to blend out once it gets close to the goal).</p>
+<pre><code class="language-c++">void timed_spring_damper_exact(
+    float&amp; x,
+    float&amp; v,
+    float&amp; xi,
+    float x_goal,
+    float t_goal,
+    float halflife,
+    float dt,
+    float apprehension = 2.0f)
+{
+    float min_time = t_goal &gt; dt ? t_goal : dt;
+    
+    float v_goal = (x_goal - xi) / min_time;
+    
+    float t_goal_future = dt + apprehension * halflife;
+    float x_goal_future = t_goal_future &lt; t_goal ?
+        xi + v_goal * t_goal_future : x_goal;
+        
+    simple_spring_damper_exact(x, v, x_goal_future, halflife, dt);
+    
+    xi += v_goal * dt;
+}
+</code></pre>
+<p>Here the <code>apprehension</code> parameter controls how far into the future we try to track the linear interpolation. A value of <code>2</code> means two-times the half life, or that we expect the blend-out to be 75% done by the goal time. Below we can see this spring in action, with the linear interpolation toward the goal shown in red.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/timed_spring.m4v</p>
+</blockquote>
+<hr />
+<h2 id="velocity-spring"><a class="header" href="#velocity-spring">Velocity Spring</a></h2>
+<p>We can use a similar idea to make a spring that tries to maintain a given velocity by tracking an intermediate target that moves toward the goal at that fixed velocity.</p>
+<pre><code class="language-c++">void velocity_spring_damper_exact(
+    float&amp; x,
+    float&amp; v,
+    float&amp; xi,
+    float x_goal,
+    float v_goal,
+    float halflife,
+    float dt,
+    float apprehension = 2.0f,
+    float eps = 1e-5f)
+{
+    float x_diff = ((x_goal - xi) &gt; 0.0f ? 1.0f : -1.0f) * v_goal;
+    
+    float t_goal_future = dt + apprehension * halflife;
+    float x_goal_future = fabs(x_goal - xi) &gt; t_goal_future * v_goal ?
+        xi + x_diff * t_goal_future : x_goal;
+    
+    simple_spring_damper_exact(x, v, x_goal_future, halflife, dt);
+    
+    xi = fabs(x_goal - xi) &gt; dt * v_goal ? xi + x_diff * dt : x_goal; 
+}
+</code></pre>
+<p>And here is how this one looks, with the intermediate target shown in red.</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/springs/velocity_spring.m4v</p>
+</blockquote>
+<hr />
+<h2 id="quaternion-spring"><a class="header" href="#quaternion-spring">Quaternion Spring</a></h2>
+<p>The simplified code of the simple spring damper also lends itself to be easily adapted to other things such as quaternions. Here the main trick is to convert quaternion differences into <a href="https://www.daniel-holden.com/page/exponential-map-angle-axis-angular-velocity">angular velocities</a> (first convert to angle axis then scale the axis by the angle) so that they can interact with the other terms such as the exponential terms and the spring velocity.</p>
+<pre><code class="language-c++">void simple_spring_damper_exact_quat(
+    quat&amp; x, 
+    vec3&amp; v, 
+    quat x_goal, 
+    float halflife, 
+    float dt)
+{
+    float y = halflife_to_damping(halflife) / 2.0f;	
+	
+    vec3 j0 = quat_to_scaled_angle_axis(quat_mul(x, quat_inv(x_goal)));
+    vec3 j1 = v + j0*y;
+	
+    float eydt = fast_negexp(y*dt);
+
+    x = quat_mul(quat_from_scaled_angle_axis(eydt*(j0 + j1*dt)), x_goal);
+    v = eydt*(v - j1*y*dt);
+}
+</code></pre>
+<p>One thing that is perhaps unintuitive about this derivation is the fact that we actually compute a rotation which takes the goal toward the initial state rather than the other way around (which is what we might expect).</p>
+<p>It's a good exercise to try and do this same style of derivation for other spring variants and other quantities such as angles, but I'll leave that as an exercise for you...</p>
+<hr />
+<h2 id="scale-spring"><a class="header" href="#scale-spring">Scale Spring</a></h2>
+<p>In <a href="https://www.daniel-holden.com/page/scalar-velocity">this post</a> I show how we can derive an equation for a spring that works on object scales.</p>
+<hr />
+<p>Tracking Spring
+See <a href="https://www.daniel-holden.com/page/perfect-tracking-springs">this article</a> for a spring which can be used to perfectly track animation data while still removing discontinuities.</p>
+<hr />
+<h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
+<h2 id="source-code"><a class="header" href="#source-code">Source Code</a></h2>
+<p>The source code for all the demos shown in this article can be found <a href="https://github.com/orangeduck/Spring-It-On">here</a>. They use <a href="https://www.raylib.com/">raylib</a> and more specifically <a href="https://github.com/raysan5/raygui">raygui</a> but once you have both of those installed you should be ready to roll.</p>
+<hr />
+<h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
+<p>I hope this article has piqued your interest in springs. Don't hesitate to get in contact if you come up with any other interesting derivations, applications, or spring variations. I'd be more than happy to add them to this article for others to see. Other than that there is not much more to say - happy exploring!</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../DanielHolden’sBlog/InertializationTransitionCost.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../DanielHolden’sBlog/InertializationTransitionCost.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Inertialization Transition Cost - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Important Articles</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Daniel Holden’s Blog</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/PerfectTrackingwithSprings.html"><strong aria-hidden="true">3.1.</strong> Perfect Tracking with Springs</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CubicInterpolationofQuaternions.html"><strong aria-hidden="true">3.2.</strong> Cubic Interpolation of Quaternions</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.html"><strong aria-hidden="true">3.3.</strong> Creating Looping Animations from Motion Capture</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.html"><strong aria-hidden="true">3.4.</strong> Exponential Map,Angle Axis, and Angular Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.html"><strong aria-hidden="true">3.5.</strong> Spring-It-On: The Game Developer's Spring-Roll-Call</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/InertializationTransitionCost.html" class="active"><strong aria-hidden="true">3.6.</strong> Inertialization Transition Cost</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/ScalarVelocity.html"><strong aria-hidden="true">3.7.</strong> Scalar Velocity</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/JointLimits.html"><strong aria-hidden="true">3.8.</strong> Joint Limits</a></li><li class="chapter-item expanded "><a href="../DanielHolden’sBlog/VisualizingRotationSpaces.html"><strong aria-hidden="true">3.9.</strong> Visualizing Rotation Spaces</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 李宏毅 - Diffusion Model</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel.html"><strong aria-hidden="true">4.1.</strong> Diffusion Model 是如何運作的</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/StableDiffusion.html"><strong aria-hidden="true">4.2.</strong> 文生图模型的基本结构</a></li><li class="chapter-item expanded "><a href="../李宏毅DiffusionModel/DiffusionModel背后的数掌原理.html"><strong aria-hidden="true">4.3.</strong> Diffusion Model背后的数掌原理</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">5.</strong> CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">5.1.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">5.1.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">5.1.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">5.1.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">5.1.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.2.</strong> Image Applications</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Applicationsonotherdomains</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.html"><strong aria-hidden="true">5.3.1.</strong> Diffusion Models for Inverse Problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3D.html"><strong aria-hidden="true">5.3.2.</strong> 3D</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">5.3.3.</strong> 2D diffusion models for 3D generation</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">5.3.4.</strong> Diffusion models for view synthesis</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.html"><strong aria-hidden="true">5.3.5.</strong> 3D reconstruction</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.html"><strong aria-hidden="true">5.3.6.</strong> Inverse problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.html"><strong aria-hidden="true">5.3.7.</strong> Video style transfer / editing methods</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">5.3.8.</strong> Safety and limitations of diffusion models</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Mike Shou - Video Diffusion Models</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/MikeShou.html"><strong aria-hidden="true">6.1.</strong> Background</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html"><strong aria-hidden="true">6.2.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration.html"><strong aria-hidden="true">6.3.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">6.3.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">6.3.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">6.3.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">6.3.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">6.3.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">6.3.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">6.3.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">6.4.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">6.4.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">6.4.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">6.4.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">6.4.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">6.4.5.</strong> Other Guidance</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">7.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../HPE_HMR_Summary.html"><strong aria-hidden="true">8.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">9.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../HumanMotionGenerationSummary.html"><strong aria-hidden="true">10.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../HumanVideoGeneration.html"><strong aria-hidden="true">11.</strong> Human Video Generation</a></li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">12.</strong> 数据集</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>转载出处：https://www.daniel-holden.com/page/inertialization-transition-cost</p>
+<h1 id="inertialization-transition-cost"><a class="header" href="#inertialization-transition-cost">Inertialization Transition Cost</a></h1>
+<p>Created on June 2, 2022, 3:21 p.m.</p>
+<p>Something which is often required by animation systems (Motion Matching being a key example) is a way to compute a &quot;cost&quot; associated with a particular transition between two frames of animation.</p>
+<blockquote>
+<p>✅ cost：转移代价</p>
+</blockquote>
+<p>In Motion Matching this is typically done by taking the difference between <a href="https://montreal.ubisoft.com/en/introducing-learned-motion-matching/">&quot;features&quot;</a> of both the source and destination animations. Usually, the positions of a few key joints (such as the feet), as well as their velocities. The magnitudes (or squared magnitudes) of the differences of these feature values is computed, and then added together using some user specified or automatically computed weights.</p>
+<p>And although both simple and fast, there are two limitations to this notion of a &quot;transition cost&quot;. The first problem is that we're mixing units (such as positions and velocities). This is why we need some kind of weighting terms to balance the contribution from each of these things. Setting good weights by hand is quite difficult, so we often resort to some kind of statistical normalization instead - something which can be a little brittle to changes in our data.</p>
+<p>The second problem is that this does not account for the relationships between these features. And having some particular combination of joint position and velocity can often result in an unexpectedly good transition, which is not accounted for when we just add up those differences separately (as we will see later).</p>
+<p>While I was thinking about this problem, I wondered if we could do something better by assuming our transitions are performed using <a href="https://www.daniel-holden.com/page/spring-roll-call#inertialization">inertialization</a>. The idea I came up with was this: let's define our transition cost as <em>the total displacement</em> caused by an inertialized transition. i.e. The area of the graph between the source and destination animations:</p>
+<p><img src="../assets/6a-1.png" alt="" /> </p>
+<p>When we're using a critically damped spring to produce this offset between source and destination, something like this area can be computed directly using the <em>integral</em> of the spring equation.</p>
+<p>For example, here's the integral of a critically damped spring, with target position zero and target velocity zero (as used to decay the offset of the inertializer), where the initial position is given as <code>x</code>, the initial velocity as <code>v</code> and half-damping <code>y</code> is as defined <a href="https://www.daniel-holden.com/page/spring-roll-call#critical">here</a>:</p>
+<p>\begin{align*} \int (e^{−y\cdot t}\cdot (x+(v+x\cdot y)\cdot t))dt &amp; =−e^{−y\cdot t} \cdot \frac{1}{y^2} \cdot (t\cdot v\cdot y+x\cdot y\cdot (t\cdot y+2)+v) \end{align*}
+​</p>
+<p>Then, by taking the definite integral of this equation from zero to infinity, we can get an equation which tells us the total area under the graph:</p>
+<p>\begin{align*} \int_{0 }^{\infty}  (e^{−y\cdot t}\cdot (x+(v+x\cdot y)\cdot t))dt &amp; =\\
+−e^{−y\cdot \infty  } \cdot \frac{1}{y^2} \cdot (\infty \cdot v\cdot y+x\cdot y\cdot (\infty \cdot y+2)+v)&amp;-\\
+−e^{−y\cdot 0  } \cdot \frac{1}{y^2} \cdot (0 \cdot v\cdot y+x\cdot y\cdot (0 \cdot y+2)+v)&amp;=\\
+0+ \frac{1}{y^2} \cdot (x \cdot y\cdot 2+v)&amp;= \frac{2 \cdot x\cdot y+v}{y^2} \end{align*}</p>
+<p>However this isn't exactly what we're looking for - and it wont exactly give us the area of the graph between source and destination animations in all cases. The first reason for this is that this number can be negative: springs which start with a negative displacement will produce a graph primarily below zero, resulting in a negative integral:</p>
+<p><img src="../assets/6a-2.png" alt="" /> </p>
+<p>The second, worse problem, is that some graphs can even cross zero - producing an area both above and below zero, leading to an integral which underestimates the total area since it subtracts one from the other:</p>
+<p><img src="../assets/6a-3.png" alt="" /> </p>
+<p>In these cases we need to split the integral into two parts - first computing the absolute value of the area before the graph crosses zero, and then the part after.</p>
+<p>To find the time at which the graph crosses zero we can set the spring equation to equal zero and solve for time:</p>
+<p>\begin{align*} e^{−y\cdot t}\cdot (x+(v+x\cdot y)\cdot t)&amp;=0\\
+x+(v+x\cdot y)\cdot t&amp;=0\\
+(v+x\cdot y)\cdot t&amp;=−x\\
+t&amp;= \frac{−x}{ v+x\cdot y } \end{align*}
+​</p>
+<p>The trick here is to remove the \(e^{−y\cdot t}\) term as for any value of <code>t</code> it simply scales the whole of the left hand side of the equation and so does not affect the point at which 0 is crossed.</p>
+<p>Then, we need three different definite integrals, first from <code>0</code> to <code>t</code>, from <code>t</code> to \( \infty \), and finally the one we already computed from <code>0</code> to \( \infty \):</p>
+<p>\begin{align*} I(x,v,y,t)&amp;=(e^{−y\cdot t}\cdot (x+(v+x\cdot y)\cdot t))\\
+\int_{t}^{0} I(x,v,y,t)dt&amp;= \frac{2\cdot x\cdot y+v}{ y^2} −e^{−y\cdot t}\cdot \frac{1 }{y^2}\cdot (t\cdot v\cdot y+x\cdot y\cdot (t\cdot y+2)+v)\\
+\int_{t }^{\infty} I(x,v,y,t)dt&amp;=e^{−y\cdot t}\cdot \frac{1 }{y^2}\cdot (t\cdot v\cdot y+x\cdot y\cdot (t\cdot y+2)+v)\\
+\int_{0}^{\infty} I(x,v,y,t)dt&amp;= \frac{2\cdot x\cdot y+v} {y^2} \end{align*}
+​</p>
+<p>With these three integrals we can get an accurate estimate of the area of our transition. Given an initial positional difference <code>x</code>, velocity difference <code>v</code> and a <code>halflife</code>, we can compute the total displacement as follows:</p>
+<pre><code class="language-c++">def decay_spring_damper_intersection(x, v, halflife, eps=1e-8):
+    y = halflife_to_damping(halflife) / 2.0
+    return -x / (v + x * y)
+
+def decay_spring_damper_displacement(x, v, halflife):
+    y = halflife_to_damping(halflife) / 2.0
+    
+    t = decay_spring_damper_intersection(x, v, halflife)
+    
+    int_0 = (x*y*2 + v) / (y*y)
+    int_t = (np.exp(-y*t) / (y*y)) * (t*v*y + x*y*(t*y+2) + v)
+    
+    return np.where(t &gt; 0.0, 
+        abs(int_0 - int_t) + abs(int_t),
+        abs(int_0))
+</code></pre>
+<p>But given we want to use this as a cost function, what does it actually look like? Well here's a 2D plot, with difference in position on the x-axis and difference in velocity on y-axis (the <code>halflife</code> here is set to <code>0.15</code>):</p>
+<p><img src="../assets/6a-4.png" alt="" /> </p>
+<p>We can compare this to the cost function we would get if we just add the summed absolute differences in position and velocity (here the velocity difference is scaled by <code>0.5</code>):</p>
+<p><img src="../assets/6a-5.png" alt="" /> </p>
+<p>The main difference we can see is that our new transition cost resembles more of a skewed valley than an inverted pyramid - the cost of a positive offset can actually be low - as long as it's combined with a negative velocity offset of the right magnitude. This makes sense - a large velocity offset can initialize the spring in a way such that it corrects itself back to zero more quickly than an initial velocity offset of zero:</p>
+<p><img src="../assets/6a-6.png" alt="" /> </p>
+<p>But the problem with this cost function in practice is that since it's not a normal euclidean distance, it's not totally clear how we might integrate it with the rest of our system and exploit many of the common acceleration structures used in Motion Matching.</p>
+<p>It would be nice if instead there were a &quot;feature&quot; we could compute which emulated the behavior of this cost function.</p>
+<p>Well, as long as we're willing to accept the approximation |\(\frac{2\cdot x\cdot y+v}{ y^2}\)| which somewhat under-estimates the cost for oscillations around zero, there is!</p>
+<p>The first step is to expand out the position difference <code>x</code> and elocity difference <code>v</code> from the source <code>s</code> and destination animations <code>d</code> into <code>s</code> \(s_{pos}\), \(d_{pos}\), \(s_{vel}\), and \(d_{vel}\), giving:</p>
+<p>\begin{align*} |\frac{2\cdot(s_{pos}-d_{pos}) \cdot y+(s_{vel}-d_{vel})}{ y^2}|\end{align*}</p>
+<p>Then, we just need to re-arrange it until we've got all the <code>s</code> variables on one side of a difference, and all the <code>d</code> on the other:</p>
+<p>\begin{align*} =&amp;|\frac{2\cdot y\cdot s_{pos}-2\cdot y\cdot d_{pos}+s_{vel}-d_{vel} }{ y^2}|\\
+=&amp;|\frac{(2\cdot y\cdot s_{pos}+s_{vel})-(2\cdot y\cdot d_{pos}+d_{vel}) }{ y^2}|\\
+=&amp;|\frac{(2\cdot y\cdot s_{pos}+s_{vel})}{ y^2}-\frac{(2\cdot y\cdot d_{pos}+d_{vel}) }{ y^2}|\\
+=&amp;|(\frac{2\cdot s_{pos}}{ y}+\frac{s_{vel}}{ y^2})-(\frac{2\cdot d_{pos}}{y}+\frac{d_{vel} }{ y^2})|\end{align*}</p>
+<p>Which tells us that to emulate this approximate cost function the feature we need to put into our database is exactly the following:</p>
+<p>\begin{align*} \frac{2\cdot pos}{y}+\frac{vel }{ y^2}\end{align*}</p>
+<p>where <code>pos</code> is the bone position, <code>vel</code> is the bone velocity, and <code>y</code> is the half-damping which we compute from the half-life.</p>
+<p>And although I'm certain there are some pathological cases which assign a small cost to transitions with large oscillations, in practice, if you use a relatively small half-life it seems to work. Here I've visualized the error of this function in comparison to our more exact cost function given previously.</p>
+<p><img src="../assets/6a-7.png" alt="" /> </p>
+<p>You can see that at least the error is limited to a fairly small part of the space where we have a large velocity offset and small, exact positional offset.</p>
+<p>To test this feature, I added it to my <a href="https://www.daniel-holden.com/page/code-vs-data-driven-displacement">previous Motion Matching demo</a>, using the original setup and acceleration structure, but replacing the existing bone position and bone velocity features with <a href="https://github.com/orangeduck/Motion-Matching/blob/inertialize_feature/database.h#L444">this feature</a>:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/MotionMatchingInertializeFeature.m4v</p>
+</blockquote>
+<p>Not bad! And although the difference is not hugely significant, to me it looks like an overall improvement, and I was surprised at how well this idea worked out-of-the-box with no tweaking of velocity and positional weights required. So while perhaps not a silver bullet, to me this still seems like a fairly good way to potentially reduce the database size and remove one more weight for users to tweak!</p>
+<hr />
+<p>As a disclaimer I should say that while I thought this was an interesting idea worth sharing, it's not something I've tested myself extensively, so in practice your mileage may vary.</p>
+<p>Also worth noting is that although I've provided the derivation here for a spring-based inertializer, I think a similar derivation should be perfectly possible for inertializers that blend out the offset using a polynomial (and in fact it may well be easier).</p>
+<p>Finally, it's worth mentioning that when we compute the total displacement here we are making an assumption that the inertialized movement of a joint's position in character space is going to be similar to what we would get if we individually inertialized all of the local joint rotations down the chain - something that may well not often be true.</p>
+<hr />
+<h2 id="appendix-cubic-inertializer"><a class="header" href="#appendix-cubic-inertializer">Appendix: Cubic Inertializer</a></h2>
+<p>For fun I thought I would try and do the same derivation for a simple cubic inertializer function (which I used in <a href="https://www.daniel-holden.com/page/creating-looping-animations-motion-capture">my article on looping animations</a>):</p>
+<pre><code class="language-c++">def decay_cubic(
+    x,
+    v,
+    blendtime, 
+    dt,
+    eps=1e-8):
+    
+    t = np.clip(dt / (blendtime + eps), 0, 1)
+
+    d = x
+    c = v * blendtime
+    b = -3*d - 2*c
+    a = 2*d + c
+    
+    return a*t*t*t + b*t*t + c*t + d
+</code></pre>
+<p>The idea behind this function is essentially just to find the coefficients of a cubic polynomial with some initial position and velocity on the y-axis, which crosses the x-axis at <code>1</code>, with a velocity of <code>0</code>. Then, if we want to change how long it takes to decay we can simply scale the x-axis (and adjust the initial velocity accordingly).</p>
+<p><img src="../assets/6a-8.png" alt="" /> </p>
+<p>The way we use this inertializer is a bit different. Rather than decaying the offset over time, we keep track of the initial offset, the time since transition, and compute the decayed offset on the fly based on how long it has been since the transition (we can actually do things this way with our spring-based inertializer too if we want).</p>
+<pre><code class="language-c++">void decayed_offset_cubic(
+    vec3&amp; out_x,
+    vec3&amp; out_v,
+    const vec3 init_x,
+    const vec3 init_v,
+    const float blendtime, 
+    const float dt,
+    const float eps=1e-8f)
+{
+    float t = clampf(dt / (blendtime + eps), 0.0f, 1.0f);
+
+    vec3 d = init_x;
+    vec3 c = init_v * blendtime;
+    vec3 b = -3.0f*d - 2.0f*c;
+    vec3 a = 2.0f*d + c;
+    
+    out_x = a*t*t*t + b*t*t + c*t + d;
+    out_v = (3.0f*a*t*t + 2.0f*b*t + c) / (blendtime + eps);
+}
+
+void inertialize_cubic_transition(
+    vec3&amp; off_x, 
+    vec3&amp; off_v, 
+    float&amp; off_t,
+    const vec3 src_x,
+    const vec3 src_v,
+    const vec3 dst_x,
+    const vec3 dst_v,
+    const float blendtime)
+{
+    vec3 dec_x, dec_v;
+    decayed_offset_cubic(dec_x, dec_v, off_x, off_v, blendtime, off_t);
+    
+    off_x = (dec_x + src_x) - dst_x;
+    off_v = (dec_v + src_v) - dst_v;
+    off_t = 0.0f;
+}
+
+void inertialize_cubic_update(
+    vec3&amp; out_x, 
+    vec3&amp; out_v,
+    float&amp; off_t,
+    const vec3 off_x,
+    const vec3 off_v,
+    const vec3 in_x, 
+    const vec3 in_v,
+    const float blendtime,
+    const float dt)
+{
+    off_t += dt;
+    
+    vec3 dec_x, dec_v;
+    decayed_offset_cubic(dec_x, dec_v, off_x, off_v, blendtime, off_t);
+    
+    out_x = in_x + dec_x;
+    out_v = in_v + dec_v;
+}
+</code></pre>
+<p>Just like our spring, this function can cross the x-axis before <code>1</code>, which means if we want to compute the absolute displacement, we need to compute the integral in two parts:</p>
+<p><img src="../assets/6a-9.png" alt="" /> </p>
+<p>And, just like before this means we need to compute the intersection time. In this case, since our cubic function is tangent to the x-axis at 1, we know that two of the roots will be exactly 1, which makes our lives a lot easier when it comes to finding the final one:</p>
+<p>\begin{align*} a x^3 +b x^2 +c x+d=(x−1)(x−1)(x − ?) ​\end{align*}</p>
+<p>To compute the final root we can use <a href="https://www.youtube.com/watch?v=aGpsjErdPnU">synthetic division</a>:</p>
+<p>\begin{align*} (a x^3 +b x^2 +c x+d) / (x−1)&amp;=a x^2 +(a+b) x+(a+b+c)\\
+(a x^2 +(a+b) x+(a+b+c)) / (x−1)&amp;=a x+2a+b ​\end{align*}</p>
+<p>Which means the value of the final root is given by the following:</p>
+<p>\begin{align*} a x+2a+b &amp;=0\\
+x&amp;= \frac{−2a −b}{a} ​\end{align*}</p>
+<p>We then just need to scale this by the <code>blendtime</code> if we want to get the actual intersection time:</p>
+<pre><code class="language-c++">def decay_cubic_intersection(x, v, blendtime, eps=1e-8):
+    
+    d = x
+    c = v * blendtime
+    b = -3*d - 2*c
+    a = 2*d + c
+
+    t = (-2*a - b) / (a + eps)
+    
+    return t * blendtime
+</code></pre>
+<p>So, depending on if there is an intersection between <code>0</code> and <code>1</code>, the total displacement is either the <code>blendtime</code> multiplied by the integral of our polynomial between <code>0</code> and <code>1</code>, or the blendtime multiplied by the sum of two integrals: one between <code>0</code> and <code>t</code>, and one between <code>t</code> and <code>1</code> where <code>t</code> is the intersection time:</p>
+<p>\begin{align*} \int_{0}^{t} a x^3 +b x^2 +c x+ddx&amp;=\frac{at^4}{4} +\frac{bt^3}{3} +\frac{ct^2}{2}+dt\\
+\int_{t}^{1} a x^3 +b x^2 +c x+ddx&amp;=(\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d)-(\frac{at^4}{4} +\frac{bt^3}{3} +\frac{ct^2}{2}+dt)\\
+\int_{0}^{1} a x^3 +b x^2 +c x+ddx&amp;=\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d \end{align*}</p>
+<p>Which in code looks something like this:</p>
+<pre><code class="language-c++">def decay_cubic_displacement(x, v, blendtime, eps=1e-8):
+    
+    d = x
+    c = v * blendtime
+    b = -3*d - 2*c
+    a = 2*d + c
+
+    t = (-2*a - b) / (a + eps)
+    
+    int_0 = a/4 + b/3 + c/2 + d
+    int_t = (a*t*t*t*t)/4 + (b*t*t*t)/3 + (c*t*t)/2 + (d*t)
+    
+    return blendtime * np.where((t &gt;= 0.0) &amp; (t &lt;= 1.0),
+        abs(int_0 - int_t) + abs(int_t),
+        abs(int_0))
+</code></pre>
+<p>Again, like before, if we can accept the approximation which does not split the integral into two parts, and underestimates the displacement of oscillations, we can derive a motion matching feature by getting all the source variables and destinations variables on either side of a subtraction, where here <code>z</code> is the <code>blendtime</code>:</p>
+<p>\begin{align*} =&amp;z|\frac{a}{4} +\frac{b}{3} +\frac{c}{2}+d|\\
+=&amp;z|\frac{z}{2}s_{vel} -\frac{z}{2}d_{vel} -\frac{2z}{3}s_{vel} +\frac{2z}{3}d_{vel} +\frac{1}{2}s_{pos}-\frac{1}{2}d_{pos}+\frac{z}{4}s_{vel}-\frac{z}{4}d_{vel}|\\
+=&amp;z|(\frac{z}{2}s_{vel} -\frac{2z}{3}s_{vel} +\frac{1}{2}s_{pos} +\frac{z}{4}s_{vel} )-(\frac{z}{2}d_{vel}-\frac{2z}{3}d_{vel}+\frac{1}{2}d_{pos}+\frac{z}{4}d_{vel})|\\
+=&amp;z|(\frac{z}{12}s_{vel}+\frac{1}{2}s_{pos} )-(\frac{z}{12}d_{vel}+\frac{1}{2}d_{pos})|  \end{align*}</p>
+<p>Giving the following feature:</p>
+<p>\begin{align*} \frac{z\cdot pos}{2}+\frac{z^2\cdot vel}{12} \end{align*}</p>
+<p>where <code>pos</code> is the bone position, <code>vel</code> is the bone velocity, and <code>z</code> is the <code>blendtime</code>. I find it interesting how close this is to the spring-based feature given that the half-damping <code>y</code> is kind of similar to an inverse blend time.</p>
+<p>Finally, here you can see an <a href="https://github.com/orangeduck/Motion-Matching/tree/inertialize_feature_cubic">adaption of my motion matching demo</a>, with this feature used for matching, and the cubic inertializer used for blending:</p>
+<blockquote>
+<p>🔎 https://www.daniel-holden.com/media/uploads/MotionMatchingCubicInertializeFeature.m4v</p>
+</blockquote>
+<p>Nice!</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper&#x27;sSpring-Roll-Call.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../DanielHolden’sBlog/ScalarVelocity.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../DanielHolden’sBlog/Spring-It-OnTheGameDeveloper&#x27;sSpring-Roll-Call.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../DanielHolden’sBlog/ScalarVelocity.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
