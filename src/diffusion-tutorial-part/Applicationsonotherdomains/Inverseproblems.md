@@ -121,58 +121,28 @@ Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Dat
 P55   
 ## Video LDM   
 
- - Similarly, fine-tune a text-to-video model from text-to-image model.    
+ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|48|2023|Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models|T2I(LDM) -> T2V(SVD)<br>Cascaded generation||[link](https://caterpillarstudygroup.github.io/ReadPapers/48.html)| 
 
 ![](../../assets/D3-55.png)     
 
-Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
-
-> &#x2705; 特点：(1) 使用 latent space． (2) Encoder fix．用 video 数据 fineture Decoder.    
-
 P56   
-## Video LDM: Decoder Fine-tuning   
+### Video LDM: Decoder Fine-tuning   
 
  - Fine-tune the decoder to be video-aware, keeping encoder frozen.    
 
 ![](../../assets/D3-56.png)     
 
-Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
-
-P57    
-## Video LDM: LDM Fine-tuning   
-
- - Interleave spatial layers and temporal layers.    
- - The spatial layers are frozen, whereas temporal layers are trained.    
- - Temporal layers can be Conv3D or Temporal attentions.   
- - Context can be added for autoregressive generation.    
-
-![](../../assets/D3-57.png)     
-
-Optional context via learned down-sampling operation.   
-
-**For Conv3D,**    
-shape is [batch, time, channel, height, width]    
-
-**For Temporal attention,**   
-shape is [batch \\(^\ast \\)height\\(^\ast \\) width, time, channel]    
-
-
-
-Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023   
-
-> &#x2705; 时序层除了时序 attention，还有 3D conv，是真正的 3D，但是更复杂，且计算、内存等消耗更大。   
-
+> &#x2705; 特点：(1) 使用 latent space． (2) Encoder fix．用 video 数据 fineture Decoder.    
 
 P58   
-## Video LDM: Upsampling
+### Video LDM: Upsampling
  - After key latent frames are generated, the latent frames go through temporal interpolation.   
  - Then, they are decoded to pixel space and optionally upsampled.   
 
 ![](../../assets/D3-58.png)     
-
-Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
-
-
+> &#x2705; 在 latent space 工作，因此 “生成关键帧 + 插帧 + 超分” 之后要 Decoder.   
 
 
 ---------------------------------------

@@ -160,8 +160,7 @@ Harvey et al., <u>"Flexible Diffusion Modeling of Long Videos",</u> arXiv 2022
 Voleti et al., <u>"MCVD: Masked Conditional Video Diffusion for Prediction, Generation, and Interpolation",</u> NeurIPS 2022   
 Ho et al., <u>"Imagen Video: High Definition Video Generation with Diffusion Models",</u> Oct 2022   
 Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Data",</u> arXiv 2022    
-Mei and Patel, <u>"VIDM: Video Implicit Diffusion Models",</u> arXiv 2022    
-Blattmann et al., <u>"Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models",</u> CVPR 2023    
+Mei and Patel, <u>"VIDM: Video Implicit Diffusion Models",</u> arXiv 2022        
 Wang et al., <u>"Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models",</u> arXiv 2023    
 Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
 Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023    

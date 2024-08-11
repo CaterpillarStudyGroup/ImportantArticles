@@ -386,28 +386,9 @@ Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with 
 P64   
 ## Align your Latents
 
-Leverage pretrained T2I models for video generation; 
-Cascaded generation   
-
-![](../../assets/08-64.png)
-
-Blattmann et al., “Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models,” CVPR 2023.     
-
-> &#x2705; 在 latent space 工作，因此 “生成关键帧 + 插帧 + 超分” 之后要 Decoder.   
-
-P65   
-## Align your Latents   
-
-Leverage pretrained T2I models for video generation
-
-**Inserting Temporal Layers**   
-
- - Latent space diffusion model: insert temporal convolutional & 3D attention layers   
- - Decoder: add 3D convolutional layers   
- - Upsampler diffusion model: add 3D convolution layers   
-
-
-> &#x2705; 所有工作的基本思路：(1) 先从小的生成开始 (2) 充分利用 T2I．   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|48|2023|Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models|T2I(LDM) -> T2V(SVD)<br>Cascaded generation||[link](https://caterpillarstudygroup.github.io/ReadPapers/48.html)| 
 
 
 ---------------------------------------
