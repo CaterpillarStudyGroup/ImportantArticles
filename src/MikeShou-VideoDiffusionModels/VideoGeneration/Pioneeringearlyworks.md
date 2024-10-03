@@ -1,60 +1,31 @@
 ![](../../assets/08-33.png)
 
-P34  
-## Problem Definition
-
-**Text-Guided Video Generation**   
-
-输入：Text prompt（或其它控制信号）  
-输出：video   
-
-Video from Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
-
-P35   
-## Problem Definition   
-
-![](../../assets/08-35.png)
-
-
-> &#x2705; 从 2D 输出变成 3D 输出。   
-
 P36  
-## Video Diffusion Models  
+# Video Diffusion Models  
 
-Recap 3D Conv
+## Recap 3D Conv
 
 |||
 |--|--|
 | ![](../../assets/08-36-1.png)  |  ![](../../assets/08-36-2.png) |
 
-Du et al., “Learning Spatiotemporal Features with 3D Convolutional Networks,” ICCV 2015.     
+> Du et al., “Learning Spatiotemporal Features with 3D Convolutional Networks,” ICCV 2015.     
 
 P37  
-## Video Diffusion Models
 
-Recap (2+1)D Conv
+## Recap (2+1)D Conv
 
 |||
 |--|--|
 | ![](../../assets/08-37-1.png)  |  ![](../../assets/08-37-2.png) |
 
-Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.    
+> Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.    
 
 > &#x2705; \\(t\times d\times d\\) 卷积 kenal 数量非常大，可以对 kernel 做分解，先在 spatial 上做卷积，然后在 temporal 上做卷积。   
 > &#x2705; 特点：效果还不错，效率也高。   
 
-P38   
-## Video Diffusion Models   
-
-Early work on video generation
-
-Ho et al., “Video Diffusion Models,” NeurIPS 2022.  
-
-
 P39   
 ## Video Diffusion Models
-
-Early work on video generation   
 
  - 3D U-Net factorized over space and time   
  - Image 2D conv inflated as → space-only 3D conv, i.e., 2 in (2+1)D Conv   
@@ -76,7 +47,7 @@ Ho et al., “Video Diffusion Models,” NeurIPS 2022.
 
 
 P40  
-## Make-A-Video
+# Make-A-Video
 
 Cascaded generation
 
@@ -92,9 +63,6 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 > &#x2705; 这种时序方法不能做流式输出。   
 
 P41   
-## Make-A-Video
-
-Cascaded generation
 
 ![](../../assets/08-41.png) 
 
@@ -103,9 +71,6 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 > &#x2753; 第 3 步时间上的超分为什么没有增加帧数？   
 
 P42  
-## Make-A-Video
-
-Cascaded generation
 
 ![](../../assets/08-42.png) 
 
@@ -128,9 +93,6 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 > &#x2753; 卷积层与 diffusion 层怎么结合？    
 
 P44  
-## Make-A-Video
-
-Cascaded generation
 
 **Training**
  - 4 main networks (decoder + interpolation + 2 super-res)   

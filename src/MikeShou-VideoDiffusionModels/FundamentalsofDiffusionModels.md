@@ -1,3 +1,4 @@
+![](../../assets/08-30.png)
 
 P6  
 # DDPM (Denoising Diffusion Probabilistic Models)
