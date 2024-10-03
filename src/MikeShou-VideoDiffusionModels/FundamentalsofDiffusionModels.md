@@ -43,18 +43,11 @@ P14
 
 ![](../assets/08-14.png)
 
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.    
-Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|**2**|2021|Denoising Diffusion Implicit Models (DDIM)| &#x2705; DDIM：可以直接从 \\(t_2\\) 去噪到 \\(t_1\\). <br> &#x2705; 把 \\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   ||[link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)|
 
-> &#x2753; 是否可以快速去噪？   
-> &#x2705; DDIM：可以直接从 \\(t_2\\) 去噪到 \\(t_1\\).   
-> &#x2705; 把 \\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   
-
-
-P15   
-## Denoising Diffusion Models
-
-DDPM vs DDIM   
+## DDPM vs DDIM   
 
 |||
 |--|--|
@@ -65,9 +58,7 @@ Song et al., “Score-Based Generative Modeling through Stochastic Differential 
 Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.    
 
 P16   
-## DDIM Inversion
-
-The task of Inversion
+## The task of Inversion
 
 ![](../assets/08-16.png)
 
@@ -78,7 +69,7 @@ Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffu
 > &#x2705; 已有训好的 denoiser，输入干净图像，求它的噪声。   
 
 P17   
-## DDIM Inversion
+## 前向过程与 DDIM Inverse 的区别
 
 Based on the assumption that the ODE process can be reversed in the limit of small steps    
 
@@ -90,8 +81,6 @@ Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.
 Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.   
 Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.    
 
-
-> &#x2705; 前向过程与 DDIM Inverse 的区别   
 > &#x2705; DDIM Inverse 可用于图片编辑   
 
 
@@ -130,20 +119,10 @@ P21
 
 ![](../assets/08-21.png) 
 
-> &#x2705; 把图片转为 high leve sematic space    
-> &#x2705; semanic 更抽像，维度更低，因此模型更高效。   
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|   
-
-
-P24   
-# LoRA: Low-Rank Adaptation   
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|38|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+|**45**|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|    
+|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
 ||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|
 
 P25   
