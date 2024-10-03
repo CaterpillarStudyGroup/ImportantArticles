@@ -1,20 +1,7 @@
 # Summary
 
-[Important Articles]()
-
 - [Introduction](README.md)
 - [如何高效读论文](./ReadPapers.md)
-
-# Daniel Holden’s Blog
-- [Perfect Tracking with Springs](DanielHolden’sBlog/PerfectTrackingwithSprings.md)
-- [Cubic Interpolation of Quaternions](DanielHolden’sBlog/CubicInterpolationofQuaternions.md)
-- [Creating Looping Animations from Motion Capture](DanielHolden’sBlog/CreatingLoopingAnimationsfromMotionCapture.md)
-- [Exponential Map,Angle Axis, and Angular Velocity](DanielHolden’sBlog/ExponentialMapAngleAxisandAngularVelocity.md)
-- [Spring-It-On: The Game Developer's Spring-Roll-Call](DanielHolden’sBlog/Spring-It-OnTheGameDeveloper'sSpring-Roll-Call.md)
-- [Inertialization Transition Cost](DanielHolden’sBlog/InertializationTransitionCost.md)
-- [Scalar Velocity](DanielHolden’sBlog/ScalarVelocity.md)
-- [Joint Limits](DanielHolden’sBlog/JointLimits.md)
-- [Visualizing Rotation Spaces](DanielHolden’sBlog/VisualizingRotationSpaces.md)
 
 # 李宏毅 - Diffusion Model
 - [Diffusion Model 是如何運作的](李宏毅DiffusionModel/DiffusionModel.md)
@@ -39,6 +26,7 @@
   - [Inverse problems](diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.md)
   - [Video style transfer / editing methods](diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.md)
   - [Safety and limitations of diffusion models](diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.md)
+
 # Mike Shou - Video Diffusion Models
 - [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
 - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
