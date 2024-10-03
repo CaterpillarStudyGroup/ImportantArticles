@@ -1,67 +1,18 @@
 
 P6  
-# 1 DDPM (Denoising Diffusion Probabilistic Models)
-
-
-P7  
-## DDPM (Denoising Diffusion Probabilistic Models)
+# DDPM (Denoising Diffusion Probabilistic Models)
 
 ![](../assets/08-02.png)
 
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.   
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
-
-> &#x2705; Diffusion Model 的第一篇论文    
-
-
-P8   
-## DDPM (Denoising Diffusion Probabilistic Models)
-
 ![](../assets/08-03.png)
-
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.    
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
-
-
-P9  
-## DDPM (Denoising Diffusion Probabilistic Models)
 
 ![](../assets/08-04.png)
 
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
-
 > &#x2705; 通过公式推导，可以直接从 \\(x_0\\) 加噪到 \\(x_t\\)．   
-
-
-P10   
-## DDPM (Denoising Diffusion Probabilistic Models)
 
 ![](../assets/08-05.png)
 
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.
-
-
-P11   
-## DDPM (Denoising Diffusion Probabilistic Models)
-
 ![](../assets/08-11.png)
-
-
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.    
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.    
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.    
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
-
 
 > &#x2705; 输入带噪声图像，预测噪声，原图像去掉噪声后得到干净图像。     
 > &#x2705; \\(x_t\\) 可以处于任意时间步，可以一步去噪到干净图像。   
@@ -69,25 +20,26 @@ Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,”
 > &#x2705; \\(t\\) 代表时间步，网络可以以此决定去噪程度。   
 > &#x2705; “A cat” 是文本 condition.    
 
-
-P12   
-## DDPM (Denoising Diffusion Probabilistic Models)
-
 ![](../assets/08-12.png)
-
-Ho et al., “Denoising Diffusion Probabilistic Models,” NeurIPS 2020.   
-Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
-Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
-Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
 
 > &#x2705; 虽然训练时是根据 \\(x_t\\) 预测 \\(x_0\\).   
 > &#x2705; 但是推断时，\\(x_t\\) 减去噪声后，又重新 sample 出一个噪声后加到图像上，变成 \\(x_{t-1}\\)．   
 > &#x2705; 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。   
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2020|Denoising Diffusion Probabilistic Models|Diffusion Model 的第一篇论文||[link](../李宏毅DiffusionModel/DiffusionModel.md)|
+
+Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
+Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
+Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.   
+
+
+
 
 P14  
 
-## DDIM (Denoising Diffusion Implicit Models)
+# DDIM (Denoising Diffusion Implicit Models)
 
 ![](../assets/08-14.png)
 
@@ -155,16 +107,15 @@ p18
 
 
 P20   
-## CLIP   
+# CLIP   
 
 Encoders bridge vision and language
 
 
  - CLIP text-/image-embeddings are commonly used in diffusion models for conditional generation
 
-|||
-|--|--|
-| ![](../assets/08-20-1.png)  |  ![](../assets/08-20-2.png) |
+![](../assets/08-20-1.png)  
+![](../assets/08-20-2.png)
 
 Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.     
 
@@ -175,7 +126,7 @@ Radford et al., “Learning Transferable Visual Models From Natural Language Sup
 
 P21   
 
-## Latent Diffusion
+# Latent Diffusion
 
 ![](../assets/08-21.png) 
 
@@ -188,7 +139,7 @@ P21
 
 
 P24   
-## LoRA: Low-Rank Adaptation   
+# LoRA: Low-Rank Adaptation   
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
@@ -196,7 +147,7 @@ P24
 ||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|
 
 P25   
-## DreamBooth   
+# DreamBooth   
 
 Few-shot finetuning of large models for generating personalized concepts
 
@@ -212,7 +163,7 @@ Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subje
 
 
 P26  
-## ControlNet    
+# ControlNet    
 
 Conditional generation with various guidances    
 
