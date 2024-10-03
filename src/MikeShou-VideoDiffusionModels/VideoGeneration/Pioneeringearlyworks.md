@@ -1,21 +1,12 @@
-
-P32   
-
-# 2 Video Generation
-
-## 2.1 Pioneering/early works
-
-
 ![](../../assets/08-33.png)
-
-
 
 P34  
 ## Problem Definition
 
 **Text-Guided Video Generation**   
 
-Text prompt → video   
+输入：Text prompt（或其它控制信号）  
+输出：video   
 
 Video from Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
 
