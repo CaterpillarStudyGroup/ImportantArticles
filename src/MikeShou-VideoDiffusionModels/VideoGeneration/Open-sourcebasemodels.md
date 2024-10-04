@@ -1,12 +1,3 @@
-
-
-
-P66   
-# 2 Video Generation   
-
-## 2.2 Open-source base models
-
-
 P67   
 ![](../../assets/08-67.png)
 
@@ -183,7 +174,7 @@ Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-
 
 
 P80  
-## VideoCrafter  
+# VideoCrafter  
 
 • Latent diffusion inserted with temporal layers
 
@@ -192,7 +183,7 @@ P80
 Chen et al., “VideoCrafter1: Open Diffusion Models for High-Quality Video Generation,” arXiv 2023.    
 
 P81  
-## LaVie  
+# LaVie  
 
 Joint image-video finetuning with curriculum learning
 
@@ -201,100 +192,14 @@ Joint image-video finetuning with curriculum learning
 Wang et al., “LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models,” arXiv 2023.   
 
 > &#x2705; 提供了一套高质量数据集，生成的视频质量也更好（训练集很重要）。   
-
-
-P83   
-## Stable Video Diffusion  
-
-Scaling latent video diffusion models to large datasets
-
-**Data Processing and Annotation** 
-
- - Cut Detection and Clipping    
-    - Detect cuts/transitions at multiple FPS levels   
-    - Extract clips precisely using keyframe timestamps   
- - Synthetic Captioning   
-    - Use CoCa image captioner to caption the mid-frame of each clip   
-    - Use V-BLIP to obtain video-based caption   
-    - Use LLM to summarise the image- and video-based caption   
-    - Compute CLIP similarities and aesthetic scores
- - Filter Static Scene   
-    - Use dense optical flow magnitudes to filter static scenes   
- - Text Detection   
-    - Use OCR to detect and remove clips with excess text    
-
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.     
-
-> &#x2705; SVD：构建数据集    
-> &#x2705; (1) 把视频切成小段，描述会更准确   
-> &#x2705; (2) 用现有模型生成视频描述     
+   
 
 P84   
-## Stable Video Diffusion   
+# Stable Video Diffusion   
 
-Scaling latent video diffusion models to large datasets
-
-**Data Processing and Annotation**  
-
-![](../../assets/08-84.png) 
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
-
-
-
-P85  
-## Stable Video Diffusion   
-
-Scaling latent video diffusion models to large datasets
-
-**Stage I: Image Pretraining**
-
- - Initialize weights from Stable Diffusion 2.1 (text-to-image model)   
-
-![](../../assets/08-85.png) 
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
-
-P86   
-## Stable Video Diffusion   
-
-Scaling latent video diffusion models to large datasets
-
-**Stage II: Curating a Video Pretraining Dataset**
-
- - Systematic Data Curation
-    - Curate subsets filtered by various criteria (CLIP-, OCR-, optical flow-, aesthetic-scores…)
-    - Assess human preferences on models trained on different subsets
-    - Choose optimal filtering thresholds via Elo rankings for human preference votes
- - Well-curated beats un-curated pretraining dataset
-
-![](../../assets/08-86.png) 
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.  
-
-
-
-P87   
-## Stable Video Diffusion  
-
-Scaling latent video diffusion models to large datasets
-
-**Stage III: High-Quality Finetuning**
-
- - Finetune base model (pretrained from Stages I-II) on high-quality video data   
-    - High-Resolution Text-to-Video Generation   
-       - ~1M samples. Finetune for 50K iterations at 576x1024 (in contrast to 320x576 base resolution)   
-    - High Resolution Image-to-Video Generation   
-    - Frame Interpolation   
-    - Multi-View Generation   
- - Performance gains from curation persists after finetuning   
-
-![](../../assets/08-87.png) 
-
-Blattmann et al., “Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets,” 2023.    
-
-> &#x2705; 在少量高质量数据上 finetune，质量提升很大。   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|50|2023|Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets|Scaling latent video diffusion models to large datasets<br>**Data Processing and Annotation**||[link](https://caterpillarstudygroup.github.io/ReadPapers/50.html)|
 
 
 ---------------------------------------
