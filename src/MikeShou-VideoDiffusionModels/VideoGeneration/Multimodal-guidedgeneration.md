@@ -1,9 +1,3 @@
-
-P134  
-# 2 Video Generation
-
-## 2.7 Multimodal-guided generation
-
 P135  
 
 ![](../../assets/08-135.png) 
@@ -12,32 +6,15 @@ P135
 
 
 P136  
-## MCDiff  
+# MCDiff  
 
-Motion-guided video generation
-
-![](../../assets/08-136.png) 
-
-
-Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023.    
-
-P137  
-## MCDiff
-
-Motion-guided video generation
-
- - Two-stage autoregressive generation
-
-![](../../assets/08-137.png) 
-
-Chen et al., “Motion-Conditioned Diffusion Model for Controllable Video Synthesis,” arXiv 2023.    
-
-> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
-> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|Motion-guided video generation<br>Two-stage autoregressive generation||[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
 
 
 P139   
-## The Power of Sound (TPoS)
+# The Power of Sound (TPoS)
 
 Sound- and text-guided video generation
 
@@ -51,7 +28,7 @@ Jeong et al., “The Power of Sound (TPoS): Audio Reactive Video Generation with
 
 
 P140
-## Sound-Guided Video Generation: More Works
+# Sound-Guided Video Generation: More Works
 
 |||
 |--|--|
@@ -64,7 +41,7 @@ Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
 
 P141  
-## Image-Guided Video Generation: More Works
+# Image-Guided Video Generation: More Works
 
 |||
 |--|--|
@@ -83,7 +60,7 @@ Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023.
 
 
 P142  
-## Cinematic Mindscapes   
+# Cinematic Mindscapes   
 
 Brain activity-guided video generation
 
@@ -99,7 +76,7 @@ Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Bra
 
 
 P144  
-## Multimodal-Guided Video Generation: More Works
+# Multimodal-Guided Video Generation: More Works
 
 
 |||

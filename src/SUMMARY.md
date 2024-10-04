@@ -9,7 +9,7 @@
 - [Diffusion Model背后的数掌原理](李宏毅DiffusionModel/DiffusionModel背后的数掌原理.md)
 
 # CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang
-- [CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang](diffusion-tutorial-part/Introduction.md)
+- [Introduction](diffusion-tutorial-part/Introduction.md)
 - [Fundamentals]()
   - [Denoising Diffusion Probabilistic Models](diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)
   - [Score-based Generative Modeling with Differential Equations](diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.md)
@@ -28,7 +28,7 @@
   - [Safety and limitations of diffusion models](diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.md)
 
 # Mike Shou - Video Diffusion Models
-- [Background](MikeShou-VideoDiffusionModels/MikeShou.md)
+- [Introduction](MikeShou-VideoDiffusionModels/MikeShou.md)
 - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
 - [Video Generation](MikeShou-VideoDiffusionModels/VideoGeneration/VideoGeneration.md)
   - [Pioneering/early works](MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.md)
