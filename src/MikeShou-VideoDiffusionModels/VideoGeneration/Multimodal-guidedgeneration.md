@@ -6,7 +6,7 @@ P135
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|Two-stage autoregressive generation<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流 (3) 做为 condition，可以细粒度地控制运动轨迹。<br> &#x2705; (2) 用光流作为 Condition 生成视频。   ||[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
+|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流<br> &#x2705; (2) 用光流作为 Condition 生成视频。|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
 
 P136  
 
