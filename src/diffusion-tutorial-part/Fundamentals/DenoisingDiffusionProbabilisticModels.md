@@ -1,5 +1,5 @@
 P12  
-# Denoising Diffusion Models
+# Diffusion Model 是如何运作的？
 
 
 P13   
@@ -8,38 +8,41 @@ Denoising diffusion models consist of two processes:
  - Forward diffusion process that gradually adds noise to input   
  - Reverse denoising process that learns to generate data by denoising    
 
-
 ![](../../assets/D1-13.png) 
-
-<u>Sohl-Dickstein et al., Deep Unsupervised Learning using Nonequilibrium Thermodynamics, ICML 2015</u>     
-<u>Ho et al., Denoising Diffusion Probabilistic Models, NeurIPS 2020</u>   
-<u>Song et al., Score-Based Generative Modeling through Stochastic Differential Equations, ICLR 2021</u>    
-
-> 详细推导过程：[link](https://caterpillarstudygroup.github.io/ImportantArticles/%E6%9D%8E%E5%AE%8F%E6%AF%85DiffusionModel/DiffusionModel%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%B0%E6%8E%8C%E5%8E%9F%E7%90%86.html)
 
 P14   
 ## Forward Diffusion Process
 
 The formal definition of the forward process in T steps:    
 
+### 直观理解
+
+![](../../assets/lhy1-8-1.png)
+
+> 真正的加噪过程，**不是直接的image + noise**。  
+
+### 从数学上理解
+
+> &#x2705; 从第一张图像到最后的纯噪声，实际上是分布的改变。
+
 ![](../../assets/D1-14.png) 
 
-> &#x2705; 要让原始分布逼近 \\(\mathcal{N} (0,1 )\\)分布，通过逐步的 scale down 让均值趋近于 0。通过引入噪声使方差趋近于 1。   
-> &#x2753; 怎么保证方差为 1 呢？答：根据P15公式。只要 \\( \bar{\alpha } _ t\\) 趋于 0 即可。(见下文)  
+通过逐步的 scale down 让均值趋近于 0。通过引入噪声使方差趋近于 1。使得原始分布逐步逼近 \\(\mathcal{N} (0,1 )\\)分布，   
+
 > &#x2753; 求联合分布有什么用?    
 
-
-P15   
-### Diffusion Kernel
+### 从操作层面理解
 
 ![](../../assets/D1-15.png) 
 
-> &#x2705; 不需要真的一步一步从 \\(\mathbf{x} _{t-1}\\)到 \\(\mathbf{x} _{t}\\)，根据公式，可以直接从 \\(\mathbf{x}_0\\)生成任意的 \\(\mathbf{x}_t\\)
+> &#x2705; 实际上，在给定一张图像x0时，想要获得第t张加噪图像时，不需要真的通过公式\\(q(x_t|x_{t-1})\\)从 \\(\mathbf{x} _{t-1}\\)到 \\(\mathbf{x} _{t}\\)一步一步计算出来，可以直接从 \\(\mathbf{x}_0\\)生成任意的 \\(\mathbf{x}_t\\)。 
 
 ![](../../assets/D1-15-1.png) 
 
-> &#x2705; 把 \\(\mathbf{x}_0\\) 加噪为 init-noise，再从 init-noise 恢复出 \\(\mathbf{x}_0\\)，这个操作是不可行的。     
-> &#x2705; 因为，根据公式 \\(\mathbf{x} _t=\sqrt{\bar{a} _t}   \mathbf{x} _0+\sqrt{(1-\bar{a} _t) }  \varepsilon  \\), 且 \\(\bar{a} _T  → 0\\)，那么经过 \\(T\\) 步加噪后，\\(\mathbf{x} _t\approx \varepsilon \\). 而是 \\(\varepsilon \\) 是一个与 \\(\mathbf{x} _ 0\\) 没有任务关系的噪声，所以不可能从中恢复出 \\(\mathbf{x} _ 0\\).     
+从数学上可以证明，从x0逐步计算到xt和从x0直接计算到xt，这两种行为是等价的。  
+
+根据公式 \\(\mathbf{x} _t=\sqrt{\bar{a} _t}   \mathbf{x} _0+\sqrt{(1-\bar{a} _t) }  \varepsilon  \\)可知，当 \\(\bar{a} _T  → 0\\)，分布\\(q(x_T)\\)的均值趋于0，方差趋于1，变成纯高斯噪声。
+
 
 P16   
 ### What happens to a distribution in the forward diffusion?
@@ -62,6 +65,11 @@ We can sample \\(\mathbf{x}_t \sim q(\mathbf{x}_t)\\) by first sampling and then
 > &#x2705; 实际上，没有任意一个时间步的 \\(q(\mathbf{x})\\) 的真实分布，只有这些分布的 sample.    
 
 ## Reverse Denoising Process
+
+
+> &#x2705; 把 \\(\mathbf{x}_0\\) 加噪为 init-noise，再从 init-noise 恢复出 \\(\mathbf{x}_0\\)，这个操作是不可行的。     
+> &#x2705; 因为，根据公式 \\(\mathbf{x} _t=\sqrt{\bar{a} _t}   \mathbf{x} _0+\sqrt{(1-\bar{a} _t) }  \varepsilon  \\), 且 \\(\bar{a} _T  → 0\\)，那么经过 \\(T\\) 步加噪后，\\(\mathbf{x} _t\approx \varepsilon \\). 而是 \\(\varepsilon \\) 是一个与 \\(\mathbf{x} _ 0\\) 没有任务关系的噪声，所以不可能从中恢复出 \\(\mathbf{x} _ 0\\).     
+
 
 P17   
 ### Generative Learning by Denoising   
@@ -98,11 +106,9 @@ P19
 > &#x2753; 求联合分布有什么用？     
 
 P20   
-## Summary   
+# 训练与推断
 
 ![](../../assets/D1-20.png) 
-
-
 
 P21    
 ## Implementation Considerations   
@@ -117,6 +123,14 @@ Time features are fed to the residual blocks using either simple spatial additio
 
 > &#x2705; \\(\sigma \\) 是怎么定义的？    
 
+# 数学原理
+
+# Reference 
+
+<u>Sohl-Dickstein et al., Deep Unsupervised Learning using Nonequilibrium Thermodynamics, ICML 2015</u>     
+<u>Ho et al., Denoising Diffusion Probabilistic Models, NeurIPS 2020</u>   
+<u>Song et al., Score-Based Generative Modeling through Stochastic Differential Equations, ICLR 2021</u>    
+> 详细推导过程：[link](https://caterpillarstudygroup.github.io/ImportantArticles/%E6%9D%8E%E5%AE%8F%E6%AF%85DiffusionModel/DiffusionModel%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%B0%E6%8E%8C%E5%8E%9F%E7%90%86.html)
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
