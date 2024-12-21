@@ -29,9 +29,9 @@ Denoising Diffusion Models
 
 P6    
  
-![](../../assets/D1-6.png) 
+![](../assets/D1-6.png) 
 
-\\(^\ast \\)Disclaimer: We rely on paper titles for counting the number of papers in each topic. Our statistics are likely to be biased.    
+Disclaimer: We rely on paper titles for counting the number of papers in each topic. Our statistics are likely to be biased.    
 
 
 # 参考材料
