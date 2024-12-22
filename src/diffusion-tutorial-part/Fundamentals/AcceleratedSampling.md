@@ -85,7 +85,7 @@ P49
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|**Progressive distillation** for fast sampling of diffusion models|||[link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)|
+||2022|**Progressive distillation** for fast sampling of diffusion models|蒸馏||[link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)|
 ||2023|On Distillation of Guided Diffusion Models|**Award Candidate**|| [link](https://caterpillarstudygroup.github.io/ReadPapers/3.html)|
 ||2023|**Consistency Models**|||[link](https://caterpillarstudygroup.github.io/ReadPapers/7.html)
 
@@ -194,7 +194,10 @@ errors accumulated over the trajectories.
 
 > &#x1F50E; <u>Song et al., “Denoising Diffusion Implicit Models”, ICLR 2021.</u>   
 > &#x1F50E; <u>Karras et al., “Elucidating the Design Space of Diffusion-Based Generative Models”, arXiv 2022.</u>   
-> &#x1F50E; <u>Salimans & Ho, “Progressive distillation for fast sampling of diffusion models”, ICLR 2022.</u>   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|**Progressive distillation** for fast sampling of diffusion models|通过修改参数化方式来提升“减少sampling steps”的稳定性。||[link](https://caterpillarstudygroup.github.io/ReadPapers/1.html)| 
 
 P64   
 ## “Momentum-based” diffusion      

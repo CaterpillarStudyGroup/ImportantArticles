@@ -6,9 +6,16 @@
         - 训练与推断
         - 数学原理
     - Scored-based 
-    - CFG
+        - 从DDPM到SDE
+        - 用SDE描述DDPM的正向过程和逆向过程
+        - 拟合score function
+        - 从SDE到ODE
+    - 条件生成
+- 网络结构
+    - 基模型
 - 应用场景
-- 基模型
+    - 图像生成
+    - 视频生成
 - 算法技巧
     - 加速
     - 提升质量
