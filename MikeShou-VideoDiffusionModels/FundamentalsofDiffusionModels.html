@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Fundamentals of Diffusion Models - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded affix "><li class="part-title">CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">3.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">4.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">4.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">4.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">4.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">4.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/diffusiontutorialpart2.html"><strong aria-hidden="true">5.</strong> Image Applications</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Applicationsonotherdomains</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.html"><strong aria-hidden="true">6.1.</strong> Diffusion Models for Inverse Problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3D.html"><strong aria-hidden="true">6.2.</strong> 3D</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">6.3.</strong> 2D diffusion models for 3D generation</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">6.4.</strong> Diffusion models for view synthesis</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.html"><strong aria-hidden="true">6.5.</strong> 3D reconstruction</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.html"><strong aria-hidden="true">6.6.</strong> Inverse problems</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.html"><strong aria-hidden="true">6.7.</strong> Video style transfer / editing methods</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">6.8.</strong> Safety and limitations of diffusion models</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mike Shou - Video Diffusion Models</li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">7.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.html" class="active"><strong aria-hidden="true">8.</strong> Fundamentals of Diffusion Models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">9.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">9.1.</strong> Pioneering/early works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">9.2.</strong> Open-source base models</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.html"><strong aria-hidden="true">9.3.</strong> Other closed-source works</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.html"><strong aria-hidden="true">9.4.</strong> Training-efficient techniques</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">9.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">9.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">9.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">10.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">10.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">10.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">10.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">10.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../MikeShou-VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">10.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">11.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../HPE_HMR_Summary.html"><strong aria-hidden="true">12.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">13.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../HumanMotionGenerationSummary.html"><strong aria-hidden="true">14.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../HumanVideoGeneration.html"><strong aria-hidden="true">15.</strong> Human Video Generation</a></li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">16.</strong> 数据集</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p><img src="../../assets/08-30.png" alt="" /></p>
+<p>P6</p>
+<h1 id="ddpm-denoising-diffusion-probabilistic-models"><a class="header" href="#ddpm-denoising-diffusion-probabilistic-models">DDPM (Denoising Diffusion Probabilistic Models)</a></h1>
+<p><img src="../assets/08-02.png" alt="" /></p>
+<p><img src="../assets/08-03.png" alt="" /></p>
+<p><img src="../assets/08-04.png" alt="" /></p>
+<blockquote>
+<p>✅ 通过公式推导，可以直接从 \(x_0\) 加噪到 \(x_t\)．</p>
+</blockquote>
+<p><img src="../assets/08-05.png" alt="" /></p>
+<p><img src="../assets/08-11.png" alt="" /></p>
+<blockquote>
+<p>✅ 输入带噪声图像，预测噪声，原图像去掉噪声后得到干净图像。<br />
+✅ \(x_t\) 可以处于任意时间步，可以一步去噪到干净图像。<br />
+✅ Noise Predictor Network 通常使用 UNet.<br />
+✅ \(t\) 代表时间步，网络可以以此决定去噪程度。<br />
+✅ “A cat” 是文本 condition.</p>
+</blockquote>
+<p><img src="../assets/08-12.png" alt="" /></p>
+<blockquote>
+<p>✅ 虽然训练时是根据 \(x_t\) 预测 \(x_0\).<br />
+✅ 但是推断时，\(x_t\) 减去噪声后，又重新 sample 出一个噪声后加到图像上，变成 \(x_{t-1}\)．<br />
+✅ 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。</p>
+</blockquote>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2020</td><td>Denoising Diffusion Probabilistic Models</td><td>Diffusion Model 的第一篇论文</td><td></td><td><a href="../%E6%9D%8E%E5%AE%8F%E6%AF%85DiffusionModel/DiffusionModel.html">link</a></td></tr>
+</tbody></table>
+<p>Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.<br />
+Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.<br />
+Vahdat et al., “Denoising Diffusion Models: A Generative Learning Big Bang,” CVPR 2023 Tutorial.</p>
+<p>P14</p>
+<h1 id="ddim-denoising-diffusion-implicit-models"><a class="header" href="#ddim-denoising-diffusion-implicit-models">DDIM (Denoising Diffusion Implicit Models)</a></h1>
+<p><img src="../assets/08-14.png" alt="" /></p>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td><strong>2</strong></td><td>2021</td><td>Denoising Diffusion Implicit Models (DDIM)</td><td>✅ DDIM：可以直接从 \(t_2\) 去噪到 \(t_1\). <br> ✅ 把 \(x_t\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/2.html">link</a></td></tr>
+</tbody></table>
+<h2 id="ddpm-vs-ddim"><a class="header" href="#ddpm-vs-ddim">DDPM vs DDIM</a></h2>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../assets/08-15-1.png" alt="" /></td><td><strong>DDPM cannot skip timesteps</strong>  <br> A few hundreds steps to generate an image</td></tr>
+<tr><td><img src="../assets/08-15-2.png" alt="" /></td><td><strong>DDIM can skip timesteps</strong> <br> Say 50 steps to generate an image</td></tr>
+</tbody></table>
+<p>Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.<br />
+Song et all, “Denoising Diffusion Implicit Models,” ICLR 2021.</p>
+<p>P16</p>
+<h2 id="the-task-of-inversion"><a class="header" href="#the-task-of-inversion">The task of Inversion</a></h2>
+<p><img src="../assets/08-16.png" alt="" /></p>
+<p>Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.<br />
+Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.<br />
+Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.</p>
+<blockquote>
+<p>✅ 已有训好的 denoiser，输入干净图像，求它的噪声。</p>
+</blockquote>
+<p>P17</p>
+<h2 id="前向过程与-ddim-inverse-的区别"><a class="header" href="#前向过程与-ddim-inverse-的区别">前向过程与 DDIM Inverse 的区别</a></h2>
+<p>Based on the assumption that the ODE process can be reversed in the limit of small steps</p>
+<p><strong>Forward Diffusion Process</strong>: Add \(\mathcal{N} (0,\mathbf{I} ) \) Noise</p>
+<p><strong>DDIM Inversion Process</strong>: Add Noise <strong>inverted</strong> by the trained DDIM denoiser</p>
+<p>Song et al., “Denoising Diffusion Implicit Models,” ICLR 2021.<br />
+Su et al., “Dual Diffusion Implicit Bridges for Image-to-Image Translation,” ICLR 2023.<br />
+Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffusion Models,” CVPR 2023.</p>
+<blockquote>
+<p>✅ DDIM Inverse 可用于图片编辑</p>
+</blockquote>
+<p>p18</p>
+<h2 id="wanted-to-learn-more"><a class="header" href="#wanted-to-learn-more">Wanted to learn more?</a></h2>
+<ul>
+<li>CVPR Tutorial (English): <a href="https://www.youtube.com/watch?v=cS6JQpEY9cs">https://www.youtube.com/watch?v=cS6JQpEY9cs</a></li>
+<li>Lil’s blog: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">https://lilianweng.github.io/posts/2021-07-11-diffusion-models/</a></li>
+<li>Hung-yi Lee (Chinese):
+<ul>
+<li><a href="https://www.youtube.com/watch?v=azBugJzmz-o">https://www.youtube.com/watch?v=azBugJzmz-o</a></li>
+<li><a href="https://www.youtube.com/watch?v=ifCDXFdeaaM">https://www.youtube.com/watch?v=ifCDXFdeaaM</a></li>
+</ul>
+</li>
+<li>Checkout codes -- Always associate theory and implementation!</li>
+</ul>
+<p>P20</p>
+<h1 id="clip"><a class="header" href="#clip">CLIP</a></h1>
+<p>Encoders bridge vision and language</p>
+<ul>
+<li>CLIP text-/image-embeddings are commonly used in diffusion models for conditional generation</li>
+</ul>
+<p><img src="../assets/08-20-1.png" alt="" /><br />
+<img src="../assets/08-20-2.png" alt="" /></p>
+<p>Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” ICML 2021.</p>
+<blockquote>
+<p>❓ 文本条件怎么输入到 denoiser？<br />
+✅ CLIP embedding：202 openai，图文配对训练用 CLIP 把文本转为 feature.</p>
+</blockquote>
+<p>P21</p>
+<h1 id="latent-diffusion"><a class="header" href="#latent-diffusion">Latent Diffusion</a></h1>
+<p><img src="../assets/08-21.png" alt="" /> </p>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td><strong>45</strong></td><td>2022</td><td>High-Resolution Image Synthesis with Latent Diffusion Models</td><td>✅ (1)：在 latent space 上工作<br> ✅ (2)：引入多种 condition．</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/45.html">link</a></td></tr>
+<tr><td><strong>38</strong></td><td>2021</td><td>Lora: Low-rank adaptation of large language models</td><td>对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/38.html">link</a></td></tr>
+<tr><td></td><td>2023</td><td>Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>P25</p>
+<h1 id="dreambooth"><a class="header" href="#dreambooth">DreamBooth</a></h1>
+<p>Few-shot finetuning of large models for generating personalized concepts</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../assets/08-25-1.png" alt="" /></td><td><img src="../assets/08-25-2.png" alt="" /></td></tr>
+</tbody></table>
+<p>Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” CVPR 2023.</p>
+<blockquote>
+<p>✅ DreamBooth：输入文本和图像，文本中的［V］指代图像，生成新图像。<br />
+✅ 特点：对预训练的 diffusion model 的权重改变比较大。</p>
+</blockquote>
+<p>P26</p>
+<h1 id="controlnet"><a class="header" href="#controlnet">ControlNet</a></h1>
+<p>Conditional generation with various guidances</p>
+<p><img src="../assets/08-26.png" alt="" /></p>
+<blockquote>
+<p>✅ Control Net：更细粒度的 condition．<br />
+✅ 方法：(1) 预训练好 Diffusion Model (2) 参数复制一份，原始网络 fix (3) 用各种 condition finetune 新的网络。 (4) 两个网络结合到一起。</p>
+</blockquote>
+<p>Conditional generation with various guidances</p>
+<ul>
+<li>Finetune parameters of a trainable copy</li>
+</ul>
+<p><img src="../assets/08-27.png" alt="" /></p>
+<p>Conditional generation with various guidances</p>
+<p><img src="../assets/08-28.png" alt="" /></p>
+<p>Zhang et al., “Adding Conditional Control to Text-to-Image Diffusion Models,” ICCV 2023. </p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../MikeShou-VideoDiffusionModels/Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../MikeShou-VideoDiffusionModels/VideoGeneration/VideoGeneration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../MikeShou-VideoDiffusionModels/Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../MikeShou-VideoDiffusionModels/VideoGeneration/VideoGeneration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
