@@ -1,6 +1,3 @@
-
-
-
 P108  
 # 2 Video Generation
 
@@ -62,6 +59,10 @@ Storyboard image from deviantart.com.
 > &#x2705; 因此这里提供了一个数据集。   
 
 
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|41|2024|STORYDIFFUSION: CONSISTENT SELF-ATTENTION FOR LONG-RANGE IMAGE AND VIDEO GENERATION|先生成一致的关键帧，再插帧成中间图像||[link](https://caterpillarstudygroup.github.io/ReadPapers/41.html)|
 
 P113   
 ## VisorGPT

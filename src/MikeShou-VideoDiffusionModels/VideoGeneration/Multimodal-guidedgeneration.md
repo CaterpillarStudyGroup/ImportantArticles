@@ -7,7 +7,7 @@ P135
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流<br> &#x2705; (2) 用光流作为 Condition 生成视频。|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|51|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|<br> &#x2705; &#x2705; (1) 用光流作为 Condition 生成视频。<br> (2) 把用户提供的控制信号转为dense光流，从而控制图像生成。|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
+|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|<br> &#x2705; &#x2705; (1) 用光流作为 Condition 生成视频。<br> (2) 把用户提供的控制信号转为dense光流，从而控制图像生成。|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
 |47|2024|Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics|拖拽控制的对象零件级运动的视频生成|零件级运动数据集|[link](https://caterpillarstudygroup.github.io/ReadPapers/47.html)|
 
 P136  

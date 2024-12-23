@@ -45,11 +45,25 @@
 
 ![](./assets/c5094236dee05a597cc12eb2a5b13473_7_Table_IV_-1432891952.png)
 
-## 3D动作驱动
+
+### 2D动作驱动
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2024|HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation|3D建模 + 3D重定向 + 渲染|[link](https://caterpillarstudygroup.github.io/ReadPapers/42.html)  |
+|37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性||[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
+
+### 视频动作驱动
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
+
+### 3D动作驱动
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|42|2024|HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation|3D建模 + 3D重定向 + 渲染，动作控制+相机控制|人物视频生成，视频驱动|[link](https://caterpillarstudygroup.github.io/ReadPapers/42.html)|
+
 
 # 数据集和评估指标
 

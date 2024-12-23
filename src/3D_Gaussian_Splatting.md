@@ -180,7 +180,16 @@ $$
 
 ## Dynamic Scene Reconstruction
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|36|2024|GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians|输入：单个视频 输出：具有动态 3D 外观的逼真人类头像 目的：实现自由视角渲染，生成逼真人类头像动画||[link](https://caterpillarstudygroup.github.io/ReadPapers/36.html)|
+
+
 ## AI-Generated Content (AIGC)
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|34|2024|Splatter a Video: Video Gaussian Representation for Versatile Processing|利用高斯进行视频编辑|
 
 ## Autonomous Driving
 

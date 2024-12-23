@@ -41,7 +41,13 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)
+|29|2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)
+
+# Motion-Conditioned Motion Generation
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|27||Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
 
 ## Generation pipeline
 

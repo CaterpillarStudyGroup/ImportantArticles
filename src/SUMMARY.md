@@ -23,7 +23,7 @@
   - [Safety and limitations of diffusion models](diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.md)
 
 # Mike Shou - Video Diffusion Models
-- [Introduction](MikeShou-VideoDiffusionModels/MikeShou.md)
+- [Introduction](MikeShou-VideoDiffusionModels/Introduction.md)
 - [Fundamentals of Diffusion Models](MikeShou-VideoDiffusionModels/FundamentalsofDiffusionModels.md)
 - [Video Generation](MikeShou-VideoDiffusionModels/VideoGeneration/VideoGeneration.md)
   - [Pioneering/early works](MikeShou-VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.md)

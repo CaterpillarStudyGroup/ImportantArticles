@@ -158,7 +158,6 @@ Can we represent the video in a truly 3D space?
 
 Liu et al., “DynVideo-E: Harnessing Dynamic NeRF for Large-Scale Motion- and View-Change Human-Centric Video Editing,” arXiv 2023.   
 
-
 P255   
 ## DynVideo-E
 

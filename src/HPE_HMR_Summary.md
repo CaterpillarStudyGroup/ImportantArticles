@@ -4,6 +4,11 @@
 
 ## 单人HPE
 ### 图像单人HPE
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|31||SMPLer: Taming Transformers for Monocular 3D Human Shape and Pose Estimation|基于 SMPL 的 Transformer 框架的HMR||[link](https://caterpillarstudygroup.github.io/ReadPapers/31.html)|
+
 #### Solving Depth Ambiguity
 #### Solving Body Structure Understanding
 #### Solving Occlusion Problems
@@ -12,6 +17,11 @@
 #### Solving Single-frame Limitation
 #### Solving Real-time Problems
 #### Solving Body Structure Understanding
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|26||PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos|利用物理合理化人物动作||[link](https://caterpillarstudygroup.github.io/ReadPapers/26.html)
+
 #### Solving Occlusion Problems
 #### Solving Data Lacking
 ## 多人HPE

@@ -1,60 +1,3 @@
-# Diffusion model architectures
-P4   
-## Architecture
-
-P5   
-### U-Net Based Diffusion Architecture
-
-#### U-Net Architecture
-
-![](../assets/D2-5-1.png) 
-
-> &#x2705; U-Net的是Large Scale Image Diffusion Model中最常用的backbone。  
-
-> &#x1F50E; Ronneberger et al., <u>“U-Net: Convolutional Networks for Biomedical Image Segmentation”, </u>MICCAI 2015    
-
-#### Pipeline 
-
-![](../assets/D2-5-2.png) 
-
-> &#x2705; 包含Input、U-Net backbone、Condition。  
-> &#x2705; Condition 通常用 Concat 或 Cross attention 的方式与 Content 相结合。    
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|**Stable Diffusion**, U-Net Based Diffusion Architecture<br>&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．|UNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|
-||2022|Photorealistic text-to-image diffusion models with deep language understanding|Imagen|
-||2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|eDiff-I|
-
-P7    
-### Transformer Architecture
-
-#### Vision Transformer(ViT)
-
-![](../assets/D2-7-1.png) 
-
-Dosovitskiy et al., <u>“An image is worth 16x16 words: Transformers for image recognition at scale”, </u>ICLR 2021    
-
-#### Pipeline
-
-![](../assets/D2-7-2.png) 
-
-> &#x2705; 特点：  
-> &#x2705; 1. 把 image patches 当作 token.    
-> &#x2705; 2. 在 Shallow layer 与 deep layer 之间引入 long skip connection.    
-
-Bao et al.,<u> "All are Worth Words: a ViT Backbone for Score-based Diffusion Models", </u>arXiv 2022    
-
-
-P8   
-#### Application
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2022|Scalable Diffusion Models with Transformers|    
-||2023|One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale|
-||2023|simple diffusion: End-to-end diffusion for high resolution images|
-
-
 P9    
 # Image editing and customization with diffusion models
 
@@ -69,9 +12,9 @@ P10
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Dual diffusion implicit bridges for image-to-image translation||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
-||2023|DiffEdit: Diffusion-based semantic image editing with mask guidance||[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
-||2023|Imagic: Text-Based Real Image Editing with Diffusion Models||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
+|23|2023|Dual diffusion implicit bridges for image-to-image translation||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
+|24|2023|DiffEdit: Diffusion-based semantic image editing with mask guidance||[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
+|25|2023|Imagic: Text-Based Real Image Editing with Diffusion Models||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
 
 ## Attention based 方法
 
@@ -85,6 +28,10 @@ P10
 
 P32   
 # Personalization with diffusion models   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
 
 ## DreamBooth
 
@@ -150,12 +97,6 @@ Works well for artistic styles
 
 P41   
 ## Low-rank Adaptation (LoRA)   
-
-> &#x2705; 要解决的问题：finetune 所需的训练时间、参数存储，Computation 的成本很高。    
-> &#x2705; 解决方法：仅仅拟合residual model 而不是 finetune entire model.  
-> &#x2705; Results：LoRA对数据集要求少，收敛速度快。可以极大提升 finetune 效率，也更省空间。    
-
-![](../assets/D2-41.png) 
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|

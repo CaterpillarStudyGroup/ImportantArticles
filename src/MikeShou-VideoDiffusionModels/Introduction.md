@@ -1,5 +1,15 @@
+# Video Diffusion Models思维导图
 
-# Tutorial: Video Diffusion Models
+- Fundamentals of Diffusion Models
+- **Video Generation**
+    - Human Video Generation([link](../HumanVideoGeneration.md))
+    - Multimodal-guided generation
+        - Pose Control
+- **Video Editing**
+- Summary
+
+
+# Reference
 
 **Mike Shou**   
 
@@ -16,15 +26,6 @@ P2
 ## Video Foundation Model  
 
 ![](../assets/08-01.png)
-
-
-P5  
-## Outline of “Tutorial: Video Diffusion Models”
-
-1. Fundamentals of Diffusion Models
-2. **Video Generation**
-3. **Video Editing**
-4. Summary
 
 
 ---------------------------------------
