@@ -2,10 +2,6 @@
 
 # 人类视频生成的基础知
 
-# 生成模型的演变
-
-：论文回顾了生成模型的发展，如变分自编码器（VAE）、生成对抗网络（GAN）和扩散模型，这些模型为人类视频生成领域的发展奠定了基础。
-
 # 关键子任务
 
 根据驱动生成过程的模态将现有方法分为三类：文本驱动、音频驱动和姿势驱动
@@ -50,19 +46,19 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性||[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
+|37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性|Diffusion|[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
 
 ### 视频动作驱动
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
+|53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动，Cross Attention|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
 
 ### 3D动作驱动
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|42|2024|HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation|3D建模 + 3D重定向 + 渲染，动作控制+相机控制|人物视频生成，视频驱动|[link](https://caterpillarstudygroup.github.io/ReadPapers/42.html)|
+|42|2024|HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation|3D建模 + 3D重定向 + 渲染，动作控制+相机控制|人物视频生成，3D管线|[link](https://caterpillarstudygroup.github.io/ReadPapers/42.html)|
 
 
 # 数据集和评估指标
@@ -116,10 +112,6 @@ SD 和 SVD 等扩散模型因其卓越的性能和多样性而广泛应用于各
 - 提高人类视频扩散模型的效率
 - 细粒度可控性
 - 交互性。
-
-# GitHub资源库
-
-**：论文提供了一个持续更新的GitHub资源库链接，包含该领域最新进展、优秀作品和数据集的链接，为研究社区提供了一个获取前沿信息和资源的便捷途径。
 
 # Reference
 

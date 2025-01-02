@@ -1,12 +1,5 @@
-
-
-
 P126   
-## 2 Video Generation
-
 ## 2.6 Long video generation
-
-
 P127  
 
 ![](../../assets/08-127.png) 
@@ -19,67 +12,46 @@ P128
 
 Recursive interpolations for generating very long videos
 
-**Method Proposed**
+### Method Proposed
 
  - A “diffusion over diffusion” architecture for very long video generation
 
-**Key Idea**
+### **Key Idea**
 
  - Key idea: coarse-to-fine hierarchical generation
 
-**Other Highlights**
+### **Other Highlights**
 
  - Trained on very long videos (3376 frames)
  - Enables parallel inference
  - Built FlintstonesHD: a new dataset for long video generation, contains 166 episodes with an average of 38000 frames of 1440 × 1080 resolution
 
-Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.   
+> Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.   
 
-P129  
-## NUWA-XL
-
-Recursive interpolations for generating very long videos
-
-**Generation Pipeline**
+### **Generation Pipeline**
 
  - Storyboard through multiple text prompts   
 
-![](../../assets/08-129.png) 
-
-Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
+![](../../assets/08-129.png)    
 
 P130  
-## NUWA-XL
 
-Recursive interpolations for generating very long videos
-
-**Generation Pipeline**
-
- - Storyboard through multiple text prompts
  - Global diffusion model: L text prompts → L keyframes
  - Local diffusion model: 2 text prompts + 2 keyframes → L keyframes   
 
 ![](../../assets/08-130.png) 
-
-Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.
 
 
 > &#x2705; 大脑信号控制生成。   
 
 
 P131  
-## NUWA-XL
 
-Recursive interpolations for generating very long videos
-
-**Mask Temporal Diffusion (MTD)**  
+### **Mask Temporal Diffusion (MTD)**  
 
  - A basic diffusion model for global & local diffusion models
 
-![](../../assets/08-131.png) 
-
-
-Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,” arXiv 2023.    
+![](../../assets/08-131.png)  
 
 P133
 ## Long Video Generation: More Works
