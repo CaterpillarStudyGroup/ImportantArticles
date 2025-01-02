@@ -11,7 +11,9 @@
   - [Accelerated Sampling](diffusion-tutorial-part/Fundamentals/AcceleratedSampling.md)
   - [Conditional Generation and Guidance](diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.md)
   - [Summary](./diffusion-tutorial-part/Fundamentals/Summary.md)
-- [Image Applications](diffusion-tutorial-part/diffusiontutorialpart2.md)
+- Image Applications
+  - [Architecture](./diffusion-tutorial-part/Architecture.md)
+  - [Image Applications](diffusion-tutorial-part/diffusiontutorialpart2.md)
 - [Applicationsonotherdomains]()
   - [Diffusion Models for Inverse Problems](diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.md)
   - [3D](diffusion-tutorial-part/Applicationsonotherdomains/3D.md)

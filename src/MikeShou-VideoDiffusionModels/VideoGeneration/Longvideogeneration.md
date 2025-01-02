@@ -1,5 +1,5 @@
 P126   
-## 2.6 Long video generation
+# 2.6 Long video generation
 P127  
 
 ![](../../assets/08-127.png) 
@@ -11,6 +11,10 @@ P128
 ## NUWA-XL  
 
 Recursive interpolations for generating very long videos
+
+
+> &#x2705; 两层 diffusion    
+> &#x2705; 通过 recursive 的插帧生成非常长的视频。   
 
 ### Method Proposed
 
@@ -34,6 +38,7 @@ Recursive interpolations for generating very long videos
 
 ![](../../assets/08-129.png)    
 
+
 P130  
 
  - Global diffusion model: L text prompts → L keyframes
@@ -41,6 +46,8 @@ P130
 
 ![](../../assets/08-130.png) 
 
+> &#x2705; Global：文生图  \\(\quad\\)  Local：图序列补全。   
+> &#x2705; Global 和 Local 使用相似的模型，训练方法不同，主要是 MASK 的区别。   
 
 > &#x2705; 大脑信号控制生成。   
 
@@ -52,6 +59,8 @@ P131
  - A basic diffusion model for global & local diffusion models
 
 ![](../../assets/08-131.png)  
+
+> &#x2705; 递归的 Local Diffusion    
 
 P133
 ## Long Video Generation: More Works
