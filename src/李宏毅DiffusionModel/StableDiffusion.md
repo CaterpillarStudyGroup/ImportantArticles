@@ -6,16 +6,6 @@ P2
 
 ![](../assets/lhy2-2-2.png) 
 
-P3   
-## Stable Diffusion 
-
-![](../assets/lhy2-3.png) 
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|   
-
-
 P4   
 ## DALL-E series 
 
@@ -57,45 +47,10 @@ P7
 > &#x2705; 评分说明：FID 越小越好，CLIP score 越大越好。因此右下角最好。   
 > &#x2705; Text Encoder 的大小对结果影响很大。Diffusion Model 的大小没那么重要。  
 
-# 怎么评价图像生成的好坏 
-
-
-P8   
-## Fréchet Inception Distance (FID)
-
-<https://arxiv.org/abs/1706.08500>
-
-
-![](../assets/lhy2-8.png) 
-
-
-> &#x2705; CNN＋Softmax 是一个预训练好的图像分类网络，取 softmax 上一层做为图像的 feature.    
-> &#x2705; 取大量真实图像的 feature 和预训练模型生成的图 feature.    
-> &#x2705; 假设两类图像的 feature 各自符合高斯分布，计算两个分布的距离。    
-> &#x2705; 优点：评价结果与人类直觉很接近，缺点：需要大量 sample.   
-
-
-P9   
-## Contrastive Language-Image Pre-Training (CLIP) 
-
-<https://arxiv.org/abs/2103.00020>
-
-400 million image-text pairs  
-
-
-![](../assets/lhy2-9-1.png) 
-
-
-> &#x2705; CLIP Score，衡量与文字的匹配度。   
-
 P10   
 # Decoder
 
 Decoder can be trained without labelled data.   
-
-
-
-
 
 P11  
 ## 「中间产物」为小图

@@ -1,5 +1,7 @@
 ![](../../assets/08-33.png)
 
+![](../../assets/08-30.png)
+
 P36  
 # Video Diffusion Models  
 

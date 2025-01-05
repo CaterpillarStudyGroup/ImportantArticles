@@ -6,6 +6,7 @@
     - Multimodal-guided generation
         - Pose Control
 - **Video Editing**
+- 视频生成的评价指标
 - Summary
 
 
@@ -35,7 +36,7 @@ P2
  - Hung-yi Lee (Chinese):    
     - <https://www.youtube.com/watch?v=azBugJzmz-o>   
     - <https://www.youtube.com/watch?v=ifCDXFdeaaM>   
-    
+
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >

@@ -52,9 +52,11 @@ P45
 P46   
 ## 扩散模型 ODE/SDE 求解器的相关工作
 
+![](../../assets/08-14.png)
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2021|Denoising Diffusion Implicit Models (DDIM)|||[link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)|
+|**2**|2021|Denoising Diffusion Implicit Models (DDIM)| &#x2705; DDIM：可以直接从 \\(t_2\\) 去噪到 \\(t_1\\). <br> &#x2705; 把 \\(x_t\\) 去掉一个 nolse 之后，不是 sample 另一个noise，而是把原来的 noise 乘以一个系数再加回去。   ||[link](https://caterpillarstudygroup.github.io/ReadPapers/2.html)|
 ||2021|Score-Based Generative Modeling through Stochastic Differential Equations|Runge-Kutta adaptive step-size ODE solver|
 ||2021|Gotta Go Fast When Generating Data with Score-Based Models|Higher-Order adaptive step-size SDE solver|
 ||2021|Denoising Diffusion Implicit Models|Reparametrized, smoother ODE|   
@@ -143,11 +145,11 @@ Cascaded Diffusion Models outperform Big-GAN in FID and IS and VQ-VAE2 in Classi
 P57   
 ## Latent Diffusion Models   
 
+![](../../assets/08-21.png) 
+
 ### Main Idea：  
 
 **Variational autoencoder + score-based prior**   
-
-![](../../assets/D1-57.png) 
 
 Encoder maps the input data to an embedding space    
 Denoising diffusion models are applied in the latent space    

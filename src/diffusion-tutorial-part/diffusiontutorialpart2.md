@@ -35,13 +35,20 @@ P32
 
 ## DreamBooth
 
-![](../assets/D2-32.png) 
+### 目标
+
+Few-shot finetuning of large models for generating personalized concepts
 
 > &#x2705; 基于目标的多张 reference，输入文本，生成包含目标的图像。要求生成的结果与refernce一致，且具有高质量和多样性：     
 
-![](../assets/D2-33.png) 
+![](../assets/D2-32.png) 
 
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” CVPR 2023.    
+
+
+> &#x2705; DreamBooth：输入文本和图像，文本中的［V］指代图像，生成新图像。   
+> &#x2705; 特点：对预训练的 diffusion model 的权重改变比较大。   
+
 
 P34   
 ### Pipeline  
@@ -58,12 +65,6 @@ P35
 ![](../assets/D2-35.png)  
 
 > Input Image的基本特征保持住了，但是细节还是有些丢失。比如书包右下角的三个贴图，在每个生成里面都不一样。  
-
-P36   
-### DreamBooth Applications    
-
-![](../assets/D2-36.png) 
-
 > 用来生成动作照片还是可以的，因为人对动画的细节差异没有那么敏感。例如这只猫。额头上的花纹，在每张图像上都不一样。如果用来生成人，会发明显的差异。  
 
 P37    
@@ -100,8 +101,9 @@ P41
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|38|2021|Lora: Low-rank adaptation of large language models|残差通常可以用low rank Matrix来拟合，因为称为low-rank adaptation。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
 |||Lora + Dreambooth (by Simo Ryu)||| <https://github.com/cloneofsimo/lora> |
+||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|将多个LoRA融合到一个模型时，解决LoRA之间的冲突问题。|
 
 
 P43
@@ -277,11 +279,14 @@ P57
 
 
 P58   
-## Adding Conditional Control to Text-to-Image Diffusion Models (ControlNet)
 
-### ControlNet
+## ControlNet    
 
-> &#x2705; Control Net 是一种通过引入额外条件来控制 Diffusion Model 的网络架构。    
+> &#x2705; Control Net 是一种通过引入额外条件来控制 Diffusion Model 的网络架构。 
+
+![](../assets/08-28.png)
+
+> &#x2705; 方法：(1) 预训练好 Diffusion Model (2) 参数复制一份，原始网络 fix (3) 用各种 condition finetune 复制出来的网络参数。 (4) 两个网络结合到一起。   
 
 ![](../assets/D2-58.png) 
 
@@ -289,19 +294,11 @@ P58
 > &#x2705; 把 (a) 的网络复制一份，finetune copy 的网络，结果叠加。    
 > &#x2705; Zero Convolution：1-1 卷积层，初始的 \\(w\\) 和 \\(b\\) 都为 0．   
 
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
+以Stable Diffusion为例来说明ControlNet的用法。
 
-P59   
+![](../assets/08-27.png)
 
-### Control Net 应用到 Stable Diffusion 的例子
 
-#### Pipeline
-
-![](../assets/D2-59.png)   
-
-P60   
-
-#### Train objective   
 
 $$
 \mathcal{L} =\mathbb{E} _ {\mathbb{z}_0,t,\mathbf{c} _ t,\mathbf{c} _ f,\epsilon \sim \mathcal{N} (0,1)}[||\epsilon -\epsilon _\theta (\mathbf{z} _ t,t,\mathbf{c} _ t,\mathbf{c}_f)||^2_2] 
@@ -311,18 +308,9 @@ where t is the time step, \\(\mathbf{c} _t\\) is the text prompts, \\(\mathbf{c}
 
 > 需要（x, cf, ct）的pair data。  
 
-P61    
-### ControlNet Result
-
-![](../assets/D2-61.png) 
-
-P62   
-
-![](../assets/D2-62.png) 
-
-P63   
-
-![](../assets/D2-63.png) 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2013|Adding Conditional Control to Text-to-Image Diffusion Models|
 
 P64   
 ## GLIGEN: Open-Set Grounded Text-to-Image Generation    
