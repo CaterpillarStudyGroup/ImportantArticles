@@ -2,11 +2,15 @@
 
 - Fundamentals of Diffusion Models
 - **Video Generation**
-    - Human Video Generation([link](../HumanVideoGeneration.md))
+    - Close-Source Works
+    - Open-Source Base Models
+    - Works Based on Base Models
     - Multimodal-guided generation
         - Pose Control
+    - Human Video Generation([link](../HumanVideoGeneration.md))
 - **Video Editing**
 - 视频生成的评价指标
+- 数据集
 - Summary
 
 
