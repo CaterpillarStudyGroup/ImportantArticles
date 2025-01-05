@@ -1,9 +1,8 @@
 P67   
 ![](../../assets/08-67.png)
 
-
 P68   
-## ModelScopeT2V
+# ModelScopeT2V
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
