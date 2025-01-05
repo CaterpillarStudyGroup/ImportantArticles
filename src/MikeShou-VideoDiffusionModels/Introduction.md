@@ -4,7 +4,8 @@
 - **Video Generation**
     - Close-Source Works
     - Open-Source Base Models
-    - Works Based on Base Models
+    - Works Based on T2I Base Models
+    - Works Based on T2V Base Models
     - Multimodal-guided generation
         - Pose Control
     - Human Video Generation([link](../HumanVideoGeneration.md))
