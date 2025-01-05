@@ -1,13 +1,4 @@
-
-
-
-P96  
-# 2 Video Generation
-
 ## 2.4 Training-efficient techniques
-
-> &#x2705; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
-> &#x2705; 优势：可以即插即用到各种用户定制化的模型中。   
 
 P97  
 
@@ -15,6 +6,10 @@ P97
 
 P98 
 ## AnimateDiff  
+
+Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
+
+### T2I -> T2V
 
 Transform domain-specific T2I models to T2V models
 
@@ -24,46 +19,30 @@ Transform domain-specific T2I models to T2V models
  - **Task: turn these image models into T2V models, without specific finetuning**   
 
 
-Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
-
 > &#x2705; (1) 用同一个 patten 生成 noise，得到的 image 可能更有一致性。   
 > &#x2705; (2) 中间帧的特征保持一致。    
 
 
 P99  
-## AnimateDiff   
-
-Transform domain-specific T2I models to T2V models
-
-**Methodology**
+### **Methodology**
 
  - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
  - Plug it into a domain-specific T2I model during inference   
 
 ![](../../assets/08-99.png) 
 
-Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
-
-
+> &#x2705; 优势：可以即插即用到各种用户定制化的模型中。   
 > &#x2705; 在 noise 上对内容进行编辑，即定义第一帧的 noise，以及后面帧的 noise 运动趋势。   
 
 
 P100 
-## AnimateDiff   
-
-Transform domain-specific T2I models to T2V models
-
-**Methodology** 
-
- - Train a motion modeling module (some temporal layers) together with frozen base T2I model   
- - Plug it into a domain-specific T2I model during inference   
-
 ![](../../assets/08-100.png)   
+
+### Training
 
  - Train on WebVid-10M, resized at 256x256 (experiments show can generalize to higher res.)   
 
-Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.    
-
+> &#x2705; 在低分辨率数据上训练，但结果可以泛化到高分辨率。   
 
 > &#x2705; 保证中间帧尽量相似。   
 
