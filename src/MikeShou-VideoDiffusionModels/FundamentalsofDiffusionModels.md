@@ -3,33 +3,9 @@
 P6  
 # DDPM (Denoising Diffusion Probabilistic Models)
 
-![](../assets/08-02.png)
-
-![](../assets/08-03.png)
-
-![](../assets/08-04.png)
-
-> &#x2705; 通过公式推导，可以直接从 \\(x_0\\) 加噪到 \\(x_t\\)．   
-
-![](../assets/08-05.png)
-
-![](../assets/08-11.png)
-
-> &#x2705; 输入带噪声图像，预测噪声，原图像去掉噪声后得到干净图像。     
-> &#x2705; \\(x_t\\) 可以处于任意时间步，可以一步去噪到干净图像。   
-> &#x2705; Noise Predictor Network 通常使用 UNet.    
-> &#x2705; \\(t\\) 代表时间步，网络可以以此决定去噪程度。   
-> &#x2705; “A cat” 是文本 condition.    
-
-![](../assets/08-12.png)
-
-> &#x2705; 虽然训练时是根据 \\(x_t\\) 预测 \\(x_0\\).   
-> &#x2705; 但是推断时，\\(x_t\\) 减去噪声后，又重新 sample 出一个噪声后加到图像上，变成 \\(x_{t-1}\\)．   
-> &#x2705; 考虑一次去噪可能会出错，所以再加一些噪声，达到慢慢去噪的效果。   
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2020|Denoising Diffusion Probabilistic Models|Diffusion Model 的第一篇论文||[link](../李宏毅DiffusionModel/DiffusionModel.md)|
+||2020|Denoising Diffusion Probabilistic Models|Diffusion Model 的第一篇论文||[link](../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)|
 
 Sohl-Dickstein et al., “Deep Unsupervised Learning using Nonequilibrium Thermodynamics,” ICML 2015.   
 Song et al., “Score-Based Generative Modeling through Stochastic Differential Equations,” ICLR 2021.   
@@ -84,18 +60,6 @@ Mokadi et al., “Null-text Inversion for Editing Real Images using Guided Diffu
 
 > &#x2705; DDIM Inverse 可用于图片编辑   
 
-
-p18   
-## Wanted to learn more?
-
- - CVPR Tutorial (English): <https://www.youtube.com/watch?v=cS6JQpEY9cs>   
- - Lil’s blog: <https://lilianweng.github.io/posts/2021-07-11-diffusion-models/>   
- - Hung-yi Lee (Chinese):    
-    - <https://www.youtube.com/watch?v=azBugJzmz-o>   
-    - <https://www.youtube.com/watch?v=ifCDXFdeaaM>   
- - Checkout codes -- Always associate theory and implementation!   
-
-
 P20   
 # CLIP   
 
@@ -123,6 +87,10 @@ P21
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |**45**|2022|High-Resolution Image Synthesis with Latent Diffusion Models|&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．||[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|    
+
+# LoRA
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
 |**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
 ||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|
 

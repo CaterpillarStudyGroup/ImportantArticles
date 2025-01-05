@@ -3,57 +3,55 @@
 P36  
 # Video Diffusion Models  
 
-## Recap 3D Conv
+## 2D -> 3D
+
+VDM的一般思路是，在T2I基模型的基础上，引入时序模块并使用视频数据进行训练。  
+
+引入时间模型的方法有卷积方法（Conv3D、Conv(2+1)D）、注意力机制(Cross Attention、Transformer)
 
 |||
-|--|--|
-| ![](../../assets/08-36-1.png)  |  ![](../../assets/08-36-2.png) |
-
-> Du et al., “Learning Spatiotemporal Features with 3D Convolutional Networks,” ICCV 2015.     
-
-P37  
-
-## Recap (2+1)D Conv
-
-|||
-|--|--|
-| ![](../../assets/08-37-1.png)  |  ![](../../assets/08-37-2.png) |
-
-> Du et al., “A Closer Look at Spatiotemporal Convolutions for Action Recognition,” CVPR 2018.    
+|---|---|
+|Conv2D|![](../../assets/08-36-1.png)|
+|Conv3D|![](../../assets/08-36-2.png)|
+|Conv(2+1)D|![](../../assets/08-37-2.png)|
 
 > &#x2705; \\(t\times d\times d\\) 卷积 kenal 数量非常大，可以对 kernel 做分解，先在 spatial 上做卷积，然后在 temporal 上做卷积。   
 > &#x2705; 特点：效果还不错，效率也高。   
 
 P39   
-## Video Diffusion Models
-
- - 3D U-Net factorized over space and time   
- - Image 2D conv inflated as → space-only 3D conv, i.e., 2 in (2+1)D Conv   
-    - Kernel size: (3×3) → (<u>1</u>×3×3)   
-    - Feature vectors: (height × weight × channel) → (<u>frame</u> × height × width × channel)   
- - Spatial attention: remain the same   
- - Insert temporal attention layer: attend across the temporal dimension (spatial axes as batch)   
-
-![](../../assets/08-39.png) 
-
-Ho et al., “Video Diffusion Models,” NeurIPS 2022.  
+## 3D U-Net factorized over space and time
 
 > &#x2705; 2D U-Net 变为 3D U-Net，需要让其内部的 conv 操作和 attention 操作适配 3D.   
+
+- Image 2D conv inflated as → space-only 3D conv, i.e., 2 in (2+1)D Conv   
+
 > &#x2705; (1) 2D conv 适配 3D，实际上只是扩充一个维度变成伪 3D，没有对时序信息做抽象。  
+
+   - Kernel size: (3×3) → (<u>1</u>×3×3)   
+   - Feature vectors: (height × weight × channel) → (<u>frame</u> × height × width × channel)   
+- Spatial attention: remain the same   
+
 > &#x2705; (2) attention 操作同样没有考虑时序。   
+
+- Insert temporal attention layer: attend across the temporal dimension (spatial axes as batch)   
+
 > &#x2705; (3) 时序上的抽象体现在 temporal attention layer 上。   
-> &#x2753; temporal layer 是怎之设计的？   
-> &#x2753; 先 spatial 还是 temporal？二者怎拼合？   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|Video Diffusion Models|
 
 
 P40  
 # Make-A-Video
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|Make-A-Video: Text-to-Video Generation without Text-Video Data|
+
 Cascaded generation
 
 ![](../../assets/08-40.png) 
-
-Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022. 
 
 > &#x2705; 效果更好，框架在当下更主流。   
 > &#x2705; (1) SD：decoder 出关键帧的大概影像。  
@@ -64,17 +62,13 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 
 P41   
 
-![](../../assets/08-41.png) 
-
-Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.     
+![](../../assets/08-41.png)    
 
 > &#x2753; 第 3 步时间上的超分为什么没有增加帧数？   
 
 P42  
 
-![](../../assets/08-42.png) 
-
-Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.    
+![](../../assets/08-42.png)  
 
 > &#x2705; 此处的伪 3D 是指 (2＋1)D，它有时序上的抽像，与 VDM 不同。   
 > &#x2705; 空间卷积使用预训练好的图像模型。   
@@ -86,11 +80,8 @@ Cascaded generation
 
 ![](../../assets/08-43.png) 
 
-Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data,” arXiv 2022.   
 
-
-> &#x2705; attention 操作也是 (2＋1)D．   
-> &#x2753; 卷积层与 diffusion 层怎么结合？    
+> &#x2705; attention 操作也是 (2＋1)D．      
 
 P44  
 
@@ -318,7 +309,7 @@ Singer et al., “Make-A-Video: Text-to-Video Generation without Text-Video Data
 
 
 P63   
-## Imagen & Imagen Video
+# Imagen & Imagen Video
 
 Leverage pretrained T2I models for video generation; Cascaded generation
 

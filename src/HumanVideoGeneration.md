@@ -63,16 +63,14 @@
 
 # 数据集和评估指标
 
-## 评价指标
-
-图像质量、视频质量、一致性、多样性、美学和动作准确性
-
-![](./assets/c5094236dee05a597cc12eb2a5b13473_2_Table_I_-1681426925.png)
-
 ## 数据集
 
 ![](./assets/c5094236dee05a597cc12eb2a5b13473_3_Figure_2_-1187442696.png)  
 ![](./assets/c5094236dee05a597cc12eb2a5b13473_3_Table_II_-1093823805.png)
+
+## 评估指标
+
+[link](./MikeShou-VideoDiffusionModels/EvaluationMetrics.md)
 
 # 挑战和难题
 

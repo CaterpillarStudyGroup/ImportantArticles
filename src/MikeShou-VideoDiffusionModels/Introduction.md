@@ -28,6 +28,14 @@ P2
 ![](../assets/08-01.png)
 
 
+## Others
+
+ - CVPR Tutorial (English): <https://www.youtube.com/watch?v=cS6JQpEY9cs>   
+ - Lil’s blog: <https://lilianweng.github.io/posts/2021-07-11-diffusion-models/>   
+ - Hung-yi Lee (Chinese):    
+    - <https://www.youtube.com/watch?v=azBugJzmz-o>   
+    - <https://www.youtube.com/watch?v=ifCDXFdeaaM>   
+    
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
