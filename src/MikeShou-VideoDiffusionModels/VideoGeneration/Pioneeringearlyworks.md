@@ -142,6 +142,7 @@ P64
 |48|2023|Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models|T2I(LDM) -> T2V(SVD)<br>Cascaded generation||[link](https://caterpillarstudygroup.github.io/ReadPapers/48.html)| 
 
 
+
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >

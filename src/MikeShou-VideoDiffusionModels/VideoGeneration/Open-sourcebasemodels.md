@@ -92,6 +92,7 @@ P84
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |50|2023|Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets|Scaling latent video diffusion models to large datasets<br>**Data Processing and Annotation**||[link](https://caterpillarstudygroup.github.io/ReadPapers/50.html)|
+||2024|CogVideo|
 
 
 ---------------------------------------

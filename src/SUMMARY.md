@@ -31,7 +31,6 @@
   - [Open-source base models](MikeShou-VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.md)
   - [Other closed-source works](MikeShou-VideoDiffusionModels/VideoGeneration/Otherclosed-sourceworks.md)
   - [Works Based on Base Models](./MikeShou-VideoDiffusionModels/VideoGeneration/WorksBasedOnBaseModels.md)
-  - [Training-efficient techniques](MikeShou-VideoDiffusionModels/VideoGeneration/Trainingefficienttechniques.md)
   - [Storyboard](MikeShou-VideoDiffusionModels/VideoGeneration/Storyboard.md)
   - [Long video generation](MikeShou-VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
   - [Multimodal-guided generation](MikeShou-VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.md)
