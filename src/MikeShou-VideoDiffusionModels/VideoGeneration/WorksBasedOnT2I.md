@@ -142,7 +142,16 @@ P105
 P106   
 > &#x2705; 文本 → 结构化的中间脚本 → 视频   
 
-## Training Efficient Techniques: More Works
+
+## Multi-Modal Guided Generation
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流<br> &#x2705; (2) 用光流作为 Condition 生成视频。|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
+|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|<br> &#x2705; &#x2705; (1) 用光流作为 Condition 生成视频。<br> (2) 把用户提供的控制信号转为dense光流，从而控制图像生成。|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
+
+
+##  More Works
 
 |||
 |--|--|
@@ -155,6 +164,17 @@ P106
 > &#x2705; 用结构化的中间表示生成图片。   
 > &#x2705; 先用 GPT 进行文本补全。   
 
+## More Works 闭源
+|||
+|--|--|
+| ![](../../assets/08-95-1.png)  | **Latent Shift** (An et al.)<br>Shift latent features for better temporal coherence <br> “Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation,” arXiv 2023. |
+| ![](../../assets/08-95-2.png) | **Video Factory** (Wang et al.)<br> Modify attention mechanism for better temporal coherence <br> “VideoFactory: Swap Attention in Spatiotemporal Diffusions for Text-to-Video Generation,” arXiv 2023. |
+| ![](../../assets/08-95-3.png) | **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023.  |
+| ![](../../assets/08-95-4.png)  | **VideoFusion** (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
+
+> &#x2705; Framwork (1) 在原模型中加入 temporal layers (2) fix 原模型，训练新的 layers (3) 把 lager 插入到目标 T2 I 模型中。   
+
+# Works Based on T2V Base Models
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

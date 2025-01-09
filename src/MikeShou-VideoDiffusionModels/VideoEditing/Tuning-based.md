@@ -28,6 +28,12 @@ One-shot tuning of T2I models for T2V generation/editing
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
+
+> &#x2705; 需要训练的模型，且针对一个模型进行训练。   
+> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
+> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。  
+
+
 > &#x2705; 推断过程：(1) 把视频 dounsample，维度变小。   
 > &#x2705; (2) 加入噪声作为初始噪声，类似于 DDIM Inversion.     
 > &#x2705; (3) 用 diffusion model 生成。   

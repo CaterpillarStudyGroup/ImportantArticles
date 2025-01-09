@@ -2,19 +2,6 @@ P135
 
 ![](../../assets/08-135.png) 
 
-# MCDiff  
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流<br> &#x2705; (2) 用光流作为 Condition 生成视频。|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|<br> &#x2705; &#x2705; (1) 用光流作为 Condition 生成视频。<br> (2) 把用户提供的控制信号转为dense光流，从而控制图像生成。|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
-|47|2024|Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics|拖拽控制的对象零件级运动的视频生成|零件级运动数据集|[link](https://caterpillarstudygroup.github.io/ReadPapers/47.html)|
-
-P136  
-
-> &#x2705; 需要训练的模型，且针对一个模型进行训练。   
-> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
-> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。  
 
 P139   
 # The Power of Sound (TPoS)

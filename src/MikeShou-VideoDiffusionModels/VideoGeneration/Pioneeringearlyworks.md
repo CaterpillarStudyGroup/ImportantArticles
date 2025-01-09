@@ -134,6 +134,34 @@ Imagen Video: Ho et al., “Imagen Video: High Definition Video Generation with 
 > &#x2753; temporal 超分具体是怎么做的？   
 
 
+# GenTron
+
+Transformer-based diffusion for text-to-video generation
+
+ - Transformer-based architecture extended from DiT (class-conditioned transformer-based LDM)   
+ - Train T2I \\(\to \\)  insert temporal self-attn \\(\to \\) joint image-video finetuning (motion-free guidance)    
+
+![](../../assets/08-91.png) 
+
+Chen et al., “GenTron: Delving Deep into Diffusion Transformers for Image and Video Generation,” arXiv 2023.    
+
+P93   
+# W.A.L.T.
+
+Transformer-based diffusion for text-to-video generation  
+
+ - Transformer-based denoising diffusion backbone   
+ - Joint image-video training via unified image/video latent space (created by a joint 3D encoder with causal 3D conv layers, allowing the first frame of a video to be tokenized independently)   
+ - Window attention to reduce computing/memory costs   
+ - Cascaded pipeline for high-quality generation    
+ 
+![](../../assets/08-93.png) 
+
+Gupta et al., “Photorealistic Video Generation with Diffusion Models,” arXiv 2023.     
+
+P94   
+> &#x2753; 已训好的图像生成模型，怎样转成同风格的视频生成模型？    
+
 P64   
 # Align your Latents
 
