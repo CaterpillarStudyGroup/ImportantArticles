@@ -1,4 +1,4 @@
-# Multimodal Guided Generation
+# Image-2-Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|

@@ -12,12 +12,6 @@ P149
 
 ![](../../assets/08-149.png) 
 
-> &#x2705; 在一个视频上训练后可以对视频进行编辑。   
-> &#x2705; 训练过程：(1) 对模型的时域模块 finetune．   
-> &#x2705; (2) 对图像打乱后用图像 finetune．  
-> &#x2705; 把视频和图片进行 mix finetune.    
-> &#x2705; 图片 finetune 会把 tenmporal 模块 fix 住。   
-
 
 P150  
 ## Tune-A-Video
@@ -28,35 +22,17 @@ One-shot tuning of T2I models for T2V generation/editing
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
-
-> &#x2705; 需要训练的模型，且针对一个模型进行训练。   
-> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
-> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。  
-
-
-> &#x2705; 推断过程：(1) 把视频 dounsample，维度变小。   
-> &#x2705; (2) 加入噪声作为初始噪声，类似于 DDIM Inversion.     
-> &#x2705; (3) 用 diffusion model 生成。   
-> &#x2705; (4) 上采样。   
-
-
-P152   
-## Tune-A-Video
-
-One-shot tuning of T2I models for T2V generation/editing
-
 <https://github.com/showlab/Tune-A-Video>
 
-**Motivation**: appearance from pretrained T2I models, dynamics from a reference video 
+### **Motivation**
 
-![](../../assets/08-152.png) 
+Motivation: appearance from pretrained T2I models, dynamics from a reference video 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
+![](../../assets/08-152.png)   
 
 P153
-## Tune-A-Video
 
-One-shot tuning of T2I models for T2V generation/editing
+### 方法
 
 **Obs #1: Still images that accurately represent the verb terms**
 
@@ -66,26 +42,12 @@ One-shot tuning of T2I models for T2V generation/editing
 
 ![](../../assets/08-153-2.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
-
-
-> &#x2705; 如果有更多 reference vedio 是不是能学得更好。   
-
 
 P154   
-## Tune-A-Video
-
-One-shot tuning of T2I models for T2V generation/editing
 
 ![](../../assets/08-154.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
-
-
 P155
-## Tune-A-Video
-
-One-shot tuning of T2I models for T2V generation/editing
 
 ![](../../assets/08-155.png) 
 
@@ -104,76 +66,24 @@ One-shot tuning of T2I models for T2V generation/editing
 **Structure guidance via DDIM inversion**
 
  - preserves the structural information   
- - improves temporal consistency   
-
-
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
+ - improves temporal consistency      
 
 
 P156  
-## Tune-A-Video
+### 主观效果
 
-![](../../assets/08-156.png) 
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
-
+![](../../assets/08-156.png)    
 P157  
-## Tune-A-Video
-
 ![](../../assets/08-157.png) 
-
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
-
-
-> &#x2705; (1) 用几段视频学习 concept．   
-> &#x2705; (2) 把 concept 接入到 diffusion model 中。   
-> &#x2705; 通过多段视频学习 motion concept.   
-
-
 P158  
-## Tune-A-Video
-
 ![](../../assets/08-158.png) 
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.   
-
-> &#x2705; 不仅学 motion，还可以学 camera motion，camera motion，物体轨迹。    
-
 P159  
-## Tune-A-Video
-
-![](../../assets/08-159.png) 
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
-
-
-> &#x2705; 怎么把一个 concept 应用到不同的物体上。   
-> &#x2705; 怎样只学 motion 而不被物体的 appearance 影响，能不能 decouple.   
-> &#x2705; 分支1：spatial path，灰色为 spatial LoRA，学习外表信息。   
-> &#x2705; 分支2：temporal path，蓝色为 temporal LoRA，这个 path 用于学习 motion.    
-> &#x2705; debias：去掉 appreance 对 loss 的影响。   
-> &#x2705; temporal LORA 学习时使用但不修改 spatial LORA 的 Weight.   
-
-
+![](../../assets/08-159.png)  
 P160  
-## Tune-A-Video
-
-
 ![](../../assets/08-160.png) 
 
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.  
-
-
-> &#x2705; 应用：(1) 也可以用于 one shot       
-> &#x2705; (2) 可以用于 appreace 和 motion 的组合   
-> &#x2705; (3) 可以用于 Image Animation   
-
 P161
-## Tune-A-Video
-
-One-shot tuning of T2I models for T2V generation/editing
+### 客观指标
 
 ![](../../assets/08-161.png) 
 
@@ -364,3 +274,35 @@ Zhao et al., “MotionDirector: Motion Customization of Text-to-Video Diffusion 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
 > https://caterpillarstudygroup.github.io/ImportantArticles/
+
+> &#x2705; 在一个视频上训练后可以对视频进行编辑。   
+> &#x2705; 训练过程：(1) 对模型的时域模块 finetune．   
+> &#x2705; (2) 对图像打乱后用图像 finetune．  
+> &#x2705; 把视频和图片进行 mix finetune.    
+> &#x2705; 图片 finetune 会把 tenmporal 模块 fix 住。   
+
+> &#x2705; 需要训练的模型，且针对一个模型进行训练。   
+> &#x2705; 基本泛式：输入：一段视频，一个文生图模型，一个文本提示词。输出：基于定制化的文生图得到文生视频。   
+> &#x2705; 不在大规模上训练，只在一个视频上训练，只需十分钟。  
+
+
+> &#x2705; 推断过程：(1) 把视频 dounsample，维度变小。   
+> &#x2705; (2) 加入噪声作为初始噪声，类似于 DDIM Inversion.     
+> &#x2705; (3) 用 diffusion model 生成。   
+> &#x2705; (4) 上采样。   
+> &#x2705; 如果有更多 reference vedio 是不是能学得更好。   
+> &#x2705; (1) 用几段视频学习 concept．   
+> &#x2705; (2) 把 concept 接入到 diffusion model 中。   
+> &#x2705; 通过多段视频学习 motion concept.   
+
+> &#x2705; 不仅学 motion，还可以学 camera motion，camera motion，物体轨迹。 
+
+> &#x2705; 怎么把一个 concept 应用到不同的物体上。   
+> &#x2705; 怎样只学 motion 而不被物体的 appearance 影响，能不能 decouple.   
+> &#x2705; 分支1：spatial path，灰色为 spatial LoRA，学习外表信息。   
+> &#x2705; 分支2：temporal path，蓝色为 temporal LoRA，这个 path 用于学习 motion.    
+> &#x2705; debias：去掉 appreance 对 loss 的影响。   
+> &#x2705; temporal LORA 学习时使用但不修改 spatial LORA 的 Weight.   
+> &#x2705; 应用：(1) 也可以用于 one shot       
+> &#x2705; (2) 可以用于 appreace 和 motion 的组合   
+> &#x2705; (3) 可以用于 Image Animation 

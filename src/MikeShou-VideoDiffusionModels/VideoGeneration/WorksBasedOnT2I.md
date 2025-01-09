@@ -1,5 +1,5 @@
 P75   
-# Works Based on T2I Base Models
+# Text-2-Video
 
 ## Show-1
 
@@ -143,7 +143,7 @@ P106
 > &#x2705; 文本 → 结构化的中间脚本 → 视频   
 
 
-## Multi-Modal Guided Generation
+# Image-2-Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
