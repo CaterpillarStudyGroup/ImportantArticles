@@ -31,72 +31,12 @@ P112
  - Can LLM model such visual prio？      
 
 P113   
-## VisorGPT
 
-Can we model such visual prior with LLM
-
-![](../../assets/08-113.png) 
-
-P114   
-
-### Prompt design
-
-![](../../assets/08-114-1.png) 
-
-![](../../assets/08-114-2.png)  
-
-P118  
-
-### Modeling Visual Prior via Generative Pre-Training
-
-![](../../assets/08-118.png)  
-
-
-P119  
-
-### Sample from the LLM which has learned visual prior
-
-![](../../assets/08-119.png) 
-
-P120   
-
-![](../../assets/08-120.png) 
-
-Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,” NeurIPS 2023.  
-
-P121   
-## VideoDirectorGPT
-
-Use storyboard as condition to generate video
-
-![](../../assets/08-121.png) 
-
-
-> &#x2705; Control Net，把文本转为 Pixel 图片。
-
-P122  
-
-![](../../assets/08-122.png) 
-
-Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,” arXiv 2023.    
-
-P124   
-## Long-form Video Prior
-
-GPT can be trained to learn better long-form video prior (e.g., object position, relative size, human interaction)
-
-> &#x2705; 用 GPT-4 In-context learning 机制生成结构化文本     
-
-**A new dataset - Storyboard20K**
-
-![](../../assets/08-124.png) 
-
-Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,” to be released in 2024.    
-<https://github.com/showlab/Long-form-Video-Prior>   
-
-> &#x2705; 没有训练 GPT／LLM，而是使用文本来引导，但是生成结果不合理。   
-> &#x2705; GPT 缺少一些视觉上的 commen sense 主要是缺少相关数据集。  
-> &#x2705; 因此这里提供了一个数据集。   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|61|2023|Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,”|A “diffusion over diffusion” architecture for very long video generation ||[link](https://caterpillarstudygroup.github.io/ReadPapers/61.html)|
+||2023|Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,”|Use storyboard as condition to generate video<br> &#x2705; Control Net，把文本转为 Pixel 图片。|![](../../assets/08-121.png) ![](../../assets/08-122.png) |
+||2024|Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,”|GPT can be trained to learn better long-form video prior (e.g., object position, relative size, human interaction)<br> &#x2705; 用 GPT-4 In-context learning 机制生成结构化文本<br> &#x2705; GPT 缺少一些视觉上的 commen sense 主要是缺少相关数据集。 <br> &#x2705; 因此这里提供了一个数据集**Storyboard20K**。 |![](../../assets/08-124.png) |[dataset](<https://github.com/showlab/Long-form-Video-Prior>)   |
 
 P125  
 ## Storyboard: More Works
