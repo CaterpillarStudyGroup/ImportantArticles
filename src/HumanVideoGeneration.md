@@ -70,7 +70,7 @@
 
 ## 评估指标
 
-[link](./MikeShou-VideoDiffusionModels/EvaluationMetrics.md)
+[link](./VideoDiffusionModels/EvaluationMetrics.md)
 
 # 挑战和难题
 

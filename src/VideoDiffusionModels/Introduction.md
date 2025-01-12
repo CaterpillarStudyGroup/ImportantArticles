@@ -2,12 +2,13 @@
 
 - Fundamentals of Diffusion Models
 - **Video Generation**
-    - Close-Source Works
-    - Open-Source Base Models
+    - Close-Source T2I Works
+    - Open-Source T2I Base Models
     - Works Based on T2I Base Models
     - Works Based on T2V Base Models
-    - Multimodal-guided generation
-        - Pose Control
+    - 长视频生成
+    - StoryBoard
+    - 多生成任务
     - Human Video Generation([link](../HumanVideoGeneration.md))
 - **Video Editing**
 - 视频生成的评价指标
