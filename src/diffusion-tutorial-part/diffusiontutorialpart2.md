@@ -374,6 +374,9 @@ P70
 
 Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",</u> ICML 2023    
 
+## Imagen
+Imagen: Saharia et al., “Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding,” arXiv 2022.    
+  
 
 P72   
 # Reference   

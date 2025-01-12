@@ -1,63 +1,6 @@
 P75   
 # Text-2-Video
 
-## Show-1
-
-Better text-video alignment? Generation in both pixel- and latent-domain
-
-![](../../assets/08-75.png) 
-
-> &#x2705; Stable Diffusion Model存在的问题：当文本变复杂时，文本和内容的 align 不好。  
-> &#x2705; show-1 在 alignment 上做了改进。   
-
-Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.    
-
-P76   
-### **Motivation**
-
-#### pixel VS latent: 一致性
- - Pixel-based VDM achieves better text-video alignment than latent-based VDM   
-
-|||
-|--|--|
-| ![](../../assets/08-76-1.png) | ![](../../assets/08-76-2.png) |
-
-> &#x2705; 实验发现：pixel spase 比 latent space 更擅长 align ment.   
-> &#x2705; 原因：在 latent space，文本对 pixel 的控制比较差。   
-
-P77   
-#### pixel VS latent: memory
-
- - Pixel-based VDM achieves better text-video alignment than latent-based VDM   
- - Pixel-based VDM takes much larger memory than latent-based VDM    
-
-![](../../assets/08-77.png)  
-
-
-P78   
-### 本文方法 
-
- - Use Pixel-based VDM in low-res stage   
- - Use latent-based VDM in high-res stage   
-
-![](../../assets/08-78.png) 
-
-
-P79   
-### Result
-
-<https://github.com/showlab/Show-1>
-
- - Better text-video alignment   
- - Can synthesize large motion   
- - Memory-efficient   
-
-Zhang et al., “Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation,” arXiv 2023.   
-
-P98 
-## AnimateDiff  
-
-Guo et al., “AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning,” arXiv 2023.     
 
 ### T2I -> T2V
 
@@ -142,15 +85,6 @@ P105
 P106   
 > &#x2705; 文本 → 结构化的中间脚本 → 视频   
 
-
-# Image-2-Video
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|<br> &#x2705; (1) 把用户提供的稀疏运动轨迹转为dense光流<br> &#x2705; (2) 用光流作为 Condition 生成视频。|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|<br> &#x2705; &#x2705; (1) 用光流作为 Condition 生成视频。<br> (2) 把用户提供的控制信号转为dense光流，从而控制图像生成。|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
-
-
 ##  More Works
 
 |||
@@ -158,11 +92,25 @@ P106
 | ![](../../assets/08-107-1.png)  | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022.  |
 |  ![](../../assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
 | ![](../../assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+||MagicVideo-V2: Multi-Stage High-Aesthetic Video Generation,2024|
+
 
 > &#x2705; 用纯文本的形式把图片描述出来。   
 > &#x2705; 方法：准备好 pair data，对 GPT 做 fine-tune.    
 > &#x2705; 用结构化的中间表示生成图片。   
 > &#x2705; 先用 GPT 进行文本补全。   
+
+
+# Image-2-Video
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|&#x2705; 用户提供的稀疏运动轨迹 -> dense光流<br>&#x2705; dense光流（condition） + Image -> 视频|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
+|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|&#x2705; 用户提供的控制信号（condition）+ Image -> dense光流<br>&#x2705; dense光流（condition） + Image -> 视频|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
+| |2023| **LFDM** (Ni et al.) <br> “Conditional Image-to-Video Generation with Latent Flow Diffusion Models,”|&#x2705;视频->光流 + Mask<br>&#x2705; 光流+Mask+图像 ->视频|![](../../assets/08-141-3.png)  ||
+||2024|Generative Image Dynamics (Li et al.) <br> “Generative Image Dynamics,”|图像（无condition） -> SV <br>&#x2705; SV + 力 -> 光流 <br>&#x2705; 光流 + Image -> 视频| ![](../../assets/08-141-2.png)  ||
+||2023|LaMD: Latent Motion Diffusion for Video Generation|视频 -> 图像特征 + 运动特征<br>&#x2705; 运动特征+图像特征->视频|![](../../assets/08-141-2.png)  |
+
 
 ## More Works 闭源
 |||
@@ -174,7 +122,36 @@ P106
 
 > &#x2705; Framwork (1) 在原模型中加入 temporal layers (2) fix 原模型，训练新的 layers (3) 把 lager 插入到目标 T2 I 模型中。   
 
-# Works Based on T2V Base Models
+# Sound2Video
+
+## The Power of Sound (TPoS)
+
+Sound- and text-guided video generation
+
+ - Input/output: a text prompt + an audio segment → a video
+
+![](../../assets/08-139.png) 
+
+Jeong et al., “The Power of Sound (TPoS): Audio Reactive Video Generation with Stable Diffusion,” ICCV 2023.    
+
+## More Works
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|**AADiff**: Audio-Aligned Video Synthesis with Text-to-Image Diffusion||![](../../assets/08-140-1.png)  | 
+||2023|**Generative Disco** (Liu et al.)<br> “Generative Disco: Text-to-Video Generation for Music Visualization,| | ![](../../assets/08-140-2.png) | 
+
+# Bain Activity 2 Video   
+
+> &#x2705; 大脑信号控制生成。   
+
+Brain activity-guided video generation
+
+ - Task: human vision reconstruction via fMRI signal-guided video generation   
+
+![](../../assets/08-142.png) 
+
+Chen et al., “Cinematic Mindscapes: High-quality Video Reconstruction from Brain Activity,” arXiv 2023.   
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

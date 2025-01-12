@@ -51,3 +51,5 @@ P8
 ||2022|Scalable Diffusion Models with Transformers|    
 ||2023|One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale|
 ||2023|simple diffusion: End-to-end diffusion for high resolution images|
+||Leverage pretrained T2I models for video generation; Cascaded generation|
+|||IMAGEN|

@@ -7,19 +7,10 @@ P109
 P110 
 ## What is a storyboard?
 
-
-Human can imagine what does the scene look like “roughly”
-
-“Two men stand in the airport waiting room and stare at the 
-airplane thru window”   
-
-What is in your mind now?
-
 > &#x2705; 难点：保持内容的一致性。   
 
 
 P111
-### What is a storyboard?
 
 A concept in film production
 
@@ -32,16 +23,12 @@ Storyboard image from deviantart.com.
 
 
 P112 
-### What is a storyboard?
 
-A concept in film production
+## How to generate such a storyboard?    
 
- - How to generate such a storyboard?    
  - As humans, over the years, we have acquired such “visual prior” about object location, object shape, relation, etc.   
 
  - Can LLM model such visual prio？      
-
-
 
 P113   
 ## VisorGPT

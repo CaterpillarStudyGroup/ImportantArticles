@@ -28,12 +28,7 @@ Slides:<https://sites.google.com/view/showlab/tutorial>
 ![](../assets/08-001.png)
 
 
-P2  
-## Video Foundation Model  
-
-![](../assets/08-01.png)
-
-
+P2
 ## Others
 
  - CVPR Tutorial (English): <https://www.youtube.com/watch?v=cS6JQpEY9cs>   
@@ -41,6 +36,7 @@ P2
  - Hung-yi Lee (Chinese):    
     - <https://www.youtube.com/watch?v=azBugJzmz-o>   
     - <https://www.youtube.com/watch?v=ifCDXFdeaaM>   
+- Xing et al., “A Survey on Video Diffusion Models,” arXiv 2023. 
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
