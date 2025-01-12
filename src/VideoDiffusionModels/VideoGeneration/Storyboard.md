@@ -9,7 +9,6 @@ P110
 
 > &#x2705; 难点：保持内容的一致性。   
 
-
 P111
 
 A concept in film production
@@ -37,12 +36,6 @@ P113
 |61|2023|Xie et al., “VisorGPT: Learning Visual Prior via Generative Pre-Training,”|A “diffusion over diffusion” architecture for very long video generation ||[link](https://caterpillarstudygroup.github.io/ReadPapers/61.html)|
 ||2023|Lin et al., “VideoDirectorGPT: Consistent Multi-scene Video Generation via LLM-Guided Planning,”|Use storyboard as condition to generate video<br> &#x2705; Control Net，把文本转为 Pixel 图片。|![](../../assets/08-121.png) ![](../../assets/08-122.png) |
 ||2024|Xie et al., “Learning Long-form Video Prior via Generative Pre-Training,”|GPT can be trained to learn better long-form video prior (e.g., object position, relative size, human interaction)<br> &#x2705; 用 GPT-4 In-context learning 机制生成结构化文本<br> &#x2705; GPT 缺少一些视觉上的 commen sense 主要是缺少相关数据集。 <br> &#x2705; 因此这里提供了一个数据集**Storyboard20K**。 |![](../../assets/08-124.png) |[dataset](<https://github.com/showlab/Long-form-Video-Prior>)   |
-
-P125  
-## Storyboard: More Works
-  
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
 |41|2024|STORYDIFFUSION: CONSISTENT SELF-ATTENTION FOR LONG-RANGE IMAGE AND VIDEO GENERATION|先生成一致的关键帧，再插帧成中间图像||[link](https://caterpillarstudygroup.github.io/ReadPapers/41.html)|
 
 |||

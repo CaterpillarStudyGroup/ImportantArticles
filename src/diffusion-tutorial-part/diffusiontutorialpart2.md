@@ -1,12 +1,12 @@
 P9    
-# Image editing and customization with diffusion models
+# 图像编辑
 
 P10    
 ## Gaussian Noise方法
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|DEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
+||2022|SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
 
 ## DDIM Inversion方法
 
@@ -27,87 +27,25 @@ P10
 
 
 P32   
-# Personalization with diffusion models   
+# 特定对象定制化的图像生成   
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
+|62|2023|Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” ||| [link](https://caterpillarstudygroup.github.io/ReadPapers/62.html)|
+|63|2023|Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"|||   [link](https://caterpillarstudygroup.github.io/ReadPapers/63.html)|
+|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+|||Lora + Dreambooth (by Simo Ryu)||| <https://github.com/cloneofsimo/lora> |
+||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|将多个LoRA融合到一个模型时，解决LoRA之间的冲突问题。|
+
+P43
+# 多个特定对象定制化的图像生成   
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
 
-## DreamBooth
 
-### 目标
-
-Few-shot finetuning of large models for generating personalized concepts
-
-> &#x2705; 基于目标的多张 reference，输入文本，生成包含目标的图像。要求生成的结果与refernce一致，且具有高质量和多样性：     
-
-![](../assets/D2-32.png) 
-
-Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” CVPR 2023.    
-
-
-> &#x2705; DreamBooth：输入文本和图像，文本中的［V］指代图像，生成新图像。   
-> &#x2705; 特点：对预训练的 diffusion model 的权重改变比较大。   
-
-
-P34   
-### Pipeline  
-
-![](../assets/D2-34.png)     
- 
-> &#x2705; 使用 reference image 微调 model，具体方法为：    
-> &#x2705; 输入多张reference image，使用包含特定 identifier 的文本构造 pairdata。目的是对输入图像做 encode。    
-> &#x2705; 同时使用用不含 identifer 的图像和文本调练，构造重建 loss 和对抗 loss.目的是生成的多样性及防止过拟合。    
-
-P35   
-### DreamBooth Results
-
-![](../assets/D2-35.png)  
-
-> Input Image的基本特征保持住了，但是细节还是有些丢失。比如书包右下角的三个贴图，在每个生成里面都不一样。  
-> 用来生成动作照片还是可以的，因为人对动画的细节差异没有那么敏感。例如这只猫。额头上的花纹，在每张图像上都不一样。如果用来生成人，会发明显的差异。  
-
-P37    
-## Textual Inversion: Optimizing Text Embedding   
-
-![](../assets/D2-37.png) 
-
-> &#x2705; 输入3-5张reference iamge。可以把内容、风格、动作等编辑为 \\(S_ {\ast }\\)     
-> &#x2705; 用一个 word 来 Encode 源，因此称为 Textual Inversion.    
-
-Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion",</u> ICLR 2023    
-
-P38   
-### Pipeline
-
-![](../assets/D2-38.png) 
-
-> &#x2705; 输入带 holder world 的 String，(1) 转为 token (2) token 转为“连续的表示”，即 embedding. (3) embedding 转为 conditional code，用于引导生成模型。    
-> &#x2705; 通过生成的结果与GT比较，构造重建loss来优化 embedding.    
-
-
-P39   
-### Textual Inversion Results   
-
-![](../assets/D2-39.png) 
-
-P40    
-Works well for artistic styles    
-
-![](../assets/D2-40.png) 
-
-P41   
-## Low-rank Adaptation (LoRA)   
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
-|||Lora + Dreambooth (by Simo Ryu)||| <https://github.com/cloneofsimo/lora> |
-||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|将多个LoRA融合到一个模型时，解决LoRA之间的冲突问题。|
-
-
-P43
-## Multi-Concept Customization of Text-to-Image Diffusion
 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 

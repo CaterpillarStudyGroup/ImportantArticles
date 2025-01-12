@@ -4,8 +4,6 @@ P127
 
 ![](../../assets/08-127.png) 
 
-> &#x2705; 声音(非语音)引导的生成。  
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |60|2023|Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,”|A “diffusion over diffusion” architecture for very long video generation ||[link](https://caterpillarstudygroup.github.io/ReadPapers/60.html)|
