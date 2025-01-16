@@ -1,8 +1,5 @@
-
-P42    
-## Outline   
-
- - 3D reconstruction    
+P42     
+# 3D reconstruction    
 
 P43    
 ## NeuralLift-360 for 3D reconstruction

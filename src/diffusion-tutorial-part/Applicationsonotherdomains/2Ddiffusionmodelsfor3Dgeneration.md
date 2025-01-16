@@ -1,5 +1,5 @@
 P23   
-## 2D Diffusion Models for 3D Generation   
+# 2D Diffusion Models for 3D Generation   
 Just now, we discussed diffusion models directly on 3d.   
 However, there are a lot fewer 3d data than 2d.A lot of experiments are based on ShapeNet!   
 Can we **use 2d diffusion models as a “prior” for 3d**?   
@@ -9,7 +9,7 @@ Can we **use 2d diffusion models as a “prior” for 3d**?
 |**68**|2023|Poole et al., "DreamFusion: Text-to-3D using 2D Diffusion"||SDS|[link](https://caterpillarstudygroup.github.io/ReadPapers/68.html)|
 ||2023|Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation"|2x speed and higher resolution <br>Accelerate NeRF with Instant-NGP, for coarse representations. <br> Optimize a fine mesh model with differentiable renderer.<br> &#x2705; Instant NGP 代替左下的 Nerf MLP．以 coarse representetion 作为 condition 来生成 fine mesh model.  |Extensions to SDS<br>![](../../assets/D3-30.png)  |
 ||2023|Wang et al.,"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",||  Alternative to SDS|
-
+||2023|Wang et al., "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",||Alternative to SDS|
 
 P31
 ## Alternative to SDS: Score Jacobian Chaining
@@ -21,9 +21,7 @@ A different formulation, motivated from approximating 3D score.
 In principle, the diffusion model is the noisy 2D score (over clean images),   
 but in practice, the diffusion model suffers from out-of-distribution (OOD) issues!    
 
-For diffusion model on noisy images, **the non-noisy images are OOD**!    
-
-Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.     
+For diffusion model on noisy images, **the non-noisy images are OOD**!     
 
 > &#x2705; 2D sample, 3D score    
 
@@ -33,9 +31,7 @@ P32
 SJC approximates noisy score with “Perturb-and-Average Scoring”, which is not present in SDS.   
  - Use score model on multiple noise-perturbed data, then average it.    
 
-![](../../assets/D3-32.png)  
-
-Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
+![](../../assets/D3-32.png)   
 
 > &#x2705; 通过这种方法来近似 clean image 的输出，解决 clean image 的 OOD 问题。    
 
@@ -47,7 +43,6 @@ SJC is a competitive alternative to SDS.
 
 ![](../../assets/D3-33.png) 
 
-Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> CVPR 2023.    
 
 P34   
 ## Alternative to SDS: ProlificDreamer   
@@ -57,7 +52,7 @@ P34
 
 ![](../../assets/D3-34.png) 
 
-Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+
 
 P35   
 ### ProlificDreamer and Variational Score Distillation  
@@ -85,9 +80,7 @@ P36
 
  - Learn another diffusion model to approximate the score of noisy rendered images!
 
-![](../../assets/D3-36.png) 
-
-Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
+![](../../assets/D3-36.png)   
 
 > &#x2705; 使用 LoRA 近第二项。    
 
@@ -103,10 +96,6 @@ P37
  - This is analogous to    
     - Representing the dataset score via mixture of Gaussians on the dataset (SDS), versus     
     - Representing the dataset score via the LoRA UNet (VSD)    
-
-
-Wang et al., <u>"ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",</u> arXiv 2023    
-
 
 
 ---------------------------------------

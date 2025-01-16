@@ -1,11 +1,5 @@
-
-P38   
-## Outline
-
- - Diffusion models for view synthesis   
-
 P39
-## Novel-view Synthesis with Diffusion Models   
+# Novel-view Synthesis with Diffusion Models   
 
  - These do not produce 3D as output, but synthesis the view at different angles.    
 
@@ -47,7 +41,11 @@ Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models"
 > &#x2705; (1) 生成 feature field (2) render 其中一个视角 (3) 优化渲染效果     
 > &#x2705; (2) 是 MLP (3) 是 diffusion．    
 
+## More
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2024|CAT3D|
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
