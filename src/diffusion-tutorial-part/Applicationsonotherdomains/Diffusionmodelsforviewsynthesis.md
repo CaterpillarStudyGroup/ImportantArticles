@@ -1,10 +1,3 @@
-P39
-# Novel-view Synthesis with Diffusion Models   
-
- - These do not produce 3D as output, but synthesis the view at different angles.    
-
-Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> ICLR 2023    
-
 P40   
 ## 3DiM   
 
@@ -45,6 +38,7 @@ Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models"
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2023|Watson et al.,"Novel View Synthesis with Diffusion Models"|
 ||2024|CAT3D|
 
 ---------------------------------------

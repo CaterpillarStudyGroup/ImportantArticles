@@ -1,8 +1,8 @@
 P23   
-# 2D Diffusion Models for 3D Generation   
-Just now, we discussed diffusion models directly on 3d.   
-However, there are a lot fewer 3d data than 2d.A lot of experiments are based on ShapeNet!   
-Can we **use 2d diffusion models as a “prior” for 3d**?   
+
+由于缺少3D数据，把2D T2I Base Model作为先验来实现3D生成。
+
+# SDS
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@ Can we **use 2d diffusion models as a “prior” for 3d**?
 ||2023|Wang et al., "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",||Alternative to SDS|
 
 P31
-## Alternative to SDS: Score Jacobian Chaining
+# Alternative to SDS: Score Jacobian Chaining
 
 A different formulation, motivated from approximating 3D score.   
 
@@ -26,7 +26,7 @@ For diffusion model on noisy images, **the non-noisy images are OOD**!
 > &#x2705; 2D sample, 3D score    
 
 P32   
-### Score Jacobian Chaining   
+## Score Jacobian Chaining   
 
 SJC approximates noisy score with “Perturb-and-Average Scoring”, which is not present in SDS.   
  - Use score model on multiple noise-perturbed data, then average it.    
@@ -37,7 +37,7 @@ SJC approximates noisy score with “Perturb-and-Average Scoring”, which is no
 
 
 P33    
-### SJC and SDS
+## SJC and SDS
 
 SJC is a competitive alternative to SDS.   
 
@@ -45,17 +45,15 @@ SJC is a competitive alternative to SDS.
 
 
 P34   
-## Alternative to SDS: ProlificDreamer   
+# Alternative to SDS: ProlificDreamer   
 
  - SDS-based method often set classifier-guidance weight to 100, which limits the “diversity” of the generated samples.   
  - ProlificDreamer reduces this to 7.5, leading to diverse samples.    
 
 ![](../../assets/D3-34.png) 
 
-
-
 P35   
-### ProlificDreamer and Variational Score Distillation  
+## ProlificDreamer and Variational Score Distillation  
 
 Instead of maximizing the likelihood under diffusion model, VSD minimizes the KL divergence via variational inference.    
 
@@ -76,7 +74,6 @@ Suppose is a \\(\theta _ \tau \sim \mu \\) NeRF sample, then VSD simulates this 
 > &#x2705; 第一项由 diffusion model 得到，在此处当作 GT．   
 
 P36   
-### ProlificDreamer and Variational Score Distillation
 
  - Learn another diffusion model to approximate the score of noisy rendered images!
 
@@ -85,7 +82,7 @@ P36
 > &#x2705; 使用 LoRA 近第二项。    
 
 P37   
-### Why does VSD work in practice?    
+## Why does VSD work in practice?    
 
  - The valid text-to-image NeRFs form a distribution with infinite possibilities!    
  - In SDS, epsilon is the score of noisy “dirac distribution” over finite renders, which converges to the true score with infinite renders!    

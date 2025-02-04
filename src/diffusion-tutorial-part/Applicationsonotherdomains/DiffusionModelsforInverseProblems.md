@@ -73,8 +73,7 @@ Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problem
  - **CSGM**: Posterior sampling with Langevin Dynamics based on the diffusion score model.   
  - **RED-Diff**: A Regularizing-by-Denoising (RED), variational inference approach.   
  - **Posterior sampling**: use RealNVP to approximate posterior samples from diffusion models.   
-
-Ho et al., <u>"Video Diffusion Models",</u> NeurIPS 2022   
+ 
 Chung et al., <u>"Improving Diffusion Models for Inverse Problems using Manifold Constraints",</u> NeurIPS 2022   
 Ryu and Ye, <u>"Pyramidal Denoising Diffusion Probabilistic Models",</u> arXiv 2022   
 Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> arXiv 2022   
