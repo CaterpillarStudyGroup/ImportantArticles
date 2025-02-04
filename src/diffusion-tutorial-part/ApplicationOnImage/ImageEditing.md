@@ -45,7 +45,7 @@ P43
 |---|---|---|---|---|---|
 |52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
 |64|2023|Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion"|||[link](https://caterpillarstudygroup.github.io/ReadPapers/64.html)|
-||2023|Tewel et al., Key-Locked Rank One Editing for Text-to-Image Personalization"|&#x2705; 方法：dynamic rank one update. <br> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  <br> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    <br> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    <br> &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。<br>Results: 可以很好地model the interaction of the two conception。  |![](../assets/D2-55.png)    ||
+||2023|Tewel et al., Key-Locked Rank One Editing for Text-to-Image Personalization"|&#x2705; 方法：dynamic rank one update. <br> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  <br> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    <br> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    <br> &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。<br>Results: 可以很好地model the interaction of the two conception。  |![](../../assets/D2-55.png)    ||
 |65|2023|Mou et al., T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",|||[link](https://caterpillarstudygroup.github.io/ReadPapers/65.html)|
 ||2013|Adding Conditional Control to Text-to-Image Diffusion Models|
 |66|2023|Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> |||[link](https://caterpillarstudygroup.github.io/ReadPapers/66.html)|
@@ -64,7 +64,7 @@ Li et al., <u>"Your Diffusion Model is Secretly a Zero-Shot Classifier",</u> arX
 
 ### Pipeline
 
-![](../assets/D2-68.png)  
+![](../../assets/D2-68.png)  
 
 > &#x2705; 输入图像\\(x\\)，用随机噪声\\(\epsilon  \\)加噪；再用 condition c 预测噪声 \\(\epsilon  _\theta \\)。优化条件 C 使得 \\(\epsilon  _\theta \\) 最接近 \\(\epsilon \\). 得到的 C 就是分类。    
 
@@ -73,7 +73,7 @@ P69
 
 > &#x2705; 使用 diffusion Model 做数据增强。    
 
-![](../assets/D2-69.png)  
+![](../../assets/D2-69.png)  
 
 **Overview of the approach:**     
 1. train a generative model and a non￾robust classifier, which are used to provide pseudo-labels to the generated data.    
@@ -84,7 +84,7 @@ Gowal et al., <u>"Improving Robustness using Generated Data",</u> NeurIPS 2021
 P70  
 ## Better Diffusion Models Further Improve Adversarial Training   
 
-![](../assets/D2-70.png)  
+![](../../assets/D2-70.png)  
 
 Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",</u> ICML 2023    
 
