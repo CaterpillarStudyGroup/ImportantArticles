@@ -157,7 +157,6 @@ Haque et al., <u>"Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions",</u> 
 Sella et al., <u>"Vox-E: Text-guided Voxel Editing of 3D Objects",</u> arXiv 2023   
 Harvey et al., <u>"Flexible Diffusion Modeling of Long Videos",</u> arXiv 2022    
 Voleti et al., <u>"MCVD: Masked Conditional Video Diffusion for Prediction, Generation, and Interpolation",</u> NeurIPS 2022     
-Singer et al., <u>"Make-A-Video: Text-to-Video Generation without Text-Video Data",</u> arXiv 2022    
 Mei and Patel, <u>"VIDM: Video Implicit Diffusion Models",</u> arXiv 2022        
 Wang et al., <u>"Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models",</u> arXiv 2023    
 Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
