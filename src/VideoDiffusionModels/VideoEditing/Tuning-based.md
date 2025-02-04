@@ -18,6 +18,8 @@ P150
 
 One-shot tuning of T2I models for T2V generation/editing
 
+![](../../assets/D3-66-3.png)    
+
 ![](../../assets/08-150.png) 
 
 Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    

@@ -39,36 +39,54 @@ Framewise depth-guided video editing
 |--|--|
 | ![](../../assets/08-193-1.png)  | ![](../../assets/08-193-2.png)  |
 
-
-Psser et al., “Structure and Content-Guided Video Synthesis with Diffusion Models,” ICCV 2023. 
-
 > &#x2705; 特点：(1) 不需要训练。 (2) 能保持前后一致性。   
+
+P60   
+### Gen-1
+
+ - Transfer the style of a video using text prompts given a “driving video”
+
+![](../../assets/D3-60.png)     
+
+Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023    
+
+P61   
+### Gen-1
+
+ - Condition on structure (depth) and content (CLIP) information.   
+ - Depth maps are passed with latents as input conditions.   
+ - CLIP image embeddings are provided via cross-attention blocks.   
+ - During inference, CLIP text embeddings are converted to CLIP image embeddings.    
+
+![](../../assets/D3-61.png)     
+
+> &#x2705; 用 depth estimator 从源视频提取 struct 信息，用 CLIP 从文本中提取 content 信息。   
+> &#x2705; depth 和 content 分别用两种形式注入。depth 作为条件，与 lantent concat 到一起。content 以 cross attention 的形式注入。    
 
 P194   
 ## Pix2Video
 
 Framewise depth-guided video editing
 
+ - Given a sequence of frames, generate a new set of images that reflects an edit.   
+ - Editing methods on individual images fail to preserve temporal information.    
+
+Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023    
+
+> &#x2705; 没有 3D diffusion model，只是用 2D diffusion model 生成多张图像并拼成序列。关键在于保持时序的连续性。    
+
  - Leverage a pretrained per-frame depth-conditioned Stable Diffusion model to edit frame by frame, to maintain motion consistency between source video and edited video
  - No need for training/finetuning
- - Challenge is how to ensure temporal consistency?   
 
 ![](../../assets/08-194.png) 
 
-Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.   
-
-
 P195   
-## Pix2Video
 
-Framewise depth-guided video editing
+### How to ensure temporal consistency?   
 
- - How to ensure temporal consistency?   
-    - Obtain initial noise from DDIM inversion   
+#### Obtain initial noise from DDIM inversion   
 
-![](../../assets/08-195.png) 
-
-Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
+![](../../assets/08-195.png)  
 
 > &#x2705; (1) 用每一帧的原始图像的 inversion 作为 init noise.   
 > &#x2705; (2) 下一帧的生成会引用上一帧的 latent.    
@@ -76,36 +94,32 @@ Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.
 
 
 P196   
-## Pix2Video
+#### **Self-Attention injection:** 
 
-Framewise depth-guided video editing
+Inject self-attention features from the previous frame in U-Net for generating the current frame    
 
- - How to ensure temporal consistency?    
-    - Inject self-attention features from the previous frame in U-Net for generating the current frame    
-    - Use the latent of the previous frame to guide latent update of the current frame   
- 
-![](../../assets/08-196.png) 
+![](../../assets/D3-63-1.png)   
 
-Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.    
+- Use the latent of the previous frame as keys and values to guide latent update of the current frame   
+
+![](../../assets/D3-63-2.png)    
+
+![](../../assets/D3-64.png)    
+
+> &#x2705; reconstruction guidance，使生成的 latent code 与上一帧接近。    
+
+> &#x2705; (1) 使用 DDIM inversion 把图像转为 noise．   
+> &#x2705; (2) 相邻的 fram 应 inversion 出相似的 noise．    
+> &#x2705; 使用 self-attention injection 得到相似的 noise.
 
 P197   
-## Pix2Video
-
-Framewise depth-guided video editing
+### Result
 
 ![](../../assets/08-197.png) 
 
-Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023   
-
 P198   
-## Pix2Video
-
-Framewise depth-guided video editing
 
 ![](../../assets/08-198.png) 
-
-Ceylan et al., “Pix2Video: Video Editing using Image Diffusion,” ICCV 2023.
-
 
 P199   
 ## ControlNet / Multiple Control

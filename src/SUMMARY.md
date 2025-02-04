@@ -15,13 +15,13 @@
 - [Image Applications Based on 基模型]()
   - [图像编辑](diffusion-tutorial-part/diffusiontutorialpart2.md)
   - [图像去噪/图像超分/图像补全](diffusion-tutorial-part/Applicationsonotherdomains/DiffusionModelsforInverseProblems.md)
+  - [大图生成](diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.md)
 - [3D Applications Based on Diffusion]()
   - [3D表示](diffusion-tutorial-part/Applicationsonotherdomains/3D.md)
   - [3D生成](diffusion-tutorial-part/Applicationsonotherdomains/2Ddiffusionmodelsfor3Dgeneration.md)
   - [新视角合成](diffusion-tutorial-part/Applicationsonotherdomains/Diffusionmodelsforviewsynthesis.md)
   - [3D重建](diffusion-tutorial-part/Applicationsonotherdomains/3Dreconstruction.md)
   - [3D编辑](diffusion-tutorial-part/Applicationsonotherdomains/Inverseproblems.md)
-- [Video style transfer / editing methods](diffusion-tutorial-part/Applicationsonotherdomains/Videostyletransfer.md)
 - [Safety and limitations of diffusion models](diffusion-tutorial-part/Applicationsonotherdomains/Safetyandlimitationsofdiffusionmodels.md)
 
 # Video Diffusion Models
