@@ -49,6 +49,7 @@
 - [Human Motion Generation: A Survey](HumanMotionGenerationSummary.md)
 - [Human Video Generation](HumanVideoGeneration.md)
 - [数据集](数据集.md)
+- [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial.md)
   
 
 
