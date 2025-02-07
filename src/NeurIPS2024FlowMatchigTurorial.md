@@ -29,7 +29,7 @@ Train by regressing a **velocity**, sample by following the **velocity**
 P8    
 ## The Generative Modeling Problem
 
-![](./assets/P8图.PNG)   
+![](../assets/P8图.PNG)   
 
 > 正方形代表所有可能的状态所构成的空间，即图像空间正方形中的每个点代表一个sample，即一张图像。      
 \\(P\\) 是源分布，\\(Q\\) 是目标分布。     
