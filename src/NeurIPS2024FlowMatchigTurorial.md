@@ -66,7 +66,7 @@ P11
 P12   
 • For now, we focus on flows…    
 
-![](assets/P12图.png)
+![](assets/P12图-1.png)
 
 > 流的特点：(1) 确定性，已知 \\(X_t\\)，那么 \\(X_{t+h}\\) 是确定的。(2) 平滑       
 流的优势：(1) sample 速度快 (2) 可以构建模型似然的无偏后计器。      
