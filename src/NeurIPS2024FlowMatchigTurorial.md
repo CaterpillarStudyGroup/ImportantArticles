@@ -80,6 +80,8 @@ P13
 > \\(\Psi_t\\) 是一个双射函数，因此它可以重塑空间而不丢失信息。    
 通过对高维空间的 warping，使 \\(P\\) 分布逐步变为 \\(Q\\) 分布。     
 
+> 对两个双射函数做线性组合，得到的函数不能保持其双射的特性，因此，基于双射函数的模型难以被参数化（设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。    
+
 P14     
 ## Flow = Velocity    
 
@@ -92,6 +94,10 @@ $$
 • **Pros**: velocities are <u>**linear**</u>      
 • **Cons**: simulate to sample      
 
+> 可以利用速度对流做参数化，在这里，速度是指 \\(P\\) 分布中的每个 sample 向 \\(Q\\) 分布中对应 sample 变化的速度（快慢和方向）。    
+对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.     
+使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
+使用速度的缺点：得到 sample 出速度后，要再解一次 ODE。   
 
 P15    
 Velocity \\(u_t\\) **generates** \\(p_t\\) if     
@@ -100,6 +106,12 @@ $$
 X _t=\Psi _t(X_0)\sim p_t
 $$
 
+
+> 使用速度来定义边缘概率路径。   
+
+P16        
+
+> Flow Matching 的训练：学习一个速度模型，由速度得到边缘路径概率 \\(P_t\\)，使得 \\(P_0 = P\\),\\(P_1= Q\\)。     
 
 P17    
 ## Sampling a flow model
@@ -113,6 +125,8 @@ $$
 Use any ODE numerical solver.      
 One that works well: **Midpoint**     
 
+> Flow Matching 的推断：(1) 从 \\(P\\) 分布中 sample 一个 noise (2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
+
 
 P19    
 ## Simplest version of Flow Matching 
@@ -125,9 +139,14 @@ $$
 $$
 
 
-"Flow Matching for Generative Modeling" Lipman el al. (2022)
-"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)
-"Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)
+"Flow Matching for Generative Modeling" Lipman el al. (2022)      
+"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
+"Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
+
+> (1) 随机构造源 \\(X_o\\) 和目标 \\(X_1\\)。     
+(2) 在 [O，1] 区间随机采样一个时间步 \\(t\\)。    
+(3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
+(4) \\(X_t\\) 是网络输入，让网络输出逼近\\(X_1-X_0\\)。     
 
 P20     
 ## Simplest version of Flow Matching 
@@ -138,6 +157,9 @@ P20
 Why does it work?      
 • Build flow from conditional flows      
 • Regress conditional flows      
+
+> 这里没有对 \\(X_0\\) 和 \\(X_1\\) 所属的分布作限制。 \\(X_0\\) 和 \\(X_1\\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。    
+条件流是指一些简单的，固定的部分。   
 
 P21    
 ## Build flow from conditional flows
@@ -151,29 +173,11 @@ $$
 \\(p_{t|1}(x|x_1)\\) conditional probability     
 \\(u_t(x|x_1)\\) conditional velocity     
 
+  
+> 假设目标分布只有 \\(X_1\\) 这一个点，那么流和速度是这样的。    
 
 P22    
 ## Build flow from conditional flows
 
 ![](assets/P22图.png)    
 
-
-P13  
-对两个双射函数做线性组合，得到的函数不能保持其双射的特性，因此，基于双射函数的模型难以被参数化（设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。
-P14．可以利用速度对流做参数化，在这里，速度是指P分布中的每个.sample向Q分布中对应sample变化的速度（快慢和方向）。
-对Flow做微分可以得到velocity，对velocily解常微分方程，可以得到Flow.
-使用速度的好处，速度是线性的，可以相加或分解，因此可以对速度做参数化.
-使用速度的缺点：得到sample出速度后，要再解一次ODE。
-P15使用速度来定义边缘概率路径。
-P16 Flow Matching的训练：学习一个速度模型，由速度得到边缘路径概率Pt，使得1P _ { 0 } = P ,
-\underline { P _ { 1 } = Q } 。
-P17．Flow Matching的推断：（1）从P分布中sample一个noise，（2）根随速度（解ODE）得到对应
-
-在Q分布中的sample。
-P19．（1）随机构造源Xo和目标x1。是
-（2）在EO，1］区间随机采样一个时间步t。
-（3）Xt是x。与x1的线性组合
-（4）Xt是网络输入，让网络输出逼近x1-x。P20这里没有对Xo和X1所属的分布作限制．X。和X，可以是独立的噪声和图像，也可以是具有某种关系（黑白与彩色）的pair data.
-空合
-条件流是指一些简单的，固定的部分，
-P21假设目标分布只有x，这一个点，那么流和速度是这样的。
