@@ -143,8 +143,8 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
 "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
 
-> (1) 随机构造源 \\(X_o\\) 和目标 \\(X_1\\)。     
-(2) 在 [O，1] 区间随机采样一个时间步 \\(t\\)。    
+> (1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
+(2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
 (3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
 (4) \\(X_t\\) 是网络输入，让网络输出逼近\\(X_1-X_0\\)。     
 
