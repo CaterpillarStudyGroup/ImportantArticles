@@ -129,4 +129,31 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)
 "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)
 
+P20     
+## Simplest version of Flow Matching 
+
+• Arbitrary \\(X_{0\sim p},X_{1\sim q}\\)      
+• Arbitrary coupling \\((X_0,X_1)\sim \pi _{0，1}\\)     
+
+Why does it work?      
+• Build flow from conditional flows      
+• Regress conditional flows      
+
+P21    
+## Build flow from conditional flows
  
+![](assets/P21图.png)    
+
+$$
+X_t=\Psi _t(X_0|x_1)=(1-t)X_0+tx_1
+$$
+
+\\(p_{t|1}(x|x_1)\\) conditional probability     
+\\(u_t(x|x_1)\\) conditional velocity     
+
+
+P22    
+## Build flow from conditional flows
+
+![](assets/P22图.png)    
+
