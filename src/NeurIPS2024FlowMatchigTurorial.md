@@ -80,8 +80,17 @@ P13
 > \\(\Psi_t\\) 是一个双射函数，因此它可以重塑空间而不丢失信息。    
 通过对高维空间的 warping，使 \\(P\\) 分布逐步变为 \\(Q\\) 分布。     
 
+P14     
+## Flow = Velocity    
 
+![](assets/P14图1.png)
 
+$$
+\frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
+$$
+
+• **Pros**: velocities are <u>**linear**</u>
+• **Cons**: simulate to sample
 
 
 
