@@ -83,17 +83,50 @@ P13
 P14     
 ## Flow = Velocity    
 
-![](assets/P14图1.png)
+![](assets/P14图1.png)    
 
 $$
 \frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
 $$
 
-• **Pros**: velocities are <u>**linear**</u>
-• **Cons**: simulate to sample
+• **Pros**: velocities are <u>**linear**</u>      
+• **Cons**: simulate to sample      
 
 
+P15    
+Velocity \\(u_t\\) **generates** \\(p_t\\) if     
+
+$$
+X _t=\Psi _t(X_0)\sim p_t
+$$
 
 
+P17    
+## Sampling a flow model
+
+![](assets/P17图.png)    
+
+$$
+\frac{d}{dt} X_t=u^0_t(X_t)
+$$
+
+Use any ODE numerical solver.      
+One that works well: **Midpoint**     
+
+
+P19    
+## Simplest version of Flow Matching 
+
+![](assets/P19图1.png)    
+![](assets/P19图2.png)    
+
+$$
+\mathbb{E } _{t,X_0,X_1}||u_t^0(X_t)-(X_1-X_0)||^2
+$$
+
+
+"Flow Matching for Generative Modeling" Lipman el al. (2022)
+"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)
+"Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)
 
  
