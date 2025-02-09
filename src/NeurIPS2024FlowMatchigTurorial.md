@@ -111,7 +111,7 @@ $$
 
 P16        
 
-> Flow Matching 的训练：学习一个速度模型，由速度得到边缘路径概率 \\(p_t\\)，使得 \\(p_0 = p\\)， \\(p_1= Q\\)     
+> Flow Matching 的训练：学习一个速度模型，由速度得到边缘路径概率 \\(P_t\\)，使得 \\(P_0 = p\\)， \\(P_1= Q\\)     
 
 P17    
 ## Sampling a flow model
@@ -143,7 +143,8 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
 "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
 
-> (1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
+> **flow matching**      
+(1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
 (2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
 (3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
 (4) \\(X_t\\) 是网络输入，让网络输出逼近\\(X_1-X_0\\)。     
@@ -177,7 +178,6 @@ $$
 > 假设目标分布只有 \\(X_1\\) 这一个点，那么流和速度是这样的。    
 
 P22    
-## Build flow from conditional flows
 
 ![](assets/P22图.png)    
 
