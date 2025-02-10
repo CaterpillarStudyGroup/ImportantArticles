@@ -323,3 +323,11 @@ $$
 
 ![](assets/P39图2.png)  
 
+P40    
+## Conditional Models
+
+Train same neural network on all conditions:     
+
+![](assets/P40图1.png)    
+
+![](assets/P40图2.png)  
