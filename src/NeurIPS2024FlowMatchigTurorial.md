@@ -434,10 +434,72 @@ Given uncoupled **source** and **target** distributions,can we build a coupling 
 P64    
 ## Multisample Couplings   
 
+![](assets/P64图.png)    
 
 Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)      
 
-
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)     
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)       
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)      
+
+P69   
+## Multisample Couplings    
+
+Use mini batch optimal transport couplings     
+
+![](assets/P69图.png)    
+
+"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
+
+P70    
+$$
+\mathrm{When} \quad k = 1 → π_{0,1} = p(X_0)q(X_1)
+$$
+
+
+P71    
+**FM with cond-OT is not marginal OT!**    
+
+When \\(k → ∞, u_t\\) generates the OT map    
+
+P72    
+## Multisample Couplings    
+
+![](assets/P72图.png)    
+
+"SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)     
+"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
+
+P73    
+## Data Couplings    
+
+**Paired data:**     
+"I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
+"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
+"Simulation-Free Training of Neural ODEs on Paired Data" Kim et al. (2024)    
+
+**Multisample couplings:**     
+"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
+"SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)   
+"Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)   
+
+
+P75    
+## Geometric Flow Matching
+
+|||
+|--|--|
+| Data with Symmetries | Riemannian Manifolds |
+| ![](assets/P75图1.png) | ![](assets/P75图3.png) |
+| • Equivariant flows → invariant densities <br>• Alignment couplings | • Simulation free on simple manifolds <br> • General geometries |
+
+
+
+
+  
+
+
+
