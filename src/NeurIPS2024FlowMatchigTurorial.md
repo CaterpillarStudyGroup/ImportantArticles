@@ -284,3 +284,42 @@ p(x) = 𝒩(x |0 , I) \quad  π_{0,1}(x_0, x_1) = p(x_0)q(x_1)
 $$
 
 ![](assets/P31图.png)    
+
+P32   　
+##　Affine and Gaussian paths
+
+![](assets/P32图.png)    
+
+P33     
+
+![](assets/P33图.png)    
+
+
+P34     
+## 02 Flow Matching Advanced Designs
+
+
+P35     
+
+![](assets/P35图.png)    
+
+
+P37     
+
+## Conditioning and Guidance 
+
+![](assets/P37图.png)    
+
+
+P39     
+
+## Conditional Models
+
+$$
+p_{t,1|Y}(x, x_1|y) = p_{t|1}(x|x_1)q(x_1|y)
+$$
+
+![](assets/P39图1.png)    
+
+![](assets/P39图2.png)  
+
