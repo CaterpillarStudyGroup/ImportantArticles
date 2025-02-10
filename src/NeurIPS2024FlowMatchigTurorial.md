@@ -280,5 +280,7 @@ P31
 ## Gaussian paths
 
 $$
-
+p(x) = 𝒩(x |0 , I) \quad  π_{0,1}(x_0, x_1) = p(x_0)q(x_1)
 $$
+
+![](assets/P31图.png)    
