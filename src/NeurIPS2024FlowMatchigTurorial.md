@@ -143,7 +143,7 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
 "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
 
-> **flow matching**      
+> **flow matching 的训练**      
 (1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
 (2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
 (3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
