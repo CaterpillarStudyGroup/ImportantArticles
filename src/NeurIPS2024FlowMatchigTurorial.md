@@ -255,3 +255,30 @@ $$
 
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
 "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
+
+P29    
+## Flow Matching with Cond-OT
+
+![](assets/P29图.png)    
+
+$$
+ℒ_{CFM}(θ) = \mathbb{E}D(u^θ_t (X_t),u_t(X_t|X_1))
+$$
+
+$$
+ℒ_{CFM}(θ) = \mathbb{E}||u^θ_t (X_t)-(X_1-X_0)||^ 2 
+$$
+
+P30    
+## Affine paths
+
+![](assets/P30图1.png)    
+
+![](assets/P30图2.png)    
+
+P31    
+## Gaussian paths
+
+$$
+
+$$
