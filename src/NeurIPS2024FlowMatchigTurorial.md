@@ -496,10 +496,30 @@ P75
 | ![](assets/P75图1.png) | ![](assets/P75图3.png) |
 | • Equivariant flows → invariant densities <br>• Alignment couplings | • Simulation free on simple manifolds <br> • General geometries |
 
+P87    
+## Equivariant Flows   
 
+![](assets/P87图1.png)     
 
+![](assets/P87图2.png)     
 
+"Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
+
+P88    
+## Equivariant Flow Matching    
+
+Equivariant Velocity     
+
+$$ 
+u^θ_t (g⋅x) = g⋅u^θ_t(x)
+$$
+
+Train with CFM:     
   
+![](assets/P88图2.png)     
+
+"Equivariant flow matching" Klein et al. (2023)     
+"Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
 
 
