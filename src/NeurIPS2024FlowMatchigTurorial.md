@@ -359,3 +359,85 @@ Flow Matching with Classifier-Free guidance:
 "Audiobox: Unified Audio Generation with Natural Language Prompts" Vyas et al. (2023)        
 "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis" Esser et al. (2024)       
 "Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
+
+
+P45   
+## Guidance for Flow Matching
+
+"Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
+![](assets/P45图.png)    
+
+P46    
+## Guidance for Flow Matching
+
+**Open Problem **     
+How to guide FM with non-Gaussian paths?      
+
+P47    
+Data Couplings     
+
+![](assets/P47图.png)    
+
+P49    
+
+$$
+X_t = ψ_t(X_0|X_1)
+$$
+
+![](assets/P49图.png) 
+
+$$
+(X_0,X_1) ∼ π_{0,1} = p(X_0)q(X_1)
+$$
+
+What about dependent couplings?      
+
+P52    
+## Data Couplings
+
+|||
+|--|--|
+| ![](assets/P52图1.png)  | ![](assets/P52图2.png)  |
+| • Non-Gaussian source distribution <br>• Alternative conditioning approach <br>• Inverse problems | • Applications to Optimal Transport <br> • Efficiency: straighter trajectories |
+
+
+P58    
+## Paired Data
+
+![](assets/P58图1.png)     
+
+![](assets/P58图2.png)     
+
+Alter **source distribution** and **coupling** instead of adding **condition**      
+
+
+P60    
+
+![](assets/P60图.png)     
+
+P61    
+## Result   
+
+![](assets/P61图.png)     
+
+
+P63    
+## Multisample Couplings   
+
+![](assets/P63图.png)     
+
+Given uncoupled **source** and **target** distributions,can we build a coupling to induce straighter paths?      
+
+"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)    
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)     
+
+P64    
+## Multisample Couplings   
+
+
+Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)      
+
+
+"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)     
+"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
+"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)       
