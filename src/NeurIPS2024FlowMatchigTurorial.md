@@ -521,5 +521,7 @@ Train with CFM:
 "Equivariant flow matching" Klein et al. (2023)     
 "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
+P89    
 
+![](assets/P89图.png)     
 
