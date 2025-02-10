@@ -181,3 +181,30 @@ P22
 
 ![](assets/P22图.png)    
 
+P23    
+## The Marginalization Trick
+
+![](assets/P23图.png)    
+
+
+P24    
+## Flow Matching Loss
+
+• Flow Matching loss:     
+
+$$
+ℒ_{FM}(θ) = \mathbb{E}  _{t,X_t}||u^θ_t (X_t) − u_t(X_t)||^ 2 
+$$
+
+• Conditional Flow Matching loss:    
+
+$$
+ℒ_{CFM}(θ) = \mathbb{E}  _{t,X_1,X_t}||u^θ_t (X_t) − u_t(X_t|X_1)||^ 2 
+$$
+
+**Theorem:** Losses are equivalent,     
+
+$$
+\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
+$$
+
