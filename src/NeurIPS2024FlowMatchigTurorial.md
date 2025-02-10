@@ -525,3 +525,119 @@ P89
 
 ![](assets/P89图.png)     
 
+P90    
+## Equivariant Flow Matching    
+
+Equivariant Velocity     
+
+$$ 
+u^θ_t (g⋅x) = g⋅u^θ_t(x)
+$$
+
+Train with CFM:    
+
+![](assets/P90图1.png)     
+
+![](assets/P90图2.png)    
+
+P91   
+
+"Equivariant flow matching" Klein et al. (2023)    
+"Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
+
+P92     
+## Equivariant Flow Matching    
+
+|||
+|--|--|
+| "Fast Point Cloud Generation with Straight Flows" Wu et al. (2022) | "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)<br> "Equivariant flow matching" Klein et al. (2023)|
+| ![](assets/P92图1.png)  | ![](assets/P92图2.png) |
+
+P94    
+## Generative Modeling on Manifolds    
+
+
+P95   
+Need to re-define the geometric structures we have in Euclidean space.     
+
+P98    
+## Riemannian Manifolds
+
+![](assets/P98图.png)    
+
+P99   
+
+![](assets/P99图.png)    
+
+
+P101   
+## Riemannian Flow Matching
+
+• **Riemannian Flow Matching loss:**   
+
+![](assets/P101图.png)    
+
+P102    
+• **Riemannian Conditional Flow Matching loss:**     
+
+![](assets/P102图.png)   
+
+Theorem: Losses are equivalent,     
+
+$$
+∇_θℒ_{RFM}(θ) = ∇_θℒ_{RCFM}(θ)
+$$
+
+P103   
+## Conditional Flows - Simple Geometries    
+
+![](assets/P103图1.png)   
+
+![](assets/P103图2.png)   
+
+![](assets/P103图3.png)   
+
+**For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic):   
+
+P104    
+## Conditional Flows - General Geometries    
+
+**Geodesics** can be hard to compute    
+
+![](assets/P104图.png)   
+
+Concentrate probability at boundary    
+
+"Flow Matching on General Geometries" Chen & Lipman (2023)   
+
+P105   
+## Conditional Flows - General Geometries   
+
+Choose a **premetric** satisfying:     
+1. Non-negative:\\(d(x,y) ≥ 0\\).      
+2. Positive: \\(d(x, y) = 0\\) iff \\(x = y\\).     
+3. Non-degenerate:\\(∇d(x, y) ≠ 0\\) iff \\(x ≠ y\\).    
+
+Build **conditional flow** satisfying:    
+
+$$ 
+d(ψ_t(x_0|x_1),x_1) = \tilde{κ}(t)d(x_0,x_1)
+$$
+
+$$
+\mathrm{Scheduler}  \quad \tilde{κ} (t) = 1 − κ(t)
+$$
+
+P106   
+
+![](assets/P106图.png)   
+ 
+P107   
+
+![](assets/P107图.png)   
+
+
+P108   
+
+![](assets/P108图.png)   
+ 
