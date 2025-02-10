@@ -208,3 +208,50 @@ $$
 \nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
 $$
 
+P25    
+## Generalized Flow Matching Loss
+
+• Flow Matching loss:    
+
+![](assets/P25图1.png)    
+
+• Conditional Flow Matching loss:     
+
+![](assets/P25图2.png)    
+
+Theorem: Losses are equivalent iff D is a Bregman divergence.     
+
+$$
+\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
+$$
+
+P26    
+## Generalized Matching Loss
+
+**Theorem:** Losses are equivalent **iff** \\(D\\) is a **Bregman divergence**.      
+
+![](assets/P26图.png)    
+
+P27    
+## How to choose \\(ψ_t(x|x_1)\\)?      
+
+• Optimal Transport minimizes **Kinetic Energy**:    
+
+$$
+\int_{0}^{1} \mathbb{E} _{X_t\sim p_t}||u_t(X_t)||^2dt\le \mathbb{E} _{X_0,X_1}\int_{0}^{1}|| \dot{ψ} _t(X_0|X_1)||^2dt
+$$
+
+![](assets/P27图.png)    
+
+$$
+ψ _t(x|x_1)=tx_1+(1-t)x
+$$
+
+**Linear conditional flow:**      
+• Minimizes bound     
+• Reduces KE of initial coupling      
+• Exact OT for single data points     
+• <u>**Not**</u> Optimal Transport (but in high dim straighter)      
+
+"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
+"On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
