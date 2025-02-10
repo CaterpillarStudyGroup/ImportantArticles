@@ -331,3 +331,31 @@ Train same neural network on all conditions:
 ![](assets/P40图1.png)    
 
 ![](assets/P40图2.png)  
+
+P41    
+## Conditional Models - Examples
+
+![](assets/P41图.png)    
+
+“Flow Matching for Generative Modeling” Lipman et al. (2022)       
+“GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)     
+
+P42     
+## Guidance for Score Matching
+
+![](assets/P42图.png)    
+
+P43     
+## Guidance for Flow Matching    
+
+Assume a velocity field trained with **Gaussian paths**.      
+
+![](assets/P43图.png)    
+
+P44    
+Flow Matching with Classifier-Free guidance:     
+"Guided Flows for Generative Modeling and Decision Making" Zheng et al. (2023)     
+"Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
+"Audiobox: Unified Audio Generation with Natural Language Prompts" Vyas et al. (2023)        
+"Scaling Rectified Flow Transformers for High-Resolution Image Synthesis" Esser et al. (2024)       
+"Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
