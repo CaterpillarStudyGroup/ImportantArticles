@@ -20,7 +20,7 @@ P39
 ## Conditional Models
 
 $$
-p_{t,1|Y}(x, x_1|y) = p_{t|1}(x|x_1)q(x_1|y)
+p_ {t,1|Y} (x, x_1|y) = p_ {t|1}(x|x_1)q(x_1|y)
 $$
 
 ![](assets/P39图1.png)    
