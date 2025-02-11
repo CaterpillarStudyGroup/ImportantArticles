@@ -126,6 +126,7 @@ P61
 
 ![](assets/P61图.png)     
 
+"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)   
 
 P63    
 ## Multisample Couplings   
