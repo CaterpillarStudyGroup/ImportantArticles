@@ -263,7 +263,7 @@ $$
 
 > ① 如果最小化动能，能让路径变得直，且速度 ① 恒定。    
 直接优化动能不容易，因此给它设定一个 Jensen bound，来限制边缘速度的动能。     
-当\\(x_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
+当\\(X_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
 
 
 **Linear conditional flow:**      
@@ -275,7 +275,7 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
 "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
 
-> ② 当动能最小化时，\\(x_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分币中只有一个 \\(X_1\\) 时）。  
+> ② 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分币中只有一个 \\(X_1\\) 时）。  
 
 P29    
 ## Flow Matching with Cond-OT
