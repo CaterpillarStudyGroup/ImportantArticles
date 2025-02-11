@@ -74,7 +74,7 @@ P45
 P46    
 ## Guidance for Flow Matching
 
-**Open Problem **     
+**Open Problem**     
 How to guide FM with non-Gaussian paths?      
 
 P47    
