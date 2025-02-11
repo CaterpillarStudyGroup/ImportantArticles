@@ -68,3 +68,35 @@ Related by a **scaling & time** transformation:
 
 “Elucidating the design space of diffusion-based generative models” Karras et al. (2023)    
 “Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
+
+P126   
+## Faster sampling by only modifying the solver   
+
+**Bespoke solvers:**    
+**Decouples** model & solver.     
+Model is left unchanged.    
+Parameterize solver and optimize.   
+
+**Can be interpreted as** finding best scheduler + more.   
+
+**Solver consistency:** sample quality is retained as NFE → ∞.    
+
+![](assets/P126图.png)    
+
+“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)    
+“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)    
+
+P127    
+## Faster sampling by only modifying the solver
+
+Bespoke solvers can t**ransfer across different data sets and resolutions**.     
+
+$$
+\mathrm{Caveat} 
+$$
+
+However, **does not reach distillation performance at extremely low NFEs.**    
+
+“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
+“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
+
