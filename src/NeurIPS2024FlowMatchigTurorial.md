@@ -301,7 +301,7 @@ P30
 ![](assets/P30图2.png)    
 
 P31    
-## Gaussian paths
+## Gaussian paths   
 
 $$
 p(x) = 𝒩(x |0 , I) \quad  π_{0,1}(x_0, x_1) = p(x_0)q(x_1)
@@ -310,7 +310,7 @@ $$
 ![](assets/P31图.png)    
 
 P32   　
-##　Affine and Gaussian paths
+## Affine and Gaussian paths    
 
 ![](assets/P32图.png)    
 
