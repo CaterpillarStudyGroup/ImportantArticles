@@ -211,7 +211,7 @@ $$
 **Theorem:** Losses are equivalent,     
 
 $$
-\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
+\nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
 $$
   
 > 目标函数：回归边缘速度场。    
@@ -235,7 +235,7 @@ $$
 \nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
 $$
 
-\\(\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)\\)
+
   
 > 用 Bregman 散度代替 L2，因为所学习的是一个条件期望。
 
