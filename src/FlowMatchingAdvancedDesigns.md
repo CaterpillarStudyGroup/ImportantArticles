@@ -114,6 +114,8 @@ P58
 
 Alter **source distribution** and **coupling** instead of adding **condition**      
 
+"I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
+"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
 
 P60    
 
