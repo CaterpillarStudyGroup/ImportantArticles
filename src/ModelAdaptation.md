@@ -100,3 +100,35 @@ However, **does not reach distillation performance at extremely low NFEs.**
 “Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
 “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
 
+P128   
+## Faster sampling references   
+
+**Rectified flows:**    
+“Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)     
+“InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2024)     
+“Improving the Training of Rectified Flows” Lee et al. (2024)    
+
+**Consistency & shortcut models:**      
+“Consistency Models” Song et al. (2023)    
+“Improved Techniques for Training Consistency Models” Song & Dhariwal (2023)    
+“One Step Diffusion via Shortcut Models” Frans et al. (2024)    
+
+**Trained & bespoke solvers:**    
+
+“DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics” Zheng et al. (2023)     
+“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
+“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
+
+P129   
+## You’ve trained a model. What next?   
+
+Inverse Problems (Training-Free)     
+
+P133    
+## Solving inverse problems by posterior inference   
+
+![](assets/P133图.png)    
+
+“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)    
+“Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
+
