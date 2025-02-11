@@ -337,6 +337,8 @@ $$
 P106   
 
 ![](assets/P106图.png)   
+
+"Flow Matching on General Geometries" Chen & Lipman (2023)    
  
 P107   
 
@@ -346,6 +348,9 @@ P107
 P108   
 
 ![](assets/P108图.png)   
+
+"Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)    
+"Flow Matching on General Geometries" Chen & Lipman (2023)      
 
 P109    
 ## Riemannian Flow vs. Score Matching
