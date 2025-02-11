@@ -4,7 +4,7 @@ P111
 P112    
 ## You’ve trained a model. What next?
 
-![](assets/P112图.png)    
+![](../assets/P112图.png)    
 
 P113    
 Faster Sampling   
@@ -12,7 +12,7 @@ Faster Sampling
 P114    
 ## Faster sampling by straightening the flow   
 
-![](assets/P114图.png)    
+![](../assets/P114图.png)    
 
 $$
 ℒ(θ) = \mathbb{E} _ {t,(X_0,X_1)∼π_ {0,1}^0}||u^θ_t (X_t) − (X_1 − X_0)||^2
@@ -27,28 +27,28 @@ Rectified Flow refits using the **pre-trained (noise, data) coupling**.
 P116    
 ## Faster sampling by straightening the flow    
 
-![](assets/P116图.png)    
+![](../assets/P116图.png)    
 
 “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
 
 P118    
 ## Faster sampling by self-consistency loss   
 
-![](assets/P118图.png)    
+![](../assets/P118图.png)    
 
 “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
 P119    
 ## Faster sampling by self-consistency loss   
 
-![](assets/P119图.png)    
+![](../assets/P119图.png)    
 
 “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
 P121    
 ## Faster sampling by self-consistency loss    
 
-![](assets/P121图.png)    
+![](../assets/P121图.png)    
 
 “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
@@ -57,13 +57,13 @@ P124
 
 **Can adapt pre-trainedmodels to different schedulers**.  
 
-![](assets/P124图1.png)    
+![](../assets/P124图1.png)    
 
 Related by a **scaling & time** transformation:    
 
-![](assets/P124图2.png)    
+![](../assets/P124图2.png)    
 
-![](assets/P124图3.png)    
+![](../assets/P124图3.png)    
 
 
 “Elucidating the design space of diffusion-based generative models” Karras et al. (2023)    
@@ -81,7 +81,7 @@ Parameterize solver and optimize.
 
 **Solver consistency:** sample quality is retained as NFE → ∞.    
 
-![](assets/P126图.png)    
+![](../assets/P126图.png)    
 
 “Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)    
 “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)    
@@ -127,7 +127,7 @@ Inverse Problems (Training-Free)
 P133    
 ## Solving inverse problems by posterior inference   
 
-![](assets/P133图.png)    
+![](../assets/P133图.png)    
 
 “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)    
 “Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
