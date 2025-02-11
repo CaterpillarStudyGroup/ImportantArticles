@@ -284,6 +284,8 @@ P101
 
 ![](assets/P101图.png)    
 
+"Flow Matching on General Geometries" Chen & Lipman (2023)   
+
 P102    
 • **Riemannian Conditional Flow Matching loss:**     
 
