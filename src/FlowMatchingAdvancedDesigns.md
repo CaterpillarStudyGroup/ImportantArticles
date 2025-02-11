@@ -297,6 +297,8 @@ $$
 ∇_θℒ_{RFM}(θ) = ∇_θℒ_{RCFM}(θ)
 $$
 
+"Flow Matching on General Geometries" Chen & Lipman (2023)    
+
 P103   
 ## Conditional Flows - Simple Geometries    
 
@@ -307,6 +309,8 @@ P103
 **For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic):   
 
 ![](assets/P103图3.png)   
+
+"Flow Matching on General Geometries" Chen & Lipman (2023)   
 
 P104    
 ## Conditional Flows - General Geometries    
