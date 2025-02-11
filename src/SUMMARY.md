@@ -50,9 +50,9 @@
 - [Human Video Generation](HumanVideoGeneration.md)
 - [数据集](数据集.md)
 - [NeurIPS 2024 Flow Matchig Turorial](Others/NeurIPS2024FlowMatchigTurorial.md)
-  - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
-  - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
-  - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
+  - [Flow Matching Basics](Others/NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
+  - [Flow Matching Advanced Designs](Others/NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
+  - [Model Adaptation](Others/NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
 
 
   
