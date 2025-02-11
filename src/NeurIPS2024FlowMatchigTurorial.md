@@ -232,7 +232,7 @@ P25
 Theorem: Losses are equivalent iff D is a Bregman divergence.     
 
 $$
-\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
+\nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
 $$
 
 \\(\nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)\\)
