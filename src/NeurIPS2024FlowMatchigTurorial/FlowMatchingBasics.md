@@ -19,7 +19,7 @@ Train by regressing a **velocity**, sample by following the **velocity**
 P8    
 ## The Generative Modeling Problem
 
-![](assets/P8图.png)   
+![](../assets/P8图.png)   
 
 > 正方形代表所有可能的状态所构成的空间，即图像空间。正方形中的每个点代表一个sample，即一张图像。      
 \\(P\\) 是源分布，\\(Q\\) 是目标分布。     
@@ -35,9 +35,9 @@ P10
 
 • Continuous-time Markov process       
 
-![](assets/P10图1-1.png)
+![](../assets/P10图1-1.png)
 
-![](assets/P10图2.png)
+![](../assets/P10图2.png)
 
 
 > 增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。\\(\Phi\\) 是从一次生成到另一次生成的转移函数。    
@@ -48,7 +48,7 @@ P11
 
 ## Marginal probability path
 
-![](assets/P11图.png)
+![](../assets/P11图.png)
 
 > 边缘概率路径，是指，任意一个特定的 \\(t\\) 时刻，\\(X_t\\) 所属于的分布 \\(P_t\\)。 即连续时间上的分布簇。    
 生成模型最重要的是，边缘概率路径以 \\(P\\) 分布开始，以 \\(Q\\) 分布结束。     
@@ -56,7 +56,7 @@ P11
 P12   
 • For now, we focus on flows…    
 
-![](assets/P12-1图.png)
+![](../assets/P12-1图.png)
 
 > 流的特点：(1) 确定性，已知 \\(X_t\\)，那么 \\(X_{t+h}\\) 是确定的。(2) 平滑       
 流的优势：(1) sample 速度快 (2) 可以构建模型似然的无偏估计器。      
@@ -66,7 +66,7 @@ P13
 ## Flow as a generative model    
 
 
-![](assets/P13图.png)
+![](../assets/P13图.png)
 
 
 
@@ -78,7 +78,7 @@ P13
 P14     
 ## Flow = Velocity    
 
-![](assets/P14图1.png)    
+![](../assets/P14图1.png)    
 
 $$
 \frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
@@ -109,7 +109,7 @@ P16
 P17    
 ## Sampling a flow model
 
-![](assets/P17图.png)    
+![](../assets/P17图.png)    
 
 $$
 \frac{d}{dt} X_t=u^0_t(X_t)
@@ -124,8 +124,8 @@ One that works well: **Midpoint**
 P19    
 ## Simplest version of Flow Matching 
 
-![](assets/P19图1.png)    
-![](assets/P19图2.png)    
+![](../assets/P19图1.png)    
+![](../assets/P19图2.png)    
 
 $$
 \mathbb{E } _{t,X_0,X_1}||u_t^0(X_t)-(X_1-X_0)||^2
@@ -158,7 +158,7 @@ Why does it work?
 P21    
 ## Build flow from conditional flows
  
-![](assets/P21图.png)    
+![](../assets/P21图.png)    
 
 $$
 X_t=\Psi _t(X_0|x_1)=(1-t)X_0+tx_1
@@ -175,7 +175,7 @@ $$
 
 P22    
 
-![](assets/P22图.png)    
+![](../assets/P22图.png)    
   
 > 实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sanple，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t1条件}\\) ，综合得到的 \\(p_t（X）\\) 是这 \\(P_{t1条件}\\) 的期望。    
 \\(u_t（X）\\) 也可以以这种方式得出。    
@@ -183,7 +183,7 @@ P22
 P23    
 ## The Marginalization Trick
 
-![](assets/P23图.png)    
+![](../assets/P23图.png)    
 
 
 P24    
@@ -216,11 +216,11 @@ P25
 
 • Flow Matching loss:    
 
-![](assets/P25图1.png)    
+![](../assets/P25图1.png)    
 
 • Conditional Flow Matching loss:     
 
-![](assets/P25图2.png)    
+![](../assets/P25图2.png)    
 
 Theorem: Losses are equivalent iff D is a Bregman divergence.     
 
@@ -237,16 +237,16 @@ P26
 
 **Theorem:** Losses are equivalent **iff** \\(D\\) is a **Bregman divergence**.      
 
-![](assets/P26图.png)    
+![](../assets/P26图.png)    
 
 P27    
 ## How to choose \\(ψ_t(x|x_1)\\)?      
 
 • Optimal Transport minimizes **Kinetic Energy**:    
 
-![](assets/P27图1.png)    
+![](../assets/P27图1.png)    
 
-![](assets/P27图.png)    
+![](../assets/P27图.png)    
 
 $$
 ψ _t(x|x_1)=tx_1+(1-t)x
@@ -271,7 +271,7 @@ $$
 P29    
 ## Flow Matching with Cond-OT
 
-![](assets/P29图.png)    
+![](../assets/P29图.png)    
 
 $$
 ℒ_{CFM}(θ) = \mathbb{E}D(u^θ_t (X_t),u_t(X_t|X_1))
@@ -287,9 +287,9 @@ $$
 P30    
 ## Affine paths
 
-![](assets/P30图1.png)    
+![](../assets/P30图1.png)    
 
-![](assets/P30图2.png)    
+![](../assets/P30图2.png)    
 
 P31    
 ## Gaussian paths   
@@ -298,16 +298,16 @@ $$
 p(x) = 𝒩(x |0 , I) \quad  π_{0,1}(x_0, x_1) = p(x_0)q(x_1)
 $$
 
-![](assets/P31图.png)    
+![](../assets/P31图.png)    
 
 P32   　
 ## Affine and Gaussian paths    
 
-![](assets/P32图.png)    
+![](../assets/P32图.png)    
 
 P33     
 
-![](assets/P33图.png)    
+![](../assets/P33图.png)    
 
 
 
