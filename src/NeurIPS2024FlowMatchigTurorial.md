@@ -255,6 +255,12 @@ $$
 \int^{1}_ {0} \mathbb{E} _ {X_t \sim p_t}||u_t(X_t)||^2dt \le \mathbb{E} _ {X_0,X_1} \int^{1}_{0}|| \dot{ψ} _ t(X_0|X_1)||^2dt
 $$
 
+1
+
+$$
+\int_{0}^{1} \mathbb{E} _ {X_t \sim p_t}||u_t(X_t)||^2dt \le \mathbb{E} _ {X_0,X_1} \int_{0}^{1}|| \dot{ψ} _ t(X_0|X_1)||^2dt
+$$
+
 ![](assets/P27图.png)    
 
 $$
