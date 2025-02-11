@@ -332,6 +332,8 @@ $$
 \mathrm{Scheduler}  \quad \tilde{κ} (t) = 1 − κ(t)
 $$
 
+"Flow Matching on General Geometries" Chen & Lipman (2023)   
+
 P106   
 
 ![](assets/P106图.png)   
