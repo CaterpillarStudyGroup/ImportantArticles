@@ -275,7 +275,7 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
 "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
 
-> ② 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分币中只有一个 \\(X_1\\) 时）。  
+> ② 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分布中只有一个 \\(X_1\\) 时）。  
 
 P29    
 ## Flow Matching with Cond-OT
