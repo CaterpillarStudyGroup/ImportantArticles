@@ -177,9 +177,15 @@ $$
   
 > 假设目标分布只有 \\(X_1\\) 这一个点，那么流和速度是这样的。    
 
+
+
+
 P22    
 
 ![](assets/P22图.png)    
+  
+> 实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sanple，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t1条件}\\)，综合得到的 \\(p_t（x）\\) 是这\\(P_{t1条件}\\)的期望。    
+\\(u_t（x）\\) 也可以以这种方式得出。    
 
 P23    
 ## The Marginalization Trick
@@ -207,6 +213,10 @@ $$
 $$
 \nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
 $$
+  
+> 目标函数：回归边缘速度场。    
+结论：仅回归条件速度，与回归 flow 相同。    
+使用条件分布（公式 2）相比于公式 1 的好处是，可以逐个样本去计算，而不需要对整个数集做平均。    
 
 P25    
 ## Generalized Flow Matching Loss
@@ -224,6 +234,8 @@ Theorem: Losses are equivalent iff D is a Bregman divergence.
 $$
 \nabla _θℒ_{FM}(θ) = \nabla _θℒ_{CFM}(θ)
 $$
+  
+> 用 Bregman 散度代替 L2，因为所学习的是一个条件期望。
 
 P26    
 ## Generalized Matching Loss
@@ -247,6 +259,11 @@ $$
 ψ _t(x|x_1)=tx_1+(1-t)x
 $$
 
+> ① 如果最小化动能，能让路径变得直，且速度 ① 恒定。    
+直接优化动能不容易，因此给它设定一个 Jensen bound，来限制边缘速度的动能。     
+当\\(x_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
+
+
 **Linear conditional flow:**      
 • Minimizes bound     
 • Reduces KE of initial coupling      
@@ -255,6 +272,8 @@ $$
 
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
 "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
+
+> ② 当动能最小化时，\\(x_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分币中只有一个 \\(X_1\\) 时）。  
 
 P29    
 ## Flow Matching with Cond-OT
@@ -268,6 +287,9 @@ $$
 $$
 ℒ_{CFM}(θ) = \mathbb{E}||u^θ_t (X_t)-(X_1-X_0)||^ 2 
 $$
+
+> 平方范数是一个 Brueggemann 散度。     
+对于特定的 \\(X_0\\) 和 \\(X_1\\) ， \\(X_1-X_0\\) 是条件路径的条件速度。   
 
 P30    
 ## Affine paths
@@ -295,24 +317,11 @@ P33
 ![](assets/P33图.png)    
 
 
-P22   
-实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sanple，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t1条件}\\)，综合得到的 \\(p_t（x）\\) 是这\\(P_{t1条件}\\)的期望。    
-\\(u_t（x）\\) 也可以以这种方式得出。    
 
-P24    
-目标函数：回归边缘速度场。    
-结论：仅回归条件速度，与回归 flow 相同。    
-使用条件分布（公式 2）相比于公式 1 的好处是，可以逐个样本去计算，而不需要对整个数集做平均。     
+ 
 
-P25  
-用 Bregman 散度代替 L2，因为所学习的是一个条件期望。
 
-P27    
-① 如果最小化动能，能让路径变得直，且速度 ① 恒定。    
-直接优化动能不容易，因此给它设定一个 Jensen bound，来限制边缘速度的动能。     
-当\\(x_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
-② 当动能最小化时，\\(x_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分币中只有一个 \\(X_1\\) 时）。      
 
-P29    
-平方范数是一个 Brueggemann 散度。     
-对于特定的 \\(X_0\\) 和 \\(X_1\\) ， \\(X_1-X_0\\) 是条件路径的条件速度。     
+    
+
+  
