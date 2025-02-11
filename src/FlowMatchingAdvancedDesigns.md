@@ -299,9 +299,9 @@ P103
 
 ![](assets/P103图2.png)   
 
-![](assets/P103图3.png)   
-
 **For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic):   
+
+![](assets/P103图3.png)   
 
 P104    
 ## Conditional Flows - General Geometries    
