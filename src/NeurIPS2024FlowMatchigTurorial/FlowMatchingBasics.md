@@ -321,7 +321,7 @@ P33
 1.diffusion 通过定义 forward process）然后再反转来生成概率路径。    
 flow matching 通过将所有已知的条件概率路径的聚合来生成概率路径。    
 2.diffusion 构造了 forward prossess，需要一个根据 forward process 构造条件概率的闭式解，因此会要求 \\(P\\) 是高斯，且 \\(P\\)和 \\(Q\\) 独立。    
-flow matching 没有这样的限制，\\(P\\) 和\\(Q\\) 可以是任意的分布。
+flow matching 没有这样的限制，\\(P\\) 和 \\(Q\\) 可以是任意的分布。
 
  
 
