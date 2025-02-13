@@ -178,7 +178,7 @@ P22
 ![](../assets/P22图.png)    
   
 > 实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sanple，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t|条件}\\) ，综合得到的 \\(p_t（X）\\) 是这 \\(P_{t|条件}\\) 的期望。    
-\\(u_t（X）\\) 也可以以这种方式得出。    
+\\(u_t(X)\\) 也可以以这种方式得出。    
 
 P23    
 ## The Marginalization Trick
@@ -252,7 +252,7 @@ $$
 ψ _t(x|x_1)=tx_1+(1-t)x
 $$
 
-> ① 如果最小化动能，能让路径变得直，且速度 ① 恒定。    
+> 如果最小化动能，能让路径变得直，且速度恒定。    
 直接优化动能不容易，因此给它设定一个 Jensen bound，来限制边缘速度的动能。     
 当\\(X_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
 
@@ -266,7 +266,7 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
 "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
 
-> ② 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分布中只有一个 \\(X_1\\) 时）。  
+> 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分布中只有一个 \\(X_1\\) 时）。  
 
 P29    
 ## Flow Matching with Cond-OT
