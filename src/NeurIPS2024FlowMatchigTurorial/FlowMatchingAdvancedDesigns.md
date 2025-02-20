@@ -7,6 +7,9 @@ P35
 
 ![](../assets/P35图.png)    
 
+> 1．条件生成    
+2．P分布和Q分布耦合的场景    
+3．在几何域上使用flow matching 构造生成模型    
 
 P37     
 
@@ -27,6 +30,9 @@ $$
 
 ![](../assets/P39图2.png)  
 
+> 将条件概率路径构建为不显式依赖于条件 \\(Y\\)。     
+
+
 P40    
 ## Conditional Models
 
@@ -36,6 +42,9 @@ Train same neural network on all conditions:
 
 ![](../assets/P40图2.png)  
 
+> 对于网络训练的影响在于，数据增加一个维度来表示\\(Y\\)。     
+
+
 P41    
 ## Conditional Models - Examples
 
@@ -44,10 +53,16 @@ P41
 “Flow Matching for Generative Modeling” Lipman et al. (2022)       
 “GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)     
 
+> 此方法在“每个条件都有大量数据”时很有用，例如条件是类别时。      
+条件是文本时不适用，因为数据集里一段文本通常只对应一张图像。     
+
 P42     
 ## Guidance for Score Matching
 
 ![](../assets/P42图.png)    
+
+> classifier Guidance；通过引入分类器，将无条件模型变成条件模型.
+CFG：条件生成结果与无条件生成结果外插。    
 
 P43     
 ## Guidance for Flow Matching    
@@ -55,6 +70,8 @@ P43
 Assume a velocity field trained with **Gaussian paths**.      
 
 ![](../assets/P43图.png)    
+
+> 以上是来自 score matching 的公式，同样的方法适配到 flow matching.    
 
 P44    
 Flow Matching with Classifier-Free guidance:     
@@ -70,6 +87,8 @@ P45
 
 "Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
 ![](../assets/P45图.png)    
+
+> 基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于diffusion.     
 
 P46    
 ## Guidance for Flow Matching
