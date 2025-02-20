@@ -8,8 +8,8 @@ P35
 ![](../assets/P35图.png)    
 
 > 1．条件生成    
-2．P分布和Q分布耦合的场景    
-3．在几何域上使用flow matching 构造生成模型    
+2．\\(P\\) 分布和 \\(Q\\) 分布耦合的场景    
+3．在几何域上使用 flow matching 构造生成模型    
 
 P37     
 
@@ -61,7 +61,7 @@ P42
 
 ![](../assets/P42图.png)    
 
-> classifier Guidance；通过引入分类器，将无条件模型变成条件模型.
+> classifier Guidance：通过引入分类器，将无条件模型变成条件模型.     
 CFG：条件生成结果与无条件生成结果外插。    
 
 P43     
@@ -88,7 +88,7 @@ P45
 "Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
 ![](../assets/P45图.png)    
 
-> 基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于diffusion.     
+> 基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于 diffusion.     
 
 P46    
 ## Guidance for Flow Matching
