@@ -171,7 +171,7 @@ Given uncoupled **source** and **target** distributions,can we build a coupling 
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)    
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)     
 
-> 有一个预训练的 flow matching 模型，构建一种耦合，使 \\(P\\)到 \\(Q\\) 的路径更直线，或 \\(Q\\) 能更好地采样。    
+> 有一个预训练的 flow matching 模型，构建一种耦合，使 \\(P\\) 到 \\(Q\\) 的路径更直线，或 \\(Q\\) 能更好地采样。    
 
 P64    
 ## Multisample Couplings   
@@ -184,7 +184,7 @@ Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)      
 
-P64 耦合cost限制了动能．降低coupling cost，就能减少动能.k个
+> 耦合 cost 限制了动能．降低 coupling cost，就能减少动能。     
 
 P69   
 ## Multisample Couplings    
@@ -196,7 +196,7 @@ Use mini batch optimal transport couplings
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
-> 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样一点，寻找两组点之间的最优排列，来最小化 cost.    
+> 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样 \\(k\\) 个点，寻找两组点之间的最优排列，来最小化 cost.    
 假设找到了最优组合，随机选择一对。    
 
 P70    
