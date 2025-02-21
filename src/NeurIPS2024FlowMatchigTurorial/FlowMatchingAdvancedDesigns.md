@@ -256,7 +256,7 @@ P87
 
 "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
-> 有些对象具有对称性，希望生成的对象也能满足这些特算。     
+> 有些对象具有对称性，希望生成的对象也能满足这些特征。     
 
 P88    
 ## Equivariant Flow Matching    
