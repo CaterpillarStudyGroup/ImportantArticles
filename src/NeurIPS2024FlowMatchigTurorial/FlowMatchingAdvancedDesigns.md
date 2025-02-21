@@ -96,6 +96,9 @@ P46
 **Open Problem**     
 How to guide FM with non-Gaussian paths?      
 
+> CFG 要求正在学习时二
+模型、但 flow matching 不局限于高斯源。     
+
 P47    
 Data Couplings     
 
@@ -114,6 +117,14 @@ $$
 $$
 
 What about dependent couplings?      
+
+> 前面工作都假设 \\(P\\) 和 \\(Q\\) 是独立的。     
+
+P50    
+
+> 两种方法，利用 \\(P\\) 和 \\(Q\\) 的耦合关系优化生成过程。    
+1．利用耦合关系，构造另一种条件方法。     
+2．试图找到多样本之间的耦合关系。      
 
 P52    
 ## Data Couplings
@@ -136,6 +147,9 @@ Alter **source distribution** and **coupling** instead of adding **condition**
 "I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
 "Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
 
+> 改变源分布和耦合，而不是添加条件。    
+源分布不是噪声，而是 \\(Y\\) 添加噪声，损失不变。     
+
 P60    
 
 ![](../assets/P60图.png)     
@@ -157,6 +171,8 @@ Given uncoupled **source** and **target** distributions,can we build a coupling 
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)    
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)     
 
+> 有一个预训练的 flow matching 模型，构建一种耦合，使 \\(P\\)到 \\(Q\\) 的路径更直线，或 \\(Q\\) 能更好地采样。    
+
 P64    
 ## Multisample Couplings   
 
@@ -168,6 +184,8 @@ Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)      
 
+P64 耦合cost限制了动能．降低coupling cost，就能减少动能.k个
+
 P69   
 ## Multisample Couplings    
 
@@ -178,10 +196,15 @@ Use mini batch optimal transport couplings
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
+> 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样一点，寻找两组点之间的最优排列，来最小化 cost.    
+假设找到了最优组合，随机选择一对。    
+
 P70    
 $$
 \mathrm{When} \quad k = 1 → π_{0,1} = p(X_0)q(X_1)
 $$
+
+> 当 \\(k＝1\\) 时，相当于 \\(P\\) 和 \\(Q\\) 是独立的。    
 
 
 P71    
@@ -197,6 +220,8 @@ P72
 "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)     
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
+
+> 低维时，此方法能明显降低 cost；高维时，路径本身已接近直线，因此效果不明显。     
 
 P73    
 ## Data Couplings    
@@ -231,6 +256,8 @@ P87
 
 "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
+> 有些对象具有对称性，希望生成的对象也能满足这些特算。     
+
 P88    
 ## Equivariant Flow Matching    
 
@@ -251,6 +278,8 @@ P89
 
 ![](../assets/P89图.png)     
 
+> 假设 \\(P\\) 和 \\(Q\\) 是独立的，会发生这种情况。    
+
 P90    
 ## Equivariant Flow Matching    
 
@@ -265,6 +294,8 @@ Train with CFM:
 ![](../assets/P90图1.png)     
 
 ![](../assets/P90图2.png)    
+
+> 导致模型学到的轨迹弯曲。     
 
 P91   
 
