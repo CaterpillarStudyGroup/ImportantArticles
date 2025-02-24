@@ -96,8 +96,7 @@ P46
 **Open Problem**     
 How to guide FM with non-Gaussian paths?      
 
-> CFG 要求正在学习时二
-模型、但 flow matching 不局限于高斯源。     
+> CFG 要求正在学习的是具有高斯路径的 flow matching 模型、但 flow matching 不局限于高斯源。     
 
 P47    
 Data Couplings     
