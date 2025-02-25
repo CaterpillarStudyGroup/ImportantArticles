@@ -301,6 +301,8 @@ P91
 "Equivariant flow matching" Klein et al. (2023)    
 "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
+> 这两篇 Paper 提出对齐耦合；解决以上问题。       
+
 P92     
 ## Equivariant Flow Matching    
 
@@ -309,22 +311,36 @@ P92
 | "Fast Point Cloud Generation with Straight Flows" Wu et al. (2022) | "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)<br> "Equivariant flow matching" Klein et al. (2023)|
 | ![](../assets/P92图1.png)  | ![](../assets/P92图2.png) |
 
+> 此方法适用于点元和分子。    
+
 P94    
 ## Generative Modeling on Manifolds    
 
+> 生成流形数据，而是整个欧拉空间。     
 
 P95   
 Need to re-define the geometric structures we have in Euclidean space.     
+
+> 重新定义几何结构，以便定义 flow matching 模型。     
 
 P98    
 ## Riemannian Manifolds
 
 ![](../assets/P98图.png)    
 
+> 假设只考虑黎曼流形      
+1．光滑流形，即可微，能够定义切空间。      
+2．选择一个内积来完成几何结构，描述流形上的角度和距离。    
+
 P99   
 
 ![](../assets/P99图.png)    
 
+Pl00      
+
+> 构建黎曼流形时，速度定义在切空间上。    
+这样 \\(v\\) 和 \\(x\\) 不在同一空间，计算出 \\(v\\) 以后，要投影回 \\(X\\).     
+\\(V\\) 指速度，\\(x\\) 指流形。     
 
 P101   
 ## Riemannian Flow Matching
@@ -355,6 +371,8 @@ P103
 
 ![](../assets/P103图2.png)   
 
+> 测地线是流形上的最短路径。      
+
 **For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic):   
 
 ![](../assets/P103图3.png)   
@@ -371,6 +389,8 @@ P104
 Concentrate probability at boundary    
 
 "Flow Matching on General Geometries" Chen & Lipman (2023)   
+
+> 这种复杂流形难以计算。     
 
 P105   
 ## Conditional Flows - General Geometries   
@@ -392,16 +412,21 @@ $$
 
 "Flow Matching on General Geometries" Chen & Lipman (2023)   
 
+> 为了解决以上问题，提出了一种新的度量方法。      
+
 P106   
 
 ![](../assets/P106图.png)   
 
 "Flow Matching on General Geometries" Chen & Lipman (2023)    
  
+> 对时间求导，得到微分方程。     
+
 P107   
 
 ![](../assets/P107图.png)   
 
+> 新度量方法与测地距离比较。     
 
 P108   
 
@@ -409,6 +434,11 @@ P108
 
 "Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)    
 "Flow Matching on General Geometries" Chen & Lipman (2023)      
+
+> flow matching 的优势      
+（1）simulate free，速度快      
+（2）解 ODE 比解 SDE 容易     
+（3）\\(U_t（X_t|x_1）\\)是精确值，\\(\nabla \mathrm{log}\\) \\(p_t（x|x_0）\\) 是近似值。    
 
 P109    
 ## Riemannian Flow vs. Score Matching
