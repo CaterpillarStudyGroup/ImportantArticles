@@ -311,7 +311,7 @@ P92
 | "Fast Point Cloud Generation with Straight Flows" Wu et al. (2022) | "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)<br> "Equivariant flow matching" Klein et al. (2023)|
 | ![](../assets/P92图1.png)  | ![](../assets/P92图2.png) |
 
-> 此方法适用于点元和分子。    
+> 此方法适用于点云和分子。    
 
 P94    
 ## Generative Modeling on Manifolds    
