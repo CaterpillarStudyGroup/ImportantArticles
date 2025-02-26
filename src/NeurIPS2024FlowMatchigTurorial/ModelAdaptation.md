@@ -48,7 +48,7 @@ P118
 
 “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
-> 增大 \\(h\\)，在 \\(x_t\\) 和 \\(X_{t＋h}\\) 之间建立 shortcut，类似于diffusion 中的蒸馏方法。     
+> 增大 \\(h\\)，在 \\(x_t\\) 和 \\(X_{t＋h}\\) 之间建立 shortcut，类似于 diffusion 中的蒸馏方法。     
 
 P119    
 ## Faster sampling by self-consistency loss   
