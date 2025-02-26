@@ -438,7 +438,7 @@ P108
 > flow matching 的优势      
 （1）simulate free，速度快      
 （2）解 ODE 比解 SDE 容易     
-（3）\\(u_t（X_t|X_1）\\)是精确值，\\(\nabla \mathrm{log}\\) \\(p_t（x|x_0）\\) 是近似值。    
+（3）\\(u_t(X_t|X_1)\\)是精确值，\\(\nabla \mathrm{log}\\) \\(p_t(x|x_0)\\) 是近似值。    
 
 P109    
 ## Riemannian Flow vs. Score Matching
