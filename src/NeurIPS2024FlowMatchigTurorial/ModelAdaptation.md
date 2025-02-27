@@ -88,7 +88,7 @@ Related by a **scaling & time** transformation:
 
 ![](../assets/P124图2.png)    
 
-> 补充：关于调度器．\\(\alpha _t\\) 和\\(\sigma _t\\)．     
+> 补充：关于调度器．\\(\alpha _t\\) 和 \\(\sigma _t\\)．     
 有一个用 scheduler A 训练好的模型，现在预要一个用 scheduler B 训练，这两个模型是什么关系？       
 
 ![](../assets/P124图3.png)    
