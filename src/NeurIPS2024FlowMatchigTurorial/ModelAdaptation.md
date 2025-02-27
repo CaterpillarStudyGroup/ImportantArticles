@@ -32,12 +32,20 @@ Rectified Flow refits using the **pre-trained (noise, data) coupling**.
 
 P115     
 
-> Result，Diffusion 对比 Rectified Flow      
+
 
 P116    
 ## Faster sampling by straightening the flow    
 
-![](../assets/P116图.png)    
+![](../assets/P116图-1.png)    
+
+> Result，Diffusion 对比 Rectified Flow      
+
+$$
+{\Large \mathbf{caveat} }
+$$
+
+Enforcing **straightness restricts** the model. Often a slight drop in sample quality
 
 “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
 
