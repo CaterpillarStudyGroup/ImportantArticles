@@ -42,7 +42,7 @@ P116
 > Result，Diffusion 对比 Rectified Flow      
 
 $$
-{\Large \mathbf{caveat} }
+\mathrm{Caveat} 
 $$
 
 Enforcing **straightness restricts** the model. Often a slight drop in sample quality
