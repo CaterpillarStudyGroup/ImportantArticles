@@ -257,6 +257,9 @@ P141
 “End-to-End Diffusion Latent Optimization Improves Classifier Guidance” Wallace et al. (2023)      
 “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)      
 
+> 方法 1：通过修改 sample 方法来逐步接近目标。这些方法大多数受到某种后验推断的启发，可以在准确性和效率之间 trade off.     
+方法 2：简单但开销很大。        
+
 P144     
 ## Data-driven and reward-driven fine-tuning    
 
@@ -264,6 +267,9 @@ P144
 |--|--|
 | ![](../assets/P144图-1.png)  | ![](../assets/P144图-2.png)  |
 | A lot of focus put into **data set curation** through human filtering. | Can use **human preference models** or text-to-image alignment. | 
+
+> Data-driven 的关键在于精心准备数据集。     
+Reward-driven 不增加训练数据，而是给模型输出一个 reward。finetune 的目标是生成得分高的 sample.      
 
 P145    
 ## Reward fine-tuning by gradient descent   
@@ -294,6 +300,8 @@ Still relatively easy to **over-optimize** reward models; **“reward hacking”
 
 “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)       
 
+> 这种方法没有 GT，所以生成结果有可能对 reward model 过拟合。因此需要使用 LoRA.      
+
 P149    
 ## Reward fine-tuning by stochastic optimal control   
 
@@ -301,6 +309,11 @@ P149
 
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)      
+
+> 和直接优化相比，RLHF 通常针对 tilted（倾斜的）分布。即将一个预训练分布倾科为能得到更高奖励的分布。      
+公式（2）蓝色项：微调模型应与预训练模型接近。这是用于 tilted 分布的常用方法。但这里不这样用。      
+这里采用公式（3），即引入 value function bias．     
+value function bias 是 \\(X＝X_0\\)时，所有可能的 \\(X_1\\) 的期望。    
 
 P150    
 
@@ -315,3 +328,5 @@ $$
 
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
+
+> 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布     
