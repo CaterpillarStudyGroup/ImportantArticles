@@ -304,10 +304,14 @@ P149
 
 P150    
 
-**Intuition:** Both initial noise p(X and the model affect 0) ubase
-t pbase
-(X1)
+**Intuition:** Both initial noise \\(p(X_0)\\) and the model \\(u_t^{base}\\) affect \\(p^{base}(X_1)\\).    
 
+[Uehara et al. 2024] proposes to learn the optimal source distribution \\(p^\ast (X_0)\\).      
+[Domingo-Enrich et al. 2024] proposes to **remove the dependency** between \\(X_0, X_1\\).     
+
+$$
+p^\ast (X_{(0,1)})=p^{base}(X_{(0,1)})\mathrm{exp} (r(X_1)+const.)\Rightarrow p^\ast (X_1)\propto p^{base}(X_1)\mathrm{exp} (r(X_1))
+$$
 
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
