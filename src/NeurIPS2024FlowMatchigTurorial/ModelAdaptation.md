@@ -177,12 +177,39 @@ P133
 用高斯来近似其中未知的部分 (score function)      
 score function 可能是 multi 的，但实验证明仅用高斯也能有比较好的效果。     
 
-P135    
+P134   
+
+$$
+\mathrm{Caveats} 
+$$
+
+Typically requires known **linear** corruption and **Gaussian prob path**.     
+Can randomly fail due to the **heuristic** sampling.    
+
+“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)      
+“Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
+
+P135      
+
+## Solving inverse problems by optimizing the source
+
+1. Don’t want to rely on **likelihoods / densities**.     
+2. Have observation \\(y\\) being nonlinear in \\(x_1\\).     
+
+![](../assets/P135图.png)    
+
+“Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)      
+“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
 
 > 预训练一个生成模型，然后有这个模型来评估数据，评估结果很不可靠，它把真实数据评估为高密度，非真实数据评估为低密度。       
 因为，高密度\\(\ne\\) 高采样率。     
 
 P138     
+## Solving inverse problems by optimizing the source
+
+![](../assets/P138图.png)    
+
+“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
 
 > 逆问题转化为优化问题。     
 
@@ -191,3 +218,96 @@ X_1=\psi (X_0)
 $$
 
 \\(\psi \\) 是预训练的生成模型，不优化 \\(\psi \\) 的参数，那就优化\\(X_0\\) 因为 \\(\psi \\) 是一个平滑、可逆、可微的函数。     
+
+P139    
+## Solving inverse problems by optimizing the source
+
+$$ 
+\min_{x_0} L(\psi ^0_1(x_0))
+$$
+
+**Theory:** Jacobian of the flow \\(\nabla _{x_0}\psi ^0_1\\) projects the gradient along the data manifold.      
+
+**Intuition:** Diffeomorphism enables **mode hopping**!      
+
+P140    
+
+**Simplicity** allows application in **multiple domains**.      
+
+**Caveat:** Requires multiple simulations and differentiation of \\(\psi ^0_1\\).     
+
+“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
+
+P141    
+
+## Inverse problems references    
+
+**Online sampling methods inspired by posterior inference:**     
+
+“Diffusion Posterior Sampling for General Noisy Inverse Problems” Chung et al. (2022)     
+“A Variational Perspective on Solving Inverse Problems with Diffusion Models” Mardani et al. (2023)      
+“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)     
+“Training-free Linear Image Inverses via Flows” Pokle et al. (2023)     
+“Practical and Asymptotically Exact Conditional Sampling in Diffusion Models” Wu et al. (2023)      
+“Monte Carlo guided Diffusion for Bayesian linear inverse problems” Cardoso et al. (2023)     
+
+**Source point optimization:**     
+
+“Differentiable Gaussianization Layers for Inverse Problems Regularized by Deep Generative Models" Li (2021)     
+“End-to-End Diffusion Latent Optimization Improves Classifier Guidance” Wallace et al. (2023)      
+“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)      
+
+P144     
+## Data-driven and reward-driven fine-tuning    
+
+|||
+|--|--|
+| ![](../assets/P144图-1.png)  | ![](../assets/P144图-2.png)  |
+| A lot of focus put into **data set curation** through human filtering. | Can use **human preference models** or text-to-image alignment. | 
+
+P145    
+## Reward fine-tuning by gradient descent   
+
+Initializing with a pre-trained flow model \\(p^\theta\\)：    
+
+$$
+\max_{\theta } \mathbb{E} _{X_1\sim p^\theta }[r(X_1)]
+$$
+
+Optimize the reward model with RL [Black et al. 2023]       
+or direct gradients [Xu et al. 2023, Clark et al. 2024]      
+
+![](../assets/P145图.png)
+
+“Training diffusion models with reinforcement learning” Black et al. (2023)      
+“Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)       
+“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)      
+
+P146    
+
+$$
+\mathrm{Caveats} 
+$$
+
+Requires using **LoRA** to heuristically stay close to the original model.       
+Still relatively easy to **over-optimize** reward models; **“reward hacking”**.     
+
+“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)       
+
+P149    
+## Reward fine-tuning by stochastic optimal control   
+
+![](../assets/P149图.png)
+
+“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
+“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)      
+
+P150    
+
+**Intuition:** Both initial noise p(X and the model affect 0) ubase
+t pbase
+(X1)
+
+
+“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
+“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
