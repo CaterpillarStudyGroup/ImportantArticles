@@ -234,7 +234,7 @@ P140
 
 **Simplicity** allows application in **multiple domains**.      
 
-**Caveat:** Requires multiple simulations and differentiation of \\(\psi ^0_1\\).     
+**Caveat:** Requires multiple simulations and differentiation of \\(\psi ^\theta _1\\).     
 
 “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
 
