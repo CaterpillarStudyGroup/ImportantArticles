@@ -223,10 +223,10 @@ P139
 ## Solving inverse problems by optimizing the source
 
 $$ 
-\min_{x_0} L(\psi ^0_1(x_0))
+\min_{x_0} L(\psi ^\theta _1(x_0))
 $$
 
-**Theory:** Jacobian of the flow \\(\nabla _{x_0}\psi ^0_1\\) projects the gradient along the data manifold.      
+**Theory:** Jacobian of the flow \\(\nabla _{x_0}\psi ^\theta_1\\) projects the gradient along the data manifold.      
 
 **Intuition:** Diffeomorphism enables **mode hopping**!      
 
