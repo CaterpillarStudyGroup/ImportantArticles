@@ -117,9 +117,10 @@ Parameterize solver and optimize.
 “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)    
 
 > Bespoke Solver：      
-1．模型与 solver 解耦，模型不变，仅优化求 solver.     
+1．模型与 solver 解耦，模型不变，仅优化求 solver.      
 2．向 solver 中仅入参数(表达 scheduler)，优化这些参数。     
-由于仅优化solver，好处：1．可以保持 solver 的一致性。     
+由于仅优化solver，好处：    
+1．可以保持 solver 的一致性。     
 2．在不同的模型(不同数据集、分辨率等训练出来的模型)之间可迁移。     
 局限性：    
 虽然能(不重训)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。       
@@ -171,8 +172,10 @@ P133
 
 “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)    
 “Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
-> \\(X_1\\) 为干净图像，\\(y\\) 为噪声图像。    
-用高斯来近似其中未知的部分 (score function) score function 可能是 multi 的，但实验证明仅用高斯也能有比较好的效果。     
+
+> \\(x_1\\) 为干净图像，\\(y\\) 为噪声图像。    
+用高斯来近似其中未知的部分 (score function)      
+score function 可能是 multi 的，但实验证明仅用高斯也能有比较好的效果。     
 
 P135    
 
