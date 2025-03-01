@@ -53,6 +53,7 @@
    - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
    - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
    - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
+   - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
 
 
 
