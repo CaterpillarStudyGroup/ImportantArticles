@@ -329,12 +329,21 @@ $$
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
 
-> 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布     
+> 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布，那么 \\(X_1\\) 的分布也会改变。    
+由于 \\(X_1\\) 同时受模型和 noise 分布的影响，那么 RLHF 同时优化这两个因素。     
+或者，改变采样方法，让 \\(X_0\\) 分布与 \\(X_1\\) 分布独立。那么此时，value function 是一个常数。     
+     
 
 P151    
 ## Reward fine-tuning by stochastic optimal control
 
-![](../assets/P151图.png)
+![](../assets/P151图.png)   
+
+> 这篇论文的主要内容：     
+1．使用 flow matching 在真实图像上训练后，再使用 ODE 采样，能得到真实的输出。    
+2．把 ODE 过程改成无记忆 SDE（强制 \\(X_0\\) 与 \\(X_1\\) 独立），那么在早期的 sample step 实际上没有什么收益，因为那时候 \\(X\\) 大部分都是噪声。因此 SD 的采样结果不符合预训练的分布。     
+3．2 其实是 finetune 的过程，因为 finetune 过程，不使用 flow 的sample 方式，而是 SDE 的 sample 方式。     
+4．finetune 之后，可以把 SDE 换回成 DDE。     
 
 P152    
 ## Reward fine-tuning references
