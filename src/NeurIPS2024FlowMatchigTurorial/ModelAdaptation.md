@@ -331,3 +331,23 @@ $$
 
 > 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布     
 
+P151    
+## Reward fine-tuning by stochastic optimal control
+
+![](../assets/P151图.png)
+
+P152    
+## Reward fine-tuning references
+
+**Gradient-based optimization:**     
+
+“DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models” Fan et al. (2023)     
+“Training diffusion models with reinforcement learning” Black et al. (2023)     
+“Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)     
+“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)     
+
+**Stochastic optimal control:**     
+
+“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
+“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” 
+Domingo-Enrich et al. (2024)     
