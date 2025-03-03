@@ -348,7 +348,7 @@ P151
 4．finetune 之后，可以把 SDE 换回成 DDE。     
 
 P152    
-## Reward fine-tuning references
+## Reward fine-tuning 总结
 
 **Gradient-based optimization:**     
 
