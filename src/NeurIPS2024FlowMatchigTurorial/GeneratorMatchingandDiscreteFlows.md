@@ -78,3 +78,20 @@ P166
 ![](../assets/P166图-2.png)
 
 “A Continuous Time Framework for Discrete Denoising Models” Campbell et al. (2022)     
+
+P167    
+## Build (factorized) velocities
+
+![](../assets/P167图.png)
+
+“Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)     
+“Discrete Flow Matching” Gat el al. (2024)     
+
+P168    
+## Discrete Flow Matching Loss
+
+![](../assets/P168图.png)
+
+“Discrete Flow Matching” Gat el al. (2024)    
+"Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
+“Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution” Lou et al. (2024)     
