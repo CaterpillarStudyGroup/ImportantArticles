@@ -90,6 +90,8 @@ P167
 P168    
 ## Discrete Flow Matching Loss
 
+\\(\mathcal{L}\\) 
+
 ![](../assets/P168图.png)
 
 “Discrete Flow Matching” Gat el al. (2024)    
