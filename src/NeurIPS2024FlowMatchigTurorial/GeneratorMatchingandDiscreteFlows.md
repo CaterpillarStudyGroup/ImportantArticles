@@ -19,7 +19,7 @@ CTMC 是一个离散空间上的过程转移的例子。所有的状态来自某
 P156    
 ## Generator
 
-Generalize the notion of velocity to arbitrary CTMP 
+Generalize the notion of **velocity** to arbitrary CTMP 
 
 ![](../assets/P156图.png)
 
@@ -42,6 +42,10 @@ P158
 ![](../assets/P158图.png)
 
 P159    
+## Generator Matching
+
+![](../assets/P159图.png)
+
 > 这里与前面的区别是速度改成了生成器。     
 
 P160    
