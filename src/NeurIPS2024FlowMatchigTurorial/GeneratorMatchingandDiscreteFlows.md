@@ -109,7 +109,7 @@ P168
 
 
 $$
-ℒ_{CDFM}(\theta )=\mathbb{E}_{t,X_1,X_t} \sum_{i}^{} D_{X_t}(\frac{1}{1-t}\delta (\cdot ,X_1^i),u_t^{\theta,i}(\cdot ,X_t))  
+ℒ _ {CDFM}(\theta )=\mathbb{E} _ {t,X_1,X_t} \sum _ {i}^{} D_{X_t}(\frac{1}{1-t}\delta (\cdot ,X_1^i),u_t^{\theta,i}(\cdot ,X_t))  
 $$
 
 ![](../assets/P168图.png)
