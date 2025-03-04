@@ -101,5 +101,24 @@ $$
 "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
 “Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution” Lou et al. (2024)     
 
+P169    
+## Example: code generation model (1.7B)    
 
+![](../assets/P169图.png)
 
+“Discrete Flow Matching” Gat el al. (2024)     
+
+P171    
+
+OPEN PROBLEMS FOR DISCRETE FLOWS     
+
+How to go beyond the factorized velocity?     
+Better sampling?    
+How to explore the (huge) design space?     
+
+![](../assets/P170图.png)
+
+P172    
+## Flow Matching blueprint   
+
+![](../assets/P172图.png)
