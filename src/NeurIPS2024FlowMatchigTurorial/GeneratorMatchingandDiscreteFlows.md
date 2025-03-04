@@ -25,15 +25,24 @@ Generalize the notion of velocity to arbitrary CTMP
 
 "Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)      
 
+> 如果要以离散状态转换的方式实现 flow matching，关键是找出线性的 transition kernal.     
+速度是线性的关键。    
+transition kernel 的导数被称为生成器       
+
 P157    
 ## CTMP via generator
 
 ![](../assets/P157图.png)
 
+> 取一个速度，并用它定义流。类似于用生成器定义一个连续时间过程的轨迹。   
+
 P158     
 ## Marginal probability path
 
 ![](../assets/P158图.png)
+
+P159    
+> 这里与前面的区别是速度改成了生成器。     
 
 P160    
 ## Sampling
