@@ -92,8 +92,6 @@ $$
 u_t(x) = [u^1_t (x),…, u^d_t (x)]
 $$
 
-![](../assets/P166图-1.png)
-
 ![](../assets/P166图-2.png)
 
 “A Continuous Time Framework for Discrete Denoising Models” Campbell et al. (2022)     
