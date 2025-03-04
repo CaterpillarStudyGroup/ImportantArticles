@@ -73,6 +73,12 @@ P165
 P166    
 ## Factorized velocities
 
+Similar to continuous case \\(𝒮 = ℝ^d\\) :    
+
+$$
+u_t(x) = [u^1_t (x),…, u^d_t (x)]
+$$
+
 ![](../assets/P166图-1.png)
 
 ![](../assets/P166图-2.png)
