@@ -90,10 +90,16 @@ P167
 P168    
 ## Discrete Flow Matching Loss
 
-\\(\mathcal{L}\\) 
+
+$$
+ℒ_{CDFM}(\theta )=\mathbb{E}_{t,X_1,X_t} \sum_{i}^{} D_{X_t}(\frac{1}{1-t}\delta (\cdot ,X_1^i),u_t^{\theta,i}(\cdot ,X_t))  
+$$
 
 ![](../assets/P168图.png)
 
 “Discrete Flow Matching” Gat el al. (2024)    
 "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
 “Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution” Lou et al. (2024)     
+
+
+
