@@ -4,10 +4,7 @@
 P1     
 # Flow Matching Basics
 
-
-
-P4     
-01 Flow Matching Basics   
+![](../assets/P4手写.png)   
 
 P6    
 WHAT IS FLOW MATCHING?       
@@ -28,33 +25,33 @@ P8
 
 P9     
 
-> GAN 是一种生成模型，优点是快，因为它的生成过程只需要一个forward。缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
+> 生成模型有两大类范式：直接生成和增量生成。     
+GAN 属于第一大类生成模型，增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。优点是快，因为它的生成过程只需要一个forward。缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
 
 P10    
-## Model
-
-• Continuous-time Markov process       
+## 增量生成范式
 
 ![](../assets/P10图1-1.png)
 
+> \\(\Phi\\) 是从一次生成到另一次生成的转移函数。
+
 ![](../assets/P10图2.png)
 
-
-> 增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。\\(\Phi\\) 是从一次生成到另一次生成的转移函数。    
-Flow 的转移过程是平滑的。Diffusion 是连续但不平滑的。还有一些是不连续的，但都是基于连续时间马尔可夫过程的随机过程。      
-生成模型的目标是学习转移函数。      
+> Flow 的转移过程是平滑的。Diffusion 是连续但不平滑的。还有一些是不连续的，但都是基于连续时间马尔可夫过程的随机过程Continuous-time Markov process。      
+增量生成模型的目标是学习转移函数。      
 
 P11    
 
 ## Marginal probability path
 
-![](../assets/P11图.png)
+边缘概率路径，是指，任意一个特定的 \\(t\\) 时刻，\\(X_t\\) 所属于的分布 \\(p_t\\)。 即连续时间上的分布簇。    
 
-> 边缘概率路径，是指，任意一个特定的 \\(t\\) 时刻，\\(X_t\\) 所属于的分布 \\(P_t\\)。 即连续时间上的分布簇。    
-生成模型最重要的是，边缘概率路径以 \\(P\\) 分布开始，以 \\(Q\\) 分布结束。     
+![](../assets/P11图-1.png)
+
+> 生成模型最重要的是，边缘概率路径以 \\(P\\) 分布开始，以 \\(Q\\) 分布结束。     
 
 P12   
-• For now, we focus on flows…    
+### 三种增量生成模型的特点   
 
 ![](../assets/P12-1图.png)
 
@@ -70,15 +67,18 @@ P13
 
 
 
-> \\(\Psi_t\\) 是一个双射函数，因此它可以重塑空间而不丢失信息。    
+> \\(\Psi_t\\) 是 flow 生成模型的转移函数。    
+\\(\Psi_t\\) 是一个双射函数，因此它可以重塑空间而不丢失信息。    
 通过对高维空间的 warping，使 \\(P\\) 分布逐步变为 \\(Q\\) 分布。     
+
+### Flow 的参数化    
 
 > 对两个双射函数做线性组合，得到的函数不能保持其双射的特性，因此，基于双射函数的模型难以被参数化（设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。    
 
 P14     
 ## Flow = Velocity    
 
-![](../assets/P14图1.png)    
+
 
 $$
 \frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
@@ -87,12 +87,17 @@ $$
 • **Pros**: velocities are <u>**linear**</u>      
 • **Cons**: simulate to sample      
 
-> 可以利用速度对流做参数化，在这里，速度是指 \\(P\\) 分布中的每个 sample 向 \\(Q\\) 分布中对应 sample 变化的速度（快慢和方向）。    
-对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.     
-使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
-使用速度的缺点：sample 出速度后，要再解一次 ODE。   
+> 因此利用速度对流做参数化。在这里，速度是指 \\(P\\) 分布中的每个 sample 向 \\(Q\\) 分布中对应 sample 变化的速度（快慢和方向）。    
+对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.    
+
+![](../assets/P14图1.png)    
+
+> 使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
+使用速度的缺点：需要对 sample 出速度做 ODE，解出图像。   
 
 P15    
+### 利用速度对流做参数化
+
 Velocity \\(u_t\\) **generates** \\(p_t\\) if     
 
 $$
@@ -100,14 +105,16 @@ X _t=\Psi _t(X_0)\sim p_t
 $$
 
 
-> 使用速度来定义边缘概率路径。   
+> 使用速度来定义边缘概率路径，\\(\Psi_t\\) 是基于速度的转移函数。   
 
 P16        
 
 > Flow Matching 的训练：学习一个速度模型，由速度得到边缘路径概率 \\(P_t\\)，使得 \\(P_0 = P\\)， \\(P_1= Q\\)     
 
 P17    
-## Sampling a flow model
+### Sampling a flow model
+
+> Flow Matching 的推断：(1) 从 \\(P\\) 分布中 sample 一个 noise， (2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
 
 ![](../assets/P17图.png)    
 
@@ -118,11 +125,16 @@ $$
 Use any ODE numerical solver.      
 One that works well: **Midpoint**     
 
-> Flow Matching 的推断：(1) 从 \\(P\\) 分布中 sample 一个 noise， (2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
 
 
 P19    
-## Simplest version of Flow Matching 
+### Simplest version of Flow Matching 
+
+> **flow matching 的训练**      
+(1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
+(2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
+(3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
+(4) \\(X_t\\) 是网络输入，让网络输出逼近\\(X_1-X_0\\)。    
 
 ![](../assets/P19图1.png)    
 ![](../assets/P19图2.png)    
@@ -136,11 +148,7 @@ $$
 "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
 "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
 
-> **flow matching 的训练**      
-(1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
-(2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
-(3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
-(4) \\(X_t\\) 是网络输入，让网络输出逼近\\(X_1-X_0\\)。     
+ 
 
 P20     
 ## Simplest version of Flow Matching 
@@ -148,16 +156,19 @@ P20
 • Arbitrary \\(X_{0\sim p},X_{1\sim q}\\)      
 • Arbitrary coupling \\((X_0,X_1)\sim \pi _{0，1}\\)     
 
-Why does it work?      
+> 这里没有对 \\(X_0\\) 和 \\(X_1\\) 所属的分布作限制。 \\(X_0\\) 和 \\(X_1\\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。    
+
+## Why does it work?      
 • Build flow from conditional flows      
 • Regress conditional flows      
 
-> 这里没有对 \\(X_0\\) 和 \\(X_1\\) 所属的分布作限制。 \\(X_0\\) 和 \\(X_1\\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。    
-条件流是指一些简单的，固定的部分。   
+> 条件流是指一些简单的，固定的部分。   
 
 P21    
-## Build flow from conditional flows
- 
+### Build flow from conditional flows
+
+#### conditional probability     
+
 ![](../assets/P21图.png)    
 
 $$
