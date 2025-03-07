@@ -20,7 +20,9 @@ P37
 
 P39     
 
-## Conditional Models
+### Conditional Models
+
+![](../assets/P22图-1.png)    
 
 $$
 p_ {t,1|Y} (x, x_1|y) = p_ {t|1}(x|x_1)q(x_1|y)
