@@ -78,12 +78,6 @@ P13
 P14     
 ## Flow = Velocity    
 
-
-
-$$
-\frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
-$$
-
 • **Pros**: velocities are <u>**linear**</u>      
 • **Cons**: simulate to sample      
 
@@ -91,6 +85,10 @@ $$
 对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.    
 
 ![](../assets/P14图1.png)    
+
+$$
+\frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
+$$
 
 > 使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
 使用速度的缺点：需要对 sample 出速度做 ODE，解出图像。   
