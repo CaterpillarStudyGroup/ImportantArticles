@@ -133,7 +133,7 @@ Alter **source distribution** and **coupling** instead of adding **condition**
 
 > 改变源分布和耦合，而不是添加条件。    
 从数据中取出样本\\((X_1,Y)\\)   
-&#x2753; \\(X_1\\) 和 Y 有什么区别？   
+[&#x2753;] \\(X_1\\) 和 Y 有什么区别？   
 根据Y构造\\(X_0\\)    
 
 $$
