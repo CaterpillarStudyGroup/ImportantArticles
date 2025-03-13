@@ -78,29 +78,33 @@ P13
 
 > 对两个双射函数做线性组合，得到的函数不能保持其双射的特性，因此，基于双射函数的模型难以被参数化。
 
+$$
+\alpha X_{t|1}+\beta X_{t|2}\ne \Psi _t(\alpha X_{t|1}+\beta X_{t|2})
+$$
 
-> （设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。   
+> 网络模型中通常包含大量线性组合，激活函数等会破坏双射性的结构，因此很难让网络学到一个双射函数。     
+包括（设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。   
 
 P14     
-## Flow = Velocity    
-
-• **Pros**: velocities are <u>**linear**</u>      
-• **Cons**: simulate to sample      
+#### 利用速度对流做参数化      
 
 > 因此利用速度对流做参数化。在这里，速度是指 \\(P\\) 分布中的每个 sample 向 \\(Q\\) 分布中对应 sample 变化的速度（快慢和方向）。    
-对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.    
+Flow 和 velocity 是可以互相转化的。对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.    
 
 ![](../assets/P14图1.png)    
+
+> 使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
+使用速度的缺点：需要对 sample 出速度做 ODE，解出图像。   
 
 $$
 \frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
 $$
 
-> 使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。       
-使用速度的缺点：需要对 sample 出速度做 ODE，解出图像。   
+$$
+\frac{d}{dt}\Psi  _t(\alpha X_1+\beta X_2)=\alpha u_t(\psi _t(X_1))+\beta u_t(\psi _t(X_2)) 
+$$
 
 P15    
-### 利用速度对流做参数化
 
 Velocity \\(u_t\\) **generates** \\(p_t\\) if     
 
@@ -113,10 +117,11 @@ $$
 
 P16        
 
-> Flow Matching 的训练：学习一个速度模型，由速度得到边缘路径概率 \\(P_t\\)，使得 \\(P_0 = P\\)， \\(P_1= Q\\)     
+#### Flow Matching 的训练：    
+学习一个速度模型，由速度得到边缘路径概率 \\(P_t\\)，使得 \\(P_0 = P\\)， \\(P_1= Q\\)     
 
 P17    
-### Sampling a flow model
+#### Sampling a flow model
 
 > Flow Matching 的推断：(1) 从 \\(P\\) 分布中 sample 一个 noise， (2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
 
@@ -132,9 +137,10 @@ One that works well: **Midpoint**
 
 
 P19    
-### Simplest version of Flow Matching 
+#### Simplest version of Flow Matching 
 
-> **flow matching 的训练**      
+### flow matching 的训练    
+
 (1) 随机构造源 \\(X_0\\) 和目标 \\(X_1\\)。     
 (2) 在 [0，1] 区间随机采样一个时间步 \\(t\\)。    
 (3) \\(X_t\\) 是 \\(X_0\\) 与 \\(X_1\\) 的线性组合。     
@@ -154,11 +160,7 @@ $$
 
  
 
-P20     
-## Simplest version of Flow Matching 
-
-• Arbitrary \\(X_{0\sim p},X_{1\sim q}\\)      
-• Arbitrary coupling \\((X_0,X_1)\sim \pi _{0，1}\\)     
+P20      
 
 > 这里没有对 \\(X_0\\) 和 \\(X_1\\) 所属的分布作限制。 \\(X_0\\) 和 \\(X_1\\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。    
 
