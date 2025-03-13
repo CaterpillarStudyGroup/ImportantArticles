@@ -164,18 +164,20 @@ P20
 
 > 这里没有对 \\(X_0\\) 和 \\(X_1\\) 所属的分布作限制。 \\(X_0\\) 和 \\(X_1\\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。    
 
-## Why does it work?      
+### Why does it work?      
 • Build flow from conditional flows      
+如何从一个更简单的速度或流（称为条件流）构建一个速度或流。   
 • Regress conditional flows      
 
 > 条件流是指一些简单的，固定的部分。   
+通过观察更简单的条件流来学习复杂的部分。
 
 P21    
-### Build flow from conditional flows
- 
-> 假设目标分布只有 \\(X_1\\) 这一个点，那么流和速度是这样的。    
+#### Build flow from conditional flows
 
-#### conditional probability     
+##### 局部问题   
+
+> 假设目标分布只有 \\(X_1\\) 这一个点，那么流和速度是这样的。    
 
 ![](../assets/P21图.png)    
 
@@ -183,16 +185,19 @@ $$
 X_t=\Psi _t(X_0|x_1)=(1-t)X_0+tx_1
 $$
 
-\\(p_{t|1}(x|x_1)\\) conditional probability     
-\\(u_t(x|x_1)\\) conditional velocity     
+这是一个条件流。    
+\\(p_{t|1}(x|x_1)\\) 是 conditional probability     
+\\(u_t(x|x_1)\\) 是 conditional velocity，是常数。        
 
 P22    
-#### conditional velocity   
+##### 全局问题   
   
-> 实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sanple，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t|条件}\\) ，综合得到的 \\(p_t(X)\\) 是这 \\(P_{t|条件}\\) 的期望。    
+> 实际的 \\(Q\\) 分布包含很多 \\(x_1\\) 这样的 sample，每一个 sample 都可以作为一个 condition，得到一个 \\(P_{t|条件}\\) ，综合所有 \\(P_{t|条件}\\) 得到的 \\(p_t(X)\\) 是这 \\(P_{t|条件}\\) 的期望。可以证明，\\(p_t(X)\\) 以 \\(P\\) 开始，以 \\(Q\\) 结束。对 \\(Q\\) 分布中的所有的 \\(x_1\\)，对 \\(U_t(X|X_1)\\) 取平均，得到生成“边缘概率路径”的速度。  
+\\(p_t(x)=\mathbb{E} _{X_1{p_{t|1}}(x|X_1)} \\)       
 \\(u_t(X)\\) 也可以以这种方式得出。    
 
-![](../assets/P22图-1.png)    
+\\(u_t(x)=\mathbb{E} [u_t(X_t|X_1)|X_t=x]\\)    
+这个速度场称为边缘速度。   
 
 P23    
 
