@@ -189,8 +189,8 @@ Use mini batch optimal transport couplings
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
 > 1. 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样 \\(k\\) 个点。   
-2. 寻找两组点之间的最优排列，来最小化 cost.    
-3. 假设找到了最优组合，随机选择一对。    
+> 2. 寻找两组点之间的最优排列，来最小化 cost.    
+> 3. 假设找到了最优组合，随机选择一对。    
 
 P70    
 $$
