@@ -103,21 +103,6 @@ How to guide FM with non-Gaussian paths?
 
 > CFG 要求正在学习的是具有高斯路径的 flow matching 模型、但 flow matching 不局限于高斯源。     
 
-
-
-P49    
-
-
-
-
-
-
-P50    
-
-> 两种方法，利用 \\(P\\) 和 \\(Q\\) 的耦合关系优化生成过程。    
-1．利用耦合关系，构造另一种条件方法。     
-2．试图找到多样本之间的耦合关系。      
-
 P52    
 ## Data Couplings
 
@@ -128,13 +113,18 @@ P52
 | ![](../assets/P52图1.png)  | ![](../assets/P52图2.png)  |
 | • Non-Gaussian source distribution <br>• Alternative conditioning approach <br>• Inverse problems | • Applications to Optimal Transport <br> • Efficiency: straighter trajectories |
 
+> 两种方法，利用 \\(P\\) 和 \\(Q\\) 的耦合关系优化生成过程。    
+1．利用耦合关系，构造另一种条件方法，用于解决 Inverse 问题。     
+2．试图找到多样本之间的耦合关系，用于优化采样效率。      
 
 P58    
-## Paired Data
+### Paired Data
+
+#### 问题定义
 
 ![](../assets/P58图1.png)     
 
-![](../assets/P58图2.png)     
+#### 方法
 
 Alter **source distribution** and **coupling** instead of adding **condition**      
 
@@ -142,23 +132,27 @@ Alter **source distribution** and **coupling** instead of adding **condition**
 "Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
 
 > 改变源分布和耦合，而不是添加条件。    
-源分布不是噪声，而是 \\(Y\\) 添加噪声，损失不变。     
+从数据中取出样本\\((X_1,Y)\\)   
+&#x2753; \\(X_1\\) 和 Y 有什么区别？   
+根据Y构造\\(X_0\\)    
 
-P60    
+$$
+X_0=Y+\epsilon \sim p 
+$$
 
-![](../assets/P60图.png)     
+> 源分布不是噪声，而是 \\(Y\\) 添加噪声，损失不变。     
 
 P61    
-## Result   
+#### Result   
 
 ![](../assets/P61图.png)     
 
 "Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)   
 
 P63    
-## Multisample Couplings   
+### Multisample Couplings   
 
-![](../assets/P63图.png)     
+#### 问题定义
 
 Given uncoupled **source** and **target** distributions,can we build a coupling to induce straighter paths?      
 
@@ -167,10 +161,14 @@ Given uncoupled **source** and **target** distributions,can we build a coupling 
 
 > 有一个预训练的 flow matching 模型，构建一种耦合，使 \\(P\\) 到 \\(Q\\) 的路径更直线，或 \\(Q\\) 能更好地采样。    
 
+![](../assets/P63图.png)     
+
 P64    
-## Multisample Couplings   
+#### 耦合的本质
 
 ![](../assets/P64图.png)    
+
+对于不同的耦合关系会得到不同的 \\(u_t\\) 和动能。但它有上限，降低上限能减少动能。
 
 Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)      
 
