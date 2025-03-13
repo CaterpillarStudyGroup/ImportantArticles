@@ -207,20 +207,22 @@ When \\(k → ∞, u_t\\) generates the Optimal Transport map
 P72    
 #### Result    
 
-![](../assets/P72图.png)    
+![](../assets/P72图-1.png)    
 
 - High dimensions-minor improvement in sampling speed compared to tailored samplers.    
 
-- Shows promise in lower dimensionalproblems for scientific applications(e.g. protein backbone design [Bose et al. '23])
+> 低维时，此方法能明显降低 cost
+
+- Shows promise in lower dimensional problems for **scientific** applications (e.g. protein backbone design  [Bose et al.'23]).    
+
+> 高维时，路径本身已接近直线，因此效果不明显。     
 
 "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)     
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
-> 低维时，此方法能明显降低 cost；高维时，路径本身已接近直线，因此效果不明显。     
-
 P73    
-## Data Couplings    
+## 相关工作    
 
 **Paired data:**     
 "I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
@@ -237,6 +239,8 @@ P73
 P75    
 ## Geometric Flow Matching
 
+使用 Flow Matching 生成(对称的或黎曼流型的)几何   
+
 |||
 |--|--|
 | Data with Symmetries | Riemannian Manifolds |
@@ -244,15 +248,29 @@ P75
 | • Equivariant flows → invariant densities <br>• Alignment couplings | • Simulation free on simple manifolds <br> • General geometries |
 
 P87    
-## Equivariant Flows   
+### Equivariant Flows   
 
 ![](../assets/P87图1.png)     
 
-![](../assets/P87图2.png)     
+#### 问题定义
+
+> 有些对象具有对称性，希望生成的对象也能满足这些特征。 
+
+####　对称性的直观理解和公式表示
+
+![](../assets/P87图2-1.png)   
+
+> 原始 \\(Q\\) 分布与对称 \\(Q\\) 分布应具有相的密度或似然性。   
+
+$$
+p_t(g\cdot x)=p_t(x)
+$$
+
+Invariant probability path
 
 "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
-> 有些对象具有对称性，希望生成的对象也能满足这些特征。     
+    
 
 P88    
 ## Equivariant Flow Matching    
