@@ -4,8 +4,6 @@
 P1     
 # Flow Matching Basics
 
-![](../assets/P4手写.png)   
-
 P6    
 WHAT IS FLOW MATCHING?       
 A scalable method to train **flow generative models**.      
@@ -24,22 +22,22 @@ P8
 生成模型的目标是，找到一个可以从 \\(P\\) 中 sample 到 \\(Q\\) 中 sample 的映射。    
 
 P9     
+### 生成模型的范式
 
 > 生成模型有两大类范式：直接生成和增量生成。     
 GAN 属于第一大类生成模型，优点是快，因为它的生成过程只需要一个forward。缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
 
 P10    
-## 增量生成范式
 
 > 增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。
-
-![](../assets/P10图1-1.png)
-
-> \\(\Phi\\) 是从一次生成到另一次生成的转移函数。
 
 ![](../assets/P10图2.png)
 
 > Flow 的转移过程是平滑的。Diffusion 是连续但不平滑的。还有一些是不连续的，但都是基于连续时间马尔可夫过程的随机过程Continuous-time Markov process。      
+
+![](../assets/P10图1-0.png)
+
+> \\(\Phi\\) 是从一次生成到另一次生成的转移函数。
 增量生成模型的目标是学习转移函数。      
 
 P11    
