@@ -123,7 +123,9 @@ P16
 P17    
 #### Sampling a flow model
 
-> Flow Matching 的推断：(1) 从 \\(P\\) 分布中 sample 一个 noise， (2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
+> Flow Matching 的推断：
+(1) 从 \\(P\\) 分布中 sample 一个 noise      
+(2) 根随速度（解ODE）得到对应在 \\(Q\\) 分布中的 sample。    
 
 ![](../assets/P17图.png)    
 
