@@ -340,10 +340,17 @@ $$
 
 ![](../assets/P31图.png)    
 
-P32   　
-## Affine and Gaussian paths    
+> diffusion 的噪声预测，在 \\(x\\) 接近噪声时(初始 steps)会有奇异性问题。   
 
-![](../assets/P32图.png)    
+P32   　
+### Affine and Gaussian paths    
+
+#### 参数比较
+
+![](../assets/P32图-1.png)    
+
+> 蓝色部分适用于所有的仿射路径(包括高斯 path)。粉色部分仅适用于高斯 path.     
+&#x2753; 表格怎么看？    
 
 P33     
 
