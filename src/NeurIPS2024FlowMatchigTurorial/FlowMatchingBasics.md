@@ -238,7 +238,7 @@ $$
 P25    
 **Theorem:** Losses are equivalent **if** \\(D\\) is a **Bregman divergence**.      
 
-> 更进一步，使用任意的 Bregman Divergence Loss \\((D(\cdot ,\cdot ))\\) 散度代替 \\(L2(||\cdot ,\cdot ||^2)\\)，都能相到相同结论，L2 Loss 只是其中一种。
+> 更进一步，使用任意的 Bregman Divergence Loss \\((D(\cdot ,\cdot ))\\) 散度代替 \\(L2(||\cdot ,\cdot ||^2)\\)，都能得到相同结论，L2 Loss 只是其中一种。
 
 P26    
 
