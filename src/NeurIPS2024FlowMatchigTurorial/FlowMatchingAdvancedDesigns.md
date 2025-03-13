@@ -166,6 +166,8 @@ Given uncoupled **source** and **target** distributions,can we build a coupling 
 P64    
 #### 耦合的本质
 
+> 耦合 cost 限制了动能．降低 coupling cost，就能减少动能。     
+
 ![](../assets/P64图.png)    
 
 对于不同的耦合关系会得到不同的 \\(u_t\\) 和动能。但它有上限，降低上限能减少动能。
@@ -176,10 +178,8 @@ Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)      
 
-> 耦合 cost 限制了动能．降低 coupling cost，就能减少动能。     
-
 P69   
-## Multisample Couplings    
+#### 方法
 
 Use mini batch optimal transport couplings     
 
@@ -188,8 +188,9 @@ Use mini batch optimal transport couplings
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
-> 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样 \\(k\\) 个点，寻找两组点之间的最优排列，来最小化 cost.    
-假设找到了最优组合，随机选择一对。    
+> 1. 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样 \\(k\\) 个点。   
+2. 寻找两组点之间的最优排列，来最小化 cost.    
+3. 假设找到了最优组合，随机选择一对。    
 
 P70    
 $$
@@ -200,14 +201,17 @@ $$
 
 
 P71    
-**FM with cond-OT is not marginal OT!**    
 
-When \\(k → ∞, u_t\\) generates the OT map    
+When \\(k → ∞, u_t\\) generates the Optimal Transport map    
 
 P72    
-## Multisample Couplings    
+#### Result    
 
 ![](../assets/P72图.png)    
+
+- High dimensions-minor improvement in sampling speed compared to tailored samplers.    
+
+- Shows promise in lower dimensionalproblems for scientific applications(e.g. protein backbone design [Bose et al. '23])
 
 "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)     
 "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
