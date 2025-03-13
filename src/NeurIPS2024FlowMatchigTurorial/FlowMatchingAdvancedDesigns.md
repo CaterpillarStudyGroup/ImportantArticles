@@ -76,7 +76,7 @@ CFG：条件生成结果与无条件生成结果外插。
 ![](../assets/P42图-2.png)  
 
 P43     
-#### Flow Matching with Caussian   
+#### Flow Matching with Caussian Path  
 
 Assume a velocity field trained with **Gaussian paths**.以上来自 score matching 的公式，同样可以适配到 flow matching.          
 
