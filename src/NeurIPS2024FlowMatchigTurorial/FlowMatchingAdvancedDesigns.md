@@ -15,56 +15,65 @@ P37
 
 ## Conditioning and Guidance 
 
-![](../assets/P37图.png)    
+问题定义：    
+数据集：样本 + 标签    
+生成：给定标签，从具有特标签的分布中采样     
 
 
 P39     
 
 ### Conditional Models
 
-![](../assets/P22图-1.png)    
+#### 公式定义   
 
 $$
 p_ {t,1|Y} (x, x_1|y) = p_ {t|1}(x|x_1)q(x_1|y)
 $$
 
-![](../assets/P39图1.png)    
-
-![](../assets/P39图2.png)  
+|||
+|--|--|
+|   无条件  | 条件 |
+| 边缘概率分布 ![](../assets/P39图-A.png)  | ![](../assets/P39图-C.png)  |
+|边缘速度 ![](../assets/P39图-B.png)  | ![](../assets/P39图-D.png)  |
 
 > 将条件概率路径构建为不显式依赖于条件 \\(Y\\)。     
 
 
 P40    
-## Conditional Models
+#### 网络训练
 
 Train same neural network on all conditions:     
 
-![](../assets/P40图1.png)    
-
-![](../assets/P40图2.png)  
+![](../assets/P40图1.png)     
 
 > 对于网络训练的影响在于，数据增加一个维度来表示\\(Y\\)。     
 
 
 P41    
-## Conditional Models - Examples
+#### Examples
 
 ![](../assets/P41图.png)    
 
 “Flow Matching for Generative Modeling” Lipman et al. (2022)       
 “GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)     
 
+#### 局限性   
+
 > 此方法在“每个条件都有大量数据”时很有用，例如条件是类别时。      
 条件是文本时不适用，因为数据集里一段文本通常只对应一张图像。     
 
 P42     
-## Guidance for Score Matching
+### Condition as Guidance   
 
-![](../assets/P42图.png)    
+####  Score Matching 和 diffusion 
 
-> classifier Guidance：通过引入分类器，将无条件模型变成条件模型.     
+classifier Guidance：通过引入分类器，将无条件模型变成条件模型.     
+
+![](../assets/P42图-1.png)    
+
 CFG：条件生成结果与无条件生成结果外插。    
+
+![](../assets/P42图-2.png)  
 
 P43     
 ## Guidance for Flow Matching    
