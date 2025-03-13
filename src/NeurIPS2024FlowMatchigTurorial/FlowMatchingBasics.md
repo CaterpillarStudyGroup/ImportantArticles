@@ -201,20 +201,23 @@ P22
 
 P23    
 
-Theorem*: The **marginal velocity** generates the **marginal probability** path.    
+Theorem*: The **marginal velocity** (边缘速度) generates the **marginal probability** path (边缘概率路径)。   
+
+以上公式中的期望，实际含义是“平均”。    
 
 P24    
-#### conditional loss  
+##### conditional loss  
 
 目标函数：回归边缘速度场。   
 
-• Flow Matching loss:     
+(1) 直接回归边缘速度场  
 
 $$
 ℒ_{FM}(θ) = \mathbb{E}  _{t,X_t}||u^θ_t (X_t) − u_t(X_t)||^ 2 
 $$
 
-• Conditional Flow Matching loss:    
+其中，\\(u_t(X_t)\\) 是通过许多数据计算出的均值(根据上文中的公式)。    
+(2) 回归条件速度   
 
 $$
 ℒ_{CFM}(θ) = \mathbb{E}  _{t,X_1,X_t}||u^θ_t (X_t) − u_t(X_t|X_1)||^ 2 
@@ -226,20 +229,13 @@ $$
 \nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
 $$
   
-> 结论：仅回归条件速度，与回归 flow 相同。    
+> 结论：仅回归条件速度，与直接回归速度相同。    
 使用条件分布(公式 2)相比于公式 1 的好处是，可以逐个样本去计算，而不需要对整个数集做平均。    
 
 P25    
+**Theorem:** Losses are equivalent **if** \\(D\\) is a **Bregman divergence**.      
 
-Theorem: Losses are equivalent if D is a Bregman divergence.     
-
-$$
-\nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
-$$
-
-
-  
-> 更通用的 flow matching loss,使用 Bregman \\((D(\cdot ,\cdot ))\\) 散度代替 \\(L2(||\cdot ,\cdot ||^2)\\)，因为所学习的是一个条件期望。结论相同。
+> 更进一步，使用任意的 Bregman Divergence Loss \\((D(\cdot ,\cdot ))\\) 散度代替 \\(L2(||\cdot ,\cdot ||^2)\\)，都能相到相同结论，L2 Loss 只是其中一种。
 
 P26    
 
@@ -247,34 +243,46 @@ P26
 
 ![](../assets/P26图.png)    
 
+> 因为要学习的是一相“期望”。    
+
 P27    
-### How to choose \\(ψ_t(x|x_1)\\)?      
+## How to choose \\(ψ_t(x|x_1)\\)?      
 
-#### Optimal Transport minimizes Kinetic Energy:    
+### Optimal Transport minimizes Kinetic Energy    
 
-> 如果最小化动能，能让路径变得直，且速度恒定。   
-
-![](../assets/P27图.png)    
+在上文中，定义     
 
 $$
 ψ _t(x|x_1)=tx_1+(1-t)x
 $$
 
->  直接优化动能不容易，因此给它设定一个 Jensen bound，来限制边缘速度的动能。     
+这样定义，是基于“最小化动能”的考虑。    
+> 如果最小化动能，能让路径变得直，且速度恒定。   
+所以将 \\(ψ _t(x_0|x_1)\\) 定义为 \\(X_0\\) 和 \\(X_1\\) 连线上的一个点，其中 \\(X_0\\) 可以是空间中任意一点定义为 \\(X\\) 。    
+
+>  直接优化动能不容易，因为它不依赖于具体的条件。因此给它设定一个 Jensen bound，来限制边缘速度的动能。    
+
 ![](../assets/P27图1.png)    
-当\\(X_0\\)和 \\(X_1\\) 确定时，Jensen bound 可以被最小化。    
 
+Jensen bound 是具体的条件 \\((X_0,X_1)\\) 下的期望。   
+当 \\(X_0\\) 和 \\(X_1\\) 确定时，Jensen bound 可以敲算出来，也可以(通过优化\\(ψ _t\\))被最小化。    
 
-**Linear conditional flow:**      
-• Minimizes bound     
-• Reduces KE of initial coupling      
-• Exact OT for single data points     
+**结论：** 当 \\(ψ _t(x|x_1)\\) 定义为 \\(tX_1+(1-t)X\\) 时，Jensen bound 被最小化，此时 \\(X_0\\) 到 \\(X_1\\) 是直线。   
+
+**Linear conditional flow总结:**      
+• Minimizes bound，而不是直接优化动能。      
+• Reduces Kinetic Energy of initial coupling      
+把 \\(ψ _t\\) 代入 Jensen bound 公式可得出此结论。   
+
+• Exact Optimal Transport for single data points     
+如果 \\(Q\\) 分布中只有一个 \\(X_1\\)。此时公式左右两边相等，是最优传输。  
+
 • <u>**Not**</u> Optimal Transport (but in high dim straighter)      
+如果 \\(Q\\) 分布里不止一个点，不是最优传输，\\(X_0\\) 到 \\(X_1\\) 也不是直线。   
 
-"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
-"On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
-
-> 当动能最小化时，\\(X_0\\) 到 \\(X_1\\) 是直线（仅存于 \\(Q\\) 分布中只有一个 \\(X_1\\) 时）。  
+&#x1F50E; "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)      
+&#x1F50E; "On Kinetic Optimal Probability Paths for Generative Models" Shaul et al. (2023)     
+   
 
 P29    
 ## Flow Matching with Cond-OT
