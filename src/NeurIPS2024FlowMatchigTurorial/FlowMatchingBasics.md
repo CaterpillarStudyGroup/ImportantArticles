@@ -139,7 +139,7 @@ One that works well: **Midpoint**
 
 
 P19    
-#### Simplest version of Flow Matching 
+## Simplest version of Flow Matching 
 
 ### flow matching 的训练    
 
