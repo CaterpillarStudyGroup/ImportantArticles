@@ -76,16 +76,14 @@ CFG：条件生成结果与无条件生成结果外插。
 ![](../assets/P42图-2.png)  
 
 P43     
-## Guidance for Flow Matching    
+#### Flow Matching with Caussian   
 
-Assume a velocity field trained with **Gaussian paths**.      
+Assume a velocity field trained with **Gaussian paths**.以上来自 score matching 的公式，同样可以适配到 flow matching.          
 
 ![](../assets/P43图.png)    
 
-> 以上是来自 score matching 的公式，同样的方法适配到 flow matching.    
-
 P44    
-Flow Matching with Classifier-Free guidance:     
+相关工作：       
 "Guided Flows for Generative Modeling and Decision Making" Zheng et al. (2023)     
 "Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
 "Audiobox: Unified Audio Generation with Natural Language Prompts" Vyas et al. (2023)        
@@ -94,41 +92,25 @@ Flow Matching with Classifier-Free guidance:
 
 
 P45   
-## Guidance for Flow Matching
 
-"Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
-![](../assets/P45图.png)    
-
-> 基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于 diffusion.     
+> 其中，movie Gen 发现基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于 diffusion.     
 
 P46    
-## Guidance for Flow Matching
+#### 非 Gaussian Path
 
 **Open Problem**     
 How to guide FM with non-Gaussian paths?      
 
 > CFG 要求正在学习的是具有高斯路径的 flow matching 模型、但 flow matching 不局限于高斯源。     
 
-P47    
-Data Couplings     
 
-![](../assets/P47图.png)    
 
 P49    
 
-$$
-X_t = ψ_t(X_0|X_1)
-$$
 
-![](../assets/P49图.png) 
 
-$$
-(X_0,X_1) ∼ π_{0,1} = p(X_0)q(X_1)
-$$
 
-What about dependent couplings?      
 
-> 前面工作都假设 \\(P\\) 和 \\(Q\\) 是独立的。     
 
 P50    
 
@@ -138,6 +120,8 @@ P50
 
 P52    
 ## Data Couplings
+
+前面工作都假设 \\(P\\) 和 \\(Q\\) 是独立的。What about dependent couplings?     
 
 |||
 |--|--|
