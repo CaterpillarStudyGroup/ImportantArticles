@@ -12,7 +12,7 @@ P113
 ## Faster Sampling   
 
 P114    
-### Recitde Flos-Faster sampling by straightening the flow   
+### Recitde Flow-Faster sampling by straightening the flow   
 
 #### 方法
 
