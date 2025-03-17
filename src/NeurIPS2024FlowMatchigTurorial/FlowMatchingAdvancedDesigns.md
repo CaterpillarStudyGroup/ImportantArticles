@@ -54,8 +54,8 @@ P41
 
 ![](../assets/P41图.png)    
 
-“Flow Matching for Generative Modeling” Lipman et al. (2022)       
-“GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)     
+&#x1F50E; “Flow Matching for Generative Modeling” Lipman et al. (2022)       
+&#x1F50E; “GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)     
 
 #### 局限性   
 
@@ -75,6 +75,8 @@ CFG：条件生成结果与无条件生成结果外插。
 
 ![](../assets/P42图-2.png)  
 
+&#x1F50E; [CFG](./6.md)     
+
 P43     
 #### Flow Matching with Caussian Path  
 
@@ -84,16 +86,16 @@ Assume a velocity field trained with **Gaussian paths**.以上来自 score match
 
 P44    
 相关工作：       
-"Guided Flows for Generative Modeling and Decision Making" Zheng et al. (2023)     
-"Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
-"Audiobox: Unified Audio Generation with Natural Language Prompts" Vyas et al. (2023)        
-"Scaling Rectified Flow Transformers for High-Resolution Image Synthesis" Esser et al. (2024)       
-"Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
+&#x1F50E; "Guided Flows for Generative Modeling and Decision Making" Zheng et al. (2023)     
+&#x1F50E; "Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
+&#x1F50E; "Audiobox: Unified Audio Generation with Natural Language Prompts" Vyas et al. (2023)        
+&#x1F50E; "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis" Esser et al. (2024)       
+&#x1F50E; "Movie Gen: A Cast of Media Foundation Models" Polyak et al. (2024)     
 
 
 P45   
 
-> 其中，movie Gen 发现基于 CFG 训练的 flow matching，在生成质量和文本一致性上，均优于 diffusion.     
+> 其中，movie Gen 发现使用 flow matching loss，在生成质量和文本一致性上，均优于 diffusion loss.     
 
 P46    
 #### 非 Gaussian Path
@@ -101,7 +103,7 @@ P46
 **Open Problem**     
 How to guide FM with non-Gaussian paths?      
 
-> CFG 要求正在学习的是具有高斯路径的 flow matching 模型、但 flow matching 不局限于高斯源。     
+> CFG 要求正在学习的是具有高斯路径的 flow matching 模型，但 flow matching 不局限于高斯源。     
 
 P52    
 ## Data Couplings
@@ -128,9 +130,6 @@ P58
 
 Alter **source distribution** and **coupling** instead of adding **condition**      
 
-"I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
-"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
-
 > 改变源分布和耦合，而不是添加条件。    
 从数据中取出样本\\((X_1,Y)\\)   
 [&#x2753;] \\(X_1\\) 和 Y 有什么区别？   
@@ -147,17 +146,12 @@ P61
 
 ![](../assets/P61图.png)     
 
-"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)   
-
 P63    
 ### Multisample Couplings   
 
 #### 问题定义
 
 Given uncoupled **source** and **target** distributions,can we build a coupling to induce straighter paths?      
-
-"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)    
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)     
 
 > 有一个预训练的 flow matching 模型，构建一种耦合，使 \\(P\\) 到 \\(Q\\) 的路径更直线，或 \\(Q\\) 能更好地采样。    
 
@@ -174,19 +168,12 @@ P64
 
 Marginal \\(u_t\\) with cond-OT FM and \\(π_{0,1}\\)      
 
-"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)     
-"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)      
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)      
-
 P69   
 #### 方法
 
 Use mini batch optimal transport couplings     
 
 ![](../assets/P69图.png)    
-
-"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 
 > 1. 从 \\(P\\) 分布和 \\(Q\\) 分布中随机采样 \\(k\\) 个点。   
 > 2. 寻找两组点之间的最优排列，来最小化 cost.    
@@ -217,10 +204,6 @@ P72
 
 > 高维时，路径本身已接近直线，因此效果不明显。     
 
-"SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)     
-"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
-
 P73    
 ## 相关工作    
 
@@ -234,7 +217,7 @@ P73
 "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
 "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)   
 "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)   
-
+"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)          
 
 P75    
 ## Geometric Flow Matching
@@ -248,7 +231,7 @@ P75
 | • Equivariant flows → invariant densities <br>• Alignment couplings | • Simulation free on simple manifolds <br> • General geometries |
 
 P87    
-### Equivariant Flows   
+### Data with Symmetries    
 
 ![](../assets/P87图1.png)     
 
@@ -258,22 +241,28 @@ P87
 
 #### 对称性的直观理解和公式表示
 
-![](../assets/P87图2-1.png)   
-
-> 原始 \\(Q\\) 分布与对称 \\(Q\\) 分布应具有相同的密度或似然性。   
+> 原始 \\(P、Q\\) 分布与对称 \\(P、Q\\) 分布应具有相同的密度或似然性。   
+边缘概率路径也应具有对称性，且原概率路径保持不变。   
 
 $$
 p_t(g\cdot x)=p_t(x)
 $$
 
-Invariant probability path
+![](../assets/P87图2-1.png)   
+
+等变性：是教学中关于的群的术语，在这里简单理解为具有对称性。
+边缘概率路径具有对称性和边缘速度具有对称性，是等价的。    
+等变速度场可以生成不变的概率路径和等变流。     
+
 
 "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
     
 
 P88    
-## Equivariant Flow Matching    
+#### 方法
+
+因此，只需要构建一个能生成等变速度的 flow matching model。   
 
 Equivariant Velocity     
 
@@ -289,37 +278,30 @@ Train with CFM:
 "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
 P89    
+#### 存在的问题
 
-![](../assets/P89图.png)     
+数据是具有对称性的。
 
-> 假设 \\(P\\) 和 \\(Q\\) 是独立的，会发生这种情况。    
+![](../assets/P89图-1.png)     
+
+> 如果没有考虑数据的对称性，仍假设 \\(P\\) 和 \\(Q\\) 是独立的，会发生这种情况。    
 
 P90    
-## Equivariant Flow Matching    
 
-Equivariant Velocity     
+![](../assets/P90图2-1.png)    
 
-$$ 
-u^θ_t (g⋅x) = g⋅u^θ_t(x)
-$$
-
-Train with CFM:    
-
-![](../assets/P90图1.png)     
-
-![](../assets/P90图2.png)    
-
-> 导致模型学到的轨迹弯曲。     
+> 导致模型学到的轨迹弯曲。降低 sample 的效率。     
 
 P91   
+#### 解决方法
 
-"Equivariant flow matching" Klein et al. (2023)    
-"Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
+&#x1F50E; "Equivariant flow matching" Klein et al. (2023)    
+&#x1F50E; "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
 > 这两篇 Paper 提出对齐耦合；解决以上问题。       
 
 P92     
-## Equivariant Flow Matching    
+#### Result    
 
 |||
 |--|--|
@@ -329,23 +311,27 @@ P92
 > 此方法适用于点云和分子。    
 
 P94    
-## Generative Modeling on Manifolds    
+### Generative Modeling on Manifolds    
 
-> 生成流形数据，而是整个欧拉空间。     
+> 生成流形数据，例如 Nesh，轨迹、曲面等而不是整个欧拉空间。     
 
 P95   
 Need to re-define the geometric structures we have in Euclidean space.     
 
 > 重新定义几何结构，以便定义 flow matching 模型。     
+此处以黎曼流形为例。   
 
 P98    
-## Riemannian Manifolds
+#### 定义几何结构
 
-![](../assets/P98图.png)    
+> &#x1F50E; [黎曼流形]()
+
+
 
 > 假设只考虑黎曼流形      
-1．光滑流形，即可微，能够定义切空间。      
-2．选择一个内积来完成几何结构，描述流形上的角度和距离。    
+1．光滑流形，即可微，能够定义切空间。    
+> 切空间是某点\\(x\\)处所有方向导数的集合。      
+2．选择一个内积来计算黎曼度量，描述流形上的角度和距离。    
 
 P99   
 
@@ -354,61 +340,59 @@ P99
 Pl00      
 
 > 构建黎曼流形时，速度定义在切空间上。    
-这样 \\(v\\) 和 \\(x\\) 不在同一空间，计算出 \\(v\\) 以后，要投影回 \\(x\\).     
-\\(v\\) 指速度，\\(x\\) 指流形。     
+这样速度 \\(v\\) 和流形 \\(x\\) 不在同一空间，计算出 \\(v\\) 以后，要投影回 \\(x\\)，转成流形。       
 
 P101   
-## Riemannian Flow Matching
+#### 构建 Riemannian Flow Matching
+
+图像上的 flow matching 与黎曼空间上的 flow matching，具有相同的数据构造、训练方法、唯一的不同是 Loss 的定义。黎曼度量代替 L2 Loss。         
 
 • **Riemannian Flow Matching loss:**   
 
-![](../assets/P101图.png)    
-
-"Flow Matching on General Geometries" Chen & Lipman (2023)   
+![](../assets/P101图.png)       
 
 P102    
 • **Riemannian Conditional Flow Matching loss:**     
 
 ![](../assets/P102图.png)   
 
-Theorem: Losses are equivalent,     
+Losses are equivalent 的结论在这里同样适用：        
 
 $$
 ∇_θℒ_{RFM}(θ) = ∇_θℒ_{RCFM}(θ)
 $$
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)    
-
 P103   
-## Conditional Flows - Simple Geometries    
+#### Conditional Flows - Simple Geometries      
 
-![](../assets/P103图1.png)   
+> flow matching 中的直线推广到这里就是测地线，因为测地线是流形上的最短路径。      
 
 ![](../assets/P103图2.png)   
 
-> 测地线是流形上的最短路径。      
+**For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic)，测地线的计算具有闭式表达：  
 
-**For simple manifolds** (e.g. Euclidean, sphere, torus, hyperbolic):   
+$$
+\Psi _t(x_0|x_1)=\mathrm{exp} _{x_0}(\kappa (t)\mathrm{log} _{x_0}(x_1)),\quad t \in [0,1]
+$$
 
-![](../assets/P103图3.png)   
+$$
+\mathrm{Scheduler }\quad \kappa (t):\kappa (0)=0,\quad \kappa (1)=1
+$$
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)   
+这种情况，无需模拟就能计算条件流。  
 
 P104    
-## Conditional Flows - General Geometries    
+#### Conditional Flows - General Geometries    
 
-**Geodesics** can be hard to compute    
+对于一般的几何结构，可能存在两个问题：    
 
-![](../assets/P104图.png)   
+1. **Geodesics** can be hard to compute    
 
-Concentrate probability at boundary    
+2. Concentrate probability at boundary    
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)   
-
-> 这种复杂流形难以计算。     
+> 因此难以计算。     
 
 P105   
-## Conditional Flows - General Geometries   
 
 Choose a **premetric** satisfying:     
 1. Non-negative:\\(d(x,y) ≥ 0\\).      
@@ -425,48 +409,39 @@ $$
 \mathrm{Scheduler}  \quad \tilde{κ} (t) = 1 − κ(t)
 $$
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)   
-
 > 为了解决以上问题，提出了一种新的度量方法。      
 
 P106   
 
-![](../assets/P106图.png)   
+> 对时间求导，得到微分方程。     
+
+![](../assets/P106图-1.png)   
 
 "Flow Matching on General Geometries" Chen & Lipman (2023)    
  
-> 对时间求导，得到微分方程。     
-
 P107   
-
-![](../assets/P107图.png)   
 
 > 新度量方法与测地距离比较。     
 
+![](../assets/P107图.png)   
+
 P108   
+#### Riemannian Flow vs. Score Matching
 
 ![](../assets/P108图.png)   
 
-"Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)    
-"Flow Matching on General Geometries" Chen & Lipman (2023)      
-
 > flow matching 的优势      
-（1）simulate free，速度快      
+（1）simulate free，速度快。PPT例子中快20倍。        
 （2）解 ODE 比解 SDE 容易     
 （3）\\(u_t(X_t|X_1)\\)是精确值，\\(\nabla \mathrm{log}\\) \\(p_t(x|x_0)\\) 是近似值。    
 
 P109    
-## Riemannian Flow vs. Score Matching
-
-![](../assets/P109图1.png)   
-
-![](../assets/P109图2.png)   
 
 "Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)     
 "Flow Matching on General Geometries" Chen & Lipman (2023)    
 
 P110    
-## Geometric Flow Matching   
+### 相关工作   
 
 **Equivariant Flow Matching:**    
 
