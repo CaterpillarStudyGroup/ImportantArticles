@@ -42,10 +42,6 @@ P116
 
 ![](../assets/P116图-1.png)    
 
-$$
-\mathrm{Caveat} 
-$$
-
 #### 局限性
 
 Enforcing **straightness restricts** the model. Often a slight drop in sample quality
