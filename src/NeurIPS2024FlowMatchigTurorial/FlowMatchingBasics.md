@@ -173,6 +173,7 @@ P20
 ### Why does it work?      
 • Build flow from conditional flows      
 > 如何从一个更简单的速度或流（称为条件流）构建一个速度或流。条件流是指一些简单的，固定的部分。      
+
 • Regress conditional flows      
 
 > 通过观察更简单的条件流来学习复杂的部分。
