@@ -133,22 +133,14 @@ Parameterize solver and optimize.
 Bespoke solvers can t**ransfer across different data sets and resolutions**.     
   
 局限性：    
-虽然能(不重训)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。       
+虽然能(不重训生成模型)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。       
 
 P127    
-## Faster sampling by only modifying the solver
-
-$$
-\mathrm{Caveat} 
-$$
 
 However, **does not reach distillation performance at extremely low NFEs.**    
 
-“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
-“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
-
 P128   
-## Faster sampling references   
+### 相关工作  
 
 **Rectified flows:**    
 “Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)     
@@ -167,22 +159,19 @@ P128
 “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
 
 P129   
-## You’ve trained a model. What next?   
-
-Inverse Problems (Training-Free)     
+## Inverse Problems (Training-Free)     
 
 > Inverse Problem：填充、去糊、超分、编辑。       
+与上节中的 data coupling 中要解决的问题不同的是，这里要利用在完全干净的数据集上训好的预训练模型，不经过重训，得到解决 Inverse Problem 的效果。  
 
 P133    
-## Solving inverse problems by posterior inference   
+### Solving inverse problems by posterior inference   
+
+\\(x_1\\) 为干净图像，\\(y\\) 为噪声图像。    
 
 ![](../assets/P133图.png)    
 
-“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)    
-“Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
-
-> \\(x_1\\) 为干净图像，\\(y\\) 为噪声图像。    
-用高斯来近似其中未知的部分 (score function)      
+> 用高斯来近似其中未知的部分 (score function)      
 score function 可能是 multi 的，但实验证明仅用高斯也能有比较好的效果。     
 
 P134   
@@ -199,27 +188,29 @@ Can randomly fail due to the **heuristic** sampling.
 
 P135      
 
-## Solving inverse problems by optimizing the source
+### Solving inverse problems by optimizing the source
+
+#### 观察结论
 
 1. Don’t want to rely on **likelihoods / densities**.     
-2. Have observation \\(y\\) being nonlinear in \\(x_1\\).     
 
-![](../assets/P135图.png)    
-
-“Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)      
-“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
-
-> 预训练一个生成模型，然后有这个模型来评估数据，评估结果很不可靠，它把真实数据评估为高密度，非真实数据评估为低密度。       
+> 预训练一个生成模型，然后有这个模型来评估数据，评估结果很不可靠，它把数据集中的数据评估为低密度，非数据集中的数据评估为低密度。       
 因为，高密度\\(\ne\\) 高采样率。     
 
+2. Have observation \\(y\\) being nonlinear in \\(x_1\\).     
+
+> \\(y\\) 是真实图像，\\(X_1\\) 是模型 sample,\\(X_1\\) 与 \\(y\\) 之间差了一个 Decoder.因此它们的关系是非线性的。   
+
+![](../assets/P135图-1.png)    
+
+“Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)      
+
 P138     
-## Solving inverse problems by optimizing the source
-
-![](../assets/P138图.png)    
-
-“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
+#### 方法
 
 > 逆问题转化为优化问题。     
+
+![](../assets/P138图-1.png)    
 
 $$
 X_1=\psi (X_0)
@@ -227,8 +218,11 @@ $$
 
 \\(\psi \\) 是预训练的生成模型，不优化 \\(\psi \\) 的参数，那就优化\\(X_0\\) 因为 \\(\psi \\) 是一个平滑、可逆、可微的函数。     
 
+![](../assets/P138图-2.png)      
+
+
 P139    
-## Solving inverse problems by optimizing the source
+#### 特点与局限性
 
 $$ 
 \min_{x_0} L(\psi ^\theta _1(x_0))
@@ -244,11 +238,13 @@ P140
 
 **Caveat:** Requires multiple simulations and differentiation of \\(\psi ^\theta _1\\).     
 
+> 求导链路很长，计算成本很高。   
+
 “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
 
 P141    
 
-## Inverse problems references    
+### Inverse problems references    
 
 **Online sampling methods inspired by posterior inference:**     
 
@@ -268,8 +264,10 @@ P141
 > 方法 1：通过修改 sample 方法来逐步接近目标。这些方法大多数受到某种后验推断的启发，可以在准确性和效率之间 trade off.     
 方法 2：简单但开销很大。        
 
-P144     
-## Data-driven and reward-driven fine-tuning    
+P144    
+## Reward Fine-tuning
+
+### Data-driven and reward-driven fine-tuning    
 
 |||
 |--|--|
@@ -278,9 +276,10 @@ P144
 
 > Data-driven 的关键在于精心准备数据集。     
 Reward-driven 不增加训练数据，而是给模型输出一个 reward。finetune 的目标是生成得分高的 sample.      
+此处仅介绍后者。    
 
 P145    
-## Reward fine-tuning by gradient descent   
+### Reward fine-tuning by gradient descent   
 
 Initializing with a pre-trained flow model \\(p^\theta\\)：    
 
@@ -293,41 +292,47 @@ or direct gradients [Xu et al. 2023, Clark et al. 2024]
 
 ![](../assets/P145图.png)
 
+P146    
+优点：    
+不同的奖励模型可以组合，得到综合的效果。    
+
+局限性：     
+Requires using **LoRA** to heuristically stay close to the original model.       
+Still relatively easy to **over-optimize** reward models; **“reward hacking”**.       
+
+> 这种方法没有 GT，所以生成结果有可能对 reward model 过拟合。因此需要使用 LoRA.      
+
 “Training diffusion models with reinforcement learning” Black et al. (2023)      
 “Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)       
 “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)      
 
-P146    
-
-$$
-\mathrm{Caveats} 
-$$
-
-Requires using **LoRA** to heuristically stay close to the original model.       
-Still relatively easy to **over-optimize** reward models; **“reward hacking”**.     
-
-“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)       
-
-> 这种方法没有 GT，所以生成结果有可能对 reward model 过拟合。因此需要使用 LoRA.      
-
 P149    
-## Reward fine-tuning by stochastic optimal control   
+### Reward fine-tuning by stochastic optimal control   
 
-![](../assets/P149图.png)
+#### 方法1：RLHF
 
-“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
-“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)      
+和直接优化相比，RLHF 将一个预训练分布倾科为能得到更高奖励的分布。      
 
-> 和直接优化相比，RLHF 通常针对 tilted（倾斜的）分布。即将一个预训练分布倾科为能得到更高奖励的分布。      
-公式（2）蓝色项：微调模型应与预训练模型接近。这是用于 tilted 分布的常用方法。但这里不这样用。      
+![](../assets/P149图.png)     
+
+> 正则化：微调模型分布应与预训练模型分布接近。常用方法是增加KL 项，如下面公式蓝色部分。但这里不这样用。因为，我们要优化的不是概率路径，而是与 \\(X_0\\) 相关的 something.         
 这里采用公式（3），即引入 value function bias．     
 value function bias 是 \\(X＝X_0\\)时，所有可能的 \\(X_1\\) 的期望。    
 
 P150    
+原理：    
 
 **Intuition:** Both initial noise \\(p(X_0)\\) and the model \\(u_t^{base}\\) affect \\(p^{base}(X_1)\\).    
 
-[Uehara et al. 2024] proposes to learn the optimal source distribution \\(p^\ast (X_0)\\).      
+> 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布，那么 \\(X_1\\) 的分布也会改变。    
+由于 \\(X_1\\) 同时受模型和 noise 分布的影响，那么 RLHF 同时优化这两个因素。       
+
+[Uehara et al. 2024] (即 RLHF) proposes to learn the optimal source distribution \\(p^\ast (X_0)\\).      
+
+> 或者，改变采样方法，让 \\(X_0\\) 分布与 \\(X_1\\) 分布独立。那么此时，value function 是一个常数。     
+     
+#### 方法2：Adjoint Matching   
+
 [Domingo-Enrich et al. 2024] proposes to **remove the dependency** between \\(X_0, X_1\\).     
 
 $$
@@ -337,10 +342,8 @@ $$
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
 
-> 原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布，那么 \\(X_1\\) 的分布也会改变。    
-由于 \\(X_1\\) 同时受模型和 noise 分布的影响，那么 RLHF 同时优化这两个因素。     
-或者，改变采样方法，让 \\(X_0\\) 分布与 \\(X_1\\) 分布独立。那么此时，value function 是一个常数。     
-     
+
+
 
 P151    
 ## Reward fine-tuning by stochastic optimal control
