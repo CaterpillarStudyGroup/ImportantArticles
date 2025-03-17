@@ -127,7 +127,7 @@ Parameterize solver and optimize.
 **Solver consistency:** sample quality is retained as NFE → ∞.    
 
 由于仅优化solver，好处：    
-1．可以利用 solver 的一致性，把步数取到无穷大，仍然能准确地解 DDE。做法是，用数据集 A 训练生成模型后，用数据集 B 训练 scheduler 的新参数。       
+1．可以利用 solver 的一致性，把步数取到无穷大，仍然能准确地解 ODE。做法是，用数据集 A 训练生成模型后，用数据集 B 训练 scheduler 的新参数。       
 2．在不同的模型(不同数据集、分辨率等训练出来的模型)之间可迁移。   
 
 Bespoke solvers can t**ransfer across different data sets and resolutions**.     
@@ -340,13 +340,8 @@ p^\ast (X_{(0,1)})=p^{base}(X_{(0,1)})\mathrm{exp} (r(X_1)+const.)\Rightarrow p^
 $$
 
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
-“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)     
-
-
-
 
 P151    
-## Reward fine-tuning by stochastic optimal control
 
 ![](../assets/P151图.png)   
 
@@ -355,11 +350,11 @@ P151
 > 这篇论文的主要内容：     
 1．使用 flow matching 在真实图像上训练后，再使用 ODE 采样，能得到真实的输出。    
 2．把 ODE 过程改成无记忆 SDE（强制 \\(X_0\\) 与 \\(X_1\\) 独立），那么在早期的 sample step 实际上没有什么收益，因为那时候 \\(X\\) 大部分都是噪声。因此 SD 的采样结果不符合预训练的分布。     
-3．2 其实是 finetune 的过程，因为 finetune 过程，不使用 flow 的 sample 方式，而是 SDE 的 sample 方式。     
-4．finetune 之后，可以把 SDE 换回成 DDE。     
+3．把 2 用于 finetune 的过程，因此 finetune 过程，不使用 flow 的 sample 方式，而是 SDE 的 sample 方式。     
+4．finetune 之后，可以把 SDE 换回成 ODE。     
 
 P152    
-## Reward fine-tuning 总结
+### Reward fine-tuning 总结
 
 **Gradient-based optimization:**     
 
