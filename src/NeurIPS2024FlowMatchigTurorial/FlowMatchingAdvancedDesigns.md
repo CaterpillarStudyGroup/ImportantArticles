@@ -248,13 +248,11 @@ $$
 p_t(g\cdot x)=p_t(x)
 $$
 
-![](../assets/P87图1.png)     
-  
-
-等变性：是教学中关于的群的术语，在这里简单理解为具有对称性。
+等变性：是教学中关于的群的术语，在这里简单理解为具有对称性。    
 边缘概率路径具有对称性和边缘速度具有对称性，是等价的。    
 等变速度场可以生成不变的概率路径和等变流。     
 
+![](../assets/P87图1.png)     
 
 "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
