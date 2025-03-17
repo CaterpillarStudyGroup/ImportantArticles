@@ -9,10 +9,12 @@ P112
 > 已有一个预训练模，可以做什么？    
 
 P113    
-Faster Sampling   
+## Faster Sampling   
 
 P114    
-## Faster sampling by straightening the flow   
+### Recitde Flos-Faster sampling by straightening the flow   
+
+#### 方法
 
 ![](../assets/P114图.png)    
 
@@ -23,112 +25,118 @@ $$
 Rectified Flow refits using the **pre-trained (noise, data) coupling**.      
 **Leads to straight flows**.     
 
-“Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)      
-“InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
-
 > Rectified Flow：让 flow 从源直接到目标。     
 第1步：训练 flow matching，flow matching 模型定义了源和目标的耦合关系，也得到了噪声与数据的 pair data.    
 第2步：用 pair data 继续训练。      
+
+“Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)      
+“InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
 
 P115     
 
 
 
 P116    
-## Faster sampling by straightening the flow    
+#### Result    
+
+> Diffusion 对比 Rectified Flow      
 
 ![](../assets/P116图-1.png)    
-
-> Result，Diffusion 对比 Rectified Flow      
 
 $$
 \mathrm{Caveat} 
 $$
+
+#### 局限性
 
 Enforcing **straightness restricts** the model. Often a slight drop in sample quality
 
 “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
 
 P118    
-## Faster sampling by self-consistency loss   
-
-![](../assets/P118图.png)    
-
-“One Step Diffusion via Shortcut Models” Frans et al. (2024)    
+### Faster sampling by self-consistency loss   
 
 > 增大 \\(h\\)，在 \\(x_t\\) 和 \\(X_{t＋h}\\) 之间建立 shortcut，类似于 diffusion 中的蒸馏方法。     
 
+#### 原理
+
+![](../assets/P118图.png)    
+
+
 P119    
-## Faster sampling by self-consistency loss   
+#### 方法   
 
 ![](../assets/P119图.png)    
 
-“One Step Diffusion via Shortcut Models” Frans et al. (2024)    
-
 P121    
-## Faster sampling by self-consistency loss    
+#### Result    
 
-![](../assets/P121图.png)    
+![](../assets/P121图-1.png)    
+
+#### 局限性
+
+Shortcuts with \\(h\\) >0 **do not work with classifier-free guidance** (CFG).    
+CFG weight can & must be specified before training.
+
+> short cuts 直接预测流而不是速度，流是非线性的，不能对结果加权组合，因此不能结合 CFG.       
+针对此问题的 workaround：预置 CFG 权重         
 
 “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
-
-> short cuts 直接预测流而不是速度，因此不能结合 CFG.       
-预置 CFG 权重针对此问题的 workaround.     
 
 P124   
-## Faster sampling by only modifying the solver   
+### Faster sampling by only modifying the solver   
+
+> 以上两种方法，都需训练。此方法不需要训练，而是修改 solver.     
+
+#### 补充：关于调度器．\\(\beta, \alpha _t\\) 和 \\(\sigma _t\\)的 trick．     
 
 **Can adapt pre-trainedmodels to different schedulers**.  
 
+有一个用 scheduler A 训练好的模型，现在要一个用 scheduler B 继续训练，这两个模型是什么关系？   
+
 ![](../assets/P124图1.png)    
 
-> 以上两种方法，都需训练。此方法不需要训练，而是修改 solver.     
+> 结论：这两个 scheduler 及其 flow 可以通过 \\(X\\) 的缩放和时间的重参数化关联起来。       
+时间重参数化是指，匹配两个 scheduler 的 SNR 和 scaling。   
 
 Related by a **scaling & time** transformation:    
 
 ![](../assets/P124图2.png)    
 
-> 补充：关于调度器．\\(\alpha _t\\) 和 \\(\sigma _t\\)．     
-有一个用 scheduler A 训练好的模型，现在预要一个用 scheduler B 训练，这两个模型是什么关系？       
-
 ![](../assets/P124图3.png)    
 
-> 结论：这两个 scheduler 及其 flow 可以通过 \\(X\\) 的缩放和时间的重参数化关联起来。       
-时间重参数化是指，调整 scheduler 的 SNR.     
+> 如图所示，调整 scheduler,流会表现出不同，但 \\(X_0\\) 与 \\(X_1\\) 的耦合关系不变。  
 
 “Elucidating the design space of diffusion-based generative models” Karras et al. (2023)    
-“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
 
 P126   
-## Faster sampling by only modifying the solver   
+#### 修改 scheduler 的例子   
+
+![](../assets/P126图.png)    
 
 **Bespoke solvers:**    
 **Decouples** model & solver.     
 Model is left unchanged.    
 Parameterize solver and optimize.   
 
+模型与 solver 解耦：模型不变，仅优化求 solver.      
+向 solver 中传入参数(表达 scheduler)，优化这些参数相当于在优化 scheduler。     
+
 **Can be interpreted as** finding best scheduler + more.   
 
 **Solver consistency:** sample quality is retained as NFE → ∞.    
 
-![](../assets/P126图.png)    
-
-“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)    
-“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)    
-
-> Bespoke Solver：      
-1．模型与 solver 解耦，模型不变，仅优化求 solver.      
-2．向 solver 中仅入参数(表达 scheduler)，优化这些参数。     
 由于仅优化solver，好处：    
-1．可以保持 solver 的一致性。     
-2．在不同的模型(不同数据集、分辨率等训练出来的模型)之间可迁移。     
+1．可以利用 solver 的一致性，把步数取到无穷大，仍然能准确地解 DDE。做法是，用数据集 A 训练生成模型后，用数据集 B 训练 scheduler 的新参数。       
+2．在不同的模型(不同数据集、分辨率等训练出来的模型)之间可迁移。   
+
+Bespoke solvers can t**ransfer across different data sets and resolutions**.     
+  
 局限性：    
 虽然能(不重训)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。       
 
 P127    
 ## Faster sampling by only modifying the solver
-
-Bespoke solvers can t**ransfer across different data sets and resolutions**.     
 
 $$
 \mathrm{Caveat} 
