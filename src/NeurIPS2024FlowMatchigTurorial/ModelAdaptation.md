@@ -127,7 +127,8 @@ Parameterize solver and optimize.
 
 Bespoke solvers can t**ransfer across different data sets and resolutions**.     
   
-局限性：    
+#### 局限性：    
+
 虽然能(不重训生成模型)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。       
 
 P127    
