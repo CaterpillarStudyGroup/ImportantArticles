@@ -29,15 +29,15 @@ P155
 P156    
 ## Generator
 
+> 如果要以离散状态转换的方式实现 flow matching，关键是找出线性的 transition kernal.     
+速度是线性的关键。    
+transition kernel 的导数被称为生成器       
+
 Generalize the notion of **velocity** to arbitrary CTMP 
 
 ![](../assets/P156图.png)
 
 "Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)      
-
-> 如果要以离散状态转换的方式实现 flow matching，关键是找出线性的 transition kernal.     
-速度是线性的关键。    
-transition kernel 的导数被称为生成器       
 
 P157    
 ## CTMP via generator
@@ -47,48 +47,41 @@ P157
 > 取一个速度，并用它定义流。类似于用生成器定义一个连续时间过程的轨迹。   
 
 P158     
-## Marginal probability path
 
-![](../assets/P158图.png)
+> 训练的目标仍然是让边缘概率路径以 \\(p\\) 分布开始，以 \\(Q\\) 分布结束。   
 
 P159    
-## Generator Matching
-
-![](../assets/P159图.png)
-
-> 这里与前面的区别是速度改成了生成器。     
 
 P160    
-## Sampling
-
-![](../assets/P160图.png)
 
 
 P161     
-## Generator Matching    
 
-![](../assets/P161图.png)
 
 P163      
 ## Building generator from conditional generators
 
 Repeating the Kata from flows……      
 
-![](../assets/P163图.png)
-
-"Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)     
+![](../assets/P163图.png)  
 
 P164     
-## The Marginalization Trick 
 
 ![](../assets/P164图.png)
+
+> 也可以从简单 condition 推广到所有数据，之前的结论同样适用。   
 
 "Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)     
 
 P165    
 ## Discrete Flow Matching
 
+> 这里讲的是与具体场景无关的通用方法。   
+
 ![](../assets/P165图.png)
+
+> \\(u_t\\) 是一个巨大的转移矩阵。    
+彩色圆点代表质量函数，类似于前面的概率密度的概念。    
 
 “Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)      
 “Discrete Flow Matching” Gat el al. (2024)       
@@ -103,6 +96,8 @@ u_t(x) = [u^1_t (x),…, u^d_t (x)]
 $$
 
 ![](../assets/P166图-2.png)
+
+> 但如果状态表太多这种方法不可行。解决方法是分解速度，一次只修改矩阵某一个维度上的某一个数值。   
 
 “A Continuous Time Framework for Discrete Denoising Models” Campbell et al. (2022)     
 
@@ -121,8 +116,6 @@ P168
 $$
 ℒ _ {CDFM}(\theta )=\mathbb{E} _ {t,X_1,X_t} \sum _ {i}^{} D_{X_t}(\frac{1}{1-t}\delta (\cdot ,X_1^i),u_t^{\theta,i}(\cdot ,X_t))  
 $$
-
-![](../assets/P168图.png)
 
 “Discrete Flow Matching” Gat el al. (2024)    
 "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
@@ -143,7 +136,11 @@ How to go beyond the factorized velocity?
 Better sampling?    
 How to explore the (huge) design space?     
 
-![](../assets/P170图.png)
+**Design choices:**    
+- Process    
+- Marginal Path    
+- Corrector steps     
+- Models superposition     
 
 P172    
 ## Flow Matching blueprint   
