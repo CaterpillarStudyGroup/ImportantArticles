@@ -323,7 +323,7 @@ Need to re-define the geometric structures we have in Euclidean space.
 P98    
 #### 定义几何结构
 
-> &#x1F50E; [黎曼流形]()
+> &#x1F50E; [黎曼流形]<https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/Geometry/RiemannianManifolds.html>
 
 
 
