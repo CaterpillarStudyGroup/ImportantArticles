@@ -459,3 +459,9 @@ P110
 "FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions" Sriram et al. (2024)   
 "Metric Flow Matching for Smooth Interpolations on the Data Manifold" Kapuśniak et al. (2024)   
 
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles/

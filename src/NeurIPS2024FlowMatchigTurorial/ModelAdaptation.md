@@ -172,9 +172,7 @@ score function 可能是 multi 的，但实验证明仅用高斯也能有比较�
 
 P134   
 
-$$
-\mathrm{Caveats} 
-$$
+#### 局限性
 
 Typically requires known **linear** corruption and **Gaussian prob path**.     
 Can randomly fail due to the **heuristic** sampling.    
@@ -212,7 +210,7 @@ $$
 X_1=\psi (X_0)
 $$
 
-> \\(\psi \\) 是预训练的生成模型，不优化 \\(\psi \\) 的参数，那就优化\\(X_0\\) 因为 \\(\psi \\) 是一个平滑、可逆、可微的函数。     
+> \\(\psi \\) 是预训练的生成模型，不优化 \\(\psi \\) 的参数，那就优化\\(X_0\\) 。因为 \\(\psi \\) 是一个平滑、可逆、可微的函数。     
 
 ![](../assets/P138图-2.png)      
 
@@ -324,10 +322,10 @@ P150
 由于 \\(X_1\\) 同时受模型和 noise 分布的影响，那么 RLHF 同时优化这两个因素。       
 
 [Uehara et al. 2024] (即 RLHF) proposes to learn the optimal source distribution \\(p^\ast (X_0)\\).      
-
-> 或者，改变采样方法，让 \\(X_0\\) 分布与 \\(X_1\\) 分布独立。那么此时，value function 是一个常数。     
      
 #### 方法2：Adjoint Matching   
+
+> 或者，改变采样方法，让 \\(X_0\\) 分布与 \\(X_1\\) 分布独立。那么此时，value function 是一个常数。     
 
 [Domingo-Enrich et al. 2024] proposes to **remove the dependency** between \\(X_0, X_1\\).     
 
@@ -364,3 +362,10 @@ P152
 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” 
 Domingo-Enrich et al. (2024)     
+
+
+
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/ImportantArticles/
