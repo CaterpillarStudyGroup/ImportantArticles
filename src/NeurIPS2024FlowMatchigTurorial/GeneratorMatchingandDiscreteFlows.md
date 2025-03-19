@@ -37,7 +37,7 @@ Generalize the notion of **velocity** to arbitrary CTMP
 
 ![](../assets/P156图.png)
 
-"Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)      
+&#x1F50E; "Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)      
 
 P157    
 ## CTMP via generator
@@ -49,14 +49,6 @@ P157
 P158     
 
 > 训练的目标仍然是让边缘概率路径以 \\(p\\) 分布开始，以 \\(Q\\) 分布结束。   
-
-P159    
-
-P160    
-
-
-P161     
-
 
 P163      
 ## Building generator from conditional generators
@@ -71,7 +63,7 @@ P164
 
 > 也可以从简单 condition 推广到所有数据，之前的结论同样适用。   
 
-"Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)     
+&#x1F50E; "Generator Matching: Generative modeling with arbitrary Markov processes" Holderrieth et al. (2024)     
 
 P165    
 ## Discrete Flow Matching
@@ -83,8 +75,8 @@ P165
 > \\(u_t\\) 是一个巨大的转移矩阵。    
 彩色圆点代表质量函数，类似于前面的概率密度的概念。    
 
-“Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)      
-“Discrete Flow Matching” Gat el al. (2024)       
+&#x1F50E; “Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)      
+&#x1F50E; “Discrete Flow Matching” Gat el al. (2024)       
 
 P166    
 ## Factorized velocities
@@ -99,15 +91,15 @@ $$
 
 > 但如果状态表太多这种方法不可行。解决方法是分解速度，一次只修改矩阵某一个维度上的某一个数值。   
 
-“A Continuous Time Framework for Discrete Denoising Models” Campbell et al. (2022)     
+&#x1F50E; “A Continuous Time Framework for Discrete Denoising Models” Campbell et al. (2022)     
 
 P167    
 ## Build (factorized) velocities
 
 ![](../assets/P167图.png)
 
-“Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)     
-“Discrete Flow Matching” Gat el al. (2024)     
+&#x1F50E; “Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design” Campbell et al. (2024)     
+&#x1F50E; “Discrete Flow Matching” Gat el al. (2024)     
 
 P168    
 ## Discrete Flow Matching Loss
@@ -117,16 +109,16 @@ $$
 ℒ _ {CDFM}(\theta )=\mathbb{E} _ {t,X_1,X_t} \sum _ {i}^{} D_{X_t}(\frac{1}{1-t}\delta (\cdot ,X_1^i),u_t^{\theta,i}(\cdot ,X_t))  
 $$
 
-“Discrete Flow Matching” Gat el al. (2024)    
-"Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
-“Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution” Lou et al. (2024)     
+&#x1F50E; “Discrete Flow Matching” Gat el al. (2024)    
+&#x1F50E; "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective” Shaul et al. (2024)    
+&#x1F50E; “Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution” Lou et al. (2024)     
 
 P169    
 ## Example: code generation model (1.7B)    
 
 ![](../assets/P169图.png)
 
-“Discrete Flow Matching” Gat el al. (2024)     
+&#x1F50E; “Discrete Flow Matching” Gat el al. (2024)     
 
 P171    
 
