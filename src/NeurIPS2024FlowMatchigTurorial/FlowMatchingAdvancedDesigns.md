@@ -75,7 +75,7 @@ CFG：条件生成结果与无条件生成结果外插。
 
 ![](../assets/P42图-2.png)  
 
-&#x1F50E; [CFG]<https://caterpillarstudygroup.github.io/ReadPapers/6.html>    
+&#x1F50E; [CFG](<https://caterpillarstudygroup.github.io/ReadPapers/6.html>)    
 
 P43     
 #### Flow Matching with Caussian Path  
