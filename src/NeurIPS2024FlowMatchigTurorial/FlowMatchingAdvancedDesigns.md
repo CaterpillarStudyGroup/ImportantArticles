@@ -208,16 +208,16 @@ P73
 ## 相关工作    
 
 **Paired data:**     
-"I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
-"Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
-"Simulation-Free Training of Neural ODEs on Paired Data" Kim et al. (2024)    
+&#x1F50E; "I2SB: Image-to-Image Schrödinger Bridge" Liu et al. (2023)    
+&#x1F50E; "Stochastic interpolants with data-dependent couplings" Albergo et al. (2024)    
+&#x1F50E; "Simulation-Free Training of Neural ODEs on Paired Data" Kim et al. (2024)    
 
 **Multisample couplings:**     
-"Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
-"Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
-"SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)   
-"Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)   
-"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)          
+&#x1F50E; "Multisample Flow Matching: Straightening Flows with Minibatch Couplings" Pooladian et al. (2023)     
+&#x1F50E; "Improving and generalizing flow-based generative models with minibatch optimal transport" Tong et al. (2023)    
+&#x1F50E; "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)   
+&#x1F50E; "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)   
+&#x1F50E; "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)          
 
 P75    
 ## Geometric Flow Matching
@@ -255,8 +255,6 @@ $$
 ![](../assets/P87图1.png)     
 
 &#x1F50E; "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
-
-    
 
 P88    
 #### 方法
