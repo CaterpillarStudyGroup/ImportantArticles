@@ -1,0 +1,551 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Flow Matching Advanced Designs - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded affix "><li class="part-title">CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">3.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">4.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">4.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">4.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">4.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">4.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">5.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">6.1.</strong> 图像编辑</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Applicationsonotherdomains/InverseProblems.html"><strong aria-hidden="true">6.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">6.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">7.1.</strong> 3D表示</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">7.2.</strong> 3D生成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">7.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">7.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">7.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">8.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded affix "><li class="part-title">Video Diffusion Models</li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">9.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">10.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">10.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">10.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">10.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">10.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">10.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">10.6.</strong> Long video generation</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">10.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">11.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">11.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">11.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/ControlledEdifng.html"><strong aria-hidden="true">11.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">11.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">11.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">12.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">13.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../HPE_HMR_Summary.html"><strong aria-hidden="true">14.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">15.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../HumanMotionGenerationSummary.html"><strong aria-hidden="true">16.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../HumanVideoGeneration.html"><strong aria-hidden="true">17.</strong> Human Video Generation</a></li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">18.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial.html"><strong aria-hidden="true">19.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">19.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html" class="active"><strong aria-hidden="true">19.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">19.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">19.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P34</p>
+<h1 id="flow-matching-advanced-designs"><a class="header" href="#flow-matching-advanced-designs">Flow Matching Advanced Designs</a></h1>
+<p>P35</p>
+<p><img src="../assets/P35%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>1．条件生成<br />
+2．\(P\) 分布和 \(Q\) 分布耦合的场景<br />
+3．在几何域上使用 flow matching 构造生成模型</p>
+</blockquote>
+<p>P37</p>
+<h2 id="conditioning-and-guidance"><a class="header" href="#conditioning-and-guidance">Conditioning and Guidance</a></h2>
+<p>问题定义：<br />
+数据集：样本 + 标签<br />
+生成：给定标签，从具有特标签的分布中采样</p>
+<p>P39</p>
+<h3 id="conditional-models"><a class="header" href="#conditional-models">Conditional Models</a></h3>
+<h4 id="公式定义"><a class="header" href="#公式定义">公式定义</a></h4>
+<p>$$
+p_ {t,1|Y} (x, x_1|y) = p_ {t|1}(x|x_1)q(x_1|y)
+$$</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>无条件</td><td>条件</td></tr>
+<tr><td>边缘概率分布 <img src="../assets/P39%E5%9B%BE-A.png" alt="" /></td><td><img src="../assets/P39%E5%9B%BE-C.png" alt="" /></td></tr>
+<tr><td>边缘速度 <img src="../assets/P39%E5%9B%BE-B.png" alt="" /></td><td><img src="../assets/P39%E5%9B%BE-D.png" alt="" /></td></tr>
+</tbody></table>
+<blockquote>
+<p>将条件概率路径构建为不显式依赖于条件 \(Y\)。</p>
+</blockquote>
+<p>P40</p>
+<h4 id="网络训练"><a class="header" href="#网络训练">网络训练</a></h4>
+<p>Train same neural network on all conditions:</p>
+<p><img src="../assets/P40%E5%9B%BE1.png" alt="" /></p>
+<blockquote>
+<p>对于网络训练的影响在于，数据增加一个维度来表示\(Y\)。</p>
+</blockquote>
+<p>P41</p>
+<h4 id="examples"><a class="header" href="#examples">Examples</a></h4>
+<p><img src="../assets/P41%E5%9B%BE.png" alt="" /></p>
+<p>🔎 “Flow Matching for Generative Modeling” Lipman et al. (2022)<br />
+🔎 “GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models” Nichol et al. (2021)</p>
+<h4 id="局限性"><a class="header" href="#局限性">局限性</a></h4>
+<blockquote>
+<p>此方法在“每个条件都有大量数据”时很有用，例如条件是类别时。<br />
+条件是文本时不适用，因为数据集里一段文本通常只对应一张图像。</p>
+</blockquote>
+<p>P42</p>
+<h3 id="condition-as-guidance"><a class="header" href="#condition-as-guidance">Condition as Guidance</a></h3>
+<h4 id="score-matching-和-diffusion"><a class="header" href="#score-matching-和-diffusion">Score Matching 和 diffusion</a></h4>
+<p>classifier Guidance：通过引入分类器，将无条件模型变成条件模型.</p>
+<p><img src="../assets/P42%E5%9B%BE-1.png" alt="" /></p>
+<p>CFG：条件生成结果与无条件生成结果外插。</p>
+<p><img src="../assets/P42%E5%9B%BE-2.png" alt="" /></p>
+<p>🔎 <a href="https://caterpillarstudygroup.github.io/ReadPapers/6.html">CFG</a></p>
+<p>P43</p>
+<h4 id="flow-matching-with-caussian-path"><a class="header" href="#flow-matching-with-caussian-path">Flow Matching with Caussian Path</a></h4>
+<p>Assume a velocity field trained with <strong>Gaussian paths</strong>.以上来自 score matching 的公式，同样可以适配到 flow matching.</p>
+<p><img src="../assets/P43%E5%9B%BE.png" alt="" /></p>
+<p>P44<br />
+相关工作：<br />
+🔎 &quot;Guided Flows for Generative Modeling and Decision Making&quot; Zheng et al. (2023)<br />
+🔎 &quot;Mosaic-SDF for 3D Generative Models&quot; Yariv et al. (2023)<br />
+🔎 &quot;Audiobox: Unified Audio Generation with Natural Language Prompts&quot; Vyas et al. (2023)<br />
+🔎 &quot;Scaling Rectified Flow Transformers for High-Resolution Image Synthesis&quot; Esser et al. (2024)<br />
+🔎 &quot;Movie Gen: A Cast of Media Foundation Models&quot; Polyak et al. (2024)</p>
+<p>P45</p>
+<blockquote>
+<p>其中，movie Gen 发现使用 flow matching loss，在生成质量和文本一致性上，均优于 diffusion loss.</p>
+</blockquote>
+<p>P46</p>
+<h4 id="非-gaussian-path"><a class="header" href="#非-gaussian-path">非 Gaussian Path</a></h4>
+<p><strong>Open Problem</strong><br />
+How to guide FM with non-Gaussian paths?</p>
+<blockquote>
+<p>CFG 要求正在学习的是具有高斯路径的 flow matching 模型，但 flow matching 不局限于高斯源。</p>
+</blockquote>
+<p>P52</p>
+<h2 id="data-couplings"><a class="header" href="#data-couplings">Data Couplings</a></h2>
+<p>前面工作都假设 \(P\) 和 \(Q\) 是独立的。What about dependent couplings?</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../assets/P52%E5%9B%BE1.png" alt="" /></td><td><img src="../assets/P52%E5%9B%BE2.png" alt="" /></td></tr>
+<tr><td>• Non-Gaussian source distribution <br>• Alternative conditioning approach <br>• Inverse problems</td><td>• Applications to Optimal Transport <br> • Efficiency: straighter trajectories</td></tr>
+</tbody></table>
+<blockquote>
+<p>两种方法，利用 \(P\) 和 \(Q\) 的耦合关系优化生成过程。<br />
+1．利用耦合关系，构造另一种条件方法，用于解决 Inverse 问题。<br />
+2．试图找到多样本之间的耦合关系，用于优化采样效率。</p>
+</blockquote>
+<p>P58</p>
+<h3 id="paired-data"><a class="header" href="#paired-data">Paired Data</a></h3>
+<h4 id="问题定义"><a class="header" href="#问题定义">问题定义</a></h4>
+<p><img src="../assets/P58%E5%9B%BE1.png" alt="" /></p>
+<h4 id="方法"><a class="header" href="#方法">方法</a></h4>
+<p>Alter <strong>source distribution</strong> and <strong>coupling</strong> instead of adding <strong>condition</strong></p>
+<blockquote>
+<p>改变源分布和耦合，而不是添加条件。<br />
+从数据中取出样本\((X_1,Y)\)<br />
+[❓] \(X_1\) 和 Y 有什么区别？<br />
+根据Y构造\(X_0\)</p>
+</blockquote>
+<p>$$
+X_0=Y+\epsilon \sim p 
+$$</p>
+<blockquote>
+<p>源分布不是噪声，而是 \(Y\) 添加噪声，损失不变。</p>
+</blockquote>
+<p>P61</p>
+<h4 id="result"><a class="header" href="#result">Result</a></h4>
+<p><img src="../assets/P61%E5%9B%BE.png" alt="" /></p>
+<p>P63</p>
+<h3 id="multisample-couplings"><a class="header" href="#multisample-couplings">Multisample Couplings</a></h3>
+<h4 id="问题定义-1"><a class="header" href="#问题定义-1">问题定义</a></h4>
+<p>Given uncoupled <strong>source</strong> and <strong>target</strong> distributions,can we build a coupling to induce straighter paths?</p>
+<blockquote>
+<p>有一个预训练的 flow matching 模型，构建一种耦合，使 \(P\) 到 \(Q\) 的路径更直线，或 \(Q\) 能更好地采样。</p>
+</blockquote>
+<p><img src="../assets/P63%E5%9B%BE.png" alt="" /></p>
+<p>P64</p>
+<h4 id="耦合的本质"><a class="header" href="#耦合的本质">耦合的本质</a></h4>
+<blockquote>
+<p>耦合 cost 限制了动能．降低 coupling cost，就能减少动能。</p>
+</blockquote>
+<p><img src="../assets/P64%E5%9B%BE.png" alt="" /></p>
+<p>对于不同的耦合关系会得到不同的 \(u_t\) 和动能。但它有上限，降低上限能减少动能。</p>
+<p>Marginal \(u_t\) with cond-OT FM and \(π_{0,1}\)</p>
+<p>P69</p>
+<h4 id="方法-1"><a class="header" href="#方法-1">方法</a></h4>
+<p>Use mini batch optimal transport couplings</p>
+<p><img src="../assets/P69%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<ol>
+<li>从 \(P\) 分布和 \(Q\) 分布中随机采样 \(k\) 个点。</li>
+<li>寻找两组点之间的最优排列，来最小化 cost.</li>
+<li>假设找到了最优组合，随机选择一对。</li>
+</ol>
+</blockquote>
+<p>P70<br />
+$$
+\mathrm{When} \quad k = 1 → π_{0,1} = p(X_0)q(X_1)
+$$</p>
+<blockquote>
+<p>当 \(k＝1\) 时，相当于 \(P\) 和 \(Q\) 是独立的。</p>
+</blockquote>
+<p>P71</p>
+<p>When \(k → ∞, u_t\) generates the Optimal Transport map</p>
+<p>P72</p>
+<h4 id="result-1"><a class="header" href="#result-1">Result</a></h4>
+<p><img src="../assets/P72%E5%9B%BE-1.png" alt="" /></p>
+<ul>
+<li>High dimensions-minor improvement in sampling speed compared to tailored samplers.</li>
+</ul>
+<blockquote>
+<p>低维时，此方法能明显降低 cost</p>
+</blockquote>
+<ul>
+<li>Shows promise in lower dimensional problems for <strong>scientific</strong> applications (e.g. protein backbone design  [Bose et al.'23]).</li>
+</ul>
+<blockquote>
+<p>高维时，路径本身已接近直线，因此效果不明显。</p>
+</blockquote>
+<p>P73</p>
+<h2 id="相关工作"><a class="header" href="#相关工作">相关工作</a></h2>
+<p><strong>Paired data:</strong><br />
+🔎 &quot;I2SB: Image-to-Image Schrödinger Bridge&quot; Liu et al. (2023)<br />
+🔎 &quot;Stochastic interpolants with data-dependent couplings&quot; Albergo et al. (2024)<br />
+🔎 &quot;Simulation-Free Training of Neural ODEs on Paired Data&quot; Kim et al. (2024)</p>
+<p><strong>Multisample couplings:</strong><br />
+🔎 &quot;Multisample Flow Matching: Straightening Flows with Minibatch Couplings&quot; Pooladian et al. (2023)<br />
+🔎 &quot;Improving and generalizing flow-based generative models with minibatch optimal transport&quot; Tong et al. (2023)<br />
+🔎 &quot;SE(3)-Stochastic Flow Matching for Protein Backbone Generation&quot; Bose et al. (2023)<br />
+🔎 &quot;Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation&quot; Huguet et al. (2024)<br />
+🔎 &quot;Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow&quot; Liu et al. (2022)</p>
+<p>P75</p>
+<h2 id="geometric-flow-matching"><a class="header" href="#geometric-flow-matching">Geometric Flow Matching</a></h2>
+<p>使用 Flow Matching 生成(对称的或黎曼流型的)几何</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>Data with Symmetries</td><td>Riemannian Manifolds</td></tr>
+<tr><td><img src="../assets/P75%E5%9B%BE1.png" alt="" /></td><td><img src="../assets/P75%E5%9B%BE3.png" alt="" /></td></tr>
+<tr><td>• Equivariant flows → invariant densities <br>• Alignment couplings</td><td>• Simulation free on simple manifolds <br> • General geometries</td></tr>
+</tbody></table>
+<p>P87</p>
+<h3 id="data-with-symmetries"><a class="header" href="#data-with-symmetries">Data with Symmetries</a></h3>
+<h4 id="问题定义-2"><a class="header" href="#问题定义-2">问题定义</a></h4>
+<blockquote>
+<p>有些对象具有对称性，希望生成的对象也能满足这些特征。 </p>
+</blockquote>
+<h4 id="对称性的直观理解和公式表示"><a class="header" href="#对称性的直观理解和公式表示">对称性的直观理解和公式表示</a></h4>
+<p><img src="../assets/P87%E5%9B%BE2-1.png" alt="" /> </p>
+<blockquote>
+<p>原始 \(P、Q\) 分布与对称 \(P、Q\) 分布应具有相同的密度或似然性。<br />
+边缘概率路径也应具有对称性，且原概率路径保持不变。</p>
+</blockquote>
+<p>$$
+p_t(g\cdot x)=p_t(x)
+$$</p>
+<p>等变性：是教学中关于的群的术语，在这里简单理解为具有对称性。<br />
+边缘概率路径具有对称性和边缘速度具有对称性，是等价的。<br />
+等变速度场可以生成不变的概率路径和等变流。</p>
+<p><img src="../assets/P87%E5%9B%BE1.png" alt="" /></p>
+<p>🔎 &quot;Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities&quot; Köhler et al. (2020)</p>
+<p>P88</p>
+<h4 id="方法-2"><a class="header" href="#方法-2">方法</a></h4>
+<p>因此，只需要构建一个能生成等变速度的 flow matching model。</p>
+<p>Equivariant Velocity</p>
+<p>$$ 
+u^θ_t (g⋅x) = g⋅u^θ_t(x)
+$$</p>
+<p>Train with CFM:</p>
+<p><img src="../assets/P88%E5%9B%BE2.png" alt="" /></p>
+<p>🔎 &quot;Equivariant flow matching&quot; Klein et al. (2023)<br />
+🔎 &quot;Equivariant Flow Matching with Hybrid Probability Transport&quot; Song et al. (2023)</p>
+<p>P89</p>
+<h4 id="存在的问题"><a class="header" href="#存在的问题">存在的问题</a></h4>
+<p>数据是具有对称性的。</p>
+<p><img src="../assets/P89%E5%9B%BE-1.png" alt="" /></p>
+<blockquote>
+<p>如果没有考虑数据的对称性，仍假设 \(P\) 和 \(Q\) 是独立的，会发生这种情况。</p>
+</blockquote>
+<p>P90</p>
+<p><img src="../assets/P90%E5%9B%BE2-1.png" alt="" /></p>
+<blockquote>
+<p>导致模型学到的轨迹弯曲。降低 sample 的效率。</p>
+</blockquote>
+<p>P91</p>
+<h4 id="解决方法"><a class="header" href="#解决方法">解决方法</a></h4>
+<p>🔎 &quot;Equivariant flow matching&quot; Klein et al. (2023)<br />
+🔎 &quot;Equivariant Flow Matching with Hybrid Probability Transport&quot; Song et al. (2023)</p>
+<blockquote>
+<p>这两篇 Paper 提出对齐耦合；解决以上问题。</p>
+</blockquote>
+<p>P92</p>
+<h4 id="result-2"><a class="header" href="#result-2">Result</a></h4>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>&quot;Fast Point Cloud Generation with Straight Flows&quot; Wu et al. (2022)</td><td>&quot;Equivariant Flow Matching with Hybrid Probability Transport&quot; Song et al. (2023)<br> &quot;Equivariant flow matching&quot; Klein et al. (2023)</td></tr>
+<tr><td><img src="../assets/P92%E5%9B%BE1.png" alt="" /></td><td><img src="../assets/P92%E5%9B%BE2.png" alt="" /></td></tr>
+</tbody></table>
+<blockquote>
+<p>此方法适用于点云和分子。</p>
+</blockquote>
+<p>P94</p>
+<h3 id="generative-modeling-on-manifolds"><a class="header" href="#generative-modeling-on-manifolds">Generative Modeling on Manifolds</a></h3>
+<blockquote>
+<p>生成流形数据，例如 Nesh，轨迹、曲面等而不是整个欧拉空间。</p>
+</blockquote>
+<p>P95<br />
+Need to re-define the geometric structures we have in Euclidean space.</p>
+<blockquote>
+<p>重新定义几何结构，以便定义 flow matching 模型。<br />
+此处以黎曼流形为例。</p>
+</blockquote>
+<p>P98</p>
+<h4 id="定义几何结构"><a class="header" href="#定义几何结构">定义几何结构</a></h4>
+<blockquote>
+<p>🔎 <a href="https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/Geometry/RiemannianManifolds.html">黎曼流形</a></p>
+</blockquote>
+<blockquote>
+<p>假设只考虑黎曼流形<br />
+1．光滑流形，即可微，能够定义切空间。</p>
+</blockquote>
+<blockquote>
+<p>切空间是某点\(x\)处所有方向导数的集合。<br />
+2．选择一个内积来计算黎曼度量，描述流形上的角度和距离。</p>
+</blockquote>
+<p>P99</p>
+<p><img src="../assets/P99%E5%9B%BE.png" alt="" /></p>
+<p>Pl00</p>
+<blockquote>
+<p>构建黎曼流形时，速度定义在切空间上。<br />
+这样速度 \(v\) 和流形 \(x\) 不在同一空间，计算出 \(v\) 以后，要投影回 \(x\)，转成流形。</p>
+</blockquote>
+<p>P101</p>
+<h4 id="构建-riemannian-flow-matching"><a class="header" href="#构建-riemannian-flow-matching">构建 Riemannian Flow Matching</a></h4>
+<p>图像上的 flow matching 与黎曼空间上的 flow matching，具有相同的数据构造、训练方法、唯一的不同是 Loss 的定义。黎曼度量代替 L2 Loss。</p>
+<p>• <strong>Riemannian Flow Matching loss:</strong></p>
+<p><img src="../assets/P101%E5%9B%BE.png" alt="" /></p>
+<p>P102<br />
+• <strong>Riemannian Conditional Flow Matching loss:</strong></p>
+<p><img src="../assets/P102%E5%9B%BE.png" alt="" /></p>
+<p>Losses are equivalent 的结论在这里同样适用：</p>
+<p>$$
+∇_θℒ_{RFM}(θ) = ∇_θℒ_{RCFM}(θ)
+$$</p>
+<p>P103</p>
+<h4 id="conditional-flows---simple-geometries"><a class="header" href="#conditional-flows---simple-geometries">Conditional Flows - Simple Geometries</a></h4>
+<blockquote>
+<p>flow matching 中的直线推广到这里就是测地线，因为测地线是流形上的最短路径。</p>
+</blockquote>
+<p><img src="../assets/P103%E5%9B%BE2.png" alt="" /></p>
+<p><strong>For simple manifolds</strong> (e.g. Euclidean, sphere, torus, hyperbolic)，测地线的计算具有闭式表达：</p>
+<p>$$
+\Psi _t(x_0|x_1)=\mathrm{exp} _{x_0}(\kappa (t)\mathrm{log} _{x_0}(x_1)),\quad t \in [0,1]
+$$</p>
+<p>$$
+\mathrm{Scheduler }\quad \kappa (t):\kappa (0)=0,\quad \kappa (1)=1
+$$</p>
+<p>这种情况，无需模拟就能计算条件流。</p>
+<p>P104</p>
+<h4 id="conditional-flows---general-geometries"><a class="header" href="#conditional-flows---general-geometries">Conditional Flows - General Geometries</a></h4>
+<p>对于一般的几何结构，可能存在两个问题：</p>
+<ol>
+<li>
+<p><strong>Geodesics</strong> can be hard to compute</p>
+</li>
+<li>
+<p>Concentrate probability at boundary</p>
+</li>
+</ol>
+<blockquote>
+<p>因此难以计算。</p>
+</blockquote>
+<p>P105</p>
+<p>Choose a <strong>premetric</strong> satisfying:</p>
+<ol>
+<li>Non-negative:\(d(x,y) ≥ 0\).</li>
+<li>Positive: \(d(x, y) = 0\) iff \(x = y\).</li>
+<li>Non-degenerate:\(∇d(x, y) ≠ 0\) iff \(x ≠ y\).</li>
+</ol>
+<p>Build <strong>conditional flow</strong> satisfying:</p>
+<p>$$ 
+d(ψ_t(x_0|x_1),x_1) = \tilde{κ}(t)d(x_0,x_1)
+$$</p>
+<p>$$
+\mathrm{Scheduler}  \quad \tilde{κ} (t) = 1 − κ(t)
+$$</p>
+<blockquote>
+<p>为了解决以上问题，提出了一种新的度量方法。</p>
+</blockquote>
+<p>P106</p>
+<blockquote>
+<p>对时间求导，得到微分方程。</p>
+</blockquote>
+<p><img src="../assets/P106%E5%9B%BE-1.png" alt="" /></p>
+<p>🔎 &quot;Flow Matching on General Geometries&quot; Chen &amp; Lipman (2023)</p>
+<p>P107</p>
+<blockquote>
+<p>新度量方法与测地距离比较。</p>
+</blockquote>
+<p><img src="../assets/P107%E5%9B%BE.png" alt="" /></p>
+<p>P108</p>
+<h4 id="riemannian-flow-vs-score-matching"><a class="header" href="#riemannian-flow-vs-score-matching">Riemannian Flow vs. Score Matching</a></h4>
+<p><img src="../assets/P108%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>flow matching 的优势<br />
+（1）simulate free，速度快。PPT例子中快20倍。<br />
+（2）解 ODE 比解 SDE 容易<br />
+（3）\(u_t(X_t|X_1)\)是精确值，\(\nabla \mathrm{log}\) \(p_t(x|x_0)\) 是近似值。</p>
+</blockquote>
+<p>P109</p>
+<p>🔎 &quot;Riemannian Score-Based Generative Modelling&quot; De Bortoli et al. (2022)<br />
+🔎 &quot;Flow Matching on General Geometries&quot; Chen &amp; Lipman (2023)</p>
+<p>P110</p>
+<h3 id="相关工作-1"><a class="header" href="#相关工作-1">相关工作</a></h3>
+<p><strong>Equivariant Flow Matching:</strong></p>
+<p>🔎 &quot;Fast Point Cloud Generation with Straight Flows&quot; Wu et al. (2022)<br />
+🔎 &quot;Equivariant flow matching&quot; Klein et al. (2023)<br />
+🔎 &quot;Equivariant Flow Matching with Hybrid Probability Transport&quot; Song et al. (2023)<br />
+🔎 &quot;Mosaic-SDF for 3D Generative Models&quot; Yariv et al. (2023)</p>
+<p><strong>Riemannian Flow Matching:</strong></p>
+<p>🔎 &quot;Flow Matching on General Geometries&quot; Chen &amp; Lipman (2023)<br />
+🔎 &quot;SE(3)-Stochastic Flow Matching for Protein Backbone Generation&quot; Bose et al. (2023)<br />
+🔎 &quot;Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation&quot; Huguet et al. (2024)<br />
+🔎 &quot;FlowMM: Generating Materials with Riemannian Flow Matching&quot; Miller et al. (2024)<br />
+🔎 &quot;FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions&quot; Sriram et al. (2024)<br />
+🔎 &quot;Metric Flow Matching for Smooth Interpolations on the Data Manifold&quot; Kapuśniak et al. (2024)</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
