@@ -29,7 +29,7 @@ Rectified Flow refits using the **pre-trained (noise, data) coupling**.
 第1步：训练 flow matching，flow matching 模型定义了源和目标的耦合关系，也得到了噪声与数据的 pair data.    
 第2步：用 pair data 继续训练。      
 
-“Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)       
+&#x1F50E; “Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)       
 
 P115     
 
@@ -46,7 +46,7 @@ P116
 
 Enforcing **straightness restricts** the model. Often a slight drop in sample quality
 
-“InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
+&#x1F50E; “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)    
 
 P118    
 ### Faster sampling by self-consistency loss   
@@ -76,7 +76,7 @@ CFG weight can & must be specified before training.
 > short cuts 直接预测流而不是速度，流是非线性的，不能对结果加权组合，因此不能结合 CFG.       
 针对此问题的 workaround：预置 CFG 权重         
 
-“One Step Diffusion via Shortcut Models” Frans et al. (2024)    
+&#x1F50E; “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
 P124   
 ### Faster sampling by only modifying the solver   
@@ -102,7 +102,7 @@ Related by a **scaling & time** transformation:
 
 > 如图所示，调整 scheduler,流会表现出不同，但 \\(X_0\\) 与 \\(X_1\\) 的耦合关系不变。  
 
-“Elucidating the design space of diffusion-based generative models” Karras et al. (2023)    
+&#x1F50E; “Elucidating the design space of diffusion-based generative models” Karras et al. (2023)    
 
 P126   
 #### 修改 scheduler 的例子   
@@ -139,20 +139,20 @@ P128
 ### 相关工作  
 
 **Rectified flows:**    
-“Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)     
-“InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2024)     
-“Improving the Training of Rectified Flows” Lee et al. (2024)    
+&#x1F50E; “Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)     
+&#x1F50E; “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2024)     
+&#x1F50E; “Improving the Training of Rectified Flows” Lee et al. (2024)    
 
 **Consistency & shortcut models:**      
-“Consistency Models” Song et al. (2023)    
-“Improved Techniques for Training Consistency Models” Song & Dhariwal (2023)    
-“One Step Diffusion via Shortcut Models” Frans et al. (2024)    
+&#x1F50E; “Consistency Models” Song et al. (2023)    
+&#x1F50E; “Improved Techniques for Training Consistency Models” Song & Dhariwal (2023)    
+&#x1F50E; “One Step Diffusion via Shortcut Models” Frans et al. (2024)    
 
 **Trained & bespoke solvers:**    
 
-“DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics” Zheng et al. (2023)     
-“Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
-“Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
+&#x1F50E; “DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics” Zheng et al. (2023)     
+&#x1F50E; “Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)     
+&#x1F50E; “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)     
 
 P129   
 ## Inverse Problems (Training-Free)     
@@ -177,8 +177,8 @@ P134
 Typically requires known **linear** corruption and **Gaussian prob path**.     
 Can randomly fail due to the **heuristic** sampling.    
 
-“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)      
-“Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
+&#x1F50E; “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)      
+&#x1F50E; “Training-free Linear Image Inverses via Flows” Pokle et al. (2024)    
 
 P135      
 
@@ -197,7 +197,7 @@ P135
 
 ![](../assets/P135图-1.png)    
 
-“Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)      
+&#x1F50E; “Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)      
 
 P138     
 #### 方法
@@ -234,7 +234,7 @@ P140
 
 > 求导链路很长，计算成本很高。   
 
-“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
+&#x1F50E; “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)     
 
 P141    
 
@@ -242,18 +242,18 @@ P141
 
 **Online sampling methods inspired by posterior inference:**     
 
-“Diffusion Posterior Sampling for General Noisy Inverse Problems” Chung et al. (2022)     
-“A Variational Perspective on Solving Inverse Problems with Diffusion Models” Mardani et al. (2023)      
-“Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)     
-“Training-free Linear Image Inverses via Flows” Pokle et al. (2023)     
-“Practical and Asymptotically Exact Conditional Sampling in Diffusion Models” Wu et al. (2023)      
-“Monte Carlo guided Diffusion for Bayesian linear inverse problems” Cardoso et al. (2023)     
+&#x1F50E; “Diffusion Posterior Sampling for General Noisy Inverse Problems” Chung et al. (2022)     
+&#x1F50E; “A Variational Perspective on Solving Inverse Problems with Diffusion Models” Mardani et al. (2023)      
+&#x1F50E; “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)     
+&#x1F50E; “Training-free Linear Image Inverses via Flows” Pokle et al. (2023)     
+&#x1F50E; “Practical and Asymptotically Exact Conditional Sampling in Diffusion Models” Wu et al. (2023)      
+&#x1F50E; “Monte Carlo guided Diffusion for Bayesian linear inverse problems” Cardoso et al. (2023)     
 
 **Source point optimization:**     
 
-“Differentiable Gaussianization Layers for Inverse Problems Regularized by Deep Generative Models" Li (2021)     
-“End-to-End Diffusion Latent Optimization Improves Classifier Guidance” Wallace et al. (2023)      
-“D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)      
+&#x1F50E; “Differentiable Gaussianization Layers for Inverse Problems Regularized by Deep Generative Models" Li (2021)     
+&#x1F50E; “End-to-End Diffusion Latent Optimization Improves Classifier Guidance” Wallace et al. (2023)      
+&#x1F50E; “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)      
 
 > 方法 1：通过修改 sample 方法来逐步接近目标。这些方法大多数受到某种后验推断的启发，可以在准确性和效率之间 trade off.     
 方法 2：简单但开销很大。        
@@ -296,9 +296,9 @@ Still relatively easy to **over-optimize** reward models; **“reward hacking”
 
 > 这种方法没有 GT，所以生成结果有可能对 reward model 过拟合。因此需要使用 LoRA.      
 
-“Training diffusion models with reinforcement learning” Black et al. (2023)      
-“Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)       
-“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)      
+&#x1F50E; “Training diffusion models with reinforcement learning” Black et al. (2023)      
+&#x1F50E; “Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)       
+&#x1F50E; “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)      
 
 P149    
 ### Reward fine-tuning by stochastic optimal control   
@@ -333,13 +333,13 @@ $$
 p^\ast (X_{(0,1)})=p^{base}(X_{(0,1)})\mathrm{exp} (r(X_1)+const.)\Rightarrow p^\ast (X_1)\propto p^{base}(X_1)\mathrm{exp} (r(X_1))
 $$
 
-“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
+&#x1F50E; “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
 
 P151    
 
 ![](../assets/P151图.png)   
 
-“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)    
+&#x1F50E; “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)    
 
 > 这篇论文的主要内容：     
 1．使用 flow matching 在真实图像上训练后，再使用 ODE 采样，能得到真实的输出。    
@@ -352,15 +352,15 @@ P152
 
 **Gradient-based optimization:**     
 
-“DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models” Fan et al. (2023)     
-“Training diffusion models with reinforcement learning” Black et al. (2023)     
-“Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)     
-“Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)     
+&#x1F50E; “DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models” Fan et al. (2023)     
+&#x1F50E; “Training diffusion models with reinforcement learning” Black et al. (2023)     
+&#x1F50E; “Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)     
+&#x1F50E; “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)     
 
 **Stochastic optimal control:**     
 
-“Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
-“Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” 
+&#x1F50E; “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)      
+&#x1F50E; “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” 
 Domingo-Enrich et al. (2024)     
 
 
