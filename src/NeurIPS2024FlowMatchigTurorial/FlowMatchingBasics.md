@@ -160,9 +160,9 @@ $$
 $$
 
 
-"Flow Matching for Generative Modeling" Lipman el al. (2022)      
-"Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
-"Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
+&#x1F50E; "Flow Matching for Generative Modeling" Lipman el al. (2022)      
+&#x1F50E; "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow" Liu et al. (2022)       
+&#x1F50E; "Building Normalizing Flows with Stochastic Interpolants" Albergo et al. (2022)    
 
  
 

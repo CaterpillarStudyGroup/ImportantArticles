@@ -254,7 +254,7 @@ $$
 
 ![](../assets/P87图1.png)     
 
-"Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
+&#x1F50E; "Equivariant Flows: Exact Likelihood Generative Learning for Symmetric Densities" Köhler et al. (2020)     
 
     
 
@@ -273,8 +273,8 @@ Train with CFM:
   
 ![](../assets/P88图2.png)     
 
-"Equivariant flow matching" Klein et al. (2023)     
-"Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
+&#x1F50E; "Equivariant flow matching" Klein et al. (2023)     
+&#x1F50E; "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)    
 
 P89    
 #### 存在的问题
@@ -417,7 +417,7 @@ P106
 
 ![](../assets/P106图-1.png)   
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)    
+&#x1F50E; "Flow Matching on General Geometries" Chen & Lipman (2023)    
  
 P107   
 
@@ -437,27 +437,27 @@ P108
 
 P109    
 
-"Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)     
-"Flow Matching on General Geometries" Chen & Lipman (2023)    
+&#x1F50E; "Riemannian Score-Based Generative Modelling" De Bortoli et al. (2022)     
+&#x1F50E; "Flow Matching on General Geometries" Chen & Lipman (2023)    
 
 P110    
 ### 相关工作   
 
 **Equivariant Flow Matching:**    
 
-"Fast Point Cloud Generation with Straight Flows" Wu et al. (2022)    
-"Equivariant flow matching" Klein et al. (2023)    
-"Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)     
-"Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
+&#x1F50E; "Fast Point Cloud Generation with Straight Flows" Wu et al. (2022)    
+&#x1F50E; "Equivariant flow matching" Klein et al. (2023)    
+&#x1F50E; "Equivariant Flow Matching with Hybrid Probability Transport" Song et al. (2023)     
+&#x1F50E; "Mosaic-SDF for 3D Generative Models" Yariv et al. (2023)    
 
 **Riemannian Flow Matching:**     
 
-"Flow Matching on General Geometries" Chen & Lipman (2023)     
-"SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)    
-"Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)    
-"FlowMM: Generating Materials with Riemannian Flow Matching" Miller et al. (2024)      
-"FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions" Sriram et al. (2024)   
-"Metric Flow Matching for Smooth Interpolations on the Data Manifold" Kapuśniak et al. (2024)   
+&#x1F50E; "Flow Matching on General Geometries" Chen & Lipman (2023)     
+&#x1F50E; "SE(3)-Stochastic Flow Matching for Protein Backbone Generation" Bose et al. (2023)    
+&#x1F50E; "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation" Huguet et al. (2024)    
+&#x1F50E; "FlowMM: Generating Materials with Riemannian Flow Matching" Miller et al. (2024)      
+&#x1F50E; "FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions" Sriram et al. (2024)   
+&#x1F50E; "Metric Flow Matching for Smooth Interpolations on the Data Manifold" Kapuśniak et al. (2024)   
 
 
 
