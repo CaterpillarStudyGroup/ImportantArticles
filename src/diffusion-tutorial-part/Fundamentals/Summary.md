@@ -1,3 +1,9 @@
+# 参数化方法
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|75|2023|simple diffusion: End-to-end diffusion for high resolution images||DiT基模型|[link](https://caterpillarstudygroup.github.io/ReadPapers/75.html)|
+
 P76   
 # Summary   
 
