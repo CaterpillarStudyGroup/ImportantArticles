@@ -6,14 +6,14 @@ P10
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
+|22|2022|SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations|提出了一种无需额外训练的统一框架，通过**加噪和去噪（随机微分方程SDE）**的逆向过程实现图像生成与编辑。||[link](https://caterpillarstudygroup.github.io/ReadPapers/22.html)|
 
 ## DDIM Inversion方法
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|23|2023|Dual diffusion implicit bridges for image-to-image translation||[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
-|24|2023|DiffEdit: Diffusion-based semantic image editing with mask guidance||[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
+|23|2023|Dual diffusion implicit bridges for image-to-image translation|DDIB利用diffusion隐式空间的对齐性，提出了一种基于DDIM的图像到图像翻译方法，通过隐式桥接（Implicit Bridges）实现跨域转换。|DDIM|[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
+|24|2023|DiffEdit: Diffusion-based semantic image editing with mask guidance|利用扩散模型在不同文本条件下的噪声预测差异，生成与编辑语义相关的区域mask，从而实现精准的局部编辑。|DDIM, auto mask|[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
 |25|2023|Imagic: Text-Based Real Image Editing with Diffusion Models||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
 
 ## Attention based 方法
@@ -96,13 +96,11 @@ Wang et al., <u>"Better Diffusion Models Further Improve Adversarial Training",<
 
 P72   
 # Reference   
-       
- - Meng et al., <u>"SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations",</u> ICLR 2022    
+         
  - Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models",</u> NeurIPS 2022   
  - Avrahami et al., <u>"Blended Diffusion for Text-driven Editing of Natural Images",</u> CVPR 2022   
  - Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023   
  - Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",</u> CVPR 2023   
- - Couairon et al., <u>"DiffEdit: Diffusion-based semantic image editing with mask guidance",</u> ICLR 2023   
  - Sarukkai et al., <u>"Collage Diffusion",</u>  arXiv 2023   
  - Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u>  ICML 2023      
  - Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
