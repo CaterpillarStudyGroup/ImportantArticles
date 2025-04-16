@@ -26,9 +26,9 @@ P10
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |20|2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|交叉注意力层决定了文本提示（prompt）与图像空间布局的关联，通过修改注意力图即可在不破坏原始图像结构的情况下完成编辑。<br> 仅适用于编辑用相同预训模型生成的图像。 |attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
-||2023|NULL-text Inversion for Editing Real Images Using Guided Diffusion Models|针对真实图像（非生成图像）的编辑，以[CFG](https://caterpillarstudygroup.github.io/ReadPapers/6.html)为基础，fix condition分支，优化无condition分支，使其embedding向condition分支的embedding靠近|attention控制|
-|||Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
-||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
+|76|2022|NULL-text Inversion for Editing Real Images Using Guided Diffusion Models|针对真实图像（非生成图像）的编辑，以[CFG](https://caterpillarstudygroup.github.io/ReadPapers/6.html)为基础，fix condition分支，优化无condition分支，使其embedding向condition分支的embedding靠近|attention控制<br> [?] |[link](https://caterpillarstudygroup.github.io/ReadPapers/76.html)|
+|77|2022|Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation||attention控制<br> [?]|[link](https://caterpillarstudygroup.github.io/ReadPapers/77.html)|
+||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions||
 
 
 P32   
