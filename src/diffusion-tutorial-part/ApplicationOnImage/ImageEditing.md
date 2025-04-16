@@ -14,13 +14,18 @@ P10
 |---|---|---|---|---|---|
 |23|2023|Dual diffusion implicit bridges for image-to-image translation|DDIB利用diffusion隐式空间的对齐性，提出了一种基于DDIM的图像到图像翻译方法，通过隐式桥接（Implicit Bridges）实现跨域转换。|DDIM|[link](https://caterpillarstudygroup.github.io/ReadPapers/23.html)|
 |24|2023|DiffEdit: Diffusion-based semantic image editing with mask guidance|利用扩散模型在不同文本条件下的噪声预测差异，生成与编辑语义相关的区域mask，从而实现精准的局部编辑。|DDIM, auto mask|[link](https://caterpillarstudygroup.github.io/ReadPapers/24.html)|
-|25|2023|Imagic: Text-Based Real Image Editing with Diffusion Models||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
+
+## 编辑文本embedding
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|25|2023|Imagic: Text-Based Real Image Editing with Diffusion Models|1. 利用T2I实现图像文本图像编辑<br>2. 需要微调T2I<br> 3. 先求出\\(T_{orig}\\)，然后在\\(T_{orig}\\)和\\(T_{tgt}\\)之间插值||[link](https://caterpillarstudygroup.github.io/ReadPapers/25.html)|
 
 ## Attention based 方法
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|通过控制生成过程中的 attention maps进行图像编辑|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
+|20|2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|交叉注意力层决定了文本提示（prompt）与图像空间布局的关联，通过修改注意力图即可在不破坏原始图像结构的情况下完成编辑。<br> 仅适用于编辑用相同预训模型生成的图像。 |attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
 ||2023|NULL-text Inversion for Editing Real Images Using Guided Diffusion Models|针对真实图像（非生成图像）的编辑，以[CFG](https://caterpillarstudygroup.github.io/ReadPapers/6.html)为基础，fix condition分支，优化无condition分支，使其embedding向condition分支的embedding靠近|attention控制|
 |||Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
 ||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|
@@ -99,8 +104,6 @@ P72
          
  - Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models",</u> NeurIPS 2022   
  - Avrahami et al., <u>"Blended Diffusion for Text-driven Editing of Natural Images",</u> CVPR 2022   
- - Hertz et al., <u>"Prompt-to-Prompt Image Editing with Cross-Attention Control",</u> ICLR 2023   
- - Kawar et al., <u>"Imagic: Text-Based Real Image Editing with Diffusion Models",</u> CVPR 2023   
  - Sarukkai et al., <u>"Collage Diffusion",</u>  arXiv 2023   
  - Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u>  ICML 2023      
  - Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
