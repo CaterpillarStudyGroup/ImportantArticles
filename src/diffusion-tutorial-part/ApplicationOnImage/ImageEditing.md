@@ -28,7 +28,7 @@ P10
 |---|---|---|---|---|---|
 |20|2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|交叉注意力层决定了文本提示（prompt）与图像空间布局的关联，通过修改注意力图即可在不破坏原始图像结构的情况下完成编辑。<br> 仅适用于编辑用相同预训模型生成的图像。 |attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
 |77|2022|Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation|**直接操纵扩散模型内部的空间特征和自注意力机制**，实现生成过程的细粒度控制。<br> 其核心思想是：从源图像中提取中间层的空间特征和自注意力图，注入目标图像的生成过程，从而在保留源图像语义布局的同时，根据文本提示修改外观属性。|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/77.html)|
-||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions||
+|21|2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|||[link](https://caterpillarstudygroup.github.io/ReadPapers/21.html)|
 
 
 P32   

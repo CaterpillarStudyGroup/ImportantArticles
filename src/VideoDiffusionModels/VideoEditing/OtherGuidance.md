@@ -9,10 +9,6 @@ P264
 
 ![](../../assets/08-264.png)   
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在上一篇的基础上，通过attention注入的方式加速上述流程|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/21.html)|
-
 P266   
 ## InstructVid2Vid
 
