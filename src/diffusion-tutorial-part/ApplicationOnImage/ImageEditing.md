@@ -28,7 +28,7 @@ P10
 |---|---|---|---|---|---|
 |20|2023|Prompt-to-Prompt Image Editing with Cross-Attention Control|交叉注意力层决定了文本提示（prompt）与图像空间布局的关联，通过修改注意力图即可在不破坏原始图像结构的情况下完成编辑。<br> 仅适用于编辑用相同预训模型生成的图像。 |attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/20.html)|
 |77|2022|Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation|**直接操纵扩散模型内部的空间特征和自注意力机制**，实现生成过程的细粒度控制。<br> 其核心思想是：从源图像中提取中间层的空间特征和自注意力图，注入目标图像的生成过程，从而在保留源图像语义布局的同时，根据文本提示修改外观属性。|attention控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/77.html)|
-|21|2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|||[link](https://caterpillarstudygroup.github.io/ReadPapers/21.html)|
+|21|2023|InstructPix2Pix: Learning to Follow Image Editing Instructions|在已有图片的情况，输入完整的控制文本不符合用户习惯，用户只需要告诉模型要怎么修改图像，通过 Prompt 2 Prompt 转化为完整 prompt. ||[link](https://caterpillarstudygroup.github.io/ReadPapers/21.html)|
 
 
 P32   
@@ -36,20 +36,18 @@ P32
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|62|2023|Ruiz et al., “DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation,” ||| [link](https://caterpillarstudygroup.github.io/ReadPapers/62.html)|
-|63|2023|Gal et al., <u>"An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion"|||   [link](https://caterpillarstudygroup.github.io/ReadPapers/63.html)|
-|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。||[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
-|||Lora + Dreambooth (by Simo Ryu)||| <https://github.com/cloneofsimo/lora> |
-||2023|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|将多个LoRA融合到一个模型时，解决LoRA之间的冲突问题。|
+|62|2023|DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation |每个主体分配一个罕见词（如“sks”），作为其文本标签。通用**微调扩散模型**，使其能够精准生成特定主体。|finetune| [link](https://caterpillarstudygroup.github.io/ReadPapers/62.html)|
+|63|2023|An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion|不修改模型权重，而是通过优化文本嵌入空间中的一个**新的嵌入向量**来表示目标概念。该向量可以像普通词汇一样被插入到自然语言描述中，指导模型生成包含该概念的图像。|Textual Inversion, 优化| [link](https://caterpillarstudygroup.github.io/ReadPapers/63.html)|
+|**38**|2021|Lora: Low-rank adaptation of large language models|对已训好的大模型进行微调，生成想要的风格。学习其中的残差。残差通常可以用low rank Matrix来拟合，因此称为low-rank adaptation。low rank的好处是要训练或调整的参数非常少。|优化训练效率|[link](https://caterpillarstudygroup.github.io/ReadPapers/38.html)|
+|||Lora + Dreambooth (by Simo Ryu)|没有找到论文|| <https://github.com/cloneofsimo/lora> |
 
 P43
 # 多个特定对象定制化的图像生成   
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|64|2023|Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion"|||[link](https://caterpillarstudygroup.github.io/ReadPapers/64.html)|
+|52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/52.html)|
+|64|2023|Multi-Concept Customization of Text-to-Image Diffusion|1. 用"交叉概念正则化"的方法防止多concept之间的混淆<br>2. 用"仅finetune KV"的方法提升训练效率<br>3. 用『所有概念的参数联合优化』的方法把多个concept融合|优化训练效率， TI|[link](https://caterpillarstudygroup.github.io/ReadPapers/64.html)|
 ||2023|Tewel et al., Key-Locked Rank One Editing for Text-to-Image Personalization"|&#x2705; 方法：dynamic rank one update. <br> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  <br> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    <br> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    <br> &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。<br>Results: 可以很好地model the interaction of the two conception。  |![](../../assets/D2-55.png)    ||
 |65|2023|Mou et al., T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",|||[link](https://caterpillarstudygroup.github.io/ReadPapers/65.html)|
 ||2013|Adding Conditional Control to Text-to-Image Diffusion Models|
@@ -105,8 +103,7 @@ P72
  - Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models",</u> NeurIPS 2022   
  - Avrahami et al., <u>"Blended Diffusion for Text-driven Editing of Natural Images",</u> CVPR 2022   
  - Sarukkai et al., <u>"Collage Diffusion",</u>  arXiv 2023   
- - Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u>  ICML 2023      
- - Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
+ - Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u>  ICML 2023       
  - Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u>  CVPR 2023   
  - Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u>  SIGGRAPH 2023   
  - Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u>  arXiv 2023   

@@ -86,7 +86,6 @@ Li et al., <u>"Efficient Spatially Sparse Inference for Conditional GANs and Dif
 Avrahami et al., <u>"Blended Diffusion for Text-driven Editing of Natural Images",</u> CVPR 2022          
 Sarukkai et al., <u>"Collage Diffusion",</u> arXiv 2023    
 Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> ICML 2023      
-Ruiz et al., <u>"DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation",</u> CVPR 2023    
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u> SIGGRAPH 2023    
 Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u> arXiv 2023    
