@@ -53,6 +53,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动，Cross Attention|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
+||2025|RealVVT: Towards Photorealistic Video Virtual Try-on via Spatio-Temporal Consistency|虚拟试衣|
 
 ### 3D动作驱动
 

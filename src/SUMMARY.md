@@ -48,12 +48,14 @@
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Human Motion Generation: A Survey](HumanMotionGenerationSummary.md)
 - [Human Video Generation](HumanVideoGeneration.md)
+- [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
 - [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
    - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
    - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
    - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
    - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
+- [More](More.md)
 
 
 
