@@ -370,7 +370,6 @@ P26
 |---|---|---|---|---|---|
 ||2015|Deep Unsupervised Learning using Nonequilibrium Thermodynamics|     
 ||2020|Denoising Diffusion Probabilistic Models|   
-||2021|Score-Based Generative Modeling through Stochastic Differential Equations|||[link](https://caterpillarstudygroup.github.io/ReadPapers/8.html)|
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

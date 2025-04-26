@@ -7,6 +7,7 @@ P127
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |60|2023|Yin et al., “NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation,”|A “diffusion over diffusion” architecture for very long video generation ||[link](https://caterpillarstudygroup.github.io/ReadPapers/60.html)|
+|80|2025|One-Minute Video Generation with Test-Time Training|||[link](https://caterpillarstudygroup.github.io/ReadPapers/80.html)|
 
 P133
 ## Long Video Generation: More Works

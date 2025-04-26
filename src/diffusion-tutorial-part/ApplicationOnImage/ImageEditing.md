@@ -1,3 +1,11 @@
+# 可控生成
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|65|2023|T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models|1. 通过轻量级适配器（Adapter），将外部控制信号（如草图、深度图）与模型内部知识对齐，实现更精准的生成控制<br>2. 仅优化apapter，高效训练<br>3. 非均匀时间步采样，在扩散过程的早期阶段（图像结构形成期）增加采样概率，提升控制信号的有效性。|优化训练效率|[link](https://caterpillarstudygroup.github.io/ReadPapers/65.html)|
+|66|2013|Adding Conditional Control to Text-to-Image Diffusion Models|通过克隆预训练模型的网络块，并引入“零卷积”连接，实现在不破坏原模型能力的前提下学习条件控制。|ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/66.html)|
+|67|2023|GLIGEN: Open-Set Grounded Text-to-Image Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/67.html)|
+
 P9    
 # 图像编辑
 
@@ -47,13 +55,9 @@ P43
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |52|2024|Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models|多个特定对象的图像生成，让多个特定的对象生成到一张图像中，并用2D pose控制对象的动作|TI, LoRA|[link](https://caterpillarstudygroup.github.io/ReadPapers/52.html)|
-|64|2023|Multi-Concept Customization of Text-to-Image Diffusion|1. 用"交叉概念正则化"的方法防止多concept之间的混淆<br>2. 用"仅finetune KV"的方法提升训练效率<br>3. 用『所有概念的参数联合优化』的方法把多个concept融合|优化训练效率， TI|[link](https://caterpillarstudygroup.github.io/ReadPapers/64.html)|
-||2023|Tewel et al., Key-Locked Rank One Editing for Text-to-Image Personalization"|&#x2705; 方法：dynamic rank one update. <br> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  <br> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    <br> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    <br> &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。<br>Results: 可以很好地model the interaction of the two conception。  |![](../../assets/D2-55.png)    ||
-|65|2023|Mou et al., T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",|||[link](https://caterpillarstudygroup.github.io/ReadPapers/65.html)|
-||2013|Adding Conditional Control to Text-to-Image Diffusion Models|
-|66|2023|Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> |||[link](https://caterpillarstudygroup.github.io/ReadPapers/66.html)|
+|64|2023|Multi-Concept Customization of Text-to-Image Diffusion|1. 用『正则化』的方法防止多concept之间的混淆<br>2. 用"仅finetune KV"的方法提升训练效率<br>3. 用『多概念组合优化』的方法把多个concept融合|优化训练效率， TI|[link](https://caterpillarstudygroup.github.io/ReadPapers/64.html)|
+|79|2023|Key-Locked Rank One Editing for Text-to-Image Personalization|&#x2705; 方法：dynamic rank one update. <br> &#x2705; Perffusion 解决 Image Personalization 的 overfitting 问题的方法：  <br> &#x2705; (1) 训练时，Introducing new *xxxx* that locks the new concepts cross-attention keys to their sub-ordinate category.    <br> &#x2705; (2) 推断时，引入 a gate rank one approach 可用于控制 the learned concept的影响力。    <br> &#x2705; (3) 允许 medel 把不同的 concept 结合到一起，并学到不同concept 之间的联系。<br>Results: 可以很好地model the interaction of the two conception。  |    |[link](https://caterpillarstudygroup.github.io/ReadPapers/79.html)|
 
-P64   
 
 P67   
 # Other applications  
@@ -108,10 +112,7 @@ P72
  - Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u>  SIGGRAPH 2023   
  - Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u>  arXiv 2023   
  - Hu et al., <u>"LoRA: Low-Rank Adaptation of Large Language Models",</u> ICLR 2022   
- - Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023   
- - Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023   
- - Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
- - Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023   
+ - Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023       
  - Orgad et al., <u>"Editing Implicit Assumptions in Text-to-Image Diffusion Models",</u> arXiv 2023   
  - Han et al., <u>"SVDiff: Compact Parameter Space for Diffusion Fine-Tuning",</u> arXiv 2023   
  - Xie et al., <u>"DiffFit: Unlocking Transferability of Large Diffusion Models via Simple Parameter￾Efficient Fine-Tuning",</u> rXiv 2023   

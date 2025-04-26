@@ -37,8 +37,7 @@ Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023
 P77   
 ## Part I
 
-Ho et al., <u>"Denoising Diffusion Probabilistic Models",</u> NeurIPS 2020    
-Song et al., <u>"Score-Based Generative Modeling through Stochastic Differential Equations",</u> ICLR 2021   
+Ho et al., <u>"Denoising Diffusion Probabilistic Models",</u> NeurIPS 2020     
 Kingma et al., <u>"Variational Diffusion Models",</u> arXiv 2021   
 Karras et al., <u>"Elucidating the Design Space of Diffusion-Based Generative Models",</u> NeurIPS 2022   
 Song et al., <u>"Denoising Diffusion Implicit Models",</u> ICLR 2021   
@@ -89,11 +88,8 @@ Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image 
 Kumari et al., <u>"Multi-Concept Customization of Text-to-Image Diffusion",</u> CVPR 2023    
 Tewel et al., <u>"Key-Locked Rank One Editing for Text-to-Image Personalization",</u> SIGGRAPH 2023    
 Zhao et al., <u>"A Recipe for Watermarking Diffusion Models",</u> arXiv 2023    
-Hu et al., <u>"LoRA: Low-Rank Adaptation of Large Language Models",</u> ICLR 2022    
-Li et al., <u>"GLIGEN: Open-Set Grounded Text-to-Image Generation",</u> CVPR 2023    
-Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023    
-Zhang and Agrawala, <u>"Adding Conditional Control to Text-to-Image Diffusion Models",</u> arXiv 2023    
-Mou et al., <u>"T2I-Adapter: Learning Adapters to Dig out More Controllable Ability for Text-to-Image Diffusion Models",</u> arXiv 2023    
+Hu et al., <u>"LoRA: Low-Rank Adaptation of Large Language Models",</u> ICLR 2022     
+Avrahami et al., <u>"SpaText: Spatio-Textual Representation for Controllable Image Generation",</u> CVPR 2023     
 Orgad et al., <u>"Editing Implicit Assumptions in Text-to-Image Diffusion Models",</u> arXiv 2023    
 Han et al., <u>"SVDiff: Compact Parameter Space for Diffusion Fine-Tuning",</u> arXiv 2023    
 Xie et al., <u>"DiffFit: Unlocking Transferability of Large Diffusion Models via Simple Parameter-Efficient Fine-Tuning",</u> arXiv 2023    

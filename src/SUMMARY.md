@@ -13,7 +13,7 @@
   - [Summary](./diffusion-tutorial-part/Fundamentals/Summary.md)
 - [T2I 基模型](./diffusion-tutorial-part/Architecture.md)
 - [Image Applications Based on 基模型]()
-  - [图像编辑](diffusion-tutorial-part/ApplicationOnImage/ImageEditing.md)
+  - [图像生成/编辑](diffusion-tutorial-part/ApplicationOnImage/ImageEditing.md)
   - [图像去噪/图像超分/图像补全](diffusion-tutorial-part/Applicationsonotherdomains/InverseProblems.md)
   - [大图生成](diffusion-tutorial-part/ApplicationOnImage/LargeContents.md)
 - [3D Applications Based on Diffusion]()

@@ -1,13 +1,14 @@
 P3   
 # 任务描述
 
-![](../../assets/D3-3.png)  ![](../../assets/D3-4-2.png)![](../../assets/D3-4.png)  
-
 1. 图像去噪
 2. 图像超分
 3. 图像补全
 
-
+输入：  
+![](../../assets/D3-3.png)  ![](../../assets/D3-4-2.png)  
+输出：  
+![](../../assets/D3-4.png)  
 ![](../../assets/D3-3-1.png) 
 
 基于某个预训练的diffusion model，在无condition的情况下，每张图像都符合diffusion生成模型的分布。当以某个特定的图像（模糊图像、低分辨率图像）时，期望能够得到的是对应的清晰、高分辨率的图像的分布。  
@@ -19,21 +20,13 @@ P6
 
 ![](../../assets/D3-6.png)  
 
-Song et al., <u>"Score-Based Generative Modeling through Stochastic Differential Equations",</u> ICLR 2021    
-
-## More
-
- - **ScoreSDE**: simple linear problems, e.g., inpainting, colorization; later extended to MRI and CT.   
- - **ILVR**: more linear problems, e.g., super-resolution.   
- - **SNIP**S: slow solution for noisy linear problems.   
- - **CCDF**: better initializations.    
- - **DDRM**: fast solution for all noisy linear problems, and JPEG.   
-
-Choi et al., <u>"ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models",</u> ICCV 2021       
-Kawar et al., <u>"SNIPS: Solving Noisy Inverse Problems Stochastically",</u> NeurIPS 2021   
-Chung et al., <u>"Come-Closer-Diffuse-Faster: Accelerating Conditional Diffusion Models for Inverse Problems through Stochastic Contraction",</u> CVPR 2022    
-Song et al., <u>"Solving Inverse Problems in Medical Imaging with Score-Based Generative Models",</u> ICLR 2022   
-Kawar et al., <u>"Denoising Diffusion Restoration Models",</u> NeurIPS 2022   
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021|ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models||||
+|||Kawar et al., <u>"SNIPS: Solving Noisy Inverse Problems Stochastically",</u> NeurIPS 2021   
+|||Chung et al., <u>"Come-Closer-Diffuse-Faster: Accelerating Conditional Diffusion Models for Inverse Problems through Stochastic Contraction",</u> CVPR 2022    
+|||Song et al., <u>"Solving Inverse Problems in Medical Imaging with Score-Based Generative Models",</u> ICLR 2022   
+|||Kawar et al., <u>"Denoising Diffusion Restoration Models",</u> NeurIPS 2022   
 
 P7   
 # Reconstruction-based Methods
@@ -73,14 +66,17 @@ Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problem
  - **CSGM**: Posterior sampling with Langevin Dynamics based on the diffusion score model.   
  - **RED-Diff**: A Regularizing-by-Denoising (RED), variational inference approach.   
  - **Posterior sampling**: use RealNVP to approximate posterior samples from diffusion models.   
- 
-Chung et al., <u>"Improving Diffusion Models for Inverse Problems using Manifold Constraints",</u> NeurIPS 2022   
-Ryu and Ye, <u>"Pyramidal Denoising Diffusion Probabilistic Models",</u> arXiv 2022   
-Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> arXiv 2022   
-Song et al., <u>"Pseudoinverse-Guided Diffusion Models for Inverse Problems",</u> ICLR 2023   
-Jalal et al., <u>"Robust Compressed Sensing MRI with Deep Generative Priors",</u> NeurIPS 2021   
-Mardani et al., <u>"A Variational Perspective on Solving Inverse Problems with Diffusion Models",</u> arXiv 2023   
-Feng et al., <u>"Score-Based Diffusion Models as Principled Priors for Inverse Imaging",</u> arXiv 2023   
+
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|||Chung et al., <u>"Improving Diffusion Models for Inverse Problems using Manifold Constraints",</u> NeurIPS 2022   
+|||Ryu and Ye, <u>"Pyramidal Denoising Diffusion Probabilistic Models",</u> arXiv 2022   
+|||Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problems",</u> arXiv 2022   
+|||Song et al., <u>"Pseudoinverse-Guided Diffusion Models for Inverse Problems",</u> ICLR 2023   
+|||Jalal et al., <u>"Robust Compressed Sensing MRI with Deep Generative Priors",</u> NeurIPS 2021   
+|||Mardani et al., <u>"A Variational Perspective on Solving Inverse Problems with Diffusion Models",</u> arXiv 2023   
+|||Feng et al., <u>"Score-Based Diffusion Models as Principled Priors for Inverse Imaging",</u> arXiv 2023   
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

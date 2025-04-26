@@ -376,7 +376,7 @@ Customized video subject swapping via point control
 **Empirical Observations**
 
  - **Question**: Can we <u> learn semantic point control </u> for a specific <u>source video subject</u> using only a <u>small number of source video frames</u>   
- - **Toy Experiment**: Manually define and annotate a set of semantic points on 8 frame; use such point maps as condition for training a control net, i.e., T2I-Adapter.    
+ - **Toy Experiment**: Manually define and annotate a set of semantic points on 8 frame; use such point maps as condition for training a control net, i.e., [T2I-Adapter](https://caterpillarstudygroup.github.io/ReadPapers/65.html).    
 
 ![](../../assets/08-228.png) 
 

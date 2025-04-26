@@ -122,6 +122,14 @@ P37
 
 > &#x2753; 第三条没听懂，把 model 当成基于数据的 ODE 来用？    
 
+## More
+
+ - **ScoreSDE**: simple linear problems, e.g., inpainting, colorization; later extended to MRI and CT.   
+ - **ILVR**: more linear problems, e.g., super-resolution.   
+ - **SNIP**S: slow solution for noisy linear problems.   
+ - **CCDF**: better initializations.    
+ - **DDRM**: fast solution for all noisy linear problems, and JPEG.  
+ 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >

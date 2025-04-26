@@ -60,7 +60,6 @@ P72
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2021|Score-Based Generative Modeling through Stochastic Differential Equations|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 ||2021|Controllable and Compositional Generation with Latent-Space Energy-Based Models|
 ||2021|Diffusion models beat GANs on image synthesis|
 
