@@ -6,7 +6,7 @@ P23
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|**68**|2023|Poole et al., "DreamFusion: Text-to-3D using 2D Diffusion"||SDS|[link](https://caterpillarstudygroup.github.io/ReadPapers/68.html)|
+|**68**|2023|DreamFusion: Text-to-3D using 2D Diffusion||SDS|[link](https://caterpillarstudygroup.github.io/ReadPapers/68.html)|
 ||2023|Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation"|2x speed and higher resolution <br>Accelerate NeRF with Instant-NGP, for coarse representations. <br> Optimize a fine mesh model with differentiable renderer.<br> &#x2705; Instant NGP 代替左下的 Nerf MLP．以 coarse representetion 作为 condition 来生成 fine mesh model.  |Extensions to SDS<br>![](../../assets/D3-30.png)  |
 ||2023|Wang et al.,"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",||  Alternative to SDS|
 ||2023|Wang et al., "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",||Alternative to SDS|

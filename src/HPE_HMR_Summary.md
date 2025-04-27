@@ -13,6 +13,13 @@
 #### Solving Body Structure Understanding
 #### Solving Occlusion Problems
 #### Solving Data Lacking
+
+### 图像人物-物体交互 (HOI)
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2025.4.24|PICO: Reconstructing 3D People In Contact with Objects|||[link](4.md)|
+
 ### 视频单人HPE
 #### Solving Single-frame Limitation
 #### Solving Real-time Problems
