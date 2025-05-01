@@ -23,7 +23,6 @@
 |89|2024||文本->GLoss->Pose->Video|人体动作控制，2阶段方法|
 |53||Text2Performer|involves the motion text and a motion encoder. motion text describes the movement, such as "She is swinging to the right." The model implicitly models these descriptions by separately representing appearance and motion, thereby generating high-quality videos with consistent appearance and actions.|text作为prompt直接生成video|
 ||2024|Motion Avatar: Generate Human and Animal Avatars with Arbitrary Motion|使用交互式文本生成3D动作和3D Mesh，并用3D动作驱动3DMesh|文本控制，3D驱动|[link](https://caterpillarstudygroup.github.io/ReadPapers/39.html)   |
-||2024|StoryDiffusion: Consistent Self-Attention for Long-Range Image and Video Generation |文生图，图填充成视频|文本控制，长视频生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/41.html)|
 
 ## 音频驱动的人类视频生成
 

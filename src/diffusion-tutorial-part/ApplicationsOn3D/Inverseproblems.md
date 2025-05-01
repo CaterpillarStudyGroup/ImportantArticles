@@ -1,3 +1,9 @@
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Instruct-NeRF2NeRF: Editing 3D Scenes with Instructions||Nerf|
+||2023|Vox-E: Text-guided Voxel Editing of 3D Objects||Voxel||
+
+
 P46   
 # Instruct NeRF2NeRF
 

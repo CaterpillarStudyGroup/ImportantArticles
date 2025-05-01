@@ -4,6 +4,8 @@ P188
 
 ## 3.3 Controlled Edifng (depth/pose/point/ControlNet)
 
+> &#x2705; 已有一段视频，通过 guidance 或文本描述，修改视频。    
+
 P189   
 
 ![](../../assets/08-189.png) 

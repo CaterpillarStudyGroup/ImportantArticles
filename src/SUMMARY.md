@@ -14,11 +14,11 @@
 - [T2I 基模型](./diffusion-tutorial-part/Architecture.md)
 - [Image Applications Based on 基模型]()
   - [图像生成/编辑](diffusion-tutorial-part/ApplicationOnImage/ImageEditing.md)
-  - [图像去噪/图像超分/图像补全](diffusion-tutorial-part/Applicationsonotherdomains/InverseProblems.md)
+  - [图像去噪/图像超分/图像补全](diffusion-tutorial-part/ApplicationOnImage/InverseProblems.md)
   - [大图生成](diffusion-tutorial-part/ApplicationOnImage/LargeContents.md)
 - [3D Applications Based on Diffusion]()
-  - [3D表示](diffusion-tutorial-part/ApplicationsOn3D/3D.md)
-  - [3D生成](diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.md)
+  - [基于T2I基模型](diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.md)
+  - [基于不同3D的3D生成](diffusion-tutorial-part/ApplicationsOn3D/3D.md)
   - [新视角合成](diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.md)
   - [3D重建](diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.md)
   - [3D编辑](diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.md)
@@ -32,7 +32,7 @@
   - [Works Based on T2I 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.md)
   - [Works Based on T2V 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.md)
   - [Storyboard](VideoDiffusionModels/VideoGeneration/Storyboard.md)
-  - [Long video generation](VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
+  - [Long video generation/Storyboard](VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
   - [Multimodal-guided generation](VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.md)
 - [Video Editing](VideoDiffusionModels/VideoEditing.md)
   - [Tuning-based](VideoDiffusionModels/VideoEditing/Tuning-based.md)
@@ -42,12 +42,16 @@
   - [Other Guidance](VideoDiffusionModels/VideoEditing/OtherGuidance.md)
 - [评价指标](./VideoDiffusionModels/EvaluationMetrics.md)
 
-# Others
-- [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
+
+# Character Animation
 - [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](HPE_HMR_Summary.md)
-- [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Human Motion Generation: A Survey](HumanMotionGenerationSummary.md)
 - [Human Video Generation](HumanVideoGeneration.md)
+
+# Others
+- [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
+- [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
+
 - [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
 - [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
