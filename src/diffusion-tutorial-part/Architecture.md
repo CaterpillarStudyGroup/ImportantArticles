@@ -22,7 +22,7 @@ P5
 |---|---|---|---|---|---|
 |45|2022|High-Resolution Image Synthesis with Latent Diffusion Models|常被称为**Stable Diffusion** 或 LDM，是diffusion方法做图像生成最经典工作（没有之一）<br>&#x2705; (1)：在 latent space 上工作<br> &#x2705; (2)：引入多种 condition．|UNet, latent space|[link](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|
 |69|2022|Photorealistic text-to-image diffusion models with deep language understanding|1. 用纯文本预训练的大语言模型（如 T5）而不是传统图文对齐模型（CLIP）<br> 2. 用4级超分而不是latent space|Imagen, UNet, T5, Google, pixel space|[link](https://caterpillarstudygroup.github.io/ReadPapers/69.html)|
-|70|2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|1. T5, Clip混合引导<br>2. 第二阶段基于第一阶段对时间步分段微调<br>3. 部分区域关联文本条件|NVIDIA,  eDiff-I, UNet, pixel space|[link](https://caterpillarstudygroup.github.io/ReadPapers/70.html)
+|70|2022|ediffi: Text-to-image diffusion models with an ensemble of expert denoiser|1. T5, Clip混合引导<br>2. 第二阶段基于第一阶段**对时间步分段微调**，解决传统扩散模型在生成过程中不同阶段对文本依赖的动态变化问题。<br>3. 部分区域关联文本条件|NVIDIA,  eDiff-I, UNet, pixel space|[link](https://caterpillarstudygroup.github.io/ReadPapers/70.html)
 
 P7    
 ## Transformer Architecture

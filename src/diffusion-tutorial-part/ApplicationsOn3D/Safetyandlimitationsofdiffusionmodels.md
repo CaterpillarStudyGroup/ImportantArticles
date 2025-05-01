@@ -124,15 +124,11 @@ Cheng et al., <u>"SDFusion: Multimodal 3D Shape Completion, Reconstruction, and 
 Hui et al., <u>"Neural Wavelet-domain Diffusion for 3D Shape Generation",</u> arXiv 2022   
 Shue et al., <u>"3D Neural Field Generation using Triplane Diffusion",</u> arXiv 2022   
 Yang et al., <u>"Learning a Diffusion Prior for NeRFs",</u> ICLR Workshop 2023   
-Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023   
-Poole et al., <u>"DreamFusion: Text-to-3D using 2D Diffusion",</u> arXiv 2022   
-Lin et al., <u>"Magic3D: High-Resolution Text-to-3D Content Creation",</u> arXiv 2022   
-Wang et al., <u>"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",</u> arXiv 2022   
+Jun and Nichol, <u>"Shap-E: Generating Conditional 3D Implicit Functions",</u> arXiv 2023     
 Metzer et al., <u>"Latent-NeRF for Shape-Guided Generation of 3D Shapes and Textures",</u> arXiv 2022   
 Hong et al., <u>"Debiasing Scores and Prompts of 2D Diffusion for Robust Text-to-3D Generation",</u> CVPR Workshop 2023   
 Watson et al., <u>"Novel View Synthesis with Diffusion Models",</u> arXiv 2022   
 Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models",</u> arXiv 2023   
-Xu et al., <u>"NeuralLift-360: Lifting An In-the-wild 2D Photo to A 3D Object with 360° Views",</u> arXiv 2022   
 Zhou and Tulsiani, <u>"SparseFusion: Distilling View-conditioned Diffusion for 3D Reconstruction",</u> arXiv 2022   
 
 P82   
