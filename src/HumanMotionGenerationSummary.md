@@ -40,17 +40,20 @@
 
 ### VQ-VAE
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|87|2023.6.19|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
+|88|2023|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
+
 以下是整理后的表格，概述了基于VQ-VAE的3D运动生成模型及其核心特性：
 
 ---
 
 | **模型名称**         | **基础架构**                    | **主要贡献**                                                                 | **条件输入**      | **输出**              | **训练目标**                                                                 | **关键创新点**                                                                 |
 |----------------------|---------------------------------|-----------------------------------------------------------------------------|-------------------|-----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| **T2M-GPT [121]**  2023  | VQ-VAE + Transformer           | 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列                          | 文本提示（CLIP）  | 运动令牌序列          | 自回归预测运动令牌（因果掩码自注意力）                                      | 结合VQ-VAE与语言建模思想，支持文本到运动的序列生成                             |
 | **DiverseMotion [122]** 2023| VQ-VAE + 扩散模型              | 提升生成多样性与语义一致性                                                  | 文本提示（CLIP）  | 去噪后的运动令牌      | 扩散过程（前向破坏令牌，反向去噪）                                          | 用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解               |
 | **MoMask [123]**   2023  | VQ-VAE + 分层码本              | 分层生成粗糙到精细的运动细节                                                | 文本              | 分层运动令牌序列      | 掩码令牌建模（BERT风格） + 残差细化                                         | 分层码本结构；掩码预测生成粗糙运动，残差层逐步细化                              |
 | **T2LM [124]**    2024   | 1D卷积VQ-VAE + Transformer     | 处理多句子文本生成长且复杂的动作序列                                        | 多句子文本        | 长动作序列            | 1D卷积压缩运动；Transformer编码文本时序关系                                  | 结合1D卷积与文本时序建模，实现跨动作平滑过渡                                    |
-| **MotionGPT [21]** 2024  | VQ-VAE + 大语言模型（LLM）     | 将运动生成视为序列到序列任务，结合LLM能力                                   | 文本              | 运动令牌序列          | 冻结VQ-VAE + LoRA微调LLM预测令牌                                             | 首次融合LLM与VQ-VAE；通过LoRA高效微调，实现快速训练与强泛化                     |
 
 ---
 
@@ -104,7 +107,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|29|2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)
+|29|2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)|
 
 # Motion-Conditioned Motion Generation
 
@@ -118,4 +121,43 @@
 |---|---|---|---|---|---|
 ||2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
-# Datasets
+以下是整理后的表格，概述了3D人体运动生成与评估的数据集、关键指标及模型性能：
+
+---
+
+# **3D人体运动生成与合成数据集**
+
+| **数据集名称**               | **关键统计**                                                                 | **模态**                          | **链接/备注**                     |
+|------------------------------|-----------------------------------------------------------------------------|-----------------------------------|-----------------------------------|
+| **Motion-X++ [301]**          | 1950万3D姿势，120,500序列，80,800视频，45,300音频，自由文本描述              | 3D/点云、文本、音频、视频         | [Motion-X++](https://mocap.cs.cmu.edu/) |
+| **HumanMM (ms-Motion) [308]** | 120长序列（237分钟），600多视角视频重建，包含罕见交互动作                    | 3D/点云、视频                     | HumanMM                          |
+| **Multimodal Anatomical [309]** | 51,051姿势（53解剖标记），48虚拟视角，2000+病理运动变体                      | 3D/点云、文本                     | Multimodal Anatomical Motion     |
+| **AMASS [242]**               | 11,265动作片段（43小时），整合15个数据集（如CMU、KIT），SMPL格式，100+动作类别 | 3D/点云                           | [AMASS](https://amass.is.tue.mpg.de/) |
+| **HumanML3D [119]**           | 14,616序列（28.6小时），44,970文本描述，200+动作类别                        | 3D/点云、文本                     | [HumanML3D](https://github.com/EricGuo5513/HumanML3D) |
+| **BABEL [307]**               | 43小时动作（AMASS数据），250+动词中心动作类别，13,220序列，含时序动作边界    | 3D/点云、文本                     | [BABEL](https://babel.is.tue.mpg.de/) |
+| **AIST++ [246]**              | 1,408舞蹈序列（1010万帧），9摄像机视角，15小时多视角视频                     | 3D/点云、视频                     | [AIST++](https://google.github.io/aichoreographer/) |
+| **3DPW [245]**                | 60序列（51,000帧），多样化室内/室外场景，挑战性姿势与物体交互                | 3D/点云、视频                     | [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/) |
+| **PROX [310]**                | 20受试者，12交互场景，180标注RGB帧，场景感知运动分析                         | 3D/点云、图像                     | [PROX](https://prox.is.tue.mpg.de/) |
+| **KIT-ML [304]**              | 3,911动作片段（11.23小时），6,278自然语言标注（52,903词），BVH/FBX格式       | 3D/点云、文本                     | [KIT-ML](https://motion-annotation.humanoids.kit.edu/) |
+| **CMU MoCap**                 | 2605试验，6大类23子类，140+受试者                                           | 3D/点云、音频                     | [CMU MoCap](https://mocap.cs.cmu.edu/) |
+
+---
+
+# **文本到动作生成评估指标**
+
+| **评估指标**           | **定义/计算方式**                                                                 | **用途**                          | **典型基准**                      |
+|------------------------|---------------------------------------------------------------------------------|-----------------------------------|-----------------------------------|
+| **FID (Fréchet Inception Distance)** | 比较生成与真实动作特征分布的Fréchet距离（低值表示更真实）                          | 真实性评估（如虚拟现实应用）       | HumanML3D, KIT Motion-Language    |
+| **R-Precision [311]**  | 在共享嵌入空间中，正确文本在Top-k匹配中的比例（如Top-1/3）                       | 语义一致性（文本-动作对齐）        | HumanML3D, BABEL                   |
+| **MultiModal Distance [312]** | 动作与文本嵌入的欧氏距离（低值表示强语义耦合）                                    | 跨模态语义对齐量化                 | ExpCLIP [41], TMR [120]            |
+| **Diversity [313]**     | 随机采样动作对的平均距离（高值表示生成多样性）                                    | 动作空间覆盖广度                   | DiverseMotion [122], Motion Anything [125] |
+| **Multimodality [313]** | 同一文本生成多动作的方差（高值表示单提示下的多样性）                              | 单提示多样性（避免重复）           | MoMask [123], TEACH [118]          |
+| **用户研究 (User Studies)** | 人工评分自然度、情感表达、上下文相关性                                           | 主观质量评估（自动化指标补充）     | 研究论文中常用（如[314]）          |
+
+---
+
+
+# Reference
+
+1. Generative AI for Character Animation: A Comprehensive Survey of Techniques, Applications, and Future Directions
+2. Human Motion Generation Summary
