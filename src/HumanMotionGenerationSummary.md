@@ -1,10 +1,6 @@
 ![](./assets/d378e84bd11f484517ba2d687e8bb933_5_Table_1_-876463523.png)
 
-# PRELIMINARIES
-
-## Motion Data
-
-## Motion Generation Methods
+# 无条件生成
 
 ### GAN
 
@@ -39,11 +35,6 @@
 此表格可快速对比各模型的核心特性及技术演进路径。
 
 ### VQ-VAE
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|87|2023.6.19|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
-|88|2023|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
 
 以下是整理后的表格，概述了基于VQ-VAE的3D运动生成模型及其核心特性：
 
@@ -82,8 +73,7 @@
 ||2022|MotionDiffuse [22 ]|MotionDiffuse [22 ], although similar in structure, handles the timestep differently by sampling it from a uniform distribution, and introduces variable-length motion generation by dividing sequences into sub-intervals. Each segment is paired with a corresponding text description, enabling part-wise and body-part-specific conditioning. It also incorporates Efficient Attention [323 ] to reduce computational cost and uses a classical transformer [ 5 ] for text encoding. While both Flame [18 ] and MotionDiffuse [22 ] rely on noise-based reconstruction, Flame adds a variational lower bound. In contrast, MotionDiffuse [ 22 ] optimizes only a mean squared error loss on the predicted noise. |
 ||2023|HMDM [126 ]|HMDM [126 ] takes a different approach by applying its primary reconstruction loss on the denoised signal rather than the noise. It encodes text using CLIP [7] and feeds the diffusion timestep into the transformer as a dedicated token, similar to Flame. However, HMDM [ 126 ] fixes the motion length and introduces a set of auxiliary loss functions designed to improve physical realism: a positional loss in joint 37 space, a velocity loss to enforce temporal consistency, and a foot contact loss defined using forward kinematics. These losses are combined with a standard reconstruction loss, forming a comprehensive objective that better preserves both spatial accuracy and motion smoothness. |
 ||2023|MakeAnAnimation [ 127 ]| In contrast, Departing from sequential generation, MakeAnAnimation [ 127 ] proposes a two-stage framework that first pre-trains on a large static 3D pose dataset, created from pose detection applied to image collections, to learn pose-text associations. Using a U-Net architecture [ 231 ] for the denoising network and a pre-trained T5 encoder [ 324 ] for text, the model generates full motion sequences concurrently. Unlike transformer-based models such as HMDM [126 ] and Flame [18 ], which enforce temporal consistency through specific loss functions, MakeAnAnimation [ 127 ] avoids such constraints and relies solely on standard diffusion loss. Despite this, it maintains motion continuity through its concurrent sampling and large-scale pre-training strategy. Recent works have also expanded the diffusion framework to support spatial and semantic constraints. |
-|86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
-|85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
+
 
 ### Motion Graph
 
@@ -94,6 +84,28 @@
 ## Action to Motion
 
 ## Text to Motion
+
+### VQ-VAE
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|88|2023|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
+
+# 多模态动作生成
+
+### VQ-VAE
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|87|2023.6.19|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
+
+### Diffusion
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
+|86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
+
 
 # AUDIO-CONDITIONED MOTION GENERATION
 
