@@ -1,6 +1,3 @@
-
-
-
 P1     
 # Flow Matching Basics
 
@@ -24,16 +21,28 @@ P8
 P9     
 ### 生成模型的范式
 
-> 生成模型有两大类范式：直接生成和增量生成。     
-GAN 属于第一大类生成模型，优点是快，因为它的生成过程只需要一个forward。缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
+> 生成模型有两大类范式：直接生成和增量生成。  
 
-P10    
+#### 直接生成
+GAN、VAE 属于第一大类生成模型，优点是快，因为它的生成过程只需要一个forward。  
+
+GAN的缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
+
+#### 增量生成 
 
 > 增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。
 
 ![](../assets/P10图2.png)
 
-> Flow 的转移过程是平滑的。Diffusion 是连续但不平滑的。还有一些是不连续的，但都是基于连续时间马尔可夫过程的随机过程Continuous-time Markov process。      
+|生成模型|特点|链接|
+|---|---|---|
+|Flow Matching|转移过程是平滑的。|
+|Diffusion| 转移过程是连续但不平滑的 | [link](../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)|
+|Jump|转移过程是不连续的|
+|Score Matching||[link](../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.md)|
+|Deterministic-to-Stochastic Diverse Latent Feature Mapping||[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
+
+共同点：都是基于连续时间马尔可夫过程的随机过程Continuous-time Markov process。      
 
 ![](../assets/P10图1-0.png)
 

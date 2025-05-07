@@ -4,12 +4,17 @@
 
 ### GAN
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2016| A deep learning framework for character motion synthesis and editing|深度学习框架	开创无条件运动生成的深度学习先河	生成多样性有限	奠定端到端生成基础|
+||2023|Modi|Modi: Unconditional motion synthesis from diverse data.|StyleGAN风格迁移	将StyleGAN风格控制引入运动生成	模式崩溃/混合（生成动作重复或混乱）	风格化运动生成|
+
 ### VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|158|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
-||2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
+|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+|19|2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 以下是整理后的表格，概述了各模型的架构、贡献、输入/输出及创新点：
 
@@ -65,6 +70,8 @@
 
 ### Diffusion Models
 
+
+
  Given the sequential nature of motion, transformers are often used within the denoising process to model temporal dependencies, though their integration varies significantly across models. Early adopters such as Flame [18], MotionDiffuse [ 22], and HMDM [126 ] all incorporate transformers for denoising, but differ in their conditioning strategies, temporal encoding, and loss functions. 
 
 |ID|Year|Name|Note|Tags|Link|
@@ -83,6 +90,19 @@
 
 ## Action to Motion
 
+### VQ-VAE
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|1. 第一阶段通，运动重建(VQVAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|VQVAE，新的生成模式|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
+
+### Diffusion
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|||MDM|	扩散模型（轨迹优化）	扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真|
+|||MLD|潜在空间DDPM	在潜在空间应用扩散模型，降低计算复杂度	与DDPM相同的采样效率问题	潜在空间压缩提升生成速度|
+
 ## Text to Motion
 
 ### VQ-VAE
@@ -90,6 +110,11 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |88|2023|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
+
+### Diffusion
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
 
 # 多模态动作生成
 
