@@ -8,51 +8,13 @@ A scalable method to train **flow generative models**.
 HOW DOES IT WORK?      
 Train by regressing a **velocity**, sample by following the **velocity**      
 
-P8    
-## The Generative Modeling Problem
 
-![](../assets/P8图.png)   
-
-> 正方形代表所有可能的状态所构成的空间，即图像空间。正方形中的每个点代表一个sample，即一张图像。      
-\\(P\\) 是源分布，\\(Q\\) 是目标分布。     
-\\(X_0\\) 和 \\(X_1\\)分别是 \\(P\\) 分布和 \\(Q\\) 分布中的 sample．     
-**生成模型的目标是，找到一个可以从 \\(P\\) 中 sample 到 \\(Q\\) 中 sample 的映射**。    
-
-P9     
-### 生成模型的范式
-
-> 生成模型有两大类范式：直接生成和增量生成。  
-
-#### 直接生成
-GAN、VAE 属于第一大类生成模型，优点是快，因为它的生成过程只需要一个forward。  
-
-GAN的缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
-
-#### 增量生成 
-
-> 增量生成是另一种生成范式，不是直接生成最终结果，而是逐步生成。每一次生成比上一次要好。
-
-![](../assets/P10图2.png)
-
-|生成模型|特点|链接|
-|---|---|---|
-|Flow Matching|转移过程是平滑的。|
-|Diffusion| 转移过程是连续但不平滑的 | [link](../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)|
-|Jump|转移过程是不连续的|
-|Score Matching||[link](../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.md)|
-|Deterministic-to-Stochastic Diverse Latent Feature Mapping||[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
-
-共同点：都是基于连续时间马尔可夫过程的随机过程Continuous-time Markov process。      
-
-![](../assets/P10图1-0.png)
-
-> \\(\Phi\\) 是从一次生成到另一次生成的转移函数。    
-**增量生成模型的目标是学习转移函数**。      
 
 P11    
-
+## 增量生成方法
 ### Marginal probability path
 
+flow matching属于[增量生成方法](../GenerativeModels.md)，需要学习边缘概率路径。  
 边缘概率路径是指，任意一个特定的 \\(t\\) 时刻，\\(X_t\\) 所属于的分布 \\(p_t\\)。 即连续时间上的分布簇。    
 
 ![](../assets/P11图-1.png)
@@ -64,7 +26,7 @@ P12
 
 ![](../assets/P12-1图.png)
 
-> 流的特点：(1) 确定性，已知 \\(X_t\\)，那么 \\(X_{t+h}\\) 是确定的。(2) 平滑       
+> 相比于其它增量生成方法，流的特点：(1) 确定性，已知 \\(X_t\\)，那么 \\(X_{t+h}\\) 是确定的。(2) 平滑       
 流的优势：(1) sample 速度快 (2) 可以构建模型似然的无偏估计器。      
 Diffusion 和 Jump 具有更大的设计空间，因此具有更多生成能力。    
 

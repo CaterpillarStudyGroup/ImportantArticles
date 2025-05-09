@@ -54,7 +54,7 @@ generation, and texture synthesis]()
 # Others
 - [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
-
+- [生成模型](GenerativeModels.md)
 - [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
 - [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
