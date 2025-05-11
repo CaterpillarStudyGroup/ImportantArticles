@@ -94,7 +94,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|1. 第一阶段通，运动重建(VQVAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|VQVAE，新的生成模式|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
+|92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|1. 第一阶段通，运动重建(VQVAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|VQVAE，新的生成模式(flow matching + score matching)，非自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
 
 ### Diffusion
 
@@ -109,7 +109,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|88|2023|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
+|88|2023.9.24|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源，自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
 
 ### Diffusion
 
@@ -131,6 +131,15 @@
 |85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
 |86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
 
+### Training Free
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2025.5.2|**TSTMotion: Training-free Scene-awarenText-to-motion Generation**|| 场景感知，文生动作 |[link](38.md)|
+||2024|“Move as you say, interact as you can: Language-guided human motion generation with scene affordance|AffordMotion|
+||2023|Synthesizing diverse human motions in 3d indoor scenes|
+||2022|Humanise: Language-conditioned human motion generation in
+3d scenes|
 
 # AUDIO-CONDITIONED MOTION GENERATION
 
