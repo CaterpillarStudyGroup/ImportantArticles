@@ -2,6 +2,7 @@ P40
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2024b|Unique3D|
 ||2023|Watson et al., <u>"Novel View Synthesis with Diffusion Models||3Dim||
 ||2023|Watson et al.,"Novel View Synthesis with Diffusion Models"|
 ||2023|Chan et al., <u>"Generative Novel View Synthesis with 3D-Aware Diffusion Models||GenVS|
