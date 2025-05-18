@@ -18,7 +18,7 @@ P126
 |41|2024|STORYDIFFUSION: CONSISTENT SELF-ATTENTION FOR LONG-RANGE IMAGE AND VIDEO GENERATION|先生成一致的关键帧，再插帧成中间图像||[link](https://caterpillarstudygroup.github.io/ReadPapers/41.html)|
 |60|2023|NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation|diffusion over diffusion的递归架构实现长视频生成和并行生成 |coarse-to-fine, 数据集|[link](https://caterpillarstudygroup.github.io/ReadPapers/60.html)|
 ||2025|Ouroboros-Diffusion: Exploring Consistent Content Generation in Tuning-free Long Video Diffusion|
-||2022|**Latent Video Diffusion Models for High-Fidelity Long Video Generation** (He et al.) <br> Generate long videos via autoregressive generation & interpolation <br> “Latent Video Diffusion Models for High-Fidelity Long Video Generation,” arXiv 2022.| ![](../../assets/08-133-1.png)  
+||2022|**Latent Video Diffusion Models for High-Fidelity Long Video Generation** (He et al.) <br> Generate long videos via autoregressive generation & interpolation| ![](../../assets/08-133-1.png)  
 ||2023| **VidRD** (Gu et al.) <br> Autoregressive long video generation <br> “Reuse and Diffuse: Iterative Denoising for Text-to-Video Generation,” arXiv 2023. |  ![](../../assets/08-133-2.png) |
 | |2023| **VideoGen** (Li et al.) <br> Cascaded pipeline for long video generation <br> “VideoGen: A Reference-Guided Latent Diffusion Approach for High Definition Text-to-Video Generation,” arXiv 2023.| ![](../../assets/08-133-3.png) |
 

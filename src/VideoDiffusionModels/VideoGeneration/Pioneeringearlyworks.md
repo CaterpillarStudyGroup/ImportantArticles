@@ -4,6 +4,7 @@ P36
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2023|Stablevideo: Text-driven consistency-aware diffusion video editing|
 |55|2022|Video Diffusion Models|引入conv(2+1)D，temporal attention||[link](https://caterpillarstudygroup.github.io/ReadPapers/55.html)|
 |56|2022|Make-A-Video: Text-to-Video Generation without Text-Video Data|||[link](https://caterpillarstudygroup.github.io/ReadPapers/56.html)|
 |48|2023|Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models|T2I(LDM) -> T2V(SVD)<br>Cascaded generation||[link](https://caterpillarstudygroup.github.io/ReadPapers/48.html)| 

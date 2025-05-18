@@ -46,11 +46,9 @@ Framewise depth-guided video editing
 P60   
 ### Gen-1
 
- - Transfer the style of a video using text prompts given a “driving video”
-
-![](../../assets/D3-60.png)     
-
-Esser et al., <u>"Structure and Content-Guided Video Synthesis with Diffusion Models",</u> arXiv 2023    
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Structure and Content-Guided Video Synthesis with Diffusion Models|Transfer the style of a video using text prompts given a “driving video”，以多种形式在预训练图像扩散模型中融入时序混合层进行扩展|![](../../assets/D3-60.png) |  
 
 P61   
 ### Gen-1
@@ -245,11 +243,15 @@ Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Control
 P214   
 ## ControlNet- and Depth-Controlled Video Editing: More Works
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models|![](../../assets/08-214-3.png)|轨迹控制|
+||2024|Vmc: Video motion customization using temporal attention adaption for text-to-video diffusion models.|轨迹控制|
+
 |||
 |--|--|
 | ![](../../assets/08-214-1.png)  | **MagicProp** (Yan et al.) <br> “MagicProp: Diffusion-based Video Editing via Motion-aware Appearance Propagation,” arXiv 2023. |
 | ![](../../assets/08-214-2.png) | **Make-Your-Video** (Xing et al.) <br> “Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance,” arXiv 2023.   |
-| ![](../../assets/08-214-3.png) | **Control-A-Video** (Lorem et al.) <br> “Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models,” arXiv 2023. |
 | ![](../../assets/08-214-4.png)  | **MagicEdit** (Liew et al.) <br> “MagicEdit: High-Fidelity and Temporally Coherent Video Editing,” arXiv 2023. |
 | ![](../../assets/08-214-5.png)  |  **EVE** (Chen et al.) <br> “EVE: Efficient zero-shot text-based Video Editing with Depth Map Guidance and Temporal Consistency Constraints,” arXiv 2023. |
 

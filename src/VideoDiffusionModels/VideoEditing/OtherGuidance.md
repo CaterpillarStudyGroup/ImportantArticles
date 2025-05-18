@@ -48,11 +48,14 @@ Lee et al., “Soundini: Sound-Guided Diffusion for Natural Video Editing,” ar
 P269   
 ## Video Editing Under Various Guidance: More Works
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory|![](../../assets/08-269-3.png)|轨迹控制|
+
 |||
 |--|--|
 | ![](../../assets/08-269-1.png)  | **Collaborative Score Distillation** (Kim et al.) <br> Instruction-guide video editing <br> “Collaborative Score Distillation for Consistent Visual Synthesis,” NeurIPS 2023. |
 | ![](../../assets/08-269-2.png)  | **Make-A-Protagonist** (Zhao et al.) <br> Video ediSng with an ensemble of experts <br> “Make-A-Protagonist: Generic Video Edigng with An Ensemble of Experts,” arXiv 2023. |
-| ![](../../assets/08-269-3.png)  | **DragNUWA** (Yin et al.) <br> Multimodal-guided video editing <br> “DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory,” arXiv 2023. |
 
 P272
 

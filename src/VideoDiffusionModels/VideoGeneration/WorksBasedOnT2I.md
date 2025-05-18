@@ -66,18 +66,20 @@ P106
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |51|2023|Motion-Conditioned Diffusion Model for Controllable Video Synthesis|&#x2705; 用户提供的稀疏运动轨迹 -> dense光流<br>&#x2705; dense光流（condition） + Image -> 视频|Two-stage,  自回归生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/51.html)|
-|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|&#x2705; 用户提供的控制信号（condition）+ Image -> dense光流<br>&#x2705; dense光流（condition） + Image -> 视频|Two-stage|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
+|44|2024|Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling|&#x2705; 用户提供的控制信号（condition）+ Image -> dense光流<br>&#x2705; dense光流（condition） + Image -> 视频|Two-stage，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/44.html)|
+||2024|Physmotion: Physicsgrounded dynamics from a single image.|轨迹控制|
 | |2023| **LFDM** (Ni et al.) <br> “Conditional Image-to-Video Generation with Latent Flow Diffusion Models,”|&#x2705;视频->光流 + Mask<br>&#x2705; 光流+Mask+图像 ->视频|![](../../assets/08-141-3.png)  ||
 ||2024|Generative Image Dynamics (Li et al.) <br> “Generative Image Dynamics,”|图像（无condition） -> SV <br>&#x2705; SV + 力 -> 光流 <br>&#x2705; 光流 + Image -> 视频| ![](../../assets/08-141-2.png)  ||
 ||2023|LaMD: Latent Motion Diffusion for Video Generation|视频 -> 图像特征 + 运动特征<br>&#x2705; 运动特征+图像特征->视频|![](../../assets/08-141-2.png)  |
-
+||2023|Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models| ![](../../assets/08-95-3.png) | **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns|
+||2023|Animate-a-story: Storytelling with retrieval-augmented video generation|深度控制|
+1.    2
 
 ## More Works 闭源
 |||
 |--|--|
 | ![](../../assets/08-95-1.png)  | **Latent Shift** (An et al.)<br>Shift latent features for better temporal coherence <br> “Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation,” arXiv 2023. |
 | ![](../../assets/08-95-2.png) | **Video Factory** (Wang et al.)<br> Modify attention mechanism for better temporal coherence <br> “VideoFactory: Swap Attention in Spatiotemporal Diffusions for Text-to-Video Generation,” arXiv 2023. |
-| ![](../../assets/08-95-3.png) | **PYoCo** (Ge et al.)<br> Generate video frames starting from similar noise patterns <br> “Preserve Your Own Correlation: A Noise Prior for Video Diffusion Models,” ICCV 2023.  |
 | ![](../../assets/08-95-4.png)  | **VideoFusion** (Lorem et al.)<br> Decompose noise into shared “base” and individual “residuals”<br>“VideoFusion: ecomposed Diffusion Models for High-Quality Video Generation,” CVPR 2023. |
 
 > &#x2705; Framwork (1) 在原模型中加入 temporal layers (2) fix 原模型，训练新的 layers (3) 把 lager 插入到目标 T2 I 模型中。   
