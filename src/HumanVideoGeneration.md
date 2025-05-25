@@ -15,7 +15,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |1|2024|ID-Animator|To ensure the consistency of appearance in generated videos with the textual descriptions while preserving identity details during frames, ID-Animator [1] leverages a pre-trained textto-video (T2V) model with a lightweight face adapter to encode identity-relevant embeddings. |人体外观控制|
-|2||Follow Your Pose|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制|
+|2||Follow Your Pose|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制<br>设计了一个两阶段训练方案，利用图像姿态对和无姿态视频生成姿态可控的角色动画|![](./assets/08-224-2.png)|
 |83||HMTV|文本生成动作和相机运动，再生成图像|人体动作控制，2阶段方法|
 |84|2020|SignSynth|Gloss2Pose文生动作，GAN动作生视频|人体动作控制，2阶段方法|
 |85|2022|H-DNA| |人体动作控制，2阶段方法|

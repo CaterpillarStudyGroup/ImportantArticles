@@ -127,6 +127,8 @@ P199
 P200   
 ## ControlVideo (Zhang et al. 2023)
 
+提出无需训练的框架，通过结构一致性实现可控文本到视频生成。
+
 ControlNet-like video editing
 
  - Input structural conditions through **ControlNet**
@@ -141,19 +143,13 @@ Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generati
 > &#x2705; contrd net 以深度图或边缘图为条件，并在时间维度上 embed 以此得到的Z。与原始视频有比较好的对应关系，但仍存在 temporal consistency 问题。   
 
 
-P201   
-## ControlVideo (Zhang et al. 2023)
-
-ControlNet-like video editing
+P201  
 
  - Use pretrained weights for Stable Diffusion & ControlNet, no training/finetuning   
  - Inflate Stable Diffusion and ControlNet along the temporal dimension   
  - Interleaved-frame smoothing during DDIM sampling for bever temporal consistency    
 
-![](../../assets/08-201.png) 
-
-
-Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
+![](../../assets/08-201.png)    
 
 > &#x2705; 解决 temporal consistency 问题，方法：   
 > &#x2705; 在每个 timestep，让不同帧成为前后两帧的融合。    
@@ -161,26 +157,12 @@ Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generati
 
 
 P202   
-## ControlVideo (Zhang et al. 2023)  
-
-ControlNet-like video editing
-
- - Use pretrained weights for Stable Diffusion & ControlNet, no training/finetuning   
- - Inflate Stable Diffusion and ControlNet along the temporal dimension    
- - Interleaved-frame smoothing during denoising for better temporal consistency    
 
 ![](../../assets/08-202.png)
 
-Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.    
-
 P203   
-## ControlVideo (Zhang et al. 2023)   
-
-ControlNet-like video editing
 
 ![](../../assets/08-203.png)  
-
-Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.     
 
 P207    
 
@@ -245,7 +227,7 @@ P214
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models|![](../../assets/08-214-3.png)|轨迹控制|
+||2023|Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models|通过边缘图或深度图等序列化控制信号生成视频，并提出两种运动自适应噪声初始化策略|![](../../assets/08-214-3.png)|轨迹控制|
 ||2024|Vmc: Video motion customization using temporal attention adaption for text-to-video diffusion models.|轨迹控制|
 
 |||
@@ -331,261 +313,17 @@ P224
 |||
 |--|--|
 | ![](../../assets/08-224-1.png)  | **Dancing Avatar** (Qin et al.)<br> Pose-guided video editing <br> “Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model,” arXiv 2023. |
-| ![](../../assets/08-224-2.png)  | **Follow Your Pose** (Ma et al.) <br> Pose-guided video editing  <br> “Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos,” arXiv 2023.  |
 | ![](../../assets/08-224-3.png)  | **DisCo** (Wang et al.) <br> Pose-guided video editing <br> “Disco: Disentangled control for referring human dance generation in real world,” arXiv 2023.  |
 
 P225   
 ## Point-Control
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|98|2023|VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence|
+
 P226   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Problem Formulation**
-
- - Subject replacement: change video subject to a **customized** subject    
- - Background preservation: preserve the unedited background same as the source video    
-
-![](../../assets/08-226.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-> &#x2705; 要求，背景一致，动作一致，仅替换前景 content.   
-> &#x2705; 因比对原视频提取关键点，基于关键点进行控制。   
-
-P227    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-
-**Motivation**
-
- - Existing methods are promising but still often motion not well aligned   
- - Need ensure precise correspondence of <u> **semantic points** </u> between the source and target   
-
-![](../../assets/08-227.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-> &#x2705; (1) 人工标注每一帧的 semantic point．（少量标注，8帧）    
-> &#x2705; (2) 把 point map 作为 condition．   
-
-P228    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Empirical Observations**
-
- - **Question**: Can we <u> learn semantic point control </u> for a specific <u>source video subject</u> using only a <u>small number of source video frames</u>   
- - **Toy Experiment**: Manually define and annotate a set of semantic points on 8 frame; use such point maps as condition for training a control net, i.e., [T2I-Adapter](https://caterpillarstudygroup.github.io/ReadPapers/65.html).    
-
-![](../../assets/08-228.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.
-
-
-> &#x2705; 实验证明，可以用 semantic point 作为 control．   
-> &#x2705; 结论：T2I 模型可以根据新的点的位置进行新的内容生成。   
-
-
-P229    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Empirical Observations**
-
- - **Observation 1**: If we can drag the points, the trained T2I-Aapter can generate new contents based on such dragged new points (new condition)  →  feasible to use semantic points as condition to control and maintain the source motion trajectory.
-
-![](../../assets/08-229.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.  
-
-
-> &#x2705; 也可以通过拉部分点改变车的形状。   
-
-P230    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Empirical Observations**
-
- - **Observation 2**: Further, we can drag the semantic points to control the subject’s shape   
- 
-![](../../assets/08-230.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-> &#x2705; 虚线框为类似于 control net 的模块，能把 semanti point 抽出来并输入到 denoise 模块中。    
-> &#x2705; Latent Blend 能更好保留背景信息。   
-> &#x2705; 蓝色部分为 Motion layer.    
-
-
-P231    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-![](../../assets/08-231.png) 
-
-**Framework**
-
- - **Motion layer**: use pretrained and fixed AnimateDiff to ensure essential temporal consistency    
- - **ED-LoRA** \\(_{(Mix-of-Show)}\\): learn the wconcept to be customized   
-
- - **Key design aims**: 
-    - Introduce semantic point correspondences to guide motion trajectory   
-    - Reduce human efforts of annotating points    
-
-
-Gu et al. “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-Gu et al. “Mix-of-Show: Decentralized Low-Rank Adaptation for Multi-Concept Customization of Diffusion Models.” NeurIPS, 2023.   
-
-P232   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Step 1: Semantic Point Extraction**
-
- - Reduce human efforts in annotating points    
-    - User define point at one keyframe    
-    - Propagate to other frames by point tracking/detector   
- - Embedding    
-
-![](../../assets/08-232.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-> &#x2705; 什么是比较好的 Semantic point 的表达？   
-
-P233   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Methodology – Step 1: Semantic Point Extraction on the source video**
-
-
- - Reduce human efforts in annotating points   
- - Embedding   
-    - Extract DIFT embedding (intermediate U-Net feature) for each semantic point   
-    - Aggregate over all frames   
-
-![](../../assets/08-233.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-> &#x2753; Embedding, 怎么输人到网络中？   
-> &#x2705; 网络参数本身是 fix 的，增加一些小的 MLP, 把 Embeddin 转化为不同的 scales 的 condition map, 作为 U-Net 的 condition.   
-
-P234    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Methodology – Step 2: Semantic Point Registration on the source video**  
-
- - Introduce several learnable MLPs, corresponding to different scales
- - Optimize the MLPs    
-    - Point Patch Loss: restrict diffusion loss to reconstruct local patch around the point    
-    - Semantic-Enhanced Schedule: only sample higher timestep (0.5T, T), which prevents overfitting to low-level details    
-
-![](../../assets/08-234.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-> &#x2705; 有些场景下需要去除部分 semanfic point, 或移动 point 的位置。   
-
-
-P235    
-## VideoSwap
-
-Customized video subject swapping via point control   
-
-**Methodology**   
-
- - After Step1 (Semantic Point Extraction) and Step2 (Semantic Point Registration), those semantic points can be used to guide motion   
- - User-point interaction for various applications   
-
-![](../../assets/08-235.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-> &#x2705; 在一帧上做的 semantic point 的移动，迁移到其它帧上。   
-
-
-P236   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Methodology**
-
- - How to drag point for shape change?   
-    - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial, because of complex camera motion and subject motion in video.   
-    - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.   
-
-![](../../assets/08-236.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-P237   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Methodology**
-
- - How to drag point for shape change?   
- - Dragging at one frame is straightforward, propagating drag displacement over time is non-trivial because of complex camera motion and subject motion in video.   
- - Resort to canonical space (i.e., Layered Neural Atlas) to propagate displacement.    
-
-![](../../assets/08-237.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-P238    
-## VideoSwap
-
-Customized video subject swapping via point control
-
-![](../../assets/08-238-1.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-P239   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-![](../../assets/08-239.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.   
-
-
-> &#x2705; point contrd 可以处理形变比较大的场景。   
-
-P240   
-## VideoSwap
-
-Customized video subject swapping via point control
-
-**Qualitative Comparisons to previous works**
-
- - VideoSwap can **support shape change** in the target swap results, leading to the correct identity of target concept. 
-
-![](../../assets/08-240.png) 
-
-Gu et al., “VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence,” 2023.    
-
-
-P241   
-> &#x2705; 重建 3D 可以解决时间一致性问题。   
+  
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
