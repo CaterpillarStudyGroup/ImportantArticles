@@ -45,3 +45,9 @@ P7
 |72|2022|All are Worth Words: a ViT Backbone for Score-based Diffusion Models|1. 基于transformer的diffusion网络 **U-ViT**，替代传统U-Net架构。<br> 2. 将图像生成过程中的所有输入（包括噪声图像块、时间步长、条件信息）统一视为“令牌”（Token），通过ViT的全局自注意力机制进行建模。<br> 3. 突破了diffusion对U-Net的依赖，展示了纯Transformer架构在生成任务中的潜力。|U-ViT|[link](https://caterpillarstudygroup.github.io/ReadPapers/72.html)|  
 |73|2022|Scalable Diffusion Models with Transformers|1. 以ViT为backbone的扩散模型——**Diffusion Transformer（DiT）**，代表UNet backbone <br>2. 通过Transformer的全局自注意力机制建模图像生成过程，验证了Transformer在扩散模型中的可扩展性与性能优势。|DiT, ViT|[link](https://caterpillarstudygroup.github.io/ReadPapers/73.html)|
 
+## 其它
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2022|DALL-E2|利用CLIP（Radford等，2021）联合特征空间优化文本-图像对齐度，解决"语义漂移"问题|||
+||2021|GLIDE|首次引入文本条件控制，并通过分类器引导（classifier guidance）机制提升生成效果<br>首次将条件控制（文本）与扩散过程结合，通过梯度调节实现语义精准映射|||

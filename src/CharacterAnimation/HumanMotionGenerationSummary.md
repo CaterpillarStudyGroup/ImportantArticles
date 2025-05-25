@@ -1,4 +1,4 @@
-![](./assets/d378e84bd11f484517ba2d687e8bb933_5_Table_1_-876463523.png)
+![](../assets/d378e84bd11f484517ba2d687e8bb933_5_Table_1_-876463523.png)
 
 # 无条件生成
 
@@ -159,15 +159,8 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|27||Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
-
-## Generation pipeline
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
-
-以下是整理后的表格，概述了3D人体运动生成与评估的数据集、关键指标及模型性能：
+|27|2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
+|19|2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 ---
 

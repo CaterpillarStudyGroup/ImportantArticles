@@ -27,7 +27,12 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|26||PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos|利用物理合理化人物动作||[link](https://caterpillarstudygroup.github.io/ReadPapers/26.html)
+|26||PhysPT: Physics-aware Pretrained Transformer for Estimating Human Dynamics from Monocular Videos|利用物理合理化人物动作|基于SMPL模型从单目视频估计人体动力学，但仅通过拉格朗日损失隐式融入物理约束|[link](https://caterpillarstudygroup.github.io/ReadPapers/26.html)
+|||PhysGen| 通过刚体物理仿真将单张图像与输入力转换为真实视频，证明从视觉数据推理物理参数的可能性；
+|||PhysDiff| 在物理模拟器中嵌入基于物理的投影模块迭代引导扩散过程，但仅解决全局穿模/漂浮问题，忽略细粒度人体关节细节；
+|||LARP| 提出替代传统物理引擎的神经网络，辅助视频动作理解。
+|||PIMNet| 通过人体动力学方程预测未来动作，但依赖动作捕捉数据直接获取关节状态；
+|||PhysMoP| 基于欧拉-拉格朗日方程（EL-Eq.）预测未来SMPL姿态参数，流程简单。
 
 #### Solving Occlusion Problems
 #### Solving Data Lacking

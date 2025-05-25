@@ -10,12 +10,11 @@
 
 讨论了如何使用文本描述来控制生成视频中的人类外观和动作。
 
-![](./assets/c5094236dee05a597cc12eb2a5b13473_4_Figure_3_-1248124106.png)
+![](../assets/c5094236dee05a597cc12eb2a5b13473_4_Figure_3_-1248124106.png)
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |1|2024|ID-Animator|To ensure the consistency of appearance in generated videos with the textual descriptions while preserving identity details during frames, ID-Animator [1] leverages a pre-trained textto-video (T2V) model with a lightweight face adapter to encode identity-relevant embeddings. |人体外观控制|
-|2||Follow Your Pose|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制<br>设计了一个两阶段训练方案，利用图像姿态对和无姿态视频生成姿态可控的角色动画|![](./assets/08-224-2.png)|
 |83||HMTV|文本生成动作和相机运动，再生成图像|人体动作控制，2阶段方法|
 |84|2020|SignSynth|Gloss2Pose文生动作，GAN动作生视频|人体动作控制，2阶段方法|
 |85|2022|H-DNA| |人体动作控制，2阶段方法|
@@ -159,11 +158,13 @@ Video + Audio -> Video
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性|Diffusion|[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
+|2|2024.1|Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制<br>设计了一个两阶段训练方案，利用图像姿态对和无姿态视频生成姿态可控的角色动画|![](./assets/08-224-2.png)|
 
 ### 视频动作驱动
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|99|2025.5.19|FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance|1. 从视频中提取2D pose<br> 2. 2D pose lifting到3D pose<br> 3. **对3D pose作物理优化** <br> 4. 用优化后的pose引导视频生成| **可微的物理优化过程**，视频作为pose信息控制，无外观信息控制 |[link](https://caterpillarstudygroup.github.io/ReadPapers/99.html)|
 |53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动，Cross Attention|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
 
 
