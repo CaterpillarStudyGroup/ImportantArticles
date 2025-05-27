@@ -2,6 +2,16 @@ P75
 # Text-2-Video
 
 
+
+P99  
+> &#x2705; 在 noise 上对内容进行编辑，即定义第一帧的 noise，以及后面帧的 noise 运动趋势。
+
+P100  
+> &#x2705; 保证中间帧尽量相似。 
+
+P101   
+> &#x2705; 扣出背景并 smooth.    
+
 P102  
 ## Text2Video-Zero   
 
