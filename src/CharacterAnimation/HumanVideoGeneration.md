@@ -164,8 +164,8 @@ Video + Audio -> Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|99|2025.5.19|FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance|1. 从视频中提取2D pose<br> 2. 2D pose lifting到3D pose<br> 3. **对3D pose作物理优化** <br> 4. 用优化后的pose引导视频生成| **可微的物理优化过程**，视频作为pose信息控制，无外观信息控制 |[link](https://caterpillarstudygroup.github.io/ReadPapers/99.html)|
-|53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|人物视频生成，视频驱动，Cross Attention|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
+|99|2025.5.19|FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance|1. 从视频中提取2D pose<br> 2. 2D pose lifting到3D pose<br> 3. **对3D pose作物理优化** <br> 4. 用优化后的pose引导视频生成| **可微的物理优化过程**，pose信息来自视频，无外观信息控制 |[link](https://caterpillarstudygroup.github.io/ReadPapers/99.html)|
+|53|2024|Implicit Warping for Animation with Image Sets|用driving视频中的人去驱动reference图像中的人，生成reference做与driving中相同动作的视频|pose信息来自视频<br>外观信息来自Reference Image<br>Cross Attention|[link](https://caterpillarstudygroup.github.io/ReadPapers/53.html)|
 
 
 ### 3D动作驱动
