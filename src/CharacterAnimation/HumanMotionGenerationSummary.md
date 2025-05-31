@@ -16,11 +16,12 @@
 |14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 |19|2024|WANDR: Intention-guided Human Motion Generation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
+
 以下是整理后的表格，概述了各模型的架构、贡献、输入/输出及创新点：
 
 | **模型名称**             | **基础架构**                | **主要贡献**                                                                 | **条件输入**          | **输出**                  | **训练目标**                                                                 | **关键创新点**                                                                 |
 |--------------------------|-----------------------------|-----------------------------------------------------------------------------|-----------------------|---------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| **ACTOR [116]** 2021         | Transformer + VAE           | 生成多样且真实的3D人体动作，作为后续研究的基线                              | 动作标签              | 多样化3D动作序列          | 潜在高斯分布对齐                                                            | 结合Transformer与VAE，支持从同一动作条件生成多动作变体                         |
+Transformer与VAE，支持从同一动作条件生成多动作变体                         |
 | **TEACH [118]**    2022      | 扩展自TEMOS                 | 处理连续文本指令生成连贯动作                                                | 文本序列              | 连贯3D动作序列            | 分层生成：非自回归（单个动作内） + 自回归（动作间时序组合）                 | 分层策略实现时序组合与平滑过渡                                                  |
 | **TMR [120]**   2023         | 改进自TEMOS                 | 提升文本-动作对齐，支持检索与生成                                           | 文本                  | 3D动作/跨模态检索结果     | 对比损失优化联合潜在空间，过滤误导性负样本（MPNet）                         | 引入CLIP式对比学习，优化负样本选择策略提升检索性能                              |
 
@@ -47,10 +48,12 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|J. Kim, J. Kim, and S. Choi, "Flame: Free-form language-based motion synthesis & editing," arXiv preprint arXiv:2209.00349, 2022.|Flame [18] introduces a transformer-based motion decoder in place of the standard U-Net [231 ], using cross-attention to incorporate text features extracted with RoBERTa [322]. It introduces two special tokens for encoding motion length and diffusion timestep, both used during cross-attention to guide generation. |Flame|
-||2022|MotionDiffuse [22 ]|MotionDiffuse [22 ], although similar in structure, handles the timestep differently by sampling it from a uniform distribution, and introduces variable-length motion generation by dividing sequences into sub-intervals. Each segment is paired with a corresponding text description, enabling part-wise and body-part-specific conditioning. It also incorporates Efficient Attention [323 ] to reduce computational cost and uses a classical transformer [ 5 ] for text encoding. While both Flame [18 ] and MotionDiffuse [22 ] rely on noise-based reconstruction, Flame adds a variational lower bound. In contrast, MotionDiffuse [ 22 ] optimizes only a mean squared error loss on the predicted noise. |
+||2025|LengthAware Motion Synthesis via Latent Diffusion|
+||2023.6.26|Flame: Free-form language-based motion synthesis & editing|Flame [18] introduces a transformer-based motion decoder in place of the standard U-Net [231 ], using cross-attention to incorporate text features extracted with RoBERTa [322]. It introduces two special tokens for encoding motion length and diffusion timestep, both used during cross-attention to guide generation. |Flame|
+||2024|MotionDiffuse [22 ]|MotionDiffuse [22 ], although similar in structure, handles the timestep differently by sampling it from a uniform distribution, and introduces variable-length motion generation by dividing sequences into sub-intervals. Each segment is paired with a corresponding text description, enabling part-wise and body-part-specific conditioning. It also incorporates Efficient Attention [323 ] to reduce computational cost and uses a classical transformer [ 5 ] for text encoding. While both Flame [18 ] and MotionDiffuse [22 ] rely on noise-based reconstruction, Flame adds a variational lower bound. In contrast, MotionDiffuse [ 22 ] optimizes only a mean squared error loss on the predicted noise. |
 ||2023|HMDM [126 ]|HMDM [126 ] takes a different approach by applying its primary reconstruction loss on the denoised signal rather than the noise. It encodes text using CLIP [7] and feeds the diffusion timestep into the transformer as a dedicated token, similar to Flame. However, HMDM [ 126 ] fixes the motion length and introduces a set of auxiliary loss functions designed to improve physical realism: a positional loss in joint 37 space, a velocity loss to enforce temporal consistency, and a foot contact loss defined using forward kinematics. These losses are combined with a standard reconstruction loss, forming a comprehensive objective that better preserves both spatial accuracy and motion smoothness. |
 ||2023|MakeAnAnimation [ 127 ]| In contrast, Departing from sequential generation, MakeAnAnimation [ 127 ] proposes a two-stage framework that first pre-trains on a large static 3D pose dataset, created from pose detection applied to image collections, to learn pose-text associations. Using a U-Net architecture [ 231 ] for the denoising network and a pre-trained T5 encoder [ 324 ] for text, the model generates full motion sequences concurrently. Unlike transformer-based models such as HMDM [126 ] and Flame [18 ], which enforce temporal consistency through specific loss functions, MakeAnAnimation [ 127 ] avoids such constraints and relies solely on standard diffusion loss. Despite this, it maintains motion continuity through its concurrent sampling and large-scale pre-training strategy. Recent works have also expanded the diffusion framework to support spatial and semantic constraints. |
+||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|
 
 
 ### Motion Graph
@@ -60,6 +63,12 @@
 # TEXT-CONDITIONED MOTION GENERATION
 
 ## Action to Motion
+
+### VAE
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2021.10|Action-Conditioned 3D Human Motion Synthesis with Transformer VAE|生成多样且真实的3D人体动作，作为后续研究的基线| ACTOR、Transformer + VAE、潜在高斯分布对齐|
 
 ### VQ-VAE
 
@@ -71,8 +80,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|||MDM|	扩散模型（轨迹优化）	扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真|
-|||MLD|潜在空间DDPM	在潜在空间应用扩散模型，降低计算复杂度	与DDPM相同的采样效率问题	潜在空间压缩提升生成速度|
+||2023|Executing your Commands via Motion Diffusion in Latent Space|潜在空间DDPM	在潜在空间应用扩散模型，降低计算复杂度	与DDPM相同的采样效率问题	潜在空间压缩提升生成速度|MLD|
 
 ## Text to Motion
 
@@ -80,31 +88,35 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|100|2025.5.16|MoCLIP: Motion-Aware Fine-Tuning and Distillation of CLIP for Human Motion Generation|一种代替CLIP的文本编码方式，其编码空间能跟Motion有更好的对齐，因此更适用于文生动作任务。||[link](https://caterpillarstudygroup.github.io/ReadPapers/100.html)||
+|100|2025.5.16|MoCLIP: Motion-Aware Fine-Tuning and Distillation of CLIP for Human Motion Generation|一种代替CLIP的文本编码方式，其编码空间能跟Motion有更好的对齐，因此更适用于文生动作任务。<br> MoCLIP是CLIP的Motion版，不能独立使用，需结束基于CLIP的文生动作Pipeline。||[link](https://caterpillarstudygroup.github.io/ReadPapers/100.html)||
 ||2022|Motionclip: Exposing human motion generation to clip space|将运动潜空间直接对齐CLIP的语义文本嵌入，实现零样本泛化能力。然而，CLIP嵌入主要捕获静态图文语义，难以完整表征真实运动合成所需的时序与运动学细节。此外，直接微调CLIP嵌入可能导致预训练语义知识的灾难性遗忘。|
 
 ### VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2022|Tm2t: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。|
+||2023|BAMM: Bidirectional Autoregressive Motion Model.|bert style|
 ||2022| Generating diverse and natural 3d | 两阶段（卷积AE + 时序VAE）分阶段生成文本对应动作 <br> 预训练运动编码器提取片段；时序VAE生成运动代码序列 <br> 两阶段框架（先编码运动代码，再生成序列） |    T2M , Transformer VAE                                  |
 ||2022| Temos: Generating diverse human motions from textual descriptions.| 改进自ACTOR<br>实现文本到SMPL动作的生成 <br> 共享潜在空间中文本与动作表征对齐（跨模态一致性）<br>对称编码器（动作序列+冻结DistilBERT文本编码器），共享潜在空间      |    Transformer VAE       |
 
 ### VQ-VAE
 
+VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问题从回归任务转化为分类任务。然而受限于码本结构，VQ-VAE倾向于存储已知动作而非泛化到新动作。虽然这些模型在训练数据分布内能精确生成和重建动作，却难以处理分布外运动导致信息损失和动作感知失真。
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025|. BAD: Bidirectional Auto-Regressive Diffusion for Text-to-Motion Generation||bert style|
+||2024|MMM: Generative Masked Motion Model. |bert style|
+||2023|AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism. |
 |88|2023.9.24|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源，自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
-
-### VQ-VAE
-
----
+||2023|**DiverseMotion [122]**|VQ-VAE + 扩散模型，提升生成多样性与语义一致性<br> 扩散过程（前向破坏令牌，反向去噪），用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解 |
+||2023|Priority-Centric Human Motion Generation in Discrete Latent Space|
+||2023| MoMask: Generative Masked Modeling of 3D Human Motions| VQ-VAE + 分层码本，分层生成粗糙到精细的运动细节<br>掩码令牌建模（BERT风格） + 残差细化 <br>分层码本结构；掩码预测生成粗糙运动，残差层逐步细化 |bert Style|
+||2023.12.15|MotionGPT: Human Motion as a Foreign Language.|
+||2022|TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。|
 
 | **模型名称**         | **基础架构**                    | **主要贡献**                                                                 | **条件输入**      | **输出**              | **训练目标**                                                                 | **关键创新点**                                                                 |
 |----------------------|---------------------------------|-----------------------------------------------------------------------------|-------------------|-----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| **DiverseMotion [122]** 2023| VQ-VAE + 扩散模型              | 提升生成多样性与语义一致性                                                  | 文本提示（CLIP）  | 去噪后的运动令牌      | 扩散过程（前向破坏令牌，反向去噪）                                          | 用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解               |
-| **MoMask [123]**   2023  | VQ-VAE + 分层码本              | 分层生成粗糙到精细的运动细节                                                | 文本              | 分层运动令牌序列      | 掩码令牌建模（BERT风格） + 残差细化                                         | 分层码本结构；掩码预测生成粗糙运动，残差层逐步细化                              |
 | **T2LM [124]**    2024   | 1D卷积VQ-VAE + Transformer     | 处理多句子文本生成长且复杂的动作序列                                        | 多句子文本        | 长动作序列            | 1D卷积压缩运动；Transformer编码文本时序关系                                  | 结合1D卷积与文本时序建模，实现跨动作平滑过渡                                    |
 
 ---
@@ -124,22 +136,37 @@
 
 ### Diffusion
 
+基于扩散的方法直接在连续运动空间操作（如原始动作数据或VAE编码的隐表征），支持高质量动作生成。但这些方法主要进行片段级建模——一次性生成整个动作序列的所有帧。该设计使得修改特定帧时难以保持整体动作一致性与质量。且通常仍局限于粗粒度语义引导或轨迹级控制，导致其缺乏细粒度时间控制能力，用户无法在生成过程中精确定义或编辑动作细节。
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|101|2025.5.16|Towards Robust and Controllable Text-to-Motion via Masked Autoregressive Diffusion|1. 递归式地补充部分帧（类似MoMask），直到全部生成 <br> 2. 帧级VAE| VAE + diffusion  |[link](https://caterpillarstudygroup.github.io/ReadPapers/101.html)|
+||2022.9.29|Human Motion Diffusion Model|	扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真||MDM|
 
-# 多模态动作生成
+# Motion-Conditioned Motion Generation
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|27|2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
+|19|2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 ### VQ-VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|87|2023.6.19|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
+||2024|AvatarGPT: All-in-One Framework for Motion Understanding, Planning, Generation and Beyond|
+|87|2024.3.24|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
+
 
 ### Diffusion
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2024| MotionLCM: Real-Time Controllable Motion Generation via Latent Consistency Model|
+||2024| LengthAware Motion Synthesis via Latent Diffusion|
 |85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
+||2024.3.24|AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion|
+||2024|EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation|
 |86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
 
 ### Training Free
@@ -165,13 +192,6 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |29|2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)|
-
-# Motion-Conditioned Motion Generation
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|27|2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
-|19|2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
 
 ---
 

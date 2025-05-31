@@ -145,9 +145,7 @@ Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 20
 Jiménez, <u>"Mixture of Diffusers for scene composition and high resolution image generation",</u> arXiv 2023    
 Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> arXiv 2023    
 Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023    
-Zhang et al., <u>"MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model",</u> arXiv 2022    
-Tevet et al., <u>"Human Motion Diffusion Model",</u> arXiv 2022    
-Chen et al., <u>"Executing your Commands via Motion Diffusion in Latent Space",</u> CVPR 2023    
+Zhang et al., <u>"MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model",</u> arXiv 2022      
 Du et al., <u>"Avatars Grow Legs: Generating Smooth Human Motion from Sparse Tracking Inputs with Diffusion Model",</u> CVPR 2023    
 Shafir et al., <u>"Human Motion Diffusion as a Generative Prior",</u> arXiv 2023    
 Somepalli et al., <u>"Diffusion Art or Digital Forgery? Investigating Data Replication in Diffusion Models",</u> CVPR 2023    
