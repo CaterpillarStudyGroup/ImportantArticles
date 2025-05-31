@@ -48,8 +48,8 @@
 - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
 - [expression rendering, avatar creation, gesture modeling, object
 generation, and texture synthesis]()
-- [Human Motion Generation: A Survey](HumanMotionGenerationSummary.md)
-- [Human Video Generation](HumanVideoGeneration.md)
+- [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
+- [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
 
 # Others
 - [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
