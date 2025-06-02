@@ -44,7 +44,7 @@
 
 
 # Character Animation
-- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](HPE_HMR_Summary.md)
+- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](CharacterAnimation/HPE_HMR_Summary.md)
 - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
 - [expression rendering, avatar creation, gesture modeling, object
 generation, and texture synthesis]()

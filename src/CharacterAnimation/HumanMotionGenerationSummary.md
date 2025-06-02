@@ -157,7 +157,6 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |101|2025.5.16|Towards Robust and Controllable Text-to-Motion via Masked Autoregressive Diffusion|1. 递归式地补充部分帧（类似MoMask），直到全部生成 <br> 2. 帧级VAE| VAE + diffusion  |[link](https://caterpillarstudygroup.github.io/ReadPapers/101.html)|
-|103|2025.5.2|GENMO: A GENeralist Model for Human MOtion||  人体运动通用模型，动作估计，动作生成, NVIDIA|[link](https://caterpillarstudygroup.github.io/ReadPapers/103.html)|
 ||2024|M2D2M|先用VQ-VAE获取离散运动编码，再在标记序列上学习去噪扩散模型。为多动作生成设计动态转移概率确保动作间平滑过渡。|
 ||2023|MoDDM|VQ-VAE|diffusion，在隐空间显式破坏VQ-VAE编码并学习去噪|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|

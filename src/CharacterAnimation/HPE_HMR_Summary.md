@@ -36,6 +36,11 @@
 
 #### Solving Occlusion Problems
 #### Solving Data Lacking
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|103|2025.5.2|GENMO: A GENeralist Model for Human MOtion| 把HPE看作是视频condition的动作生成任务。通过动作估计与动作生成的协同增强，提升动作估计的准确性。|  人体运动通用模型，动作估计，动作生成, NVIDIA|[link](https://caterpillarstudygroup.github.io/ReadPapers/103.html)|
+
 ## 多人HPE
 # Human Mesh Recovery
 ## Template-based human mesh recovery
