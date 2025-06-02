@@ -4,7 +4,7 @@ P36
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023.11|Stablevideo: Text-driven consistency-aware diffusion video editing|
+||2025.5.14|**Generating time-consistent dynamics with discriminator-guided image diffusion models**||图像生成+时间一致性判别器=视频生成  |[link](84.md)|
 |57|2023.9|Show-1: Marrying Pixel and Latent Diffusion Models for Text-to-Video Generation|直接在像素空间实现时序扩散模型，结合修复（inpainting）与超分辨率技术生成高分辨率视频||[link](https://caterpillarstudygroup.github.io/ReadPapers/57.html)| 
 ||2023.8|I2vgen-xl: High-quality image-to-video|提出级联网络，通过分离内容与运动因素提升模型性能，并利用静态图像作为引导增强数据对齐。|
 |48|2023.4|Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models|首次将潜在扩散模型（LDM）范式引入视频生成，在潜在空间中加入时序维度<br>T2I(LDM) -> T2V(SVD)<br>Cascaded generation|Video LDM|[link](https://caterpillarstudygroup.github.io/ReadPapers/48.html)| 
