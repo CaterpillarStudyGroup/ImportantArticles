@@ -63,6 +63,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2025.5.8|**SOAP: Style-Omniscient Animatable Portraits**|从单张图像生成可动画化的3D虚拟头象| FLAME，FACS面部动作编码，多风格3D头像数据集 |[link](60.md)|
+||2025.5.2|Model See Model Do: Speech-Driven Facial Animation with Style Control|| 语音驱动，唇形同步，风格 |[link](41.md)|
 
 ---
 

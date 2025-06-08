@@ -156,7 +156,17 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.28|UniMoGen: Universal Motion Generation||  **骨架无关**的动作生成  |[link](134.md)|
+||2025.5.27|IKMo: Image-Keyframed Motion Generation with Trajectory-Pose Conditioned Motion Diffusion Model||  基于扩散模型的运动生成方法，其核心在于**解耦轨迹与姿态输入**  |[link](130.md)|
+||2025.5.26|Absolute Coordinates Make Motion Generation Easy|| 全局空间中的**绝对关节坐标**表示方法的文生动作   |[link](123.md)|
+||2025.5.23|Multi-Person Interaction Generation from Two-Person Motion Priors|| 利用现有双人运动扩散模型作为运动先验，生成逼真且多样化的多人交互动作   |[link](119.md)|
+||2025.5.20|Large-Scale Multi-Character Interaction Synthesis||  生成大规模多角色交互的角色动画 |[link](105.md)|
+||2025.5.19|UniHM: Universal Human Motion Generation with Object Interactions in Indoor Scenes|| 整合静态环境、可移动物体、自然语言提示和空间路径点等多模态信息的文生动作  |[link](97.md)|
 |101|2025.5.16|Towards Robust and Controllable Text-to-Motion via Masked Autoregressive Diffusion|1. 递归式地补充部分帧（类似MoMask），直到全部生成 <br> 2. 帧级VAE| VAE + diffusion  |[link](https://caterpillarstudygroup.github.io/ReadPapers/101.html)|
+||2025.5.15|Dyadic Mamba: Long-term Dyadic Human Motion Synthesis|| 文生超长序列双人动作  |[link](89.md)|
+||2025.5.8|ReAlign: Bilingual Text-to-Motion Generation via Step-Aware Reward-Guided Alignment||  双语文本输入合成3D人体运动 |[link](59.md)|
+||2025.4.23|PMG: Progressive Motion Generation via Sparse Anchor Postures Curriculum Learning||**更高控制精度和更精细的运动生成** |[link](6.md)|
+||2024.3.26|**Move as you say, interact as you can: Language-guided human motion generation with scene affordance**|| 3D环境中的文生3D动作  |[link](63.md)|
 ||2024|M2D2M|先用VQ-VAE获取离散运动编码，再在标记序列上学习去噪扩散模型。为多动作生成设计动态转移概率确保动作间平滑过渡。|
 ||2023|MoDDM|VQ-VAE|diffusion，在隐空间显式破坏VQ-VAE编码并学习去噪|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|
@@ -229,7 +239,24 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 
 ## Music to Dance
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2025.5.26|PAMD: Plausibility-Aware Motion Diffusion Model for Long Dance Generation||  合理性感知运动扩散模型 (PAMD)的音乐生成舞蹈  |[link](124.md)|
+||2025.5.14|CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation|| 单阶段音频驱动的说话身体生成 |[link](78.md)|
+||2025.5.8|ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation|| 反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作 |[link](67.md)|
+||2025.5.7|ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition|| 生成乐器演奏动作  |[link](56.md)|
+||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md)|
+
 ## Speech to Gesture
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2025.6.1|TRiMM: Transformer-Based Rich Motion Matching for Real-Time multi-modal Interaction in Digital Humans||  实时3D手势生成  |[link](146.md)|
+||2025.5.29|MMGT: Motion Mask Guided Two-Stage Network for Co-Speech Gesture Video Generation||  利用音频，以及从音频信号生成的**运动掩码**和**运动特征**，共同驱动生成同步的语音-手势视频  |[link](139.md)|
+||2025.5.22|MEgoHand: Multimodal Egocentric Hand-Object Interaction Motion Generation|| 以自我为中心的手-物体运动生成   |[link](112.md)|
+||2025.5.21|Intentional Gesture: Deliver Your Intentions with Gestures for Speech|| 意图驱动手势生成框架  |[link](110.md)|
+||2025.5.14|**Robust Photo-Realistic Hand Gesture Generation: from Single View to Multiple View**|| 高保真手势生成  |[link](94.md)|
+||2025.5.3|Co$^{3}$Gesture: Towards Coherent Concurrent Co-speech 3D Gesture Generation with Interactive Diffusion|| 语音生成手势、双人交互、数据集 |[link](43.md)|
 
 # SCENE-CONDITIONED MOTION GENERATION
 

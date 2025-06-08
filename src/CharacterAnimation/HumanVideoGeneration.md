@@ -14,6 +14,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.21|Interspatial Attention for Efficient 4D Human Video Generation|| 以可控方式生成数字人(digital humans)的逼真视频  |[link](106.md)|
 |1|2024|ID-Animator|To ensure the consistency of appearance in generated videos with the textual descriptions while preserving identity details during frames, ID-Animator [1] leverages a pre-trained textto-video (T2V) model with a lightweight face adapter to encode identity-relevant embeddings. |人体外观控制|
 |83||HMTV|文本生成动作和相机运动，再生成图像|人体动作控制，2阶段方法|
 |84|2020|SignSynth|Gloss2Pose文生动作，GAN动作生视频|人体动作控制，2阶段方法|
@@ -157,6 +158,8 @@ Video + Audio -> Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.6|**FlexiAct: Towards Flexible Action Control in Heterogeneous Scenarios**||  姿势引导视频合成 |[link](51.md)|
+||2025.5.6|Real-Time Person Image Synthesis Using a Flow Matching Model|| 姿势引导人物图像合成， flow matching  |[link](50.md)|
 |37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性|Diffusion|[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
 |2|2024.1|Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制<br>设计了一个两阶段训练方案，利用图像姿态对和无姿态视频生成姿态可控的角色动画|![](./assets/08-224-2.png)|
 
@@ -172,6 +175,7 @@ Video + Audio -> Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.28|LatentMove: Towards Complex Human Movement Video Generation || 专门为高度动态的人体动画量身定制的、**基于DiT(扩散Transformer)的框架**的图像到视频(I2V)生成   |[link](135.md)|
 |42|2024|HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation|3D建模 + 3D重定向 + 渲染，动作控制+相机控制|人物视频生成，3D管线    |[link](https://caterpillarstudygroup.github.io/ReadPapers/42.html)|
 
 

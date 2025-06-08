@@ -22,6 +22,11 @@
 
 ### 视频单人HPE
 #### Solving Single-frame Limitation
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2025.5.29|GeoMan: Temporally Consistent Human Geometry Estimation using Image-to-Video Diffusion||  从单目人体视频中生成精确且时序一致的深度图和法线图  |[link](140.md)|
+
 #### Solving Real-time Problems
 #### Solving Body Structure Understanding
 

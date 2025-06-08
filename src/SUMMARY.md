@@ -46,10 +46,17 @@
 # Character Animation
 - [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](CharacterAnimation/HPE_HMR_Summary.md)
 - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
-- [expression rendering, avatar creation, gesture modeling, object
-generation, and texture synthesis]()
+- [expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis]()
 - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
 - [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
+
+# NeurIPS 2024 Flow Matchig Turorial
+
+- [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
+   - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
+   - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
+   - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
+   - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
 
 # Others
 - [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
@@ -57,11 +64,7 @@ generation, and texture synthesis]()
 - [生成模型](GenerativeModels.md)
 - [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
-- [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
-   - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
-   - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
-   - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
-   - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
+- [Animal Generation](AnimationGeneration.md)
 - [More](More.md)
 
 

@@ -13,8 +13,9 @@ P126
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.2|DiffuseSlide: Training-Free High Frame Rate Video Generation Diffusion ||  基于预训练扩散模型的高帧率视频生成新方法  |[link](149.md)|
+||2025.6.1|FlowMo: Variance-Based Flow Guidance for Coherent Motion in Video Generation|| 无训练引导方法增加视频生成的连续性   |[link](147.md)|
 |80|2025|One-Minute Video Generation with Test-Time Training|1. 引入TTT层，通过TTT层动态调整模型隐藏状态，增强对长序列的全局理解能力。<br>2. 通过门控机制防止TTT层训练初期引入噪声。<br>3. 多阶段训练策略：从3秒片段逐步扩展至63秒，仅微调TTT层和门控参数，保留预训练模型的知识。|Test Time Training, RNN, |[link](https://caterpillarstudygroup.github.io/ReadPapers/80.html)|
-
 |41|2024|STORYDIFFUSION: CONSISTENT SELF-ATTENTION FOR LONG-RANGE IMAGE AND VIDEO GENERATION|先生成一致的关键帧，再插帧成中间图像||[link](https://caterpillarstudygroup.github.io/ReadPapers/41.html)|
 |60|2023|NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation|diffusion over diffusion的递归架构实现长视频生成和并行生成 |coarse-to-fine, 数据集|[link](https://caterpillarstudygroup.github.io/ReadPapers/60.html)|
 ||2025|Ouroboros-Diffusion: Exploring Consistent Content Generation in Tuning-free Long Video Diffusion|
