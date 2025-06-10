@@ -2,10 +2,10 @@
 
 - Fundamentals of Diffusion Models
 - **Video Generation**
-    - Close-Source T2I Works
-    - Open-Source T2I Base Models
-    - Works Based on T2I Base Models
-    - Works Based on T2V Base Models
+    - 闭源T2V大模型
+    - 开源T2V基模型
+    - T2I Base Model + Control
+    - T2V Base Model + Control
     - 长视频生成
     - StoryBoard
     - 多生成任务

@@ -14,6 +14,15 @@ P36
 |56|2022.9|Make-A-Video: Text-to-Video Generation without Text-Video Data|||[link](https://caterpillarstudygroup.github.io/ReadPapers/56.html)|
 |55|2022.4|Video Diffusion Models|首次采用3D U-Net结构的扩散模型预测并生成视频序列<br>引入conv(2+1)D，temporal attention||[link](https://caterpillarstudygroup.github.io/ReadPapers/55.html)|
 
+##  More Works
+
+|||
+|--|--|
+| ![](../../assets/08-107-1.png)  | **MagicVideo** (Zhou et al.) <br> Insert causal attention to Stable Diffusion for better temporal coherence <br> “MagicVideo: Efficient Video Generation With Latent Diffusion Models,” arXiv 2022.  |
+|  ![](../../assets/08-107-2.png)  | **Simple Diffusion Adapter** (Xing et al.) <br> Insert lightweight adapters to T2I models, shift latents, and finetune adapters on videos <br>“SimDA: Simple Diffusion Adapter for Efficient Video Generation,” arXiv 2023. |
+| ![](../../assets/08-107-3.png) | **Dual-Stream Diffusion Net** (Liu et al.) <br> Leverage multiple T2I networks for T2V <br> “Dual-Stream Diffusion Net for Text-to-Video Generation,” arXiv 2023. |
+||MagicVideo-V2: Multi-Stage High-Aesthetic Video Generation,2024|
+
 # Traning Free
 
 |ID|Year|Name|Note|Tags|Link|

@@ -17,6 +17,12 @@ P113
 |  ![](../../assets/08-125-3.png)  | **Free-Bloom** (Huang et al.)<br>Storyboard through detailed text prompts<br> “Free-Bloom: Zero-Shot Text-to-Video Generator with LLM Director and LDM Animator,” NeurIPS 2023. |
 |  ![](../../assets/08-125-4.png) | **LLM-Grounded Video Diffusion Models** (Lian et al.) <br> Storyboard through foreground bounding boxes <br> “LLM-grounded Video Diffusion Models,” arXiv 2023. |
 
+P104
+
+> &#x2705; 生成电影级别的视频，而不是几秒钟的视频。   
+
+P106   
+> &#x2705; 文本 → 结构化的中间脚本 → 视频  
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
