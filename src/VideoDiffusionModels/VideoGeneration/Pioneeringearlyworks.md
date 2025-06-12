@@ -27,7 +27,7 @@ P36
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2025.5.14|**Generating time-consistent dynamics with discriminator-guided image diffusion models**|1. 训练一个时序一致性判别器，用判别器引导T2I模型生成时序一致性的模型。|图像生成+时间一致性判别器=视频生成  |[link](84.md)|
+|84|2025.5.14|**Generating time-consistent dynamics with discriminator-guided image diffusion models**|1. 训练一个时序一致性判别器，用判别器引导T2I模型生成时序一致性的模型。|图像生成+时间一致性判别器=视频生成  |[link](84.md)|
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

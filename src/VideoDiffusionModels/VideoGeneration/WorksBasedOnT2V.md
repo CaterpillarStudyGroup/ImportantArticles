@@ -2,10 +2,18 @@
 
 ## 强调符合物理规律
 
+1. 如何描述物理规律：LLM对物理的理解、特定的数据集、已有的物理模型  
+2. 如何使用物理规律：数据集、损失
+3. 是否显示提取物理规律
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|106|2025.5.26|Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals|将物理力作为视频生成的控制信号的视频生成 |开源  |[link](125.md)|
+|106|2025.5.26|Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals|1. 将物理力(全局力和点力)编码后作为生成条件引导生成<br> 2. 构造少量数据集 <br> 3. 证明大TI2V模型 + 少量样本能得到比较好的泛化性 |开源， CogVideoX + ControlNet，物理 |[link](https://caterpillarstudygroup.github.io/ReadPapers/106.html)|
+||2025.5.1|T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation|| 文生视频，物理，评估 |[link](34.md)|
+||2025.4.30|**ReVision: High-Quality, Low-Cost Video Generation with Explicit 3D Physics Modeling for Complex Motion and Interaction**|参数化的三维物理知识显式地集成到一个预训练的条件视频生成模型中，从而显著增强了其生成高质量、包含复杂动作和交互的视频的能力<br> 1.使用一个视频扩散模型生成一个粗糙的视频 <br> 2. 从该粗略视频中提取一组 2D 和 3D 特征，构建一个以对象为中心的 3D 表示，并通过我们提出的参数化物理先验模型对其进行优化，生成精确的 3D 动作序列。<br> 3. 这一优化后的动作序列被反馈到同一个视频扩散模型中作为额外的条件输入 | 三阶段, 即插即用  |[link](27.md)|
 |96|2025.3.26|**PhysAnimator: Physics-Guided Generative Cartoon Animation**|静态动漫插图生成动画<br>1. 分割出可形变部分<br>2. 转成2D Mesh<br>3. FEM驱动2D Mesh<br>4. 根据2D Mesh形变生成光流<br>5. 光流驱动Image草图<br>6. 草图作为控制信号，生成视频| 2D Mesh，FEM，ControlNet，光流，轨迹控制，SAM |[link](https://caterpillarstudygroup.github.io/ReadPapers/96.html)|
+||2025|Physdreamer: Physics-based interaction with 3d objects via video generation|
+
 
 ## 强调时序一致性
 
@@ -29,12 +37,9 @@
 ||2025.5.20|LMP: Leveraging Motion Prior in Zero-Shot Video Generation with Diffusion Transformer|| 文+图像+运动视频->视频  |[link](101.md)|
 ||2025.5.14|CameraCtrl: Enabling Camera Control for Video Diffusion Models|| 相机位姿控制的视频生成 |[link](82.md)|
 ||2025.5.4|DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization|| 文生视频 |[link](46.md)|
-||2025.5.1|T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation|| 文生视频，物理，评估 |[link](34.md)|
 ||2025.4.30|**Eye2Eye: A Simple Approach for Monocular-to-Stereo Video Synthesis**|| 文生3D视频 |[link](35.md)|
-||2025.4.30|**ReVision: High-Quality, Low-Cost Video Generation with Explicit 3D Physics Modeling for Complex Motion and Interaction**||视频生成，物理  |[link](27.md)|
 ||2025|Sparsectrl: Adding sparse controls to text-to-video diffusion models|深度控制|
 ||2024|Cinemo: Consistent and controllable image animation with motion diffusion models|
 ||2024.06|Mimicmotion: High-quality human motion video generation with confidence-aware pose guidance|pose控制|
 ||2024|Vr-gs: A physical dynamics-aware interactive gaussian splatting system in virtual reality|
 ||2024| Physgaussian: Physicsintegrated 3d gaussians for generative dynamics|
-||2025|Physdreamer: Physics-based interaction with 3d objects via video generation|
