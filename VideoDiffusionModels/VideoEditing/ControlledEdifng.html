@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Controlled Edifng - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded affix "><li class="part-title">CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">3.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">4.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">4.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">4.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">4.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">4.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">5.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">6.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">6.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">6.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">7.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">7.2.</strong> 基于不同3D的3D生成</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">7.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">7.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">7.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">8.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded affix "><li class="part-title">Video Diffusion Models</li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">9.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">10.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">10.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">10.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">10.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">10.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">10.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">10.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">10.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">11.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">11.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">11.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/ControlledEdifng.html" class="active"><strong aria-hidden="true">11.3.</strong> Controlled Edifng</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">11.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">11.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">12.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">Character Animation</li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HPE_HMR_Summary.html"><strong aria-hidden="true">13.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">14.</strong> facial and expression</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis</div></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">16.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">17.</strong> Human Video Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">NeurIPS 2024 Flow Matchig Turorial</li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">18.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">18.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">18.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">18.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">18.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">19.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../../3D_Gaussian_Splatting.html"><strong aria-hidden="true">20.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../../GenerativeModels.html"><strong aria-hidden="true">21.</strong> 生成模型</a></li><li class="chapter-item expanded "><a href="../../ClipAnimation.html"><strong aria-hidden="true">22.</strong> 2D图形驱动</a></li><li class="chapter-item expanded "><a href="../../数据集.html"><strong aria-hidden="true">23.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../../AnimationGeneration.html"><strong aria-hidden="true">24.</strong> Animal Generation</a></li><li class="chapter-item expanded "><a href="../../More.html"><strong aria-hidden="true">25.</strong> More</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P188</p>
+<h1 id="3-video-editing"><a class="header" href="#3-video-editing">3 Video Editing</a></h1>
+<h2 id="33-controlled-edifng-depthposepointcontrolnet"><a class="header" href="#33-controlled-edifng-depthposepointcontrolnet">3.3 Controlled Edifng (depth/pose/point/ControlNet)</a></h2>
+<blockquote>
+<p>✅ 已有一段视频，通过 guidance 或文本描述，修改视频。</p>
+</blockquote>
+<p>P189</p>
+<p><img src="../../assets/08-189.png" alt="" /> </p>
+<p>P190</p>
+<h2 id="depth-control"><a class="header" href="#depth-control">Depth Control</a></h2>
+<blockquote>
+<p>✅ RunwayML 主要做的是 style transfer, 强制加入 depth 作为 condition, 因此可移植性非常高。</p>
+</blockquote>
+<p>P191</p>
+<blockquote>
+<p>✅ MIDS 是已有的深度估计模型。</p>
+</blockquote>
+<p>P192</p>
+<h2 id="use-midas-to-offer-depth-condition"><a class="header" href="#use-midas-to-offer-depth-condition">Use MiDaS to offer depth condition</a></h2>
+<p>Depth estimating network</p>
+<p>Ranftl et al., “Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer,” TPAMI 2022.</p>
+<blockquote>
+<p>✅ 深变信息 Encode 成 latent code, 与 noise conca 到一起。</p>
+</blockquote>
+<p>P193</p>
+<h2 id="gen-1"><a class="header" href="#gen-1">Gen-1</a></h2>
+<p>Framewise depth-guided video editing</p>
+<ul>
+<li>Inflate Stable Diffusion to a 3D model, finetune on pretrained weights</li>
+<li>Insert temporal convolution/attention layers</li>
+<li>Finetune to take <strong>per-frame depth as conditions</strong></li>
+</ul>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-193-1.png" alt="" /></td><td><img src="../../assets/08-193-2.png" alt="" /></td></tr>
+</tbody></table>
+<blockquote>
+<p>✅ 特点：(1) 不需要训练。 (2) 能保持前后一致性。</p>
+</blockquote>
+<p>P60</p>
+<h3 id="gen-1-1"><a class="header" href="#gen-1-1">Gen-1</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023</td><td>Structure and Content-Guided Video Synthesis with Diffusion Models</td><td>Transfer the style of a video using text prompts given a “driving video”，以多种形式在预训练图像扩散模型中融入时序混合层进行扩展</td><td><img src="../../assets/D3-60.png" alt="" /></td><td></td></tr>
+</tbody></table>
+<p>P61</p>
+<h3 id="gen-1-2"><a class="header" href="#gen-1-2">Gen-1</a></h3>
+<ul>
+<li>Condition on structure (depth) and content (CLIP) information.</li>
+<li>Depth maps are passed with latents as input conditions.</li>
+<li>CLIP image embeddings are provided via cross-attention blocks.</li>
+<li>During inference, CLIP text embeddings are converted to CLIP image embeddings.</li>
+</ul>
+<p><img src="../../assets/D3-61.png" alt="" /></p>
+<blockquote>
+<p>✅ 用 depth estimator 从源视频提取 struct 信息，用 CLIP 从文本中提取 content 信息。<br />
+✅ depth 和 content 分别用两种形式注入。depth 作为条件，与 lantent concat 到一起。content 以 cross attention 的形式注入。</p>
+</blockquote>
+<p>P194</p>
+<h2 id="pix2video"><a class="header" href="#pix2video">Pix2Video</a></h2>
+<p>Framewise depth-guided video editing</p>
+<ul>
+<li>Given a sequence of frames, generate a new set of images that reflects an edit.</li>
+<li>Editing methods on individual images fail to preserve temporal information.</li>
+</ul>
+<p>Ceylan et al., <u>&quot;Pix2Video: Video Editing using Image Diffusion&quot;,</u> arXiv 2023</p>
+<blockquote>
+<p>✅ 没有 3D diffusion model，只是用 2D diffusion model 生成多张图像并拼成序列。关键在于保持时序的连续性。</p>
+</blockquote>
+<ul>
+<li>Leverage a pretrained per-frame depth-conditioned Stable Diffusion model to edit frame by frame, to maintain motion consistency between source video and edited video</li>
+<li>No need for training/finetuning</li>
+</ul>
+<p><img src="../../assets/08-194.png" alt="" /> </p>
+<p>P195</p>
+<h3 id="how-to-ensure-temporal-consistency"><a class="header" href="#how-to-ensure-temporal-consistency">How to ensure temporal consistency?</a></h3>
+<h4 id="obtain-initial-noise-from-ddim-inversion"><a class="header" href="#obtain-initial-noise-from-ddim-inversion">Obtain initial noise from DDIM inversion</a></h4>
+<p><img src="../../assets/08-195.png" alt="" /></p>
+<blockquote>
+<p>✅ (1) 用每一帧的原始图像的 inversion 作为 init noise.<br />
+✅ (2) 下一帧的生成会引用上一帧的 latent.<br />
+✅ (3) 生成的中间结果上也会有融合。</p>
+</blockquote>
+<p>P196</p>
+<h4 id="self-attention-injection"><a class="header" href="#self-attention-injection"><strong>Self-Attention injection:</strong></a></h4>
+<p>Inject self-attention features from the previous frame in U-Net for generating the current frame</p>
+<p><img src="../../assets/D3-63-1.png" alt="" /></p>
+<ul>
+<li>Use the latent of the previous frame as keys and values to guide latent update of the current frame</li>
+</ul>
+<p><img src="../../assets/D3-63-2.png" alt="" /></p>
+<p><img src="../../assets/D3-64.png" alt="" /></p>
+<blockquote>
+<p>✅ reconstruction guidance，使生成的 latent code 与上一帧接近。</p>
+</blockquote>
+<blockquote>
+<p>✅ (1) 使用 DDIM inversion 把图像转为 noise．<br />
+✅ (2) 相邻的 fram 应 inversion 出相似的 noise．<br />
+✅ 使用 self-attention injection 得到相似的 noise.</p>
+</blockquote>
+<p>P197</p>
+<h3 id="result"><a class="header" href="#result">Result</a></h3>
+<p><img src="../../assets/08-197.png" alt="" /> </p>
+<p>P198</p>
+<p><img src="../../assets/08-198.png" alt="" /> </p>
+<p>P199</p>
+<h2 id="controlnet--multiple-control"><a class="header" href="#controlnet--multiple-control">ControlNet / Multiple Control</a></h2>
+<p>P200</p>
+<h2 id="controlvideo-zhang-et-al-2023"><a class="header" href="#controlvideo-zhang-et-al-2023">ControlVideo (Zhang et al. 2023)</a></h2>
+<p>提出无需训练的框架，通过结构一致性实现可控文本到视频生成。</p>
+<p>ControlNet-like video editing</p>
+<ul>
+<li>Input structural conditions through <strong>ControlNet</strong></li>
+</ul>
+<p><img src="../../assets/08-200.png" alt="" /> </p>
+<p>Zhang et al., “ControlVideo: Training-free Controllable Text-to-Video Generation,” arXiv 2023.</p>
+<blockquote>
+<p>✅ 使用预训练的 stable diffusion, 无需额外训练。<br />
+✅ contrd net 是与 stable diffusion 配对的。<br />
+✅ contrd net 以深度图或边缘图为条件，并在时间维度上 embed 以此得到的Z。与原始视频有比较好的对应关系，但仍存在 temporal consistency 问题。</p>
+</blockquote>
+<p>P201</p>
+<ul>
+<li>Use pretrained weights for Stable Diffusion &amp; ControlNet, no training/finetuning</li>
+<li>Inflate Stable Diffusion and ControlNet along the temporal dimension</li>
+<li>Interleaved-frame smoothing during DDIM sampling for bever temporal consistency</li>
+</ul>
+<p><img src="../../assets/08-201.png" alt="" /></p>
+<blockquote>
+<p>✅ 解决 temporal consistency 问题，方法：<br />
+✅ 在每个 timestep，让不同帧成为前后两帧的融合。<br />
+❓ control net 与 diffusion medel 是什么关系？</p>
+</blockquote>
+<p>P202</p>
+<p><img src="../../assets/08-202.png" alt="" /></p>
+<p>P203</p>
+<p><img src="../../assets/08-203.png" alt="" /></p>
+<p>P207</p>
+<blockquote>
+<p>✅ 除了 control net, 还使用光流信息作为引导。<br />
+✅ Gop：Group of Pictures.</p>
+</blockquote>
+<p>P208</p>
+<h2 id="videocontrolnet"><a class="header" href="#videocontrolnet">VideoControlNet</a></h2>
+<p>Optical flow-guided video editing; I, P, B frames in video compression</p>
+<p><img src="../../assets/08-208.png" alt="" /></p>
+<p>Hu et al., “VideoControlNet: A Motion-Guided Video-to-Video Translation Framework by Using Diffusion Model with ControlNet,” arXiv 2023.</p>
+<blockquote>
+<p>✅ 内容一致性，适用于 style transfer, 但需要对物体都较大编辑力度时不适用(例如编辑物体形状)。</p>
+</blockquote>
+<p>P209</p>
+<blockquote>
+<p>✅ 也是control net 形式，但用到更多控制条件。</p>
+</blockquote>
+<p>P210</p>
+<h2 id="ccedit"><a class="header" href="#ccedit">CCEdit</a></h2>
+<p>Mulemodal-guided video edieng</p>
+<p><img src="../../assets/08-210.png" alt="" /></p>
+<p>Feng et al., “CCEdit: Creative and Controllable Video Editing via Diffusion Models,” arXiv 2023.</p>
+<blockquote>
+<p>✅ 使用了更多控制信息，并把它们 combine 到一起。</p>
+</blockquote>
+<p>P211</p>
+<h2 id="videocomposer"><a class="header" href="#videocomposer">VideoComposer</a></h2>
+<p>Image-, sketch-, motion-, depth-, mask-controlled video editing</p>
+<p><strong>Video Editing based on Various Conditions</strong></p>
+<p><img src="../../assets/08-211.png" alt="" /></p>
+<p>Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.</p>
+<blockquote>
+<p>✅ 每个 condition 进来，都过一个 STC-Encoder, 然后把不同 condition fuse 到一起，输入到 U-Net.</p>
+</blockquote>
+<p>P212</p>
+<h2 id="videocomposer-1"><a class="header" href="#videocomposer-1">VideoComposer</a></h2>
+<p>Image-, sketch-, motion-, depth-, mask-controlled video editing</p>
+<p>• Spako-Temporal Condikon encoder (STC-encoder): a unified input interface for condikons</p>
+<p><img src="../../assets/08-212.png" alt="" /></p>
+<p>Wang et al., “VideoComposer: Compositional Video Synthesis with Motion Controllability,” arXiv 2023.</p>
+<p>P214</p>
+<h2 id="controlnet--and-depth-controlled-video-editing-more-works"><a class="header" href="#controlnet--and-depth-controlled-video-editing-more-works">ControlNet- and Depth-Controlled Video Editing: More Works</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023</td><td>Control-A-Video: Controllable Text-to-Video Generagon with Diffusion Models</td><td>通过边缘图或深度图等序列化控制信号生成视频，并提出两种运动自适应噪声初始化策略</td><td><img src="../../assets/08-214-3.png" alt="" /></td><td>轨迹控制</td></tr>
+<tr><td></td><td>2024</td><td>Vmc: Video motion customization using temporal attention adaption for text-to-video diffusion models.</td><td>轨迹控制</td><td></td><td></td></tr>
+</tbody></table>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-214-1.png" alt="" /></td><td><strong>MagicProp</strong> (Yan et al.) <br> “MagicProp: Diffusion-based Video Editing via Motion-aware Appearance Propagation,” arXiv 2023.</td></tr>
+<tr><td><img src="../../assets/08-214-2.png" alt="" /></td><td><strong>Make-Your-Video</strong> (Xing et al.) <br> “Make-Your-Video: Customized Video Generation Using Textual and Structural Guidance,” arXiv 2023.</td></tr>
+<tr><td><img src="../../assets/08-214-4.png" alt="" /></td><td><strong>MagicEdit</strong> (Liew et al.) <br> “MagicEdit: High-Fidelity and Temporally Coherent Video Editing,” arXiv 2023.</td></tr>
+<tr><td><img src="../../assets/08-214-5.png" alt="" /></td><td><strong>EVE</strong> (Chen et al.) <br> “EVE: Efficient zero-shot text-based Video Editing with Depth Map Guidance and Temporal Consistency Constraints,” arXiv 2023.</td></tr>
+</tbody></table>
+<p>P215</p>
+<h2 id="pose-control"><a class="header" href="#pose-control">Pose Control</a></h2>
+<p>P216</p>
+<h2 id="dreampose"><a class="header" href="#dreampose">DreamPose</a></h2>
+<p>Pose- and image-guided video generation</p>
+<p>Input: image  \(\quad \) Input: pose sequence   \(\quad \)  Output: Video</p>
+<p>Karras et al., “DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion,” arXiv 2023.</p>
+<p>P218</p>
+<h2 id="magicanimate"><a class="header" href="#magicanimate">MagicAnimate</a></h2>
+<p>Pose- and image-guided video generaeon</p>
+<p><strong>Challenges</strong></p>
+<ul>
+<li>Flickering video</li>
+<li>Cannot maintain background</li>
+<li>Short video animation results</li>
+</ul>
+<p><strong>Possible Cause</strong></p>
+<ul>
+<li>Weak appearance preservation due to lack of temporal modeling</li>
+</ul>
+<p>Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.</p>
+<blockquote>
+<p>✅ 把 pose control net 加到核心的 U-Net 生成。<br />
+✅ 把原始 U-Net fix, copy- 分可以 train 的 U-Net.<br />
+✅ 输入：reference image, 两个 U-Net 在部分 layer 进行结合达到前景 appearance 和背景 appeorance 的 Encode 推断时输入多个 Sequence, 可以生成 long video.</p>
+</blockquote>
+<p>P219</p>
+<h2 id="magicanimate-1"><a class="header" href="#magicanimate-1">MagicAnimate</a></h2>
+<p>Pose- and image-guided video generation</p>
+<p><img src="../../assets/08-219.png" alt="" /> </p>
+<p>Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.</p>
+<p>P220</p>
+<h2 id="magicanimate-2"><a class="header" href="#magicanimate-2">MagicAnimate</a></h2>
+<p>Pose- and image-guided video generation</p>
+<p><img src="../../assets/08-220.png" alt="" /> </p>
+<p>Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.</p>
+<p>P223</p>
+<h2 id="magicanimate-3"><a class="header" href="#magicanimate-3">MagicAnimate</a></h2>
+<p>Pose-guided video generation</p>
+<p><img src="../../assets/08-223.png" alt="" /> </p>
+<p>Xu et al., “MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model,” arXiv 2023.</p>
+<p>P224</p>
+<h2 id="video-editing-under-pose-guidance-more-works"><a class="header" href="#video-editing-under-pose-guidance-more-works">Video Editing Under Pose Guidance: More Works</a></h2>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../../assets/08-224-1.png" alt="" /></td><td><strong>Dancing Avatar</strong> (Qin et al.)<br> Pose-guided video editing <br> “Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model,” arXiv 2023.</td></tr>
+<tr><td><img src="../../assets/08-224-3.png" alt="" /></td><td><strong>DisCo</strong> (Wang et al.) <br> Pose-guided video editing <br> “Disco: Disentangled control for referring human dance generation in real world,” arXiv 2023.</td></tr>
+</tbody></table>
+<p>P225</p>
+<h2 id="point-control"><a class="header" href="#point-control">Point-Control</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>98</td><td>2023</td><td>VideoSwap: Customized Video Subject Swapping with Interactive Semantic Point Correspondence</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>P226</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../VideoDiffusionModels/VideoEditing/Training-free.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../VideoDiffusionModels/VideoEditing/3D-Aware.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../VideoDiffusionModels/VideoEditing/Training-free.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../VideoDiffusionModels/VideoEditing/3D-Aware.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../theme/pagetoc.js"></script>
+    </body>
+</html>
