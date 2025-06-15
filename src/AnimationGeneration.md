@@ -21,4 +21,4 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|39|2024|Motion Avatar: Generate Human and Animal Avatars with Arbitrary Motion|文生3D Mesh + 文生成3D动作 + 重定向 = 3D动物运动序列||[link](https://caterpillarstudygroup.github.io/ReadPapers/39.html)|
+|39|2024.5|Motion Avatar: Generate Human and Animal Avatars with Arbitrary Motion|文生3D Mesh + 文生成3D动作 + 重定向 = 3D动物运动序列||[link](https://caterpillarstudygroup.github.io/ReadPapers/39.html)|
