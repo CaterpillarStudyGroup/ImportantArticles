@@ -8,9 +8,9 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**||    |[link](160.md)|
 |106|2025.5.26|Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals|1. 将物理力(全局力和点力)编码后作为生成条件引导生成<br> 2. 构造少量数据集 <br> 3. 证明大TI2V模型 + 少量样本能得到比较好的泛化性 |开源， CogVideoX + ControlNet，物理 |[link](https://caterpillarstudygroup.github.io/ReadPapers/106.html)|
 ||2025.5.1|T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation|| 文生视频，物理，评估 |[link](34.md)|
-||2025.4.30|**ReVision: High-Quality, Low-Cost Video Generation with Explicit 3D Physics Modeling for Complex Motion and Interaction**|参数化的三维物理知识显式地集成到一个预训练的条件视频生成模型中，从而显著增强了其生成高质量、包含复杂动作和交互的视频的能力<br> 1.使用一个视频扩散模型生成一个粗糙的视频 <br> 2. 从该粗略视频中提取一组 2D 和 3D 特征，构建一个以对象为中心的 3D 表示，并通过我们提出的参数化物理先验模型对其进行优化，生成精确的 3D 动作序列。<br> 3. 这一优化后的动作序列被反馈到同一个视频扩散模型中作为额外的条件输入 | 三阶段, 即插即用  |[link](27.md)|
 |96|2025.3.26|**PhysAnimator: Physics-Guided Generative Cartoon Animation**|静态动漫插图生成动画<br>1. 分割出可形变部分<br>2. 转成2D Mesh<br>3. FEM驱动2D Mesh<br>4. 根据2D Mesh形变生成光流<br>5. 光流驱动Image草图<br>6. 草图作为控制信号，生成视频| 2D Mesh，FEM，ControlNet，光流，轨迹控制，SAM |[link](https://caterpillarstudygroup.github.io/ReadPapers/96.html)|
 ||2025|Physdreamer: Physics-based interaction with 3d objects via video generation|
 

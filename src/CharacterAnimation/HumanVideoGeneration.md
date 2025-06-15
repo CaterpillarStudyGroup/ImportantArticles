@@ -158,6 +158,7 @@ Video + Audio -> Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|108|2025.4.30|**ReVision: High-Quality, Low-Cost Video Generation with Explicit 3D Physics Modeling for Complex Motion and Interaction**|参数化的三维物理知识显式地集成到一个预训练的条件视频生成模型中，从而显著增强了其生成高质量、包含复杂动作和交互的视频的能力<br> 1.使用一个视频扩散模型生成一个粗糙的视频 <br> 2. 从该粗略视频中提取一组 2D 和 3D 特征，构建一个以对象为中心的 3D 表示，并通过我们提出的参数化物理先验模型对其进行优化，生成精确的 3D 动作序列。<br> 3. 这一优化后的动作序列被反馈到同一个视频扩散模型中作为额外的条件输入 | 三阶段, 即插即用  |[link](https://caterpillarstudygroup.github.io/ReadPapers/108.html)|
 ||2025.5.6|**FlexiAct: Towards Flexible Action Control in Heterogeneous Scenarios**||  姿势引导视频合成 |[link](51.md)|
 ||2025.5.6|Real-Time Person Image Synthesis Using a Flow Matching Model|| 姿势引导人物图像合成， flow matching  |[link](50.md)|
 |37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性|Diffusion|[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
