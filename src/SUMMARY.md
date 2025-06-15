@@ -49,6 +49,7 @@
 - [expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis]()
 - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
 - [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
+- [Human 4D Generation](./CharacterAnimation/Human4DGeneration.md)
 
 # NeurIPS 2024 Flow Matchig Turorial
 
@@ -65,7 +66,7 @@
 - [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
 - [Animal Generation](AnimationGeneration.md)
-- [4D Generation](MeshAniation.md)
+- [4D Generation](4DGeneration.md)
 - [More](More.md)
 
 

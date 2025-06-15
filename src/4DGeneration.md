@@ -42,7 +42,7 @@
 ||2025|L4gm: Large 4d gaussian reconstruction model|
 ||2024|Dreammesh4d: Video-to-4d generation with sparse-controlled gaussian-mesh hybrid representation|
 ||2024|Animate3d: Animating any 3d model with multi-view video diffusion|
-|111|2024.6.10|**Dreamgaussian4d: Generative 4d gaussian splatting**|1. 先使用DreamGaussianHD生成静态高斯溅射模型，然后通过基于六面体 (HexPlane) 的动态生成方法结合高斯变形技术生成动态内容 <br> 2. 运动信息来自driving video而不是video SDS|HexPlane显式驱动， 开源, driving video||[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
+|111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|1. 先使用DreamGaussianHD生成静态高斯溅射模型，然后通过基于六面体 (HexPlane) 的动态生成方法结合高斯变形技术生成动态内容 <br> 2. 运动信息来自driving video而不是video SDS|HexPlane显式驱动， 开源, driving video||[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
 
 ## Mesh Animation
 
