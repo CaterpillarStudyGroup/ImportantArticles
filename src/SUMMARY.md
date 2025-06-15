@@ -65,7 +65,7 @@
 - [2D图形驱动](ClipAnimation.md)
 - [数据集](数据集.md)
 - [Animal Generation](AnimationGeneration.md)
-- [Mesh Animation](MeshAniation.md)
+- [4D Generation](MeshAniation.md)
 - [More](More.md)
 
 
