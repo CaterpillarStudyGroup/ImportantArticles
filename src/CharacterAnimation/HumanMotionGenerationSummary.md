@@ -8,12 +8,15 @@
 |---|---|---|---|---|---|
 ||2016| A deep learning framework for character motion synthesis and editing|深度学习框架	开创无条件运动生成的深度学习先河	生成多样性有限	奠定端到端生成基础|
 ||2023|Modi|Modi: Unconditional motion synthesis from diverse data.|StyleGAN风格迁移	将StyleGAN风格控制引入运动生成	模式崩溃/混合（生成动作重复或混乱）	风格化运动生成|
+||2022|Ganimator: Neural motion synthesis from a single sequence
 
 ### VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2023|Drop: Dynamics responses from human motion prior and projective dynamics|
+|113|2017| Phasefunctioned neural networks for character control|PFNN||[link](https://caterpillarstudygroup.github.io/ReadPapers/113.html)|
 
 
 以下是整理后的表格，概述了各模型的架构、贡献、输入/输出及创新点：
@@ -41,19 +44,24 @@ Transformer与VAE，支持从同一动作条件生成多动作变体            
 
 ### Diffusion Models
 
-
-
- Given the sequential nature of motion, transformers are often used within the denoising process to model temporal dependencies, though their integration varies significantly across models. Early adopters such as Flame [18], MotionDiffuse [ 22], and HMDM [126 ] all incorporate transformers for denoising, but differ in their conditioning strategies, temporal encoding, and loss functions. 
-
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|112|2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**|1. 使用运动学生成动作 2. 使用动力学优化动作 3. 优化结果再映射回运动学数据 <br> | 物理合理，自回归，动作优化   |[link](https://caterpillarstudygroup.github.io/ReadPapers/112.html)|
 ||2025|LengthAware Motion Synthesis via Latent Diffusion|
-||2023|MakeAnAnimation [ 127 ]| In contrast, Departing from sequential generation, MakeAnAnimation [ 127 ] proposes a two-stage framework that first pre-trains on a large static 3D pose dataset, created from pose detection applied to image collections, to learn pose-text associations. Using a U-Net architecture [ 231 ] for the denoising network and a pre-trained T5 encoder [ 324 ] for text, the model generates full motion sequences concurrently. Unlike transformer-based models such as HMDM [126 ] and Flame [18 ], which enforce temporal consistency through specific loss functions, MakeAnAnimation [ 127 ] avoids such constraints and relies solely on standard diffusion loss. Despite this, it maintains motion continuity through its concurrent sampling and large-scale pre-training strategy. Recent works have also expanded the diffusion framework to support spatial and semantic constraints. |
+
 
 
 ### Motion Graph
 
 ### Regression
+
+### Normalizing Flows
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023|Stylevr: Stylizing character animations with normalizing flows|
+||2020|Moglow: Probabilistic and controllable motion synthesis
+using normalising flows
 
 # TEXT-CONDITIONED MOTION GENERATION
 
@@ -168,15 +176,19 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2025.4.23|PMG: Progressive Motion Generation via Sparse Anchor Postures Curriculum Learning||**更高控制精度和更精细的运动生成** |[link](6.md)|
 ||2024.3.26|**Move as you say, interact as you can: Language-guided human motion generation with scene affordance**|| 3D环境中的文生3D动作  |[link](63.md)|
 ||2024|M2D2M|先用VQ-VAE获取离散运动编码，再在标记序列上学习去噪扩散模型。为多动作生成设计动态转移概率确保动作间平滑过渡。|
+||2024|Seamless human motion composition with blended positional encodings|
+||2024.5|Flexible motion in-betweening with diffusion models|
+||2024.4|Motionlcm: Real-time controllable motion generation via latent consistency model|
 ||2023|MoDDM|VQ-VAE|diffusion，在隐空间显式破坏VQ-VAE编码并学习去噪|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|
 ||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性|
+||2023.10| Humantomato: Text-aligned whole-body motion generation|
 ||2023.6.26|Flame: Free-form language-based motion synthesis & editing|纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合|Flame|
 |||MoFusion|轻量1D U-Net，三大约束损失（运动学一致性），显著提升效率与长序列质量
-||2022.9.29|Human Motion Diffusion Model|	1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声|MDM, CLIP|
-||2022|MotionDiffuse [22 ]|首用DDPM于运动生成，关节角表示+Transformer时序建模<br>验证扩散模型在运动生成的高质量与时序一致性 |CLIP|
-|      | 2022 | **MotionDiffuse** [Zhang et al.] | – 首个基于扩散模型的文本驱动运动生成框架<br>– 采用DDPM模型<br>– 跨模态线性Transformer处理输入序列 | – 推理需大量扩散步数<br>– 生成运动存在不自然现象                               |
-|      | 2022 | **MDM** [Tevet et al.]       | – 基于Transformer的扩散模型<br>– 扩散过程的无分类器指导                    | – 计算开销大、推理速度低<br>– 仅适合短序列生成                                |
+||2023|MakeAnAnimation| 摒弃了顺序生成（通过特定的损失函数强制保证时序一致性）的方式，仅依赖于标准的扩散损失。<br>两阶段训练。先在一个大型静态 3D 姿态数据集上进行预训练，以学习姿态-文本的关联。<br> 通过其并行采样策略和大规模预训练策略保持运动的连续性。|U-Net， T5|
+||2022|Generating diverse and natural 3d human motions from text|
+||2022.9.29|Human Motion Diffusion Model|	1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声<br>计算开销大、推理速度低，仅适合短序列生成|HMDM, MDM, CLIP, transformer|
+|| 2022 | **MotionDiffuse** [Zhang et al.] | 首个基于扩散模型的文本驱动运动生成框架<br>跨模态线性Transformer处理输入序列<br> 关节角表示+Transformer时序建模 <br>验证扩散模型在运动生成的高质量与时序一致性<br>推理需大量扩散步数<br> 生成运动存在不自然现|CLIP, DDPM, Transformer|象   |                                 |
 |      | 2024 | **MMDM** [Chen]              | – 跨时间帧与身体部位的掩码建模策略                                         | – 计算成本高昂                                                          |
 |      | 2023 | **priorMDM** [Shafir et al.] | – 并行组合：双运动同步生成<br>– 串行组合：多动作长动画生成                   | – 依赖初始模型质量<br>– 长间隔运动不一致<br>– 泛化能力不足                    |
 |      | 2024 | **FlowMDM** [Barquero et al.]| – 混合位置编码<br>– 姿态中心化交叉注意力<br>– 构建两项新指标（检测突变过渡）      | – 复杂文本描述生成失败<br>– 部分过渡轻微不匹配                              |
@@ -246,6 +258,8 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2025.5.8|ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation|| 反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作 |[link](67.md)|
 ||2025.5.7|ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition|| 生成乐器演奏动作  |[link](56.md)|
 ||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md)|
+||2023|Listen, denoise, action! audio-driven motion synthesis with diffusion models|
+||2022|Edge: Editable dance generation from music|
 
 ## Speech to Gesture
 
@@ -257,6 +271,10 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2025.5.21|Intentional Gesture: Deliver Your Intentions with Gestures for Speech|| 意图驱动手势生成框架  |[link](110.md)|
 ||2025.5.14|**Robust Photo-Realistic Hand Gesture Generation: from Single View to Multiple View**|| 高保真手势生成  |[link](94.md)|
 ||2025.5.3|Co$^{3}$Gesture: Towards Coherent Concurrent Co-speech 3D Gesture Generation with Interactive Diffusion|| 语音生成手势、双人交互、数据集 |[link](43.md)|
+||2024|Diffsheg: A diffusion-based approach for real-time speech-driven holistic 3d expression and gesture generation
+||2024|Emotional speech-driven 3d body animation via disentangled latent diffusion|
+||2024|Semantic gesticulator: Semantics-aware co-speech gesture synthesis|
+||2023|Gesturediffuclip: Gesture diffusion model with clip latents|
 
 # SCENE-CONDITIONED MOTION GENERATION
 

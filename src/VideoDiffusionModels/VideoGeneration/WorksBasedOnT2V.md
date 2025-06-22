@@ -8,7 +8,6 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**||    |[link](160.md)|
 |106|2025.5.26|Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals|1. 将物理力(全局力和点力)编码后作为生成条件引导生成<br> 2. 构造少量数据集 <br> 3. 证明大TI2V模型 + 少量样本能得到比较好的泛化性 |开源， CogVideoX + ControlNet，物理 |[link](https://caterpillarstudygroup.github.io/ReadPapers/106.html)|
 ||2025.5.1|T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation|| 文生视频，物理，评估 |[link](34.md)|
 |96|2025.3.26|**PhysAnimator: Physics-Guided Generative Cartoon Animation**|静态动漫插图生成动画<br>1. 分割出可形变部分<br>2. 转成2D Mesh<br>3. FEM驱动2D Mesh<br>4. 根据2D Mesh形变生成光流<br>5. 光流驱动Image草图<br>6. 草图作为控制信号，生成视频| 2D Mesh，FEM，ControlNet，光流，轨迹控制，SAM |[link](https://caterpillarstudygroup.github.io/ReadPapers/96.html)|
