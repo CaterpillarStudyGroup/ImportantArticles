@@ -2,45 +2,24 @@
 
 # 无条件生成
 
+1. 无引导的动作生成，无法对动作进行控制。
+2. 通常会先学习动作先验模型，基于动作模型进行生成。
+3. 动作先验模型也可用于动作优化。
+
 ### GAN
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2016| A deep learning framework for character motion synthesis and editing|深度学习框架	开创无条件运动生成的深度学习先河	生成多样性有限	奠定端到端生成基础|
 ||2023|Modi|Modi: Unconditional motion synthesis from diverse data.|StyleGAN风格迁移	将StyleGAN风格控制引入运动生成	模式崩溃/混合（生成动作重复或混乱）	风格化运动生成|
 ||2022|Ganimator: Neural motion synthesis from a single sequence
+||2016| A deep learning framework for character motion synthesis and editing|深度学习框架	开创无条件运动生成的深度学习先河	生成多样性有限	奠定端到端生成基础|
 
 ### VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|||[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 ||2023|Drop: Dynamics responses from human motion prior and projective dynamics|
-|113|2017| Phasefunctioned neural networks for character control|PFNN||[link](https://caterpillarstudygroup.github.io/ReadPapers/113.html)|
-
-
-以下是整理后的表格，概述了各模型的架构、贡献、输入/输出及创新点：
-
-| **模型名称**             | **基础架构**                | **主要贡献**                                                                 | **条件输入**          | **输出**                  | **训练目标**                                                                 | **关键创新点**                                                                 |
-|--------------------------|-----------------------------|-----------------------------------------------------------------------------|-----------------------|---------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-Transformer与VAE，支持从同一动作条件生成多动作变体                         |
-| **TEACH [118]**    2022      | 扩展自TEMOS                 | 处理连续文本指令生成连贯动作                                                | 文本序列              | 连贯3D动作序列            | 分层生成：非自回归（单个动作内） + 自回归（动作间时序组合）                 | 分层策略实现时序组合与平滑过渡                                                  |
-| **TMR [120]**   2023         | 改进自TEMOS                 | 提升文本-动作对齐，支持检索与生成                                           | 文本                  | 3D动作/跨模态检索结果     | 对比损失优化联合潜在空间，过滤误导性负样本（MPNet）                         | 引入CLIP式对比学习，优化负样本选择策略提升检索性能                              |
-
----
-
-#### **关键说明**  
-1. **条件输入与输出**：各模型均以文本或动作标签为条件生成动作，TEMOS与TMR兼容SMPL格式输出，T2M通过两阶段生成更灵活的运动片段组合。  
-2. **架构演进**：  
-   - ACTOR为基础模型，TEMOS引入文本编码，TEACH扩展至序列指令，TMR强化跨模态对齐。  
-   - T2M采用独立的两阶段框架，与基于Transformer的模型形成对比。  
-3. **训练策略**：  
-   - TEMOS/TMR通过共享潜在空间实现跨模态对齐，TMR进一步引入对比损失提升检索能力。  
-   - TEACH结合非自回归与自回归生成平衡质量与效率。  
-
-此表格可快速对比各模型的核心特性及技术演进路径。
-
-### Normalizing Flows.
+|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|1. 分别构造转移关系z的先验概率模型和后验概率模型，并让先验概率逼近后验概率<br> 2. 基于预训练的运动模型，通过优化z优化动作序列|开源，Condition VAE，转移关系建模，动作优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 
 ### Diffusion Models
 
@@ -49,19 +28,12 @@ Transformer与VAE，支持从同一动作条件生成多动作变体            
 |112|2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**|1. 使用运动学生成动作 2. 使用动力学优化动作 3. 优化结果再映射回运动学数据 <br> | 物理合理，自回归，动作优化   |[link](https://caterpillarstudygroup.github.io/ReadPapers/112.html)|
 ||2025|LengthAware Motion Synthesis via Latent Diffusion|
 
-
-
-### Motion Graph
-
-### Regression
-
 ### Normalizing Flows
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2023|Stylevr: Stylizing character animations with normalizing flows|
-||2020|Moglow: Probabilistic and controllable motion synthesis
-using normalising flows
+||2020|Moglow: Probabilistic and controllable motion synthesis using normalising flows
 
 # TEXT-CONDITIONED MOTION GENERATION
 
@@ -71,7 +43,9 @@ using normalising flows
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2021.10|Action-Conditioned 3D Human Motion Synthesis with Transformer VAE|生成多样且真实的3D人体动作，作为后续研究的基线| ACTOR、Transformer + VAE、潜在高斯分布对齐|
+||2021.10|Action-Conditioned 3D Human Motion Synthesis with Transformer VAE|生成多样且真实的3D人体动作，作为后续研究的基线<br> 不可学习的可微分SMPL层，数据依赖性强<br>– 生成长序列计算密集| ACTOR、Transformer + VAE、潜在高斯分布对齐||
+||2020| **Action2Motion** | – 动作条件运动生成的首个方法<br>– 基于李代数的VAE框架<br>– 构建新3D运动数据集：HumanAct12 | – 泛化能力不足<br>– 仅能生成单一动作的简单运动                              |
+
 
 ### VQ-VAE
 
@@ -92,36 +66,28 @@ using normalising flows
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |100|2025.5.16|MoCLIP: Motion-Aware Fine-Tuning and Distillation of CLIP for Human Motion Generation|一种代替CLIP的文本编码方式，其编码空间能跟Motion有更好的对齐，因此更适用于文生动作任务。<br> MoCLIP是CLIP的Motion版，不能独立使用，需结束基于CLIP的文生动作Pipeline。||[link](https://caterpillarstudygroup.github.io/ReadPapers/100.html)||
+||2023| **TMR [120]** | 改进自TEMOS，提升文本-动作对齐，支持检索与生成，根据文本输出3D动作/跨模态检索结果<br>对比损失优化联合潜在空间，过滤误导性负样本（MPNet）<br>引入CLIP式对比学习，优化负样本选择策略提升检索性能 <br> TEMOS/TMR通过共享潜在空间实现跨模态对齐，TMR进一步引入对比损失提升检索能力。|VAE隐空间对比学习<br>文本描述相似性过滤策略<br>泛化能力不足<br>部分场景内存效率低|
 ||2022|Motionclip: Exposing human motion generation to clip space|将运动潜空间直接对齐CLIP的语义文本嵌入，实现零样本泛化能力。然而，CLIP嵌入主要捕获静态图文语义，难以完整表征真实运动合成所需的时序与运动学细节。此外，直接微调CLIP嵌入可能导致预训练语义知识的灾难性遗忘。|
-||2022| Temos: Generating diverse human motions from textual descriptions.| 改进自ACTOR<br>实现文本到SMPL动作的生成 <br> 共享潜在空间中文本与动作表征对齐（跨模态一致性）<br>对称编码器（动作序列+冻结DistilBERT文本编码器），共享潜在空间<br> 虽然生成运动真实，但存在内存消耗大、长序列处理弱、多样性不足的问题。      |    Transformer VAE、潜在空间对齐       |
+||2022| Temos: Generating diverse human motions from textual descriptions.| 改进自ACTOR<br>实现文本到SMPL动作的生成 <br> 共享潜在空间中文本与动作表征对齐（跨模态一致性）<br>对称编码器（动作序列+冻结DistilBERT文本编码器），共享潜在空间<br> 虽然生成运动真实，但存在内存消耗大（二次内存消耗、不适于长运动）、长序列处理弱、多样性不足的问题。<br>– 跨模态嵌入相似性 – <br>– 文本拼写错误时易失效<br>– 多样性不足        |    Transformer VAE、潜在空间对齐，非自回归       |
 
 ### VAE
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|BAMM: Bidirectional Autoregressive Motion Model.|bert style|
-||2022| Generating diverse and natural 3d | 两阶段（卷积AE + 时序VAE）分阶段生成文本对应动作 <br> 预训练运动编码器提取片段；时序VAE生成运动代码序列 <br> 两阶段框架（先编码运动代码，再生成序列） |    T2M , Transformer VAE                                  |
+||2025|BAMM: Bidirectional Autoregressive Motion Model.|bert style <br> – 条件掩码自注意力Transformer<br>– 混合注意力掩码训练                  | – 中等计算复杂度<br>– 无法生成快速变化的根运动                            |
+| |2022|**TEACH [118]**| 扩展自TEMOS，处理连续文本指令生成连贯动作<br>分层生成：非自回归（单个动作内） + 自回归（动作间时序组合）<br>分层策略实现时序组合与平滑过渡 <br> TEACH结合非自回归与自回归生成平衡质量与效率。<br> 存在的问题： 动作过渡时易出现加速度峰值|
+| |2023| **ATOM** [Zhai et al., 2023] | – CVAE分解复杂动作为原子动作<br>– 基于掩码运动的课程学习策略               | – 解释复杂文本能力有限<br>– 文本-运动特征融合策略不足                        |
+| |2023|**MultiAct** [Lee et al., 2023] | – 条件VAE架构<br>– 生成多动作长序列模型                                | – 生成不真实运动<br>– 无法生成复杂多样动作序列                              |
+| |2022|**ImplicitMotion** [Cervantes et al., 2022] | – 变分隐式神经表示<br>– 线性计算成本                                  | – 参数更新导致性能不稳定                                                  |
+||2022| **UM-CVAE** [Zhong et al., 2022] | – 解耦序列级CVAE<br>– 基于FiLM的动作感知调制                           | – 无法生成全新动作<br>– 生成运动质量有限（数据依赖）                        |
+||2022| **PoseGPT** [Lucas et al., 2022] | – 类GPT模型预测隐空间索引<br>– 量化隐空间的编码器-解码器架构             | – 量化方案限制运动多样性                                                  |
+||2022| **Action-GPT** [Kalakonda et al., 2022] | – 首个基于LLM的文本条件运动生成<br>– 兼容VAE模型的模块                  | – 无法生成长序列<br>– 不支持复杂身体运动（瑜伽/舞蹈）<br>– 无手指运动         |
+||2022a|Generating diverse and natural 3d human motions from text|两阶段（卷积AE + 时序VAE）分阶段生成文本对应动作 <br> 预训练运动编码器提取片段；时序VAE生成运动代码序列 <br> 两阶段框架（先编码运动代码，再生成序列） <br> – text2length阶段确定运动时长<br>– text2motion阶段用时序VAE生成运动 <br> – 无法处理罕见动作（如“跺脚”）<br>– 细粒度描述和复杂动作失败<br>– 生成运动不真实 |T2M, Transformer VAE|
+
 | 方法名称                     | 主要贡献                                                                 | 局限性                                                                 |
 |------------------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| **Action2Motion** [Guo et al., 2020] | – 动作条件运动生成的首个方法<br>– 基于李代数的VAE框架<br>– 构建新3D运动数据集：HumanAct12 | – 泛化能力不足<br>– 仅能生成单一动作的简单运动                              |
-| **ACTOR** [Petrovich et al., 2021] | – 基于Transformer的条件VAE<br>– 不可学习的可微分SMPL层                    | – 数据依赖性强<br>– 生成长序列计算密集                                    |
-| **Generating diverse and natural 3d human motions from text**(T2M) [Guo et al., 2022a]  | – text2length阶段确定运动时长<br>– text2motion阶段用时序VAE生成运动        | – 无法处理罕见动作（如“跺脚”）<br>– 细粒度描述和复杂动作失败<br>– 生成运动不真实 |
-| **TM2T** [Guo et al., 2022c] | – 运动分词器将运动转为离散编码<br>– 反向对齐技术                           | – 生成运动不真实<br>– 无法处理长而复杂的描述                                |
-| **TEMOS** [Petrovich et al., 2022] | – 基于非自回归Transformer的VAE<br>– DistilBERT编码文本<br>– 跨模态嵌入相似性 | – 二次内存消耗（不适于长运动）<br>– 文本拼写错误时易失效<br>– 多样性不足       |
-| **TEACH** [Athanasiou et al., 2022] | – 3D运动时序动作组合基准<br>– 扩展TEMOS处理动作序列                      | – 动作过渡时易出现加速度峰值                                              |
-| **ImplicitMotion** [Cervantes et al., 2022] | – 变分隐式神经表示<br>– 线性计算成本                                  | – 参数更新导致性能不稳定                                                  |
-| **ATOM** [Zhai et al., 2023] | – CVAE分解复杂动作为原子动作<br>– 基于掩码运动的课程学习策略               | – 解释复杂文本能力有限<br>– 文本-运动特征融合策略不足                        |
-| **UM-CVAE** [Zhong et al., 2022] | – 解耦序列级CVAE<br>– 基于FiLM的动作感知调制                           | – 无法生成全新动作<br>– 生成运动质量有限（数据依赖）                        |
-| **PoseGPT** [Lucas et al., 2022] | – 类GPT模型预测隐空间索引<br>– 量化隐空间的编码器-解码器架构             | – 量化方案限制运动多样性                                                  |
-| **MultiAct** [Lee et al., 2023] | – 条件VAE架构<br>– 生成多动作长序列模型                                | – 生成不真实运动<br>– 无法生成复杂多样动作序列                              |
-| **Action-GPT** [Kalakonda et al., 2022] | – 首个基于LLM的文本条件运动生成<br>– 兼容VAE模型的模块                  | – 无法生成长序列<br>– 不支持复杂身体运动（瑜伽/舞蹈）<br>– 无手指运动         |
-| **TMR** [Petrovich et al., 2023] | – VAE隐空间对比学习<br>– 文本描述相似性过滤策略                         | – 泛化能力不足<br>– 部分场景内存效率低                                    |
-| **TM2D** [Gong et al., 2023] | – VQ-VAE框架<br>– 双模态特征融合（跨模态Transformer）                  | – 缺乏配对数据（音乐/文本）<br>– 限于特定舞蹈风格（数据依赖）                |
-| **T2LM** [Lee et al., 2024] | – 连续长期VQ-VAE生成框架<br>– 1D卷积VQVAE（避免时序不一致）            | – 无法生成细粒度运动<br>– 仅支持短文本描述                                |
-| **AttT2M** [Zhong et al., 2023] | – 基于身体部位注意力的时空VQ-VAE<br>– 全局-局部注意力学习跨模态关系     | – 长文本驱动生成多样性不足<br>– 数据依赖（无法生成未见运动）                 |
-| **MMM** [Pinyoanuntapong et al., 2024] | – 条件掩码运动模型                                                    | – 无法生成长而详细的文本描述                                              |
-| **MoMask** [Guo et al., 2024] | – 运动残差VQ-VAE<br>– 条件掩码Transformer                             | – 多样性有限<br>– 无法生成快速变化的根运动                                |
-| **BAMM** [Pinyoanuntapong et al., 2025] | – 条件掩码自注意力Transformer<br>– 混合注意力掩码训练                  | – 中等计算复杂度<br>– 无法生成快速变化的根运动                            |
+
+
 
 ### VQ-VAE
 
@@ -131,32 +97,16 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |---|---|---|---|---|---|
 |102|2025.5.16|HGM³: Hierarchical Generative Masked Motion Modeling with Hard Token Mining|1. 类似MoMask的残差VQVAE，但专门训练了一个网络来决定给哪些token掩码 <br> 2. 把文本编码成不同粒度的embedding，提升文本的整体把控与细节控制| 分层文本编码，残差VQVAE  |[link](https://caterpillarstudygroup.github.io/ReadPapers/102.html)|
 ||2025|BAD: Bidirectional Auto-Regressive Diffusion for Text-to-Motion Generation||bert style|
-||2024|MMM: Generative Masked Motion Model. |bert style:训练中随机掩码部分标记，模型基于文本和上下文重建。|
-||2023|AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism. |
+||2024| **MoMask** [Guo et al., 2024] | – 运动残差VQ-VAE<br>– 条件掩码Transformer                             | – 多样性有限<br>– 无法生成快速变化的根运动                                |
+||2024|MMM: Generative Masked Motion Model. |bert style:训练中随机掩码部分标记，模型基于文本和上下文重建。<br> – 条件掩码运动模型 <br> – 无法生成长而详细的文本描述  |
+||2023|AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism. | – 基于身体部位注意力的时空VQ-VAE<br>– 全局-局部注意力学习跨模态关系 <br> – 长文本驱动生成多样性不足<br>– 数据依赖（无法生成未见运动）                 |
 |88|2023.9.24|T2m-gpt: Generating human motion from textual descriptions with discrete representations|1. 首次将VQ-VAE引入运动生成，将运动建模为离散令牌序列<br> 2. 结合了**矢量量化变分自动编码器（VQ-VAE）**和**生成式预训练Transformer（GPT）**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 文本->Motion, 开源，自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
 ||2023|**DiverseMotion [122]**|VQ-VAE + 扩散模型，提升生成多样性与语义一致性<br> 扩散过程（前向破坏令牌，反向去噪），用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解 |
 ||2023|Priority-Centric Human Motion Generation in Discrete Latent Space|
 ||2023| MoMask: Generative Masked Modeling of 3D Human Motions| VQ-VAE + 分层码本，分层生成粗糙到精细的运动细节<br>掩码令牌建模（BERT风格） + 残差细化 <br>分层码本结构；掩码预测生成粗糙运动，残差层逐步细化 |bert Style|
 ||2023.12.15|MotionGPT: Human Motion as a Foreign Language.|运动分词器转换运动为离散编码| T5文本嵌入                   |
-||2022|TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。|
-
-| **模型名称**         | **基础架构**                    | **主要贡献**                                                                 | **条件输入**      | **输出**              | **训练目标**                                                                 | **关键创新点**                                                                 |
-|----------------------|---------------------------------|-----------------------------------------------------------------------------|-------------------|-----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| **T2LM [124]**    2024   | 1D卷积VQ-VAE + Transformer     | 处理多句子文本生成长且复杂的动作序列                                        | 多句子文本        | 长动作序列            | 1D卷积压缩运动；Transformer编码文本时序关系                                  | 结合1D卷积与文本时序建模，实现跨动作平滑过渡                                    |
-
----
-
-#### **关键说明**  
-1. **技术路线**：  
-   - **VQ-VAE核心思想**：将连续运动编码为离散令牌序列，类比语言建模，增强生成的结构性与可控性。   
-2. **文本编码**：  
-   - T2M-GPT与DiverseMotion依赖CLIP编码文本；后续模型（如MoMask、T2LM）直接学习端到端文本-运动映射。  
-3. **效率与扩展性**：  
-   - MotionGPT通过冻结VQ-VAE与LoRA技术，显著降低LLM微调成本，支持大规模文本-运动对齐。  
-4. **应用方向**：  
-   - 长序列生成（T2LM）、细节分层控制（MoMask）、多模态扩展（MotionGPT与LLM结合）是主要优化方向。  
-
-此表格总结了基于VQ-VAE的运动生成模型的技术差异与演进趋势，突出离散化表示与语言建模结合的灵活性。
+||2022c|TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。<br>– 运动分词器将运动转为离散编码<br>– 反向对齐技术 <br> – 生成运动不真实<br>– 无法处理长而复杂的描述                                |
+| |2024| **T2LM** [Lee et al., 2024] | 处理多句子文本生成长且复杂的动作序列，直接学习端到端文本-运动映射。<br> – 连续长期VQ-VAE生成框架<br>– 1D(时序维度)卷积VQVAE（避免时序不一致）<br> – 无法生成细粒度运动<br>– 仅支持短文本描述                       |1D卷积VQ-VAE + Transformer，长序列生成|
 
 ### Diffusion
 
@@ -186,7 +136,6 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2023.6.26|Flame: Free-form language-based motion synthesis & editing|纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合|Flame|
 |||MoFusion|轻量1D U-Net，三大约束损失（运动学一致性），显著提升效率与长序列质量
 ||2023|MakeAnAnimation| 摒弃了顺序生成（通过特定的损失函数强制保证时序一致性）的方式，仅依赖于标准的扩散损失。<br>两阶段训练。先在一个大型静态 3D 姿态数据集上进行预训练，以学习姿态-文本的关联。<br> 通过其并行采样策略和大规模预训练策略保持运动的连续性。|U-Net， T5|
-||2022|Generating diverse and natural 3d human motions from text|
 ||2022.9.29|Human Motion Diffusion Model|	1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声<br>计算开销大、推理速度低，仅适合短序列生成|HMDM, MDM, CLIP, transformer|
 || 2022 | **MotionDiffuse** [Zhang et al.] | 首个基于扩散模型的文本驱动运动生成框架<br>跨模态线性Transformer处理输入序列<br> 关节角表示+Transformer时序建模 <br>验证扩散模型在运动生成的高质量与时序一致性<br>推理需大量扩散步数<br> 生成运动存在不自然现|CLIP, DDPM, Transformer|象   |                                 |
 |      | 2024 | **MMDM** [Chen]              | – 跨时间帧与身体部位的掩码建模策略                                         | – 计算成本高昂                                                          |
@@ -217,6 +166,7 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |---|---|---|---|---|---|
 |27|2024|Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment|2D轨迹生成3D Motion||[link](https://caterpillarstudygroup.github.io/ReadPapers/27.html)
 |19|2024|WANDR: Intention-guided Human Motion Generation|基于初始与结束状态控制的动作生成。||[link](https://caterpillarstudygroup.github.io/ReadPapers/19.html)|
+|113|2017| Phasefunctioned neural networks for character control|PFNN||[link](https://caterpillarstudygroup.github.io/ReadPapers/113.html)|
 
 ### VQ-VAE
 
@@ -224,7 +174,6 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |---|---|---|---|---|---|
 ||2024|AvatarGPT: All-in-One Framework for Motion Understanding, Planning, Generation and Beyond|
 |87|2024.3.24|MotionGPT: Finetuned LLMs are General-Purpose Motion Generators|1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法|VQ-VAE + LLM + LoRA, 文本/key frame -> motion|[link](https://caterpillarstudygroup.github.io/ReadPapers/87.html)|
-
 
 ### Diffusion
 
@@ -258,6 +207,7 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2025.5.8|ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation|| 反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作 |[link](67.md)|
 ||2025.5.7|ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition|| 生成乐器演奏动作  |[link](56.md)|
 ||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md)|
+| |2023|**TM2D** [Gong et al., 2023] | – VQ-VAE框架<br>– 双模态特征融合（跨模态Transformer）                  | – 缺乏配对数据（音乐/文本）<br>– 限于特定舞蹈风格（数据依赖）                |
 ||2023|Listen, denoise, action! audio-driven motion synthesis with diffusion models|
 ||2022|Edge: Editable dance generation from music|
 
