@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Flow Matching Basics - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../ReadPapers.html"><strong aria-hidden="true">2.</strong> 如何高效读论文</a></li><li class="chapter-item expanded affix "><li class="part-title">CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang</li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">3.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">4.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">4.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">4.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">4.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">4.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">5.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">6.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">6.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">6.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">7.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">7.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">7.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">7.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">7.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">8.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded affix "><li class="part-title">Video Diffusion Models</li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">9.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">10.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">10.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">10.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">10.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">10.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">10.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">10.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">10.7.</strong> Multimodal-guided generation</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">11.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">11.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">11.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">11.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">11.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">11.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">12.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">Character Animation</li><li class="chapter-item expanded "><a href="../CharacterAnimation/HPE_HMR_Summary.html"><strong aria-hidden="true">13.</strong> Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">14.</strong> facial and expression</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis</div></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">16.</strong> Human Motion Generation: A Survey</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">17.</strong> Human Video Generation</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/Human4DGeneration.html"><strong aria-hidden="true">18.</strong> Human 4D Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">NeurIPS 2024 Flow Matchig Turorial</li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">19.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html" class="active"><strong aria-hidden="true">19.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">19.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">19.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">19.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">20.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">21.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../GenerativeModels.html"><strong aria-hidden="true">22.</strong> 生成模型</a></li><li class="chapter-item expanded "><a href="../ClipAnimation.html"><strong aria-hidden="true">23.</strong> 2D图形驱动</a></li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">24.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../AnimationGeneration.html"><strong aria-hidden="true">25.</strong> Animal Generation</a></li><li class="chapter-item expanded "><a href="../4DGeneration.html"><strong aria-hidden="true">26.</strong> 4D Generation</a></li><li class="chapter-item expanded "><a href="../More.html"><strong aria-hidden="true">27.</strong> More</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P1</p>
+<h1 id="flow-matching-basics"><a class="header" href="#flow-matching-basics">Flow Matching Basics</a></h1>
+<p>P6<br />
+WHAT IS FLOW MATCHING?<br />
+A scalable method to train <strong>flow generative models</strong>.</p>
+<p>HOW DOES IT WORK?<br />
+Train by regressing a <strong>velocity</strong>, sample by following the <strong>velocity</strong></p>
+<p>P11</p>
+<h2 id="增量生成方法"><a class="header" href="#增量生成方法">增量生成方法</a></h2>
+<h3 id="marginal-probability-path"><a class="header" href="#marginal-probability-path">Marginal probability path</a></h3>
+<p>flow matching属于<a href="../GenerativeModels.html">增量生成方法</a>，需要学习边缘概率路径。<br />
+边缘概率路径是指，任意一个特定的 \(t\) 时刻，\(X_t\) 所属于的分布 \(p_t\)。 即连续时间上的分布簇。</p>
+<p><img src="../assets/P11%E5%9B%BE-1.png" alt="" /></p>
+<blockquote>
+<p><strong>生成模型最重要的是，边缘概率路径以 \(P\) 分布开始，以 \(Q\) 分布结束</strong>。</p>
+</blockquote>
+<p>P12</p>
+<h3 id="三种增量生成模型的特点"><a class="header" href="#三种增量生成模型的特点">三种增量生成模型的特点</a></h3>
+<p><img src="../assets/P12-1%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>相比于其它增量生成方法，流的特点：(1) 确定性，已知 \(X_t\)，那么 \(X_{t+h}\) 是确定的。(2) 平滑<br />
+流的优势：(1) sample 速度快 (2) 可以构建模型似然的无偏估计器。<br />
+Diffusion 和 Jump 具有更大的设计空间，因此具有更多生成能力。</p>
+</blockquote>
+<p>P13</p>
+<h2 id="flow-生成模型"><a class="header" href="#flow-生成模型">Flow 生成模型</a></h2>
+<h3 id="flow-的参数化"><a class="header" href="#flow-的参数化">Flow 的参数化</a></h3>
+<p><img src="../assets/P13%E5%9B%BE-1.png" alt="" /></p>
+<blockquote>
+<p>\(\Psi_t\) 是 flow 生成模型的转移函数。<br />
+\(\Psi_t\) 是一个双射函数，因此它可以重塑空间而不丢失信息。<br />
+通过对高维空间的 warping，使 \(P\) 分布逐步变为 \(Q\) 分布。<br />
+<strong>双射函数</strong>的特性：</p>
+</blockquote>
+<ul>
+<li><strong>一一对应</strong>：每个输入对应唯一的输出，且每个输出都被某个输入映射到。</li>
+<li><strong>可逆性</strong>：存在逆函数 \( f^{-1}: Y \to X \)，满足 \( f^{-1}(f(x)) = x \) 且 \( f(f^{-1}(y)) = y \)。</li>
+</ul>
+<p><img src="../assets/P13%E5%9B%BE-2.png" alt="" /></p>
+<blockquote>
+<p>flow Model 是一个马尔可夫过程。<br />
+马尔可夫过程（Markov Process）是一类具有<strong>无记忆性</strong>（马尔可夫性质）的随机过程，其核心特点是<strong>未来状态仅依赖于当前状态，而与历史状态无关</strong>。</p>
+</blockquote>
+<h4 id="直接参数化会遇到的问题"><a class="header" href="#直接参数化会遇到的问题">直接参数化会遇到的问题</a></h4>
+<blockquote>
+<p>对两个双射函数做线性组合，得到的函数不能保持其双射的特性，因此，基于双射函数的模型难以被参数化。</p>
+</blockquote>
+<p>$$
+\alpha X_ {t|1}+\beta X_ {t|2}\ne \Psi _ t(\alpha X_ {t|1}+\beta X_ {t|2})
+$$</p>
+<blockquote>
+<p>网络模型中通常包含大量线性组合，激活函数等会破坏双射性的结构，因此很难让网络学到一个双射函数。<br />
+“模型的参数化”（<strong>Parameterization of a Model</strong>）是指<strong>用一组可调整的参数（Parameters）来定义模型的结构和功能</strong>的过程。它是模型设计的核心步骤，决定了模型如何从输入数据中学习规律、进行预测或生成输出。包括（设计模型结构、连接方式，定义参数如何初始化，哪些参数可以被优化）。</p>
+</blockquote>
+<p>P14</p>
+<h4 id="利用速度对流做参数化"><a class="header" href="#利用速度对流做参数化">利用速度对流做参数化</a></h4>
+<blockquote>
+<p>因此利用速度对流做参数化。在这里，速度是指 \(P_t\) 分布中的每个 sample 向 \(Q\) 分布中对应 sample 变化的速度（快慢和方向）。<br />
+Flow 和 velocity 是可以互相转化的。对 Flow 做微分可以得到 velocity，对 velocily 解常微分方程，可以得到 Flow.</p>
+</blockquote>
+<p><img src="../assets/P14%E5%9B%BE1.png" alt="" /></p>
+<blockquote>
+<p>使用速度的好处：速度是线性的，可以相加或分解，因此可以对速度做参数化。<br />
+使用速度的缺点：需要对 sample 出速度做 ODE，解出图像。</p>
+</blockquote>
+<p>$$
+\frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
+$$</p>
+<p>$$
+\frac{d}{dt}\Psi  _t(\alpha X_1+\beta X_2)=\alpha u_t(\psi _t(X_1))+\beta u_t(\psi _t(X_2)) 
+$$</p>
+<p>P15</p>
+<p>Velocity \(u_t\) <strong>generates</strong> \(p_t\) if</p>
+<p>$$
+X _t=\Psi _t(X_0)\sim p_t
+$$</p>
+<blockquote>
+<p>使用速度来定义边缘概率路径，\(\Psi_t\) 是基于速度的转移函数。</p>
+</blockquote>
+<p>P16</p>
+<h4 id="flow-matching-的训练"><a class="header" href="#flow-matching-的训练">Flow Matching 的训练</a></h4>
+<p>学习一个速度模型，由速度得到边缘路径概率 \(P_t\)，使得 \(P_0 = P\)， \(P_1= Q\)</p>
+<p>P17</p>
+<h4 id="sampling-a-flow-model"><a class="header" href="#sampling-a-flow-model">Sampling a flow model</a></h4>
+<blockquote>
+<p>Flow Matching 的推断：<br />
+(1) 从 \(P\) 分布中 sample 一个 noise<br />
+(2) 根随速度（解ODE）得到对应在 \(Q\) 分布中的 sample。</p>
+</blockquote>
+<p><img src="../assets/P17%E5%9B%BE.png" alt="" /></p>
+<p>$$
+\frac{d}{dt} X_t=u^0_t(X_t)
+$$</p>
+<p>Use any ODE numerical solver.<br />
+One that works well: <strong>Midpoint</strong></p>
+<p>P19</p>
+<h2 id="simplest-version-of-flow-matching"><a class="header" href="#simplest-version-of-flow-matching">Simplest version of Flow Matching</a></h2>
+<h3 id="flow-matching-的训练-1"><a class="header" href="#flow-matching-的训练-1">flow matching 的训练</a></h3>
+<p>(1) 随机构造源 \(X_0\) 和目标 \(X_1\)。<br />
+(2) 在 [0，1] 区间随机采样一个时间步 \(t\)。<br />
+(3) \(X_t\) 是 \(X_0\) 与 \(X_1\) 的线性组合。<br />
+(4) \(X_t\) 是网络输入，让网络输出逼近\(X_1-X_0\)。</p>
+<p><img src="../assets/P19%E5%9B%BE1.png" alt="" /><br />
+<img src="../assets/P19%E5%9B%BE2.png" alt="" /></p>
+<p>$$
+\mathbb{E } _{t,X_0,X_1}||u_t^0(X_t)-(X_1-X_0)||^2
+$$</p>
+<p>🔎 &quot;Flow Matching for Generative Modeling&quot; Lipman el al. (2022)<br />
+🔎 &quot;Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow&quot; Liu et al. (2022)<br />
+🔎 &quot;Building Normalizing Flows with Stochastic Interpolants&quot; Albergo et al. (2022)</p>
+<p>P20</p>
+<blockquote>
+<p>这里没有对 \(X_0\) 和 \(X_1\) 所属的分布作限制。 \(X_0\) 和 \(X_1\) 可以是独立的噪声和图像，也可以是具有某种关系（例如黑白与彩色）的 pair data。</p>
+</blockquote>
+<h3 id="why-does-it-work"><a class="header" href="#why-does-it-work">Why does it work?</a></h3>
+<p>• Build flow from conditional flows</p>
+<blockquote>
+<p>如何从一个更简单的速度或流（称为条件流）构建一个速度或流。条件流是指一些简单的，固定的部分。</p>
+</blockquote>
+<p>• Regress conditional flows</p>
+<blockquote>
+<p>通过观察更简单的条件流来学习复杂的部分。</p>
+</blockquote>
+<p>P21</p>
+<h4 id="局部问题"><a class="header" href="#局部问题">局部问题</a></h4>
+<blockquote>
+<p>假设目标分布只有 \(X_1\) 这一个点，那么流和速度是这样的。</p>
+</blockquote>
+<p><img src="../assets/P21%E5%9B%BE.png" alt="" /></p>
+<p>$$
+X_t=\Psi _t(X_0|x_1)=(1-t)X_0+tx_1
+$$</p>
+<p>这是一个条件流。<br />
+\(p_{t|1}(x|x_1)\) 是 conditional probability<br />
+\(u_t(x|x_1)\) 是 conditional velocity，是常数。</p>
+<p>P22</p>
+<h4 id="全局问题"><a class="header" href="#全局问题">全局问题</a></h4>
+<blockquote>
+<p>实际的 \(Q\) 分布包含很多 \(x_1\) 这样的 sample，每一个 sample 都可以作为一个 condition，得到一个 \(P_{t|条件}\) ，综合所有 \(P_{t|条件}\) 得到的 \(p_t(X)\) 是这 \(P_{t|条件}\) 的期望。可以证明，\(p_t(X)\) 以 \(P\) 开始，以 \(Q\) 结束。对 \(Q\) 分布中的所有的 \(x_1\)，对 \(U_t(X|X_1)\) 取平均，得到生成“边缘概率路径”的速度。<br />
+\(p_t(x)= \mathbb{E} _ {X_ 1}p_{t|1}(x|X_ 1)\)<br />
+\(u_t(X)\) 也可以以这种方式得出。</p>
+</blockquote>
+<p>\(u_t(x)=\mathbb{E} [u_t(X_t|X_1)|X_t=x]\)</p>
+<p>这个速度场称为边缘速度。</p>
+<p>P23</p>
+<p>Theorem*: The <strong>marginal velocity</strong> (边缘速度) generates the <strong>marginal probability</strong> path (边缘概率路径)。</p>
+<p>以上公式中的期望，实际含义是“平均”。</p>
+<p>P24</p>
+<h4 id="conditional-loss"><a class="header" href="#conditional-loss">conditional loss</a></h4>
+<p>目标函数：回归边缘速度场。</p>
+<p>(1) 直接回归边缘速度场</p>
+<p>$$
+ℒ_{FM}(θ) = \mathbb{E}  _{t,X_t}||u^θ_t (X_t) − u_t(X_t)||^ 2 
+$$</p>
+<p>其中，\(u_t(X_t)\) 是通过许多数据计算出的均值(根据上文中的公式)。<br />
+(2) 回归条件速度</p>
+<p>$$
+ℒ_{CFM}(θ) = \mathbb{E}  _{t,X_1,X_t}||u^θ_t (X_t) − u_t(X_t|X_1)||^ 2 
+$$</p>
+<p><strong>Theorem:</strong> Losses are equivalent,</p>
+<p>$$
+\nabla_θℒ_{FM}(θ) = \nabla_θℒ_{CFM}(θ)
+$$</p>
+<blockquote>
+<p>结论：仅回归条件速度，与直接回归速度相同。<br />
+使用条件分布(公式 2)相比于公式 1 的好处是，可以逐个样本去计算，而不需要对整个数集做平均。</p>
+</blockquote>
+<p>P25<br />
+<strong>Theorem:</strong> Losses are equivalent <strong>if</strong> \(D\) is a <strong>Bregman divergence</strong>.</p>
+<blockquote>
+<p>更进一步，使用任意的 Bregman Divergence Loss \((D(\cdot ,\cdot ))\) 散度代替 \(L2(||\cdot ,\cdot ||^2)\)，都能得到相同结论，L2 Loss 只是其中一种。</p>
+</blockquote>
+<p>P26</p>
+<p><img src="../assets/P26%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>因为要学习的是一个“期望”。</p>
+</blockquote>
+<p>P27</p>
+<h2 id="how-to-choose-ψ_txx_1"><a class="header" href="#how-to-choose-ψ_txx_1">How to choose \(ψ_t(x|x_1)\)?</a></h2>
+<h3 id="optimal-transport-minimizes-kinetic-energy"><a class="header" href="#optimal-transport-minimizes-kinetic-energy">Optimal Transport minimizes Kinetic Energy</a></h3>
+<p>在上文中，定义</p>
+<p>$$
+ψ _t(x|x_1)=tx_1+(1-t)x
+$$</p>
+<p>这样定义，是基于“最小化动能”的考虑。</p>
+<blockquote>
+<p>如果最小化动能，能让路径变得直，且速度恒定。<br />
+所以将 \(ψ _t(X_0|X_1)\) 定义为 \(X_0\) 和 \(X_1\) 连线上的一个点，其中 \(X_0\) 可以是空间中任意一点定义为 \(X\) 。 </p>
+</blockquote>
+<p><img src="../assets/P29%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>直接优化动能不容易，因为它不依赖于具体的条件。因此给它设定一个 Jensen bound，来限制边缘速度的动能。</p>
+</blockquote>
+<p><img src="../assets/P27%E5%9B%BE1.png" alt="" /></p>
+<p>Jensen bound 是具体的条件 \((X_0,X_1)\) 下的期望。<br />
+当 \(X_0\) 和 \(X_1\) 确定时，Jensen bound 可以被算出来，也可以(通过优化\(ψ _t\))被最小化。</p>
+<p><strong>结论：</strong> 当 \(ψ _t(x|x_1)\) 定义为 \(tX_1+(1-t)X\) 时，Jensen bound 被最小化，此时 \(X_0\) 到 \(X_1\) 是直线。</p>
+<p><strong>Linear conditional flow总结:</strong><br />
+• Minimizes bound，而不是直接优化动能。<br />
+• Reduces Kinetic Energy of initial coupling<br />
+把 \(ψ _t\) 代入 Jensen bound 公式可得出此结论。</p>
+<p>• Exact Optimal Transport for single data points<br />
+如果 \(Q\) 分布中只有一个 \(X_1\)。此时公式左右两边相等，是最优传输。</p>
+<p>• <u><strong>Not</strong></u> Optimal Transport (but in high dim straighter)<br />
+如果 \(Q\) 分布里不止一个点，不是最优传输，\(X_0\) 到 \(X_1\) 也不是直线。</p>
+<p>🔎 &quot;Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow&quot; Liu et al. (2022)<br />
+🔎 &quot;On Kinetic Optimal Probability Paths for Generative Models&quot; Shaul et al. (2023)</p>
+<p>P29<br />
+好的最优传输，可以通过单个欧拉步骤采样。</p>
+<p>$$
+\frac{d}{dt} \Psi  _t(x)=u_t(\Psi _t(x))
+$$</p>
+<p>$$
+ℒ_{CFM}(θ) = \mathbb{E}D(u^θ_t (X_t),u_t(X_t|X_1))
+$$</p>
+<blockquote>
+<p>D 是一个 Bregman 散度，L2 Loss 是其中一种，根据上文中 \(ψ _t\) 的定义，把L2 和条件速度代入公式得：对于特定的 \(X_0\) 和 \(X_1\) ， \(X_1-X_0\) 是条件路径的条件速度。</p>
+</blockquote>
+<p>$$
+ℒ_{CFM}(θ) = \mathbb{E}||u^θ_t (X_t)-(X_1-X_0)||^ 2 
+$$</p>
+<p>因此，这个算法是特定条件流 + 特定 Loss 下的一个 flow matching 实例。</p>
+<p>P30</p>
+<h3 id="affine-paths"><a class="header" href="#affine-paths">Affine paths</a></h3>
+<blockquote>
+<p>在前面的方法中，\(ψ_t(x|x_1)\) 是 \(x\) 与 \(x_1\) 的线性组合，这只是一种选择。现在假设其为仿射组合。</p>
+</blockquote>
+<p><img src="../assets/P30%E5%9B%BE1.png" alt="" /></p>
+<p>这种情况下，\(X_0\) 到 \(X_1\) 不再是直线。<br />
+由此得到不同的参数化速度的方式，例如：<br />
+(1) \(u_t(x)=\frac{d\psi t}{dt}\) ，直接预测速度</p>
+<p><img src="../assets/P30%E5%9B%BE2-1.png" alt="" /> </p>
+<p>(2) 源预测：通过 \(X_0\) 的条件期望来参数化速度。预测 \(X_0\) ，再转化为 \(x\) 的速度</p>
+<p><img src="../assets/P30%E5%9B%BE2-2.png" alt="" /></p>
+<p>(3) 目标预测类似，预测 \(X_1\) ，再转化为 \(x\)的速度<br />
+<img src="../assets/P30%E5%9B%BE2-3.png" alt="" /></p>
+<p>根据 \(\alpha _t\) 和 \(\sigma _t\) 的定义不同，推导出的 \(a_t,b_t,c_t,d_t\) 不同。<br />
+以上公式中的“期望”部分，都是网络要预测的部分。预测的内容不同，最终目的都是为了求 \(x\) 的速度。</p>
+<p>P31</p>
+<h3 id="gaussian-paths"><a class="header" href="#gaussian-paths">Gaussian paths</a></h3>
+<blockquote>
+<p>目前为止，没有对源分布 \(P\) 和目标分布 \(Q\) 做任何假设。<br />
+如果假设 \(P\) 是一个高斯分布，\(P\) 和 \(Q\) 是独立的，这个过程即与 diffusion 的 ODE 过程吻合。</p>
+</blockquote>
+<p>$$
+p(x) = 𝒩(x |0 , I) \quad  π_{0,1}(x_0, x_1) = p(x_0)q(x_1)
+$$</p>
+<p><img src="../assets/P31%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>diffusion 的噪声预测，在 \(x\) 接近噪声时(初始 steps)会有奇异性问题。</p>
+</blockquote>
+<p>P32   　</p>
+<h3 id="affine-and-gaussian-paths"><a class="header" href="#affine-and-gaussian-paths">Affine and Gaussian paths</a></h3>
+<h4 id="参数比较"><a class="header" href="#参数比较">参数比较</a></h4>
+<p><img src="../assets/P32%E5%9B%BE-1.png" alt="" /></p>
+<blockquote>
+<p>蓝色部分适用于所有的仿射路径(包括高斯 path)。粉色部分仅适用于高斯 path.<br />
+[❓] 表格怎么看？</p>
+</blockquote>
+<p>P33</p>
+<p><img src="../assets/P33%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>flow matching 与确定性 diffusion 之间的关系:<br />
+1.diffusion 通过定义 forward process 然后再反转来生成概率路径。<br />
+flow matching 通过将所有已知的条件概率路径的聚合来生成概率路径。<br />
+2.diffusion 构造了 forward prossess，需要一个根据 forward process 构造条件概率的闭式解，因此会要求 \(P\) 是高斯，且 \(P\) 和 \(Q\) 独立。<br />
+flow matching 没有这样的限制，\(P\) 和 \(Q\) 可以是任意的分布。</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/Agenda.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/Agenda.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
