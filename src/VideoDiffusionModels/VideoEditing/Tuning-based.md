@@ -1,34 +1,23 @@
 
 # 3.1 Tuning-based
 
+![](../../assets/08-149.png) 
+
 ## One-Shot Tuned Video Editing
 
-P149 
+**Compared to training-free editing methods:** 
 
-![](../../assets/08-149.png) 
+ - Cons: still need 1 video for training
+ - Pros: supports significant shape change   
+
+P149 
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |118|2023|Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation|  
 |119|2023|Dreamix: Video Diffusion Models are General Video Editors|
-
-P162  
-
-P164   
-### More Works
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
 ||2023|Towards Consistent Video Editing with Text-to-Image rDiffusion Models|Modify self-attention for better temporal consistency|
 ||2023|Video-P2P: Video Editing with Cross-attention Control|Improve input-output semantic consistency of video editing via shared embedding optimization and cross-attention control。<br>![](../../assets/08-164-2.png)|attention控制|
-
-
-### **Compared to training-free editing methods:** 
-
- - Cons: still need 1 video for training
- - Pros: supports significant shape change 
-
-Wu et al., “Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation,” ICCV 2023.    
 
 P166  
 ## Multiple-Shot Tuned

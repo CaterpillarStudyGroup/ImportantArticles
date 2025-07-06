@@ -103,9 +103,11 @@ Video + Audio -> Video
 
 #### **基于扩散模型的唇音同步方法**
 
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |89|2025.3.13|LatentSync: Taming Audio-Conditioned Latent Diffusion Models for Lip Sync with SyncNet Supervision|1. 在latent space训练，在pixel space监督<br> 2. 用TREPA代表temporal layer<br> 3. 系统性地分析SyncNet的训练参数与效果| LDM, 开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/89.html)|
+||2023|Speech Driven Video Editing via an Audio-Conditioned Diffusion Model|> &#x2705;（1）把说话的部分 mask 掉 （2）用 diffusion 根据 Audio Feature 生成说话的部分。<br> &#x2705; 额外约束：（1）reference 状态 （2）前后帧 smooth <br> &#x2705; 语音驱动嘴形。|![](./../assets/08-267.png) |
 
 | **方法/论文**       | **关键架构**                          | **训练策略**                | **生成阶段说明**                                                                 | **输入 → 输出**        | **主要创新点**                                                                 |
 |----------------------|---------------------------------------|-----------------------------|---------------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------|

@@ -11,8 +11,6 @@ P178
 P187   
 ## More Works
 
-
-
 |||
 |--|--|
 | ![](../../assets/08-187-1.png)  | **MeDM** (Chu et al.) <br> OpScal flow-based guidance for temporal consistency <br> “MeDM: Mediagng Image Diffusion Models for Video-to Video Translagon with Temporal Correspondence Guidance,” arXiv 2023. |
