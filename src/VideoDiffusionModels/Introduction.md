@@ -1,4 +1,4 @@
-# Video Diffusion Models思维导图
+# Video Diffusion Models章节地图
 
 - Fundamentals of Diffusion Models
 - **Video Generation**

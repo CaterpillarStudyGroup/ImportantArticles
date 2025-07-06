@@ -18,7 +18,7 @@
   - [大图生成](diffusion-tutorial-part/ApplicationOnImage/LargeContents.md)
 - [3D Applications Based on Diffusion]()
   - [基于T2I基模型](diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.md)
-  - [基于不同3D的3D生成](diffusion-tutorial-part/ApplicationsOn3D/3D.md)
+  - [基于不同视角的3D生成](diffusion-tutorial-part/ApplicationsOn3D/3D.md)
   - [新视角合成](diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.md)
   - [3D重建](diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.md)
   - [3D编辑](diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.md)
