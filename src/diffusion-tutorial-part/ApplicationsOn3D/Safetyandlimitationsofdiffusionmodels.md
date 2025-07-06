@@ -140,8 +140,7 @@ Sella et al., <u>"Vox-E: Text-guided Voxel Editing of 3D Objects",</u> arXiv 202
 Harvey et al., <u>"Flexible Diffusion Modeling of Long Videos",</u> arXiv 2022    
 Voleti et al., <u>"MCVD: Masked Conditional Video Diffusion for Prediction, Generation, and Interpolation",</u> NeurIPS 2022     
 Mei and Patel, <u>"VIDM: Video Implicit Diffusion Models",</u> arXiv 2022        
-Wang et al., <u>"Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models",</u> arXiv 2023    
-Ceylan et al., <u>"Pix2Video: Video Editing using Image Diffusion",</u> arXiv 2023     
+Wang et al., <u>"Zero-Shot Video Editing Using Off-The-Shelf Image Diffusion Models",</u> arXiv 2023      
 Jiménez, <u>"Mixture of Diffusers for scene composition and high resolution image generation",</u> arXiv 2023    
 Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> arXiv 2023    
 Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023    

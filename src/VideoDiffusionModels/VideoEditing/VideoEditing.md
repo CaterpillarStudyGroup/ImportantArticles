@@ -6,9 +6,6 @@ P146
 
 ![](../../assets/08-146.png) 
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2023.11|Stablevideo: Text-driven consistency-aware diffusion video editing|
 
 ---------------------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

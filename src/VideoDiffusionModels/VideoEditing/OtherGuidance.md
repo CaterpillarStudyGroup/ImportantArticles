@@ -1,8 +1,4 @@
-
-P263   
-# 3 Video Editing  
-
-## 3.5 Other Guidance
+# 3.5 Other Guidance
 
 
 P264  

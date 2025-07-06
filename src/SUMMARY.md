@@ -37,7 +37,7 @@
 - [Video Editing](VideoDiffusionModels/VideoEditing.md)
   - [Tuning-based](VideoDiffusionModels/VideoEditing/Tuning-based.md)
   - [Training-free](VideoDiffusionModels/VideoEditing/Training-free.md)
-  - [Controlled Edifng](VideoDiffusionModels/VideoEditing/ControlledEdifng.md)
+  - [Controlled Editing](VideoDiffusionModels/VideoEditing/ControlledEditing.md)
   - [3D-Aware](VideoDiffusionModels/VideoEditing/3D-Aware.md)
   - [Other Guidance](VideoDiffusionModels/VideoEditing/OtherGuidance.md)
 - [评价指标](./VideoDiffusionModels/EvaluationMetrics.md)

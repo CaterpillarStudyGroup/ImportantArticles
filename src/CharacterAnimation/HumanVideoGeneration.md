@@ -155,6 +155,8 @@ Video + Audio -> Video
 
 ### 2D动作驱动
 
+pose + reference Image -> video
+
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |108|2025.4.30|**ReVision: High-Quality, Low-Cost Video Generation with Explicit 3D Physics Modeling for Complex Motion and Interaction**|参数化的三维物理知识显式地集成到一个预训练的条件视频生成模型中，从而显著增强了其生成高质量、包含复杂动作和交互的视频的能力<br> 1.使用一个视频扩散模型生成一个粗糙的视频 <br> 2. 从该粗略视频中提取一组 2D 和 3D 特征，构建一个以对象为中心的 3D 表示，并通过我们提出的参数化物理先验模型对其进行优化，生成精确的 3D 动作序列。<br> 3. 这一优化后的动作序列被反馈到同一个视频扩散模型中作为额外的条件输入 | 三阶段, 即插即用  |[link](https://caterpillarstudygroup.github.io/ReadPapers/108.html)|
@@ -162,6 +164,10 @@ Video + Audio -> Video
 ||2025.5.6|Real-Time Person Image Synthesis Using a Flow Matching Model|| 姿势引导人物图像合成， flow matching  |[link](50.md)|
 |37|2024|TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models|通过修正attention map实现背景的时序稳定性|Diffusion|[link](https://caterpillarstudygroup.github.io/ReadPapers/37.html)|
 |2|2024.1|Follow Your Pose: Pose-Guided Text-to-Video Generation using Pose-Free Videos|uses text descriptions to provide semantic information about the content of the characters, ensuring the generated videos align with the textual descriptions.|人体外观控制<br>设计了一个两阶段训练方案，利用图像姿态对和无姿态视频生成姿态可控的角色动画|![](./assets/08-224-2.png)|
+||2023|DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion|
+|121|2023|MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model||
+||2023|Dancing avatar: Pose and text-guided human motion videos synthesis with image diffusion model|![](../assets/08-224-1.png)
+||2023|Disco: Disentangled control for referring human dance generation in real world|![](./../assets/08-224-3.png)|
 
 ### 视频动作驱动
 

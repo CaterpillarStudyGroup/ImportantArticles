@@ -56,7 +56,7 @@ Chung et al., <u>"Diffusion Posterior Sampling for General Noisy Inverse Problem
 
 > &#x2705; 在 diffusion 的同时做重建。    
 
-## More
+# More
 
  - **Video Diffusion/Pyramid DDPM**: used for uper-resolution.      
  - **Pseudoinverse guidance**: linear and some non-differentiable problems, e.g., JPEG
