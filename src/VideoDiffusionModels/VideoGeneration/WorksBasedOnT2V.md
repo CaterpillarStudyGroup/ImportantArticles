@@ -1,4 +1,10 @@
-# Image-2-Video
+# Image（提供动作信息）Text(提供外观信息)-2-Video
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|126|2025.7.22|MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation|1. 参考对象（**动作信息来自图像**）与目标对象（**外观信息来自文本**）外观或结构差异显著<br> 2. 显示提取源和目标在外观上的语义匹配以及对应部分的形变关系，通过对源做warp得到目标的大致轮廓，以引作为condition引入视频生成|training-free|
+
+# Image（提供外观信息）-2-Video
 
 ## 强调符合物理规律
 
