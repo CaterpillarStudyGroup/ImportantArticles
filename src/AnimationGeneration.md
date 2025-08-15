@@ -8,6 +8,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|128|2025.8.7|X-MoGen: Unified Motion Generation across Humans and Animals|首个覆盖人类与动物的统一跨物种文本驱动动作生成框架。<br> 第一阶段：CGVAE学习规范T姿态先验，AE将动作编码至由形态学损失正则化的共享潜空间；<br> 第二阶段：通过掩码动作建模生成基于文本描述的动作嵌入。|跨物种生成|
 ||2025.6.4|**AniMo: Species-Aware Model for Text-Driven Animal Motion Generation**|| 文生动物动作   |[link](153.md)|
 |35||MagicPony: Learning Articulated 3D Animals in the Wild|图像生成3D动物Mesh并绑定，图像生成3D动作||[link](https://caterpillarstudygroup.github.io/ReadPapers/35.html)|
 

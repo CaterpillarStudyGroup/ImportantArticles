@@ -21,6 +21,10 @@
 
 ### 直接预测动态高斯属性
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|127|2025.7.31|Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis|直接对4D高斯进行diffusion生成数据量比较大，因此构建4D GS的VAE，并基于这个VAE进行隐空间的4G生成|[link](https://caterpillarstudygroup.github.io/ReadPapers/127.html)|
+
 ### 显式驱动静态高斯属性
 
 核心思路： 利用控制点/蒙皮等显式或参数化结构来驱动显式图元（如高斯椭球）的变形，从而表示动态。这比纯隐式 NeRF 更高效且渲染质量更高。  
