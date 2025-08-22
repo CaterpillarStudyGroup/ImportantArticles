@@ -19,6 +19,12 @@
 
 ## dynamic 3DGS
 
+优点：
+- 克服隐式方法（特别是动态 NeRF）的效率瓶颈和兼容性问题。  
+
+主要缺点：
+- 由于缺乏真实的4D标注数据，只能依赖多视角渲染进行监督学习，因此容易出现视角间的不一致性问题。
+
 ### 直接预测动态高斯属性
 
 |ID|Year|Name|Note|Tags|Link|
@@ -30,13 +36,13 @@
 核心思路： 利用控制点/蒙皮等显式或参数化结构来驱动显式图元（如高斯椭球）的变形，从而表示动态。这比纯隐式 NeRF 更高效且渲染质量更高。  
 优点：
 - 将静态几何与动态运动解耦。静态部分可以高效优化/表示，动态部分专注于运动。这通常比直接拟合整个时空函数更有效率。
-- 克服隐式方法（特别是动态 NeRF）的效率瓶颈和兼容性问题。  
+
 主要缺点：
 - 要解决如何有效控制显式图元随时间的变形以保持时空一致性和高质量。
-- 由于缺乏真实的4D标注数据，只能依赖多视角渲染进行监督学习，因此容易出现视角间的不一致性问题。
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|129|2025.8.13|TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos|从视频中学习每个高斯点的动力学属性|开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/129.html)|
 ||2025.6.11|HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene||    |[link](179.md)|
 ||2025.6.9|**PIG: Physically-based Multi-Material Interaction with 3D Gaussians**||    |[link](170.md)|
 ||2025.6.5|SinGS: Animatable Single-Image Human Gaussian Splats with Kinematic Priors||    |[link](159.md)|
