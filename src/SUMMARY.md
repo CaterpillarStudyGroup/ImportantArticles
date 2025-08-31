@@ -3,7 +3,57 @@
 - [Introduction](README.md)
 - [如何高效读论文](./ReadPapers.md)
 
-# CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang
+# 动画3D管线 - Mesh的驱动
+
+## 动作来源
+
+- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](CharacterAnimation/HPE_HMR_Summary.md)
+- [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
+- [expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis]()
+- [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
+
+# 动画3D管线 - 3DGS的驱动
+
+- [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
+- [Human 4D Generation](./CharacterAnimation/Human4DGeneration.md)
+- [4D Generation](4DGeneration.md)
+- [Animal Generation](AnimationGeneration.md)
+
+# 动画2D管线 - 像素的驱动，可控视频生成
+
+- [Introduction](VideoDiffusionModels/Introduction.md)
+- [Video Generation](VideoDiffusionModels/VideoGeneration/VideoGeneration.md)
+  - [闭源T2V大模型](VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.md)
+  - [开源T2V基模型](VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.md)
+  - [Works Based on T2I 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.md)
+  - [Works Based on T2V 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.md)
+  - [Storyboard](VideoDiffusionModels/VideoGeneration/Storyboard.md)
+  - [Long video generation/Storyboard](VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
+  - [Multimodal-guided generation](VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.md)
+  - [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
+- [Video Editing](VideoDiffusionModels/VideoEditing.md)
+  - [Tuning-based](VideoDiffusionModels/VideoEditing/Tuning-based.md)
+  - [Training-free](VideoDiffusionModels/VideoEditing/Training-free.md)
+  - [Controlled Editing](VideoDiffusionModels/VideoEditing/ControlledEditing.md)
+  - [3D-Aware](VideoDiffusionModels/VideoEditing/3D-Aware.md)
+  - [Other Guidance](VideoDiffusionModels/VideoEditing/OtherGuidance.md)
+- [评价指标](./VideoDiffusionModels/EvaluationMetrics.md)
+
+# 动画2D管线 - 2D图形的驱动
+
+- [2D图形驱动](ClipAnimation.md)
+
+# 通用AI技术
+
+## NeurIPS 2024 Flow Matchig Turorial
+
+- [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
+   - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
+   - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
+   - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
+   - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
+
+## CVPR Tutorial - Denoising Diffusion Models: A Generative Learning Big Bang
 - [Introduction](diffusion-tutorial-part/Introduction.md)
 - [Fundamentals]()
   - [Denoising Diffusion Probabilistic Models](diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.md)
@@ -23,50 +73,12 @@
   - [3D重建](diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.md)
   - [3D编辑](diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.md)
 - [Safety and limitations of diffusion models](diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.md)
-
-# Video Diffusion Models
-- [Introduction](VideoDiffusionModels/Introduction.md)
-- [Video Generation](VideoDiffusionModels/VideoGeneration/VideoGeneration.md)
-  - [闭源T2V大模型](VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.md)
-  - [开源T2V基模型](VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.md)
-  - [Works Based on T2I 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.md)
-  - [Works Based on T2V 基模型](./VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.md)
-  - [Storyboard](VideoDiffusionModels/VideoGeneration/Storyboard.md)
-  - [Long video generation/Storyboard](VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
-  - [Multimodal-guided generation](VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.md)
-- [Video Editing](VideoDiffusionModels/VideoEditing.md)
-  - [Tuning-based](VideoDiffusionModels/VideoEditing/Tuning-based.md)
-  - [Training-free](VideoDiffusionModels/VideoEditing/Training-free.md)
-  - [Controlled Editing](VideoDiffusionModels/VideoEditing/ControlledEditing.md)
-  - [3D-Aware](VideoDiffusionModels/VideoEditing/3D-Aware.md)
-  - [Other Guidance](VideoDiffusionModels/VideoEditing/OtherGuidance.md)
-- [评价指标](./VideoDiffusionModels/EvaluationMetrics.md)
-
-
-# Character Animation
-- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](CharacterAnimation/HPE_HMR_Summary.md)
-- [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
-- [expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis]()
-- [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
-- [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
-- [Human 4D Generation](./CharacterAnimation/Human4DGeneration.md)
-
-# NeurIPS 2024 Flow Matchig Turorial
-
-- [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
-   - [Flow Matching Basics](NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.md)
-   - [Flow Matching Advanced Designs](NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.md)
-   - [Model Adaptation](NeurIPS2024FlowMatchigTurorial/ModelAdaptation.md)
-   - [Generator Matching and Discrete Flows](NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.md)
+- [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
+- [生成模型](GenerativeModels.md)
 
 # Others
-- [Large Multimodal Models Notes on CVPR 2023 Tutorial](LargeMultimodalModelsNotesonCVPR2023Tutorial.md)
-- [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
-- [生成模型](GenerativeModels.md)
-- [2D图形驱动](ClipAnimation.md)
+
 - [数据集](数据集.md)
-- [Animal Generation](AnimationGeneration.md)
-- [4D Generation](4DGeneration.md)
 - [More](More.md)
 
 
