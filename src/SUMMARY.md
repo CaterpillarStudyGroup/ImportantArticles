@@ -1,16 +1,14 @@
 # Summary
 
 - [Introduction](README.md)
-- [如何高效读论文](./ReadPapers.md)
 
-# 动画3D管线 - Mesh的驱动
+# 动画3D管线
 
-## 动作来源
-
-- [Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey](CharacterAnimation/HPE_HMR_Summary.md)
-- [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
-- [expression rendering, avatar creation, gesture modeling, object generation, and texture synthesis]()
-- [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
+- [基于骨骼代理的Mesh的驱动]()
+  - [3D Human Pose Estimation and Mesh Recovery](CharacterAnimation/HPE_HMR_Summary.md)
+  - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
+  - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
+- [无代理的Mesh驱动](MeshAnimation/E2E.md)
 
 # 动画3D管线 - 3DGS的驱动
 

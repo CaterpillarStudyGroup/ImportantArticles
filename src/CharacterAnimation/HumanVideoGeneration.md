@@ -122,6 +122,7 @@ Video + Audio -> Video
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.17|SyncTalk++: High-Fidelity and Efficient Synchronized Talking Heads Synthesis Using Gaussian Splatting||    |[link](199.md)|
 |90|2024.10|MuseTalk: Real-Time High Quality Lip Synchronization with Latent Space Inpainting|1. 借用扩散架构但采用GAN式训练（无扩散过程），平衡生成速度与质量<br> 2. 用根据特征筛选的方式选择reference image，提升生成质量。| LDM, 开源，实时，GAN, 逐帧, VQ-VAE|[link](https://caterpillarstudygroup.github.io/ReadPapers/90.html)|
 |91|2020.8.23|A Lip Sync Expert Is All You Need for Speech to Lip Generation In The Wild|1. 首个跨ID的唇间同步口型生成方法<br>2. 预训练唇同步判别器（SyncNet监督） + 对抗学习<br>3. 提出唇音对齐性指标LSE-C和LSE-D|Wav2Lip， GAN, SyncNet, LSE-C, LSE-D|[link](https://caterpillarstudygroup.github.io/ReadPapers/91.html)|
 

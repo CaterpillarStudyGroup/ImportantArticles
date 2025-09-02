@@ -232,6 +232,7 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.18|HOIDiNi: Human-Object Interaction through Diffusion Noise Optimization||    |[link](202.md)|
 |29|2024|PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios|基于2D轨迹或视频的行人动作生成||[link](https://caterpillarstudygroup.github.io/ReadPapers/29.html)|
 
 ---

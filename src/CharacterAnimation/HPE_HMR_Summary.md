@@ -50,6 +50,11 @@
 # Human Mesh Recovery
 ## Template-based human mesh recovery
 ### Naked human body recovery
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2025.8.13|HumanGenesis: Agent-Based Geometric and Generative Modeling for Synthetic Human Dynamics|1. 传统HPE方法没有考虑特定人体体型与3D姿态的关系，因此牺牲了HPE精度。<br> 2. 依赖2D图像衍生的约束条件的对齐效果来优化姿态。|1. 通过先校准用户身体形状，再基于该形状进行**个性化**姿态拟合。2. 开发了基于身体形状条件的3D姿态先验模型，有效缓解了因过度依赖2D约束而产生的误差。<br> 升了骨盆对齐姿态精度，还改善了绝对姿态精度|仅需合成数据训练，即插即用|
+
 #### **Multimodal Methods**
 
 |ID|Year|Name|Note|Tags|Link|
@@ -176,3 +181,7 @@ absolute trajectory error (ATE) [75], which performs Procrustes with scaling to 
 ### To evaluate the accuracy of our scale estimation
 
 evaluate ATE using our estimated scale (ATE-S) [35].
+
+# Reference 
+
+1. Deep Learning for 3D Human Pose Estimation and Mesh Recovery: A Survey

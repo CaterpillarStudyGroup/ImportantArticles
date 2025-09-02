@@ -22,6 +22,10 @@
 
 ## 强调时序一致性
 
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+|130|2025.8.25|Multi-Object Sketch Animation with Grouping and Motion Trajectory Priors|
+
 ## 强调控制性
 
 1. 如何对控制信号进行表示
@@ -36,6 +40,7 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.17|VideoMAR: Autoregressive Video Generatio with Continuous Tokens||    |[link](200.md)|
 ||2025.5.29|ATI: Any Trajectory Instruction for Controllable Video Generation||  视频生成中运动控制  |[link](138.md)|
 ||2025.5.26|MotionPro: A Precise Motion Controller for Image-to-Video Generation|| **通过交互式运动控制实现图像动画**   |[link](127.md)|
 ||2025.5.23|Temporal Differential Fields for 4D Motion Modeling via Image-to-Video Synthesis|| 通过图像到视频(I2V)合成框架来模拟规律的运动过程   |[link](117.md)|

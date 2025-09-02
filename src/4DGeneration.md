@@ -13,11 +13,12 @@
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.6.17|GAF: Gaussian Action Field as a Dvnamic World Model for Robotic Mlanipulation||    |[link](198.md)|
 ||2024|Consistent4d: Consistent 360° dynamic object generation from monocular video|引入了一个视频到4D的框架，通过优化一个级联动态NeRF (Cascaded DyNeRF) 来从静态捕获的视频生成4D内容。|driving video|
 |||Animate124 | 利用多种扩散先验，能够通过文本运动描述将单张野外图像动画化为3D视频。|SDS|
 |||4D-fy| 使用混合分数蒸馏采样 (hybrid SDS)，基于多个预训练扩散模型实现了引人注目的文本到4D生成。|SDS|
 
-## dynamic 3DGS
+## 3DGS
 
 优点：
 - 克服隐式方法（特别是动态 NeRF）的效率瓶颈和兼容性问题。  
@@ -43,6 +44,7 @@
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |129|2025.8.13|TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos|从视频中学习每个高斯点的动力学属性|开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/129.html)|
+||2025.6.18|Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos||    |[link](203.md)|
 ||2025.6.11|HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene||    |[link](179.md)|
 ||2025.6.9|**PIG: Physically-based Multi-Material Interaction with 3D Gaussians**||    |[link](170.md)|
 ||2025.6.5|SinGS: Animatable Single-Image Human Gaussian Splats with Kinematic Priors||    |[link](159.md)|
@@ -53,14 +55,3 @@
 ||2024|Dreammesh4d: Video-to-4d generation with sparse-controlled gaussian-mesh hybrid representation|
 ||2024|Animate3d: Animating any 3d model with multi-view video diffusion|
 |111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|1. 先使用DreamGaussianHD生成静态高斯溅射模型，然后通过基于六面体 (HexPlane) 的动态生成方法结合高斯变形技术生成动态内容 <br> 2. 运动信息来自driving video而不是video SDS|HexPlane显式驱动， 开源, driving video||[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
-
-## Mesh Animation
-
-### 先绑定再驱动
-
-### 直接驱动
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|109|2025.6.11|**AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation**| 1. 将动态网格分解为初始状态与相对轨迹<br> 2. 融合网格拓扑信息 <br> 3. 基于注意力机制实现高效变长压缩与重建| 修正流，数据集   |[link](https://caterpillarstudygroup.github.io/ReadPapers/109.html)|
-|110|2025.6.9|**Drive Any Mesh: 4D Latent Diffusion for Mesh Deformation from Video**|1. 以文本和目标视频为条件驱动Mesh<br> 2. 将动态网格分解为初始状态与相对轨迹 <br> 3. 使用latent set + Transformer VAE对动态Mesh进行编码<br> 4. 使用diffusion进行生成| Latent Sets，diffusion，数据集  |[link](https://caterpillarstudygroup.github.io/ReadPapers/110.html)|
