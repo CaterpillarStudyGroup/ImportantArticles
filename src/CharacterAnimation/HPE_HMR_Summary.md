@@ -28,6 +28,11 @@
 ||2025.5.29|GeoMan: Temporally Consistent Human Geometry Estimation using Image-to-Video Diffusion||  从单目人体视频中生成精确且时序一致的深度图和法线图  |[link](140.md)|
 
 #### Solving Real-time Problems
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2025.8.29|Efficient Diffusion-Based 3D Human Pose Estimation with Hierarchical Temporal Pruning|基于diffusion的方法成本高|采用分层时序剪枝（HTP）策略，能在保留关键运动动态的同时，从帧级别和语义级别动态剪除冗余姿态令牌。|
+
 #### Solving Body Structure Understanding
 
 |ID|Year|Name|Note|Tags|Link|

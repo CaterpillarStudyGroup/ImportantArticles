@@ -2,7 +2,7 @@
 
 - [Introduction](README.md)
 
-# 动画3D管线
+# 动画3D管线 - 3DMesh的驱动
 
 - [基于骨骼代理的Mesh的驱动]()
   - [3D Human Pose Estimation and Mesh Recovery](CharacterAnimation/HPE_HMR_Summary.md)
@@ -79,6 +79,10 @@
 - [数据集](数据集.md)
 - [More](More.md)
 
+
+# Views
+
+- [2025.9.3骨骼动作生成](Views/20250903.md)
 
 
   
