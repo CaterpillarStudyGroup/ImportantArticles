@@ -4,17 +4,23 @@
 ```mermaid
 mindmap
 基于学习的动作生成
-    按生成内容分
+    按生成方式分
         自回归生成
         非自回归生成
+            Regression
+            完形填空式（Bert Style）
     按动作表示分
         连续表示
         离散表示
     按生成模型分
         确定性映射
-        VAE
-        GAN
-        diffusion
+        离散空间采样
+            离散分布采样(GPT Style)
+            掩码语言模型(Bert Style)
+        连续空间采样
+            VAE
+            GAN
+            diffusion
 ```
 
 # 无条件生成
@@ -66,9 +72,9 @@ mindmap
 
 ### VQ-VAE
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|1. 第一阶段通，运动重建(VQVAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|VQVAE，新的生成模式(flow matching + score matching)，非自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|基于score的生成模型，其训练过程涉及复杂的曲率轨迹，导致训练稳定性不足。|1. 第一阶段通，运动重建(VQ-VAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|控制条件： Action Label <br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>**生成模型：flow matching + score matching**|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
 
 ### Diffusion
 
@@ -104,26 +110,37 @@ mindmap
 | 方法名称                     | 主要贡献                                                                 | 局限性                                                                 |
 |------------------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------|
 
+### Score Matching
 
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|102|2025.5.16|HGM³: Hierarchical Generative Masked Motion Modeling with Hard Token Mining|由于文本固有的歧义性以及人体运动动态的复杂性|1. 类似MoMask的残差VQ-VAE，但专门训练了一个网络来决定给哪些token掩码 <br> 2. 把文本编码成不同粒度的embedding，提升文本的整体把控与细节控制|控制条件：文本（Graph Reasoning）<br> 生成方式：Bert Style<br>表示方式：离散表示（分层文本编码，每一层是残差VQ-VAE）<br>生成模型：残差VQ-VAE(类似于Diffusion的逐渐细化的生成模式)  |[link](https://caterpillarstudygroup.github.io/ReadPapers/102.html)|
 
 ### VQ-VAE
 
 VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问题从回归任务转化为分类任务。然而受限于码本结构，VQ-VAE倾向于存储已知动作而非泛化到新动作。虽然这些模型在训练数据分布内能精确生成和重建动作，却难以处理分布外运动导致信息损失和动作感知失真。
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|102|2025.5.16|HGM³: Hierarchical Generative Masked Motion Modeling with Hard Token Mining|1. 类似MoMask的残差VQVAE，但专门训练了一个网络来决定给哪些token掩码 <br> 2. 把文本编码成不同粒度的embedding，提升文本的整体把控与细节控制| 分层文本编码，残差VQVAE  |[link](https://caterpillarstudygroup.github.io/ReadPapers/102.html)|
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
 ||2025|BAD: Bidirectional Auto-Regressive Diffusion for Text-to-Motion Generation||bert style|
-||2024| **MoMask** [Guo et al., 2024] | – 运动残差VQ-VAE<br>– 条件掩码Transformer                             | – 多样性有限<br>– 无法生成快速变化的根运动                                |
 ||2024|MMM: Generative Masked Motion Model. |bert style:训练中随机掩码部分标记，模型基于文本和上下文重建。<br> – 条件掩码运动模型 <br> – 无法生成长而详细的文本描述  |
 ||2023|AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism. | – 基于身体部位注意力的时空VQ-VAE<br>– 全局-局部注意力学习跨模态关系 <br> – 长文本驱动生成多样性不足<br>– 数据依赖（无法生成未见运动）                 |
-||2023|**DiverseMotion [122]**|VQ-VAE + 扩散模型，提升生成多样性与语义一致性<br> 扩散过程（前向破坏令牌，反向去噪），用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解 |
 ||2023|Priority-Centric Human Motion Generation in Discrete Latent Space|
-||2023| MoMask: Generative Masked Modeling of 3D Human Motions| VQ-VAE + 分层码本，分层生成粗糙到精细的运动细节<br>掩码令牌建模（BERT风格） + 残差细化 <br>分层码本结构；掩码预测生成粗糙运动，残差层逐步细化 |bert Style|
 ||2023.12.15|MotionGPT: Human Motion as a Foreign Language.|运动分词器转换运动为离散编码| T5文本嵌入                   |
-| |2024| **T2LM** [Lee et al., 2024] | 处理多句子文本生成长且复杂的动作序列，直接学习端到端文本-运动映射。<br> – 连续长期VQ-VAE生成框架<br>– 1D(时序维度)卷积VQVAE（避免时序不一致）<br> – 无法生成细粒度运动<br>– 仅支持短文本描述                       |1D卷积VQ-VAE + Transformer，长序列生成|
-|88|2023.9.24|T2m-gpt: Generating human motion from textual descriptions with discrete representations|基于VQ-VAE与GPT的文生人体运动框架|1. 基于VQ-VAE的离散运动表示<br> 2. VQ-VAE + Transformer（GPT）的文生动作框架**<br> 3. 生成质量(FID)有明显提升|VQ-VAE + Transformer, CLIP, 开源，自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
-||2022c|TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |首次提出离散量化的运动表示 <br>互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。<br>– 运动分词器将运动转为离散编码|
+| |2024| **T2LM** [Lee et al., 2024] | 处理多句子文本生成长且复杂的动作序列，直接学习端到端文本-运动映射。<br> – 连续长期VQ-VAE生成框架<br>– 1D(时序维度)卷积VQ-VAE（避免时序不一致）<br> – 无法生成细粒度运动<br>– 仅支持短文本描述                       |1D卷积VQ-VAE + Transformer，长序列生成|
+
+### 掩码语言模型（Bert Style）
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2023| MoMask: Generative Masked Modeling of 3D Human Motions|VQ-VAE + Bert Style的文生动作新框架 | VQ-VAE + 分层码本结构；掩码预测生成粗糙运动，残差层逐步细化<br> 首个离散运动表示+掩码语言模型的文生动作框架 |控制条件：文本（CLIP）<br> 生成方式：Bert Style<br>表示方式：离散表示（VQ-VAE + 残差细化）<br>生成模型：掩码语言模型|
+
+### 离散分布采样（GPT Style）
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|88|2023.9.24|T2m-gpt: Generating human motion from textual descriptions with discrete representations|基于VQ-VAE与GPT的文生人体运动框架|1. 基于VQ-VAE的离散运动表示<br> 2. VQ-VAE + Transformer（GPT）的文生动作框架**<br> 3. 生成质量(FID)有明显提升|控制条件：文本（CLIP）<br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散分布采样（GPT）<br>其它：Transformer，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/88.html)|
+||2022.8.4|TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts. |文生3D全身动作，实现同文本生成多个差异化动作，并避免产生无意义的静止姿态序列。|首次提出离散量化的运动表示 <br>互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。|控制条件：文本（NMT Encoder）<br> 生成方式：自回归<br>表示方式：离散表示（同VQ-VAE，但没有使用这个词）<br>生成模型：离散分布采样（NMT Decoder）|
 
 ### Diffusion
 
@@ -146,7 +163,8 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2024|Seamless human motion composition with blended positional encodings|
 ||2024.5|Flexible motion in-betweening with diffusion models|
 ||2024.4|Motionlcm: Real-time controllable motion generation via latent consistency model|
-||2023|MoDDM|VQ-VAE|diffusion，在隐空间显式破坏VQ-VAE编码并学习去噪|
+||2023.9.4|DiverseMotion: Towards Diverse Human Motion Generation via Discrete Diffusion |在动作质量与多样性之间取得平衡仍是一个未解决的挑战。该问题主要由两个关键因素导致：<br> 1）现有基准数据集中动作-描述对缺乏多样性；<br> 2）对文本提示存在片面且有偏差的语义理解，主要关注动词成分而忽略其他词语所指示的微妙差异。|1. 构建了大规模野生动作-描述数据集（WMC）<br> 2. 提出分层语义聚合（HSA）模块来捕获细粒度语义。<br> 将上述设计整合到有效的动作离散扩散（MDD）框架中|VQ-VAE + 扩散模型，提升生成多样性与语义一致性<br> 扩散过程（前向破坏令牌，反向去噪），用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解 <br> 其它：数据集|
+||2023|Text-to-Motion Synthesis using Discrete Diffusion Model|扩散模型计算成本较高，且生成的运动可能与输入文本对齐度不足。|结合离散潜在空间与扩散模型，学习表达性条件概率映射以实现运动合成。<br>1. 学习离散运动表达 <br> 2. 应用离散去噪扩散概率模型（D3PM）学习运动标记的条件概率分布。<br> 3. 训练过程中进一步采用离散无分类器引导技术，通过合适的引导尺度实现运动与对应文本描述的对齐。|控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：MoDDM|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|
 ||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性|
 ||2023.10| Humantomato: Text-aligned whole-body motion generation|
@@ -175,7 +193,7 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |      | 2024 | **M2D2M** [Chi et al.]       | – 动态转移概率模型<br>– 新评估指标Jerk（动作边界平滑度）                 | – Jerk指标无法评估所有场景                                              |
 |      | 2025 | **EMDM** [Zhou et al.]       | – 条件去噪扩散GAN<br>– 快速扩散方案                                      | – 可能违反物理定律（如漂浮/地面穿透）                                    |
 |      | 2025 | **Motion Mamba** [Zhang et al.] | – 双模块去噪U-Net：<br> • 分层时序Mamba<br> • 双向空间Mamba               | – 未展示短序列性能<br>– 模型泛化能力未验证                              |
-|132| 2022.8.31 | MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model |根据多样化文本输入实现细腻且精细的运动生成 |首个基于扩散模型的文本驱动运动生成框架，通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br> 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br> 在噪声空间对不同片断的融合，实现长序列的生成|CLIP, DDPM, Transformer，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/132.html)|                                 |
+|132| 2022.8.31 | MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model |根据多样化文本输入实现细腻且精细的运动生成 |首个基于扩散模型的文本驱动运动生成框架，通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br> 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br> 在噪声空间对不同片断的融合，实现长序列的生成|控制条件：文本（CLIP）<br>生成方式：非自回归<br>表示方式：连续表示（原始数据）<br>生成模型：DDPM<br>其它：Transformer，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/132.html)|                                 |
 
 # Motion-Conditioned Motion Generation
 
@@ -245,13 +263,11 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 
 # SCENE-CONDITIONED MOTION GENERATION
 
-## Scene representation
-
-### AE Based
+## 确定性映射
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
-|131|2016| A deep learning framework for character motion synthesis and editing|自动生成角色动作数据|深开创了Deep Learning Based运动生成的先河|控制条件：轨迹条件<br>表示方式：连续表示（AE）<br>，风格迁移|[link](https://caterpillarstudygroup.github.io/ReadPapers/131.html)
+|131|2016| A deep learning framework for character motion synthesis and editing|自动生成角色动作数据|深开创了Deep Learning Based运动生成的先河|控制条件：轨迹条件、风格条件（风格迁移）生成方式：非自回归<br>表示方式：连续表示（AE）<br>生成模型：确定性映射|[link](https://caterpillarstudygroup.github.io/ReadPapers/131.html)
 
 ### VAE Based
 
