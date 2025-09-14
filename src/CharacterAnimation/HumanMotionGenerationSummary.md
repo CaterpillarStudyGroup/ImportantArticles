@@ -1,5 +1,22 @@
 ![](../assets/d378e84bd11f484517ba2d687e8bb933_5_Table_1_-876463523.png)
 
+
+```mermaid
+mindmap
+基于学习的动作生成
+    按生成内容分
+        自回归生成
+        非自回归生成
+    按动作表示分
+        连续表示
+        离散表示
+    按生成模型分
+        确定性映射
+        VAE
+        GAN
+        diffusion
+```
+
 # 无条件生成
 
 1. 无引导的动作生成，无法对动作进行控制。
@@ -230,11 +247,13 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 
 ## Scene representation
 
-### AE/VAE Based
+### AE Based
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
-|131|2016| A deep learning framework for character motion synthesis and editing|自动生成角色动作数据|深开创了Deep Learning Based运动生成的先河|轨迹条件，AE，风格迁移|[link](https://caterpillarstudygroup.github.io/ReadPapers/131.html)
+|131|2016| A deep learning framework for character motion synthesis and editing|自动生成角色动作数据|深开创了Deep Learning Based运动生成的先河|控制条件：轨迹条件<br>表示方式：连续表示（AE）<br>，风格迁移|[link](https://caterpillarstudygroup.github.io/ReadPapers/131.html)
+
+### VAE Based
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|

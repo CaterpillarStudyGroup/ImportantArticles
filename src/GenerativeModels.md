@@ -16,28 +16,18 @@ P9
 
 GAN、VAE 属于第一大类生成模型，优点是快，因为它的生成过程只需要一个forward。  
 
-[TODO] 把下面表格中的图下载下来，换成本地链接
+GAN的缺点是：  
+（1）没有一个精确的可以用于 sample 的概率模型  
+（2）难以训练。     
 
-|生成模型|特点|结构|链接|
-|---|---|---|---|
-|AE|降维、聚类，但latent仍是复杂分布，不能直接sample|![](https://pica.zhimg.com/v2-350331de3d1f8c7c02df2d4a89e1b676_r.jpg)|
-|VAE|降维、聚类，latent为std normal，可以直接sample|![](https://pic1.zhimg.com/v2-a9769819dddedc52151bf12f2ac98ad8_1440w.jpg)|
-|VQ-VAE|离散AE（用于降维、聚类） + PixelCNN（用于sample）|![](https://pic3.zhimg.com/v2-ece699c485581ba30cc739ce1c51d9b4_1440w.jpg)|
-|GAN|
+### 自回归 VS 非自回归
 
-### AE
+要生成的内容是一个整体，可以一次性生成整个内容，也可以把要生成的内容分解成多个小块，分别生成这些小块，再合成整体。  
 
-### VAE
+例如图像生成，PixelCNN、ViT把图像分成多个patch，并分别生成这些patch。为了让这些patch之间有协调性，后生成的patch要以已生成的patch为依据。  
+再例如动作生成，要生成一个动作序列，可以把每一帧作为一个patch，也可以把连续的几帧作为一个patch。  
+自回归生成的特点是，生成内容的依赖关系是固定的。先生成的patch会对后生成的patch产生影响，反之则不行。  
 
-### VQ-VAE
-
-### GAN
-
-GAN的缺点是（1）没有一个精确的可以用于 sample 的概率模型（2）难以训练。     
-
-### 自回归
-
-例如PixelCNN，根据前面的像素生成后面的像素，或者transformer，根据上一帧生成下帧。
 
 ## 增量生成 
 
