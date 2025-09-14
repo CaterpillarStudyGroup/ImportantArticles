@@ -17,6 +17,7 @@ mindmap
         离散空间采样
             离散分布采样(GPT Style)
             掩码语言模型(Bert Style)
+            离散去噪扩散概率模型（D3PM）
         连续空间采样
             VAE
             GAN
@@ -163,8 +164,6 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 ||2024|Seamless human motion composition with blended positional encodings|
 ||2024.5|Flexible motion in-betweening with diffusion models|
 ||2024.4|Motionlcm: Real-time controllable motion generation via latent consistency model|
-||2023.9.4|DiverseMotion: Towards Diverse Human Motion Generation via Discrete Diffusion |在动作质量与多样性之间取得平衡仍是一个未解决的挑战。该问题主要由两个关键因素导致：<br> 1）现有基准数据集中动作-描述对缺乏多样性；<br> 2）对文本提示存在片面且有偏差的语义理解，主要关注动词成分而忽略其他词语所指示的微妙差异。|1. 构建了大规模野生动作-描述数据集（WMC）<br> 2. 提出分层语义聚合（HSA）模块来捕获细粒度语义。<br> 将上述设计整合到有效的动作离散扩散（MDD）框架中|VQ-VAE + 扩散模型，提升生成多样性与语义一致性<br> 扩散过程（前向破坏令牌，反向去噪），用扩散过程替代自回归解码；引入分层语义聚合（HSA）增强文本语义理解 <br> 其它：数据集|
-||2023|Text-to-Motion Synthesis using Discrete Diffusion Model|扩散模型计算成本较高，且生成的运动可能与输入文本对齐度不足。|结合离散潜在空间与扩散模型，学习表达性条件概率映射以实现运动合成。<br>1. 学习离散运动表达 <br> 2. 应用离散去噪扩散概率模型（D3PM）学习运动标记的条件概率分布。<br> 3. 训练过程中进一步采用离散无分类器引导技术，通过合适的引导尺度实现运动与对应文本描述的对齐。|控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：MoDDM|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|
 ||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性|
 ||2023.10| Humantomato: Text-aligned whole-body motion generation|
@@ -187,13 +186,19 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |      | 2024 | **StableMoFusion** [Huang et al.]| – 消除足部滑动的有效机制<br>– 系统分析扩散运动生成流程组件                 | – 推理速度慢（计算成本高）                                               |
 |      | 2023 | **MLD** [Chen et al.]        | – 基于运动Transformer的VAE<br>– 隐空间条件扩散                            | – 生成运动长度受限<br>– 仅支持人体主干（无手部/面部动作）                  |
 |      | 2023 | **M2DM** [Kong et al.]       | – 基于Transformer的VQ-VAE<br>– 优先级中心化方案                           | – 难以捕捉运动细粒度细节                                                |
-|      | 2023 | **MoDDM** [Chemburkar et al.] | – 离散去噪扩散概率模型                                                   | – 难以捕捉运动细粒度细节                                                |
 |      | 2023 | **UDE** [Zhou and Wang]      | – 统一文本/音频驱动的单模型<br>– 基于扩散的解码器                         | – 处理多模态复杂交互困难                                                |
 |      | 2023 | **GestureDiffuCLIP** [Ao et al.] | – 多模态提示控制风格（文本+语音）<br>– CLIP引导的语音同步手势合成         | – 数据依赖性强<br>– CLIP对细节运动建模有限                              |
 |      | 2024 | **M2D2M** [Chi et al.]       | – 动态转移概率模型<br>– 新评估指标Jerk（动作边界平滑度）                 | – Jerk指标无法评估所有场景                                              |
 |      | 2025 | **EMDM** [Zhou et al.]       | – 条件去噪扩散GAN<br>– 快速扩散方案                                      | – 可能违反物理定律（如漂浮/地面穿透）                                    |
 |      | 2025 | **Motion Mamba** [Zhang et al.] | – 双模块去噪U-Net：<br> • 分层时序Mamba<br> • 双向空间Mamba               | – 未展示短序列性能<br>– 模型泛化能力未验证                              |
 |132| 2022.8.31 | MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model |根据多样化文本输入实现细腻且精细的运动生成 |首个基于扩散模型的文本驱动运动生成框架，通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br> 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br> 在噪声空间对不同片断的融合，实现长序列的生成|控制条件：文本（CLIP）<br>生成方式：非自回归<br>表示方式：连续表示（原始数据）<br>生成模型：DDPM<br>其它：Transformer，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/132.html)|                                 |
+
+### 离散去噪概率模型
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2023.9.4|DiverseMotion: Towards Diverse Human Motion Generation via Discrete Diffusion |在动作质量与多样性之间取得平衡仍是一个未解决的挑战。该问题主要由两个关键因素导致：<br> 1）现有基准数据集中动作-描述对缺乏多样性；<br> 2）对文本提示存在片面且有偏差的语义理解，主要关注动词成分而忽略其他词语所指示的微妙差异。|1. 构建了大规模野生动作-描述数据集（WMC）<br> 2. 提出分层语义聚合（HSA）模块来捕获细粒度语义。<br> 3. 将上述设计整合到有效的动作离散扩散（MDD）框架中|控制条件：文本（分层语义聚合HSA）<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：动作离散扩散（MDD）框架 <br> 其它：数据集|
+||2023|Text-to-Motion Synthesis using Discrete Diffusion Model|扩散模型计算成本较高，且生成的运动可能与输入文本对齐度不足。|结合离散潜在空间与扩散模型，学习表达性条件概率映射以实现运动合成。<br>1. 学习离散运动表达 <br> 2. 应用离散去噪扩散概率模型（D3PM）学习运动标记的条件概率分布。<br> 3. 训练过程中进一步采用离散无分类器引导技术，通过合适的引导尺度实现运动与对应文本描述的对齐。|控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：MoDDM|
 
 # Motion-Conditioned Motion Generation
 
