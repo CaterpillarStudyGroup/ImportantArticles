@@ -7,11 +7,10 @@ P67
 |---|---|---|---|---|---|
 ||2025|Wan. Wan-AI/Wan2.1-T2V-14B||| https://huggingface.co/Wan-AI/Wan2.1-T2V-14B|
 ||2025|CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer|
-||2024|Hunyuanvideo: A systematic framework for large video
-generative models|
+||2024|Hunyuanvideo: A systematic framework for large video generative models|
 |81|2024|CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers|1. 使用预训练T2I模型CogView2<br>2. 先生成1 fps关键帧再递归向中间插帧<br>3. 引入temporal channel，并以混合因子\\(\alpha\\)与spatial channel混合|CogView2（60亿参数）, Transformer Based|[link](https://caterpillarstudygroup.github.io/ReadPapers/81.html)|
 |107|2023|Text2Video-Zero: Text-to-Image Diffusion Models are Zero-Shot Video Generators||| [link](https://caterpillarstudygroup.github.io/ReadPapers/107.html)| 
-|58|2023|Wang et al., “ModelScope Text-to-Video Technical Report,”| ||[link](https://caterpillarstudygroup.github.io/ReadPapers/58.html)|
+|58|2023|ModelScope Text-to-Video Technical Report| ||[link](https://caterpillarstudygroup.github.io/ReadPapers/58.html)|
 ||2023|ZeroScope| &#x2705; ZeroScope 在 ModelScope 上 finetune，使用了非常小但质量非常高的数据，得到了高分辨率的生成效果。   |
 |50|2023|Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets|Scaling latent video diffusion models to large datasets<br>**Data Processing and Annotation**||[link](https://caterpillarstudygroup.github.io/ReadPapers/50.html)|
 ||2023|Wang et al., “LAVIE: High-Quality Video Generation with Cascaded Latent Diffusion Models,”|Joint image-video finetuning with curriculum learning<br> &#x2705; 提供了一套高质量数据集，生成的视频质量也更好（训练集很重要）。|![](../../assets/08-81.png) |

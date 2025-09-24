@@ -11,7 +11,10 @@ mindmap
             完形填空式（Bert Style）
     按动作表示分
         连续表示
+            原始表示
+            AE/VAE Latent Code
         离散表示
+            VQ-VAE
     按生成模型分
         确定性映射
         离散空间采样
@@ -43,7 +46,7 @@ mindmap
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 ||2023|Drop: Dynamics responses from human motion prior and projective dynamics|
-|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|1. 分别构造转移关系z的先验概率模型和后验概率模型，并让先验概率逼近后验概率<br> 2. 基于预训练的运动模型，通过优化z优化动作序列|开源，Condition VAE，转移关系建模，动作优化，自回归|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|在存在噪声和遮挡的情况下恢复合理的姿势序列|1. 分别构造转移关系z的先验概率模型和后验概率模型，并让先验概率逼近后验概率<br> 2. 基于预训练的运动模型，通过优化z优化动作序列|控制条件：无 <br> 生成方式：自回归<br>表示方式：VAE<br>生成模型：状态转移 <br>其它：开源，Condition VAE，转移关系建模，动作优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 
 ### Diffusion Models
 
