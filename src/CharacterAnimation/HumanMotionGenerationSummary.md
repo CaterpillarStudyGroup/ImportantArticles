@@ -27,40 +27,61 @@ mindmap
             diffusion
 ```
 
-# 无条件生成
+# 动作先验 / 动作优化
 
-1. 无引导的动作生成，无法对动作进行控制。
-2. 通常会先学习动作先验模型，基于动作模型进行生成。
-3. 动作先验模型也可用于动作优化。
+这一个系列的论文通常包含两个主题：
+1. 构建动作先验：  
+要解决的问题：如何通过数据或规则构造动作先验。
+2. 基于动作先验的应用
+基于动作先验完成以下任务：  
+（1）动作生成任务：可以基于动作先验进行动作生成（无控制条件），生成结果为最符合动作先验的动作。  
+要解决的问题：怎样基于动作先验进行无条件生成  
+（2）动作优化任务：可以基于动作先验对已有的动作进行优化，生成结果为与原始动作最接近的且最符合动作先验的任务。  
+要解决的问题：怎样基于动作先验对已有动作进行优化  
+（3）动作生成&优化任务：可以使用额外的动作生成方法（基于控制条件）先生成再优化，或者生成与优化迭代进行，得到即使符合生成要求又符合动作先验的动作。  
+要解决的问题：怎样把动作生成和动作优化结合起来
+（4）动作交互任务：使用额外的交互算法与用户交互，通过动作先验的约束，使得交互结果符合动作先验。  
+要解决的问题：如何把动作先验实时地融入到交互结果中
 
-### GAN
+*如果一个方法中使用了多种先验，还需要考虑这些先验之间怎么结合。*
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2023|Modi|Modi: Unconditional motion synthesis from diverse data.|StyleGAN风格迁移	将StyleGAN风格控制引入运动生成	模式崩溃/混合（生成动作重复或混乱）	风格化运动生成|
-||2022|Ganimator: Neural motion synthesis from a single sequence
-
+## 基于数据的动作先验
 
 ### VAE
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
-||2023|Drop: Dynamics responses from human motion prior and projective dynamics|
-|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|在存在噪声和遮挡的情况下恢复合理的姿势序列|1. 分别构造转移关系z的先验概率模型和后验概率模型，并让先验概率逼近后验概率<br> 2. 基于预训练的运动模型，通过优化z优化动作序列|控制条件：无 <br> 生成方式：自回归<br>表示方式：VAE<br>生成模型：状态转移 <br>其它：开源，Condition VAE，转移关系建模，动作优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
-
-### Diffusion Models
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|112|2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**|1. 使用运动学生成动作 2. 使用动力学优化动作 3. 优化结果再映射回运动学数据 <br> | 物理合理，自回归，动作优化   |[link](https://caterpillarstudygroup.github.io/ReadPapers/112.html)|
-||2025|LengthAware Motion Synthesis via Latent Diffusion|
+|14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|在存在噪声和遮挡的情况下恢复合理的姿势序列|1. Humor: 一种通过创新的 条件VAE 建模的生成 3D 人体运动先验，可用于多种下游任务。<br> 2. 基于运动先验的动作生成：根据运动先验进行采样 <br> 3. 基于运动先验的动作优化，可以产生『准确且合理的运动和接触』的动作。|Condition VAE，转移关系建模，动作优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
 
 ### Normalizing Flows
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2023|Stylevr: Stylizing character animations with normalizing flows|
-||2020|Moglow: Probabilistic and controllable motion synthesis using normalising flows
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|134|2020.12.7|MoGlow: Probabilistic and controllable motion synthesis using normalising flows|基于数据的运动建模与合成|基于归一化流的新型概率化、生成式且可控的运动数据模型。<br> 1. 运动先验：通过归一化流来描述运动数据的概率分布 <br> 2. 基于运动先验的动作生成：通过随机采样从先验分布中生成新的运动数据 <br> 3. 动作生成任务：以控制信号的满足程度和动作的合理性概率为目标进行动作优化||[link](https://caterpillarstudygroup.github.io/ReadPapers/134.html)|
+
+## 基于规则的动作先验
+
+### Diffusion Models
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|112|2025.6.5|**POMP: Physics-consistent Motion Generative Model through Phase Manifolds**|现有的动作生成方法聚焦于运动学，而常常物理不合理|一个基于运动学的框架，它利用相流形将运动先验与物理约束对齐，从而合成物理上真实的运动。<br> 1. 基于物理约束的运动先验：使用动力学优化动作 <br> 2. 动作生成与动作优化相结合：在每个时间步，（1）Diffusion模块生成动作，（2）仿真模块使用动力学优化动作，（3）相位编码模块：优化结果再映射回运动学数据 | 物理合理，自回归，动作优化 |[link](https://caterpillarstudygroup.github.io/ReadPapers/112.html)|
+
+## 基于数据+规则的动作先验
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|135|2025.9.11|Improving Human Motion Plausibility with Body Momentum|『附着在根关节上的局部坐标系中的局部运动』与『世界坐标系中根关节的全局运动』之间的耦合关系<br> 1. 分别处理则无法精确捕捉局部与全局动力学之间的耦合关系<br>2. 基于物理仿真（从关节扭矩和外部力推导全局轨迹）又存在计算成本高、复杂度大的问题|1. 考虑全局与局部耦合关系的运动先验：使用全身线性和角动量作为约束条件，将局部运动与全局运动联系起来，其原理为**动量反映了关节层面动力学对身体空间运动的整体影响，它提供了将局部关节行为与全局位移相关联的物理基础方法**。<br>2. 数据先验与物理先验的结合：从数据中学习动量曲线<br> 3. 基于运动先验的动作优化：一种新的损失项，用于强制生成动量曲线与真实数据中观测到的动量曲线保持一致。采用我们的损失函数可减少脚部滑动和抖动，改善平衡性，并保持恢复运动的准确性。|[link](https://caterpillarstudygroup.github.io/ReadPapers/135.html)|
+|114|2023|Drop: Dynamics responses from human motion prior and projective dynamics|[link](https://caterpillarstudygroup.github.io/ReadPapers/114.html)|基于纯运动学的方法生成结果缺乏物理性，结合物理仿真的方法缺乏扩展性|**利用生成式运动模型的最新进展，实现基于物理的运动合成**<br>1. DROP，一个高度稳定、极简的基于物理的人体模拟器，提供人体运动的物理先验。<br> 2. 数据先验与物理先验的结合：利用投影动力学，DROP将学习到的运动(数据)先验作为投影能量之一集成到牛顿动力学中<br> 3. 基于数据&物理先验的动作交互：由运动（数据）先验提供动作控制，使用牛顿动力学优化结果。|
+
+# 无条件动作生成
+
+### GAN
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|133|2022.12.18|Modi: Unconditional motion synthesis from diverse data.|从给定分布中无条件合成运动|1. MoDi——一种在无监督设置下，从极其多样化、非结构化和无标签的数据集中训练得到的生成模型。<br> 2. 将StyleGAN风格控制引入运动生成实现风格化运动生成|控制条件：无<br> 生成方式：Regression<br>表示方式：连续表示(可能是VAE)<br>生成模型：Style GAN<br>其它：模式崩溃/混合（生成动作重复或混乱）	|
+||2022|Ganimator: Neural motion synthesis from a single sequence | 小样本生成
 
 # TEXT-CONDITIONED MOTION GENERATION
 
@@ -79,6 +100,12 @@ mindmap
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |92|2025|Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis|基于score的生成模型，其训练过程涉及复杂的曲率轨迹，导致训练稳定性不足。|1. 第一阶段通，运动重建(VQ-VAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。|控制条件： Action Label <br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>**生成模型：flow matching + score matching**|[link](https://caterpillarstudygroup.github.io/ReadPapers/92.html)|
+
+### Normalizing Flows
+
+|ID|Year|Name|Note|Tags|Link|
+|---|---|---|---|---|---|
+||2024.7|Stylevr: Stylizing character animations with normalizing flows|Style Label|
 
 ### Diffusion
 
@@ -223,7 +250,7 @@ VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问�
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 ||2024| MotionLCM: Real-Time Controllable Motion Generation via Latent Consistency Model|
-||2024| LengthAware Motion Synthesis via Latent Diffusion|
+||2024.7.16| LengthAware Motion Synthesis via Latent Diffusion|
 |85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
 ||2024.3.24|AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion|
 ||2024|EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation|原始空间扩散+对抗训练+部分观测数据条件	生成物理合理性提升	计算成本极高（百步迭代）|
