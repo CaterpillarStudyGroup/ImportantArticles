@@ -52,6 +52,7 @@ mindmap
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |14|2021|HuMoR: 3D Human Motion Model for Robust Pose Estimation|在存在噪声和遮挡的情况下恢复合理的姿势序列|1. Humor: 一种通过创新的 条件VAE 建模的生成 3D 人体运动先验，可用于多种下游任务。<br> 2. 基于运动先验的动作生成：根据运动先验进行采样 <br> 3. 基于运动先验的动作优化，可以产生『准确且合理的运动和接触』的动作。|Condition VAE，转移关系建模，动作优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/14.html)|
+||2021.3.26|Character Controllers Using Motion VAEs|![](../assets/06a-29.png)||
 
 ### Normalizing Flows
 
