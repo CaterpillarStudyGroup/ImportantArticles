@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Human Motion Generation: A Survey - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DMesh的驱动</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 基于骨骼代理的Mesh的驱动</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../CharacterAnimation/HPE_HMR_Summary.html"><strong aria-hidden="true">2.1.</strong> 3D Human Pose Estimation and Mesh Recovery</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">2.2.</strong> facial and expression</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanMotionGenerationSummary.html" class="active"><strong aria-hidden="true">2.3.</strong> Human Motion Generation: A Survey</a></li></ol></li><li class="chapter-item expanded "><a href="../MeshAnimation/E2E.html"><strong aria-hidden="true">3.</strong> 无代理的Mesh驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DGS的驱动</li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">4.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/Human4DGeneration.html"><strong aria-hidden="true">5.</strong> Human 4D Generation</a></li><li class="chapter-item expanded "><a href="../4DGeneration.html"><strong aria-hidden="true">6.</strong> 4D Generation</a></li><li class="chapter-item expanded "><a href="../AnimationGeneration.html"><strong aria-hidden="true">7.</strong> Animal Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 像素的驱动，可控视频生成</li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">8.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">9.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">9.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">9.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">9.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">9.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">9.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">9.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">9.7.</strong> Multimodal-guided generation</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">9.8.</strong> Human Video Generation</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">10.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">10.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">10.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">10.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">10.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">10.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">11.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 2D图形的驱动</li><li class="chapter-item expanded "><a href="../ClipAnimation.html"><strong aria-hidden="true">12.</strong> 2D图形驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">通用AI技术</li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">13.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">13.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">13.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">13.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">13.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">14.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">15.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">15.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">15.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">15.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">15.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">16.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">17.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">17.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">17.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">18.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">18.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">18.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">18.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">18.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">19.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">20.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../GenerativeModels.html"><strong aria-hidden="true">21.</strong> 生成模型</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">22.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../More.html"><strong aria-hidden="true">23.</strong> More</a></li><li class="chapter-item expanded affix "><li class="part-title">Views</li><li class="chapter-item expanded "><a href="../Views/20250903.html"><strong aria-hidden="true">24.</strong> 2025.9.3骨骼动作生成</a></li><li class="chapter-item expanded "><a href="../Views/20250914.html"><strong aria-hidden="true">25.</strong> 2025.9.14骨骼动作离散编码</a></li><li class="chapter-item expanded "><a href="../Views/20250920.html"><strong aria-hidden="true">26.</strong> 2025.9.20视频可控生成</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p><img src="../assets/d378e84bd11f484517ba2d687e8bb933_5_Table_1_-876463523.png" alt="" /></p>
+<pre class="mermaid">mindmap
+基于学习的动作生成
+    按生成方式分
+        自回归生成
+        非自回归生成
+            Regression
+            完形填空式（Bert Style）
+    按动作表示分
+        连续表示
+            原始表示
+            AE/VAE Latent Code
+        离散表示
+            VQ-VAE
+    按生成模型分
+        确定性映射
+        离散空间采样
+            离散分布采样(GPT Style)
+            掩码语言模型(Bert Style)
+            离散去噪扩散概率模型（D3PM）
+        连续空间采样
+            VAE
+            GAN
+            diffusion
+</pre>
+<h1 id="动作先验--动作优化"><a class="header" href="#动作先验--动作优化">动作先验 / 动作优化</a></h1>
+<p>这一个系列的论文通常包含两个主题：</p>
+<ol>
+<li>构建动作先验：<br />
+要解决的问题：如何通过数据或规则构造动作先验。</li>
+<li>基于动作先验的应用
+基于动作先验完成以下任务：<br />
+（1）动作生成任务：可以基于动作先验进行动作生成（无控制条件），生成结果为最符合动作先验的动作。<br />
+要解决的问题：怎样基于动作先验进行无条件生成<br />
+（2）动作优化任务：可以基于动作先验对已有的动作进行优化，生成结果为与原始动作最接近的且最符合动作先验的任务。<br />
+要解决的问题：怎样基于动作先验对已有动作进行优化<br />
+（3）动作生成&amp;优化任务：可以使用额外的动作生成方法（基于控制条件）先生成再优化，或者生成与优化迭代进行，得到即使符合生成要求又符合动作先验的动作。<br />
+要解决的问题：怎样把动作生成和动作优化结合起来
+（4）动作交互任务：使用额外的交互算法与用户交互，通过动作先验的约束，使得交互结果符合动作先验。<br />
+要解决的问题：如何把动作先验实时地融入到交互结果中</li>
+</ol>
+<p><em>如果一个方法中使用了多种先验，还需要考虑这些先验之间怎么结合。</em></p>
+<h2 id="基于数据的动作先验"><a class="header" href="#基于数据的动作先验">基于数据的动作先验</a></h2>
+<h3 id="vae"><a class="header" href="#vae">VAE</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>14</td><td>2021</td><td>HuMoR: 3D Human Motion Model for Robust Pose Estimation</td><td>在存在噪声和遮挡的情况下恢复合理的姿势序列</td><td>1. Humor: 一种通过创新的 条件VAE 建模的生成 3D 人体运动先验，可用于多种下游任务。<br> 2. 基于运动先验的动作生成：根据运动先验进行采样 <br> 3. 基于运动先验的动作优化，可以产生『准确且合理的运动和接触』的动作。</td><td>Condition VAE，转移关系建模，动作优化</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/14.html">link</a></td></tr>
+<tr><td></td><td>2021.3.26</td><td>Character Controllers Using Motion VAEs</td><td><img src="../assets/06a-29.png" alt="" /></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="normalizing-flows"><a class="header" href="#normalizing-flows">Normalizing Flows</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>134</td><td>2020.12.7</td><td>MoGlow: Probabilistic and controllable motion synthesis using normalising flows</td><td>基于数据的运动建模与合成</td><td>基于归一化流的新型概率化、生成式且可控的运动数据模型。<br> 1. 运动先验：通过归一化流来描述运动数据的概率分布 <br> 2. 基于运动先验的动作生成：通过随机采样从先验分布中生成新的运动数据 <br> 3. 动作生成任务：以控制信号的满足程度和动作的合理性概率为目标进行动作优化</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/134.html">link</a></td></tr>
+</tbody></table>
+<h2 id="基于规则的动作先验"><a class="header" href="#基于规则的动作先验">基于规则的动作先验</a></h2>
+<h3 id="diffusion-models"><a class="header" href="#diffusion-models">Diffusion Models</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>112</td><td>2025.6.5</td><td><strong>POMP: Physics-consistent Motion Generative Model through Phase Manifolds</strong></td><td>现有的动作生成方法聚焦于运动学，而常常物理不合理</td><td>一个基于运动学的框架，它利用相流形将运动先验与物理约束对齐，从而合成物理上真实的运动。<br> 1. 基于物理约束的运动先验：使用动力学优化动作 <br> 2. 动作生成与动作优化相结合：在每个时间步，（1）Diffusion模块生成动作，（2）仿真模块使用动力学优化动作，（3）相位编码模块：优化结果再映射回运动学数据</td><td>物理合理，自回归，动作优化</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/112.html">link</a></td></tr>
+</tbody></table>
+<h2 id="基于数据规则的动作先验"><a class="header" href="#基于数据规则的动作先验">基于数据+规则的动作先验</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>135</td><td>2025.9.11</td><td>Improving Human Motion Plausibility with Body Momentum</td><td>『附着在根关节上的局部坐标系中的局部运动』与『世界坐标系中根关节的全局运动』之间的耦合关系<br> 1. 分别处理则无法精确捕捉局部与全局动力学之间的耦合关系<br>2. 基于物理仿真（从关节扭矩和外部力推导全局轨迹）又存在计算成本高、复杂度大的问题</td><td>1. 考虑全局与局部耦合关系的运动先验：使用全身线性和角动量作为约束条件，将局部运动与全局运动联系起来，其原理为<strong>动量反映了关节层面动力学对身体空间运动的整体影响，它提供了将局部关节行为与全局位移相关联的物理基础方法</strong>。<br>2. 数据先验与物理先验的结合：从数据中学习动量曲线<br> 3. 基于运动先验的动作优化：一种新的损失项，用于强制生成动量曲线与真实数据中观测到的动量曲线保持一致。采用我们的损失函数可减少脚部滑动和抖动，改善平衡性，并保持恢复运动的准确性。</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/135.html">link</a></td><td></td></tr>
+<tr><td>114</td><td>2023</td><td>Drop: Dynamics responses from human motion prior and projective dynamics</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/114.html">link</a></td><td>基于纯运动学的方法生成结果缺乏物理性，结合物理仿真的方法缺乏扩展性</td><td><strong>利用生成式运动模型的最新进展，实现基于物理的运动合成</strong><br>1. DROP，一个高度稳定、极简的基于物理的人体模拟器，提供人体运动的物理先验。<br> 2. 数据先验与物理先验的结合：利用投影动力学，DROP将学习到的运动(数据)先验作为投影能量之一集成到牛顿动力学中<br> 3. 基于数据&amp;物理先验的动作交互：由运动（数据）先验提供动作控制，使用牛顿动力学优化结果。</td><td></td></tr>
+</tbody></table>
+<h1 id="无条件动作生成"><a class="header" href="#无条件动作生成">无条件动作生成</a></h1>
+<h3 id="gan"><a class="header" href="#gan">GAN</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>133</td><td>2022.12.18</td><td>Modi: Unconditional motion synthesis from diverse data.</td><td>从给定分布中无条件合成运动</td><td>1. MoDi——一种在无监督设置下，从极其多样化、非结构化和无标签的数据集中训练得到的生成模型。<br> 2. 将StyleGAN风格控制引入运动生成实现风格化运动生成</td><td>控制条件：无<br> 生成方式：Regression<br>表示方式：连续表示(可能是VAE)<br>生成模型：Style GAN<br>其它：模式崩溃/混合（生成动作重复或混乱）</td><td></td></tr>
+<tr><td></td><td>2022</td><td>Ganimator: Neural motion synthesis from a single sequence</td><td>小样本生成</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h1 id="text-conditioned-motion-generation"><a class="header" href="#text-conditioned-motion-generation">TEXT-CONDITIONED MOTION GENERATION</a></h1>
+<h2 id="action-to-motion"><a class="header" href="#action-to-motion">Action to Motion</a></h2>
+<h3 id="vae-1"><a class="header" href="#vae-1">VAE</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2021.10</td><td>Action-Conditioned 3D Human Motion Synthesis with Transformer VAE</td><td>生成多样且真实的3D人体动作，作为后续研究的基线<br> 不可学习的可微分SMPL层，数据依赖性强<br>– 生成长序列计算密集</td><td>ACTOR、Transformer + VAE、潜在高斯分布对齐</td><td></td></tr>
+<tr><td></td><td>2020</td><td><strong>Action2Motion</strong></td><td>– 动作条件运动生成的首个方法<br>– 基于李代数的VAE框架<br>– 构建新3D运动数据集：HumanAct12</td><td>– 泛化能力不足<br>– 仅能生成单一动作的简单运动</td><td></td></tr>
+</tbody></table>
+<h3 id="vq-vae"><a class="header" href="#vq-vae">VQ-VAE</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>92</td><td>2025</td><td>Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis</td><td>基于score的生成模型，其训练过程涉及复杂的曲率轨迹，导致训练稳定性不足。</td><td>1. 第一阶段通，运动重建(VQ-VAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。</td><td>控制条件： Action Label <br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br><strong>生成模型：flow matching + score matching</strong></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/92.html">link</a></td></tr>
+</tbody></table>
+<h3 id="normalizing-flows-1"><a class="header" href="#normalizing-flows-1">Normalizing Flows</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2024.7</td><td>Stylevr: Stylizing character animations with normalizing flows</td><td>Style Label</td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="diffusion"><a class="header" href="#diffusion">Diffusion</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023</td><td>Executing your Commands via Motion Diffusion in Latent Space</td><td>潜在空间DDPM	在潜在空间应用扩散模型，降低计算复杂度	与DDPM相同的采样效率问题	潜在空间压缩提升生成速度</td><td>MLD</td><td></td></tr>
+</tbody></table>
+<h2 id="text-to-motion"><a class="header" href="#text-to-motion">Text to Motion</a></h2>
+<h3 id="潜在表征对齐"><a class="header" href="#潜在表征对齐">潜在表征对齐</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>100</td><td>2025.5.16</td><td>MoCLIP: Motion-Aware Fine-Tuning and Distillation of CLIP for Human Motion Generation</td><td>一种代替CLIP的文本编码方式，其编码空间能跟Motion有更好的对齐，因此更适用于文生动作任务。<br> MoCLIP是CLIP的Motion版，不能独立使用，需结束基于CLIP的文生动作Pipeline。</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/100.html">link</a></td></tr>
+<tr><td></td><td>2023</td><td><strong>TMR [120]</strong></td><td>改进自TEMOS，提升文本-动作对齐，支持检索与生成，根据文本输出3D动作/跨模态检索结果<br>对比损失优化联合潜在空间，过滤误导性负样本（MPNet）<br>引入CLIP式对比学习，优化负样本选择策略提升检索性能 <br> TEMOS/TMR通过共享潜在空间实现跨模态对齐，TMR进一步引入对比损失提升检索能力。</td><td>VAE隐空间对比学习<br>文本描述相似性过滤策略<br>泛化能力不足<br>部分场景内存效率低</td><td></td></tr>
+<tr><td></td><td>2022</td><td>Motionclip: Exposing human motion generation to clip space</td><td>将运动潜空间直接对齐CLIP的语义文本嵌入，实现零样本泛化能力。然而，CLIP嵌入主要捕获静态图文语义，难以完整表征真实运动合成所需的时序与运动学细节。此外，直接微调CLIP嵌入可能导致预训练语义知识的灾难性遗忘。</td><td></td><td></td></tr>
+<tr><td></td><td>2022</td><td>Temos: Generating diverse human motions from textual descriptions.</td><td>改进自ACTOR<br>实现文本到SMPL动作的生成 <br> 共享潜在空间中文本与动作表征对齐（跨模态一致性）<br>对称编码器（动作序列+冻结DistilBERT文本编码器），共享潜在空间<br> 虽然生成运动真实，但存在内存消耗大（二次内存消耗、不适于长运动）、长序列处理弱、多样性不足的问题。<br>– 跨模态嵌入相似性 – <br>– 文本拼写错误时易失效<br>– 多样性不足</td><td>Transformer VAE、潜在空间对齐，非自回归</td><td></td></tr>
+</tbody></table>
+<h3 id="vae-2"><a class="header" href="#vae-2">VAE</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025</td><td>BAMM: Bidirectional Autoregressive Motion Model.</td><td>bert style <br> – 条件掩码自注意力Transformer<br>– 混合注意力掩码训练</td><td>– 中等计算复杂度<br>– 无法生成快速变化的根运动</td><td></td></tr>
+<tr><td></td><td>2022</td><td><strong>TEACH [118]</strong></td><td>扩展自TEMOS，处理连续文本指令生成连贯动作<br>分层生成：非自回归（单个动作内） + 自回归（动作间时序组合）<br>分层策略实现时序组合与平滑过渡 <br> TEACH结合非自回归与自回归生成平衡质量与效率。<br> 存在的问题： 动作过渡时易出现加速度峰值</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>ATOM</strong> [Zhai et al., 2023]</td><td>– CVAE分解复杂动作为原子动作<br>– 基于掩码运动的课程学习策略</td><td>– 解释复杂文本能力有限<br>– 文本-运动特征融合策略不足</td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>MultiAct</strong> [Lee et al., 2023]</td><td>– 条件VAE架构<br>– 生成多动作长序列模型</td><td>– 生成不真实运动<br>– 无法生成复杂多样动作序列</td><td></td></tr>
+<tr><td></td><td>2022</td><td><strong>ImplicitMotion</strong> [Cervantes et al., 2022]</td><td>– 变分隐式神经表示<br>– 线性计算成本</td><td>– 参数更新导致性能不稳定</td><td></td></tr>
+<tr><td></td><td>2022</td><td><strong>UM-CVAE</strong> [Zhong et al., 2022]</td><td>– 解耦序列级CVAE<br>– 基于FiLM的动作感知调制</td><td>– 无法生成全新动作<br>– 生成运动质量有限（数据依赖）</td><td></td></tr>
+<tr><td></td><td>2022</td><td><strong>PoseGPT</strong> [Lucas et al., 2022]</td><td>– 类GPT模型预测隐空间索引<br>– 量化隐空间的编码器-解码器架构</td><td>– 量化方案限制运动多样性</td><td></td></tr>
+<tr><td></td><td>2022</td><td><strong>Action-GPT</strong> [Kalakonda et al., 2022]</td><td>– 首个基于LLM的文本条件运动生成<br>– 兼容VAE模型的模块</td><td>– 无法生成长序列<br>– 不支持复杂身体运动（瑜伽/舞蹈）<br>– 无手指运动</td><td></td></tr>
+<tr><td></td><td>2022a</td><td>Generating diverse and natural 3d human motions from text</td><td>两阶段（卷积AE + 时序VAE）分阶段生成文本对应动作 <br> 预训练运动编码器提取片段；时序VAE生成运动代码序列 <br> 两阶段框架（先编码运动代码，再生成序列） <br> – text2length阶段确定运动时长<br>– text2motion阶段用时序VAE生成运动 <br> – 无法处理罕见动作（如“跺脚”）<br>– 细粒度描述和复杂动作失败<br>– 生成运动不真实</td><td>T2M, Transformer VAE</td><td></td></tr>
+</tbody></table>
+<table><thead><tr><th>方法名称</th><th>主要贡献</th><th>局限性</th></tr></thead><tbody>
+</tbody></table>
+<h3 id="score-matching"><a class="header" href="#score-matching">Score Matching</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>102</td><td>2025.5.16</td><td>HGM³: Hierarchical Generative Masked Motion Modeling with Hard Token Mining</td><td>由于文本固有的歧义性以及人体运动动态的复杂性</td><td>1. 类似MoMask的残差VQ-VAE，但专门训练了一个网络来决定给哪些token掩码 <br> 2. 把文本编码成不同粒度的embedding，提升文本的整体把控与细节控制</td><td>控制条件：文本（Graph Reasoning）<br> 生成方式：Bert Style<br>表示方式：离散表示（分层文本编码，每一层是残差VQ-VAE）<br>生成模型：残差VQ-VAE(类似于Diffusion的逐渐细化的生成模式)</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/102.html">link</a></td></tr>
+</tbody></table>
+<h3 id="vq-vae-1"><a class="header" href="#vq-vae-1">VQ-VAE</a></h3>
+<p>VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问题从回归任务转化为分类任务。然而受限于码本结构，VQ-VAE倾向于存储已知动作而非泛化到新动作。虽然这些模型在训练数据分布内能精确生成和重建动作，却难以处理分布外运动导致信息损失和动作感知失真。</p>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025</td><td>BAD: Bidirectional Auto-Regressive Diffusion for Text-to-Motion Generation</td><td></td><td>bert style</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td>MMM: Generative Masked Motion Model.</td><td>bert style:训练中随机掩码部分标记，模型基于文本和上下文重建。<br> – 条件掩码运动模型 <br> – 无法生成长而详细的文本描述</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td>AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism.</td><td>– 基于身体部位注意力的时空VQ-VAE<br>– 全局-局部注意力学习跨模态关系 <br> – 长文本驱动生成多样性不足<br>– 数据依赖（无法生成未见运动）</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td>Priority-Centric Human Motion Generation in Discrete Latent Space</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023.12.15</td><td>MotionGPT: Human Motion as a Foreign Language.</td><td>运动分词器转换运动为离散编码</td><td>T5文本嵌入</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td><strong>T2LM</strong> [Lee et al., 2024]</td><td>处理多句子文本生成长且复杂的动作序列，直接学习端到端文本-运动映射。<br> – 连续长期VQ-VAE生成框架<br>– 1D(时序维度)卷积VQ-VAE（避免时序不一致）<br> – 无法生成细粒度运动<br>– 仅支持短文本描述</td><td>1D卷积VQ-VAE + Transformer，长序列生成</td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="掩码语言模型bert-style"><a class="header" href="#掩码语言模型bert-style">掩码语言模型（Bert Style）</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023</td><td>MoMask: Generative Masked Modeling of 3D Human Motions</td><td>VQ-VAE + Bert Style的文生动作新框架</td><td>VQ-VAE + 分层码本结构；掩码预测生成粗糙运动，残差层逐步细化<br> 首个离散运动表示+掩码语言模型的文生动作框架</td><td>控制条件：文本（CLIP）<br> 生成方式：Bert Style<br>表示方式：离散表示（VQ-VAE + 残差细化）<br>生成模型：掩码语言模型</td><td></td></tr>
+</tbody></table>
+<h3 id="离散分布采样gpt-style"><a class="header" href="#离散分布采样gpt-style">离散分布采样（GPT Style）</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>88</td><td>2023.9.24</td><td>T2m-gpt: Generating human motion from textual descriptions with discrete representations</td><td>基于VQ-VAE与GPT的文生人体运动框架</td><td>1. 基于VQ-VAE的离散运动表示<br> 2. VQ-VAE + Transformer（GPT）的文生动作框架**<br> 3. 生成质量(FID)有明显提升</td><td>控制条件：文本（CLIP）<br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散分布采样（GPT）<br>其它：Transformer，开源</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/88.html">link</a></td></tr>
+<tr><td></td><td>2022.8.4</td><td>TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts.</td><td>文生3D全身动作，实现同文本生成多个差异化动作，并避免产生无意义的静止姿态序列。</td><td>首次提出离散量化的运动表示 <br>互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了语义对齐能力。</td><td>控制条件：文本（NMT Encoder）<br> 生成方式：自回归<br>表示方式：离散表示（同VQ-VAE，但没有使用这个词）<br>生成模型：离散分布采样（NMT Decoder）</td><td></td></tr>
+</tbody></table>
+<h3 id="diffusion-1"><a class="header" href="#diffusion-1">Diffusion</a></h3>
+<p>基于扩散的方法直接在连续运动空间操作（如原始动作数据或VAE编码的隐表征），支持高质量动作生成。但这些方法主要进行片段级建模——一次性生成整个动作序列的所有帧。该设计使得修改特定帧时难以保持整体动作一致性与质量。且通常仍局限于粗粒度语义引导或轨迹级控制，导致其缺乏细粒度时间控制能力，用户无法在生成过程中精确定义或编辑动作细节。</p>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.5.28</td><td>UniMoGen: Universal Motion Generation</td><td></td><td><strong>骨架无关</strong>的动作生成</td><td><a href="134.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.27</td><td>IKMo: Image-Keyframed Motion Generation with Trajectory-Pose Conditioned Motion Diffusion Model</td><td></td><td>基于扩散模型的运动生成方法，其核心在于<strong>解耦轨迹与姿态输入</strong></td><td><a href="130.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.26</td><td>Absolute Coordinates Make Motion Generation Easy</td><td></td><td>全局空间中的<strong>绝对关节坐标</strong>表示方法的文生动作</td><td><a href="123.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.23</td><td>Multi-Person Interaction Generation from Two-Person Motion Priors</td><td></td><td>利用现有双人运动扩散模型作为运动先验，生成逼真且多样化的多人交互动作</td><td><a href="119.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.20</td><td>Large-Scale Multi-Character Interaction Synthesis</td><td></td><td>生成大规模多角色交互的角色动画</td><td><a href="105.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.19</td><td>UniHM: Universal Human Motion Generation with Object Interactions in Indoor Scenes</td><td></td><td>整合静态环境、可移动物体、自然语言提示和空间路径点等多模态信息的文生动作</td><td><a href="97.html">link</a></td><td></td></tr>
+<tr><td>101</td><td>2025.5.16</td><td>Towards Robust and Controllable Text-to-Motion via Masked Autoregressive Diffusion</td><td>1. 递归式地补充部分帧（类似MoMask），直到全部生成 <br> 2. 帧级VAE</td><td>VAE + diffusion</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/101.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.15</td><td>Dyadic Mamba: Long-term Dyadic Human Motion Synthesis</td><td></td><td>文生超长序列双人动作</td><td><a href="89.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.5.8</td><td>ReAlign: Bilingual Text-to-Motion Generation via Step-Aware Reward-Guided Alignment</td><td></td><td>双语文本输入合成3D人体运动</td><td><a href="59.html">link</a></td><td></td></tr>
+<tr><td></td><td>2025.4.23</td><td>PMG: Progressive Motion Generation via Sparse Anchor Postures Curriculum Learning</td><td></td><td><strong>更高控制精度和更精细的运动生成</strong></td><td><a href="6.html">link</a></td><td></td></tr>
+<tr><td></td><td>2024.3.26</td><td><strong>Move as you say, interact as you can: Language-guided human motion generation with scene affordance</strong></td><td></td><td>3D环境中的文生3D动作</td><td><a href="63.html">link</a></td><td></td></tr>
+<tr><td></td><td>2024</td><td>M2D2M</td><td>先用VQ-VAE获取离散运动编码，再在标记序列上学习去噪扩散模型。为多动作生成设计动态转移概率确保动作间平滑过渡。</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td>Seamless human motion composition with blended positional encodings</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024.5</td><td>Flexible motion in-betweening with diffusion models</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024.4</td><td>Motionlcm: Real-time controllable motion generation via latent consistency model</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Make-an-Athlete</td><td>两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023.10.1</td><td>ReMoDiffuse: RetrievalAugmented Motion Diffusion Model</td><td>检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023.10</td><td>Humantomato: Text-aligned whole-body motion generation</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023.6.26</td><td>Flame: Free-form language-based motion synthesis &amp; editing</td><td>纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合</td><td>Flame</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>MoFusion</td><td>轻量1D U-Net，三大约束损失（运动学一致性），显著提升效率与长序列质量</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td>MakeAnAnimation</td><td>摒弃了顺序生成（通过特定的损失函数强制保证时序一致性）的方式，仅依赖于标准的扩散损失。<br>两阶段训练。先在一个大型静态 3D 姿态数据集上进行预训练，以学习姿态-文本的关联。<br> 通过其并行采样策略和大规模预训练策略保持运动的连续性。</td><td>U-Net， T5</td><td></td><td></td></tr>
+<tr><td></td><td>2022.9.29</td><td>Human Motion Diffusion Model</td><td>1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声<br>计算开销大、推理速度低，仅适合短序列生成</td><td>HMDM, MDM, CLIP, transformer</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td><strong>MMDM</strong> [Chen]</td><td>– 跨时间帧与身体部位的掩码建模策略</td><td>– 计算成本高昂</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>priorMDM</strong> [Shafir et al.]</td><td>– 并行组合：双运动同步生成<br>– 串行组合：多动作长动画生成</td><td>– 依赖初始模型质量<br>– 长间隔运动不一致<br>– 泛化能力不足</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td><strong>FlowMDM</strong> [Barquero et al.]</td><td>– 混合位置编码<br>– 姿态中心化交叉注意力<br>– 构建两项新指标（检测突变过渡）</td><td>– 复杂文本描述生成失败<br>– 部分过渡轻微不匹配</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>Physdiff</strong> [Yuan et al.]</td><td>– 生成过程注入物理约束<br>– 联合训练框架（真实运动+仿真数据）</td><td>– 物理模拟器导致计算复杂度极高</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>MoFusion</strong> [Dabral et al.]</td><td>– 轻量1D U-Net网络 + 跨模态Transformer<br>– 运动学损失的时变权重调度</td><td>– 推理时间长<br>– 文本条件词汇受限</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>FLAME</strong> [Kim et al.]</td><td>– 预训练大模型编码文本（Roberta）<br>– Transformer解码器的掩码策略</td><td>– 计算成本高昂</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>DiffGesture</strong> [Zhu et al.]</td><td>– 扩散音频-手势Transformer（多模态信息处理）<br>– 扩散手势稳定器消除时序不一致</td><td>– 数据多样性不足<br>– 计算成本高昂</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>LDA</strong> [Alexanderson et al.]</td><td>– 基于Conformer的扩散模型<br>– 构建音频+高质量3D运动新数据集</td><td>– 依赖语音特征提取<br>– 计算开销大</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>ReMoDiffuse</strong> [Zhang et al.]</td><td>– 检索增强运动扩散模型<br>– 语义调制Transformer</td><td>– 数据依赖性强<br>– 计算成本高昂</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>FineMoGen</strong> [Zhang et al.]</td><td>– 时空混合注意力机制<br>– 构建大规模语言-运动数据集（HuMMan-MoGen）</td><td>– 运动数据格式支持有限<br>– 依赖大型语言模型</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>Fg-T2M</strong> [Wang et al.]</td><td>– 语言结构辅助模块<br>– 上下文感知渐进推理模块</td><td>– 受限于语言模型能力</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>MAA</strong> [Azadi et al.]</td><td>– 文本条件3D静态姿态数据集预训练扩散模型<br>– 时序扩展与运动数据集微调</td><td>– 计算成本高<br>– 生成部分不自然运动</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td><strong>StableMoFusion</strong> [Huang et al.]</td><td>– 消除足部滑动的有效机制<br>– 系统分析扩散运动生成流程组件</td><td>– 推理速度慢（计算成本高）</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>MLD</strong> [Chen et al.]</td><td>– 基于运动Transformer的VAE<br>– 隐空间条件扩散</td><td>– 生成运动长度受限<br>– 仅支持人体主干（无手部/面部动作）</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>M2DM</strong> [Kong et al.]</td><td>– 基于Transformer的VQ-VAE<br>– 优先级中心化方案</td><td>– 难以捕捉运动细粒度细节</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>UDE</strong> [Zhou and Wang]</td><td>– 统一文本/音频驱动的单模型<br>– 基于扩散的解码器</td><td>– 处理多模态复杂交互困难</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td><strong>GestureDiffuCLIP</strong> [Ao et al.]</td><td>– 多模态提示控制风格（文本+语音）<br>– CLIP引导的语音同步手势合成</td><td>– 数据依赖性强<br>– CLIP对细节运动建模有限</td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td><strong>M2D2M</strong> [Chi et al.]</td><td>– 动态转移概率模型<br>– 新评估指标Jerk（动作边界平滑度）</td><td>– Jerk指标无法评估所有场景</td><td></td><td></td></tr>
+<tr><td></td><td>2025</td><td><strong>EMDM</strong> [Zhou et al.]</td><td>– 条件去噪扩散GAN<br>– 快速扩散方案</td><td>– 可能违反物理定律（如漂浮/地面穿透）</td><td></td><td></td></tr>
+<tr><td></td><td>2025</td><td><strong>Motion Mamba</strong> [Zhang et al.]</td><td>– 双模块去噪U-Net：<br> • 分层时序Mamba<br> • 双向空间Mamba</td><td>– 未展示短序列性能<br>– 模型泛化能力未验证</td><td></td><td></td></tr>
+<tr><td>132</td><td>2022.8.31</td><td>MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model</td><td>根据多样化文本输入实现细腻且精细的运动生成</td><td>首个基于扩散模型的文本驱动运动生成框架，通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br> 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br> 在噪声空间对不同片断的融合，实现长序列的生成</td><td>控制条件：文本（CLIP）<br>生成方式：非自回归<br>表示方式：连续表示（原始数据）<br>生成模型：DDPM<br>其它：Transformer，开源</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/132.html">link</a></td></tr>
+</tbody></table>
+<h3 id="离散去噪概率模型"><a class="header" href="#离散去噪概率模型">离散去噪概率模型</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023.9.4</td><td>DiverseMotion: Towards Diverse Human Motion Generation via Discrete Diffusion</td><td>在动作质量与多样性之间取得平衡仍是一个未解决的挑战。该问题主要由两个关键因素导致：<br> 1）现有基准数据集中动作-描述对缺乏多样性；<br> 2）对文本提示存在片面且有偏差的语义理解，主要关注动词成分而忽略其他词语所指示的微妙差异。</td><td>1. 构建了大规模野生动作-描述数据集（WMC）<br> 2. 提出分层语义聚合（HSA）模块来捕获细粒度语义。<br> 3. 将上述设计整合到有效的动作离散扩散（MDD）框架中</td><td>控制条件：文本（分层语义聚合HSA）<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：动作离散扩散（MDD）框架 <br> 其它：数据集</td></tr>
+<tr><td></td><td>2023</td><td>Text-to-Motion Synthesis using Discrete Diffusion Model</td><td>扩散模型计算成本较高，且生成的运动可能与输入文本对齐度不足。</td><td>结合离散潜在空间与扩散模型，学习表达性条件概率映射以实现运动合成。<br>1. 学习离散运动表达 <br> 2. 应用离散去噪扩散概率模型（D3PM）学习运动标记的条件概率分布。<br> 3. 训练过程中进一步采用离散无分类器引导技术，通过合适的引导尺度实现运动与对应文本描述的对齐。</td><td>控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：MoDDM</td></tr>
+</tbody></table>
+<h1 id="motion-conditioned-motion-generation"><a class="header" href="#motion-conditioned-motion-generation">Motion-Conditioned Motion Generation</a></h1>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>27</td><td>2024</td><td>Learning Human Motion from Monocular Videos via Cross-Modal Manifold Alignment</td><td>2D轨迹生成3D Motion</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/27.html">link</a></td></tr>
+<tr><td>19</td><td>2024</td><td>WANDR: Intention-guided Human Motion Generation</td><td>基于初始与结束状态控制的动作生成。</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/19.html">link</a></td></tr>
+<tr><td>113</td><td>2017</td><td>Phasefunctioned neural networks for character control</td><td>PFNN</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/113.html">link</a></td></tr>
+</tbody></table>
+<h3 id="vq-vae-2"><a class="header" href="#vq-vae-2">VQ-VAE</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2024</td><td>AvatarGPT: All-in-One Framework for Motion Understanding, Planning, Generation and Beyond</td><td></td><td></td><td></td></tr>
+<tr><td>87</td><td>2024.3.24</td><td>MotionGPT: Finetuned LLMs are General-Purpose Motion Generators</td><td>1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法</td><td>VQ-VAE + LLM + LoRA, 文本/key frame -&gt; motion</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/87.html">link</a></td></tr>
+</tbody></table>
+<h3 id="diffusion-2"><a class="header" href="#diffusion-2">Diffusion</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2024</td><td>MotionLCM: Real-Time Controllable Motion Generation via Latent Consistency Model</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024.7.16</td><td>LengthAware Motion Synthesis via Latent Diffusion</td><td></td><td></td><td></td></tr>
+<tr><td>85</td><td>2024</td><td>OmniControl: Control Any Joint at Any Time for Human Motion Generation</td><td>1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。</td><td>MDM，GMD，精确控制，ControlNet</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/85.html">link</a></td></tr>
+<tr><td></td><td>2024.3.24</td><td>AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td>EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation</td><td>原始空间扩散+对抗训练+部分观测数据条件	生成物理合理性提升	计算成本极高（百步迭代）</td><td></td><td></td></tr>
+<tr><td>86</td><td>2023</td><td>Guided Motion Diffusion for Controllable Human Motion Synthesis</td><td>将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹-&gt;稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成</td><td>GMD，轨迹控制</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/86.html">link</a></td></tr>
+</tbody></table>
+<h3 id="training-free"><a class="header" href="#training-free">Training Free</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.5.2</td><td><strong>TSTMotion: Training-free Scene-awarenText-to-motion Generation</strong></td><td></td><td>场景感知，文生动作</td><td><a href="38.html">link</a></td></tr>
+<tr><td></td><td>2024</td><td>“Move as you say, interact as you can: Language-guided human motion generation with scene affordance</td><td>AffordMotion</td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td>Synthesizing diverse human motions in 3d indoor scenes</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2022</td><td>Humanise: Language-conditioned human motion generation in</td><td></td><td></td><td></td></tr>
+<tr><td>3d scenes</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h1 id="audio-conditioned-motion-generation"><a class="header" href="#audio-conditioned-motion-generation">AUDIO-CONDITIONED MOTION GENERATION</a></h1>
+<h2 id="music-to-dance"><a class="header" href="#music-to-dance">Music to Dance</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.5.26</td><td>PAMD: Plausibility-Aware Motion Diffusion Model for Long Dance Generation</td><td></td><td>合理性感知运动扩散模型 (PAMD)的音乐生成舞蹈</td><td><a href="124.html">link</a></td></tr>
+<tr><td></td><td>2025.5.14</td><td>CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation</td><td></td><td>单阶段音频驱动的说话身体生成</td><td><a href="78.html">link</a></td></tr>
+<tr><td></td><td>2025.5.8</td><td>ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation</td><td></td><td>反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作</td><td><a href="67.html">link</a></td></tr>
+<tr><td></td><td>2025.5.7</td><td>ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition</td><td></td><td>生成乐器演奏动作</td><td><a href="56.html">link</a></td></tr>
+<tr><td></td><td>2025.5.6</td><td>PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model</td><td></td><td>音频驱动上半身人体动画</td><td><a href="48.html">link</a></td></tr>
+<tr><td></td><td>2023</td><td><strong>TM2D</strong> [Gong et al., 2023]</td><td>– VQ-VAE框架<br>– 双模态特征融合（跨模态Transformer）</td><td>– 缺乏配对数据（音乐/文本）<br>– 限于特定舞蹈风格（数据依赖）</td><td></td></tr>
+<tr><td></td><td>2023</td><td>Listen, denoise, action! audio-driven motion synthesis with diffusion models</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2022</td><td>Edge: Editable dance generation from music</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="speech-to-gesture"><a class="header" href="#speech-to-gesture">Speech to Gesture</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.6.1</td><td>TRiMM: Transformer-Based Rich Motion Matching for Real-Time multi-modal Interaction in Digital Humans</td><td></td><td>实时3D手势生成</td><td><a href="146.html">link</a></td></tr>
+<tr><td></td><td>2025.5.29</td><td>MMGT: Motion Mask Guided Two-Stage Network for Co-Speech Gesture Video Generation</td><td></td><td>利用音频，以及从音频信号生成的<strong>运动掩码</strong>和<strong>运动特征</strong>，共同驱动生成同步的语音-手势视频</td><td><a href="139.html">link</a></td></tr>
+<tr><td></td><td>2025.5.22</td><td>MEgoHand: Multimodal Egocentric Hand-Object Interaction Motion Generation</td><td></td><td>以自我为中心的手-物体运动生成</td><td><a href="112.html">link</a></td></tr>
+<tr><td></td><td>2025.5.21</td><td>Intentional Gesture: Deliver Your Intentions with Gestures for Speech</td><td></td><td>意图驱动手势生成框架</td><td><a href="110.html">link</a></td></tr>
+<tr><td></td><td>2025.5.14</td><td><strong>Robust Photo-Realistic Hand Gesture Generation: from Single View to Multiple View</strong></td><td></td><td>高保真手势生成</td><td><a href="94.html">link</a></td></tr>
+<tr><td></td><td>2025.5.3</td><td>Co$^{3}$Gesture: Towards Coherent Concurrent Co-speech 3D Gesture Generation with Interactive Diffusion</td><td></td><td>语音生成手势、双人交互、数据集</td><td><a href="43.html">link</a></td></tr>
+<tr><td></td><td>2024</td><td>Diffsheg: A diffusion-based approach for real-time speech-driven holistic 3d expression and gesture generation</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td>Emotional speech-driven 3d body animation via disentangled latent diffusion</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2024</td><td>Semantic gesticulator: Semantics-aware co-speech gesture synthesis</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>2023</td><td>Gesturediffuclip: Gesture diffusion model with clip latents</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h1 id="scene-conditioned-motion-generation"><a class="header" href="#scene-conditioned-motion-generation">SCENE-CONDITIONED MOTION GENERATION</a></h1>
+<h2 id="确定性映射"><a class="header" href="#确定性映射">确定性映射</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>131</td><td>2016</td><td>A deep learning framework for character motion synthesis and editing</td><td>自动生成角色动作数据</td><td>深开创了Deep Learning Based运动生成的先河</td><td>控制条件：轨迹条件、风格条件（风格迁移）生成方式：非自回归<br>表示方式：连续表示（AE）<br>生成模型：确定性映射</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/131.html">link</a></td></tr>
+</tbody></table>
+<h3 id="vae-based"><a class="header" href="#vae-based">VAE Based</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.6.18</td><td>HOIDiNi: Human-Object Interaction through Diffusion Noise Optimization</td><td></td><td></td><td><a href="202.html">link</a></td></tr>
+<tr><td>29</td><td>2024</td><td>PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios</td><td>基于2D轨迹或视频的行人动作生成</td><td></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/29.html">link</a></td></tr>
+</tbody></table>
+<hr />
+<h1 id="3d人体运动生成与合成数据集"><a class="header" href="#3d人体运动生成与合成数据集"><strong>3D人体运动生成与合成数据集</strong></a></h1>
+<table><thead><tr><th><strong>数据集名称</strong></th><th><strong>关键统计</strong></th><th><strong>模态</strong></th><th><strong>链接/备注</strong></th></tr></thead><tbody>
+<tr><td><strong>Motion-X++ [301]</strong></td><td>1950万3D姿势，120,500序列，80,800视频，45,300音频，自由文本描述</td><td>3D/点云、文本、音频、视频</td><td><a href="https://mocap.cs.cmu.edu/">Motion-X++</a></td></tr>
+<tr><td><strong>HumanMM (ms-Motion) [308]</strong></td><td>120长序列（237分钟），600多视角视频重建，包含罕见交互动作</td><td>3D/点云、视频</td><td>HumanMM</td></tr>
+<tr><td><strong>Multimodal Anatomical [309]</strong></td><td>51,051姿势（53解剖标记），48虚拟视角，2000+病理运动变体</td><td>3D/点云、文本</td><td>Multimodal Anatomical Motion</td></tr>
+<tr><td><strong>AMASS [242]</strong></td><td>11,265动作片段（43小时），整合15个数据集（如CMU、KIT），SMPL格式，100+动作类别</td><td>3D/点云</td><td><a href="https://amass.is.tue.mpg.de/">AMASS</a></td></tr>
+<tr><td><strong>HumanML3D [119]</strong></td><td>14,616序列（28.6小时），44,970文本描述，200+动作类别</td><td>3D/点云、文本</td><td><a href="https://github.com/EricGuo5513/HumanML3D">HumanML3D</a></td></tr>
+<tr><td><strong>BABEL [307]</strong></td><td>43小时动作（AMASS数据），250+动词中心动作类别，13,220序列，含时序动作边界</td><td>3D/点云、文本</td><td><a href="https://babel.is.tue.mpg.de/">BABEL</a></td></tr>
+<tr><td><strong>AIST++ [246]</strong></td><td>1,408舞蹈序列（1010万帧），9摄像机视角，15小时多视角视频</td><td>3D/点云、视频</td><td><a href="https://google.github.io/aichoreographer/">AIST++</a></td></tr>
+<tr><td><strong>3DPW [245]</strong></td><td>60序列（51,000帧），多样化室内/室外场景，挑战性姿势与物体交互</td><td>3D/点云、视频</td><td><a href="https://virtualhumans.mpi-inf.mpg.de/3DPW/">3DPW</a></td></tr>
+<tr><td><strong>PROX [310]</strong></td><td>20受试者，12交互场景，180标注RGB帧，场景感知运动分析</td><td>3D/点云、图像</td><td><a href="https://prox.is.tue.mpg.de/">PROX</a></td></tr>
+<tr><td><strong>KIT-ML [304]</strong></td><td>3,911动作片段（11.23小时），6,278自然语言标注（52,903词），BVH/FBX格式</td><td>3D/点云、文本</td><td><a href="https://motion-annotation.humanoids.kit.edu/">KIT-ML</a></td></tr>
+<tr><td><strong>CMU MoCap</strong></td><td>2605试验，6大类23子类，140+受试者</td><td>3D/点云、音频</td><td><a href="https://mocap.cs.cmu.edu/">CMU MoCap</a></td></tr>
+</tbody></table>
+<hr />
+<h1 id="文本到动作生成评估指标"><a class="header" href="#文本到动作生成评估指标"><strong>文本到动作生成评估指标</strong></a></h1>
+<table><thead><tr><th><strong>评估指标</strong></th><th><strong>定义/计算方式</strong></th><th><strong>用途</strong></th><th><strong>典型基准</strong></th></tr></thead><tbody>
+<tr><td><strong>FID (Fréchet Inception Distance)</strong></td><td>比较生成与真实动作特征分布的Fréchet距离（低值表示更真实）</td><td>真实性评估（如虚拟现实应用）</td><td>HumanML3D, KIT Motion-Language</td></tr>
+<tr><td><strong>R-Precision [311]</strong></td><td>在共享嵌入空间中，正确文本在Top-k匹配中的比例（如Top-1/3）</td><td>语义一致性（文本-动作对齐）</td><td>HumanML3D, BABEL</td></tr>
+<tr><td><strong>MultiModal Distance [312]</strong></td><td>动作与文本嵌入的欧氏距离（低值表示强语义耦合）</td><td>跨模态语义对齐量化</td><td>ExpCLIP [41], TMR [120]</td></tr>
+<tr><td><strong>Diversity [313]</strong></td><td>随机采样动作对的平均距离（高值表示生成多样性）</td><td>动作空间覆盖广度</td><td>DiverseMotion [122], Motion Anything [125]</td></tr>
+<tr><td><strong>Multimodality [313]</strong></td><td>同一文本生成多动作的方差（高值表示单提示下的多样性）</td><td>单提示多样性（避免重复）</td><td>MoMask [123], TEACH [118]</td></tr>
+<tr><td><strong>用户研究 (User Studies)</strong></td><td>人工评分自然度、情感表达、上下文相关性</td><td>主观质量评估（自动化指标补充）</td><td>研究论文中常用（如[314]）</td></tr>
+</tbody></table>
+<hr />
+<h1 id="补充"><a class="header" href="#补充">补充</a></h1>
+<h2 id="离散表示-vs-连续表示对比表"><a class="header" href="#离散表示-vs-连续表示对比表">离散表示 vs 连续表示对比表</a></h2>
+<table><thead><tr><th><strong>对比维度</strong></th><th><strong>离散表示</strong></th><th><strong>连续表示</strong></th></tr></thead><tbody>
+<tr><td><strong>运动编码</strong></td><td>VQ-VAE或量化器从姿态序列生成运动token</td><td>自编码器或直接使用原始连续姿态数据</td></tr>
+<tr><td><strong>生成模型</strong></td><td>Transformer（如GPT）<br>掩码模型（如BERT）<br>离散扩散模型</td><td>原始运动空间的扩散模型<br>隐空间扩散（如LDMs）</td></tr>
+<tr><td><strong>文本对齐</strong></td><td>易与NLP模型集成<br>可将运动视为&quot;语言&quot;</td><td>需注意力/跨模态融合<br>映射结构较弱</td></tr>
+<tr><td><strong>训练稳定性</strong></td><td>易发码本坍塌和量化伪影</td><td>扩散中连续MSE损失保障稳定性</td></tr>
+<tr><td><strong>保真度与多样性</strong></td><td>码本大时保真度高<br>多样性受限</td><td>随机采样天然多样<br>表现力强</td></tr>
+<tr><td><strong>推理速度</strong></td><td>小型自回归模型快<br>长序列慢</td><td>迭代采样通常较慢<br>LDMs可提速</td></tr>
+<tr><td><strong>控制与编辑</strong></td><td>支持掩码修复<br>token级符号控制</td><td>精细编辑（如FLAME）<br>支持帧/关节控制（如SALAD）</td></tr>
+<tr><td><strong>流式/在线能力</strong></td><td>自回归解码受限<br>非因果序列阻碍实时性</td><td>因果隐变量支持流式生成<br>（如MotionStreamer）</td></tr>
+<tr><td><strong>常见局限</strong></td><td>量化信息损失<br>分词器训练困难</td><td>计算成本高<br>文本精确对齐难</td></tr>
+<tr><td><strong>代表工作</strong></td><td>T2M-GPT [2023]<br>MMM [2024]<br>MotionGPT [2023]<br>MoDDM [2023]<br>M2D2M [2024]</td><td>MotionDiffuse [2022]<br>MoFusion [2023]<br>FLAME [2023]<br>SALAD [2025]<br>MoLA [2024]<br>MotionStreamer [2025]</td></tr>
+</tbody></table>
+<h1 id="reference"><a class="header" href="#reference">Reference</a></h1>
+<ol>
+<li>Generative AI for Character Animation: A Comprehensive Survey of Techniques, Applications, and Future Directions</li>
+<li>Human Motion Generation Summary</li>
+<li>Text-driven Motion Generation: Overview, Challenges and Directions</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../CharacterAnimation/HumanFacialAnimation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../MeshAnimation/E2E.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../CharacterAnimation/HumanFacialAnimation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../MeshAnimation/E2E.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+        <script type="text/javascript" src="../theme/mermaid.min.js"></script>
+        <script type="text/javascript" src="../theme/mermaid-init.js"></script>
+    </body>
+</html>
