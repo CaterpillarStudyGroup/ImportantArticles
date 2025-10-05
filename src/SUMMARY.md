@@ -5,6 +5,7 @@
 # 动画3D管线 - 3DMesh的驱动
 
 - [基于骨骼代理的Mesh的驱动]()
+  - [骨骼动作先验](MeshAnimation/SkeletonProxy/MotionPrior.md)
   - [3D Human Pose Estimation and Mesh Recovery](CharacterAnimation/HPE_HMR_Summary.md)
   - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
   - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
