@@ -18,7 +18,7 @@
 ||2025.5.1|T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation|| 文生视频，物理，评估 |[link](34.md)|
 |96|2025.3.26|**PhysAnimator: Physics-Guided Generative Cartoon Animation**|静态动漫插图生成动画<br>1. 分割出可形变部分<br>2. 转成2D Mesh<br>3. FEM驱动2D Mesh<br>4. 根据2D Mesh形变生成光流<br>5. 光流驱动Image草图<br>6. 草图作为控制信号，生成视频| 2D Mesh，FEM，ControlNet，光流，轨迹控制，SAM |[link](https://caterpillarstudygroup.github.io/ReadPapers/96.html)|
 ||2025|Physdreamer: Physics-based interaction with 3d objects via video generation|
-
+||2024.9.27|PhysGen| 通过刚体物理仿真将单张图像与输入力转换为真实视频，证明从视觉数据推理物理参数的可能性；
 
 ## 强调时序一致性
 
