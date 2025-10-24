@@ -59,7 +59,7 @@ mindmap
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-||2023|Executing your Commands via Motion Diffusion in Latent Space|潜在空间DDPM	在潜在空间应用扩散模型，降低计算复杂度	与DDPM相同的采样效率问题	潜在空间压缩提升生成速度|MLD|
+
 
 ## Text to Motion
 
@@ -89,16 +89,35 @@ mindmap
 
 基于扩散的方法直接在连续运动空间操作（如原始动作数据或VAE编码的隐表征），支持高质量动作生成。但这些方法主要进行片段级建模——一次性生成整个动作序列的所有帧。该设计使得修改特定帧时难以保持整体动作一致性与质量。且通常仍局限于粗粒度语义引导或轨迹级控制，导致其缺乏细粒度时间控制能力，用户无法在生成过程中精确定义或编辑动作细节。
 
+```mermaid
+mindmap
+基于diffusion的动作生成
+    相同点
+        控制条件：文本（CLIP）
+        生成方式：非自回归
+        表示方式：离散表示
+        生成模型：DDPM/DDIM
+    按表示方式分：
+        原始数据
+        Latent表示
+    按要解决的问题分
+        与控制信号的匹配
+        生成质量
+        生成速度
+        长序列生成
+    按基础架构分
+        Transformer Based
+        UNet Based
+```
+
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
-||2025.5.28|UniMoGen: Universal Motion Generation||  **骨架无关**的动作生成  |[link](134.md)|
 ||2025.5.27|IKMo: Image-Keyframed Motion Generation with Trajectory-Pose Conditioned Motion Diffusion Model||  基于扩散模型的运动生成方法，其核心在于**解耦轨迹与姿态输入**  |[link](130.md)|
 ||2025.5.26|Absolute Coordinates Make Motion Generation Easy|| 全局空间中的**绝对关节坐标**表示方法的文生动作   |[link](123.md)|
 ||2025.5.23|Multi-Person Interaction Generation from Two-Person Motion Priors|| 利用现有双人运动扩散模型作为运动先验，生成逼真且多样化的多人交互动作   |[link](119.md)|
 ||2025.5.20|Large-Scale Multi-Character Interaction Synthesis||  生成大规模多角色交互的角色动画 |[link](105.md)|
 ||2025.5.19|UniHM: Universal Human Motion Generation with Object Interactions in Indoor Scenes|| 整合静态环境、可移动物体、自然语言提示和空间路径点等多模态信息的文生动作  |[link](97.md)|
 |101|2025.5.16|Towards Robust and Controllable Text-to-Motion via Masked Autoregressive Diffusion|1. 递归式地补充部分帧（类似MoMask），直到全部生成 <br> 2. 帧级VAE| VAE + diffusion  |[link](https://caterpillarstudygroup.github.io/ReadPapers/101.html)|
-||2025.5.15|Dyadic Mamba: Long-term Dyadic Human Motion Synthesis|| 文生超长序列双人动作  |[link](89.md)|
 ||2025.5.8|ReAlign: Bilingual Text-to-Motion Generation via Step-Aware Reward-Guided Alignment||  双语文本输入合成3D人体运动 |[link](59.md)|
 ||2025.4.23|PMG: Progressive Motion Generation via Sparse Anchor Postures Curriculum Learning||**更高控制精度和更精细的运动生成** |[link](6.md)|
 ||2024.3.26|**Move as you say, interact as you can: Language-guided human motion generation with scene affordance**|| 3D环境中的文生3D动作  |[link](63.md)|
@@ -106,34 +125,29 @@ mindmap
 ||2024.5|Flexible motion in-betweening with diffusion models|
 ||2024.4|Motionlcm: Real-time controllable motion generation via latent consistency model|
 |||Make-an-Athlete|两阶段训练：静态姿态生成→时序扩展<br>利用图像-文本伪姿态数据集	突破数据瓶颈，多样性指标SOTA|
-||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性|
+||2023.10.1| ReMoDiffuse: RetrievalAugmented Motion Diffusion Model|检索增强生成，融合Top-k相似运动样本+CLIP语义特征，提升生成多样性与上下文相关性|– 语义调制Transformer                          | – 数据依赖性强<br>– 计算成本高昂                                        |
 ||2023.10| Humantomato: Text-aligned whole-body motion generation|
-||2023.6.26|Flame: Free-form language-based motion synthesis & editing|纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合|Flame|
-|||MoFusion|轻量1D U-Net，三大约束损失（运动学一致性），显著提升效率与长序列质量
+||2023.6.26|Flame: Free-form language-based motion synthesis & editing|纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合|– 预训练大模型编码文本（Roberta）<br>– Transformer解码器的掩码策略 <br> – 计算成本高昂          |
+|      | 2023 | **MoFusion** [Dabral et al.] | – 轻量1D U-Net网络 + 跨模态Transformer，三大约束损失（运动学一致性），显著提升效率与长序列质量<br>– 运动学损失的时变权重调度         | – 推理时间长<br>– 文本条件词汇受限                                        |
 ||2023|MakeAnAnimation| 摒弃了顺序生成（通过特定的损失函数强制保证时序一致性）的方式，仅依赖于标准的扩散损失。<br>两阶段训练。先在一个大型静态 3D 姿态数据集上进行预训练，以学习姿态-文本的关联。<br> 通过其并行采样策略和大规模预训练策略保持运动的连续性。|U-Net， T5|
-||2022.9.29|Human Motion Diffusion Model|	1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声<br>计算开销大、推理速度低，仅适合短序列生成|HMDM, MDM, CLIP, transformer|
 |      | 2024 | **MMDM** [Chen]              | – 跨时间帧与身体部位的掩码建模策略                                         | – 计算成本高昂                                                          |
 |      | 2023 | **priorMDM** [Shafir et al.] | – 并行组合：双运动同步生成<br>– 串行组合：多动作长动画生成                   | – 依赖初始模型质量<br>– 长间隔运动不一致<br>– 泛化能力不足                    |
 |      | 2024 | **FlowMDM** [Barquero et al.]| – 混合位置编码<br>– 姿态中心化交叉注意力<br>– 构建两项新指标（检测突变过渡）      | – 复杂文本描述生成失败<br>– 部分过渡轻微不匹配                              |
-|      | 2023 | **MoFusion** [Dabral et al.] | – 轻量1D U-Net网络 + 跨模态Transformer<br>– 运动学损失的时变权重调度         | – 推理时间长<br>– 文本条件词汇受限                                        |
-|      | 2023 | **FLAME** [Kim et al.]       | – 预训练大模型编码文本（Roberta）<br>– Transformer解码器的掩码策略            | – 计算成本高昂                                                          |
-|      | 2023 | **DiffGesture** [Zhu et al.] | – 扩散音频-手势Transformer（多模态信息处理）<br>– 扩散手势稳定器消除时序不一致 | – 数据多样性不足<br>– 计算成本高昂                                       |
 |      | 2023 | **LDA** [Alexanderson et al.]| – 基于Conformer的扩散模型<br>– 构建音频+高质量3D运动新数据集               | – 依赖语音特征提取<br>– 计算开销大                                      |
-|      | 2023 | **ReMoDiffuse** [Zhang et al.]| – 检索增强运动扩散模型<br>– 语义调制Transformer                          | – 数据依赖性强<br>– 计算成本高昂                                        |
 |      | 2023 | **FineMoGen** [Zhang et al.] | – 时空混合注意力机制<br>– 构建大规模语言-运动数据集（HuMMan-MoGen）         | – 运动数据格式支持有限<br>– 依赖大型语言模型                              |
 |      | 2023 | **Fg-T2M** [Wang et al.]     | – 语言结构辅助模块<br>– 上下文感知渐进推理模块                            | – 受限于语言模型能力                                                   |
 |      | 2023 | **MAA** [Azadi et al.]       | – 文本条件3D静态姿态数据集预训练扩散模型<br>– 时序扩展与运动数据集微调       | – 计算成本高<br>– 生成部分不自然运动                                     |
-|      | 2024 | **StableMoFusion** [Huang et al.]| – 消除足部滑动的有效机制<br>– 系统分析扩散运动生成流程组件                 | – 推理速度慢（计算成本高）                                               |
-|      | 2023 | **MLD** [Chen et al.]        | – 基于运动Transformer的VAE<br>– 隐空间条件扩散                            | – 生成运动长度受限<br>– 仅支持人体主干（无手部/面部动作）                  |
-|      | 2023 | **UDE** [Zhou and Wang]      | – 统一文本/音频驱动的单模型<br>– 基于扩散的解码器                         | – 处理多模态复杂交互困难                                                |
-|      | 2023 | **GestureDiffuCLIP** [Ao et al.] | – 多模态提示控制风格（文本+语音）<br>– CLIP引导的语音同步手势合成         | – 数据依赖性强<br>– CLIP对细节运动建模有限                              |
-|      | 2024.11.23 | EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation       |实现**快速**、高质量的人体运动生成。<br> 1. latent space方法学习latent space需要成员<br> 2. DDIM 会导致质量下降。| – 条件去噪扩散GAN<br>– **快速**扩散方案 <br> – 可能违反物理定律（如漂浮/地面穿透）|   [link](https://arxiv.org/pdf/2312.02256)                |
-|132| 2022.8.31 | MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model |根据多样化文本输入实现细腻且精细的运动生成 |**首个基于扩散模型的文本驱动运动生成框架**<br>1. 通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br>2. 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br>3. 在噪声空间对不同片断的融合，实现长序列的生成|控制条件：文本（CLIP）<br>生成方式：非自回归<br>表示方式：连续表示（原始数据）<br>生成模型：DDPM<br>其它：Transformer，开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/132.html)|                                 |
+|   155   | 2024.12.9 | StableMoFusion: Towards Robust and Efficient Diffusion-based Motion Generation Framework |现有的基于扩散模型的方法采用了各不相同的网络架构和训练策略，各个组件设计的具体影响尚不明确。<br> 滑步问题|深入分析并优化人体动作生成的每个组件。<br> - 通过识别足地接触关系并在去噪过程中**修正脚部运动**  <br> – 推理速度慢（计算成本高）  |[link](https://arxiv.org/pdf/2405.05691)                                             |
+|    154  | 2024.11.23 | EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation       |实现**快速**、高质量的人体运动生成。<br> 1. latent space方法学习latent space需要成员<br> 2. DDIM 会导致质量下降。|通过**条件去噪扩散GAN**技术，在任意（可能更大）步长条件下根据控制信号**捕捉多模态数据分布**，实现高保真度、多样化的少步数运动采样。<br> – 条件去噪扩散GAN<br>– **快速**扩散方案 <br> – 可能违反物理定律（如漂浮/地面穿透）| 控制条件：文本（CLIP）<br>表示方式：原始数据<br>基础架构：Transformer<br> 要解决的问题：生成速度|  [link](https://arxiv.org/pdf/2312.02256)                |
+||2023.5.19|Executing your Commands via Motion Diffusion in Latent Space|在**潜在空间**应用扩散模型，降低计算复杂度，潜在空间压缩提升生成速度<br>– 生成运动长度受限<br>– 仅支持人体主干（无手部/面部动作）|MLD, Transformer Based VAE|控制条件：文本（CLIP）<br>表示方式：Latent表示<br>基础架构：Transformer<br> 要解决的问题：生成速度|[link](https://arxiv.org/pdf/2212.04048)|
+||2022.9.29|Human Motion Diffusion Model|	1. 扩散模型首次应用于动作条件生成	多样性与保真度权衡（训练/采样轨迹曲线限制）	生成结果多样且逼真<br> 2. 预测x0而不是噪声<br>计算开销大、推理速度低，仅适合短序列生成|HMDM, MDM, CLIP, transformer|
+|132| 2022.8.31 | MotionDiffuse: Text-Driven Human Motion Generation with Diffusion Model |根据多样化文本输入实现细腻且精细的运动生成 |**首个基于扩散模型的文本驱动运动生成框架**<br>1. 通过文本特征与noise的self attention，实现文本-动作的跨模态生成<br>2. 在噪声空间对不同文本提示的融合，实现不同部分的细粒度控制 <br>3. 在噪声空间对不同片断的融合，实现长序列的生成|控制条件：文本（CLIP）<br>表示方式：原始数据<br>基础架构：Transformer<br> 其它：开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/132.html)|                                 |
 
 ### Mamba
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.15|Dyadic Mamba: Long-term Dyadic Human Motion Synthesis|| 文生超长序列双人动作  |[link](89.md)|
 |      | 2025 | Motion Mamba: Efficient and Long Sequence Motion Generation | – 双模块去噪U-Net：<br> • 分层时序Mamba<br> • 双向空间Mamba               | – 未展示短序列性能<br>– 模型泛化能力未验证                              |
 
 # Motion-Conditioned Motion Generation
@@ -149,11 +163,11 @@ mindmap
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.28|UniMoGen: Universal Motion Generation||  **骨架无关**的动作生成  |UNet Based，风格与轨迹控制|[link](134.md)|
 ||2024| MotionLCM: Real-Time Controllable Motion Generation via Latent Consistency Model|
 ||2024.7.16| LengthAware Motion Synthesis via Latent Diffusion|
 |85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
 ||2024.3.24|AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion|
-||2024|EMDM: Efficient Motion Diffusion Model for Fast and High-Quality Motion Generation|原始空间扩散+对抗训练+部分观测数据条件	生成物理合理性提升	计算成本极高（百步迭代）|
 |86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
 
 ### Training Free
@@ -178,6 +192,7 @@ mindmap
 ||2025.5.7|ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition|| 生成乐器演奏动作  |[link](56.md)|
 ||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md)|
 ||2023|Listen, denoise, action! audio-driven motion synthesis with diffusion models|
+|      | 2023 | **UDE** [Zhou and Wang]      | – 统一文本/音频驱动的单模型<br>– 基于扩散的解码器                         | – 处理多模态复杂交互困难                                                |
 ||2022|Edge: Editable dance generation from music|
 
 ## Speech to Gesture
@@ -193,7 +208,8 @@ mindmap
 ||2024|Diffsheg: A diffusion-based approach for real-time speech-driven holistic 3d expression and gesture generation
 ||2024|Emotional speech-driven 3d body animation via disentangled latent diffusion|
 ||2024|Semantic gesticulator: Semantics-aware co-speech gesture synthesis|
-||2023|Gesturediffuclip: Gesture diffusion model with clip latents|
+||2023|Gesturediffuclip: Gesture diffusion model with clip latents| – 多模态提示控制风格（文本+语音）<br>– CLIP引导的语音同步手势合成         | – 数据依赖性强<br>– CLIP对细节运动建模有限                              |
+|      | 2023 | **DiffGesture** [Zhu et al.] | – 扩散音频-手势Transformer（多模态信息处理）<br>– 扩散手势稳定器消除时序不一致 | – 数据多样性不足<br>– 计算成本高昂                                       |
 
 # SCENE-CONDITIONED MOTION GENERATION
 
