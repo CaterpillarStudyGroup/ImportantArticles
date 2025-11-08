@@ -145,7 +145,6 @@ Jiménez, <u>"Mixture of Diffusers for scene composition and high resolution ima
 Bar-Tal et al., <u>"MultiDiffusion: Fusing Diffusion Paths for Controlled Image Generation",</u> arXiv 2023    
 Zhang et al., <u>"DiffCollage: Parallel Generation of Large Content with Diffusion Models",</u> CVPR 2023       
 Du et al., <u>"Avatars Grow Legs: Generating Smooth Human Motion from Sparse Tracking Inputs with Diffusion Model",</u> CVPR 2023    
-Shafir et al., <u>"Human Motion Diffusion as a Generative Prior",</u> arXiv 2023    
 Somepalli et al., <u>"Diffusion Art or Digital Forgery? Investigating Data Replication in Diffusion Models",</u> CVPR 2023    
 Carlini et al., <u>"Extracting Training Data from Diffusion Models",</u> arXiv 2023    
 Gandikota et al., <u>"Erasing Concepts from Diffusion Models",</u> arXiv 2023    
