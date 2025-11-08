@@ -10,6 +10,7 @@
   - [骨骼动作生成]()
     - [文生动作]()
       - [基于Diffusion的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.md)
+      - [基于Mamba的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.md)
   - [3D Human Pose Estimation and Mesh Recovery](CharacterAnimation/HPE_HMR_Summary.md)
   - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
   - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)

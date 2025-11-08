@@ -78,15 +78,6 @@ mindmap
 ||2022a|Generating diverse and natural 3d human motions from text|两阶段（卷积AE + 时序VAE）分阶段生成文本对应动作 <br> 预训练运动编码器提取片段；时序VAE生成运动代码序列 <br> 两阶段框架（先编码运动代码，再生成序列） <br> – text2length阶段确定运动时长<br>– text2motion阶段用时序VAE生成运动 <br> – 无法处理罕见动作（如“跺脚”）<br>– 细粒度描述和复杂动作失败<br>– 生成运动不真实 |T2M, Transformer VAE|
 |144|2023.3.7| Action-GPT: Leveraging Large-scale Language Models for Improved and Generalized Action Generation |当前运动捕捉数据集中的动作短语通常只包含最精简的核心信息。|通过为大语言模型精心设计提示模板，我们能够生成更丰富、更细粒度的动作描述。<br> – 首个基于LLM的文本条件运动生成<br>– 兼容VAE模型的模块 <br> – 无法生成长序列<br>– 不支持复杂身体运动（瑜伽/舞蹈）<br>– 无手指运动         |
 
-
-
-### Mamba
-
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2025.5.15|Dyadic Mamba: Long-term Dyadic Human Motion Synthesis|| 文生超长序列双人动作  |[link](89.md)|
-|      | 2025 | Motion Mamba: Efficient and Long Sequence Motion Generation | – 双模块去噪U-Net：<br> • 分层时序Mamba<br> • 双向空间Mamba               | – 未展示短序列性能<br>– 模型泛化能力未验证                              |
-
 # Motion-Conditioned Motion Generation
 
 |ID|Year|Name|Note|Tags|Link|
@@ -98,19 +89,7 @@ mindmap
 
 ### Diffusion
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-||2025.4.23|PMG: Progressive Motion Generation via Sparse Anchor Postures Curriculum Learning||**更高控制精度和更精细的运动生成** |[link](6.md)|
-||2024.5|Flexible motion in-betweening with diffusion models|
-||2025.5.27|IKMo: Image-Keyframed Motion Generation with Trajectory-Pose Conditioned Motion Diffusion Model||  基于扩散模型的运动生成方法，其核心在于**解耦轨迹与姿态输入**  |[link](130.md)|
-||2025.5.28|UniMoGen: Universal Motion Generation||  **骨架无关**的动作生成  |UNet Based，风格与轨迹控制|[link](134.md)|
-||2024| MotionLCM: Real-Time Controllable Motion Generation via Latent Consistency Model|
-||2024.7.16| LengthAware Motion Synthesis via Latent Diffusion|
-|85|2024|OmniControl: Control Any Joint at Any Time for Human Motion Generation|1. 使用ControlNet方式引入控制信号<br>2. 使用推断时损失注入方式进一步实现空间约束。|MDM，GMD，精确控制，ControlNet|[link](https://caterpillarstudygroup.github.io/ReadPapers/85.html)|
-||2024.3.24|AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion|
-|      | 2023.5.15 | MoFusion: A Framework for Denoising-Diffusion-based Motion Synthesis | – 轻量1D U-Net网络 + 跨模态Transformer，三大约束损失（运动学一致性），显著提升效率与长序列质量<br>– 运动学损失的时变权重调度         | – 推理时间长<br>– 文本条件词汇受限                                        |
-||2023.6.26|Flame: Free-form language-based motion synthesis & editing|纯Transformer解码器，动态掩码处理变长输入，灵活支持复杂动作组合|– 预训练大模型编码文本（Roberta）<br>– Transformer解码器的掩码策略 <br> – 计算成本高昂          |
-|86|2023|Guided Motion Diffusion for Controllable Human Motion Synthesis|将空间约束融入运动生成过程, 通过two-stage pipeline解决控制信号稀疏导致控制能力不足的问题。<br>第一阶段通过提升root投影轨迹loss强化轨迹控制，通过去噪函数实现稀疏轨迹->稠密轨迹的方法，从而生成稠密轨迹。<br>第二阶段使用稠密信号引导生成|GMD，轨迹控制|[link](https://caterpillarstudygroup.github.io/ReadPapers/86.html)|
+
 
 ### Training Free
 
@@ -128,6 +107,7 @@ mindmap
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+|      | 2023.5.15 | MoFusion: A Framework for Denoising-Diffusion-based Motion Synthesis | – 轻量1D U-Net网络 + 跨模态Transformer，三大约束损失（运动学一致性），显著提升效率与长序列质量<br>– 运动学损失的时变权重调度         | – 推理时间长<br>– 文本条件词汇受限                                        |
 ||2025.5.26|PAMD: Plausibility-Aware Motion Diffusion Model for Long Dance Generation||  合理性感知运动扩散模型 (PAMD)的音乐生成舞蹈  |[link](124.md)|
 ||2025.5.14|CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation|| 单阶段音频驱动的说话身体生成 |[link](78.md)|
 ||2025.5.8|ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation|| 反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作 |[link](67.md)|

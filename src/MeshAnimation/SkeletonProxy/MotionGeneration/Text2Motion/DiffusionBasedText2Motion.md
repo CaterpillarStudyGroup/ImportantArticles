@@ -6,15 +6,21 @@
 mindmap
 基于diffusion的动作生成
     相同点
-        控制条件：文本（CLIP）
+        控制条件：文本
+            CLIP
+            Roberta
+            LLM
         生成方式：非自回归
-        表示方式：离散表示
+        表示方式：连续表示
         生成模型：DDPM/DDIM
     按表示方式分：
         原始数据
         Latent表示
     按要解决的问题分
-        与控制信号的匹配
+        与文本的匹配
+            长文本
+            细节控制能力
+            文本契合度
         生成质量
         生成多样性
         生成速度
@@ -68,14 +74,16 @@ mindmap
 |---|---|---|---|---|---|---|
 |161|2025.5.8|ReAlign: Bilingual Text-to-Motion Generation via Step-Aware Reward-Guided Alignment|双语文本输入合成3D人体运动 |1. BiHumanML3D双语人体运动数据集<br> 2. 双语运动扩散模型(BiMD)，通过跨语言对齐表征捕捉语义信息，实现统一的双语建模。<br> 3. 提出了奖励引导的采样对齐方法(ReAlign)，包含用于评估采样过程中对齐质量的步态感知奖励模型，以及引导扩散过程向最优对齐分布演进的奖励引导策略。该奖励模型融合步态感知标记，结合保证语义一致性的文本对齐模块和提升真实性的运动对齐模块，通过在每一步优化噪声运动，平衡概率密度与对齐效果。<br> 实验表明，在文本-运动对齐质量和运动生成质量上SOTA。||[link](https://wengwanjiang.github.io/ReAlign-page)|
 | 158     | 2023.12.22 | FineMoGen: Fine-Grained Spatio-Temporal Motion Generation and Editing |生成符合细粒度描述的复杂动作序列|1. 名为时空混合注意力（SAMI）的新型Transformer架构。SAMI从两个角度优化全局注意力模板的生成：<br> 1）时空混合注意力机制, 显式建模时空组合的约束条件；<br> 2）利用稀疏激活的专家混合机制自适应提取细粒度特征。<br> 2. HuMMan-MoGen**数据集**，包含2,968个视频和102,336条细粒度时空描述。<br>– 运动数据格式支持有限<br>– 依赖大型语言模型  |控制条件：文本<br>表示方式：<br>基础架构：Transformer <br> 要解决的问题：文本契合|[link](https://arxiv.org/pdf/2312.15004)|
+||2023.12.21|AMD: Anatomical Motion Diffusion with Interpretable Motion Decomposition and Fusion|处理描述复杂或长时间运动的文本输入|利用大语言模型（LLM）将输入文本解析为一系列与目标运动相对应的简洁可解释的解剖学脚本|[link](https://arxiv.org/pdf/2312.12763)|
 ||2023.10.19| Humantomato: Text-aligned whole-body motion generation|文生全身动作（肢体、表情、手势）|[link](https://arxiv.org/abs/2310.12978)|
 |   157   | 2023.9.12 | Fg-T2M: Fine-Grained Text-Driven Human Motion Generation via Diffusion Model |现有方法仅能生成确定性或不够精确的动作序列，难以有效控制时空关系以契合给定文本描述。|1）语言结构辅助模块——通过构建精准完整的语言特征以充分挖掘文本信息；<br> 2）上下文感知渐进推理模块——借助浅层与深层图神经网络分别学习局部与全局语义语言学特征，实现多步推理。 – 语言结构辅助模块<br> – 受限于语言模型能力 |控制条件：文本（CLIP）<br>表示方式：原始数据<br>基础架构：Others <br> 要解决的问题：文本契合 |[link](https://arxiv.org/pdf/2309.06284)|
-
+|166|2023.6.26|Flame: Free-form language-based motion synthesis & editing|动作生成，且无需微调即可实现帧级与关节级的动作局部编辑|纯Transformer解码器 + 掩码策略，动态掩码处理变长输入，灵活支持复杂动作组合<br> – 计算成本高昂    | 文本（Roberta） |[link](https://arxiv.org/pdf/2209.00349)|
 
 ## 长序列生成
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
+|170|2024.7.16| LengthAware Motion Synthesis via Latent Diffusion|根据目标时长的合成动作序列（**长度感知动作生成**）|1）长度感知变分自编码器，通过长度相关的潜在代码学习运动表征；2）长度顺应潜在扩散模型，其生成运动的细节丰富度会随着所需目标序列长度的增加而提升|
 |      | 2024.2.23 | Seamless Human Motion Composition with Blended Positional Encodings |根据连续变化的文本描述生成长时间连续运动序列|1. 混合位置编码：绝对编码阶段重建全局运动一致性，而相对编码阶段则构建平滑逼真的动作过渡<br>2. 两个新指标：峰值加加速度和加加速度曲线下面积，用以检测运动中的突变转换<br> – 复杂文本描述生成失败<br>– 部分过渡轻微不匹配                       |    要解决的问题：长序列生成<br> 其它：**FlowMDM**   |[link](https://arxiv.org/pdf/2402.15509)|
 
 
