@@ -103,6 +103,7 @@ Latent Code对齐用于以下场景：
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 | |2023|**TM2D** [Gong et al., 2023] | – VQ-VAE框架<br>– 双模态特征融合（跨模态Transformer）                  | – 缺乏配对数据（音乐/文本）<br>– 限于特定舞蹈风格（数据依赖）                |
+|      | 2022.11.29 | UDE: A Unified Driving Engine for Human Motion Generation | 统一文本/音频驱动的单模型|模态无关的Transformer Encoder + Diffusion Decoder<br> – 处理多模态复杂交互困难                                                |[link](https://arxiv.org/pdf/2211.16016)|
 
 ## 离散去噪概率模型 D3PM
 

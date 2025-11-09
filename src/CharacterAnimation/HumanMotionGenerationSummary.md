@@ -87,10 +87,6 @@ mindmap
 |113|2017| Phasefunctioned neural networks for character control|PFNN||[link](https://caterpillarstudygroup.github.io/ReadPapers/113.html)|
 
 
-### Diffusion
-
-
-
 ### Training Free
 
 |ID|Year|Name|Note|Tags|Link|
@@ -105,23 +101,12 @@ mindmap
 
 ## Music to Dance
 
-|ID|Year|Name|Note|Tags|Link|
-|---|---|---|---|---|---|
-|      | 2023.5.15 | MoFusion: A Framework for Denoising-Diffusion-based Motion Synthesis | – 轻量1D U-Net网络 + 跨模态Transformer，三大约束损失（运动学一致性），显著提升效率与长序列质量<br>– 运动学损失的时变权重调度         | – 推理时间长<br>– 文本条件词汇受限                                        |
-||2025.5.26|PAMD: Plausibility-Aware Motion Diffusion Model for Long Dance Generation||  合理性感知运动扩散模型 (PAMD)的音乐生成舞蹈  |[link](124.md)|
-||2025.5.14|CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation|| 单阶段音频驱动的说话身体生成 |[link](78.md)|
-||2025.5.8|ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation|| 反应式舞蹈生成(Reactive Dance Generation, RDG)通过结合引导舞者动作和音乐输入来生成跟随者动作 |[link](67.md)|
-||2025.5.7|ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition|| 生成乐器演奏动作  |[link](56.md)|
-||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md)|
-||2023|Listen, denoise, action! audio-driven motion synthesis with diffusion models|
-|      | 2023 | **UDE** [Zhou and Wang]      | – 统一文本/音频驱动的单模型<br>– 基于扩散的解码器                         | – 处理多模态复杂交互困难                                                |
-||2022|Edge: Editable dance generation from music|
-|      | 2023 | **LDA** [Alexanderson et al.]| – 基于Conformer的扩散模型<br>– 构建音频+高质量3D运动新数据集               | – 依赖语音特征提取<br>– 计算开销大                                      |
-
 ## Speech to Gesture
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
+||2025.5.6|PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model|| 音频驱动上半身人体动画  |[link](48.md), [link](https://arxiv.org/pdf/2505.03603v1)|
+||2025.5.14|CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation|| 单阶段音频驱动的说话身体生成 |[link](78.md)|
 ||2025.6.1|TRiMM: Transformer-Based Rich Motion Matching for Real-Time multi-modal Interaction in Digital Humans||  实时3D手势生成  |[link](146.md)|
 ||2025.5.29|MMGT: Motion Mask Guided Two-Stage Network for Co-Speech Gesture Video Generation||  利用音频，以及从音频信号生成的**运动掩码**和**运动特征**，共同驱动生成同步的语音-手势视频  |[link](139.md)|
 ||2025.5.22|MEgoHand: Multimodal Egocentric Hand-Object Interaction Motion Generation|| 以自我为中心的手-物体运动生成   |[link](112.md)|

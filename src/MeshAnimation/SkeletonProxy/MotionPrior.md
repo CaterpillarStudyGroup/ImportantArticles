@@ -108,6 +108,7 @@ mindmap
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |137|2025.9.11|Geometric Neural Distance Fields for Learning Human Motion Priors|实现鲁棒、时序一致且物理合理的三维运动重建|**1. 建模运动先验模型：**<br>显式地将人体运动建模为对应姿态、转移（速度）和加速度动态的神经距离场（NDF）零水平集<br>**2. 动作优化任务**<br>（1）一种新型自适应步长混合算法，用于在合理运动集合上进行投影计算；<br>（2）一种创新几何积分器，在测试时优化和生成过程中实现真实运动轨迹的"展开"。|
+|172|2025.5.26|PAMD: Plausibility-Aware Motion Diffusion Model for Long Dance Generation||  合理性感知运动扩散模型 (PAMD)的音乐生成舞蹈  |[link](124.md)|
 |139|2024.4.11|NRDF: Neural Riemannian Distance Fields for Learning Articulated Pose Priors||**1. 建模运动先验模型：** 通过高维四元数积空间中的神经场零水平集来表征合理关节空间. <br>**2. 动作优化任务**：采用自适应步长黎曼梯度下降法，确保迭代点始终保持在SO(3)^K乘积空间内，从而获得更快的收敛速度|
 |138|2022.7.27|Pose-NDF: Modeling Human Pose Manifolds with Neural Distance Fields|直接建模真实姿态流形并保持姿态间距离|**1. 建模运动先验模型：**<br>信息来源：数据<br>建模内容：单帧动作<br> 建模方式：NDF<br> **2. 动作优化任务**：根据距离向0水平集步进，每一次步进后都需要投影回SO(3)空间|
 
