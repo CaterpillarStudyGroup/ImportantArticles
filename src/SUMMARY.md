@@ -11,17 +11,22 @@
     - [文生动作]()
       - [基于Diffusion的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.md)
       - [基于Mamba的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.md)
-  - [3D Human Pose Estimation and Mesh Recovery](CharacterAnimation/HPE_HMR_Summary.md)
+  - [基于视觉的人类动作捕捉HPE](./MeshAnimation/SkeletonProxy/HPE_HMR_Summary.md)
   - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
   - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
 - [无代理的Mesh驱动](MeshAnimation/E2E.md)
 
 # 动画3D管线 - 3DGS的驱动
 
+- [3DGS驱动](./3DGSAnimation/3DGSAnimation.md)
+- [静态3DGS](./3DGSAnimation/Static.md)
+- [动态3DGS](./3DGSAnimation/Dynamic.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
-- [Human 4D Generation](./CharacterAnimation/Human4DGeneration.md)
-- [4D Generation](4DGeneration.md)
 - [Animal Generation](AnimationGeneration.md)
+
+# 动画3D管线 - Nerf驱动
+
+- [NerfAnimation](NerfAnimation.md)
 
 # 动画2D管线 - 像素的驱动，可控视频生成
 

@@ -99,8 +99,6 @@ mindmap
 
 # AUDIO-CONDITIONED MOTION GENERATION
 
-## Music to Dance
-
 ## Speech to Gesture
 
 |ID|Year|Name|Note|Tags|Link|
