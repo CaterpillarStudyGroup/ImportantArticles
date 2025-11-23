@@ -4,17 +4,21 @@
 
 # 动画3D管线 - 3DMesh的驱动
 
-- [基于骨骼代理的Mesh的驱动]()
+- [基于骨骼代理的Mesh的驱动](MeshAnimation/SkeletonProxy/SkeletonProxy.md)
   - [骨骼动作先验](MeshAnimation/SkeletonProxy/MotionPrior.md)
   - [基于离散表示的骨骼动作生成](./MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.md)
-  - [骨骼动作生成]()
+  - [基于连续表示的骨骼动作生成]()
     - [文生动作]()
       - [基于Diffusion的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.md)
       - [基于Mamba的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.md)
-  - [基于视觉的人类动作捕捉HPE](./MeshAnimation/SkeletonProxy/HPE_HMR_Summary.md)
+  - [基于视觉的人类骨骼动作捕捉HPE](./MeshAnimation/SkeletonProxy/HPE_HMR_Summary.md)
   - [facial and expression](CharacterAnimation/HumanFacialAnimation.md)
   - [Human Motion Generation: A Survey](CharacterAnimation/HumanMotionGenerationSummary.md)
 - [无代理的Mesh驱动](MeshAnimation/E2E.md)
+
+# 动画3D管线 - Nerf驱动
+
+- [NerfAnimation](NerfAnimation.md)
 
 # 动画3D管线 - 3DGS的驱动
 
@@ -24,9 +28,7 @@
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Animal Generation](AnimationGeneration.md)
 
-# 动画3D管线 - Nerf驱动
 
-- [NerfAnimation](NerfAnimation.md)
 
 # 动画2D管线 - 像素的驱动，可控视频生成
 
