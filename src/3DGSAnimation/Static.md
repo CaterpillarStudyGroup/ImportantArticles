@@ -49,5 +49,6 @@ mindmap
 ||2024.9.9|Animate3d: Animating any 3d model with multi-view video diffusion|充分利用现有具有多视图属性的3D资产，解决生成结果存在时空不一致问题|运动信息来源：自己训练的多视频图生视频<br>驱动方式：直接驱动|1）多视角视频扩散模型（MV-VDM）2）大规模多视图视频数据集（MV-Video）3）基于MV-VDM，我们引入结合重建技术与4D分数蒸馏采样（4D-SDS）的框架，利用多视图视频扩散先验实现3D对象动画。|[link](https://arxiv.org/pdf/2407.11398)|
 |111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|一个系统性的图像到4D生成框架|1. 先使用DreamGaussianHD生成静态高斯溅射模型，然后通过基于六面体 (HexPlane) 的动态生成方法结合高斯变形技术生成动态内容 <br> 2. 运动信息来自driving video而不是video SDS|运动信息来源：图生视频得到的单视角视频<br>驱动方式：直接驱动（HexPlane）<br>开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
 
-|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
-|---|---|---|---|---|---|---|
+|ID|Year|Name|静态高斯的构建|表达对象|运动信息来源|驱动方式|监督方式|要解决的问题|link|
+|---|---|---|---|---|---|---|---|---|---|
+|111|2024.6.10|**Dreamgaussian4d: Generative 4d gaussian splatting**|DreamGaussianHD|单个3D对象|图生视频得到的单视角视频|直接驱动（HexPlane）|一个系统性的图像到4D生成框架|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
