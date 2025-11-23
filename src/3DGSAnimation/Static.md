@@ -47,8 +47,4 @@ mindmap
 |173|2025.5.14|SplineGS: Learning Smooth Trajectories in Gaussian Splatting for Dynamic Scene Reconstruction|静态场景的高质量快速重建的基础上融入形变模块|用Spline来表征时间维度上的平滑形变|运动信息来源：单目视频<br>驱动方式：参数化线条驱动|
 ||2024.10.9|Dreammesh4d: Video-to-4d generation with sparse-controlled gaussian-mesh hybrid representation|时空一致性与表面外观|图像->3DMesh->Mesh形状->GS形状|运动信息来源：单目视频<br>驱动方式：Mesh形变驱动|[link](https://arxiv.org/pdf/2410.06756)|
 ||2024.9.9|Animate3d: Animating any 3d model with multi-view video diffusion|充分利用现有具有多视图属性的3D资产，解决生成结果存在时空不一致问题|运动信息来源：自己训练的多视频图生视频<br>驱动方式：直接驱动|1）多视角视频扩散模型（MV-VDM）2）大规模多视图视频数据集（MV-Video）3）基于MV-VDM，我们引入结合重建技术与4D分数蒸馏采样（4D-SDS）的框架，利用多视图视频扩散先验实现3D对象动画。|[link](https://arxiv.org/pdf/2407.11398)|
-|111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|一个系统性的图像到4D生成框架|1. 先使用DreamGaussianHD生成静态高斯溅射模型，然后通过基于六面体 (HexPlane) 的动态生成方法结合高斯变形技术生成动态内容 <br> 2. 运动信息来自driving video而不是video SDS|运动信息来源：图生视频得到的单视角视频<br>驱动方式：直接驱动（HexPlane）<br>开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
-
-|ID|Year|Name|静态高斯的构建|表达对象|运动信息来源|驱动方式|监督方式|要解决的问题|link|
-|---|---|---|---|---|---|---|---|---|---|
-|111|2024.6.10|**Dreamgaussian4d: Generative 4d gaussian splatting**|DreamGaussianHD|单个3D对象|图生视频得到的单视角视频|直接驱动（HexPlane）|一个系统性的图像到4D生成框架|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
+|111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|隐式表示 (NeRF)的场景重建与驱动都非常低效|一个系统性的图像到4D生成框架|静态高斯的构建：DreamGaussianHD<br> 表达对象：单个3D对象<br> 运动信息来源：图生视频得到的单视角视频<br> 驱动方式：直接驱动（HexPlane）<br> 监督方式：[?]driving video|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
