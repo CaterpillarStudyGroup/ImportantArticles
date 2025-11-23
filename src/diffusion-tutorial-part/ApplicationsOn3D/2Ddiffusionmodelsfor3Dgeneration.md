@@ -6,7 +6,6 @@ P23
 
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
-|**68**|2023|DreamFusion: Text-to-3D using 2D Diffusion|利用2D扩散模型的先验知识，绕过3D数据限制，实现开放域文本到3D的高效生成，同时支持多视角一致性和几何细节。|SDS|[link](https://caterpillarstudygroup.github.io/ReadPapers/68.html)|
 |82|2023|Magic3D: High-Resolution Text-to-3D Content Creation|在68的基础上：<br>1. 采用**“粗到细”（Coarse-to-Fine）的两阶段优化策略，，结合不同分辨率扩散模型与场景表示，coarse阶段速度更快，Fine阶段提升细节 <br>2. Coarse阶段采用[**Instant-NGP**](https://caterpillarstudygroup.github.io/ReadPapers/83.md) + [eDiff-I](https://caterpillarstudygroup.github.io/ReadPapers//70.md)，快速收敛，且适合处理复杂拓扑变化。<br> 3. Fine阶段使用DMTet + [LDM](https://caterpillarstudygroup.github.io/ReadPapers/45.html)|SDS, Coarse-to-Fine|[link](https://caterpillarstudygroup.github.io/ReadPapers/82.html)|
 ||2023|Wang et al.,"Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",||  Alternative to SDS|
 ||2023|Wang et al., "ProlificDreamer: High-Fidelity and Diverse Text-to-3D Generation with Variational Score Distillation",||Alternative to SDS|

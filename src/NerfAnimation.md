@@ -45,11 +45,14 @@ NeRF： 将一个连续场景表示为一个神经网络。这个网络输入一
 *   **原因：** 神经网络的训练本身就是一个复杂的优化问题。
 *   **3DGS对比：** 3DGS虽然也依赖SfM初始化，但其优化过程相对鲁棒，且社区已经形成了比较固定的超参数设置，开箱即用性更好。
 
-# 静态Nerf(基于Nerf的单图场景重建)
+# 3D静态Nerf
 
+## 基于Nerf的3D生成
 |ID|Year|Name|Note|Tags|Link|
 |---|---|---|---|---|---|
 |**68**|2022.9.29|**DreamFusion: Text-to-3D using 2D Diffusion**|利用2D扩散模型的先验知识，绕过3D数据限制，实现开放域文本到3D的高效生成，同时支持多视角一致性和几何细节。|SDS|[link](https://caterpillarstudygroup.github.io/ReadPapers/68.html)|
+
+## 基于Nerf的单图3D场景重建
 
 # 动态Nerf(基于NeRF的变体，实现动态场景重建)
 
