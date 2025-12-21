@@ -78,7 +78,7 @@ mindmap
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |176|2025.6.11|HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene|学习结构化且时间一致的运动表征|一个通过**稀疏锚点**驱动形变实现结构化一致动态建模的统一框架。<br>1. 通过锚点过滤器识别运动相关区域，抑制静态区域的冗余更新；2. 利用自监督诱导流引导变形模块，通过多帧特征聚合驱动锚点运动，无需显式光流标签；<br> 3. 为处理细粒度形变，分层锚点传播机制能依据运动复杂度提升锚点分辨率，并传播多级变换关系。    |运动信息来源：?<br>驱动方式：稀疏锚点驱动||
-|175|2025.6.9|**PIG: Physically-based Multi-Material Interaction with 3D Gaussians**|由3D高斯基元表征的场景中，物体间的交互存在三大缺陷：三维分割精度不足、异质材质形变失准及严重渲染伪影。| 1. 从二维像素到三维高斯基元的快速精准映射，从而达成精确的物体级三维分割。 <br> 2. 为场景中分割后的物体赋予独特物理属性，以实现多材质耦合交互。<br> 3. 创新性地将约束尺度嵌入变形梯度，通过钳制高斯基元的缩放与旋转属性消除渲染伪影，达成几何保真度与视觉一致性。   |运动信息来源：单目视频<br>驱动方式：物理属性驱动|
+|175|2025.6.9|**PIG: Physically-based Multi-Material Interaction with 3D Gaussians**|由3D高斯基元表征的场景中，物体间的交互存在三大缺陷：三维分割精度不足、异质材质形变失准及严重渲染伪影。| 1. 从二维像素到三维高斯基元的快速精准映射，从而达成精确的物体级**三维分割**。 <br> 2. 为场景中分割后的物体赋予独特物理属性，以实现**多材质耦合交互**。<br> 3. 创新性地将约束尺度嵌入变形梯度，通过钳制高斯基元的缩放与旋转属性**消除渲染伪影**，达成几何保真度与视觉一致性。   |运动信息来源：单目视频<br>驱动方式：物理属性驱动|
 |174|2025.6.4|**EnliveningGS: Active Locomotion of 3DGS**| 3D 高斯溅射(3DGS)表示的 3D 模型能够实现主动运动   |高效且鲁棒地建模“活化模型”与环境之间的**摩擦接触**||
 |173|2025.5.14|SplineGS: Learning Smooth Trajectories in Gaussian Splatting for Dynamic Scene Reconstruction|静态场景的高质量快速重建的基础上融入形变模块|用Spline来表征时间维度上的平滑形变|运动信息来源：单目视频<br>驱动方式：参数化线条驱动|
 ||2024.10.9|Dreammesh4d: Video-to-4d generation with sparse-controlled gaussian-mesh hybrid representation|时空一致性与表面外观|图像->3DMesh->Mesh形状->GS形状|运动信息来源：单目视频<br>驱动方式：Mesh形变驱动|[link](https://arxiv.org/pdf/2410.06756)|
