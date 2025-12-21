@@ -22,6 +22,7 @@
 
 # 动画3D管线 - 3DGS的驱动
 
+- [基于3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
 - [3DGS驱动](./3DGSAnimation/3DGSAnimation.md)
 - [静态3DGS](./3DGSAnimation/Static.md)
 - [动态3DGS](./3DGSAnimation/Dynamic.md)

@@ -77,7 +77,6 @@ mindmap
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
-|177|2025.6.18|Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos||    ||
 |176|2025.6.11|HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene|学习结构化且时间一致的运动表征|一个通过**稀疏锚点**驱动形变实现结构化一致动态建模的统一框架。<br>1. 通过锚点过滤器识别运动相关区域，抑制静态区域的冗余更新；2. 利用自监督诱导流引导变形模块，通过多帧特征聚合驱动锚点运动，无需显式光流标签；<br> 3. 为处理细粒度形变，分层锚点传播机制能依据运动复杂度提升锚点分辨率，并传播多级变换关系。    |运动信息来源：?<br>驱动方式：稀疏锚点驱动||
 |175|2025.6.9|**PIG: Physically-based Multi-Material Interaction with 3D Gaussians**|由3D高斯基元表征的场景中，物体间的交互存在三大缺陷：三维分割精度不足、异质材质形变失准及严重渲染伪影。| 1. 从二维像素到三维高斯基元的快速精准映射，从而达成精确的物体级三维分割。 <br> 2. 为场景中分割后的物体赋予独特物理属性，以实现多材质耦合交互。<br> 3. 创新性地将约束尺度嵌入变形梯度，通过钳制高斯基元的缩放与旋转属性消除渲染伪影，达成几何保真度与视觉一致性。   |运动信息来源：单目视频<br>驱动方式：物理属性驱动|
 |174|2025.6.4|**EnliveningGS: Active Locomotion of 3DGS**| 3D 高斯溅射(3DGS)表示的 3D 模型能够实现主动运动   |高效且鲁棒地建模“活化模型”与环境之间的**摩擦接触**||
@@ -104,10 +103,35 @@ mindmap
 ||2024.9.9|Animate3d: Animating any 3d model with multi-view video diffusion|充分利用现有具有多视图属性的3D资产，解决生成结果存在时空不一致问题|1）多视角视频扩散模型（MV-VDM）<br>2）大规模多视图视频数据集（MV-Video）<br>3）基于MV-VDM，我们引入结合重建技术与4D分数蒸馏采样（4D-SDS）的框架，利用多视图视频扩散先验实现3D对象动画。|静态高斯模型：预置<br>表达对象：单个3D对象<br>运动信息来源：自己训练的多视角图生视频<br>驱动方式：直接驱动（HexPlane）<br>监督方式：4D-SDS，视频重建，ARAP<br>运动推断方式：先前向，再优化|[link](https://arxiv.org/pdf/2407.11398)|
 |111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|隐式表示 (NeRF)的场景重建与驱动都非常低效|一个系统性的图像到4D生成框架|静态高斯模型：DreamGaussianHD<br> 表达对象：单个3D对象<br> 运动信息来源：图生视频得到的单视角视频<br> 驱动方式：直接驱动（HexPlane）<br> 监督方式：video SDS，视频重建<br>运动推断方式：优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
 
-## GS运动代理：物理属性
+## GS运动代理：具有物理属性的GS球/点云
 
-### 控制信号：力，GS运动代理：GS球的物理状态
+### 控制信号：力，GS运动代理：具有物理属性的GS球/点云
+
+技术一：生成运动代理
+1. 直接使用所有高斯球，无额外代理
+2. 从高斯球中采样出点云
+
+技术二：学习每个粒子（GS球或者由GS采样出的点云）的物理属性。  
+1. 对粒子做分割。每一组高斯粒子赋予相似的物理属性。依赖人工标注。    
+2. 通过视频，无差别地学习每个高斯粒子的物理属性。依赖于特定的视频。  
+3. 一种通用的根据粒子属性估计粒子物理属性的方法。   
+
+技术三：通过力来驱动具有物理属性的粒子 
+1. 借助物理仿真方法（粒子系统、网格系统）
+2. 神经网络方法
+
+#### 借助物理仿真的方法
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |129|2025.8.13|TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos|从视频中学习每个高斯点的动力学属性|开源|[link](https://caterpillarstudygroup.github.io/ReadPapers/129.html)|
+||2024| Physgaussian: Physicsintegrated 3d gaussians for generative dynamics|
+||2024|Language-driven physics-based scene synthesis and editing via feature splatting. |
+||2024|Reconstruction and simulation of elastic objects with spring-mass 3d gaussians|
+||2024|Physically embodied gaussian splatting: A realtime correctable world model for robotics|
+
+#### 神经网络方法
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|177|2025.6.18|Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos||    |[link](https://arxiv.org/pdf/2506.15680)|

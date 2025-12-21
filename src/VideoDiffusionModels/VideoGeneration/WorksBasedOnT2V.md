@@ -52,4 +52,4 @@
 ||2024|Cinemo: Consistent and controllable image animation with motion diffusion models|
 ||2024.06|Mimicmotion: High-quality human motion video generation with confidence-aware pose guidance|pose控制|
 ||2024|Vr-gs: A physical dynamics-aware interactive gaussian splatting system in virtual reality|
-||2024| Physgaussian: Physicsintegrated 3d gaussians for generative dynamics|
+
