@@ -26,7 +26,7 @@
 - [动态3DGS](./3DGSAnimation/Dynamic.md)
 - [静态3DGS](./3DGSAnimation/Static.md)D
   - [基于静态3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
-  - [静态3DGS](./3DGSAnimation/3DGSAnimation.md)
+  - [静态3DGS驱动](./3DGSAnimation/3DGSAnimation.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Animal Generation](AnimationGeneration.md)
 
