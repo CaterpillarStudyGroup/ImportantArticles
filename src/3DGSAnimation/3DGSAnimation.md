@@ -5,13 +5,13 @@
 ## 控制信号：多/视角视频控制，GS运动代理：无
 
 由视频直接驱动每个高斯点的运动控制信号与GS运动的关系非常直观，通过Video SDS和视频重建来约束，就可以实现驱动效果。   
-这实际上是一个[基于3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)的问题。  
+这实际上是一个[基于3DGS的4D重建](./4DReconstruction.md)的问题。  
 
 ## 控制信号：文本，GS运动代理：无
 
 先用文本和首帧生成视频，再用视频驱动GS，即：
 
-[TI2V](../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.md) + [基于3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
+[TI2V](../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.md) + [基于3DGS的4D重建](./4DReconstruction.md)
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
