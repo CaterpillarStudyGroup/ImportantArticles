@@ -22,14 +22,13 @@
 
 # 动画3D管线 - 3DGS的驱动
 
-- [基于3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
-- [3DGS驱动](./3DGSAnimation/3DGSAnimation.md)
-- [静态3DGS](./3DGSAnimation/Static.md)
+- [3DGS VS. Nerf](./3DGSAnimation/3DGS.md)
 - [动态3DGS](./3DGSAnimation/Dynamic.md)
+- [静态3DGS](./3DGSAnimation/Static.md)D
+  - [基于静态3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
+  - [静态3DGS](./3DGSAnimation/3DGSAnimation.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Animal Generation](AnimationGeneration.md)
-
-
 
 # 动画2D管线 - 像素的驱动，可控视频生成
 
