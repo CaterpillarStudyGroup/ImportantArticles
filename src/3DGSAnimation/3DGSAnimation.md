@@ -56,7 +56,9 @@
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 |177|2025.6.18|Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos|||对象分割：显式分割<br>物理仿真代理：高斯球采样成粒子，空间划分成风格<br>物理属性：从视频中学习<br>仿真方式：粒子仿真+网格仿真+数据学习|[link](https://arxiv.org/pdf/2506.15680)|
-|179|2025.5.26|ParticleGS: Particle-Based Dynamics Modeling of 3D Gaussians for Prior-free Motion Extrapolation||  根据视觉观测数据建模三维高斯分布的动力学特性  ||
+|179|2025.5.26|ParticleGS: Particle-Based Dynamics Modeling of 3D Gaussians for Prior-free Motion Extrapolation|动态重建方法不能显式学习动态演化规律，因此不能外推<br>引入了显式仿真框架的方法，需人工设定外力条件.<br>基于物理信息神经网络（PINNs）和基于神经常微分方程（Neural ODEs）均无法直接从视频中学习运动规律。|  根据视觉观测数据建模三维高斯分布的动力学特性。首个无需任何人工定义物理先验、完全端到端的通用动态三维外推方法。  ||
+||2019|Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations|
+||2019|Occupancy flow: 4d reconstruction by learning particle dynamics|
 
 # GS运动代理：Mesh
 
