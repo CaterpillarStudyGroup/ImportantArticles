@@ -13,7 +13,7 @@ command = "mdbook-mermaid"
 mathjax-support = true
 git-repository-url = "https://github.com/CaterpillarStudyGroup/ImportantArticles"
 git-repository-icon = "fa-github"
-additional-css = ["theme/pagetoc.css"]
+additional-css = ["theme/pagetoc.css", "theme/custom.css"]
 additional-js  = ["theme/pagetoc.js", "theme/mermaid.min.js", "theme/mermaid-init.js"]
 
 
