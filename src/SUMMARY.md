@@ -56,6 +56,10 @@
 
 # 通用AI技术
 
+## 物理仿真
+
+- [PINN系列](PhysicsSimulation/PINN.md)
+
 ## NeurIPS 2024 Flow Matchig Turorial
 
 - [NeurIPS 2024 Flow Matchig Turorial](NeurIPS2024FlowMatchigTurorial/Agenda.md)
