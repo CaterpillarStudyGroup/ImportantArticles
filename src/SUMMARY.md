@@ -58,7 +58,8 @@
 
 ## 物理仿真
 
-- [PINN系列](PhysicsSimulation/PINN.md)
+- [2025 PINN Survey](PhysicsSimulation/PINN.md)
+- [2024 Fluid Survey](./PhysicsSimulation/Fluid.md)
 
 ## NeurIPS 2024 Flow Matchig Turorial
 
