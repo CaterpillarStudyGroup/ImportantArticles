@@ -1,0 +1,4 @@
+/* 移除所有最大宽度限制 */
+.book .markdown {
+    max-width: 100% !important;
+}

@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Model Adaptation - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <link rel="stylesheet" href="../theme/custom.css">
+        <link rel="stylesheet" href="../theme/font-sizes.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DMesh的驱动</li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/SkeletonProxy.html"><strong aria-hidden="true">2.</strong> 基于骨骼代理的Mesh的驱动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionPrior.html"><strong aria-hidden="true">2.1.</strong> 骨骼动作先验</a></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.html"><strong aria-hidden="true">2.2.</strong> 基于离散表示的骨骼动作生成</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> 基于连续表示的骨骼动作生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/Locomotion.html"><strong aria-hidden="true">2.3.1.</strong> locomotion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.</strong> 文生动作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.html"><strong aria-hidden="true">2.3.2.1.</strong> 基于Diffusion的文生动作</a></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.html"><strong aria-hidden="true">2.3.2.2.</strong> 基于Mamba的文生动作</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html"><strong aria-hidden="true">2.4.</strong> 基于视觉的人类骨骼动作捕捉HPE</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">2.5.</strong> facial and expression</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">2.6.</strong> Human Motion Generation: A Survey</a></li></ol></li><li class="chapter-item expanded "><a href="../MeshAnimation/E2E.html"><strong aria-hidden="true">3.</strong> 无代理的Mesh驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - Nerf驱动</li><li class="chapter-item expanded "><a href="../NerfAnimation.html"><strong aria-hidden="true">4.</strong> NerfAnimation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DGS的驱动</li><li class="chapter-item expanded "><a href="../3DGSAnimation/3DGS.html"><strong aria-hidden="true">5.</strong> 3DGS VS. Nerf</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/Dynamic.html"><strong aria-hidden="true">6.</strong> 动态3DGS</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/Static.html"><strong aria-hidden="true">7.</strong> 静态3DGS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3DGSAnimation/4DReconstruction.html"><strong aria-hidden="true">7.1.</strong> 基于静态3DGS的4D重建</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/3DGSAnimation.html"><strong aria-hidden="true">7.2.</strong> 静态3DGS驱动</a></li></ol></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">8.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../AnimationGeneration.html"><strong aria-hidden="true">9.</strong> Animal Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 像素的驱动，可控视频生成</li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">10.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">11.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">11.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">11.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">11.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">11.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">11.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">11.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">11.7.</strong> Multimodal-guided generation</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">11.8.</strong> Human Video Generation</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">12.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">12.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">12.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">12.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">12.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">12.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">13.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 2D图形的驱动</li><li class="chapter-item expanded "><a href="../ClipAnimation.html"><strong aria-hidden="true">14.</strong> 2D图形驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">通用AI技术</li><li class="chapter-item expanded "><a href="../PhysicsSimulation/PINN.html"><strong aria-hidden="true">15.</strong> 2025 PINN Survey</a></li><li class="chapter-item expanded "><a href="../PhysicsSimulation/Fluid.html"><strong aria-hidden="true">16.</strong> 2024 Fluid Survey</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">17.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">17.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">17.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html" class="active"><strong aria-hidden="true">17.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">17.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">18.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">19.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">19.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">19.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">19.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">19.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">20.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">21.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">21.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">21.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">22.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">22.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">22.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">22.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">22.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">23.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">24.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../GenerativeModels.html"><strong aria-hidden="true">25.</strong> 生成模型</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">26.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../More.html"><strong aria-hidden="true">27.</strong> More</a></li><li class="chapter-item expanded affix "><li class="part-title">Views</li><li class="chapter-item expanded "><a href="../Views/20250903.html"><strong aria-hidden="true">28.</strong> 2025.9.3骨骼动作生成</a></li><li class="chapter-item expanded "><a href="../Views/20250914.html"><strong aria-hidden="true">29.</strong> 2025.9.14骨骼动作离散编码</a></li><li class="chapter-item expanded "><a href="../Views/20250920.html"><strong aria-hidden="true">30.</strong> 2025.9.20视频可控生成</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <p>P111</p>
+<h1 id="model-adaptation"><a class="header" href="#model-adaptation">Model Adaptation</a></h1>
+<p>P112</p>
+<h2 id="youve-trained-a-model-what-next"><a class="header" href="#youve-trained-a-model-what-next">You’ve trained a model. What next?</a></h2>
+<p><img src="../assets/P112%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>已有一个预训练模，可以做什么？</p>
+</blockquote>
+<p>P113</p>
+<h2 id="faster-sampling"><a class="header" href="#faster-sampling">Faster Sampling</a></h2>
+<p>P114</p>
+<h3 id="recitde-flow-faster-sampling-by-straightening-the-flow"><a class="header" href="#recitde-flow-faster-sampling-by-straightening-the-flow">Recitde Flow-Faster sampling by straightening the flow</a></h3>
+<h4 id="方法"><a class="header" href="#方法">方法</a></h4>
+<p><img src="../assets/P114%E5%9B%BE.png" alt="" /></p>
+<p>$$
+ℒ(θ) = \mathbb{E} _ {t,(X_0,X_1)∼π_ {0,1}^0}||u^θ_t (X_t) − (X_1 − X_0)||^2
+$$</p>
+<p>Rectified Flow refits using the <strong>pre-trained (noise, data) coupling</strong>.<br />
+<strong>Leads to straight flows</strong>.</p>
+<blockquote>
+<p>Rectified Flow：让 flow 从源直接到目标。<br />
+第1步：训练 flow matching，flow matching 模型定义了源和目标的耦合关系，也得到了噪声与数据的 pair data.<br />
+第2步：用 pair data 继续训练。</p>
+</blockquote>
+<p>🔎 “Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)</p>
+<p>P115</p>
+<p>P116</p>
+<h4 id="result"><a class="header" href="#result">Result</a></h4>
+<blockquote>
+<p>Diffusion 对比 Rectified Flow</p>
+</blockquote>
+<p><img src="../assets/P116%E5%9B%BE-1.png" alt="" /></p>
+<h4 id="局限性"><a class="header" href="#局限性">局限性</a></h4>
+<p>Enforcing <strong>straightness restricts</strong> the model. Often a slight drop in sample quality</p>
+<p>🔎 “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2022)</p>
+<p>P118</p>
+<h3 id="faster-sampling-by-self-consistency-loss"><a class="header" href="#faster-sampling-by-self-consistency-loss">Faster sampling by self-consistency loss</a></h3>
+<blockquote>
+<p>增大 \(h\)，在 \(x_t\) 和 \(X_{t＋h}\) 之间建立 shortcut，类似于 diffusion 中的蒸馏方法。</p>
+</blockquote>
+<h4 id="原理"><a class="header" href="#原理">原理</a></h4>
+<p><img src="../assets/P118%E5%9B%BE.png" alt="" /></p>
+<p>P119</p>
+<h4 id="方法-1"><a class="header" href="#方法-1">方法</a></h4>
+<p><img src="../assets/P119%E5%9B%BE.png" alt="" /></p>
+<p>P121</p>
+<h4 id="result-1"><a class="header" href="#result-1">Result</a></h4>
+<p><img src="../assets/P121%E5%9B%BE-1.png" alt="" /></p>
+<h4 id="局限性-1"><a class="header" href="#局限性-1">局限性</a></h4>
+<p>Shortcuts with \(h\) &gt;0 <strong>do not work with classifier-free guidance</strong> (CFG).<br />
+CFG weight can &amp; must be specified before training.</p>
+<blockquote>
+<p>short cuts 直接预测流而不是速度，流是非线性的，不能对结果加权组合，因此不能结合 CFG.<br />
+针对此问题的 workaround：预置 CFG 权重</p>
+</blockquote>
+<p>🔎 “One Step Diffusion via Shortcut Models” Frans et al. (2024)</p>
+<p>P124</p>
+<h3 id="faster-sampling-by-only-modifying-the-solver"><a class="header" href="#faster-sampling-by-only-modifying-the-solver">Faster sampling by only modifying the solver</a></h3>
+<blockquote>
+<p>以上两种方法，都需训练。此方法不需要训练，而是修改 solver.</p>
+</blockquote>
+<h4 id="补充关于调度器beta-alpha-_t-和-sigma-_t的-trick"><a class="header" href="#补充关于调度器beta-alpha-_t-和-sigma-_t的-trick">补充：关于调度器．\(\beta, \alpha _t\) 和 \(\sigma _t\)的 trick．</a></h4>
+<p><strong>Can adapt pre-trainedmodels to different schedulers</strong>.</p>
+<p>有一个用 scheduler A 训练好的模型，现在要一个用 scheduler B 继续训练，这两个模型是什么关系？</p>
+<p><img src="../assets/P124%E5%9B%BE1.png" alt="" /></p>
+<blockquote>
+<p>结论：这两个 scheduler 及其 flow 可以通过 \(X\) 的缩放和时间的重参数化关联起来。<br />
+时间重参数化是指，匹配两个 scheduler 的 SNR 和 scaling。</p>
+</blockquote>
+<p>Related by a <strong>scaling &amp; time</strong> transformation:</p>
+<p><img src="../assets/P124%E5%9B%BE2.png" alt="" /></p>
+<p><img src="../assets/P124%E5%9B%BE3.png" alt="" /></p>
+<blockquote>
+<p>如图所示，调整 scheduler,流会表现出不同，但 \(X_0\) 与 \(X_1\) 的耦合关系不变。</p>
+</blockquote>
+<p>🔎 “Elucidating the design space of diffusion-based generative models” Karras et al. (2023)</p>
+<p>P126</p>
+<h4 id="修改-scheduler-的例子"><a class="header" href="#修改-scheduler-的例子">修改 scheduler 的例子</a></h4>
+<p><img src="../assets/P126%E5%9B%BE.png" alt="" /></p>
+<p><strong>Bespoke solvers:</strong><br />
+<strong>Decouples</strong> model &amp; solver.<br />
+Model is left unchanged.<br />
+Parameterize solver and optimize.</p>
+<p>模型与 solver 解耦：模型不变，仅优化求 solver.<br />
+向 solver 中传入参数(表达 scheduler)，优化这些参数相当于在优化 scheduler。</p>
+<p><strong>Can be interpreted as</strong> finding best scheduler + more.</p>
+<p><strong>Solver consistency:</strong> sample quality is retained as NFE → ∞.</p>
+<p>由于仅优化solver，好处：<br />
+1．可以利用 solver 的一致性，把步数取到无穷大，仍然能准确地解 ODE。做法是，用数据集 A 训练生成模型后，用数据集 B 训练 scheduler 的新参数。<br />
+2．在不同的模型(不同数据集、分辨率等训练出来的模型)之间可迁移。</p>
+<p>Bespoke solvers can t<strong>ransfer across different data sets and resolutions</strong>.</p>
+<h4 id="局限性-2"><a class="header" href="#局限性-2">局限性：</a></h4>
+<p>虽然能(不重训生成模型)直接迁移到另一个模型，但比在另一个模型上蒸馏(重训)效果要差一点。</p>
+<p>P127</p>
+<p>However, <strong>does not reach distillation performance at extremely low NFEs.</strong></p>
+<p>P128</p>
+<h3 id="相关工作"><a class="header" href="#相关工作">相关工作</a></h3>
+<p><strong>Rectified flows:</strong><br />
+🔎 “Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow” Liu et al. (2022)<br />
+🔎 “InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation” Liu et al. (2024)<br />
+🔎 “Improving the Training of Rectified Flows” Lee et al. (2024)</p>
+<p><strong>Consistency &amp; shortcut models:</strong><br />
+🔎 “Consistency Models” Song et al. (2023)<br />
+🔎 “Improved Techniques for Training Consistency Models” Song &amp; Dhariwal (2023)<br />
+🔎 “One Step Diffusion via Shortcut Models” Frans et al. (2024)</p>
+<p><strong>Trained &amp; bespoke solvers:</strong></p>
+<p>🔎 “DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics” Zheng et al. (2023)<br />
+🔎 “Bespoke Solvers for Generative Flow Models” Shaul et al. (2023)<br />
+🔎 “Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models” Shaul et al. (2024)</p>
+<p>P129</p>
+<h2 id="inverse-problems-training-free"><a class="header" href="#inverse-problems-training-free">Inverse Problems (Training-Free)</a></h2>
+<blockquote>
+<p>Inverse Problem：填充、去糊、超分、编辑。<br />
+与上节中的 data coupling 中要解决的问题不同的是，这里要利用在完全干净的数据集上训好的预训练模型，不经过重训，得到解决 Inverse Problem 的效果。</p>
+</blockquote>
+<p>P133</p>
+<h3 id="solving-inverse-problems-by-posterior-inference"><a class="header" href="#solving-inverse-problems-by-posterior-inference">Solving inverse problems by posterior inference</a></h3>
+<p>\(x_1\) 为干净图像，\(y\) 为噪声图像。</p>
+<p><img src="../assets/P133%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>用高斯来近似其中未知的部分 (score function)<br />
+score function 可能是 multi 的，但实验证明仅用高斯也能有比较好的效果。</p>
+</blockquote>
+<p>P134</p>
+<h4 id="局限性-3"><a class="header" href="#局限性-3">局限性</a></h4>
+<p>Typically requires known <strong>linear</strong> corruption and <strong>Gaussian prob path</strong>.<br />
+Can randomly fail due to the <strong>heuristic</strong> sampling.</p>
+<p>🔎 “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)<br />
+🔎 “Training-free Linear Image Inverses via Flows” Pokle et al. (2024)</p>
+<p>P135</p>
+<h3 id="solving-inverse-problems-by-optimizing-the-source"><a class="header" href="#solving-inverse-problems-by-optimizing-the-source">Solving inverse problems by optimizing the source</a></h3>
+<h4 id="观察结论"><a class="header" href="#观察结论">观察结论</a></h4>
+<ol>
+<li>Don’t want to rely on <strong>likelihoods / densities</strong>.</li>
+</ol>
+<blockquote>
+<p>预训练一个生成模型，然后有这个模型来评估数据，评估结果很不可靠，它把数据集中的数据评估为低密度，非数据集中的数据评估为低密度。<br />
+因为，高密度\(\ne\) 高采样率。</p>
+</blockquote>
+<ol start="2">
+<li>Have observation \(y\) being nonlinear in \(x_1\).</li>
+</ol>
+<blockquote>
+<p>\(y\) 是真实图像，\(X_1\) 是模型 sample,\(X_1\) 与 \(y\) 之间差了一个 Decoder.因此它们的关系是非线性的。</p>
+</blockquote>
+<p><img src="../assets/P135%E5%9B%BE-1.png" alt="" /></p>
+<p>🔎 “Do Deep Generative Models Know What They Don't Know?” Nalisnick et al. (2018)</p>
+<p>P138</p>
+<h4 id="方法-2"><a class="header" href="#方法-2">方法</a></h4>
+<blockquote>
+<p>逆问题转化为优化问题。</p>
+</blockquote>
+<p><img src="../assets/P138%E5%9B%BE-1.png" alt="" /></p>
+<p>$$
+X_1=\psi (X_0)
+$$</p>
+<blockquote>
+<p>\(\psi \) 是预训练的生成模型，不优化 \(\psi \) 的参数，那就优化\(X_0\) 。因为 \(\psi \) 是一个平滑、可逆、可微的函数。</p>
+</blockquote>
+<p><img src="../assets/P138%E5%9B%BE-2.png" alt="" /></p>
+<p>P139</p>
+<h4 id="特点与局限性"><a class="header" href="#特点与局限性">特点与局限性</a></h4>
+<p>$$ 
+\min_{x_0} L(\psi ^\theta _1(x_0))
+$$</p>
+<p><strong>Theory:</strong> Jacobian of the flow \(\nabla _{x_0}\psi ^\theta_1\) projects the gradient along the data manifold.</p>
+<p><strong>Intuition:</strong> Diffeomorphism enables <strong>mode hopping</strong>!</p>
+<p>P140</p>
+<p><strong>Simplicity</strong> allows application in <strong>multiple domains</strong>.</p>
+<p><strong>Caveat:</strong> Requires multiple simulations and differentiation of \(\psi ^\theta _1\).</p>
+<blockquote>
+<p>求导链路很长，计算成本很高。</p>
+</blockquote>
+<p>🔎 “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)</p>
+<p>P141</p>
+<h3 id="inverse-problems-references"><a class="header" href="#inverse-problems-references">Inverse problems references</a></h3>
+<p><strong>Online sampling methods inspired by posterior inference:</strong></p>
+<p>🔎 “Diffusion Posterior Sampling for General Noisy Inverse Problems” Chung et al. (2022)<br />
+🔎 “A Variational Perspective on Solving Inverse Problems with Diffusion Models” Mardani et al. (2023)<br />
+🔎 “Pseudoinverse-Guided Diffusion Models for Inverse Problems” Song et al. (2023)<br />
+🔎 “Training-free Linear Image Inverses via Flows” Pokle et al. (2023)<br />
+🔎 “Practical and Asymptotically Exact Conditional Sampling in Diffusion Models” Wu et al. (2023)<br />
+🔎 “Monte Carlo guided Diffusion for Bayesian linear inverse problems” Cardoso et al. (2023)</p>
+<p><strong>Source point optimization:</strong></p>
+<p>🔎 “Differentiable Gaussianization Layers for Inverse Problems Regularized by Deep Generative Models&quot; Li (2021)<br />
+🔎 “End-to-End Diffusion Latent Optimization Improves Classifier Guidance” Wallace et al. (2023)<br />
+🔎 “D-Flow: Differentiating through Flows for Controlled Generation” Ben-Hamu et al. (2024)</p>
+<blockquote>
+<p>方法 1：通过修改 sample 方法来逐步接近目标。这些方法大多数受到某种后验推断的启发，可以在准确性和效率之间 trade off.<br />
+方法 2：简单但开销很大。</p>
+</blockquote>
+<p>P144</p>
+<h2 id="reward-fine-tuning"><a class="header" href="#reward-fine-tuning">Reward Fine-tuning</a></h2>
+<h3 id="data-driven-and-reward-driven-fine-tuning"><a class="header" href="#data-driven-and-reward-driven-fine-tuning">Data-driven and reward-driven fine-tuning</a></h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="../assets/P144%E5%9B%BE-1.png" alt="" /></td><td><img src="../assets/P144%E5%9B%BE-2.png" alt="" /></td></tr>
+<tr><td>A lot of focus put into <strong>data set curation</strong> through human filtering.</td><td>Can use <strong>human preference models</strong> or text-to-image alignment.</td></tr>
+</tbody></table>
+<blockquote>
+<p>Data-driven 的关键在于精心准备数据集。<br />
+Reward-driven 不增加训练数据，而是给模型输出一个 reward。finetune 的目标是生成得分高的 sample.<br />
+此处仅介绍后者。</p>
+</blockquote>
+<p>P145</p>
+<h3 id="reward-fine-tuning-by-gradient-descent"><a class="header" href="#reward-fine-tuning-by-gradient-descent">Reward fine-tuning by gradient descent</a></h3>
+<p>Initializing with a pre-trained flow model \(p^\theta\)：</p>
+<p>$$
+\max_{\theta } \mathbb{E} _{X_1\sim p^\theta }[r(X_1)]
+$$</p>
+<p>Optimize the reward model with RL [Black et al. 2023]<br />
+or direct gradients [Xu et al. 2023, Clark et al. 2024]</p>
+<p><img src="../assets/P145%E5%9B%BE.png" alt="" /></p>
+<p>P146<br />
+优点：<br />
+不同的奖励模型可以组合，得到综合的效果。</p>
+<p>局限性：<br />
+Requires using <strong>LoRA</strong> to heuristically stay close to the original model.<br />
+Still relatively easy to <strong>over-optimize</strong> reward models; <strong>“reward hacking”</strong>.</p>
+<blockquote>
+<p>这种方法没有 GT，所以生成结果有可能对 reward model 过拟合。因此需要使用 LoRA.</p>
+</blockquote>
+<p>🔎 “Training diffusion models with reinforcement learning” Black et al. (2023)<br />
+🔎 “Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)<br />
+🔎 “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)</p>
+<p>P149</p>
+<h3 id="reward-fine-tuning-by-stochastic-optimal-control"><a class="header" href="#reward-fine-tuning-by-stochastic-optimal-control">Reward fine-tuning by stochastic optimal control</a></h3>
+<h4 id="方法1rlhf"><a class="header" href="#方法1rlhf">方法1：RLHF</a></h4>
+<p>和直接优化相比，RLHF 将一个预训练分布倾科为能得到更高奖励的分布。</p>
+<p><img src="../assets/P149%E5%9B%BE.png" alt="" /></p>
+<blockquote>
+<p>正则化：微调模型分布应与预训练模型分布接近。常用方法是增加KL 项，如下面公式蓝色部分。但这里不这样用。因为，我们要优化的不是概率路径，而是与 \(X_0\) 相关的 something.<br />
+这里采用公式（3），即引入 value function bias．<br />
+value function bias 是 \(X＝X_0\)时，所有可能的 \(X_1\) 的期望。</p>
+</blockquote>
+<p>P150<br />
+原理：</p>
+<p><strong>Intuition:</strong> Both initial noise \(p(X_0)\) and the model \(u_t^{base}\) affect \(p^{base}(X_1)\).</p>
+<blockquote>
+<p>原理：某一时刻的分布受到 noise 分布和模型的共同影响，即使是同一个预预训练模型改变 noise 的分布，那么 \(X_1\) 的分布也会改变。<br />
+由于 \(X_1\) 同时受模型和 noise 分布的影响，那么 RLHF 同时优化这两个因素。</p>
+</blockquote>
+<p>[Uehara et al. 2024] (即 RLHF) proposes to learn the optimal source distribution \(p^\ast (X_0)\).</p>
+<h4 id="方法2adjoint-matching"><a class="header" href="#方法2adjoint-matching">方法2：Adjoint Matching</a></h4>
+<blockquote>
+<p>或者，改变采样方法，让 \(X_0\) 分布与 \(X_1\) 分布独立。那么此时，value function 是一个常数。</p>
+</blockquote>
+<p>[Domingo-Enrich et al. 2024] proposes to <strong>remove the dependency</strong> between \(X_0, X_1\).</p>
+<p>$$
+p^\ast (X_{(0,1)})=p^{base}(X_{(0,1)})\mathrm{exp} (r(X_1)+const.)\Rightarrow p^\ast (X_1)\propto p^{base}(X_1)\mathrm{exp} (r(X_1))
+$$</p>
+<p>🔎 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)</p>
+<p>P151</p>
+<p><img src="../assets/P151%E5%9B%BE.png" alt="" /></p>
+<p>🔎 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” Domingo-Enrich et al. (2024)</p>
+<blockquote>
+<p>这篇论文的主要内容：<br />
+1．使用 flow matching 在真实图像上训练后，再使用 ODE 采样，能得到真实的输出。<br />
+2．把 ODE 过程改成无记忆 SDE（强制 \(X_0\) 与 \(X_1\) 独立），那么在早期的 sample step 实际上没有什么收益，因为那时候 \(X\) 大部分都是噪声。因此 SD 的采样结果不符合预训练的分布。<br />
+3．把 2 用于 finetune 的过程，因此 finetune 过程，不使用 flow 的 sample 方式，而是 SDE 的 sample 方式。<br />
+4．finetune 之后，可以把 SDE 换回成 ODE。</p>
+</blockquote>
+<p>P152</p>
+<h3 id="reward-fine-tuning-总结"><a class="header" href="#reward-fine-tuning-总结">Reward fine-tuning 总结</a></h3>
+<p><strong>Gradient-based optimization:</strong></p>
+<p>🔎 “DPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models” Fan et al. (2023)<br />
+🔎 “Training diffusion models with reinforcement learning” Black et al. (2023)<br />
+🔎 “Imagereward: Learning and evaluating human preferences for text-to-image generation.” Xu et al. (2023)<br />
+🔎 “Directly fine-tuning diffusion models on differentiable rewards.” Clark et al. (2024)</p>
+<p><strong>Stochastic optimal control:</strong></p>
+<p>🔎 “Fine-tuning of continuous-time diffusion models as entropy regularized control” Uehara et al. (2024)<br />
+🔎 “Adjoint matching: Fine-tuning flow and diffusion generative models with memoryless stochastic optimal control” 
+Domingo-Enrich et al. (2024)</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/ImportantArticles/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+        <script type="text/javascript" src="../theme/mermaid.min.js"></script>
+        <script type="text/javascript" src="../theme/mermaid-init.js"></script>
+    </body>
+</html>

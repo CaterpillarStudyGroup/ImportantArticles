@@ -1,0 +1,32 @@
+/* 使用 CSS 锁技术限制字体大小范围 */
+:root {
+    /* 计算公式: 
+       min-size: 最小字体
+       max-size: 最大字体
+       min-width: 开始放大的屏幕宽度
+       max-width: 停止放大的屏幕宽度
+    */
+    --min-font: 16px;
+    --max-font: 20px;
+    --min-width: 320px;
+    --max-width: 1400px;
+    
+    /* 动态计算字体大小 */
+    --fluid-font: clamp(
+        var(--min-font),
+        calc(var(--min-font) + (var(--max-font) - var(--min-font)) * 
+            ((100vw - var(--min-width)) / 
+            (var(--max-width) - var(--min-width)))),
+        var(--max-font)
+    );
+}
+
+/* 应用到正文 */
+.book .markdown {
+    font-size: var(--fluid-font);
+}
+
+/* 标题使用比例但限制最大值 */
+.book .markdown h1 {
+    font-size: clamp(24px, 2.5rem, 32px) !important;
+}
