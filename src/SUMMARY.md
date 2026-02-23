@@ -8,6 +8,7 @@
   - [骨骼动作先验](MeshAnimation/SkeletonProxy/MotionPrior.md)
   - [基于离散表示的骨骼动作生成](./MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.md)
   - [基于连续表示的骨骼动作生成]()
+    - [locomotion](./MeshAnimation/SkeletonProxy/Locomotion.md)
     - [文生动作]()
       - [基于Diffusion的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.md)
       - [基于Mamba的文生动作](./MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.md)
