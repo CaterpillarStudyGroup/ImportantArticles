@@ -43,8 +43,6 @@ mindmap
 
 ## 基于匹配的方法
 
-### Motion Matching 流程图（笔记 P2）
-
 ```mermaid
 graph TD
     A[当前帧 frame] --> B{是否匹配？}
@@ -60,6 +58,16 @@ graph TD
     L[(6) 角色的动作数据集] --> M[提取特征]
     M --> N[特征集]
 ```
+
+| ID | Year | Title | 特点 |
+|----|------|-------|------|
+| - | - | Motion Field | - |
+| - | - | Motion Graph | Baseline，以 clip 为单位<br>(1) 只在一个 clip 结束时重新匹配<br>(2) 寻找最像的 clip，并用插值衔接 |
+| - | - | Motion Matching | 以 frame 为单位<br>(1) 每帧或几帧重新匹配，响应更快<br>(2) 寻找最近匹配的帧，并用 blend 衔接 |
+| - | 2020 | Learned Motion Matching | 基于数据集，把 (1)(2)(3) 替换成了网络模块，消除了在线搜索时对数据库的依赖 |
+| P47 | Ⓐ | (风格迁移) | 让 (5) 和 (6) 分别是不同的角色，并增加将运动内容与运动风格解耦的模块。在运动空间进行最近邻匹配，在匹配空间中融入目标风格，实现在线风格迁移的效果。 |
+
+> P41 Ⓐ
 
 ### Motion Graph / Motion Matching / Motion Field
 
