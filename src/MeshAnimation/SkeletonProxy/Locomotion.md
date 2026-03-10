@@ -135,6 +135,29 @@ P41 A
 
 ### 基于相位的方法
 
+笔记P3
+
+```mermaid
+flowchart LR
+    C[NN2]-->A
+    D[NN3] -->A
+    E[NN4] -->A
+    B[NN1] -->A[专家混合]
+    A-->F[混合专家模型]
+    F-->G[模型推理]
+    H["控制目标<br>(轨迹、标签)"]-->G
+    J[当前状态]-->G
+    G -->K[相位变化量]-->P[相位]-->O[当前相位]
+    G -->L[触地信息]-->R[IK]-->N
+    G -->Q[未来轨迹]-->N
+    G -->M[下一帧状态]-->N[动作输出]-->J 
+    O -->A
+```
+
+
+---------------
+笔记P4
+
 
 **优势：**   
 1. 能对用户输入做出稳定实时的响应。    
@@ -143,6 +166,8 @@ P41 A
 1. 依赖精心的设计   
 2. 用高度可变的运动数据进行训练，会产生平均化的结果。   
 3. 难以泛化到数据以外的动作。   
+
+
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
@@ -156,11 +181,75 @@ P41 A
 
 ## 基于生成的方法
 
+
+---------------
+笔记P7
+
+
+### 生成 + 控制    
+
+(1) 无控制自回归生成模型   
+
+```mermaid
+flowchart LR
+ A[数据集]-->|"预训练"|C[先验模型]
+ B[当前状态]--> C-->D[下一帧状态]
+```
+
+(2) 引入控制策略
+
+```mermaid
+flowchart LR
+ A[控制目标]-->B[策略]--> D[先验模型]--> E[下一帧状态]
+ C[当前状态]--> D
+```
+    
+```mermaid
+flowchart LR
+ A[当前状态]-->B[先验模型]
+ B--> C[生成1]--> F
+ B--> D[生成2]--> F
+ B--> E[⋮]--> F
+ B--> G[生成n]--> F
+ F[选出下一帧]
+```
+
+
+---------------
+笔记P8
+
+| ID  | Year | Title | 特点 |
+|-----|------|-------|------|
+| 136 | 2021.3.26 |  Character Controllers Using Motion VAEs|在给定足够丰富的运动捕捉片段集合的情况下，如何实现有目的性且逼真的人体运动    | 使用RL策略控制或Monte-Carlo方式 |
+|    | 2023.10.16| MOCHA: RealTime Motion Characterization via Context Matching| 风格迁移 + 实时控制|风格迁移任务，根据源角色当前状态预测目标角色下一帧动作。不涉及未来轨迹引导。 |
+|  | 2024.8.16 |  Interactive Character Control with Auto-Regressive Motion Diffusion Models   | A-MDM<br>136中的VAE替换成了MLP diffusion<br>并使用分层强化学习进行控制。 |
+
+
+---------------
+笔记P9
+
+### 条件生成
+
+```mermaid
+flowchart LR
+ A([当前状态])--> C
+ B([控制目标])--> C
+ C([条件])--> F[Diffusion]--> G([latent code]) --> H[Decoder]--> I([下一帧状态])
+ D([噪声])--> F
+ E([t])-->F
+```
+
+
+1. 难以在各种控制信号间进行泛化。    
+2. 难以泛化到数据以外的动作。   
+3. 支持多模态条件信号和任意损失引导。   
+4. 能够实现更长期的目标和复杂任务。    
+
+
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 ||2025.5.30|MotionPersona: Characteristics-aware Locomotion Control|首个生成式角色控制器。实时交互+角色个性化|1. 输入：文本描述->CLIP->emb，SMPL beta，历史状态，未来轨迹，示例版本(Optimal)<br>2. 模型：DiT结构，每次45帧，单帧>60fps<br>3. 动作衔接：在噪声空间对生成的前5帧与最后一帧做平滑<br> 4. 推理时基于对小样本对编码层和输出层微调（DreamBooth）<br> 5. 数据集|多：个性化<br>快：实时推理<br>省：极少的定制化数据及微调时间|[PDF](https://arxiv.org/pdf/2506.00173)|
-||2025.5.13|DartControl: A Diffusion-Based Autoregressive Motion Model for Real-Time Text-Driven Motion Control| 自然语言的角色
-控制，条件为自然语言。为了支持轨迹控制，额外引入控制方式，类似上文“生成+控制”方法。 |
+||2025.5.13|DartControl: A Diffusion-Based Autoregressive Motion Model for Real-Time Text-Driven Motion Control| 自然语言的角色控制，条件为自然语言。<br>为了支持轨迹控制，额外引入控制方式，类似上文“生成+控制”方法。 |
 ||2024.8.16|Interactive Character Control with Auto-Regressive Motion Diffusion Models|
 ||2024.7.11|AAMDM: Accelerated Auto-regressive Motion Diffusion Model|| 使用DDGAN 进行推断加速  |
 ||2024.4.23|Taming Diffusion Probabilistic Models for Character Control|这篇发表于SIGGRAPH 2024的论文聚焦基于扩散模型的实时角色控制，提出了条件自回归运动扩散模型（CAMDM），首次将运动扩散概率模型成功落地到实时交互式角色控制场景中。核心解决了传统扩散模型计算量大、可控性差、多样性不足的问题，实现了单模型支持多风格、实时响应用户控制、生成高质量且多样化的角色动画，同时能完成风格间的无缝过渡，是角色动画和运动生成领域的重要突破。|
@@ -176,7 +265,37 @@ P41 A
 (1) 开销问题    
 (2) 可扩展性问题    
 
-笔记P13、P12
+
+---------------
+笔记P13
+
+### 运动先验 + 下游控制    
+
+类似于“生成 + 控制”
+
+1. 每个任务都需要单独训练策略
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2022.5.12|AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control|模仿学习时，模仿目标需要精心设定，模仿效果的目标函数也难设定。|不模仿特定的动作，而是模仿目标动作的风格。通过对抗学习来判断模仿的风格像不像。<br>AMP动作先验 = 对抗式判别器。|
+
+
+---------------
+笔记P12
+
+
+### 运动规划器 + 运动控制器
+
+类似“可控生成 + 动作优化”   
+
+1. 规划器和控制器之间存在GAP，导致动作质量下降
+2. 控制策略难以准确跟踪规划的运动，需要微调，限制了其泛化能力
+3. 优点同“可控生成”
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2025.5.13|CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control| 扩散规划器 + 跟踪控制器 | 扩散规划器：以文本和目标位置为条件，生成下一个运动计划。|跟踪控制器：接收来自 DiP 的计划并提供来自环境的反馈。|
+
 
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
@@ -186,4 +305,10 @@ P41 A
 ||2010|Real-time planning and control for simulated bipedal locomotion|
 ||2007.7.29|	SIMBICON: simple biped locomotion control|① 零力矩点（ZMP）方法依赖预计算轨迹，灵活性不足；<br>② 强化学习 / 策略搜索需设计复杂奖励函数，高维状态下难以收敛；<br>③ 数据驱动方法多为运动学建模，缺乏物理适应性。	|“有限状态机 + 全局坐标控制 + 质心反馈” 的极简组合，无需复杂动力学建模，实现实时、鲁棒的物理基双足运动生成|[link](https://www.cs.sfu.ca/~kkyin/papers/Yin_SIG07.pdf)|
 
+
+---------------
 笔记P11
+
+| ID | Year | Name | 主要贡献 |
+|----|------|------|----------|
+|    | [2]  |      | 1. 把运动规划和控制整合到一个模型中，消除两个模型带来的domaingap<br>2. 文本、目标、轨迹等多模态输入<br>3. Diffusion Forcing范式进行训练，消除长期累计误差<br>4. 通过引导采样，无需finetune，即可泛化到不同（包括没见过）的控制信号。<br>具体方法为行为克隆学习，先从动捕数据中提取状态-策略对，再用diffusion学习策略。 |
