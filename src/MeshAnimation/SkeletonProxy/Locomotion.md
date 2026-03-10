@@ -76,7 +76,7 @@ graph TD
 ```mermaid
 flowchart LR
 A([当前帧frame]) --> B("是否重新匹配(1)")
-    B -->|"N"|C[当前帧frame]
+    B -->|"N"|C([当前帧frame])
     C --> D["(3)取下一帧动作"]
     D --> E([下一帧frame])
     E --> A
