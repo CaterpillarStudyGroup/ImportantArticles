@@ -257,17 +257,41 @@ flowchart LR
 
 ## 基于动力学的方法
 
+```mermaid
+mindmap
+基于动力学的方法
+    参考学习
+        运动生成 + 运动模仿/sim2real
+        运动先验 + 下游控制
+    无参考的强化学习
+```
+
+
+
+### 无参考的强化学习
+
 **优势：**    
 (1) 能够生成新颖且符合物理规律的动作    
 (2) 数据依赖少    
 
 **局限性：**    
 (1) 开销问题    
-(2) 可扩展性问题    
+(2) 可扩展性问题  
+(3) 需要大量手工调优奖励函数，收敛速度慢，在步态切换、跳跃等复杂机动动作上难以实现稳定表现。
 
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+||2007.7.29|	SIMBICON: simple biped locomotion control|① 零力矩点（ZMP）方法依赖预计算轨迹，灵活性不足；<br>② 强化学习 / 策略搜索需设计复杂奖励函数，高维状态下难以收敛；<br>③ 数据驱动方法多为运动学建模，缺乏物理适应性。	|“有限状态机 + 全局坐标控制 + 质心反馈” 的极简组合，无需复杂动力学建模，实现实时、鲁棒的物理基双足运动生成|[link](https://www.cs.sfu.ca/~kkyin/papers/Yin_SIG07.pdf)|
 
----------------
-笔记P13
+---
+
+基于参考的学习，例如APM、模仿学习，动作空间还是来自于数据，物理只是一种动作合理化的方法。
+优势：  
+1. 物理的方法与数据的方法相结合，利用两种范式的优势，提升运动质量、多样性的泛化能力。  
+局限性：  
+1. 依赖高质量数据
+2. 存在数据角色与被驱动角色之间的形态不匹配
+3. 难以泛化到数据分布之外
 
 ### 运动先验 + 下游控制    
 
@@ -278,10 +302,6 @@ flowchart LR
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 ||2022.5.12|AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control|模仿学习时，模仿目标需要精心设定，模仿效果的目标函数也难设定。|不模仿特定的动作，而是模仿目标动作的风格。通过对抗学习来判断模仿的风格像不像。<br>AMP动作先验 = 对抗式判别器。|
-
-
----------------
-笔记P12
 
 
 ### 运动规划器 + 运动控制器
@@ -295,15 +315,15 @@ flowchart LR
 |ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
 |---|---|---|---|---|---|---|
 ||2025.5.13|CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control| 扩散规划器 + 跟踪控制器 | 扩散规划器：以文本和目标位置为条件，生成下一个运动计划。|跟踪控制器：接收来自 DiP 的计划并提供来自环境的反馈。|
-
-
-|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
-|---|---|---|---|---|---|---|
 ||2023.10.18|Interactive Locomotion Style Control for a Human Character based on Gait Cycle Features| 没有下载|
+||2025.9.15|Gait-Conditioned Reinforcement Learning with Multi-Phase Curriculum for Humanoid Locomotion||1. 单个循环策略同时学习站立、行走、奔跑及步态过渡，避免多策略架构的切换复杂度<br> 2. 一种路由机制根据步态ID动态激活步态目标，核心解决不同步态的奖励目标冲突问题<br> 3.让机器人自主学习符合人体生物力学的自然运动，摆脱对 MoCap 数据的依赖<br>4. 用于技能扩展的渐近式多阶段课程。|  
+||2025.5.13|CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control|
+||2025.05|PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers|物理模拟角色在复杂地形中实现敏捷移动控制|Motion Generator（MG）：运动合成器根据地形和目标生成运动序列。<br>Motion Tracker（MT）：物理追踪控制器将生成的 “虚拟运动” 转化为物理仿真中可执行的 “真实运动”，修正失真<br>MG 生成→MT 修正→数据反哺 MG，两者能力协同进化，兼顾数据驱动的真实感与物理驱动的自适应.|
+||2023.10.18|Interactive Locomotion Style Control for a Human Character based on Gait Cycle Features|
+||2022.5.12|AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control|
 ||2020.7.26|**Feature-based locomotion controllers**|
 ||2018.4.8|DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills|
 ||2010|Real-time planning and control for simulated bipedal locomotion|
-||2007.7.29|	SIMBICON: simple biped locomotion control|① 零力矩点（ZMP）方法依赖预计算轨迹，灵活性不足；<br>② 强化学习 / 策略搜索需设计复杂奖励函数，高维状态下难以收敛；<br>③ 数据驱动方法多为运动学建模，缺乏物理适应性。	|“有限状态机 + 全局坐标控制 + 质心反馈” 的极简组合，无需复杂动力学建模，实现实时、鲁棒的物理基双足运动生成|[link](https://www.cs.sfu.ca/~kkyin/papers/Yin_SIG07.pdf)|
 
 
 ---------------
