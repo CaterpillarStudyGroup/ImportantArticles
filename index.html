@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/pagetoc.css">
+        <link rel="stylesheet" href="theme/custom.css">
+        <link rel="stylesheet" href="theme/font-sizes.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DMesh的驱动</li><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/SkeletonProxy.html"><strong aria-hidden="true">2.</strong> 基于骨骼代理的Mesh的驱动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/MotionPrior.html"><strong aria-hidden="true">2.1.</strong> 骨骼动作先验</a></li><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.html"><strong aria-hidden="true">2.2.</strong> 基于离散表示的骨骼动作生成</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> 基于连续表示的骨骼动作生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/Locomotion.html"><strong aria-hidden="true">2.3.1.</strong> locomotion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.</strong> 文生动作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.html"><strong aria-hidden="true">2.3.2.1.</strong> 基于Diffusion的文生动作</a></li><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.html"><strong aria-hidden="true">2.3.2.2.</strong> 基于Mamba的文生动作</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html"><strong aria-hidden="true">2.4.</strong> 基于视觉的人类骨骼动作捕捉HPE</a></li><li class="chapter-item expanded "><a href="CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">2.5.</strong> facial and expression</a></li><li class="chapter-item expanded "><a href="CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">2.6.</strong> Human Motion Generation: A Survey</a></li></ol></li><li class="chapter-item expanded "><a href="MeshAnimation/E2E.html"><strong aria-hidden="true">3.</strong> 无代理的Mesh驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - Nerf驱动</li><li class="chapter-item expanded "><a href="NerfAnimation.html"><strong aria-hidden="true">4.</strong> NerfAnimation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DGS的驱动</li><li class="chapter-item expanded "><a href="3DGSAnimation/3DGS.html"><strong aria-hidden="true">5.</strong> 3DGS VS. Nerf</a></li><li class="chapter-item expanded "><a href="3DGSAnimation/Dynamic.html"><strong aria-hidden="true">6.</strong> 动态3DGS</a></li><li class="chapter-item expanded "><a href="3DGSAnimation/Static.html"><strong aria-hidden="true">7.</strong> 静态3DGS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3DGSAnimation/4DReconstruction.html"><strong aria-hidden="true">7.1.</strong> 基于静态3DGS的4D重建</a></li><li class="chapter-item expanded "><a href="3DGSAnimation/3DGSAnimation.html"><strong aria-hidden="true">7.2.</strong> 静态3DGS驱动</a></li></ol></li><li class="chapter-item expanded "><a href="3D_Gaussian_Splatting.html"><strong aria-hidden="true">8.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="AnimationGeneration.html"><strong aria-hidden="true">9.</strong> Animal Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 像素的驱动，可控视频生成</li><li class="chapter-item expanded "><a href="VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">10.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">11.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">11.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">11.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">11.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">11.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">11.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">11.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">11.7.</strong> Multimodal-guided generation</a></li><li class="chapter-item expanded "><a href="CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">11.8.</strong> Human Video Generation</a></li></ol></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">12.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">12.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">12.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">12.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">12.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">12.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">13.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 2D图形的驱动</li><li class="chapter-item expanded "><a href="ClipAnimation.html"><strong aria-hidden="true">14.</strong> 2D图形驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">通用AI技术</li><li class="chapter-item expanded "><a href="PhysicsSimulation/PINN.html"><strong aria-hidden="true">15.</strong> 2025 PINN Survey</a></li><li class="chapter-item expanded "><a href="PhysicsSimulation/Fluid.html"><strong aria-hidden="true">16.</strong> 2024 Fluid Survey</a></li><li class="chapter-item expanded "><a href="NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">17.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">17.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">17.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">17.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">17.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">18.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">19.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">19.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">19.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">19.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">19.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">20.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">21.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">21.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">21.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">22.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">22.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">22.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">22.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">22.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">23.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded "><a href="LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">24.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="GenerativeModels.html"><strong aria-hidden="true">25.</strong> 生成模型</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="数据集.html"><strong aria-hidden="true">26.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="More.html"><strong aria-hidden="true">27.</strong> More</a></li><li class="chapter-item expanded affix "><li class="part-title">Views</li><li class="chapter-item expanded "><a href="Views/20250903.html"><strong aria-hidden="true">28.</strong> 2025.9.3骨骼动作生成</a></li><li class="chapter-item expanded "><a href="Views/20250914.html"><strong aria-hidden="true">29.</strong> 2025.9.14骨骼动作离散编码</a></li><li class="chapter-item expanded "><a href="Views/20250920.html"><strong aria-hidden="true">30.</strong> 2025.9.20视频可控生成</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="本仓库论文方向"><a class="header" href="#本仓库论文方向">本仓库论文方向</a></h1>
+<h2 id="动画方向"><a class="header" href="#动画方向">动画方向</a></h2>
+<p>让看到的景象成为一个会动的景象，其管线为：</p>
+<p>景象 --(建模)--&gt; 动画代理 --(驱动)--&gt; 会动的代理 --(渲染)--&gt; 会动的景象</p>
+<p>根据代理的表达不同，又可以分为2D管线（2D建模）、3D管线(3D建模)。<br />
+不同的代理有不同的驱动和渲染方式。驱动需要外观信息（来自代理）、动作信息（来自动画数据）和外观与动作的关联关系，由此引申出动作生成和动作驱动两个领域。<br />
+将建模与驱动显式地分成两个步骤的方式，称为静态建模与驱动。也可以是由景象直接得到会动的的代理，称为动态建模与驱动。甚至直接由景象得到会动的景象，这就是可控文生视频。</p>
+<h3 id="3d管线"><a class="header" href="#3d管线">3D管线</a></h3>
+<p>优势：由于会在3D进行建模，擅长时间、空间上的一致性的保持。不太容易出现非常奇怪的驱动的结果。<br />
+局限性：通常用于比较明确的主体</p>
+<table><thead><tr><th>建模（外观来源、驱动代理）</th><th>驱动方式（外观与动作的关联）</th><th>动作（动作来源）</th><th>渲染</th></tr></thead><tbody>
+<tr><td>Mesh建模 + 骨骼蒙皮</td><td>LBS</td><td>骨骼动作生成、骨骼动作捕捉、骨骼动作迁移</td><td>无</td></tr>
+<tr><td>Mesh</td><td>无（逐顶点直接驱动）</td><td>Mesh顶点运动生成、运动捕捉、运动迁移</td><td>无</td></tr>
+<tr><td>静态3DGS建模</td><td>3DGS直接驱动</td><td>无</td><td>3DGS渲染</td></tr>
+<tr><td>静态3DGS建模</td><td>3DGS动作提取</td><td>3DGS绑定到骨骼</td><td>3DGS渲染</td></tr>
+<tr><td>无</td><td>动态3DGS同时实现建模和驱动</td><td>无</td><td>3DGS渲染</td></tr>
+<tr><td>3D点云重建</td><td>3D点云驱动</td><td>无</td><td>3D点云渲染</td></tr>
+<tr><td>Nerf建模</td><td></td><td></td><td>Nerf渲染</td></tr>
+</tbody></table>
+<h3 id="2d管线"><a class="header" href="#2d管线">2D管线</a></h3>
+<p>优势：被驱动的内容更广泛，可以是任意图像内容<br />
+局限性：自由度高，时间、空间的一致性是难点，可能出现非常奇怪的结果，通常比较耗时</p>
+<table><thead><tr><th>建模（外观来源）</th><th>动作（动作来源）</th><th>驱动（外观与动作的关联）</th><th>渲染</th></tr></thead><tbody>
+</tbody></table>
+<h2 id="仿真方向"><a class="header" href="#仿真方向">仿真方向</a></h2>
+<p>创造一个具有物理真实感的景象，其管线为：</p>
+<p>(建模)--&gt; 仿真代理 --(驱动)--&gt; 会动的代理 --(渲染)--&gt; 会动的景象</p>
+<p>仿真代理与动画代理相似但不同。<br />
+驱动所需要的动作信息中包含物理规律。<br />
+有些工作中，会同时结合动画与仿真。</p>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<table><thead><tr><th>Pipeline</th><th>3D建模（外观来源、驱动/仿真代理）</th><th>驱动方式（外观与动作的关联）</th><th>动作（动作来源）</th><th>渲染</th></tr></thead><tbody>
+<tr><td>1</td><td>3DMesh<br>相关技术：3DMesh重建</td><td>骨骼带动Mesh顶点<br>相关技术：蒙皮绑定、LBS</td><td>骨骼动作<br>相关技术：骨骼动作生成、骨骼动作捕捉、骨骼动作迁移</td><td>无</td></tr>
+<tr><td>2</td><td></td><td>不同Mesh形变基的线性组合<br>相关技术：表情基绑定</td><td>表情基系数<br>相关技术：表情基系数预测</td><td>无</td></tr>
+<tr><td>3</td><td></td><td>逐顶点直接驱动</td><td>Mesh顶点运动<br>4DMesh生成、运动捕捉、运动迁移</td><td>无</td></tr>
+<tr><td>4</td><td></td><td>顶点作为粒子，线作为约束，以物理规律控制顶点运动<br>关键技术：软体仿真</td><td>力</td><td>无</td></tr>
+<tr><td>5</td><td>3DGS<br>相关技术：静态3DGS建模</td><td>3DGS直接驱动</td><td>3DGS运动<br>相关技术：3DGS驱动</td><td>3DGS渲染</td></tr>
+<tr><td>6</td><td></td><td>3DGS绑定到骨骼，骨骼驱动高斯点<br>相关技术：3DGS绑定</td><td>骨骼动作</td><td>3DGS渲染</td></tr>
+<tr><td>7</td><td></td><td>每一帧都重新生成3DGS</td><td>3DGS的全部属性<br>相关技术：动态3DGS</td><td>3DGS渲染</td></tr>
+<tr><td>8</td><td>3D点云<br>相关技术：3D点云重建</td><td>逐顶点驱动</td><td>点云运动数据<br>相关技术：3D点云驱动</td><td>3D点云渲染<br>相关技术：3D点云渲染</td></tr>
+<tr><td>9</td><td>3D仿真粒子</td><td>基于物理规律的粒子运动<br>相关技术：粒子仿真</td><td>粒子控制</td><td>仿真粒子的渲染</td></tr>
+<tr><td>10</td><td>Nerf相关技术:Nerf建模</td><td>[?]</td><td>[?]</td><td>Nerf渲染</td></tr>
+</tbody></table>
+<table><thead><tr><th>Pipeline</th><th><strong>2D建模（外观来源、驱动代理）</strong></th><th><strong>驱动方式（外观与动作的关联）</strong></th><th><strong>动作（动作来源）</strong></th><th><strong>渲染</strong></th></tr></thead><tbody>
+<tr><td>1</td><td>MAT建模</td><td>MAT动作提取</td><td>MAT驱动</td><td>MAT渲染</td></tr>
+<tr><td>2</td><td>2D图形建模</td><td>2D图形动作提取</td><td>2D图形驱动</td><td>2D图形渲染</td></tr>
+<tr><td>3</td><td>像素</td><td>控制信号直接驱动像素<br>关键技术：可控图生视频</td><td>控制信号</td><td>无</td></tr>
+<tr><td>4</td><td>像素</td><td>光流驱动像素 + inpainting<br>关键技术：inpainting</td><td>光流<br> 关键技术：控制信号生成光流</td><td>无</td></tr>
+<tr><td>5</td><td>2DMesh建模</td><td>Mesh绑定到控制点上，由控制点带动Mesh</td><td>控制点运动</td><td>无</td></tr>
+<tr><td>6</td><td></td><td>Mesh绑定到骨骼上，由骨骼带动Mesh</td><td>骨骼运动</td><td>无</td></tr>
+</tbody></table>
+<h2 id="通用的ai技术"><a class="header" href="#通用的ai技术">通用的AI技术</a></h2>
+<ol>
+<li>Diffusion技术</li>
+</ol>
+<h1 id="读论文方法"><a class="header" href="#读论文方法">读论文方法</a></h1>
+<p><img src="./assets/ReadPaperSummary.PNG" alt="" /></p>
+<blockquote>
+<p>转载出处：GAMES 在线报告227</p>
+</blockquote>
+<h2 id="找论文"><a class="header" href="#找论文">找论文</a></h2>
+<ol>
+<li>找方向</li>
+</ol>
+<ul>
+<li>主流会议的paper session</li>
+</ul>
+<ol start="2">
+<li>找综述，精读</li>
+</ol>
+<ul>
+<li>搜索“方向”相关的关键词</li>
+</ul>
+<ol start="3">
+<li>找经典论文，精读</li>
+</ol>
+<ul>
+<li>综述里面被highlight的论文</li>
+<li>引用非常高的论文</li>
+<li>获奖论文</li>
+</ul>
+<ol start="4">
+<li>延伸</li>
+</ol>
+<ul>
+<li>reference：综述里（第二章）被metion的论文次之</li>
+<li>citation：在google里点击“被引用”</li>
+</ul>
+<ol start="5">
+<li>习惯</li>
+</ol>
+<ul>
+<li>维持一个paper queue，经典论文提高优先级</li>
+<li>从队首选一篇</li>
+<li>把reference和citation（筛去不相关）放入队尾</li>
+</ul>
+<ol start="6">
+<li>多交流</li>
+</ol>
+<h2 id="读论文"><a class="header" href="#读论文">读论文</a></h2>
+<ol>
+<li>Quick skim</li>
+</ol>
+<p>内容：看图，看视频（会议的 presentation view）
+目的：对文章了解大概
+时间：十分钟</p>
+<ol start="2">
+<li>Critical reading</li>
+</ol>
+<p>内容：</p>
+<ul>
+<li>Title</li>
+<li>Abstract</li>
+<li>Introduction</li>
+<li>discussion/limitation</li>
+</ul>
+<p>目的：</p>
+<ul>
+<li>核心问题是什么</li>
+<li>核心贡献是什么？</li>
+<li>大致方法是什么？有效？缺陷？验证？</li>
+<li>启发</li>
+</ul>
+<h2 id="记笔记"><a class="header" href="#记笔记">记笔记</a></h2>
+<ol>
+<li>Summary</li>
+<li>Fact.</li>
+</ol>
+<ul>
+<li>motivafion</li>
+<li>contribution</li>
+<li>method</li>
+<li>evaluation</li>
+</ul>
+<ol start="3">
+<li>Crifical thinking</li>
+</ol>
+<ul>
+<li>批判优缺点</li>
+</ul>
+<ol start="4">
+<li>Creative thinking</li>
+</ol>
+<p>如何启发了我</p>
+<ul>
+<li>想到什么idea</li>
+<li>怎么improve</li>
+<li>怎么generalize</li>
+</ul>
+<ol start="5">
+<li>what I have learned</li>
+</ol>
+<p>精读：1周1～2篇</p>
+<h2 id="求反馈"><a class="header" href="#求反馈">求反馈</a></h2>
+<ul>
+<li>对照作者video的重点</li>
+<li>对照作者总结的limitaton</li>
+<li>分享，交流</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="next" href="MeshAnimation/SkeletonProxy/SkeletonProxy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="next" href="MeshAnimation/SkeletonProxy/SkeletonProxy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="theme/pagetoc.js"></script>
+        <script type="text/javascript" src="theme/mermaid.min.js"></script>
+        <script type="text/javascript" src="theme/mermaid-init.js"></script>
+    </body>
+</html>

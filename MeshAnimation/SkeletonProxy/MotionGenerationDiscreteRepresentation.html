@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>基于离散表示的骨骼动作生成 - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/pagetoc.css">
+        <link rel="stylesheet" href="../../theme/custom.css">
+        <link rel="stylesheet" href="../../theme/font-sizes.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DMesh的驱动</li><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/SkeletonProxy.html"><strong aria-hidden="true">2.</strong> 基于骨骼代理的Mesh的驱动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/MotionPrior.html"><strong aria-hidden="true">2.1.</strong> 骨骼动作先验</a></li><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.html" class="active"><strong aria-hidden="true">2.2.</strong> 基于离散表示的骨骼动作生成</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> 基于连续表示的骨骼动作生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/Locomotion.html"><strong aria-hidden="true">2.3.1.</strong> locomotion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.</strong> 文生动作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.html"><strong aria-hidden="true">2.3.2.1.</strong> 基于Diffusion的文生动作</a></li><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.html"><strong aria-hidden="true">2.3.2.2.</strong> 基于Mamba的文生动作</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html"><strong aria-hidden="true">2.4.</strong> 基于视觉的人类骨骼动作捕捉HPE</a></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanFacialAnimation.html"><strong aria-hidden="true">2.5.</strong> facial and expression</a></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">2.6.</strong> Human Motion Generation: A Survey</a></li></ol></li><li class="chapter-item expanded "><a href="../../MeshAnimation/E2E.html"><strong aria-hidden="true">3.</strong> 无代理的Mesh驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - Nerf驱动</li><li class="chapter-item expanded "><a href="../../NerfAnimation.html"><strong aria-hidden="true">4.</strong> NerfAnimation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DGS的驱动</li><li class="chapter-item expanded "><a href="../../3DGSAnimation/3DGS.html"><strong aria-hidden="true">5.</strong> 3DGS VS. Nerf</a></li><li class="chapter-item expanded "><a href="../../3DGSAnimation/Dynamic.html"><strong aria-hidden="true">6.</strong> 动态3DGS</a></li><li class="chapter-item expanded "><a href="../../3DGSAnimation/Static.html"><strong aria-hidden="true">7.</strong> 静态3DGS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3DGSAnimation/4DReconstruction.html"><strong aria-hidden="true">7.1.</strong> 基于静态3DGS的4D重建</a></li><li class="chapter-item expanded "><a href="../../3DGSAnimation/3DGSAnimation.html"><strong aria-hidden="true">7.2.</strong> 静态3DGS驱动</a></li></ol></li><li class="chapter-item expanded "><a href="../../3D_Gaussian_Splatting.html"><strong aria-hidden="true">8.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../../AnimationGeneration.html"><strong aria-hidden="true">9.</strong> Animal Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 像素的驱动，可控视频生成</li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">10.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">11.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">11.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">11.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">11.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">11.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">11.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">11.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">11.7.</strong> Multimodal-guided generation</a></li><li class="chapter-item expanded "><a href="../../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">11.8.</strong> Human Video Generation</a></li></ol></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">12.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">12.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">12.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">12.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">12.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">12.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">13.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 2D图形的驱动</li><li class="chapter-item expanded "><a href="../../ClipAnimation.html"><strong aria-hidden="true">14.</strong> 2D图形驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">通用AI技术</li><li class="chapter-item expanded "><a href="../../PhysicsSimulation/PINN.html"><strong aria-hidden="true">15.</strong> 2025 PINN Survey</a></li><li class="chapter-item expanded "><a href="../../PhysicsSimulation/Fluid.html"><strong aria-hidden="true">16.</strong> 2024 Fluid Survey</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">17.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">17.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">17.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">17.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">17.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">18.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">19.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">19.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">19.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">19.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">19.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">20.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">21.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">21.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">21.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">22.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">22.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">22.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">22.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">22.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">23.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded "><a href="../../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">24.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../../GenerativeModels.html"><strong aria-hidden="true">25.</strong> 生成模型</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../../数据集.html"><strong aria-hidden="true">26.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../../More.html"><strong aria-hidden="true">27.</strong> More</a></li><li class="chapter-item expanded affix "><li class="part-title">Views</li><li class="chapter-item expanded "><a href="../../Views/20250903.html"><strong aria-hidden="true">28.</strong> 2025.9.3骨骼动作生成</a></li><li class="chapter-item expanded "><a href="../../Views/20250914.html"><strong aria-hidden="true">29.</strong> 2025.9.14骨骼动作离散编码</a></li><li class="chapter-item expanded "><a href="../../Views/20250920.html"><strong aria-hidden="true">30.</strong> 2025.9.20视频可控生成</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="基于离散表示的骨骼动作生成"><a class="header" href="#基于离散表示的骨骼动作生成">基于离散表示的骨骼动作生成</a></h1>
+<p>不管是离散表示还是连续表示，动作生成任务要解决的问题、所使用的数据集、评价指标等都是相似的。这里把离散表示的动作生成单独提成一页，是考虑到：</p>
+<ul>
+<li>离散表示所构建的是真实数据的离散分布</li>
+<li>离散分布的采样与连续分布的采样对于构建生成模型有较大的影响</li>
+<li>采样是生成算法的重要环节</li>
+</ul>
+<pre class="mermaid">mindmap
+基于学习的动作生成
+    按生成方式分
+        自回归生成
+        非自回归生成
+            Regression
+            完形填空式（Bert Style）
+    按生成模型分
+        确定性映射
+        离散空间采样
+            离散分布采样(GPT Style)
+            掩码语言模型(Bert Style)
+            离散去噪扩散概率模型（D3PM）
+        连续空间采样
+            VAE
+            GAN
+            diffusion
+    按控制信号分
+        文本驱动
+            Action/Label驱动
+            自然语言驱动
+        声音驱动
+            音乐驱动舞蹈
+            语言驱动手势
+        动作驱动
+            轨迹驱动
+            关键帧驱动
+        场景驱动
+            场景交互
+</pre>
+<p>VQ-VAE及其变体将动作编码为离散标记，本质上将运动生成问题从回归任务转化为分类任务。然而受限于码本结构，VQ-VAE倾向于存储已知动作而非泛化到新动作。虽然这些模型在训练数据分布内能精确生成和重建动作，却难以处理分布外运动导致信息损失和动作感知失真。</p>
+<h1 id="离散空间采样"><a class="header" href="#离散空间采样">离散空间采样</a></h1>
+<h2 id="gpt-style"><a class="header" href="#gpt-style">GPT Style</a></h2>
+<p>『离散表示+自回归生成框架』能够实现文生动作任务，且生成动作的质量非常高。</p>
+<p>离散表示把motion序列变成了token序列。<br />
+动作生成的控制信号也可以有离散形式的或者连续形式。如果控制信号正好也是离散的token表达，那么通过将控制信号的离散表达与动作的离散表达进行对齐，那么可以提升跨模态生成的一致性。</p>
+<p>要解决的问题：</p>
+<ol>
+<li>生成结果与控制信号的匹配度</li>
+<li>生成时长</li>
+<li>生成质量</li>
+</ol>
+<h3 id="多模态latent-code对齐"><a class="header" href="#多模态latent-code对齐">多模态Latent Code对齐</a></h3>
+<p>Latent Code对齐用于以下场景：</p>
+<ol>
+<li>输入（控制信号）与输出（生成动作）都是离散表达</li>
+<li>输入与输出具体不同的表达语义（例如语言和动作）</li>
+<li>输入包含不同语义的控制信号（例如语言+动作）</li>
+</ol>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>87</td><td>2024.3.18</td><td>MotionGPT: Finetuned LLMs are General-Purpose Motion Generators</td><td>1. 利用VQ-VAE，将运动序列编码为一种特殊“语言”<br>2.  将运动生成视为序列到序列任务，结合LLM能力实现从文本到动作的端到端生成。<br>3. 首个多模态控制的动作生成方法</td><td>VQ-VAE + LLM + LoRA， 生成质量(FID)有明显提升</td><td>控制条件：文本(token)/key frame<br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：复用GPT<br>其它：LLM</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/87.html">link</a></td></tr>
+<tr><td>146</td><td>2023.11.28</td><td>AvatarGPT: All-in-One Framework for Motion Understanding, Planning, Generation and Beyond</td><td>在与人体运动相关的研究领域，学者们仍在为每个任务开发孤立模型。</td><td>VQ-VAE + LLM + Adapter</td><td></td><td></td></tr>
+<tr><td>145</td><td>2023.7.20</td><td>MotionGPT: Human Motion as a Foreign Language.</td><td>构建一个能够统一处理语言与运动等多模态数据的模型</td><td>1. 采用离散向量量化技术将人体运动转化为运动标记<br>2. 基于该&quot;运动词汇表&quot;，以统一的方式对运动和文本进行语言建模，将人体运动视为特殊形式的语言。<br>3. (<strong>提示学习</strong>)采用运动-语言混合数据对MotionGPT进行预训练，并基于提示问答任务进行微调。</td><td>控制条件：问题（文本T5，动作VQ-VAE）<br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：GPT Style 问答模型</td><td></td></tr>
+<tr><td></td><td>2022.8.4</td><td>TM2T: Stochastic and tokenized modeling for the reciprocal generation of 3d human motions and texts.</td><td>文生3D全身动作，实现同文本生成多个差异化动作，并避免产生无意义的静止姿态序列。</td><td><strong>首次提出离散量化的运动表示</strong> <br>互惠生成方法通过同时训练文本→运动和运动→文本任务，显著提升了<strong>语义对齐</strong>能力。</td><td>控制条件：文本（NMT Encoder）<br> 生成方式：自回归<br>表示方式：离散表示（同VQ-VAE，但没有使用这个词）<br>生成模型：GPT Style（NMT Decoder）</td><td></td></tr>
+</tbody></table>
+<h3 id="不需要latent-code对齐"><a class="header" href="#不需要latent-code对齐">不需要Latent Code对齐</a></h3>
+<p>以下场景不需要Latent Code对齐：</p>
+<ol>
+<li>输入（控制信号）与输出（生成动作）具有相同的语义，例如历史动作预测未来动作的任务。</li>
+<li>输入（控制信号）使用连续表示方式，不能与输出（生成动作）的离散表示方式共享空间。</li>
+</ol>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>151</td><td>2024.6.2</td><td>T2LM: Long-Term 3D Human Motion Generation from Multiple Sentences</td><td>处理多句子文本生成长且复杂的动作序列，直接学习端到端文本-运动映射。</td><td><br> – 连续长期VQ-VAE生成框架<br>– 1D(时序维度)卷积VQ-VAE（避免时序不一致）<br> – 无法生成细粒度运动<br>– 仅支持短文本描述</td><td>1D卷积VQ-VAE + Transformer，长序列生成</td><td>控制条件：<strong>文本（CLIP）</strong><br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：GPT Style<br>其它：Transformer</td></tr>
+<tr><td>88</td><td>2023.9.24</td><td>T2m-gpt: Generating human motion from textual descriptions with discrete representations</td><td><strong>基于VQ-VAE与GPT的文生人体运动框架</strong></td><td>1. 基于VQ-VAE的离散运动表示<br> 2. VQ-VAE + Transformer（GPT）的文生动作框架**<br> 3. 生成质量(FID)有明显提升</td><td>控制条件：<strong>文本（CLIP）</strong><br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：GPT Style<br>其它：Transformer，开源</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/88.html">link</a></td></tr>
+<tr><td>150</td><td>2023.9.2</td><td>AttT2M:Text-Driven Human Motion Generation with Multi-Perspective Attention Mechanism.</td><td>1. 人体运动固有的复杂时空特性<br>2. 文本与运动间跨模态关系学习的难度</td><td>– 基于身体部位注意力的时空VQ-VAE<br>– 全局-局部注意力学习跨模态关系 <br> – 长文本驱动生成多样性不足<br>– 数据依赖（无法生成未见运动）</td><td>控制条件：<strong>文本（CLIP）</strong><br> 生成方式：自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：GPT Style<br>其它：Transformer</td><td><a href="https://arxiv.org/pdf/2309.00796">link</a></td></tr>
+<tr><td>143</td><td>2022.10.19</td><td>PoseGPT: Quantization-based 3D Human Motion Generation and Forecasting</td><td>任意观测长度（包括零观测）条件下的运动生成</td><td>1. 量化隐空间的编码器-解码器架构 <br> 2. 基于离散编解码的动作生成</td><td>控制条件：历史动作, action <br> 生成方式：自回归 <br>表示方式：离散表示 <br>生成模型：类GPT模型预测隐空间索引 <br> 其它： 量化方案限制运动多样性</td><td></td></tr>
+</tbody></table>
+<h2 id="bert-style"><a class="header" href="#bert-style">Bert Style</a></h2>
+<p>『离散表示 + 掩码语言模型生成框架』的文生动作模型。</p>
+<ul>
+<li><strong>核心思想：</strong> 将动作序列<strong>离散化</strong> 为令牌序列（类似 NLP 中的单词）。在训练时，随机或有策略地<strong>掩码 (Mask)</strong> 一部分令牌，让模型基于上下文（未掩码令牌和文本条件）<strong>预测被掩码的令牌</strong>。</li>
+<li><strong>优势：</strong> 通常比扩散模型<strong>效率更高</strong>，能有效学习动作的时空依赖关系。</li>
+</ul>
+<h3 id="text-to-motion"><a class="header" href="#text-to-motion">Text to Motion</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025</td><td>BAMM: Bidirectional Autoregressive Motion Model.</td><td>bert style <br> – 条件掩码自注意力Transformer<br>– 混合注意力掩码训练</td><td>– 中等计算复杂度<br>– 无法生成快速变化的根运动</td><td></td><td></td></tr>
+<tr><td>148</td><td>2024.3.28</td><td>MMM: Generative Masked Motion Model.</td><td><strong>基于掩码动作模型的全新简易动作生成范式。</strong></td><td>与MoMask非常相似，文中没有与MoMask的对比<br> 对输入动作令牌进行<strong>随机掩码</strong>，模型基于所有未掩码令牌（上下文）同时预测所有被掩码的令牌（非自回归）。<br>局限性：无法生成长而详细的文本描述</td><td>控制条件：文本（CLIP）<br> 生成方式：Bert Style<br>表示方式：离散表示VQ-VAE<br>生成模型：条件掩码运动模型</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/148.html">link</a></td></tr>
+<tr><td></td><td>2023.11.29</td><td>MoMask: Generative Masked Modeling of 3D Human Motions</td><td>VQ-VAE + Bert Style的文生动作新框架</td><td>VQ-VAE + 分层码本结构；掩码预测生成粗糙运动，残差层逐步细化<br> <strong>首个离散运动表示+掩码语言模型的文生动作框架</strong></td><td>控制条件：文本（CLIP）<br> 生成方式：Bert Style<br>表示方式：离散表示（VQ-VAE + 残差细化）<br>生成模型：掩码语言模型</td><td><a href="https://arxiv.org/pdf/2312.00063">link</a></td></tr>
+</tbody></table>
+<h3 id="music-2-dance"><a class="header" href="#music-2-dance">music 2 dance</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2023</td><td><strong>TM2D</strong> [Gong et al., 2023]</td><td>– VQ-VAE框架<br>– 双模态特征融合（跨模态Transformer）</td><td>– 缺乏配对数据（音乐/文本）<br>– 限于特定舞蹈风格（数据依赖）</td><td></td><td></td></tr>
+<tr><td></td><td>2022.11.29</td><td>UDE: A Unified Driving Engine for Human Motion Generation</td><td>统一文本/音频驱动的单模型</td><td>模态无关的Transformer Encoder + Diffusion Decoder<br> – 处理多模态复杂交互困难</td><td><a href="https://arxiv.org/pdf/2211.16016">link</a></td><td></td></tr>
+</tbody></table>
+<h2 id="离散去噪概率模型-d3pm"><a class="header" href="#离散去噪概率模型-d3pm">离散去噪概率模型 D3PM</a></h2>
+<h3 id="text-to-motion-1"><a class="header" href="#text-to-motion-1">Text to Motion</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>152</td><td>2024.7.19</td><td>M2D2M: Multi-Motion Generation from Text with Discrete Diffusion Models</td><td>先用VQ-VAE获取离散运动编码，再在标记序列上学习去噪扩散模型。为多动作生成设计动态转移概率确保动作间平滑过渡。</td><td>– 动态转移概率模型<br>– 新评估指标Jerk（动作边界平滑度），但Jerk指标无法评估所有场景</td><td>控制条件：文本(CLIP)<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：动作边界平滑度指标Jerk</td></tr>
+<tr><td></td><td>2023.9.4</td><td>DiverseMotion: Towards Diverse Human Motion Generation via Discrete Diffusion</td><td>在动作质量与多样性之间取得平衡仍是一个未解决的挑战。该问题主要由两个关键因素导致：<br> 1）现有基准数据集中动作-描述对缺乏多样性；<br> 2）对文本提示存在片面且有偏差的语义理解，主要关注动词成分而忽略其他词语所指示的微妙差异。</td><td>1. 构建了大规模野生动作-描述数据集（WMC）<br> 2. 提出分层语义聚合（HSA）模块来捕获细粒度语义。<br> 3. 将上述设计整合到有效的动作离散扩散（MDD）框架中</td><td>控制条件：文本（分层语义聚合HSA）<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：动作离散扩散（MDD）框架 <br> 其它：数据集</td></tr>
+<tr><td></td><td>2023</td><td>Text-to-Motion Synthesis using Discrete Diffusion Model</td><td>扩散模型计算成本较高，且生成的运动可能与输入文本对齐度不足。</td><td>结合离散潜在空间与扩散模型，学习表达性条件概率映射以实现运动合成。<br>1. 学习离散运动表达 <br> 2. 应用离散去噪扩散概率模型（D3PM）学习运动标记的条件概率分布。<br> 3. 训练过程中进一步采用离散无分类器引导技术，通过合适的引导尺度实现运动与对应文本描述的对齐。</td><td>控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br>生成模型：离散去噪扩散概率模型（D3PM）<br>其它：MoDDM</td></tr>
+<tr><td>147</td><td>2023.8.30</td><td>Priority-Centric Human Motion Generation in Discrete Latent Space</td><td>并非所有动作都与特定文本描述具有同等关联度——某些更具显著性和信息量的动作应在生成过程中被优先考虑</td><td>1. 基于Transformer的VQ-VAE架构，<strong>通过全局自注意力机制与正则化项构建紧凑的离散动作表示，有效防止代码坍塌</strong>。<br>2. 一种创新的运动离散扩散模型，<strong>通过分析动作令牌在整体序列中的重要性来制定噪声调度策略</strong>。<br>局限性：难以捕捉运动细粒度细节</td><td><strong>M2DM</strong><br>控制条件：文本<br> 生成方式：非自回归<br>表示方式：离散表示（基于Transformer的VQ-VAE架构）<br>生成模型：离散去噪扩散概率模型（D3PM）</td></tr>
+</tbody></table>
+<h1 id="连续空间采样"><a class="header" href="#连续空间采样">连续空间采样</a></h1>
+<h2 id="diffusion"><a class="header" href="#diffusion">Diffusion</a></h2>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>149</td><td>2024.9.17</td><td>BAD: Bidirectional Auto-Regressive Diffusion for Text-to-Motion Generation</td><td>自回归模型难以捕捉复杂的双向模式。<br> Mask Modeling假设标记相互独立，削弱了对序列依赖关系。<br> 掩码或吸收操作对序列进行的破坏可能引入不自然的失真，增加学习难度。</td><td>双向自回归扩散模型（BAD），基于排列的序列破坏技术，<strong>融合了自回归与基于掩码的生成模型优势，</strong> 保持因果依赖的同时有效捕捉序列与双向关系。<br> [?] 创新的把diffusion用于离散数据的方法</td><td>控制条件：文本（CLIP）<br> 生成方式：Bert Style<br>表示方式：离散表示VQ-VAE<br>生成模型：a novel corruption (diffusion) technique</td><td><a href="https://arxiv.org/pdf/2409.10847">link</a></td></tr>
+</tbody></table>
+<h3 id="score-matching"><a class="header" href="#score-matching">Score Matching</a></h3>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>解决了什么痛点</th><th>主要贡献是什么</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td>102</td><td>2025.5.16</td><td>HGM³: Hierarchical Generative Masked Motion Modeling with Hard Token Mining</td><td>由于文本固有的歧义性以及人体运动动态的复杂性</td><td>1. 类似MoMask的残差VQ-VAE，但专门训练了一个网络来决定给哪些token掩码 <br> 2. 把文本编码成不同粒度的embedding，提升文本的整体把控与细节控制</td><td>控制条件：文本（Graph Reasoning）<br> 生成方式：Bert Style<br>表示方式：离散表示（分层文本编码，每一层是残差VQ-VAE）<br>生成模型：残差VQ-VAE(类似于Diffusion的逐渐细化的生成模式)</td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/102.html">link</a></td></tr>
+<tr><td>92</td><td>2025</td><td>Deterministic-to-Stochastic Diverse Latent Feature Mapping for Human Motion Synthesis</td><td>基于score的生成模型，其训练过程涉及复杂的曲率轨迹，导致训练稳定性不足。</td><td>1. 第一阶段通，运动重建(VQ-VAE with different network)，学习运动潜在表征<br>2. 第二阶段，使用确定性特征映射过程(DerODE)构建高斯分布与运动潜在空间分布之间的映射关系<br>3. 生成时通过通过向确定性特征映射过程的梯度场中注入可控噪声(DivSDE)实现多样性。</td><td>控制条件： Action Label <br> 生成方式：非自回归<br>表示方式：离散表示（VQ-VAE）<br><strong>生成模型：flow matching + score matching</strong></td><td><a href="https://caterpillarstudygroup.github.io/ReadPapers/92.html">link</a></td></tr>
+</tbody></table>
+<h1 id="离散表示-vs-连续表示对比表"><a class="header" href="#离散表示-vs-连续表示对比表">离散表示 vs 连续表示对比表</a></h1>
+<table><thead><tr><th><strong>对比维度</strong></th><th><strong>离散表示</strong></th><th><strong>连续表示</strong></th></tr></thead><tbody>
+<tr><td><strong>运动编码</strong></td><td>VQ-VAE或量化器从姿态序列生成运动token</td><td>自编码器或直接使用原始连续姿态数据</td></tr>
+<tr><td><strong>生成模型</strong></td><td>Transformer（如GPT）<br>掩码模型（如BERT）<br>离散扩散模型</td><td>原始运动空间的扩散模型<br>隐空间扩散（如LDMs）</td></tr>
+<tr><td><strong>文本对齐</strong></td><td>易与NLP模型集成<br>可将运动视为&quot;语言&quot;</td><td>需注意力/跨模态融合<br>映射结构较弱</td></tr>
+<tr><td><strong>训练稳定性</strong></td><td>易发码本坍塌和量化伪影</td><td>扩散中连续MSE损失保障稳定性</td></tr>
+<tr><td><strong>保真度与多样性</strong></td><td>码本大时保真度高<br>多样性受限</td><td>随机采样天然多样<br>表现力强</td></tr>
+<tr><td><strong>推理速度</strong></td><td>小型自回归模型快<br>长序列慢</td><td>迭代采样通常较慢<br>LDMs可提速</td></tr>
+<tr><td><strong>控制与编辑</strong></td><td>支持掩码修复<br>token级符号控制</td><td>精细编辑（如FLAME）<br>支持帧/关节控制（如SALAD）</td></tr>
+<tr><td><strong>流式/在线能力</strong></td><td>自回归解码受限<br>非因果序列阻碍实时性</td><td>因果隐变量支持流式生成<br>（如MotionStreamer）</td></tr>
+<tr><td><strong>常见局限</strong></td><td>量化信息损失<br>分词器训练困难</td><td>计算成本高<br>文本精确对齐难</td></tr>
+<tr><td><strong>代表工作</strong></td><td>T2M-GPT [2023]<br>MMM [2024]<br>MotionGPT [2023]<br>MoDDM [2023]<br>M2D2M [2024]</td><td>MotionDiffuse [2022]<br>MoFusion [2023]<br>FLAME [2023]<br>SALAD [2025]<br>MoLA [2024]<br>MotionStreamer [2025]</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../MeshAnimation/SkeletonProxy/MotionPrior.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../MeshAnimation/SkeletonProxy/Locomotion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../MeshAnimation/SkeletonProxy/MotionPrior.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../MeshAnimation/SkeletonProxy/Locomotion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../theme/pagetoc.js"></script>
+        <script type="text/javascript" src="../../theme/mermaid.min.js"></script>
+        <script type="text/javascript" src="../../theme/mermaid-init.js"></script>
+    </body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>facial and expression - ImportantArticles</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of Important Articles">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <link rel="stylesheet" href="../theme/custom.css">
+        <link rel="stylesheet" href="../theme/font-sizes.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DMesh的驱动</li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/SkeletonProxy.html"><strong aria-hidden="true">2.</strong> 基于骨骼代理的Mesh的驱动</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionPrior.html"><strong aria-hidden="true">2.1.</strong> 骨骼动作先验</a></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGenerationDiscreteRepresentation.html"><strong aria-hidden="true">2.2.</strong> 基于离散表示的骨骼动作生成</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> 基于连续表示的骨骼动作生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/Locomotion.html"><strong aria-hidden="true">2.3.1.</strong> locomotion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.</strong> 文生动作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/DiffusionBasedText2Motion.html"><strong aria-hidden="true">2.3.2.1.</strong> 基于Diffusion的文生动作</a></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/MotionGeneration/Text2Motion/MambaBasedText2Motion.html"><strong aria-hidden="true">2.3.2.2.</strong> 基于Mamba的文生动作</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html"><strong aria-hidden="true">2.4.</strong> 基于视觉的人类骨骼动作捕捉HPE</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanFacialAnimation.html" class="active"><strong aria-hidden="true">2.5.</strong> facial and expression</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanMotionGenerationSummary.html"><strong aria-hidden="true">2.6.</strong> Human Motion Generation: A Survey</a></li></ol></li><li class="chapter-item expanded "><a href="../MeshAnimation/E2E.html"><strong aria-hidden="true">3.</strong> 无代理的Mesh驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - Nerf驱动</li><li class="chapter-item expanded "><a href="../NerfAnimation.html"><strong aria-hidden="true">4.</strong> NerfAnimation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画3D管线 - 3DGS的驱动</li><li class="chapter-item expanded "><a href="../3DGSAnimation/3DGS.html"><strong aria-hidden="true">5.</strong> 3DGS VS. Nerf</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/Dynamic.html"><strong aria-hidden="true">6.</strong> 动态3DGS</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/Static.html"><strong aria-hidden="true">7.</strong> 静态3DGS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3DGSAnimation/4DReconstruction.html"><strong aria-hidden="true">7.1.</strong> 基于静态3DGS的4D重建</a></li><li class="chapter-item expanded "><a href="../3DGSAnimation/3DGSAnimation.html"><strong aria-hidden="true">7.2.</strong> 静态3DGS驱动</a></li></ol></li><li class="chapter-item expanded "><a href="../3D_Gaussian_Splatting.html"><strong aria-hidden="true">8.</strong> A Survey on 3D Gaussian Splatting</a></li><li class="chapter-item expanded "><a href="../AnimationGeneration.html"><strong aria-hidden="true">9.</strong> Animal Generation</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 像素的驱动，可控视频生成</li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/Introduction.html"><strong aria-hidden="true">10.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/VideoGeneration.html"><strong aria-hidden="true">11.</strong> Video Generation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Pioneeringearlyworks.html"><strong aria-hidden="true">11.1.</strong> 闭源T2V大模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Open-sourcebasemodels.html"><strong aria-hidden="true">11.2.</strong> 开源T2V基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2I.html"><strong aria-hidden="true">11.3.</strong> Works Based on T2I 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/WorksBasedOnT2V.html"><strong aria-hidden="true">11.4.</strong> Works Based on T2V 基模型</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Storyboard.html"><strong aria-hidden="true">11.5.</strong> Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Longvideogeneration.html"><strong aria-hidden="true">11.6.</strong> Long video generation/Storyboard</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.html"><strong aria-hidden="true">11.7.</strong> Multimodal-guided generation</a></li><li class="chapter-item expanded "><a href="../CharacterAnimation/HumanVideoGeneration.html"><strong aria-hidden="true">11.8.</strong> Human Video Generation</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing.html"><strong aria-hidden="true">12.</strong> Video Editing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Tuning-based.html"><strong aria-hidden="true">12.1.</strong> Tuning-based</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/Training-free.html"><strong aria-hidden="true">12.2.</strong> Training-free</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/ControlledEditing.html"><strong aria-hidden="true">12.3.</strong> Controlled Editing</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/3D-Aware.html"><strong aria-hidden="true">12.4.</strong> 3D-Aware</a></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/VideoEditing/OtherGuidance.html"><strong aria-hidden="true">12.5.</strong> Other Guidance</a></li></ol></li><li class="chapter-item expanded "><a href="../VideoDiffusionModels/EvaluationMetrics.html"><strong aria-hidden="true">13.</strong> 评价指标</a></li><li class="chapter-item expanded affix "><li class="part-title">动画2D管线 - 2D图形的驱动</li><li class="chapter-item expanded "><a href="../ClipAnimation.html"><strong aria-hidden="true">14.</strong> 2D图形驱动</a></li><li class="chapter-item expanded affix "><li class="part-title">通用AI技术</li><li class="chapter-item expanded "><a href="../PhysicsSimulation/PINN.html"><strong aria-hidden="true">15.</strong> 2025 PINN Survey</a></li><li class="chapter-item expanded "><a href="../PhysicsSimulation/Fluid.html"><strong aria-hidden="true">16.</strong> 2024 Fluid Survey</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/Agenda.html"><strong aria-hidden="true">17.</strong> NeurIPS 2024 Flow Matchig Turorial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingBasics.html"><strong aria-hidden="true">17.1.</strong> Flow Matching Basics</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/FlowMatchingAdvancedDesigns.html"><strong aria-hidden="true">17.2.</strong> Flow Matching Advanced Designs</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/ModelAdaptation.html"><strong aria-hidden="true">17.3.</strong> Model Adaptation</a></li><li class="chapter-item expanded "><a href="../NeurIPS2024FlowMatchigTurorial/GeneratorMatchingandDiscreteFlows.html"><strong aria-hidden="true">17.4.</strong> Generator Matching and Discrete Flows</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Introduction.html"><strong aria-hidden="true">18.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Fundamentals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/DenoisingDiffusionProbabilisticModels.html"><strong aria-hidden="true">19.1.</strong> Denoising Diffusion Probabilistic Models</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Score-basedGenerativeModelingwithDifferentialEquations.html"><strong aria-hidden="true">19.2.</strong> Score-based Generative Modeling with Differential Equations</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/AcceleratedSampling.html"><strong aria-hidden="true">19.3.</strong> Accelerated Sampling</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/ConditionalGenerationandGuidance.html"><strong aria-hidden="true">19.4.</strong> Conditional Generation and Guidance</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Fundamentals/Summary.html"><strong aria-hidden="true">19.5.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/Architecture.html"><strong aria-hidden="true">20.</strong> T2I 基模型</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Image Applications Based on 基模型</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/ImageEditing.html"><strong aria-hidden="true">21.1.</strong> 图像生成/编辑</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/InverseProblems.html"><strong aria-hidden="true">21.2.</strong> 图像去噪/图像超分/图像补全</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationOnImage/LargeContents.html"><strong aria-hidden="true">21.3.</strong> 大图生成</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> 3D Applications Based on Diffusion</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/2Ddiffusionmodelsfor3Dgeneration.html"><strong aria-hidden="true">22.1.</strong> 基于T2I基模型</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3D.html"><strong aria-hidden="true">22.2.</strong> 基于不同视角的3D生成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Diffusionmodelsforviewsynthesis.html"><strong aria-hidden="true">22.3.</strong> 新视角合成</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/3Dreconstruction.html"><strong aria-hidden="true">22.4.</strong> 3D重建</a></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Inverseproblems.html"><strong aria-hidden="true">22.5.</strong> 3D编辑</a></li></ol></li><li class="chapter-item expanded "><a href="../diffusion-tutorial-part/ApplicationsOn3D/Safetyandlimitationsofdiffusionmodels.html"><strong aria-hidden="true">23.</strong> Safety and limitations of diffusion models</a></li><li class="chapter-item expanded "><a href="../LargeMultimodalModelsNotesonCVPR2023Tutorial.html"><strong aria-hidden="true">24.</strong> Large Multimodal Models Notes on CVPR 2023 Tutorial</a></li><li class="chapter-item expanded "><a href="../GenerativeModels.html"><strong aria-hidden="true">25.</strong> 生成模型</a></li><li class="chapter-item expanded affix "><li class="part-title">Others</li><li class="chapter-item expanded "><a href="../数据集.html"><strong aria-hidden="true">26.</strong> 数据集</a></li><li class="chapter-item expanded "><a href="../More.html"><strong aria-hidden="true">27.</strong> More</a></li><li class="chapter-item expanded affix "><li class="part-title">Views</li><li class="chapter-item expanded "><a href="../Views/20250903.html"><strong aria-hidden="true">28.</strong> 2025.9.3骨骼动作生成</a></li><li class="chapter-item expanded "><a href="../Views/20250914.html"><strong aria-hidden="true">29.</strong> 2025.9.14骨骼动作离散编码</a></li><li class="chapter-item expanded "><a href="../Views/20250920.html"><strong aria-hidden="true">30.</strong> 2025.9.20视频可控生成</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ImportantArticles</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/ImportantArticles" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="face-reenactment-and-identity-preservation"><a class="header" href="#face-reenactment-and-identity-preservation">Face Reenactment and Identity Preservation</a></h1>
+<h1 id="3d-face-generation-and-editing"><a class="header" href="#3d-face-generation-and-editing">3D Face Generation and Editing</a></h1>
+<h1 id="text-to-face-and-style-based-face-generation"><a class="header" href="#text-to-face-and-style-based-face-generation">Text-to-Face and Style-Based Face Generation</a></h1>
+<p><strong>【翻译】</strong></p>
+<h3 id="可动画头部建模"><a class="header" href="#可动画头部建模">可动画头部建模</a></h3>
+<p>参数化3D头部模型作为统计先验被广泛应用于可动画头部建模。3D可变形模型（3DMM）[Paysan等，2009]通过低维主成分表示头部形状。在此基础上，FLAME模型[Li等，2017]引入形状与姿势混合形状（blendshapes），实现了下颌、颈部及眼球的运动控制。后续研究[Daněček等，2022；Feng等，2021，2023]基于参数化头部模型[Blanz与Vetter，2023；Li等，2017；Ploumpis等，2020]进一步建模细节表情与情感。ROME方法[Khakhulin等，2022]提出顶点偏移量以捕捉头发几何，但这些方法因固定拓扑和有限表达能力常产生过度平滑的表面，难以处理头饰或复杂发型等几何结构。另一类研究探索混合表示：DELTA[Feng等，2023]将面部显式网格与NeRF头发建模结合，支持多样化发型。</p>
+<p>为实现高质量渲染，多项工作[Gafni等，2021；Grassal等，2022；Xu等，2023]采用神经辐射场（NeRF）[Mildenhall等，2021]建模头部虚拟形象。HeadNeRF[Hong等，2022]提出参数化NeRF模型，将头部模型融入NeRF；INSTA[Zielonka等，2023]基于InstantNGP[Müller等，2022]开发动态NeRF。PointAvatar[Zheng等，2023]提出基于点的表征，通过FLAME表情驱动点云形变场。NeRFBlendshape[Gao等，2022]构建基于NeRF的混合形状模型，结合多级体素场与表情系数实现语义动画控制与超写实渲染。</p>
+<p>近期研究[Chen等，2024；Dhamo等，2025；Ma等，2024等]利用3D高斯溅射（3D Gaussian Splatting）[Kerbl等，2023]建模头部形象。FlashAvatar[Xiang等，2024]在网格上附加可学习偏移量的高斯点；GaussianBlendshapes[Ma等，2024]将偏移解耦为混合形状。尽管这些方法对写实形象有效，但难以处理风格化内容。</p>
+<h3 id="生成式头部建模"><a class="header" href="#生成式头部建模">生成式头部建模</a></h3>
+<p>头部建模领域的最新进展利用生成模型合成新视角。PanoHead[An等，2023]采用三网格神经体积表征，支持360度头部合成；Rodin[Wang等，2023b]及其扩展RodinHD[Zhang等，2024]通过扩散模型生成头部三平面图。但这些生成的头部均为静态，无法动画。Liveportrait[Guo等，2024]可将单图动态化为视频，但局限于2D空间。CAT4D[Wu等，2024a]训练多视角可变形扩散模型创建动态形象，但基于扩散的方法常面临跨视角一致性挑战。</p>
+<p>另一类研究[Chen等，2023a；Liao等，2024等]通过分数蒸馏采样（SDS）将2D扩散先验提炼至3D，虽能实现高质量，但单形象生成需数小时。相比之下，前馈方法[Hong等，2023；Tang等，2025等]在大规模3D数据集训练后可在秒级生成资产，但因训练数据为通用物体，应用于头部时存在显著领域差距，常产生形状失真。总体而言，现有推理方法仍局限于静态形象重建。</p>
+<hr />
+<p><strong>【深度解析】</strong></p>
+<h3 id="技术演进图谱"><a class="header" href="#技术演进图谱">技术演进图谱</a></h3>
+<table><thead><tr><th><strong>技术路线</strong></th><th><strong>代表性方法</strong></th><th><strong>核心突破</strong></th><th><strong>关键局限</strong></th></tr></thead><tbody>
+<tr><td><strong>参数化建模</strong></td><td>3DMM/FLAME</td><td>建立可动画的混合形状参数体系</td><td>拓扑固定导致几何细节缺失</td></tr>
+<tr><td><strong>神经辐射场(NeRF)</strong></td><td>HeadNeRF/INSTA</td><td>实现超写实渲染与动态光照</td><td>难以兼容传统动画管线/高计算成本</td></tr>
+<tr><td><strong>点云与高斯表征</strong></td><td>PointAvatar/GaussianBlendshapes</td><td>支持非刚性形变的灵活表征</td><td>风格化内容适应性差/缺乏语义控制</td></tr>
+<tr><td><strong>混合表示</strong></td><td>DELTA</td><td>分区优化（面部网格+头发NeRF）</td><td>接缝区域过渡不自然</td></tr>
+<tr><td><strong>生成式建模</strong></td><td>RodIN/PanoHead</td><td>单图到3D的零样本生成</td><td>输出静态/跨视角几何不一致</td></tr>
+</tbody></table>
+<h3 id="关键技术瓶颈突破"><a class="header" href="#关键技术瓶颈突破">关键技术瓶颈突破</a></h3>
+<ol>
+<li>
+<p><strong>动态-静态表征鸿沟</strong></p>
+<ul>
+<li>现有生成式方法（如扩散模型）多聚焦静态输出，需通过<strong>时序感知的潜在空间编码</strong>将动画参数（如FACS系数）注入生成过程</li>
+<li>潜在解决方案：在NeRF体积场中嵌入可驱动的形变场（如SE(3)-Field），实现表情驱动的密度场变化</li>
+</ul>
+</li>
+<li>
+<p><strong>风格化内容建模</strong></p>
+<ul>
+<li>传统参数化模型对非写实风格的泛化能力弱，需开发<strong>解耦式风格迁移框架</strong>：
+<ul>
+<li>几何风格（如卡通比例）通过对抗学习在顶点位移空间建模</li>
+<li>外观风格（如赛博朋克色调）通过纹理生成网络实现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>跨模态控制</strong></p>
+<ul>
+<li>现有方法缺乏多粒度控制接口，理想系统应支持：
+<ul>
+<li><strong>高层语义控制</strong>：通过自然语言描述调整发型（如&quot;蓬松卷发+金属耳环&quot;）</li>
+<li><strong>底层参数控制</strong>：精确调节混合形状权重与骨骼绑定</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>该领域正经历从&quot;重建-驱动&quot;到&quot;生成-动画&quot;的范式转换，下一阶段突破将取决于<strong>神经符号系统</strong>（结合生成式AI与参数化建模）与<strong>物理启发生成</strong>（模拟真实肌肉运动）的深度融合。</p>
+<p>以下是整理后的表格，概述了文本到人脸生成与编辑模型的关键特性：</p>
+<hr />
+<table><thead><tr><th><strong>模型名称</strong></th><th><strong>基础架构/方法</strong></th><th><strong>主要贡献</strong></th><th><strong>输入</strong></th><th><strong>输出</strong></th><th><strong>训练目标/优化方法</strong></th><th><strong>关键创新点</strong></th></tr></thead><tbody>
+<tr><td><strong>AdaTrans [32]</strong></td><td>非线性潜在空间变换（基于StyleGAN）</td><td>改进复杂条件编辑能力，保持图像真实感</td><td>潜在代码 + 编辑条件</td><td>编辑后的面部图像</td><td>自适应非线性变换优化</td><td>非线性潜在空间变换替代传统线性编辑（如StyleGAN），提升编辑灵活性</td></tr>
+<tr><td><strong>StyleT2I [33]</strong></td><td>StyleGAN + CLIP引导</td><td>解决属性组合性与生成忠实度问题</td><td>文本描述</td><td>符合文本的面部图像</td><td>CLIP-guided对比损失 + 文本到方向模块（Text-to-Direction）</td><td>文本到方向模块学习潜在方向；组合属性调整确保多属性正确表达</td></tr>
+<tr><td><strong>M3Face [34]</strong></td><td>Muse/VQ-GAN + ControlNet + Imagic优化</td><td>支持多模态输入（多语言文本、分割掩码、地标）</td><td>文本/掩码/地标</td><td>多模态编辑的面部图像</td><td>多模态条件输入融合 + Imagic高保真微调</td><td>端到端集成生成与编辑流程，支持多语言与多模态输入</td></tr>
+<tr><td><strong>GuidedStyle [35]</strong></td><td>StyleGAN + 知识网络（预训练属性分类器）</td><td>实现精准、可解释的语义面部编辑</td><td>属性条件（如年龄、表情）</td><td>属性编辑后的面部图像</td><td>稀疏注意力控制分层编辑 + 知识网络引导</td><td>稀疏注意力机制实现分层编辑；知识网络防止意外属性变化</td></tr>
+<tr><td><strong>AnyFace [36]</strong></td><td>StyleGAN + 两流框架 + CLIP</td><td>开放世界自由文本生成，解决模式崩溃与词汇限制</td><td>自由文本描述</td><td>多样化且对齐文本的面部图像</td><td>跨模态蒸馏（CLIP） + 多样性三元组损失（Diverse Triplet Loss）</td><td>两流框架分离合成与重建；跨模态蒸馏增强文本-图像对齐；多样性损失提升生成丰富性</td></tr>
+</tbody></table>
+<table><thead><tr><th>ID</th><th>Year</th><th>Name</th><th>Note</th><th>Tags</th><th>Link</th></tr></thead><tbody>
+<tr><td></td><td>2025.5.8</td><td><strong>SOAP: Style-Omniscient Animatable Portraits</strong></td><td>从单张图像生成可动画化的3D虚拟头象</td><td>FLAME，FACS面部动作编码，多风格3D头像数据集</td><td><a href="60.html">link</a></td></tr>
+<tr><td></td><td>2025.5.2</td><td>Model See Model Do: Speech-Driven Facial Animation with Style Control</td><td></td><td>语音驱动，唇形同步，风格</td><td><a href="41.html">link</a></td></tr>
+</tbody></table>
+<hr />
+<h3 id="关键说明"><a class="header" href="#关键说明"><strong>关键说明</strong></a></h3>
+<ol>
+<li><strong>架构演进</strong>：
+<ul>
+<li><strong>基础模型</strong>：多数基于StyleGAN，逐步引入CLIP、ControlNet等多模态组件。</li>
+<li><strong>编辑方式</strong>：从线性（StyleGAN）→ 非线性（AdaTrans）→ 分层（GuidedStyle）→ 开放世界（AnyFace）。</li>
+</ul>
+</li>
+<li><strong>多模态支持</strong>：
+<ul>
+<li>M3Face支持文本、掩码、地标混合输入，扩展应用场景。</li>
+</ul>
+</li>
+<li><strong>生成可控性</strong>：
+<ul>
+<li>StyleT2I通过文本到方向模块实现语义精准控制；GuidedStyle利用稀疏注意力避免属性干扰。</li>
+</ul>
+</li>
+<li><strong>开放性与多样性</strong>：
+<ul>
+<li>AnyFace通过两流框架与多样性损失，突破传统模型的词汇限制与模式崩溃问题。</li>
+</ul>
+</li>
+</ol>
+<h1 id="speech-driven-and-multimodal-expression-generation"><a class="header" href="#speech-driven-and-multimodal-expression-generation">Speech-Driven and Multimodal Expression Generation</a></h1>
+<p>以下是整理后的表格，概述了3D面部动画生成与编辑模型的关键特性：</p>
+<hr />
+<table><thead><tr><th><strong>模型名称/引用</strong></th><th><strong>基础架构/方法</strong></th><th><strong>主要贡献</strong></th><th><strong>输入</strong></th><th><strong>输出</strong></th><th><strong>训练目标/优化方法</strong></th><th><strong>关键创新点</strong></th></tr></thead><tbody>
+<tr><td><strong>[37]</strong>  2021</td><td>GPT-2文本编码器 + 扩张卷积音频编码器</td><td>双模态（音频+文本）驱动，提升上半脸表情与唇同步（优于VOCA [38]/MeshTalk [39]）</td><td>音频 + 文本</td><td>3D面部动画</td><td>联合音频-文本特征对齐</td><td>首个双模态联合模型，但缺乏头部与视线控制</td></tr>
+<tr><td><strong>CSTalk [40]</strong>  2024.4</td><td>Transformer编码器</td><td>捕捉面部区域相关性，增强情感语音驱动的动画真实感</td><td>情感语音</td><td>情感面部动画</td><td>面部区域关联建模</td><td>基于Transformer的跨区域关联编码，但仅支持5种情感</td></tr>
+<tr><td><strong>ExpCLIP [41]</strong>     2023</td><td>CLIP编码器（文本/图像/表情对齐）</td><td>支持文本/图像驱动的表情动画，适配多样化情感风格</td><td>文本/图像 + 语音</td><td>表情丰富的面部动画</td><td>CLIP多模态对齐 + TEAD数据集 + 表情提示增强（Expression Prompt Augmentation）</td><td>三模态（文本/图像/表情）对齐，扩展情感风格泛化性</td></tr>
+<tr><td><strong>[42]</strong>        2023.10</td><td>解缠表示（风格+内容）</td><td>提升身份保持与过渡平滑性，优于FaceFormer [43]的视听同步</td><td>语音 + 身份特征</td><td>个性化面部动画</td><td>解缠风格与内容表征</td><td>身份保留优化，但计算效率较低</td></tr>
+<tr><td><strong>AdaMesh [44]</strong>  2023.10</td><td>Expression Adapter (MoLoRA) + Pose Adapter</td><td>个性化语音驱动动画，表达力/多样性/同步性优于GeneFace [45]/Imitator [46]</td><td>语音 + 个性化参数</td><td>个性化表情与姿势动画</td><td>MoLoRA增强的表情适配器 + 基于检索的姿势适配器</td><td>分模块适配表情与姿势，支持高效个性化定制</td></tr>
+<tr><td><strong>[47]</strong>      2023</td><td>FaceXHuBERT [48] + FaceDiffuser [49]</td><td>解耦情感表达与随机运动多样性</td><td>语音 + 情感标签</td><td>多样化情感动画</td><td>随机扩散过程增强运动变化</td><td>结合HuBERT语音特征与扩散模型，实现可控随机性</td></tr>
+<tr><td><strong>NFR [51]</strong>    2023</td><td>解耦编码（身份码 $z_i$ + 表情码 $z_e$）</td><td>自动绑定与表情重定向，支持可解释参数（zFACS）</td><td>无表情网格 + 目标中性网格</td><td>重定向后的动画网格</td><td>身份与表情解耦训练 + 可解释参数生成</td><td>艺术家友好工具，支持自动绑定与参数化表情控制</td></tr>
+</tbody></table>
+<hr />
+<h3 id="关键说明-1"><a class="header" href="#关键说明-1"><strong>关键说明</strong></a></h3>
+<ol>
+<li><strong>多模态驱动</strong>：
+<ul>
+<li><strong>[37]</strong> 和 <strong>ExpCLIP</strong> 通过音频/文本/图像多模态输入增强动画表现力。</li>
+<li><strong>NFR</strong> 专注于网格数据的解耦与重定向，适用于影视与游戏制作。</li>
+</ul>
+</li>
+<li><strong>个性化与解耦</strong>：
+<ul>
+<li><strong>[42]</strong> 和 <strong>AdaMesh</strong> 通过解缠表示或模块化适配器提升身份保留与个性化控制。</li>
+<li><strong>[47]</strong> 结合扩散模型实现随机运动多样性，平衡可控性与自然性。</li>
+</ul>
+</li>
+<li><strong>技术挑战</strong>：
+<ul>
+<li>部分模型（如 <strong>[42]</strong>）牺牲计算效率以提升生成质量，需进一步优化实时性。</li>
+<li>情感类型限制（如 <strong>CSTalk</strong> 仅支持5种情感）仍是细分场景应用的瓶颈。</li>
+</ul>
+</li>
+</ol>
+<p>此表格总结了3D面部动画生成模型的核心技术路径，突出多模态驱动、解耦表示与个性化适配的演进方向。</p>
+<h1 id="reference"><a class="header" href="#reference">Reference</a></h1>
+<ol>
+<li>Generative AI for Character Animation: A Comprehensive Survey of Techniques, Applications, and Future Directions</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../CharacterAnimation/HumanMotionGenerationSummary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../MeshAnimation/SkeletonProxy/HPE_HMR_Summary.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../CharacterAnimation/HumanMotionGenerationSummary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+        <script type="text/javascript" src="../theme/mermaid.min.js"></script>
+        <script type="text/javascript" src="../theme/mermaid-init.js"></script>
+    </body>
+</html>
