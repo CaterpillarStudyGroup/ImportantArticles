@@ -1,3 +1,11 @@
+# GS运动代理：Skeleton（骨骼/角色动画）
+
+> 3D Gaussian Splatting 用于骨骼驱动角色动画的前沿方向。核心挑战：如何用高斯球表达非刚性形变（skin deformation），以及如何高效驱动骨骼运动。
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|220|2026.4.9|**GaussiAnimate: Rethinking Gaussian Splatting for Articulated Models via Skeleton-Aware Representation**|现有3DGS方法用于关节模型时存在三大痛点：<br>1) 骨骼绑定依赖LBS，对非线性形变表达差<br>2) 高斯球分布冗余，缺乏结构感知<br>3) 运动控制信号单一，难以处理复杂动作|1) **PartMM (Part-aware Mixture Model)** — 替代传统LBS的骨骼-高斯绑定方案，超越LBS 17.3%<br>2) **Structure-Guided Initialization** — 骨骼感知的高斯球初始化，消除冗余<br>3) **多模态运动驱动** — 支持文本/视频/动作序列多种输入<br>4) **Gaussian Splatting Skeleton Compression (GSSC)** — 高效压缩骨架表示|静态高斯模型：SMPL/HumanML3D<br>表达对象：人形角色<br>运动代理类型：**Skeleton Agent（骨骼）**<br>绑定方式：**PartMM（非LBS）**<br>驱动方式：多模态（文本/视频/动作序列）<br>开源|[ReadPapers/220](https://caterpillarstudygroup.github.io/ReadPapers/220.html)|
+
 # GS的运动代理：无
 
 无需要代理，直接控制每个高斯球的运动。  
