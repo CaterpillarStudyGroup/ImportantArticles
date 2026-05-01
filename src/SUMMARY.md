@@ -23,11 +23,11 @@
 
 # 动画3D管线 - 3DGS的驱动
 
-- [3DGS VS. Nerf](./3DGSAnimation/3DGS.md)
+- [3DGS基础：原理与对比](./3DGSAnimation/3DGS.md)
+- [静态3DGS驱动](./3DGSAnimation/Static.md)
+  - [驱动方法总览（论文索引）](./3DGSAnimation/3DGSAnimation.md)
 - [动态3DGS](./3DGSAnimation/Dynamic.md)
-  - [基于静态3DGS的4D重建](./3DGSAnimation/4DReconstruction.md)
-- [静态3DGS](./3DGSAnimation/Static.md)
-  - [静态3DGS驱动](./3DGSAnimation/3DGSAnimation.md)
+  - [4D重建](./3DGSAnimation/4DReconstruction.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
 - [Animal Generation](AnimationGeneration.md)
 
