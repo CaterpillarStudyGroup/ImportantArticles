@@ -26,6 +26,14 @@
 ||2024.9.9|Animate3d: Animating any 3d model with multi-view video diffusion|充分利用现有具有多视图属性的3D资产，解决生成结果存在时空不一致问题|1）多视角视频扩散模型（MV-VDM）<br>2）大规模多视图视频数据集（MV-Video）<br>3）基于MV-VDM，我们引入结合重建技术与4D分数蒸馏采样（4D-SDS）的框架，利用多视图视频扩散先验实现3D对象动画。|静态高斯模型：预置<br>表达对象：单个3D对象<br>运动信息来源：自己训练的多视角图生视频<br>驱动方式：直接驱动（HexPlane）<br>监督方式：4D-SDS，视频重建，ARAP<br>运动推断方式：先前向，再优化|[link](https://arxiv.org/pdf/2407.11398)|
 |111|2023.12|**Dreamgaussian4d: Generative 4d gaussian splatting**|隐式表示 (NeRF)的场景重建与驱动都非常低效|一个系统性的图像到4D生成框架|静态高斯模型：DreamGaussianHD<br> 表达对象：单个3D对象<br> 运动信息来源：图生视频得到的单视角视频<br> 驱动方式：直接驱动（HexPlane）<br> 监督方式：video SDS，视频重建<br>运动推断方式：优化|[link](https://caterpillarstudygroup.github.io/ReadPapers/111.html)|
 
+# GS运动代理：稀疏控制点
+
+> 用少量稀疏控制点作为运动代理，通过MLP预测控制点变换后以LBS驱动高斯点。运动表示紧凑，支持用户编辑。
+
+|ID|Year|Name|解决了什么痛点|主要贡献是什么|Tags|Link|
+|---|---|---|---|---|---|---|
+|234|2024|**SC-GS: Sparse-Controlled Gaussian Splatting for Editable Dynamic Scenes**|动态场景新视角合成中，直接预测每个高斯点的运动参数量大、易过拟合，且不支持运动编辑|1) **稀疏控制点表示** — 用约512个控制点（远少于10万高斯点）紧凑表示场景运动<br>2) **变形MLP** — 每个控制点预测时变6DoF变换，大幅降低学习复杂度<br>3) **自适应控制点策略 + ARAP损失** — 控制点分布自适应调整，保证运动局部刚性<br>4) **支持用户控制的运动编辑** — 显式稀疏表示使得用户可直接拖拽控制点实现运动编辑|表达对象：动态场景<br>运动代理类型：**稀疏控制点**<br>驱动方式：MLP预测6DoF + LBS插值<br>监督方式：渲染损失 + ARAP损失<br>开源|[ReadPapers/234](https://caterpillarstudygroup.github.io/ReadPapers/234.html)|
+
 # GS运动代理：物理仿真对象
 
 ```mermaid
