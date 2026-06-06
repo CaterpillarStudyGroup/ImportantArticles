@@ -24,8 +24,10 @@
 # 动画3D管线 - 3DGS的驱动
 
 - [3DGS基础：原理与对比](./3DGSAnimation/3DGS.md)
+- [3D重建](./3DGSAnimation/3DGSReconstruction.md)
 - [静态3DGS驱动](./3DGSAnimation/Static.md)
   - [驱动方法总览（论文索引）](./3DGSAnimation/3DGSAnimation.md)
+  - [GS分割](./3DGSAnimation/Split.md)
 - [动态3DGS](./3DGSAnimation/Dynamic.md)
   - [4D重建](./3DGSAnimation/4DReconstruction.md)
 - [A Survey on 3D Gaussian Splatting](3D_Gaussian_Splatting.md)
@@ -43,6 +45,7 @@
   - [Long video generation/Storyboard](VideoDiffusionModels/VideoGeneration/Longvideogeneration.md)
   - [Multimodal-guided generation](VideoDiffusionModels/VideoGeneration/Multimodal-guidedgeneration.md)
   - [Human Video Generation](CharacterAnimation/HumanVideoGeneration.md)
+- [新视角生成](./VideoDiffusionModels/NovelViews.md)
 - [Video Editing](VideoDiffusionModels/VideoEditing.md)
   - [Tuning-based](VideoDiffusionModels/VideoEditing/Tuning-based.md)
   - [Training-free](VideoDiffusionModels/VideoEditing/Training-free.md)
